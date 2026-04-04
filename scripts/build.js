@@ -175,6 +175,42 @@ function toArray(value) {
   return Array.isArray(value) ? value : [value];
 }
 
+function isLikelyUrl(value) {
+  return /^https?:\/\//i.test(String(value || '').trim());
+}
+
+function normalizeListeningKey(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '');
+}
+
+function providerLabelFromKey(value) {
+  const raw = String(value || '').trim();
+  const normalized = normalizeListeningKey(raw);
+
+  if (!normalized) return '';
+
+  const knownProviders = {
+    applemusic: 'Apple Music',
+    bandcamp: 'Bandcamp',
+    mixcloud: 'Mixcloud',
+    soundcloud: 'SoundCloud',
+    spotify: 'Spotify',
+    youtube: 'YouTube',
+  };
+
+  if (knownProviders[normalized]) return knownProviders[normalized];
+
+  return raw
+    .replace(/[_-]+/g, ' ')
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
 function inferProviderFromUrl(url) {
   const href = String(url || '').toLowerCase();
   if (!href) return 'Listening link';
@@ -190,6 +226,7 @@ function inferProviderFromUrl(url) {
 function inferProviderKind(url) {
   const href = String(url || '').toLowerCase();
   if (!href) return 'listen';
+  if (href.includes('/embed/') || href.includes('/embed?') || href.includes('youtube.com/embed/') || href.includes('/oembed')) return 'embed';
   if (href.includes('/playlist/')) return 'playlist';
   if (href.includes('/album/')) return 'album';
   if (href.includes('/track/') || href.includes('/song/')) return 'track';
@@ -244,121 +281,120 @@ function buildTrackSearchLinks(track) {
   };
 }
 
-function normalizeListeningEntries(rawEntries) {
-  const entries = [];
+function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode) {
+  const items = [];
+  const providerContainerKeys = new Set(['providers', 'links', 'providerlinks', 'streaming', 'entries', 'items', 'sources']);
+  const embedContainerKeys = new Set(['embeds', 'embed', 'players', 'iframes']);
+  const metaKeys = new Set(['url', 'href', 'src', 'provider', 'label', 'title', 'kind', 'note', 'summary', 'intro', 'description']);
 
-  for (const rawEntry of flattenToArray(rawEntries)) {
-    if (!rawEntry) continue;
+  function visit(value, currentMode = startMode, providerHint = '') {
+    if (!value) return;
 
-    if (typeof rawEntry === 'string') {
-      entries.push({
-        provider: inferProviderFromUrl(rawEntry),
-        label: '',
-        url: rawEntry,
-        kind: inferProviderKind(rawEntry),
-        note: '',
-      });
-      continue;
+    if (Array.isArray(value)) {
+      for (const entry of value) {
+        visit(entry, currentMode, providerHint);
+      }
+      return;
     }
 
-    if (Array.isArray(rawEntry)) {
-      entries.push(...normalizeListeningEntries(rawEntry));
-      continue;
-    }
+    if (typeof value === 'string') {
+      const url = value.trim();
+      if (!url || !isLikelyUrl(url) || isMegaUrl(url)) return;
 
-    if (typeof rawEntry === 'object') {
-      const keys = Object.keys(rawEntry);
-      const looksLikeSingleEntry = ['url', 'href', 'provider', 'label', 'kind', 'note', 'title'].some((key) => key in rawEntry);
-
-      if (!looksLikeSingleEntry) {
-        for (const key of keys) {
-          const value = rawEntry[key];
-          if (typeof value === 'string' && value.trim()) {
-            entries.push({
-              provider: key,
-              label: '',
-              url: value,
-              kind: inferProviderKind(value),
-              note: '',
-            });
-          }
-        }
-        continue;
+      if (currentMode === 'embed') {
+        items.push({
+          mode: currentMode,
+          provider: providerHint || inferProviderFromUrl(url),
+          title: '',
+          url,
+          note: '',
+        });
+        return;
       }
 
-      const url = String(rawEntry.url || rawEntry.href || '').trim();
-      if (!url) continue;
-      if (isMegaUrl(url)) continue;
-      entries.push({
-        provider: rawEntry.provider || inferProviderFromUrl(url),
-        label: rawEntry.label || rawEntry.title || '',
+      items.push({
+        mode: currentMode,
+        provider: providerHint || inferProviderFromUrl(url),
+        label: '',
         url,
-        kind: rawEntry.kind || inferProviderKind(url),
-        note: rawEntry.note || rawEntry.summary || '',
+        kind: inferProviderKind(url),
+        note: '',
       });
+      return;
+    }
+
+    if (typeof value !== 'object') return;
+
+    const url = String(value.url || value.href || value.src || '').trim();
+    if (url && !isMegaUrl(url)) {
+      if (currentMode === 'embed') {
+        items.push({
+          mode: currentMode,
+          provider: value.provider || providerHint || inferProviderFromUrl(url),
+          title: value.title || value.label || '',
+          url,
+          note: value.note || value.summary || '',
+        });
+      } else {
+        items.push({
+          mode: currentMode,
+          provider: value.provider || providerHint || inferProviderFromUrl(url),
+          label: value.label || value.title || '',
+          url,
+          kind: value.kind || inferProviderKind(url),
+          note: value.note || value.summary || '',
+        });
+      }
+    }
+
+    for (const [key, child] of Object.entries(value)) {
+      const normalizedKey = normalizeListeningKey(key);
+      if (!child || metaKeys.has(normalizedKey)) continue;
+
+      const nextMode = embedContainerKeys.has(normalizedKey)
+        ? 'embed'
+        : providerContainerKeys.has(normalizedKey)
+          ? 'provider'
+          : currentMode;
+      const nextHint = providerContainerKeys.has(normalizedKey) || embedContainerKeys.has(normalizedKey)
+        ? providerHint
+        : providerLabelFromKey(key) || providerHint;
+
+      visit(child, nextMode, nextHint);
     }
   }
 
-  const deduped = new Map();
-  for (const entry of entries) {
-    const url = String(entry.url || '').trim();
-    if (!url) continue;
-    if (isMegaUrl(url)) continue;
-    const provider = String(entry.provider || inferProviderFromUrl(url)).trim() || 'Listening link';
-    const key = `${provider}::${url}`;
-    if (deduped.has(key)) continue;
-    deduped.set(key, {
-      provider,
-      label: String(entry.label || '').trim(),
-      url,
-      kind: String(entry.kind || inferProviderKind(url)).trim() || 'listen',
-      note: String(entry.note || '').trim(),
-    });
+  for (const entry of flattenToArray(rawEntries)) {
+    visit(entry, startMode, '');
   }
 
-  return Array.from(deduped.values());
-}
+  const deduped = new Map();
+  for (const item of items) {
+    if (item.mode !== mode) continue;
 
-function normalizeListeningEmbeds(rawEmbeds) {
-  const embeds = [];
+    const url = String(item.url || '').trim();
+    if (!url) continue;
 
-  for (const rawEmbed of flattenToArray(rawEmbeds)) {
-    if (!rawEmbed) continue;
+    const provider = String(item.provider || inferProviderFromUrl(url)).trim() || (mode === 'embed' ? 'Embed' : 'Listening link');
+    const key = `${provider}::${url}`;
+    if (deduped.has(key)) continue;
 
-    if (typeof rawEmbed === 'string') {
-      embeds.push({
-        provider: inferProviderFromUrl(rawEmbed),
-        title: '',
-        url: rawEmbed,
-        note: '',
+    if (mode === 'embed') {
+      deduped.set(key, {
+        provider,
+        title: String(item.title || '').trim(),
+        url,
+        note: String(item.note || '').trim(),
       });
       continue;
     }
 
-    if (typeof rawEmbed === 'object') {
-      const url = String(rawEmbed.url || rawEmbed.src || rawEmbed.href || '').trim();
-      if (!url) continue;
-      embeds.push({
-        provider: rawEmbed.provider || inferProviderFromUrl(url),
-        title: rawEmbed.title || rawEmbed.label || '',
-        url,
-        note: rawEmbed.note || rawEmbed.summary || '',
-      });
-    }
-  }
-
-  const deduped = new Map();
-  for (const embed of embeds) {
-    const url = String(embed.url || '').trim();
-    if (!url) continue;
-    const provider = String(embed.provider || inferProviderFromUrl(url)).trim() || 'Embed';
-    const key = `${provider}::${url}`;
-    if (deduped.has(key)) continue;
     deduped.set(key, {
       provider,
-      title: String(embed.title || '').trim(),
+      label: String(item.label || '').trim(),
       url,
-      note: String(embed.note || '').trim(),
+      kind: String(item.kind || inferProviderKind(url)).trim() || 'listen',
+      note: String(item.note || '').trim(),
     });
   }
 
@@ -367,17 +403,26 @@ function normalizeListeningEmbeds(rawEmbeds) {
 
 function normalizeListening(mix) {
   const listening = mix.listening && typeof mix.listening === 'object' ? mix.listening : {};
-  const providerEntries = normalizeListeningEntries([
+  const providerRoots = [
     listening.providers,
     listening.links,
     mix.providers,
     mix.providerLinks,
     mix.streaming,
-  ]);
-  const embedEntries = normalizeListeningEmbeds([
+  ];
+  const embedRoots = [
     listening.embeds,
     mix.embeds,
-  ]);
+  ];
+  const providerEntries = collectListeningEntries(providerRoots, 'provider', 'provider');
+  const embedEntries = Array.from(
+    new Map(
+      [
+        ...collectListeningEntries(providerRoots, 'embed', 'provider'),
+        ...collectListeningEntries(embedRoots, 'embed', 'embed'),
+      ].map((entry) => [`${entry.provider}::${entry.url}`, entry])
+    ).values()
+  );
 
   return {
     intro: String(listening.intro || listening.summary || mix.listeningIntro || '').trim(),

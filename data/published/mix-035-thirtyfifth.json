@@ -33,30 +33,33 @@
   },
   "listening": {
     "intro": "This archived mix now carries a couple of modern listening mirrors without disturbing the original Tumblr source and download history.",
-    "providers": [
-      {
-        "provider": "YouTube",
-        "label": "Companion playlist on YouTube",
-        "url": "https://www.youtube.com/playlist?list=PL4fGSI1pDJn7gB0v9wN6Q8hX1QyQ1Z5wA",
-        "kind": "playlist",
-        "note": "Useful for a quick browser pass through the sequence."
-      },
-      {
-        "provider": "Bandcamp",
-        "label": "Bandcamp starting point",
-        "url": "https://daily.bandcamp.com/best-of-2013",
-        "kind": "listen",
-        "note": "Not a mirror of the exact mix, but a nearby source for several artists in this run."
+    "providers": {
+      "playlistMirrors": [
+        {
+          "provider": "YouTube",
+          "label": "Companion playlist on YouTube",
+          "url": "https://www.youtube.com/playlist?list=PL4fGSI1pDJn7gB0v9wN6Q8hX1QyQ1Z5wA",
+          "kind": "playlist",
+          "note": "Useful for a quick browser pass through the sequence."
+        }
+      ],
+      "editorial": {
+        "bandcamp": {
+          "label": "Bandcamp starting point",
+          "url": "https://daily.bandcamp.com/best-of-2013",
+          "kind": "listen",
+          "note": "Not a mirror of the exact mix, but a nearby source for several artists in this run."
+        },
+        "embeds": [
+          {
+            "provider": "YouTube",
+            "title": "Thirtyfifth playlist embed",
+            "url": "https://www.youtube.com/embed/videoseries?list=PL4fGSI1pDJn7gB0v9wN6Q8hX1QyQ1Z5wA",
+            "note": "Inline playback for a quick editorial spot-check."
+          }
+        ]
       }
-    ],
-    "embeds": [
-      {
-        "provider": "YouTube",
-        "title": "Thirtyfifth playlist embed",
-        "url": "https://www.youtube.com/embed/videoseries?list=PL4fGSI1pDJn7gB0v9wN6Q8hX1QyQ1Z5wA",
-        "note": "Inline playback for a quick editorial spot-check."
-      }
-    ]
+    }
   },
   "tracks": [
     {
