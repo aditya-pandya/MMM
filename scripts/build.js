@@ -119,6 +119,17 @@ function slugify(value) {
     .replace(/^-+|-+$/g, '');
 }
 
+function flattenToArray(value) {
+  if (!value) return [];
+  if (!Array.isArray(value)) return [value];
+
+  const items = [];
+  for (const entry of value) {
+    items.push(...flattenToArray(entry));
+  }
+  return items;
+}
+
 function sortMixes(mixes) {
   return [...mixes].sort((a, b) => {
     const aDate = a.date ? new Date(a.date).getTime() : -Infinity;
@@ -236,7 +247,7 @@ function buildTrackSearchLinks(track) {
 function normalizeListeningEntries(rawEntries) {
   const entries = [];
 
-  for (const rawEntry of toArray(rawEntries)) {
+  for (const rawEntry of flattenToArray(rawEntries)) {
     if (!rawEntry) continue;
 
     if (typeof rawEntry === 'string') {
@@ -311,7 +322,7 @@ function normalizeListeningEntries(rawEntries) {
 function normalizeListeningEmbeds(rawEmbeds) {
   const embeds = [];
 
-  for (const rawEmbed of toArray(rawEmbeds)) {
+  for (const rawEmbed of flattenToArray(rawEmbeds)) {
     if (!rawEmbed) continue;
 
     if (typeof rawEmbed === 'string') {
@@ -380,7 +391,7 @@ function normalizeMixes(rawMixes) {
 
   return sortMixes(
     rawMixes.map((mix, index) => {
-      const title = mix.title || mix.displayTitle || mix.name || `Untitled Mix ${index + 1}`;
+      const title = mix.displayTitle || mix.title || mix.name || `Untitled Mix ${index + 1}`;
       const intro = Array.isArray(mix.intro) ? mix.intro.join('\n\n') : '';
       const slug = mix.slug || slugify(title) || `mix-${index + 1}`;
       const excerpt = mix.excerpt || mix.summary || mix.description || intro || 'A hand-built mix, archived carefully.';
@@ -524,7 +535,7 @@ function loadMixes() {
 
   const fromDirect = Array.isArray(directMixes) ? directMixes : directMixes?.mixes || [];
   const fromArchive = Array.isArray(archiveIndex?.mixes) ? archiveIndex.mixes : [];
-  const combined = [...fromDirect, ...fromArchive, ...publishedMixes, ...importedMixes];
+  const combined = [...fromDirect, ...fromArchive, ...importedMixes, ...publishedMixes];
   const deduped = Array.from(new Map(combined.map((mix) => [mix.slug || mix.id || mix.title, mix])).values());
 
   return normalizeMixes(deduped);
@@ -871,7 +882,7 @@ function renderListeningSection(mix) {
       <div class="section-heading">
         <div>
           <p class="eyebrow">Listening</p>
-          <h2>Honest listening fallbacks</h2>
+          <h2>Provider links and embedded playback</h2>
           <p class="supporting-copy">${escapeHtml(
             listening.intro || 'When durable playback links are missing, the archive falls back to track-first search helpers instead of pretending dead downloads still work.'
           )}</p>
@@ -898,17 +909,6 @@ function renderHomePage({ mixes, notes, site }) {
   const featuredNotes = featured?.relatedNotes?.slice(0, 2) || [];
   const intro = site.homeIntro || site.homepage_intro || 'A personal archive for mixes built slowly, sequenced by hand, and kept with just enough context to matter later.';
   const description = featured ? featured.excerpt : 'A darker editorial archive for handmade mixes and notes.';
-  const nextActions = [];
-
-  if (!featured && mixes.length) {
-    nextActions.push('Set a featured mix in data/site.json so the homepage lead is deliberate instead of automatic.');
-  }
-
-  if (notes.length < mixes.length) {
-    nextActions.push('Add another note so more archive mixes have context that points back to them.');
-  }
-
-  nextActions.push('Use the studio dashboard for draft state, validation commands, and publish prep.');
 
   const featureBlock = featured
     ? `<section class="hero-grid">
@@ -1012,34 +1012,12 @@ function renderHomePage({ mixes, notes, site }) {
         <p><a class="text-link" href="studio/">Open the local studio dashboard</a></p>
       </div>
     </section>`;
-  const operatorBlock = `<section class="section-block section-block--split">
-      <div>
-        <p class="eyebrow">Operator commands</p>
-        <h2>Local commands worth keeping close</h2>
-      </div>
-      <div class="command-list">
-        <code>python3 scripts/validate_content.py</code>
-        <code>python3 scripts/generate_weekly_draft.py --mode auto</code>
-        <code>python3 scripts/publish_mix.py &lt;slug-or-path&gt; --feature</code>
-        <code>npm run build</code>
-      </div>
-    </section>`;
-  const nextActionsBlock = `<section class="section-block section-block--split">
-      <div>
-        <p class="eyebrow">Next actions</p>
-        <h2>What the current data suggests</h2>
-      </div>
-      <div class="action-list">
-        ${nextActions.map((action) => `<p>${escapeHtml(action)}</p>`).join('')}
-      </div>
-    </section>`;
-
   return renderLayout({
     depth: 0,
     currentNav: 'home',
     title: 'Home',
     description,
-    content: `${featureBlock}${recentBlock}${notesBlock}${featuredRelationBlock}${valuesBlock}${operatorBlock}${nextActionsBlock}`,
+    content: `${featureBlock}${recentBlock}${notesBlock}${featuredRelationBlock}${valuesBlock}`,
   });
 }
 
@@ -1302,6 +1280,27 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
         <p>${escapeHtml(featuredMix?.excerpt || 'The homepage feature follows data/site.json. Point it at a published mix when you want a deliberate lead story.')}</p>
         ${featuredMix ? `<a class="text-link" href="../mixes/${escapeHtml(featuredMix.slug)}/">Open featured mix</a>` : ''}
       </article>
+    </section>`;
+  content += `<section class="section-block section-block--split">
+      <div>
+        <p class="eyebrow">Operator commands</p>
+        <h2>Local commands worth keeping close</h2>
+      </div>
+      <div class="command-list">
+        <code>python3 scripts/validate_content.py</code>
+        <code>python3 scripts/generate_weekly_draft.py --mode auto</code>
+        <code>python3 scripts/publish_mix.py &lt;slug-or-path&gt; --feature</code>
+        <code>npm run build</code>
+      </div>
+    </section>`;
+  content += `<section class="section-block section-block--split">
+      <div>
+        <p class="eyebrow">Next actions</p>
+        <h2>What the current data suggests</h2>
+      </div>
+      <div class="action-list">
+        ${nextActions.map((action) => `<p>${escapeHtml(action)}</p>`).join('')}
+      </div>
     </section>`;
 
   return renderLayout({

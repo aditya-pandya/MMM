@@ -16,7 +16,8 @@
     { "label": "Home", "path": "/" },
     { "label": "Archive", "path": "/archive/" },
     { "label": "About", "path": "/about/" },
-    { "label": "Notes", "path": "/notes/" }
+    { "label": "Notes", "path": "/notes/" },
+    { "label": "Studio", "path": "/studio/" }
   ],
   "socialLinks": [
     { "label": "Tumblr", "url": "https://mondaymusicmix.tumblr.com/" },

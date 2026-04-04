@@ -49,7 +49,14 @@
         "note": "Not a mirror of the exact mix, but a nearby source for several artists in this run."
       }
     ],
-    "embeds": []
+    "embeds": [
+      {
+        "provider": "YouTube",
+        "title": "Thirtyfifth playlist embed",
+        "url": "https://www.youtube.com/embed/videoseries?list=PL4fGSI1pDJn7gB0v9wN6Q8hX1QyQ1Z5wA",
+        "note": "Inline playback for a quick editorial spot-check."
+      }
+    ]
   },
   "tracks": [
     {

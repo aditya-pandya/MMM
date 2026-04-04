@@ -11,6 +11,7 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
   - `/about/`
   - `/notes/`
   - `/notes/[slug]/`
+  - `/studio/`
 - Tumblr/RSS import pipeline for old MMM mixes
 - Taste-profile builder from imported history
 - Local editorial tooling for:
@@ -65,6 +66,7 @@ Then open:
 - http://localhost:3000/archive/
 - http://localhost:3000/notes/
 - http://localhost:3000/notes/rebuilding-the-archive/
+- http://localhost:3000/studio/
 
 ## Editorial commands
 
@@ -220,6 +222,8 @@ npm run build
 - Notes are loaded from `data/notes-index.json` plus matching files in `data/notes/`, with `data/notes.json` still supported as a fallback.
 - Note detail pages are emitted at `/notes/[slug]/`.
 - Mix detail pages expose previous/next archive links, related notes, highlighted tracks, and source/embed metadata when present in the JSON.
+- Dedicated listening sections render automatically when mix JSON includes provider links or embeds under `listening`.
+- `/studio/` is generated from local JSON and summarizes draft count, latest draft, published count, notes count, featured mix state, and a few operator commands.
 - Tumblr-imported archive mixes fall back to typographic cover placeholders and track-level search helpers when the only artwork/download data is legacy Tumblr residue.
 - Home, archive, and notes pages surface mix-note relationships so the writing is visible without having to guess where it lives.
 
