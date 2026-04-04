@@ -8,4 +8,5 @@
 - Imported JSON keeps the raw Tumblr HTML under `legacy.descriptionHtml` so future cleanup can be done without re-fetching the feed.
 - The seeded `data/published/` entries were generated from a live fetch of the public Tumblr RSS snapshot saved to `data/imported/raw/mondaymusicmix-rss.xml`.
 - `data/archive-index.json`, `data/notes-index.json`, and `data/taste-profile.json` are lightweight seed outputs meant to give the future site generator stable starter data.
+- Notes are expected to live as full JSON entries under `data/notes/` and be referenced from `data/notes-index.json`; the static build merges those sources by slug and uses `relatedMixSlugs` to drive note detail pages and mix cross-links.
 - Taste-profile derivation is heuristic rather than authoritative; it counts recurring artists and scans track text for cover/remix-era hints.

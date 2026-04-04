@@ -22,6 +22,7 @@
 
 5. Deploy
    - Run `npm run build` locally if desired.
+   - The static build emits `/notes/[slug]/` pages automatically and wires note-to-mix relationships into the homepage, notes index, archive, and mix detail pages.
    - Push to `main` to trigger the GitHub Pages deployment workflow.
 
 ## Weekly generation automation
@@ -46,3 +47,4 @@ Scheduled local runs:
 
 - Deterministic local generation is the default and only supported mode right now.
 - The hosted GitHub workflow is for deployment, not editorial generation.
+- Notes can be authored as standalone JSON files in `data/notes/` and indexed in `data/notes-index.json`; the build merges them by slug so short index metadata and full note bodies can evolve separately.

@@ -9,6 +9,7 @@ What’s in here
   - /mixes/[slug]/
   - /about/
   - /notes/
+  - /notes/[slug]/
 - Tumblr/RSS import pipeline for old MMM mixes
 - Taste-profile builder from imported history
 - Weekly draft generation for local-machine workflows
@@ -35,7 +36,7 @@ Repo structure
 - src/static/
   - site CSS
 - tests/
-  - import, publish, and generation tests
+  - import, publish, generation, and static build tests
 
 Local setup
 ```bash
@@ -52,6 +53,7 @@ Then open:
 - http://localhost:3000/
 - http://localhost:3000/archive/
 - http://localhost:3000/notes/
+- http://localhost:3000/notes/rebuilding-the-archive/
 
 Import old Tumblr mixes
 From RSS URL:
@@ -132,6 +134,12 @@ Current seeded content
 - sample published mixes
 - sample notes
 - generated taste profile
+
+Static build behavior
+- Notes are loaded from `data/notes-index.json` plus matching files in `data/notes/`, with `data/notes.json` still supported as a fallback.
+- Note detail pages are emitted at `/notes/[slug]/`.
+- Mix detail pages expose previous/next archive links, related notes, highlighted tracks, and source/embed metadata when present in the JSON.
+- Home, archive, and notes pages surface mix-note relationships so the writing is visible without having to guess where it lives.
 
 Operational flow
 1. Import archive

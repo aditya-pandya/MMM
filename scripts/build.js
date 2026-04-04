@@ -11,8 +11,13 @@ function ensureDir(dirPath) {
 }
 
 function resetDir(dirPath) {
-  fs.rmSync(dirPath, { recursive: true, force: true });
   ensureDir(dirPath);
+
+  for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
+    try {
+      fs.rmSync(path.join(dirPath, entry.name), { recursive: true, force: true });
+    } catch {}
+  }
 }
 
 function walkJsonFiles(dirPath) {
@@ -132,6 +137,17 @@ function sortMixes(mixes) {
   });
 }
 
+function sortNotes(notes) {
+  return [...notes].sort((a, b) => {
+    const aDate = a.date ? new Date(a.date).getTime() : -Infinity;
+    const bDate = b.date ? new Date(b.date).getTime() : -Infinity;
+
+    if (aDate !== bDate) return bDate - aDate;
+
+    return String(a.title ?? '').localeCompare(String(b.title ?? ''));
+  });
+}
+
 function normalizeMixes(rawMixes) {
   if (!Array.isArray(rawMixes)) return [];
 
@@ -148,7 +164,10 @@ function normalizeMixes(rawMixes) {
           ? mix.tracks
           : [];
       const tags = Array.isArray(mix.tags) ? mix.tags : [];
-      const links = mix.links && typeof mix.links === 'object' ? mix.links : {};
+      const links = {
+        ...(mix.links && typeof mix.links === 'object' ? mix.links : {}),
+        ...(mix.download?.url ? { [mix.download.label || 'Download mix']: mix.download.url } : {}),
+      };
 
       return {
         ...mix,
@@ -164,24 +183,46 @@ function normalizeMixes(rawMixes) {
         runtime: mix.runtime || mix.duration || '',
         image: mix.image || mix.coverImage || mix.heroImage || mix.cover?.imageUrl || '',
         imageAlt: mix.imageAlt || mix.coverAlt || mix.cover?.alt || `${title} artwork`,
+        coverCredit: mix.cover?.credit || mix.coverCredit || '',
+        sourceUrl: mix.source?.sourceUrl || mix.sourceUrl || '',
+        legacyHtml: mix.legacy?.descriptionHtml || mix.descriptionHtml || '',
       };
     })
   );
+}
+
+function normalizeNote(note, index = 0) {
+  const bodyParagraphs = Array.isArray(note.body)
+    ? note.body.filter((item) => typeof item === 'string' && item.trim())
+    : typeof note.body === 'string' && note.body.trim()
+      ? [note.body.trim()]
+      : typeof note.content === 'string' && note.content.trim()
+        ? [note.content.trim()]
+        : [];
+  const relatedMixSlugs = Array.isArray(note.relatedMixSlugs)
+    ? note.relatedMixSlugs.filter(Boolean)
+    : note.mixSlug || note.mix_slug
+      ? [note.mixSlug || note.mix_slug]
+      : [];
+
+  return {
+    ...note,
+    title: note.title || `Note ${index + 1}`,
+    slug: note.slug || slugify(note.title || `note-${index + 1}`),
+    date: note.publishedAt || note.date || note.published_at || '',
+    excerpt: note.excerpt || note.summary || note.description || '',
+    body: bodyParagraphs.join('\n\n'),
+    bodyParagraphs,
+    relatedMixSlugs,
+    tags: Array.isArray(note.tags) ? note.tags : [],
+  };
 }
 
 function normalizeNotes(raw) {
   if (!raw) return [];
   const items = Array.isArray(raw) ? raw : Array.isArray(raw.notes) ? raw.notes : [];
 
-  return items.map((note, index) => ({
-    title: note.title || `Note ${index + 1}`,
-    slug: note.slug || slugify(note.title || `note-${index + 1}`),
-    date: note.date || note.published_at || '',
-    excerpt: note.excerpt || note.summary || note.description || '',
-    body: note.body || note.content || '',
-    mixSlug: note.mixSlug || note.mix_slug || '',
-    tags: Array.isArray(note.tags) ? note.tags : [],
-  }));
+  return sortNotes(items.map((note, index) => normalizeNote(note, index)));
 }
 
 function loadMixes() {
@@ -198,26 +239,20 @@ function loadMixes() {
     .map((filePath) => readJsonIfExists(filePath, null))
     .filter(Boolean)
     .filter((mix) => !mix.status || mix.status === 'published')
-    .map((mix) => {
-      const downloadLink = mix.download?.url
-        ? { [mix.download.label || 'Download']: mix.download.url }
-        : {};
-
-      return {
-        ...mix,
-        title: mix.displayTitle || mix.title,
-        excerpt: mix.summary,
-        notes: Array.isArray(mix.intro) ? mix.intro.join('\n\n') : '',
-        date: mix.publishedAt,
-        number: mix.mixNumber,
-        image: mix.cover?.imageUrl,
-        imageAlt: mix.cover?.alt,
-        links: {
-          ...(mix.links || {}),
-          ...downloadLink,
-        },
-      };
-    });
+    .map((mix) => ({
+      ...mix,
+      title: mix.displayTitle || mix.title,
+      excerpt: mix.summary,
+      notes: Array.isArray(mix.intro) ? mix.intro.join('\n\n') : '',
+      date: mix.publishedAt,
+      number: mix.mixNumber,
+      image: mix.cover?.imageUrl,
+      imageAlt: mix.cover?.alt,
+      links: {
+        ...(mix.links || {}),
+        ...(mix.download?.url ? { [mix.download.label || 'Download mix']: mix.download.url } : {}),
+      },
+    }));
 
   const fromDirect = Array.isArray(directMixes) ? directMixes : directMixes?.mixes || [];
   const fromArchive = Array.isArray(archiveIndex?.mixes) ? archiveIndex.mixes : [];
@@ -225,6 +260,69 @@ function loadMixes() {
   const deduped = Array.from(new Map(combined.map((mix) => [mix.slug || mix.id || mix.title, mix])).values());
 
   return normalizeMixes(deduped);
+}
+
+function loadNotes() {
+  const flexibleNotes = readJsonIfExists(path.join(DATA_DIR, 'notes.json'), null);
+  if (flexibleNotes) return normalizeNotes(flexibleNotes);
+
+  const notesIndex = readJsonIfExists(path.join(DATA_DIR, 'notes-index.json'), null);
+  const indexedItems = Array.isArray(notesIndex?.items) ? notesIndex.items : [];
+  const noteFiles = walkJsonFiles(path.join(DATA_DIR, 'notes'));
+
+  const detailedNotes = noteFiles
+    .map((filePath) => readJsonIfExists(filePath, null))
+    .filter(Boolean);
+  const detailedBySlug = new Map(
+    detailedNotes.map((note, index) => {
+      const normalized = normalizeNote(note, index);
+      return [normalized.slug, normalized];
+    })
+  );
+
+  const merged = indexedItems.map((item, index) => {
+    const normalizedIndexItem = normalizeNote(item, index);
+    const detailed = detailedBySlug.get(normalizedIndexItem.slug);
+    return detailed ? { ...normalizedIndexItem, ...detailed } : normalizedIndexItem;
+  });
+
+  const indexedSlugs = new Set(merged.map((note) => note.slug));
+  for (const detailed of detailedBySlug.values()) {
+    if (!indexedSlugs.has(detailed.slug)) merged.push(detailed);
+  }
+
+  return sortNotes(merged);
+}
+
+function attachRelationships(mixes, notes) {
+  const mixesBySlug = new Map(mixes.map((mix) => [mix.slug, mix]));
+
+  const notesWithRelations = notes.map((note) => ({
+    ...note,
+    relatedMixes: note.relatedMixSlugs.map((slug) => mixesBySlug.get(slug)).filter(Boolean),
+  }));
+
+  const notesByMixSlug = new Map();
+  for (const note of notesWithRelations) {
+    for (const slug of note.relatedMixSlugs) {
+      const current = notesByMixSlug.get(slug) || [];
+      current.push(note);
+      notesByMixSlug.set(slug, current);
+    }
+  }
+
+  const mixesWithRelations = mixes.map((mix, index) => ({
+    ...mix,
+    relatedNotes: notesByMixSlug.get(mix.slug) || [],
+    highlightedTracks: mix.tracklist.filter((track) => track && typeof track === 'object' && track.isFavorite),
+    newerMix: index > 0 ? mixes[index - 1] : null,
+    olderMix: index < mixes.length - 1 ? mixes[index + 1] : null,
+  }));
+
+  return {
+    mixes: mixesWithRelations,
+    notes: notesWithRelations,
+  };
 }
 
 function relativePrefix(depth) {
@@ -306,21 +404,113 @@ function renderCover(mix, compact = false) {
   </div>`;
 }
 
-function renderLinkButtons(links) {
-  const items = Object.entries(links).filter(([, href]) => typeof href === 'string' && href.trim());
-  if (!items.length) return '';
+function renderMixMiniList(mixes, { basePath = '', emptyMessage = '' } = {}) {
+  if (!mixes.length) {
+    return emptyMessage ? `<p class="supporting-copy">${escapeHtml(emptyMessage)}</p>` : '';
+  }
 
-  return `<div class="button-row">${items
-    .map(([label, href]) => `<a class="button button--secondary" href="${escapeHtml(href)}">${escapeHtml(label.replace(/_/g, ' '))}</a>`)
-    .join('')}</div>`;
+  return `<div class="related-list">
+    ${mixes
+      .map(
+        (mix) => `<a class="related-card" href="${basePath}${escapeHtml(mix.slug)}/">
+          <p class="related-card__meta">${escapeHtml(formatMonthYear(mix.date))}${mix.number !== '' ? ` · Mix ${escapeHtml(mix.number)}` : ''}</p>
+          <h3>${escapeHtml(mix.title)}</h3>
+          <p>${escapeHtml(mix.excerpt)}</p>
+        </a>`
+      )
+      .join('')}
+  </div>`;
 }
 
-function renderHomePage({ mixes, site }) {
+function renderNoteMiniList(notes, { basePath = '', emptyMessage = '' } = {}) {
+  if (!notes.length) {
+    return emptyMessage ? `<p class="supporting-copy">${escapeHtml(emptyMessage)}</p>` : '';
+  }
+
+  return `<div class="related-list">
+    ${notes
+      .map(
+        (note) => `<a class="related-card" href="${basePath}${escapeHtml(note.slug)}/">
+          <p class="related-card__meta">${escapeHtml(note.date ? formatDate(note.date) : 'Undated note')}</p>
+          <h3>${escapeHtml(note.title)}</h3>
+          <p>${escapeHtml(note.excerpt || 'A note tied to this corner of the archive.')}</p>
+        </a>`
+      )
+      .join('')}
+  </div>`;
+}
+
+function renderResourceSection(mix) {
+  const resourceCards = [];
+
+  if (mix.sourceUrl) {
+    resourceCards.push(`
+      <article class="resource-card">
+        <p class="resource-card__eyebrow">Source</p>
+        <h3>Original Tumblr post</h3>
+        <p>The imported source page stays linked so the archive can always point back to the original post.</p>
+        <a class="text-link" href="${escapeHtml(mix.sourceUrl)}">Open source</a>
+      </article>
+    `);
+  }
+
+  if (mix.coverCredit) {
+    resourceCards.push(`
+      <article class="resource-card">
+        <p class="resource-card__eyebrow">Artwork</p>
+        <h3>Cover credit</h3>
+        <p>${escapeHtml(mix.coverCredit)}</p>
+      </article>
+    `);
+  }
+
+  const linkItems = Object.entries(mix.links || {}).filter(([, href]) => typeof href === 'string' && href.trim());
+  if (linkItems.length) {
+    resourceCards.push(`
+      <article class="resource-card">
+        <p class="resource-card__eyebrow">Links</p>
+        <h3>Listen or download</h3>
+        <div class="button-row">
+          ${linkItems
+            .map(([label, href]) => `<a class="button button--secondary" href="${escapeHtml(href)}">${escapeHtml(label.replace(/_/g, ' '))}</a>`)
+            .join('')}
+        </div>
+      </article>
+    `);
+  }
+
+  const legacyHtml = String(mix.legacyHtml || '').trim();
+  if (!resourceCards.length && !legacyHtml) return '';
+
+  return `${resourceCards.length
+    ? `<section class="section-block">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Resources</p>
+            <h2>Links, provenance, and source residue</h2>
+          </div>
+        </div>
+        <div class="resource-grid">${resourceCards.join('')}</div>
+      </section>`
+    : ''}${legacyHtml
+    ? `<section class="section-block section-block--split">
+        <div>
+          <p class="eyebrow">Original post</p>
+          <h2>Imported Tumblr snapshot</h2>
+        </div>
+        <div class="legacy-embed">${legacyHtml}</div>
+      </section>`
+    : ''}`;
+}
+
+function renderHomePage({ mixes, notes, site }) {
   const featuredSlug = site.featuredMixSlug || site.featured_mix_slug;
   const featured = featuredSlug
     ? mixes.find((mix) => mix.slug === featuredSlug) || mixes[0]
     : mixes[0];
   const recent = featured ? mixes.filter((mix) => mix.slug !== featured.slug).slice(0, 4) : mixes.slice(0, 4);
+  const recentNotes = notes.slice(0, 2);
+  const featuredNotes = featured?.relatedNotes?.slice(0, 2) || [];
   const intro = site.homeIntro || site.homepage_intro || 'A personal archive for mixes built slowly, sequenced by hand, and kept with just enough context to matter later.';
   const description = featured ? featured.excerpt : 'A darker editorial archive for handmade mixes and notes.';
 
@@ -334,6 +524,7 @@ function renderHomePage({ mixes, site }) {
             <span>${escapeHtml(formatDate(featured.date))}</span>
             ${featured.runtime ? `<span>${escapeHtml(featured.runtime)}</span>` : ''}
             ${featured.number !== '' ? `<span>Mix ${escapeHtml(featured.number)}</span>` : ''}
+            ${featured.relatedNotes.length ? `<span>${escapeHtml(String(featured.relatedNotes.length))} related note${featured.relatedNotes.length === 1 ? '' : 's'}</span>` : ''}
           </div>
           ${renderTagList(featured.tags)}
           <div class="button-row">
@@ -375,11 +566,41 @@ function renderHomePage({ mixes, site }) {
                 <div>
                   <p class="archive-row__meta">${escapeHtml(formatMonthYear(mix.date))}${mix.number !== '' ? ` · Mix ${escapeHtml(mix.number)}` : ''}</p>
                   <h3>${escapeHtml(mix.title)}</h3>
+                  <p class="archive-row__submeta">${mix.highlightedTracks.length ? `${escapeHtml(String(mix.highlightedTracks.length))} highlighted track${mix.highlightedTracks.length === 1 ? '' : 's'}` : 'No highlighted tracks marked'}${mix.relatedNotes.length ? ` · ${escapeHtml(String(mix.relatedNotes.length))} related note${mix.relatedNotes.length === 1 ? '' : 's'}` : ''}</p>
                 </div>
                 <p>${escapeHtml(mix.excerpt)}</p>
               </a>`
             )
             .join('')}
+        </div>
+      </section>`
+    : '';
+
+  const notesBlock = recentNotes.length
+    ? `<section class="section-block section-block--split">
+        <div>
+          <p class="eyebrow">From the notebook</p>
+          <h2>Notes that explain why a mix stayed around.</h2>
+          <p class="supporting-copy">Short editorial fragments now have their own pages and stay wired back into the archive.</p>
+          <div class="button-row">
+            <a class="button button--secondary" href="notes/">Browse notes</a>
+          </div>
+        </div>
+        <div>
+          ${renderNoteMiniList(recentNotes, { basePath: 'notes/' })}
+        </div>
+      </section>`
+    : '';
+
+  const featuredRelationBlock = featured && featuredNotes.length
+    ? `<section class="section-block section-block--split">
+        <div>
+          <p class="eyebrow">Connected reading</p>
+          <h2>Notes related to ${escapeHtml(featured.title)}</h2>
+          <p class="supporting-copy">The homepage now exposes the writing closest to the featured mix instead of leaving it stranded on a separate index.</p>
+        </div>
+        <div>
+          ${renderNoteMiniList(featuredNotes, { basePath: 'notes/' })}
         </div>
       </section>`
     : '';
@@ -400,7 +621,7 @@ function renderHomePage({ mixes, site }) {
     currentNav: 'home',
     title: 'Home',
     description,
-    content: `${featureBlock}${recentBlock}${valuesBlock}`,
+    content: `${featureBlock}${recentBlock}${notesBlock}${featuredRelationBlock}${valuesBlock}`,
   });
 }
 
@@ -418,6 +639,7 @@ function renderArchivePage({ mixes }) {
               <div>
                 <p class="archive-row__meta">${escapeHtml(formatDate(mix.date))}${mix.number !== '' ? ` · Mix ${escapeHtml(mix.number)}` : ''}</p>
                 <h2>${escapeHtml(mix.title)}</h2>
+                <p class="archive-row__submeta">${mix.highlightedTracks.length ? `${escapeHtml(String(mix.highlightedTracks.length))} highlighted track${mix.highlightedTracks.length === 1 ? '' : 's'}` : 'No highlighted tracks marked'}${mix.relatedNotes.length ? ` · ${escapeHtml(String(mix.relatedNotes.length))} related note${mix.relatedNotes.length === 1 ? '' : 's'}` : ''}</p>
                 ${renderTagList(mix.tags)}
               </div>
               <p>${escapeHtml(mix.excerpt)}</p>
@@ -447,6 +669,22 @@ function renderArchivePage({ mixes }) {
 }
 
 function renderMixPage({ mix }) {
+  const highlightedSection = mix.highlightedTracks.length
+    ? `<section class="section-block">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Highlights</p>
+            <h2>Favorite tracks marked in the source</h2>
+          </div>
+        </div>
+        <ul class="highlight-list">
+          ${mix.highlightedTracks
+            .map((track) => `<li>${escapeHtml(track.displayText || `${track.artist} - ${track.title}`)}</li>`)
+            .join('')}
+        </ul>
+      </section>`
+    : '';
+
   const trackSection = mix.tracklist.length
     ? `<section class="section-block">
         <div class="section-heading">
@@ -466,6 +704,7 @@ function renderMixPage({ mix }) {
                 <div>
                   <strong>${String(normalized.position || index + 1).padStart(2, '0')}</strong>
                   <span>${escapeHtml(title)}${artist}</span>
+                  ${normalized.isFavorite ? '<em class="track-favorite">Favorite</em>' : ''}
                 </div>
                 ${annotation}
               </li>`;
@@ -490,6 +729,47 @@ function renderMixPage({ mix }) {
       </section>`
     : '';
 
+  const relatedNotesSection = `<section class="section-block section-block--split">
+      <div>
+        <p class="eyebrow">Related notes</p>
+        <h2>Writing that points back to this mix</h2>
+        <p class="supporting-copy">Notes can reference one or more mixes, so this section stays data-driven and only fills when those relationships exist.</p>
+      </div>
+      <div>
+        ${renderNoteMiniList(mix.relatedNotes, {
+          basePath: '../../notes/',
+          emptyMessage: 'No notes point back to this mix yet.',
+        })}
+      </div>
+    </section>`;
+
+  const adjacentMixes = [mix.olderMix, mix.newerMix].filter(Boolean);
+  const navigationSection = adjacentMixes.length
+    ? `<section class="section-block section-block--split">
+        <div>
+          <p class="eyebrow">Continue through the archive</p>
+          <h2>Prev and next mix links</h2>
+          <p class="supporting-copy">A mix detail page should feel connected to the rest of the run, not like a dead end.</p>
+        </div>
+        <div class="adjacent-grid">
+          ${mix.olderMix
+            ? `<a class="adjacent-card" href="../${escapeHtml(mix.olderMix.slug)}/">
+                <p class="adjacent-card__eyebrow">Previous mix</p>
+                <h3>${escapeHtml(mix.olderMix.title)}</h3>
+                <p>${escapeHtml(formatDate(mix.olderMix.date))}</p>
+              </a>`
+            : ''}
+          ${mix.newerMix
+            ? `<a class="adjacent-card" href="../${escapeHtml(mix.newerMix.slug)}/">
+                <p class="adjacent-card__eyebrow">Next mix</p>
+                <h3>${escapeHtml(mix.newerMix.title)}</h3>
+                <p>${escapeHtml(formatDate(mix.newerMix.date))}</p>
+              </a>`
+            : ''}
+        </div>
+      </section>`
+    : '';
+
   return renderLayout({
     depth: 2,
     currentNav: 'archive',
@@ -505,17 +785,22 @@ function renderMixPage({ mix }) {
             <span>${escapeHtml(formatDate(mix.date))}</span>
             ${mix.runtime ? `<span>${escapeHtml(mix.runtime)}</span>` : ''}
             ${mix.number !== '' ? `<span>Mix ${escapeHtml(mix.number)}</span>` : ''}
+            ${mix.highlightedTracks.length ? `<span>${escapeHtml(String(mix.highlightedTracks.length))} highlighted</span>` : ''}
+            ${mix.relatedNotes.length ? `<span>${escapeHtml(String(mix.relatedNotes.length))} related note${mix.relatedNotes.length === 1 ? '' : 's'}</span>` : ''}
           </div>
           ${renderTagList(mix.tags)}
           <div class="button-row">
             <a class="button button--secondary" href="../../archive/">Back to archive</a>
           </div>
-          ${renderLinkButtons(mix.links)}
         </div>
         ${renderCover(mix)}
       </section>
       ${notesSection}
-      ${trackSection}`,
+      ${highlightedSection}
+      ${trackSection}
+      ${relatedNotesSection}
+      ${navigationSection}
+      ${renderResourceSection(mix)}`,
   });
 }
 
@@ -588,7 +873,12 @@ function renderNotesPage({ notes }) {
               <h2>${escapeHtml(note.title)}</h2>
               <p>${escapeHtml(note.excerpt || stripHtml(note.body).slice(0, 180) || 'A short note waiting for more context.')}</p>
               ${note.tags.length ? renderTagList(note.tags) : ''}
-              ${note.mixSlug ? `<p class="note-card__link">Related mix: <a href="../mixes/${escapeHtml(note.mixSlug)}/">${escapeHtml(note.mixSlug)}</a></p>` : ''}
+              ${note.relatedMixes.length
+                ? `<p class="note-card__link">Related mixes: ${note.relatedMixes
+                    .map((mix) => `<a href="../mixes/${escapeHtml(mix.slug)}/">${escapeHtml(mix.title)}</a>`)
+                    .join(', ')}</p>`
+                : ''}
+              <p class="note-card__link"><a href="./${escapeHtml(note.slug)}/">Read note</a></p>
             </article>`
           )
           .join('')}
@@ -604,8 +894,8 @@ function renderNotesPage({ notes }) {
           <h2>Useful residue comes later.</h2>
         </div>
         <div class="prose">
-          <p>No notes data was found, so this page acts as a clean holding page. Add data/notes.json with an array of entries or an object containing a notes array, and the page will render them automatically.</p>
-          <p>Expected fields are flexible: title, date, excerpt, body, tags, and an optional mixSlug if a note should point back to a specific mix.</p>
+          <p>No notes data was found, so this page acts as a clean holding page. Add data/notes-index.json plus note files under data/notes/, or provide a flexible data/notes.json, and the page will render them automatically.</p>
+          <p>Expected fields are flexible: title, date, excerpt, body, tags, and optional related mix slugs.</p>
         </div>
       </section>`;
 
@@ -615,6 +905,81 @@ function renderNotesPage({ notes }) {
     title: 'Notes',
     description: 'Notebook fragments and future writing around the mixes.',
     content: body,
+  });
+}
+
+function renderNotePage({ note, allNotes }) {
+  const currentIndex = allNotes.findIndex((candidate) => candidate.slug === note.slug);
+  const previousNote = currentIndex >= 0 && currentIndex < allNotes.length - 1 ? allNotes[currentIndex + 1] : null;
+  const nextNote = currentIndex > 0 ? allNotes[currentIndex - 1] : null;
+  const adjacentNotes = [previousNote, nextNote].filter(Boolean);
+
+  return renderLayout({
+    depth: 2,
+    currentNav: 'notes',
+    title: note.title,
+    description: stripHtml(note.excerpt || note.body),
+    eyebrow: note.title,
+    content: `<section class="page-intro page-intro--wide">
+        <div>
+          <p class="eyebrow">Note detail</p>
+          <h1>${escapeHtml(note.title)}</h1>
+          <div class="meta-row">
+            <span>${escapeHtml(note.date ? formatDate(note.date) : 'Undated note')}</span>
+            ${note.relatedMixes.length ? `<span>${escapeHtml(String(note.relatedMixes.length))} related mix${note.relatedMixes.length === 1 ? '' : 'es'}</span>` : ''}
+          </div>
+          ${renderTagList(note.tags)}
+        </div>
+        <div>
+          <p class="page-intro__copy page-intro__copy--large">${escapeHtml(note.excerpt || 'A short note from the archive notebook.')}</p>
+          <div class="button-row">
+            <a class="button button--secondary" href="../../notes/">Back to notes</a>
+          </div>
+        </div>
+      </section>
+      <section class="section-block section-block--split">
+        <div>
+          <p class="eyebrow">Body</p>
+          <h2>Kept in plain text on purpose</h2>
+        </div>
+        <div class="prose">${paragraphize(note.body)}</div>
+      </section>
+      <section class="section-block section-block--split">
+        <div>
+          <p class="eyebrow">Related mixes</p>
+          <h2>Where this note attaches to the archive</h2>
+        </div>
+        <div>
+          ${renderMixMiniList(note.relatedMixes, {
+            basePath: '../../mixes/',
+            emptyMessage: 'This note is currently standalone.',
+          })}
+        </div>
+      </section>
+      ${adjacentNotes.length
+        ? `<section class="section-block section-block--split">
+            <div>
+              <p class="eyebrow">Continue reading</p>
+              <h2>Prev and next notes</h2>
+            </div>
+            <div class="adjacent-grid">
+              ${previousNote
+                ? `<a class="adjacent-card" href="../${escapeHtml(previousNote.slug)}/">
+                    <p class="adjacent-card__eyebrow">Previous note</p>
+                    <h3>${escapeHtml(previousNote.title)}</h3>
+                    <p>${escapeHtml(previousNote.date ? formatDate(previousNote.date) : 'Undated note')}</p>
+                  </a>`
+                : ''}
+              ${nextNote
+                ? `<a class="adjacent-card" href="../${escapeHtml(nextNote.slug)}/">
+                    <p class="adjacent-card__eyebrow">Next note</p>
+                    <h3>${escapeHtml(nextNote.title)}</h3>
+                    <p>${escapeHtml(nextNote.date ? formatDate(nextNote.date) : 'Undated note')}</p>
+                  </a>`
+                : ''}
+            </div>
+          </section>`
+        : ''}`,
   });
 }
 
@@ -629,19 +994,18 @@ function build() {
 
   const siteSource = readJsonIfExists(path.join(DATA_DIR, 'site.json'), {});
   const about = readJsonIfExists(path.join(DATA_DIR, 'about.json'), {});
-  const notesSource = readJsonIfExists(path.join(DATA_DIR, 'notes.json'), []);
-
   const site = {
     ...siteSource,
     title: siteSource.title || siteSource.site_title || 'Monday Music Mix',
     homeIntro: siteSource.homeIntro || siteSource.homepage_intro || '',
   };
-  const mixes = loadMixes();
-  const notes = normalizeNotes(notesSource);
+  const relationshipGraph = attachRelationships(loadMixes(), loadNotes());
+  const mixes = relationshipGraph.mixes;
+  const notes = relationshipGraph.notes;
 
   copyDir(STATIC_DIR, path.join(DIST, 'assets'));
 
-  writePage('index.html', renderHomePage({ mixes, site }));
+  writePage('index.html', renderHomePage({ mixes, notes, site }));
   writePage(path.join('archive', 'index.html'), renderArchivePage({ mixes }));
   writePage(path.join('about', 'index.html'), renderAboutPage({ site, about }));
   writePage(path.join('notes', 'index.html'), renderNotesPage({ notes }));
@@ -650,9 +1014,13 @@ function build() {
     writePage(path.join('mixes', mix.slug, 'index.html'), renderMixPage({ mix }));
   }
 
+  for (const note of notes) {
+    writePage(path.join('notes', note.slug, 'index.html'), renderNotePage({ note, allNotes: notes }));
+  }
+
   fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 
-  console.log(`Built ${mixes.length} mix page(s) into ${path.relative(ROOT, DIST)}`);
+  console.log(`Built ${mixes.length} mix page(s) and ${notes.length} note page(s) into ${path.relative(ROOT, DIST)}`);
 }
 
 build();
