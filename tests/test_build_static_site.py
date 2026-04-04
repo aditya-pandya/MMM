@@ -59,23 +59,24 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "../../mixes/mix-036-thirtysixth/" in note_detail_html
     assert "Prev and next notes" in note_detail_html
 
-    assert "Writing that points back to this mix" in mix_detail_html
+    assert "Writing tied to this mix" in mix_detail_html
     assert "../../notes/rebuilding-the-archive/" in mix_detail_html
-    assert "Prev and next mix links" in mix_detail_html
-    assert "Links, provenance, and source residue" in mix_detail_html
-    assert "Imported Tumblr snapshot" in mix_detail_html
-    assert "Favorite tracks marked in the source" in mix_detail_html
-    assert "Search YouTube" in mix_detail_html
+    assert "More mixes" in mix_detail_html
+    assert "Full sequence" in mix_detail_html
+    assert "Provenance" in mix_detail_html
+    assert "Legacy download removed" in mix_detail_html
+    assert "Listening" not in mix_detail_html
+    assert "Imported Tumblr snapshot" not in mix_detail_html
+    assert "Search YouTube" not in mix_detail_html
     assert "Legacy Tumblr artwork is preserved as source context" in mix_detail_html
     assert "https://mega.co.nz/" not in mix_detail_html
 
     assert "related note" in archive_html
     assert "highlighted track" in archive_html
-    assert "Provider links and embedded playback" in mix_with_youtube_html
     assert "Companion playlist on YouTube" in mix_with_youtube_html
-    assert "This archived mix now carries a couple of modern listening mirrors" in mix_with_youtube_html
-    assert "Thirtyfifth playlist embed" in mix_with_youtube_html
+    assert "Playlist" in mix_with_youtube_html
     assert "youtube.com/embed/videoseries" in mix_with_youtube_html
+    assert "Bandcamp starting point" not in mix_with_youtube_html
     assert "Local editorial state" in studio_html
     assert "Latest: MMM for 2026-04-06" in studio_html
     assert "Local commands worth keeping close" in studio_html
@@ -130,7 +131,7 @@ def test_static_build_recursively_flattens_nested_listening_provider_shapes(tmp_
     mix_html = read_text(repo / "dist" / "mixes" / "mix-035-thirtyfifth" / "index.html")
 
     assert "Companion playlist on YouTube" in mix_html
-    assert "Bandcamp starting point" in mix_html
+    assert "Bandcamp starting point" not in mix_html
     assert "Listening" in mix_html
     assert "youtube.com/embed/videoseries" in mix_html
 

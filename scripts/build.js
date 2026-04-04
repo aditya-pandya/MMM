@@ -334,6 +334,34 @@ function getDistinctMixNotes(mix) {
   });
 }
 
+function resolvePlaylistEmbed(mix) {
+  const providers = Array.isArray(mix.listening?.providers) ? mix.listening.providers : [];
+  const embeds = Array.isArray(mix.listening?.embeds) ? mix.listening.embeds : [];
+  const providerIds = new Set(providers.map((provider) => getYouTubePlaylistId(provider.url)).filter(Boolean));
+
+  for (const embed of embeds) {
+    if (!isYouTubePlaylistEmbed(embed)) continue;
+
+    const playlistId = getYouTubePlaylistId(embed.url);
+    if (!providerIds.size || providerIds.has(playlistId)) return embed;
+  }
+
+  return null;
+}
+
+function getCompactListeningLinks(mix) {
+  const providers = Array.isArray(mix.listening?.providers) ? mix.listening.providers : [];
+  const allowedKinds = new Set(['playlist', 'album', 'track', 'set']);
+
+  return providers.filter((provider) => {
+    if (!provider || typeof provider !== 'object') return false;
+    const url = String(provider.url || '').trim();
+    const kind = String(provider.kind || '').trim().toLowerCase();
+    if (!url) return false;
+    return allowedKinds.has(kind);
+  });
+}
+
 function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode) {
   const items = [];
   const providerContainerKeys = new Set(['providers', 'links', 'providerlinks', 'streaming', 'entries', 'items', 'sources']);
@@ -519,7 +547,6 @@ function normalizeMixes(rawMixes) {
           : [];
       const tags = Array.isArray(mix.tags) ? mix.tags : [];
       const archivalCover = isTumblrLegacyCover(mix);
-      const trackSearches = tracklist.map((track) => buildTrackSearchLinks(track)).filter(Boolean);
       const links = {
         ...(mix.links && typeof mix.links === 'object' ? mix.links : {}),
         ...(mix.download?.url ? { [mix.download.label || 'Download mix']: mix.download.url } : {}),
@@ -552,7 +579,6 @@ function normalizeMixes(rawMixes) {
         primaryLinks,
         legacyLinks,
         usesArchivalCoverFallback: archivalCover,
-        trackSearches,
         listening: normalizeListening(mix),
       };
     })
@@ -859,8 +885,7 @@ function renderResourceSection(mix) {
     resourceCards.push(`
       <article class="resource-card">
         <p class="resource-card__eyebrow">Source</p>
-        <h3>Original Tumblr post</h3>
-        <p>The imported source page stays linked so the archive can always point back to the original post without pretending it is a playback destination.</p>
+        <h3>Original post</h3>
         <a class="text-link" href="${escapeHtml(mix.sourceUrl)}">Open source</a>
       </article>
     `);
@@ -882,7 +907,7 @@ function renderResourceSection(mix) {
       <article class="resource-card">
         <p class="resource-card__eyebrow">Archive links</p>
         <h3>Other preserved links</h3>
-        <div class="button-row">
+        <div class="button-row button-row--compact">
           ${linkItems
             .map(([label, href]) => `<a class="button button--secondary" href="${escapeHtml(href)}">${escapeHtml(label.replace(/_/g, ' '))}</a>`)
             .join('')}
@@ -896,121 +921,60 @@ function renderResourceSection(mix) {
     resourceCards.push(`
       <article class="resource-card">
         <p class="resource-card__eyebrow">Archive cleanup</p>
-        <h3>Legacy downloads suppressed</h3>
-        <p>Dead Mega download links are kept in the source data for provenance, but they are intentionally omitted from primary listening paths.</p>
+        <h3>Legacy download removed</h3>
+        <p>Dead Mega links stay in the JSON for provenance but are intentionally hidden from the page.</p>
       </article>
     `);
   }
 
-  const legacyHtml = String(mix.legacyHtml || '').trim();
-  if (!resourceCards.length && !legacyHtml) return '';
+  if (!resourceCards.length) return '';
 
-  return `${resourceCards.length
-    ? `<section class="section-block">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Resources</p>
-            <h2>Links, provenance, and source residue</h2>
-          </div>
-        </div>
-        <div class="resource-grid">${resourceCards.join('')}</div>
-      </section>`
-    : ''}${legacyHtml
-    ? `<section class="section-block section-block--split">
+  return `<section class="section-block section-block--compact">
+      <div class="section-heading">
         <div>
-          <p class="eyebrow">Original post</p>
-          <h2>Imported Tumblr snapshot</h2>
+          <p class="eyebrow">Source</p>
+          <h2>Provenance</h2>
         </div>
-        <div class="legacy-embed">${legacyHtml}</div>
-      </section>`
-    : ''}`;
+      </div>
+      <div class="resource-grid resource-grid--compact">${resourceCards.join('')}</div>
+    </section>`;
 }
 
 function renderListeningSection(mix) {
-  const listening = mix.listening || {};
-  const providers = Array.isArray(listening.providers) ? listening.providers : [];
-  const embeds = Array.isArray(listening.embeds) ? listening.embeds : [];
-  const trackSearches = Array.isArray(mix.trackSearches) ? mix.trackSearches : [];
+  const playlistEmbed = resolvePlaylistEmbed(mix);
+  const listeningLinks = getCompactListeningLinks(mix);
 
-  if (!providers.length && !embeds.length && !trackSearches.length) return '';
+  if (!playlistEmbed && !listeningLinks.length) return '';
 
-  const providerCards = providers.length
-    ? `<div class="provider-grid">
-        ${providers
-          .map((provider) => {
-            const title = provider.label || `${provider.provider} ${provider.kind}`;
-            return `<article class="provider-card">
-              <p class="provider-card__eyebrow">${escapeHtml(provider.provider)}</p>
-              <h3>${escapeHtml(title)}</h3>
-              <p>${escapeHtml(provider.note || `Open the ${provider.kind} on ${provider.provider}.`)}</p>
-              <a class="button button--secondary" href="${escapeHtml(provider.url)}">Open ${escapeHtml(provider.provider)}</a>
-            </article>`;
-          })
-          .join('')}
-      </div>`
-    : '';
-
-  const embedCards = embeds.length
-    ? `<div class="embed-stack">
-        ${embeds
-          .map((embed) => `<article class="embed-card">
-            <div class="embed-card__frame">
-              <iframe
-                src="${escapeHtml(embed.url)}"
-                title="${escapeHtml(embed.title || `${embed.provider} embed for ${mix.title}`)}"
-                loading="lazy"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                referrerpolicy="strict-origin-when-cross-origin"
-              ></iframe>
-            </div>
-            <div class="embed-card__meta">
-              <p class="provider-card__eyebrow">${escapeHtml(embed.provider)}</p>
-              <h3>${escapeHtml(embed.title || `${embed.provider} embed`)}</h3>
-              ${embed.note ? `<p>${escapeHtml(embed.note)}</p>` : ''}
-            </div>
-          </article>`)
-          .join('')}
-      </div>`
-    : '';
-
-  const trackFallbackList = trackSearches.length
-    ? `<ol class="track-fallback-list">
-        ${trackSearches
-          .map(
-            (track) => `<li>
-              <div class="track-fallback-list__row">
-                <div>
-                  <p class="track-fallback-list__meta">Track ${escapeHtml(String(track.position || ''))}${track.isFavorite ? ' · Favorite in source' : ''}</p>
-                  <h3>${escapeHtml(track.displayText)}</h3>
-                </div>
-                <div class="button-row track-fallback-list__actions">
-                  <a class="button button--secondary" href="${escapeHtml(track.youtubeUrl)}">Search YouTube</a>
-                </div>
-              </div>
-            </li>`
-          )
-          .join('')}
-      </ol>`
-    : '';
-
-  return `<section class="section-block">
+  return `<section class="section-block section-block--compact">
       <div class="section-heading">
         <div>
           <p class="eyebrow">Listening</p>
-          <h2>Provider links and embedded playback</h2>
-          <p class="supporting-copy">${escapeHtml(
-            listening.intro || 'When durable playback links are missing, the archive falls back to track-first search helpers instead of pretending dead downloads still work.'
-          )}</p>
+          <h2>${playlistEmbed ? 'Playlist' : 'Links'}</h2>
         </div>
       </div>
-      ${providerCards}
-      ${embedCards}
-      ${trackFallbackList ? `<div class="track-fallback-block">
-        <p class="eyebrow">Track-first listening</p>
-        <h3>Search each song where it actually lives now</h3>
-        <p class="supporting-copy">These are helper links, not claims of canonical availability. They are built from the archived tracklist so the mix stays usable.</p>
-        ${trackFallbackList}
-      </div>` : ''}
+      ${playlistEmbed
+        ? `<div class="embed-stack">
+            <article class="embed-card">
+              <div class="embed-card__frame">
+                <iframe
+                  src="${escapeHtml(playlistEmbed.url)}"
+                  title="${escapeHtml(playlistEmbed.title || `YouTube playlist for ${mix.title}`)}"
+                  loading="lazy"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+            </article>
+          </div>`
+        : ''}
+      ${listeningLinks.length
+        ? `<div class="button-row button-row--compact">
+            ${listeningLinks
+              .map((provider) => `<a class="button button--secondary" href="${escapeHtml(provider.url)}">${escapeHtml(provider.label || `Open on ${provider.provider}`)}</a>`)
+              .join('')}
+          </div>`
+        : ''}
     </section>`;
 }
 
@@ -1180,28 +1144,13 @@ function renderArchivePage({ mixes }) {
 }
 
 function renderMixPage({ mix }) {
-  const highlightedSection = mix.highlightedTracks.length
-    ? `<section class="section-block">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Highlights</p>
-            <h2>Favorite tracks marked in the source</h2>
-          </div>
-        </div>
-        <ul class="highlight-list">
-          ${mix.highlightedTracks
-            .map((track) => `<li>${escapeHtml(track.displayText || `${track.artist} - ${track.title}`)}</li>`)
-            .join('')}
-        </ul>
-      </section>`
-    : '';
-
   const trackSection = mix.tracklist.length
-    ? `<section class="section-block">
+    ? `<section class="section-block section-block--primary">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Tracklist</p>
-            <h2>Sequenced by hand</h2>
+            <h2>Full sequence</h2>
+            <p class="supporting-copy">${escapeHtml(String(mix.tracklist.length))} tracks${mix.highlightedTracks.length ? ` · ${escapeHtml(String(mix.highlightedTracks.length))} favorites marked in source` : ''}</p>
           </div>
         </div>
         <ol class="tracklist">
@@ -1234,8 +1183,8 @@ function renderMixPage({ mix }) {
   const notesSection = distinctMixNotes.length
     ? `<section class="section-block section-block--split">
         <div>
-          <p class="eyebrow">Notes</p>
-          <h2>What stayed worth saying</h2>
+          <p class="eyebrow">Context</p>
+          <h2>Archive notes</h2>
         </div>
         <div class="prose">${paragraphize(distinctMixNotes.join('\n\n'))}</div>
       </section>`
@@ -1244,8 +1193,7 @@ function renderMixPage({ mix }) {
   const relatedNotesSection = `<section class="section-block section-block--split">
       <div>
         <p class="eyebrow">Related notes</p>
-        <h2>Writing that points back to this mix</h2>
-        <p class="supporting-copy">Notes can reference one or more mixes, so this section stays data-driven and only fills when those relationships exist.</p>
+        <h2>Writing tied to this mix</h2>
       </div>
       <div>
         ${renderNoteMiniList(mix.relatedNotes, {
@@ -1259,9 +1207,8 @@ function renderMixPage({ mix }) {
   const navigationSection = adjacentMixes.length
     ? `<section class="section-block section-block--split">
         <div>
-          <p class="eyebrow">Continue through the archive</p>
-          <h2>Prev and next mix links</h2>
-          <p class="supporting-copy">A mix detail page should feel connected to the rest of the run, not like a dead end.</p>
+          <p class="eyebrow">Archive</p>
+          <h2>More mixes</h2>
         </div>
         <div class="adjacent-grid">
           ${mix.olderMix
@@ -1307,10 +1254,9 @@ function renderMixPage({ mix }) {
         </div>
         ${renderCover(mix)}
       </section>
-      ${notesSection}
-      ${renderListeningSection(mix)}
-      ${highlightedSection}
       ${trackSection}
+      ${renderListeningSection(mix)}
+      ${notesSection}
       ${relatedNotesSection}
       ${navigationSection}
       ${renderResourceSection(mix)}`,
