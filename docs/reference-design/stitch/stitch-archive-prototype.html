@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;0,6..72,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#432c00",
+                    "primary-fixed-dim": "#ffba38",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed": "#ffdeac",
+                    "on-primary-fixed": "#281900",
+                    "tertiary-container": "#acabab",
+                    "surface-variant": "#353534",
+                    "on-error-container": "#ffdad6",
+                    "surface": "#131313",
+                    "outline": "#a48c7a",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container-highest": "#353534",
+                    "on-secondary-fixed": "#360f00",
+                    "error": "#ffb4ab",
+                    "tertiary": "#c8c6c6",
+                    "primary-container": "#e29f00",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "surface-bright": "#393939",
+                    "on-tertiary-container": "#3f3f3f",
+                    "on-secondary-container": "#ffa179",
+                    "on-secondary-fixed-variant": "#773211",
+                    "inverse-on-surface": "#313030",
+                    "secondary": "#ffb598",
+                    "inverse-surface": "#e5e2e1",
+                    "on-error": "#690005",
+                    "on-secondary": "#591d00",
+                    "on-background": "#e5e2e1",
+                    "primary": "#ffba3a",
+                    "outline-variant": "#564334",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "on-surface-variant": "#dcc1ae",
+                    "secondary-fixed-dim": "#ffb598",
+                    "on-tertiary": "#303030",
+                    "surface-dim": "#131313",
+                    "surface-container": "#201f1f",
+                    "secondary-fixed": "#ffdbcd",
+                    "background": "#131313",
+                    "inverse-primary": "#7e5700",
+                    "secondary-container": "#7a3413",
+                    "surface-tint": "#ffba38",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c8c6c6",
+                    "tertiary-fixed": "#e4e2e1",
+                    "on-primary-container": "#573a00",
+                    "on-primary-fixed-variant": "#604100"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased selection:bg-primary selection:text-on-primary">
+<div class="grain-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-md">
+<nav class="flex justify-between items-center px-8 py-6 w-full max-w-none">
+<a class="flex items-center gap-2 cursor-pointer transition-opacity active:opacity-70" href="../monday_music_mix_corrected/code.html">
+<span class="material-symbols-outlined text-[#ffba3a]" data-icon="blur_on">blur_on</span>
+<span class="font-['Newsreader'] text-xl font-bold text-[#e5e2e1] uppercase tracking-tight">MMM</span>
+</a>
+<div class="flex items-center gap-6">
+<a class="text-[#e5e2e1]/40 font-medium uppercase tracking-[0.2em] text-[10px] hover:text-[#ffba3a] transition-colors duration-300" href="../monday_music_mix_corrected/code.html">HOME</a>
+<a class="text-[#ffba3a] font-bold font-['Inter'] text-[10px] uppercase tracking-[0.2em]" href="../archive_monday_music_mix/code.html">ARCHIVE</a>
+<button class="material-symbols-outlined text-[#e5e2e1] text-xl" data-icon="menu">menu</button>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-8 min-h-screen max-w-2xl mx-auto flex flex-col">
+<!-- Page Header -->
+<section class="mb-20">
+<span class="inline-block px-2 py-1 mb-6 bg-surface-container-highest text-[#ffba3a] font-['Inter'] text-[10px] font-semibold uppercase tracking-[0.2em]">In Progress</span>
+<h1 class="font-['Newsreader'] text-6xl font-bold text-on-surface uppercase tracking-tighter mb-8 leading-none">
+                ARCHIVE
+            </h1>
+<p class="font-['Inter'] text-on-surface-variant text-lg leading-relaxed max-w-md">
+                The archive is still taking shape. Finished mixes will appear here in sequence, with notes, tracklists, and only the context worth keeping.
+            </p>
+</section>
+<!-- Elegant Empty State -->
+<section class="flex-grow flex flex-col items-center justify-center py-12">
+<div class="w-full aspect-[4/5] relative mb-12 overflow-hidden bg-surface-container-low group">
+<img alt="Dashboard and streetlights at night" class="w-full h-full object-cover opacity-40 grayscale contrast-125" data-alt="grainy dashboard view at night with blurred amber streetlights, windshield reflections, and a quiet late-drive mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbFvqhLr7FFW4F-YPubwHxFriTbIDmmekyXtS9CcXmEopHIpcZF5jZUAIHHVq58I0WldRv7AqnOY1ZmFRgtLgR9daRfVaKF1uQ7gZRRYQ373bTl3GR5cq8WPUbMNnCafcMszIv7fLZOFzS73DHwxVWhsC1oT8riGbtJw7MOiO7JpkiNPzWq84PigPnY7oeY_AFRUldyR0BOIE7woSCvS9H1NzWMvSgJO5YEkTGzFyN-xwEt069lcoEYlWzjz9wXdBCLtXMZBP2Ft4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant/30 text-6xl font-light" data-icon="cloud_off">cloud_off</span>
+</div>
+</div>
+<div class="text-center space-y-4">
+<h2 class="font-['Newsreader'] text-3xl text-on-surface">No published mixes yet.</h2>
+<div class="h-[1px] w-12 bg-outline-variant/30 mx-auto"></div>
+<p class="font-['Inter'] text-on-surface-variant text-sm max-w-xs mx-auto leading-relaxed">
+                    Empty for now. Better a small real archive than a fake back catalog.
+                </p>
+<p class="font-['Inter'] text-[#ffba3a]/60 text-[10px] uppercase tracking-[0.2em] pt-4">
+                    When the first mix is ready, it’ll start here.
+                </p>
+</div>
+<div class="mt-16">
+<a class="inline-block bg-primary-container text-on-primary-container px-10 py-4 font-['Inter'] text-[10px] font-bold uppercase tracking-[0.2em] hover:brightness-110 active:scale-95 transition-all" href="../monday_music_mix_corrected/code.html">
+                    Back to Home
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 border-t border-[#564334]/15 bg-[#0e0e0e]">
+<div class="flex flex-col items-center space-y-12 w-full px-8">
+<div class="flex flex-col items-center gap-2">
+<span class="font-['Newsreader'] text-2xl text-[#e5e2e1] font-bold uppercase tracking-tight">MONDAY MUSIC MIX</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-[#e5e2e1]/40">Handmade, occasionally after midnight.</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-[#e5e2e1]/40 font-['Inter'] text-[10px] uppercase tracking-[0.2em] hover:text-[#ffba3a] transition-colors" href="../monday_music_mix_corrected/code.html">HOME</a>
+<a class="text-[#ffba3a] font-['Inter'] text-[10px] uppercase tracking-[0.2em]" href="../archive_monday_music_mix/code.html">ARCHIVE</a>
+<a class="text-[#e5e2e1]/40 font-['Inter'] text-[10px] uppercase tracking-[0.2em] hover:text-[#ffba3a] transition-colors" href="../about_monday_music_mix/code.html">ABOUT</a>
+<a class="text-[#e5e2e1]/40 font-['Inter'] text-[10px] uppercase tracking-[0.2em] hover:text-[#ffba3a] transition-colors" href="../notes_monday_music_mix/code.html">NOTES</a>
+</nav>
+<div class="pt-8">
+<p class="font-['Inter'] text-[9px] text-[#e5e2e1]/20 tracking-[0.3em] uppercase">© MONDAY MUSIC MIX. MMXXIV.</p>
+</div>
+</div>
+</footer>
+</body></html>

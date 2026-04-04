@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Newsreader:opsz,wght@6..72,400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#ffb598",
+                    "surface-variant": "#353534",
+                    "on-secondary-fixed": "#360f00",
+                    "on-surface-variant": "#dcc1ae",
+                    "surface-dim": "#131313",
+                    "tertiary-container": "#acabab",
+                    "tertiary": "#c8c6c6",
+                    "surface-tint": "#ffba38",
+                    "surface-container": "#201f1f",
+                    "error": "#ffb4ab",
+                    "background": "#131313",
+                    "on-background": "#e5e2e1",
+                    "primary-fixed-dim": "#ffba38",
+                    "inverse-surface": "#e5e2e1",
+                    "on-surface": "#e5e2e1",
+                    "primary": "#ffba3a",
+                    "error-container": "#93000a",
+                    "surface": "#131313",
+                    "on-primary": "#432c00",
+                    "outline": "#a48c7a",
+                    "on-primary-container": "#573a00",
+                    "outline-variant": "#564334",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-bright": "#393939",
+                    "primary-container": "#e29f00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            pointer-events: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            z-index: 9999;
+        }
+        .cinematic-glow {
+            box-shadow: 0 0 40px -10px rgba(255, 186, 58, 0.15);
+        }
+        .text-glow:hover {
+            text-shadow: 0 0 8px rgba(255, 186, 58, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary/30">
+<div class="grain-overlay"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-md flex justify-between items-center px-12 py-6 w-full max-w-none">
+<a class="font-['Newsreader'] text-2xl font-bold tracking-tighter text-[#e5e2e1]" href="../monday_music_mix_corrected/code.html">MONDAY MUSIC MIX</a>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-['Inter'] uppercase tracking-widest text-[10px] font-medium text-[#ffba3a] border-b border-[#ffba3a] pb-1 cursor-pointer transition-opacity active:opacity-70" href="../monday_music_mix_corrected/code.html">HOME</a>
+<a class="font-['Inter'] uppercase tracking-widest text-[10px] font-medium text-[#e5e2e1]/60 hover:text-[#ffba3a] transition-colors duration-300 cursor-pointer transition-opacity active:opacity-70" href="../archive_monday_music_mix/code.html">ARCHIVE</a>
+<a class="font-['Inter'] uppercase tracking-widest text-[10px] font-medium text-[#e5e2e1]/60 hover:text-[#ffba3a] transition-colors duration-300 cursor-pointer transition-opacity active:opacity-70" href="../about_monday_music_mix/code.html">ABOUT</a>
+<a class="font-['Inter'] uppercase tracking-widest text-[10px] font-medium text-[#e5e2e1]/60 hover:text-[#ffba3a] transition-colors duration-300 cursor-pointer transition-opacity active:opacity-70" href="../notes_monday_music_mix/code.html">NOTES</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] text-[#ffba3a]">Current mix</span>
+<span class="material-symbols-outlined text-[#e5e2e1] text-xl cursor-pointer">menu</span>
+</div>
+</nav>
+<main class="pt-24 pb-12">
+<!-- Hero Section: Music Mix 64 -->
+<section class="px-12 mb-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 relative group">
+<div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] scale-105 group-hover:scale-100 transition-transform duration-[2000ms]" data-alt="cinematic point of view from a car windshield at night, rain droplets on glass, blurred orange sodium vapor street lights and tail lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrx39EL8VyDY0V-Ux85QeW-yGtx1VJG_Z2bwFenYoxSRsQXfNCF3PYk-sFqXzEKnkUOxPQ4sxef1_0uYZI86Jrd4JWp5DeYGB4xbelhMpfXvNtAmbQdKYFlSreM2ShZhbthdv38TeT7na8JVthpzhkLqmhp58kk2YrCbOpB6N3qWx5H7OTCh0q3rNq2KmxlsCCcfYB5o41HQ1GiDpiA3tg9YNxfvjVCg3y6pI6GLAauxdzlX8QdL7GEquqzcWPXscqUSvWtDvpqNk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="absolute -bottom-6 -right-6 hidden lg:block w-48 h-48 border border-outline-variant/20 p-4 bg-surface-container-low/80 backdrop-blur-sm">
+<span class="block text-[10px] tracking-[0.2em] uppercase text-outline mb-2">Metadata</span>
+<p class="text-[11px] leading-relaxed text-on-surface/70">Music Mix 64 | April 27, 2017<br/>Volume 64<br/>Duration: 74:12</p>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col items-start">
+<div class="flex gap-2 mb-6">
+<span class="px-2 py-0.5 bg-surface-container-highest text-[9px] tracking-widest uppercase font-medium">Post-Rock</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-[9px] tracking-widest uppercase font-medium">Ambient</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-[9px] tracking-widest uppercase font-medium">Electronic</span>
+</div>
+<h1 class="font-headline text-7xl lg:text-8xl font-bold tracking-tighter mb-6 leading-tight">The Long Way Home</h1>
+<p class="text-xl text-on-surface/60 font-light leading-relaxed mb-10 max-w-md">
+                    Bittersweet songs for late nights, missed exits, and taking the slower road home on purpose.
+                </p>
+<div class="flex flex-wrap gap-6">
+<button class="bg-primary-container text-on-primary-container px-8 py-3 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-primary transition-colors flex items-center gap-3">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                        Play mix
+                    </button>
+<button class="border border-outline-variant/30 text-on-surface px-8 py-3 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-surface-container-high transition-colors text-glow">
+                        See tracklist
+                    </button>
+</div>
+</div>
+</section>
+<!-- Recent Issues -->
+<section class="px-12 mb-32">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-[10px] tracking-[0.3em] uppercase text-primary font-bold mb-4">Recent Mixes</h2>
+<p class="text-2xl font-headline text-on-surface/60">A running archive of mixes for late drives, kitchen cleanups, and repeat listens.</p>
+</div>
+<a class="text-[10px] tracking-[0.2em] uppercase text-outline hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1" href="../archive_monday_music_mix/code.html">View archive</a>
+</div>
+<div class="space-y-0 border-t border-outline-variant/10">
+<!-- Issue 63 -->
+<div class="group flex flex-col md:flex-row justify-between items-center py-10 border-b border-outline-variant/10 cursor-pointer hover:bg-surface-container-low/30 transition-colors px-4">
+<div class="flex items-baseline gap-8">
+<span class="text-[10px] font-medium text-outline">063</span>
+<h3 class="font-headline text-4xl group-hover:text-primary transition-colors">Static &amp; Rainwater</h3>
+</div>
+<div class="flex items-center gap-12 mt-4 md:mt-0">
+<span class="text-[10px] tracking-widest text-outline uppercase">March 2017</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+<!-- Issue 62 -->
+<div class="group flex flex-col md:flex-row justify-between items-center py-10 border-b border-outline-variant/10 cursor-pointer hover:bg-surface-container-low/30 transition-colors px-4">
+<div class="flex items-baseline gap-8">
+<span class="text-[10px] font-medium text-outline">062</span>
+<h3 class="font-headline text-4xl group-hover:text-primary transition-colors">Blue Hour Resonance</h3>
+</div>
+<div class="flex items-center gap-12 mt-4 md:mt-0">
+<span class="text-[10px] tracking-widest text-outline uppercase">February 2017</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+<!-- Issue 61 -->
+<div class="group flex flex-col md:flex-row justify-between items-center py-10 border-b border-outline-variant/10 cursor-pointer hover:bg-surface-container-low/30 transition-colors px-4">
+<div class="flex items-baseline gap-8">
+<span class="text-[10px] font-medium text-outline">061</span>
+<h3 class="font-headline text-4xl group-hover:text-primary transition-colors">Echoes from the Wharf</h3>
+</div>
+<div class="flex items-center gap-12 mt-4 md:mt-0">
+<span class="text-[10px] tracking-widest text-outline uppercase">January 2017</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- From the Passenger Seat: Featured Selections -->
+<section class="px-12 mb-40">
+<h2 class="text-[10px] tracking-[0.3em] uppercase text-primary font-bold mb-16 text-center">From the Passenger Seat</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] mb-8 overflow-hidden bg-surface-container-high rounded-sm">
+<img class="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" data-alt="macro close-up of a vintage record player needle on a spinning vinyl, soft warm ambient lighting, dust motes in light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNPytzOhp_qoZ1hzwj_UsF6U42LVLeEZ8lkUrUPJ451ein8DMB9d2SQtYS0bXxtQhL6IZ-049qg0YNAeKXSeGpjv9Zn88dmM2I4w93CXVmfjZs2nIxDFq-xBESH9uxZFL8rSUBFFGAMNxwejmaM6XowZDLy3x6PeOQnkLYu4TCpaGj233ZbblT_nyjyFLjzLSw2aMB1lrHDueEy79h8U-tLn0ryhq3AbeIa8Q72pt90AxtHR8-9VEZ486SwXBj4hMq0YKy7oAdh9E"/>
+</div>
+<span class="block text-[9px] tracking-widest uppercase text-primary mb-3">Selections</span>
+<h4 class="font-headline text-3xl mb-4 leading-tight">Tape Notes</h4>
+<p class="text-on-surface/50 text-sm leading-relaxed max-w-xs">Small observations on texture, sequencing, and why some mixes need a little hiss.</p>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer md:mt-12">
+<div class="aspect-[3/4] mb-8 overflow-hidden bg-surface-container-high rounded-sm">
+<img class="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" data-alt="shinjuku tokyo street at night in rain, neon signs reflected in wet asphalt, blurred figures with umbrellas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPDxqJB5VHWZaG-H_VrFd0ysU47Zfp6n_KhbqQEY2312vQvvaHhwVxho8duvjCsqOg1xedatlPLUGo9oAfaY2ClkV56_jEVawRS2hgUPztDeWtfG8waxby68sxlHt293moz92Dg_OePx5YNFZPi4YoSIn2At4HhoVUkdrpzcLsFUvJ_-L9V_UV4NqUOeP8P2wRHGCMqxqJF2J6blA5GULawE7fLRNZyvr3J8y4KhwVCb3MKI-zlNmkq2omSBIz0MBF2r_i_Ez7rcg"/>
+</div>
+<span class="block text-[9px] tracking-widest uppercase text-primary mb-3">Notes</span>
+<h4 class="font-headline text-3xl mb-4 leading-tight">City After Rain</h4>
+<p class="text-on-surface/50 text-sm leading-relaxed max-w-xs">Notes on wet streets, passing headlights, and songs that sound better after midnight.</p>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] mb-8 overflow-hidden bg-surface-container-high rounded-sm">
+<img class="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" data-alt="misty coastal highway at dawn, blurred ocean waves on the side, dense fog, ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ5OLmfj6x58KxRB0NzEA09H2hNlSRCrLucs0xp7UEVWk9F5UxhkdULoOlACjbcfQWt1MJTC2wcHdYLZER9rB4PwWAfyA9Xs8DLnD4UiL-vBHOzhbeM0YM5Hvi0EBPZL6uvEX1swnubXUCsAFY99UBnxO9akNWef0akKkSrKqTpCy1LZNO1WjFMINXkOJut0LBG4Zsh728OH0BVCKJ5d8K8tdRwVQevgqxIsbf5ThbDqrxL9--1g7vn8edMXp52QuyZEHsrbcwbCE"/>
+</div>
+<span class="block text-[9px] tracking-widest uppercase text-primary mb-3">Late Entries</span>
+<h4 class="font-headline text-3xl mb-4 leading-tight">Roadside FM</h4>
+<p class="text-on-surface/50 text-sm leading-relaxed max-w-xs">Loose notes on radio bleed, dashboard glow, and the songs that survive bad reception.</p>
+</div>
+</div>
+</section>
+<!-- Quote Block -->
+<section class="px-12 mb-40 flex justify-center">
+<div class="max-w-3xl text-center relative">
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute -top-12 -left-12">format_quote</span>
+<blockquote class="font-headline text-4xl lg:text-5xl italic leading-tight text-on-surface/90 mb-8">
+                    "Some songs arrive immediately. Others take a few years, a longer drive, and the right weather."
+                </blockquote>
+<cite class="not-italic text-[10px] tracking-[0.4em] uppercase text-outline">Notebook, 1:14 a.m.</cite>
+</div>
+</section>
+<!-- Philosophy Block (About) -->
+<section class="px-12 mb-32 grid grid-cols-1 lg:grid-cols-12 border-t border-outline-variant/10 pt-24 gap-12">
+<div class="lg:col-span-4">
+<h2 class="text-[10px] tracking-[0.3em] uppercase text-primary font-bold mb-4">WHY IT EXISTS</h2>
+</div>
+<div class="lg:col-span-8">
+<p class="font-headline text-4xl lg:text-5xl leading-tight mb-8">Monday Music Mix is a personal archive of hand-sequenced mixes shaped by mood, memory, and the hours when songs finally click into place.</p>
+<p class="text-lg text-on-surface/40 leading-relaxed max-w-2xl font-light">Less brand world, more listening habit. Each mix is built by hand, left with room to breathe, and kept with whatever notes are still worth reading later.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#564334]/15 mt-32 bg-[#0e0e0e] flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full ease-in-out duration-500">
+<div class="flex flex-col gap-4 items-center md:items-start mb-8 md:mb-0">
+<div class="font-['Newsreader'] text-lg text-[#e5e2e1]">MONDAY MUSIC MIX</div>
+<div class="font-['Inter'] tracking-[0.2em] text-[9px] text-[#e5e2e1]/40 uppercase">Handmade, occasionally after midnight.</div>
+</div>
+<div class="flex gap-12">
+<a class="font-['Inter'] uppercase tracking-[0.2em] text-[9px] text-[#e5e2e1]/40 hover:text-[#e5e2e1] transition-all" href="../monday_music_mix_corrected/code.html">HOME</a>
+<a class="font-['Inter'] uppercase tracking-[0.2em] text-[9px] text-[#e5e2e1]/40 hover:text-[#e5e2e1] transition-all" href="../archive_monday_music_mix/code.html">ARCHIVE</a>
+<a class="font-['Inter'] uppercase tracking-[0.2em] text-[9px] text-[#e5e2e1]/40 hover:text-[#e5e2e1] transition-all" href="../about_monday_music_mix/code.html">ABOUT</a>
+<a class="font-['Inter'] uppercase tracking-[0.2em] text-[9px] text-[#e5e2e1]/40 hover:text-[#e5e2e1] transition-all" href="../notes_monday_music_mix/code.html">NOTES</a>
+</div>
+<div class="mt-8 md:mt-0 text-[9px] uppercase tracking-[0.2em] text-[#e5e2e1]/40 text-center md:text-right">
+Real mixes, saved carefully.
+</div>
+</footer>
+</body></html>
