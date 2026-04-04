@@ -4,9 +4,44 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
+export PATH="$ROOT/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+LOG_DIR="$ROOT/logs"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/run-local-workflow-$(date '+%Y-%m-%d').log"
+exec >> "$LOG_FILE" 2>&1
+
+scheduled_run=false
+forwarded_args=()
+
+for arg in "$@"; do
+  case "$arg" in
+    --scheduled)
+      scheduled_run=true
+      ;;
+    *)
+      forwarded_args+=("$arg")
+      ;;
+  esac
+done
+
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting local MMM workflow (scheduled=$scheduled_run)"
+
 python3 -m pytest -q
-python3 scripts/generate_weekly_draft.py --mode auto --force "$@"
-npm run build
+
+generate_args=(scripts/generate_weekly_draft.py --mode auto)
+if [ "$scheduled_run" = false ]; then
+  generate_args+=(--force)
+fi
+if [ "${#forwarded_args[@]}" -gt 0 ]; then
+  generate_args+=("${forwarded_args[@]}")
+fi
+
+python3 "${generate_args[@]}"
+
+if [ "$scheduled_run" = false ]; then
+  npm run build
+fi
 
 echo "Local MMM workflow complete."
 echo "Latest drafts:"

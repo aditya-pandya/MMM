@@ -13,7 +13,7 @@ What’s in here
 - Taste-profile builder from imported history
 - Weekly draft generation for local-machine workflows
 - Publish flow for approved mixes
-- GitHub Actions for Pages deploy and scheduled draft generation
+- GitHub Actions for Pages deploy only
 
 Repo structure
 - data/
@@ -83,9 +83,15 @@ Run the local MMM workflow end-to-end
 ./scripts/run_local_workflow.sh
 ```
 
+Scheduled local run without overwrite/build
+```bash
+./scripts/run_local_workflow.sh --scheduled
+```
+
 Optional macOS scheduling
 - Load `ops/com.aditya.mmm.weekly.plist` as a LaunchAgent after editing paths if needed.
 - That keeps weekly generation on this machine instead of GitHub Actions.
+- Local workflow logs are written to `logs/run-local-workflow-YYYY-MM-DD.log`.
 
 Approve + publish a mix
 1. Open the draft JSON in `data/drafts/`

@@ -27,13 +27,20 @@
 ## Weekly generation automation
 
 - Local/manual: `python3 scripts/generate_weekly_draft.py --mode auto`
-- Local scheduled: use the LaunchAgent template in `ops/com.aditya.mmm.weekly.plist`
+- Local/manual end-to-end: `./scripts/run_local_workflow.sh`
+- Local scheduled: use `./scripts/run_local_workflow.sh --scheduled` via the LaunchAgent template in `ops/com.aditya.mmm.weekly.plist`
 - Inputs read by the generator:
   - `data/taste-profile.json`
   - `data/site.json`
   - `data/archive/index.json`
 - Output:
   - A new JSON draft in `data/drafts/`
+  - A dated workflow log in `logs/run-local-workflow-YYYY-MM-DD.log`
+
+Scheduled local runs:
+- still execute the repo test suite first
+- do not pass `--force` to draft generation
+- do not run `npm run build` after writing the draft
 
 ## Notes
 

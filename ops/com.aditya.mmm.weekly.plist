@@ -9,10 +9,17 @@
   <array>
     <string>/bin/bash</string>
     <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM/scripts/run_local_workflow.sh</string>
+    <string>--scheduled</string>
   </array>
 
   <key>WorkingDirectory</key>
   <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
 
   <key>StartCalendarInterval</key>
   <dict>
@@ -25,9 +32,9 @@
   </dict>
 
   <key>StandardOutPath</key>
-  <string>/tmp/mmm-weekly.log</string>
+  <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM/logs/launchd-weekly.stdout.log</string>
   <key>StandardErrorPath</key>
-  <string>/tmp/mmm-weekly.err.log</string>
+  <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM/logs/launchd-weekly.stderr.log</string>
 
   <key>RunAtLoad</key>
   <false/>
