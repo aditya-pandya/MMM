@@ -270,6 +270,9 @@ h3 {
   gap: 0.8rem;
   margin-top: 1.6rem;
 }
+.button-row--compact {
+  margin-top: 1rem;
+}
 
 .button {
   display: inline-flex;
@@ -360,6 +363,12 @@ h3 {
 .section-block {
   padding: 2.25rem 0;
   border-top: 1px solid var(--line);
+}
+.section-block--primary {
+  padding-top: 2.75rem;
+}
+.section-block--compact {
+  padding: 1.5rem 0;
 }
 
 .section-block--split > :first-child {
@@ -468,6 +477,10 @@ h3 {
 .resource-grid,
 .stats-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.resource-grid--compact {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
 }
 
 .related-card,
@@ -624,10 +637,11 @@ h3 {
   display: grid;
   gap: 1px;
   background: var(--line);
+  border: 1px solid var(--line);
 }
 
 .tracklist li {
-  padding: 1rem 1.2rem;
+  padding: 1.15rem 1.25rem;
   background: var(--panel);
 }
 
@@ -647,6 +661,7 @@ h3 {
 
 .tracklist span {
   font-family: Inter, Arial, sans-serif;
+  font-size: 1.02rem;
 }
 
 .tracklist p {

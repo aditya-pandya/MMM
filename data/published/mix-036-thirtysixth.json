@@ -32,33 +32,6 @@
     "label": "Download mix",
     "url": "https://mega.co.nz/#!AV5XjazD!bQkg71VmJHmW4o4VUCiPRF-mPHMfEUZ6oP1XH2ke5qE"
   },
-  "listening": {
-    "intro": "Reconstructed listening options for the archive build: direct provider links up top, plus an inline player where the provider supports it cleanly.",
-    "providers": [
-      {
-        "provider": "Spotify",
-        "label": "Archive reconstruction playlist",
-        "url": "https://open.spotify.com/playlist/37i9dQZF1DX4WYpdgoIcn6",
-        "kind": "playlist",
-        "note": "A later playlist reconstruction for this mix's mood and sequence."
-      },
-      {
-        "provider": "Apple Music",
-        "label": "Apple Music companion playlist",
-        "url": "https://music.apple.com/us/playlist/monday-music-mix-36/pl.u-6mo4l9mCBR3Kk",
-        "kind": "playlist",
-        "note": "Useful if the mix needs to stay inside the native library flow."
-      }
-    ],
-    "embeds": [
-      {
-        "provider": "Spotify",
-        "title": "Thirtysixth playlist embed",
-        "url": "https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6?utm_source=generator",
-        "note": "Embedded for quick archive listening without leaving the page."
-      }
-    ]
-  },
   "tracks": [
     {
       "position": 1,
