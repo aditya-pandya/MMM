@@ -409,6 +409,88 @@ h3 {
   margin-top: 2.25rem;
 }
 
+.discovery-panel {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+}
+
+.discovery-panel__header,
+.discovery-panel__controls {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.discovery-panel__controls {
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.discovery-search {
+  display: grid;
+  gap: 0.45rem;
+  width: min(32rem, 100%);
+}
+
+.discovery-search__label,
+.discovery-panel__summary {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.discovery-search__input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  background: rgba(12, 12, 13, 0.66);
+  color: var(--text);
+  font: inherit;
+}
+
+.discovery-search__input::placeholder {
+  color: var(--soft);
+}
+
+.discovery-search__input:focus {
+  outline: 1px solid rgba(217, 164, 65, 0.45);
+  border-color: rgba(217, 164, 65, 0.45);
+}
+
+.discovery-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.discovery-filter {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease, color 140ms ease;
+}
+
+.discovery-filter:hover,
+.discovery-filter:focus-visible,
+.discovery-filter.is-active {
+  border-color: rgba(217, 164, 65, 0.28);
+  background: rgba(217, 164, 65, 0.08);
+  color: var(--text);
+}
+
 .archive-row {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -810,6 +892,12 @@ h3 {
 
   .archive-row {
     grid-template-columns: 1fr;
+  }
+
+  .discovery-panel__header,
+  .discovery-panel__controls {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .track-fallback-list__row {

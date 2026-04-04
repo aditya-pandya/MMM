@@ -46,14 +46,25 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     mix_detail_html = read_text(dist_dir / "mixes" / "mix-036-thirtysixth" / "index.html")
     mix_with_youtube_html = read_text(dist_dir / "mixes" / "mix-035-thirtyfifth" / "index.html")
     studio_html = read_text(dist_dir / "studio" / "index.html")
+    site_js = read_text(dist_dir / "assets" / "site.js")
 
     assert "notes/rebuilding-the-archive/" in home_html
     assert "Notes related to Thirtysixth" in home_html
     assert "studio/" in home_html
 
+    assert "Search archive" in archive_html
+    assert 'data-discovery-filter="state:has-related"' in archive_html
+    assert 'data-discovery-filter="state:has-highlights"' in archive_html
+    assert 'data-discovery-item' in archive_html
+    assert 'data-discovery-tags="' in archive_html
+    assert 'data-discovery-search="' in archive_html
+
     assert "./rebuilding-the-archive/" in notes_index_html
     assert "../mixes/mix-036-thirtysixth/" in notes_index_html
     assert "Related mixes:" in notes_index_html
+    assert "Search notes" in notes_index_html
+    assert 'data-discovery-filter="state:has-related"' in notes_index_html
+    assert 'data-discovery-item' in notes_index_html
 
     assert "../../mixes/mix-034-thirtyfourth/" in note_detail_html
     assert "../../mixes/mix-036-thirtysixth/" in note_detail_html
@@ -78,8 +89,12 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "youtube.com/embed/videoseries" in mix_with_youtube_html
     assert "Bandcamp starting point" not in mix_with_youtube_html
     assert "Local editorial state" in studio_html
-    assert "Latest: MMM for 2026-04-06" in studio_html
+    assert "Validation posture" in studio_html
+    assert "Archive coverage" in studio_html
+    assert "Recent routes" in studio_html
+    assert "Recommended next actions" in studio_html
     assert "Local commands worth keeping close" in studio_html
+    assert "updateDiscovery" in site_js
 
 
 def test_static_build_recursively_flattens_nested_listening_provider_shapes(tmp_path):

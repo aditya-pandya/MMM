@@ -789,6 +789,7 @@ function renderLayout({ depth = 0, currentNav = '', title, description, eyebrow 
     <title>${escapeHtml(title)} · Monday Music Mix</title>
     <meta name="description" content="${escapeHtml(description)}">
     <link rel="stylesheet" href="${assetBase}site.css">
+    <script src="${assetBase}site.js" defer></script>
   </head>
   <body>
     <div class="page-shell">
@@ -821,6 +822,110 @@ function renderLayout({ depth = 0, currentNav = '', title, description, eyebrow 
 function renderTagList(tags) {
   if (!tags.length) return '';
   return `<ul class="tag-list">${tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join('')}</ul>`;
+}
+
+function countTopTags(items, limit = 3) {
+  const counts = new Map();
+
+  for (const item of items) {
+    const tags = Array.isArray(item?.tags) ? item.tags : [];
+    for (const tag of tags) {
+      const normalized = String(tag || '').trim();
+      if (!normalized) continue;
+      counts.set(normalized, (counts.get(normalized) || 0) + 1);
+    }
+  }
+
+  return Array.from(counts.entries())
+    .sort((a, b) => {
+      if (b[1] !== a[1]) return b[1] - a[1];
+      return a[0].localeCompare(b[0]);
+    })
+    .slice(0, limit)
+    .map(([tag]) => tag);
+}
+
+function buildSearchBlob(parts) {
+  return parts
+    .flatMap((part) => (Array.isArray(part) ? part : [part]))
+    .map((part) => String(part || '').trim())
+    .filter(Boolean)
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function renderDiscoveryControls({
+  title,
+  description,
+  queryLabel,
+  queryPlaceholder,
+  itemLabelSingular,
+  itemLabelPlural,
+  totalCount,
+  filters,
+}) {
+  return `<section
+      class="discovery-panel"
+      data-discovery
+      data-item-label-singular="${escapeHtml(itemLabelSingular)}"
+      data-item-label-plural="${escapeHtml(itemLabelPlural)}"
+      data-total-count="${escapeHtml(String(totalCount))}"
+    >
+      <div class="discovery-panel__header">
+        <div>
+          <p class="eyebrow">Discovery</p>
+          <h2>${escapeHtml(title)}</h2>
+        </div>
+        <p class="supporting-copy">${escapeHtml(description)}</p>
+      </div>
+      <div class="discovery-panel__controls">
+        <label class="discovery-search">
+          <span class="discovery-search__label">${escapeHtml(queryLabel)}</span>
+          <input
+            class="discovery-search__input"
+            type="search"
+            placeholder="${escapeHtml(queryPlaceholder)}"
+            autocomplete="off"
+            spellcheck="false"
+            data-discovery-input
+          >
+        </label>
+        <p class="discovery-panel__summary" data-discovery-summary>
+          Showing all ${escapeHtml(String(totalCount))} ${escapeHtml(totalCount === 1 ? itemLabelSingular : itemLabelPlural)}.
+        </p>
+      </div>
+      <div class="discovery-filter-row" aria-label="Filter ${escapeHtml(itemLabelPlural)}">
+        ${filters
+          .map(
+            (filter, index) => `<button
+                class="discovery-filter${index === 0 ? ' is-active' : ''}"
+                type="button"
+                data-discovery-filter="${escapeHtml(filter.value)}"
+                aria-pressed="${index === 0 ? 'true' : 'false'}"
+              >${escapeHtml(filter.label)}</button>`
+          )
+          .join('')}
+      </div>
+    </section>`;
+}
+
+function renderRouteList(routes) {
+  if (!routes.length) {
+    return '<p class="supporting-copy">No routes to suggest yet.</p>';
+  }
+
+  return `<div class="related-list">
+    ${routes
+      .map(
+        (route) => `<a class="related-card" href="${escapeHtml(route.href)}">
+          <p class="related-card__meta">${escapeHtml(route.kicker || 'Route')}</p>
+          <h3>${escapeHtml(route.title)}</h3>
+          <p>${escapeHtml(route.description || '')}</p>
+        </a>`
+      )
+      .join('')}
+  </div>`;
 }
 
 function renderCover(mix, compact = false) {
@@ -1101,16 +1206,55 @@ function renderHomePage({ mixes, notes, site }) {
 }
 
 function renderArchivePage({ mixes }) {
+  const topTags = countTopTags(mixes);
+  const discoveryFilters = [
+    { label: 'All mixes', value: 'all' },
+    { label: 'Related notes', value: 'state:has-related' },
+    { label: 'Highlighted tracks', value: 'state:has-highlights' },
+    ...topTags.map((tag) => ({ label: `Tag: ${tag}`, value: `tag:${tag}` })),
+  ];
   const body = mixes.length
     ? `<section class="page-intro">
         <p class="eyebrow">Archive</p>
         <h1>Published mixes</h1>
         <p class="page-intro__copy">A chronological run of finished mixes, each with whatever notes, artwork, and track sequencing survived the urge to over-explain.</p>
       </section>
+      ${renderDiscoveryControls({
+        title: 'Search archive',
+        description: 'Filter by title, tags, dates, highlighted tracks, or whether a mix already has notes attached.',
+        queryLabel: 'Search archive',
+        queryPlaceholder: 'Title, tag, date, note count...',
+        itemLabelSingular: 'mix',
+        itemLabelPlural: 'mixes',
+        totalCount: mixes.length,
+        filters: discoveryFilters,
+      })}
       <section class="list-stack list-stack--archive">
         ${mixes
           .map(
-            (mix) => `<a class="archive-row archive-row--full" href="../mixes/${escapeHtml(mix.slug)}/">
+            (mix) => `<a
+              class="archive-row archive-row--full"
+              href="../mixes/${escapeHtml(mix.slug)}/"
+              data-discovery-item
+              data-discovery-tags="${escapeHtml(mix.tags.join('|'))}"
+              data-discovery-states="${escapeHtml(
+                [mix.relatedNotes.length ? 'has-related' : '', mix.highlightedTracks.length ? 'has-highlights' : '']
+                  .filter(Boolean)
+                  .join('|')
+              )}"
+              data-discovery-search="${escapeHtml(
+                buildSearchBlob([
+                  mix.title,
+                  mix.excerpt,
+                  mix.tags,
+                  formatDate(mix.date),
+                  formatMonthYear(mix.date),
+                  mix.number !== '' ? `mix ${mix.number}` : '',
+                  mix.highlightedTracks.length ? `${mix.highlightedTracks.length} highlighted tracks` : '',
+                  mix.relatedNotes.length ? `${mix.relatedNotes.length} related notes` : 'no related notes',
+                ])
+              )}"
+            >
               <div>
                 <p class="archive-row__meta">${escapeHtml(formatDate(mix.date))}${mix.number !== '' ? ` · Mix ${escapeHtml(mix.number)}` : ''}</p>
                 <h2>${escapeHtml(mix.title)}</h2>
@@ -1121,6 +1265,12 @@ function renderArchivePage({ mixes }) {
             </a>`
           )
           .join('')}
+      </section>
+      <section class="empty-state" hidden data-discovery-empty>
+        <div class="callout-panel">
+          <p class="callout-panel__eyebrow">No matches</p>
+          <p>Try a different tag, clear the search, or return to all mixes.</p>
+        </div>
       </section>`
     : `<section class="page-intro">
         <p class="eyebrow">Archive</p>
@@ -1267,10 +1417,51 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
   const featuredSlug = site.featuredMixSlug || site.featured_mix_slug;
   const featuredMix = featuredSlug ? mixes.find((mix) => mix.slug === featuredSlug) || null : null;
   const latestDraft = drafts[0] || null;
+  const latestPublished = mixes[0] || null;
+  const latestNote = notes[0] || null;
+  const latestPublishedWithoutNote = mixes.find((mix) => mix.relatedNotes.length === 0) || null;
+  const publishedWithNotes = mixes.filter((mix) => mix.relatedNotes.length > 0).length;
+  const notesWithRelations = notes.filter((note) => note.relatedMixes.length > 0).length;
+  const approvedDrafts = drafts.filter((draft) => draft.status === 'approved').length;
+  const draftDrafts = drafts.filter((draft) => draft.status === 'draft').length;
   const nextActions = [];
+  const validationSignals = [];
+
+  if (featuredSlug) {
+    validationSignals.push(featuredMix ? 'Featured mix slug resolves to a published mix.' : 'Featured mix slug does not resolve to a published mix yet.');
+  } else {
+    validationSignals.push('No featured mix slug is set yet.');
+  }
+
+  validationSignals.push(
+    latestDraft
+      ? `Latest draft is currently marked ${latestDraft.status}.`
+      : 'There is no local draft mix file right now.'
+  );
+
+  validationSignals.push(
+    mixes.length
+      ? `${publishedWithNotes} of ${mixes.length} published mix${mixes.length === 1 ? '' : 'es'} already have note context attached.`
+      : 'There are no published mixes to validate against note coverage yet.'
+  );
+
+  const validationHeadline = !featuredSlug || featuredMix
+    ? latestDraft?.status === 'approved'
+      ? 'Ready for validate/build pass'
+      : 'Editorial review still pending'
+    : 'Needs data attention';
+  const validationCopy = !featuredSlug || featuredMix
+    ? latestDraft?.status === 'approved'
+      ? 'The current data shape looks coherent from the site build, but schema validation still needs a local run before publishing.'
+      : 'The site can render the current state cleanly, but the latest draft still needs review before it feels publishable.'
+    : 'The dashboard found a featured mix reference that does not point at a published entry, so validation should wait until that is corrected.';
 
   if (latestDraft) {
-    nextActions.push(`Review ${latestDraft.title} and promote it from draft to approved once the sequencing feels done.`);
+    nextActions.push(
+      latestDraft.status === 'approved'
+        ? `Run validation and build against ${latestDraft.title}, then publish when the page and metadata still look intentional.`
+        : `Review ${latestDraft.title} and promote it from ${latestDraft.status} to approved once the sequencing feels done.`
+    );
   } else {
     nextActions.push('Generate the next weekly draft so the studio reflects the upcoming mix instead of staying empty.');
   }
@@ -1279,7 +1470,11 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
     nextActions.push('Update data/site.json so a published mix is featured on the homepage instead of falling back automatically.');
   }
 
-  if (notes.length < mixes.length) {
+  if (latestPublishedWithoutNote) {
+    nextActions.push(`Add a note or mix-context paragraph for ${latestPublishedWithoutNote.title} so the archive coverage does not stall at the latest listening work.`);
+  }
+
+  if (notes.length < mixes.length && !latestPublishedWithoutNote) {
     nextActions.push('Add another note to capture why a recent published mix still matters to the archive.');
   }
 
@@ -1308,7 +1503,74 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
       value: featuredMix?.displayTitle || featuredMix?.title || 'Unset',
       detail: featuredMix ? formatDate(featuredMix.date) : 'Check data/site.json',
     },
+    {
+      label: 'Validation posture',
+      value: validationHeadline,
+      detail: 'Schema validation is still a separate local command.',
+    },
   ];
+  const healthCards = [
+    {
+      eyebrow: 'Draft queue',
+      title: latestDraft?.title || 'No draft available',
+      body: latestDraft
+        ? `${draftDrafts} draft${draftDrafts === 1 ? '' : 's'} waiting on review, ${approvedDrafts} approved.`
+        : 'Generate the next weekly draft to give the studio a clear editing target.',
+      detail: latestDraft ? `${formatDate(latestDraft.date)} · ${latestDraft.trackCount} tracks · ${latestDraft.status}` : '',
+    },
+    {
+      eyebrow: 'Archive coverage',
+      title: `${publishedWithNotes}/${mixes.length || 0} published mixes carry note context`,
+      body: mixes.length
+        ? `${notesWithRelations} of ${notes.length} note${notes.length === 1 ? '' : 's'} already point back into the archive.`
+        : 'Coverage will appear here once published mixes land in the archive.',
+      detail: latestPublishedWithoutNote ? `Latest gap: ${latestPublishedWithoutNote.title}` : 'Recent published mixes all have at least one related note.',
+    },
+    {
+      eyebrow: 'Validation posture',
+      title: validationHeadline,
+      body: validationCopy,
+      detail: validationSignals.join(' '),
+    },
+  ];
+  const recentRoutes = [
+    latestPublished
+      ? {
+          href: `../mixes/${latestPublished.slug}/`,
+          kicker: 'Latest mix',
+          title: latestPublished.title,
+          description: `${formatDate(latestPublished.date)} · ${latestPublished.relatedNotes.length} related note${latestPublished.relatedNotes.length === 1 ? '' : 's'}`,
+        }
+      : null,
+    featuredMix
+      ? {
+          href: `../mixes/${featuredMix.slug}/`,
+          kicker: 'Featured',
+          title: featuredMix.title,
+          description: 'Current homepage lead story.',
+        }
+      : null,
+    latestNote
+      ? {
+          href: `../notes/${latestNote.slug}/`,
+          kicker: 'Latest note',
+          title: latestNote.title,
+          description: latestNote.excerpt || 'Newest archive note.',
+        }
+      : null,
+    {
+      href: '../archive/',
+      kicker: 'Overview',
+      title: 'Archive',
+      description: 'Check the full published run and scan for thin metadata.',
+    },
+    {
+      href: '../notes/',
+      kicker: 'Overview',
+      title: 'Notes',
+      description: 'Review what writing is already attached to the archive.',
+    },
+  ].filter(Boolean);
   let content = `<section class="page-intro page-intro--wide">
       <div>
         <p class="eyebrow">Studio</p>
@@ -1328,20 +1590,25 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
         .join('')}
     </section>`;
   content += `<section class="section-block studio-grid">
-      <article class="resource-card">
-        <p class="resource-card__eyebrow">Latest draft</p>
-        <h3>${escapeHtml(latestDraft?.title || 'No draft available')}</h3>
-        <p>${escapeHtml(latestDraft?.summary || 'Create or generate a draft mix to give the studio a working center of gravity.')}</p>
-        ${latestDraft
-          ? `<p class="supporting-copy">${escapeHtml(formatDate(latestDraft.date))} · ${escapeHtml(String(latestDraft.trackCount))} tracks · ${escapeHtml(latestDraft.status)}</p>`
-          : ''}
-      </article>
-      <article class="resource-card">
-        <p class="resource-card__eyebrow">Featured mix</p>
-        <h3>${escapeHtml(featuredMix?.title || 'No featured mix set')}</h3>
-        <p>${escapeHtml(featuredMix?.excerpt || 'The homepage feature follows data/site.json. Point it at a published mix when you want a deliberate lead story.')}</p>
-        ${featuredMix ? `<a class="text-link" href="../mixes/${escapeHtml(featuredMix.slug)}/">Open featured mix</a>` : ''}
-      </article>
+      ${healthCards
+        .map(
+          (card) => `<article class="resource-card">
+            <p class="resource-card__eyebrow">${escapeHtml(card.eyebrow)}</p>
+            <h3>${escapeHtml(card.title)}</h3>
+            <p>${escapeHtml(card.body)}</p>
+            ${card.detail ? `<p class="supporting-copy">${escapeHtml(card.detail)}</p>` : ''}
+          </article>`
+        )
+        .join('')}
+    </section>`;
+  content += `<section class="section-block section-block--split">
+      <div>
+        <p class="eyebrow">Recent routes</p>
+        <h2>What to open next</h2>
+      </div>
+      <div>
+        ${renderRouteList(recentRoutes)}
+      </div>
     </section>`;
   content += `<section class="section-block section-block--split">
       <div>
@@ -1357,7 +1624,7 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
     </section>`;
   content += `<section class="section-block section-block--split">
       <div>
-        <p class="eyebrow">Next actions</p>
+        <p class="eyebrow">Recommended next actions</p>
         <h2>What the current data suggests</h2>
       </div>
       <div class="action-list">
@@ -1429,16 +1696,48 @@ function renderAboutPage({ site, about }) {
 
 function renderNotesPage({ notes }) {
   const hasNotes = notes.length > 0;
+  const topTags = countTopTags(notes);
+  const discoveryFilters = [
+    { label: 'All notes', value: 'all' },
+    { label: 'Linked mixes', value: 'state:has-related' },
+    ...topTags.map((tag) => ({ label: `Tag: ${tag}`, value: `tag:${tag}` })),
+  ];
   const body = hasNotes
     ? `<section class="page-intro">
         <p class="eyebrow">Notes</p>
         <h1>Notebook fragments</h1>
         <p class="page-intro__copy">Small observations around sequencing, atmosphere, and the songs that took time to reveal themselves.</p>
       </section>
+      ${renderDiscoveryControls({
+        title: 'Search notes',
+        description: 'Filter by note title, tags, dates, or whether a note already connects back to published mixes.',
+        queryLabel: 'Search notes',
+        queryPlaceholder: 'Title, tag, date, related mix...',
+        itemLabelSingular: 'note',
+        itemLabelPlural: 'notes',
+        totalCount: notes.length,
+        filters: discoveryFilters,
+      })}
       <section class="notes-grid">
         ${notes
           .map(
-            (note) => `<article class="note-card">
+            (note) => `<article
+              class="note-card"
+              data-discovery-item
+              data-discovery-tags="${escapeHtml(note.tags.join('|'))}"
+              data-discovery-states="${escapeHtml(note.relatedMixes.length ? 'has-related' : '')}"
+              data-discovery-search="${escapeHtml(
+                buildSearchBlob([
+                  note.title,
+                  note.excerpt,
+                  note.body,
+                  note.tags,
+                  formatDate(note.date),
+                  note.relatedMixes.map((mix) => mix.title),
+                  note.relatedMixes.length ? `${note.relatedMixes.length} related mixes` : 'standalone note',
+                ])
+              )}"
+            >
               <p class="note-card__meta">${escapeHtml(note.date ? formatDate(note.date) : 'Undated note')}</p>
               <h2>${escapeHtml(note.title)}</h2>
               <p>${escapeHtml(note.excerpt || stripHtml(note.body).slice(0, 180) || 'A short note waiting for more context.')}</p>
@@ -1452,6 +1751,12 @@ function renderNotesPage({ notes }) {
             </article>`
           )
           .join('')}
+      </section>
+      <section class="empty-state" hidden data-discovery-empty>
+        <div class="callout-panel">
+          <p class="callout-panel__eyebrow">No matches</p>
+          <p>Try a different tag, clear the search, or return to all notes.</p>
+        </div>
       </section>`
     : `<section class="page-intro">
         <p class="eyebrow">Notes</p>

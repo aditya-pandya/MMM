@@ -43,7 +43,7 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
   - `build.js`
   - `dev-server.js`
 - `src/static/`
-  - site CSS
+  - site CSS + small client-side discovery JS
 - `tests/`
   - import, publish, generation, editorial tooling, and static build tests
 
@@ -223,7 +223,8 @@ npm run build
 - Note detail pages are emitted at `/notes/[slug]/`.
 - Mix detail pages expose previous/next archive links, related notes, highlighted tracks, and source/embed metadata when present in the JSON.
 - Dedicated listening sections render automatically when mix JSON includes provider links or embeds under `listening`, including nested provider maps and embedded-player groups.
-- `/studio/` is generated from local JSON and summarizes draft count, latest draft, published count, notes count, featured mix state, and a few operator commands.
+- `/archive/` and `/notes/` include lightweight client-side search and filter controls driven by the metadata already rendered into each page.
+- `/studio/` is generated from local JSON and now summarizes draft count, published count, notes count, featured mix state, validation posture, recent routes, and recommended next actions.
 - Tumblr-imported archive mixes fall back to typographic cover placeholders and track-level search helpers when the only artwork/download data is legacy Tumblr residue.
 - Home, archive, and notes pages surface mix-note relationships so the writing is visible without having to guess where it lives.
 
