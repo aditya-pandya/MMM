@@ -210,6 +210,22 @@ npm run build
 - Weekly draft generation is intended to run locally on this machine.
 - GitHub Actions is used for deploy only.
 
+## Handoff and deep project docs
+
+For another agent or developer, start here:
+- `docs/handoff-spec.md`
+- `docs/architecture-and-operations.md`
+- `docs/roadmap-and-future-plans.md`
+- `docs/operator-flow.md`
+- `docs/data-import-assumptions.md`
+
+These documents cover:
+- product intent and non-goals
+- architecture and route model
+- editorial/local operations
+- current requirements
+- future roadmap and safe extension areas
+
 ## Current seeded content
 
 - imported real mixes from the Monday Music Mix Tumblr RSS

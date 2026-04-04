@@ -1,0 +1,269 @@
+# MMM Architecture and Operations
+
+## System overview
+
+MMM is a static-site publishing system with local editorial tooling.
+
+It is made of three major subsystems:
+
+1. Data and schemas
+2. Editorial tooling
+3. Static rendering and deploy
+
+## 1. Data and schemas
+
+### Primary data directories
+- `data/drafts/` — unpublished or approved draft mixes
+- `data/published/` — published mixes rendered into the live archive
+- `data/notes/` — note detail records
+- `data/imported/` — imported Tumblr/RSS source and normalized mix records
+- `data/archive/` — generated archive index
+
+### Aggregates and config
+- `data/site.json`
+- `data/mixes.json`
+- `data/archive-index.json`
+- `data/notes-index.json`
+- `data/taste-profile.json`
+
+### Schemas
+Stored in `schemas/`.
+
+These are not decorative. They define the expected contract for future agents.
+
+## 2. Editorial tooling
+
+All tooling lives under `scripts/`.
+
+### Key scripts
+
+`import_tumblr.py`
+- imports historical Tumblr/RSS posts
+- preserves provenance
+- parses tracklists and favorites
+
+`build_taste_profile.py`
+- derives recurring artist/taste hints from imported material
+
+`generate_weekly_draft.py`
+- generates a local deterministic weekly draft
+- writes into `data/drafts/`
+
+`create_content.py`
+- creates new draft mix templates
+- creates note templates and updates note index
+
+`validate_content.py`
+- validates content health across repo data
+- should be run before publishing or handoff
+
+`publish_mix.py`
+- promotes approved draft mix to published state
+- rebuilds aggregate files
+- can update featured mix
+
+`run_local_workflow.sh`
+- convenience runner for scheduled/local editorial workflow
+
+## 3. Static rendering and deploy
+
+`build.js`
+- canonical static site generator
+- reads data files
+- writes HTML into `dist/`
+
+`dev-server.js`
+- local preview server helper
+
+`src/static/site.css`
+- global styles
+- includes small UI affordances for discovery/filtering and dashboard surfaces
+
+## Route map
+
+Public/editorial routes emitted by the build:
+- `/`
+- `/archive/`
+- `/mixes/[slug]/`
+- `/about/`
+- `/notes/`
+- `/notes/[slug]/`
+- `/studio/`
+
+## Route purpose
+
+### `/`
+Homepage
+- featured mix
+- recent archive entries
+- recent note relationships
+- route into studio/dashboard
+
+### `/archive/`
+Published mix index
+- searchable/filterable
+- exposes tags and relationship hints
+
+### `/mixes/[slug]/`
+Mix detail page
+- metadata
+- tracklist
+- listening fallback/provider area
+- related notes
+- previous/next mix links
+- source/provenance
+
+### `/notes/`
+Notes index
+- searchable/filterable
+- links into note detail pages
+
+### `/notes/[slug]/`
+Note detail page
+- note body
+- related mixes
+- prev/next notes
+
+### `/studio/`
+Local/editorial orientation route
+- content counts
+- recent draft/published/note state
+- featured mix state
+- validation posture copy
+- recommended next actions
+
+## Build-time data flow
+
+1. load raw site metadata
+2. load mixes from aggregate/generated/published/imported sources
+3. normalize mix structures
+4. load notes from notes index + note detail files
+5. attach note-to-mix and mix-to-note relationships
+6. load drafts
+7. render all routes
+8. emit `dist/`
+
+## Publish-time data flow
+
+1. read draft JSON
+2. validate draft shape/content
+3. require approved status
+4. transform to published mix shape
+5. write to `data/published/`
+6. rebuild aggregate indexes/files
+7. optionally update featured mix in `data/site.json`
+
+## Local operations model
+
+### Expected operator flow
+1. validate repo content
+2. create/generate draft
+3. edit content JSON
+4. validate again
+5. approve mix
+6. publish
+7. build preview
+8. push to `main`
+9. GitHub deploys Pages
+
+### Why local-first matters
+This project intentionally keeps editorial decisions and generation on the local machine.
+
+Reasons:
+- avoids hidden hosted state
+- avoids fragile CI-as-editor patterns
+- matches Aditya’s preference for local ops
+- keeps the deployed site dumb and stable
+
+## GitHub Actions role
+
+GitHub Actions should remain deploy/test oriented only.
+
+Allowed responsibilities:
+- install dependencies needed for test/build
+- run tests
+- build the site
+- deploy Pages
+
+Disallowed responsibilities unless explicitly requested later:
+- generate editorial drafts
+- publish content automatically
+- mutate editorial content as part of CI
+
+## Listening and provenance rules
+
+These matter because future agents may get too clever.
+
+### Good behavior
+- show real provider/embed data when trustworthy
+- show track-first search helpers when provider confidence is low
+- preserve Tumblr source links as provenance
+- suppress dead Mega links from primary listening UI
+
+### Bad behavior
+- fabricate “official” listening paths from weak evidence
+- present legacy Tumblr artwork as definitive album art when it is only archival source art
+- hide provenance because it looks messy
+
+## Design source material
+
+The live app does not depend on Stitch prototype files.
+
+Reference material is stored only under:
+- `docs/reference-design/stitch/`
+
+Those files are for inspiration and audit, not runtime usage.
+
+## Testing strategy
+
+Current tests cover:
+- Tumblr import parsing
+- draft generation
+- publish flow
+- local workflow behavior
+- static build output
+- content creation helpers
+- content validation
+
+Any future major feature should add tests in one of these categories:
+- tooling behavior
+- static build output
+- data validation contract
+
+## Change-management guidance
+
+When changing MMM, future agents should prefer this order:
+1. update schemas/data expectations if needed
+2. update generators/validators
+3. update build/rendering
+4. update tests
+5. update docs
+
+## Safe extension areas
+
+These are good places to keep building:
+- archive discovery
+- better studio summaries
+- note/mix relationship quality
+- local editorial helpers
+- provider confidence heuristics
+- imported legacy cleanup tools
+
+## Dangerous extension areas
+
+These are where agents are likely to overbuild or regress the product:
+- turning `/studio/` into a gross admin app
+- turning CI into an editorial runtime
+- adding server-side state
+- introducing framework migration churn without benefit
+- inventing too much fake metadata for legacy archive content
+
+## Operator sanity checks
+
+Before handoff or deploy, the system should satisfy:
+- `python3 scripts/validate_content.py` → no errors
+- `python3 -m pytest -q` → green
+- `npm run build` → green
+- `git status` → clean unless intentionally in progress
+
+If those hold, the repo is in good operational shape.
