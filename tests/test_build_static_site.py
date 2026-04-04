@@ -62,21 +62,16 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Writing that points back to this mix" in mix_detail_html
     assert "../../notes/rebuilding-the-archive/" in mix_detail_html
     assert "Prev and next mix links" in mix_detail_html
-    assert "Provider links and embedded playback" in mix_detail_html
-    assert "Reconstructed listening options for the archive build" in mix_detail_html
-    assert "Archive reconstruction playlist" in mix_detail_html
-    assert "Thirtysixth playlist embed" in mix_detail_html
-    assert "open.spotify.com/embed/playlist" in mix_detail_html
     assert "Links, provenance, and source residue" in mix_detail_html
     assert "Imported Tumblr snapshot" in mix_detail_html
     assert "Favorite tracks marked in the source" in mix_detail_html
     assert "Search YouTube" in mix_detail_html
-    assert "Search Spotify" in mix_detail_html
     assert "Legacy Tumblr artwork is preserved as source context" in mix_detail_html
     assert "https://mega.co.nz/" not in mix_detail_html
 
     assert "related note" in archive_html
     assert "highlighted track" in archive_html
+    assert "Provider links and embedded playback" in mix_with_youtube_html
     assert "Companion playlist on YouTube" in mix_with_youtube_html
     assert "This archived mix now carries a couple of modern listening mirrors" in mix_with_youtube_html
     assert "Thirtyfifth playlist embed" in mix_with_youtube_html
@@ -136,5 +131,46 @@ def test_static_build_recursively_flattens_nested_listening_provider_shapes(tmp_
 
     assert "Companion playlist on YouTube" in mix_html
     assert "Bandcamp starting point" in mix_html
-    assert "Thirtyfifth playlist embed" in mix_html
+    assert "Listening" in mix_html
     assert "youtube.com/embed/videoseries" in mix_html
+
+
+def test_static_build_only_derives_youtube_playlist_embeds_from_real_playlist_data(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    youtube_mix_path = repo / "data" / "published" / "mix-035-thirtyfifth.json"
+    youtube_mix = json.loads(read_text(youtube_mix_path))
+    youtube_mix["listening"]["providers"]["editorial"]["embeds"] = []
+    write_json(youtube_mix_path, youtube_mix)
+
+    spotify_mix_path = repo / "data" / "published" / "mix-036-thirtysixth.json"
+    spotify_mix = json.loads(read_text(spotify_mix_path))
+    spotify_mix["listening"] = {
+        "intro": "Explicit Spotify provider data should stay link-only.",
+        "providers": [
+            {
+                "provider": "Spotify",
+                "label": "Archive reconstruction playlist",
+                "url": "https://open.spotify.com/playlist/37i9dQZF1DX4WYpdgoIcn6",
+                "kind": "playlist",
+                "note": "Useful as a direct playlist link, but not enough to claim embed support."
+            }
+        ]
+    }
+    write_json(spotify_mix_path, spotify_mix)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    youtube_mix_html = read_text(repo / "dist" / "mixes" / "mix-035-thirtyfifth" / "index.html")
+    spotify_mix_html = read_text(repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html")
+
+    assert "youtube.com/embed/videoseries" in youtube_mix_html
+    assert "open.spotify.com/embed/playlist" not in spotify_mix_html

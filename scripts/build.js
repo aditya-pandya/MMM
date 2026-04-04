@@ -259,6 +259,20 @@ function sanitizeLegacyHtml(html) {
   return cleaned.trim();
 }
 
+function normalizeComparableText(value) {
+  return stripHtml(String(value || ''))
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function splitParagraphs(value) {
+  return String(value || '')
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+}
+
 function buildTrackSearchLinks(track) {
   if (!track || typeof track !== 'object') return null;
 
@@ -276,9 +290,48 @@ function buildTrackSearchLinks(track) {
     title,
     displayText: displayText || query,
     youtubeUrl: `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`,
-    spotifyUrl: `https://open.spotify.com/search/${encodeURIComponent(query)}`,
     isFavorite: Boolean(track.isFavorite),
   };
+}
+
+function getYouTubePlaylistId(value) {
+  const raw = String(value || '').trim();
+  if (!raw || !raw.includes('youtu')) return '';
+
+  try {
+    const url = new URL(raw);
+    const hostname = url.hostname.toLowerCase();
+    if (!hostname.includes('youtube.com') && !hostname.includes('youtu.be')) return '';
+    return String(url.searchParams.get('list') || '').trim();
+  } catch {
+    return '';
+  }
+}
+
+function isYouTubePlaylistProvider(provider) {
+  if (!provider || typeof provider !== 'object') return false;
+  return provider.provider === 'YouTube' && Boolean(getYouTubePlaylistId(provider.url));
+}
+
+function isYouTubePlaylistEmbed(embed) {
+  if (!embed || typeof embed !== 'object') return false;
+  const url = String(embed.url || '');
+  return embed.provider === 'YouTube' && Boolean(getYouTubePlaylistId(url)) && url.includes('/embed/videoseries');
+}
+
+function getDistinctMixNotes(mix) {
+  const blocked = new Set(
+    [mix.excerpt, mix.coverCredit, mix.summary]
+      .map((value) => normalizeComparableText(value))
+      .filter(Boolean)
+  );
+
+  return splitParagraphs(mix.notes).filter((paragraph) => {
+    const normalized = normalizeComparableText(paragraph);
+    if (!normalized || blocked.has(normalized)) return false;
+    if (mix.coverCredit && normalized.includes(normalizeComparableText(mix.coverCredit))) return false;
+    return true;
+  });
 }
 
 function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode) {
@@ -415,12 +468,30 @@ function normalizeListening(mix) {
     mix.embeds,
   ];
   const providerEntries = collectListeningEntries(providerRoots, 'provider', 'provider');
+  const explicitEmbeds = [
+    ...collectListeningEntries(providerRoots, 'embed', 'provider').filter((entry) => inferProviderKind(entry.url) === 'embed'),
+    ...collectListeningEntries(embedRoots, 'embed', 'embed'),
+  ];
+  const derivedEmbeds = providerEntries
+    .filter((provider) => isYouTubePlaylistProvider(provider))
+    .map((provider) => {
+      const playlistId = getYouTubePlaylistId(provider.url);
+      return {
+        provider: provider.provider,
+        title: provider.label || `${provider.provider} playlist`,
+        url: `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(playlistId)}`,
+        note: provider.note,
+      };
+    });
   const embedEntries = Array.from(
     new Map(
-      [
-        ...collectListeningEntries(providerRoots, 'embed', 'provider'),
-        ...collectListeningEntries(embedRoots, 'embed', 'embed'),
-      ].map((entry) => [`${entry.provider}::${entry.url}`, entry])
+      [...derivedEmbeds, ...explicitEmbeds]
+        .filter((entry) => {
+          if (!entry || typeof entry !== 'object') return false;
+          if (isYouTubePlaylistEmbed(entry)) return true;
+          return Boolean(String(entry.provider || '').trim() && String(entry.url || '').trim());
+        })
+        .map((entry) => [`${entry.provider}::${entry.url}`, entry])
     ).values()
   );
 
@@ -914,7 +985,6 @@ function renderListeningSection(mix) {
                 </div>
                 <div class="button-row track-fallback-list__actions">
                   <a class="button button--secondary" href="${escapeHtml(track.youtubeUrl)}">Search YouTube</a>
-                  <a class="button button--secondary" href="${escapeHtml(track.spotifyUrl)}">Search Spotify</a>
                 </div>
               </div>
             </li>`
@@ -1160,13 +1230,14 @@ function renderMixPage({ mix }) {
         </div>
       </section>`;
 
-  const notesSection = mix.notes
+  const distinctMixNotes = getDistinctMixNotes(mix);
+  const notesSection = distinctMixNotes.length
     ? `<section class="section-block section-block--split">
         <div>
           <p class="eyebrow">Notes</p>
           <h2>What stayed worth saying</h2>
         </div>
-        <div class="prose">${paragraphize(mix.notes)}</div>
+        <div class="prose">${paragraphize(distinctMixNotes.join('\n\n'))}</div>
       </section>`
     : '';
 
