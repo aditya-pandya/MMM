@@ -1,0 +1,1 @@
+"""MMM automation scripts package."""

@@ -1,0 +1,26 @@
+{
+  "updated_at": "2026-04-04T00:47:23Z",
+  "mixes": [
+    {
+      "slug": "mix-036-thirtysixth",
+      "title": "Monday Music Mix #36",
+      "date": "2013-11-19",
+      "summary": "Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.",
+      "track_count": 14
+    },
+    {
+      "slug": "mix-035-thirtyfifth",
+      "title": "Monday Music Mix #35",
+      "date": "2013-09-23",
+      "summary": "A bit late given this is going up in the last hour of Monday but it still counts, right? Right. Left out a lot of really great music off this mix. Maybe someday I should do a Monday Music Mix: Rejects edition. Soon.",
+      "track_count": 15
+    },
+    {
+      "slug": "mix-034-thirtyfourth",
+      "title": "Monday Music Mix #34",
+      "date": "2013-08-12",
+      "summary": "New week, new mix. A little birdy from the mountains had to prod me to post this today.",
+      "track_count": 15
+    }
+  ]
+}

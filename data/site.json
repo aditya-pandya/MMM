@@ -1,0 +1,26 @@
+{
+  "$schema": "../schemas/site.schema.json",
+  "schemaVersion": "1.0",
+  "name": "Monday Music Mix",
+  "tagline": "An eclectic music mix, (almost) every Monday.",
+  "description": "A data-first archive for Monday Music Mix, preserving Tumblr-era weekly mixtapes, notes, and listening context in structured JSON.",
+  "baseUrl": "https://aditya-pandya.github.io/MMM/",
+  "repoUrl": "https://github.com/aditya-pandya/MMM",
+  "featuredMixSlug": "mix-036-thirtysixth",
+  "author": {
+    "name": "Aditya Pandya",
+    "email": null,
+    "tumblr": "https://mondaymusicmix.tumblr.com/"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "Archive", "path": "/archive/" },
+    { "label": "About", "path": "/about/" },
+    { "label": "Notes", "path": "/notes/" }
+  ],
+  "socialLinks": [
+    { "label": "Tumblr", "url": "https://mondaymusicmix.tumblr.com/" },
+    { "label": "RSS", "url": "https://mondaymusicmix.tumblr.com/rss" },
+    { "label": "GitHub", "url": "https://github.com/aditya-pandya/MMM" }
+  ]
+}

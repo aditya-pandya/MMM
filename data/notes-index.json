@@ -1,0 +1,28 @@
+{
+  "$schema": "../schemas/notes-index.schema.json",
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-04-04T00:42:00Z",
+  "totalNotes": 2,
+  "items": [
+    {
+      "id": "note-rebuilding-the-archive",
+      "slug": "rebuilding-the-archive",
+      "title": "Rebuilding the archive",
+      "publishedAt": "2026-04-03T20:00:00Z",
+      "summary": "Why the Tumblr archive is being normalized into durable JSON files and indexes.",
+      "path": "data/notes/rebuilding-the-archive.json",
+      "tags": ["meta", "archive", "migration"],
+      "relatedMixSlugs": ["mix-034-thirtyfourth", "mix-035-thirtyfifth", "mix-036-thirtysixth"]
+    },
+    {
+      "id": "note-how-the-mixes-are-read",
+      "slug": "how-the-mixes-are-read",
+      "title": "How the mixes are read",
+      "publishedAt": "2026-04-03T20:05:00Z",
+      "summary": "A lightweight editorial note on what stands out in the seeded 2013 mixes.",
+      "path": "data/notes/how-the-mixes-are-read.json",
+      "tags": ["editorial", "taste", "seed-data"],
+      "relatedMixSlugs": ["mix-035-thirtyfifth", "mix-036-thirtysixth"]
+    }
+  ]
+}

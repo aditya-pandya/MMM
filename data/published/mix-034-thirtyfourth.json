@@ -1,0 +1,163 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-034-thirtyfourth",
+  "slug": "mix-034-thirtyfourth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "rss",
+    "importedAt": "2026-04-04T00:41:14.451006Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/58054518253",
+    "guid": "https://mondaymusicmix.tumblr.com/post/58054518253"
+  },
+  "title": "Monday Music Mix #34",
+  "displayTitle": "Thirtyfourth",
+  "mixNumber": 34,
+  "publishedAt": "2013-08-12T12:42:00Z",
+  "summary": "New week, new mix. A little birdy from the mountains had to prod me to post this today.",
+  "intro": [
+    "New week, new mix. A little birdy from the mountains had to prod me to post this today.",
+    "Album art featuring work by Mapache Salado"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": "https://64.media.tumblr.com/b73c1db6dfb13c8fab236ed521780a93/93684f9912d6730d-14/s540x810/6a3caa5cb1fe01397903d11a807718686ea7867c.jpg",
+    "alt": "Cover art for Thirtyfourth",
+    "credit": "Album art featuring work by Mapache Salado"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "https://mega.co.nz/#!Ichl2A5Z!UG--vHXe4-ly4Y4Xo82WbEafgcRx6xquUuZKtdDgOjY"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Ha Ha Tonka",
+      "title": "Colorful Kids",
+      "displayText": "Ha Ha Tonka - Colorful Kids",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Bear Mountain",
+      "title": "Congo",
+      "displayText": "Bear Mountain - Congo",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Join the Riot",
+      "title": "Queen Marmalade",
+      "displayText": "Join the Riot - Queen Marmalade",
+      "isFavorite": true
+    },
+    {
+      "position": 4,
+      "artist": "Haim",
+      "title": "The Wire",
+      "displayText": "Haim - The Wire",
+      "isFavorite": true
+    },
+    {
+      "position": 5,
+      "artist": "Dum Dum Girls",
+      "title": "Mine Tonight",
+      "displayText": "Dum Dum Girls - Mine Tonight",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Pure Bathing Culture",
+      "title": "Dream the Dare",
+      "displayText": "Pure Bathing Culture - Dream the Dare",
+      "isFavorite": true
+    },
+    {
+      "position": 7,
+      "artist": "Avec Sans",
+      "title": "Hold On",
+      "displayText": "Avec Sans - Hold On",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Cat Power",
+      "title": "Cherokee",
+      "displayText": "Cat Power - Cherokee",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Keep Shelly in Athens",
+      "title": "Oostende",
+      "displayText": "Keep Shelly in Athens - Oostende",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Tree",
+      "title": "Demons (feat. Beat Culture and Lena Kuhn)",
+      "displayText": "Tree - Demons (feat. Beat Culture and Lena Kuhn)",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "The Weeknd",
+      "title": "Love in the Sky",
+      "displayText": "The Weeknd - Love in the Sky",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Porcelain Raft",
+      "title": "The Way Out",
+      "displayText": "Porcelain Raft - The Way Out",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Lolo",
+      "title": "Heard it from a Friend",
+      "displayText": "Lolo - Heard it from a Friend",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "RJD2",
+      "title": "Her Majesty’s Socialist Request",
+      "displayText": "RJD2 - Her Majesty’s Socialist Request",
+      "isFavorite": false
+    },
+    {
+      "position": 15,
+      "artist": "Happy Hollows",
+      "title": "Endless",
+      "displayText": "Happy Hollows - Endless",
+      "isFavorite": true
+    }
+  ],
+  "stats": {
+    "trackCount": 15,
+    "favoriteCount": 4,
+    "favoriteTracks": [
+      "Join the Riot - Queen Marmalade",
+      "Haim - The Wire",
+      "Pure Bathing Culture - Dream the Dare",
+      "Happy Hollows - Endless"
+    ],
+    "topArtists": [
+      "Ha Ha Tonka",
+      "Bear Mountain",
+      "Join the Riot",
+      "Haim",
+      "Dum Dum Girls"
+    ]
+  },
+  "legacy": {
+    "originalTitle": "Thirtyfourth New week, new mix. A little birdy from the mountains had to prod me to post this...",
+    "tumblrHeading": "Thirtyfourth",
+    "descriptionHtml": "<h2>Thirtyfourth</h2>\n<p>New week, new mix. A little birdy from the mountains had to prod me to post this today.</p>\n<p><strong>Monday Music Mix: 34</strong></p>\n<p><figure class=\"tmblr-full\" data-orig-height=\"400\" data-orig-width=\"400\"><img alt=\"image\" src=\"https://64.media.tumblr.com/b73c1db6dfb13c8fab236ed521780a93/93684f9912d6730d-14/s540x810/6a3caa5cb1fe01397903d11a807718686ea7867c.jpg\" data-orig-height=\"400\" data-orig-width=\"400\"/></figure></p>\n\n<p>Album art featuring work by <a href=\"http://owlandtheanimals.blogspot.com\" target=\"_blank\">Mapache Salado</a></p>\n<p>Tracklist:<br/></p>\n<ol><li>Ha Ha Tonka - Colorful Kids</li>\n<li>Bear Mountain - Congo</li>\n<li><strong>Join the Riot - Queen Marmalade</strong></li>\n<li><strong>Haim - The Wire</strong></li>\n<li>Dum Dum Girls - Mine Tonight</li>\n<li><strong>Pure Bathing Culture - Dream the Dare</strong></li>\n<li>Avec Sans - Hold On</li>\n<li>Cat Power - Cherokee</li>\n<li>Keep Shelly in Athens - Oostende</li>\n<li>Tree - Demons (feat. Beat Culture and Lena Kuhn)</li>\n<li>The Weeknd - Love in the Sky</li>\n<li>Porcelain Raft - The Way Out</li>\n<li>Lolo - Heard it from a Friend</li>\n<li>RJD2 - Her Majesty&rsquo;s Socialist Request</li>\n<li><strong>Happy Hollows - Endless</strong></li>\n</ol><p>* Tracks in bold indicate my favourites</p>\n<p><a href=\"https://mega.co.nz/#!Ichl2A5Z!UG--vHXe4-ly4Y4Xo82WbEafgcRx6xquUuZKtdDgOjY\" target=\"_blank\">Download album</a></p>"
+  }
+}

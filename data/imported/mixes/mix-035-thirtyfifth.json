@@ -1,0 +1,162 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-035-thirtyfifth",
+  "slug": "mix-035-thirtyfifth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "rss",
+    "importedAt": "2026-04-04T00:41:14.448084Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/62073032244",
+    "guid": "https://mondaymusicmix.tumblr.com/post/62073032244"
+  },
+  "title": "Monday Music Mix #35",
+  "displayTitle": "Thirtyfifth",
+  "mixNumber": 35,
+  "publishedAt": "2013-09-23T17:32:30Z",
+  "summary": "A bit late given this is going up in the last hour of Monday but it still counts, right? Right. Left out a lot of really great music off this mix. Maybe someday I should do a Monday Music Mix: Rejects edition. Soon.",
+  "intro": [
+    "A bit late given this is going up in the last hour of Monday but it still counts, right? Right. Left out a lot of really great music off this mix. Maybe someday I should do a Monday Music Mix: Rejects edition. Soon.",
+    "Album art featuring work by Andrew Salgado"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": "https://64.media.tumblr.com/555f756c6ac8f15c99699f1aff623d66/a9ae05f1087cd924-30/s540x810/5460a8cf8f174fb3e930b5f4a08734ed1a200fbd.jpg",
+    "alt": "Cover art for Thirtyfifth",
+    "credit": "Album art featuring work by Andrew Salgado"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "https://mega.co.nz/#!wRoTFI4b!LoNgkTb7YUmss7dwmS53NxZrMgcFqeC6jvmbaICvB4Y"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Chromeo",
+      "title": "Over Your Shoulder",
+      "displayText": "Chromeo - Over Your Shoulder",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "White Denim",
+      "title": "Pretty Green",
+      "displayText": "White Denim - Pretty Green",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Young Galaxy",
+      "title": "Sea Drug",
+      "displayText": "Young Galaxy - Sea Drug",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Wolf Alice",
+      "title": "Blush",
+      "displayText": "Wolf Alice - Blush",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Meg Myers",
+      "title": "Desire",
+      "displayText": "Meg Myers - Desire",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Phantogram",
+      "title": "Black Out Days",
+      "displayText": "Phantogram - Black Out Days",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Society",
+      "title": "14 Hours",
+      "displayText": "Society - 14 Hours",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Braids",
+      "title": "Hossak",
+      "displayText": "Braids - Hossak",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Anna Lunoe",
+      "title": "Breathe",
+      "displayText": "Anna Lunoe - Breathe",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Jungle",
+      "title": "The Heat",
+      "displayText": "Jungle - The Heat",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "Yamantaka // Sonic Titan",
+      "title": "One",
+      "displayText": "Yamantaka // Sonic Titan - One",
+      "isFavorite": true
+    },
+    {
+      "position": 12,
+      "artist": "Shy Girls",
+      "title": "Still Not Falling",
+      "displayText": "Shy Girls - Still Not Falling",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "The Wyld",
+      "title": "Odyssey",
+      "displayText": "The Wyld - Odyssey",
+      "isFavorite": true
+    },
+    {
+      "position": 14,
+      "artist": "Goldroom",
+      "title": "Embrace",
+      "displayText": "Goldroom - Embrace",
+      "isFavorite": true
+    },
+    {
+      "position": 15,
+      "artist": "Laura Welsh",
+      "title": "Undiscovered",
+      "displayText": "Laura Welsh - Undiscovered",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 15,
+    "favoriteCount": 3,
+    "favoriteTracks": [
+      "Yamantaka // Sonic Titan - One",
+      "The Wyld - Odyssey",
+      "Goldroom - Embrace"
+    ],
+    "topArtists": [
+      "Chromeo",
+      "White Denim",
+      "Young Galaxy",
+      "Wolf Alice",
+      "Meg Myers"
+    ]
+  },
+  "legacy": {
+    "originalTitle": "Thirtyfifth A bit late given this is going up in the last hour of Monday but it still counts, right?...",
+    "tumblrHeading": "Thirtyfifth",
+    "descriptionHtml": "<h2>Thirtyfifth</h2>\n<p>A bit late given this is going up in the last hour of Monday but it still counts, right? Right. Left out a lot of really great music off this mix. Maybe someday I should do a Monday Music Mix: Rejects edition. Soon.</p>\n<p><strong>Monday Music Mix: 35</strong></p>\n<p><figure class=\"tmblr-full\" data-orig-height=\"400\" data-orig-width=\"400\"><img src=\"https://64.media.tumblr.com/555f756c6ac8f15c99699f1aff623d66/a9ae05f1087cd924-30/s540x810/5460a8cf8f174fb3e930b5f4a08734ed1a200fbd.jpg\" data-orig-height=\"400\" data-orig-width=\"400\"/></figure></p>\n\n<p>Album art featuring work by <a href=\"http://www.andrewsalgado.com/\" target=\"_blank\">Andrew Salgado</a></p>\n<p>Tracklist:</p>\n<ol><li>Chromeo - Over Your Shoulder</li>\n<li>White Denim - Pretty Green</li>\n<li>Young Galaxy - Sea Drug</li>\n<li>Wolf Alice - Blush</li>\n<li>Meg Myers - Desire</li>\n<li>Phantogram - Black Out Days</li>\n<li>Society - 14 Hours</li>\n<li>Braids - Hossak</li>\n<li>Anna Lunoe - Breathe</li>\n<li>Jungle - The Heat</li>\n<li><strong>Yamantaka // Sonic Titan - One</strong></li>\n<li>Shy Girls - Still Not Falling</li>\n<li><strong>The Wyld - Odyssey</strong></li>\n<li><strong>Goldroom - Embrace</strong></li>\n<li>Laura Welsh - Undiscovered</li>\n</ol><p>* Tracks in bold indicate my favourites</p>\n<p><a href=\"https://mega.co.nz/#!wRoTFI4b!LoNgkTb7YUmss7dwmS53NxZrMgcFqeC6jvmbaICvB4Y\" target=\"_blank\">Download album</a></p>"
+  }
+}

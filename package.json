@@ -1,0 +1,20 @@
+{
+  "name": "mmm",
+  "version": "1.0.0",
+  "description": "Automation and static build tooling for Monday Music Mix",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev-server.js",
+    "preview": "npm run build && python3 -m http.server 4173 -d dist",
+    "test": "python3 -m pytest",
+    "draft:generate": "python3 scripts/generate_weekly_draft.py --mode auto",
+    "publish": "python3 scripts/publish_mix.py"
+  },
+  "keywords": [
+    "music",
+    "static-site",
+    "automation"
+  ],
+  "license": "ISC"
+}

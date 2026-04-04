@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/note.schema.json",
+  "schemaVersion": "1.0",
+  "id": "note-how-the-mixes-are-read",
+  "slug": "how-the-mixes-are-read",
+  "status": "published",
+  "title": "How the mixes are read",
+  "publishedAt": "2026-04-03T20:05:00Z",
+  "summary": "A lightweight editorial note on what stands out in the seeded 2013 mixes.",
+  "body": [
+    "The seeded mixes lean toward blog-era indie, dreamy pop, left-field electronic tracks, and the occasional big cover version that changes the mood of the whole sequence.",
+    "The Tumblr posts also signal favorites in bold, which the importer preserves as a first-class boolean field on each track.",
+    "That structure makes it easy to surface recurring artists, covers, remixes, and other taste signals without rewriting the original posts."
+  ],
+  "relatedMixSlugs": ["mix-035-thirtyfifth", "mix-036-thirtysixth"],
+  "tags": ["editorial", "taste", "seed-data"]
+}

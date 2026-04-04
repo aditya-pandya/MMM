@@ -1,0 +1,156 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-036-thirtysixth",
+  "slug": "mix-036-thirtysixth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "rss",
+    "importedAt": "2026-04-04T00:41:14.444442Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/67441502817",
+    "guid": "https://mondaymusicmix.tumblr.com/post/67441502817"
+  },
+  "title": "Monday Music Mix #36",
+  "displayTitle": "Thirtysixth",
+  "mixNumber": 36,
+  "publishedAt": "2013-11-19T05:09:00Z",
+  "summary": "Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.",
+  "intro": [
+    "Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.",
+    "Contains some of the best music I have heard in a quite a192 while.",
+    "Album art featuring work by Erik Jones"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": "https://64.media.tumblr.com/323412fd886c4ef193aa4ff6d874ec7d/7c1052bf17558af1-ac/s540x810/1dd5548517bdfc2f5267db236a2474b478091f6b.jpg",
+    "alt": "Cover art for Thirtysixth",
+    "credit": "Album art featuring work by Erik Jones"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "https://mega.co.nz/#!AV5XjazD!bQkg71VmJHmW4o4VUCiPRF-mPHMfEUZ6oP1XH2ke5qE"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "The Kite String Tangle",
+      "title": "Tennis Court (Lorde cover)",
+      "displayText": "The Kite String Tangle - Tennis Court (Lorde cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Say Lou Lou",
+      "title": "Beloved",
+      "displayText": "Say Lou Lou - Beloved",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Empress Of",
+      "title": "Realize You",
+      "displayText": "Empress Of - Realize You",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Dum Dum Girls",
+      "title": "Lost Boys and Girls Club",
+      "displayText": "Dum Dum Girls - Lost Boys and Girls Club",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Bastille",
+      "title": "(I Just) Died In Your Arms Tonight (Cutting Crew cover)",
+      "displayText": "Bastille - (I Just) Died In Your Arms Tonight (Cutting Crew cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Blood Orange",
+      "title": "You’re Not Good Enough",
+      "displayText": "Blood Orange - You’re Not Good Enough",
+      "isFavorite": true
+    },
+    {
+      "position": 7,
+      "artist": "Twin Shadow",
+      "title": "Old Love New Love",
+      "displayText": "Twin Shadow - Old Love New Love",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "STRANGERS",
+      "title": "London Light",
+      "displayText": "STRANGERS - London Light",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Grizzly Bear",
+      "title": "Will Calls",
+      "displayText": "Grizzly Bear - Will Calls",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Mogwai",
+      "title": "Remurdered",
+      "displayText": "Mogwai - Remurdered",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "High Highs",
+      "title": "A Real Hero (College & Electric Youth cover)",
+      "displayText": "High Highs - A Real Hero (College & Electric Youth cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Angel Haze",
+      "title": "Summer Time Sadness (Lana Del Rey cover)",
+      "displayText": "Angel Haze - Summer Time Sadness (Lana Del Rey cover)",
+      "isFavorite": true
+    },
+    {
+      "position": 13,
+      "artist": "Ellie Goulding",
+      "title": "Mirror",
+      "displayText": "Ellie Goulding - Mirror",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Oh Land",
+      "title": "Love You Better (John Dillinger remix)",
+      "displayText": "Oh Land - Love You Better (John Dillinger remix)",
+      "isFavorite": true
+    }
+  ],
+  "stats": {
+    "trackCount": 14,
+    "favoriteCount": 3,
+    "favoriteTracks": [
+      "Blood Orange - You’re Not Good Enough",
+      "Angel Haze - Summer Time Sadness (Lana Del Rey cover)",
+      "Oh Land - Love You Better (John Dillinger remix)"
+    ],
+    "topArtists": [
+      "The Kite String Tangle",
+      "Say Lou Lou",
+      "Empress Of",
+      "Dum Dum Girls",
+      "Bastille"
+    ]
+  },
+  "legacy": {
+    "originalTitle": "Thirtysixth Also known as the Tuesday music mix. One week and one day later than originally...",
+    "tumblrHeading": "Thirtysixth",
+    "descriptionHtml": "<h2>Thirtysixth</h2>\n<p>Also known as the Tuesday music mix. One week and one day later than originally should&rsquo;ve been out in the wild. Some new, some old and reimagined.</p>\n<p>Contains some of the best music I have heard in a quite a192 while.</p>\n<p><strong>Monday Music Mix: 36</strong></p>\n<p><figure class=\"tmblr-full\" data-orig-height=\"400\" data-orig-width=\"400\"><img alt=\"image\" src=\"https://64.media.tumblr.com/323412fd886c4ef193aa4ff6d874ec7d/7c1052bf17558af1-ac/s540x810/1dd5548517bdfc2f5267db236a2474b478091f6b.jpg\" data-orig-height=\"400\" data-orig-width=\"400\"/></figure></p>\n<p>Album art featuring work by <a href=\"http://erikjones.co\">Erik Jones</a></p>\n<p>Tracklist:</p>\n<ol><li>The Kite String Tangle - Tennis Court (Lorde cover)</li>\n<li>Say Lou Lou - Beloved</li>\n<li>Empress Of - Realize You</li>\n<li>Dum Dum Girls - Lost Boys and Girls Club</li>\n<li>Bastille - (I Just) Died In Your Arms Tonight (Cutting Crew cover)</li>\n<li><strong>Blood Orange - You&rsquo;re Not Good Enough</strong></li>\n<li>Twin Shadow - Old Love New Love</li>\n<li>STRANGERS - London Light</li>\n<li>Grizzly Bear - Will Calls</li>\n<li>Mogwai - Remurdered</li>\n<li>High Highs - A Real Hero (College &amp; Electric Youth cover)</li>\n<li><strong>Angel Haze - Summer Time Sadness (Lana Del Rey cover)</strong></li>\n<li>Ellie Goulding - Mirror</li>\n<li><strong>Oh Land - Love You Better (John Dillinger remix)</strong></li>\n</ol><p>* Tracks in bold indicate my favourites</p>\n<p><a href=\"https://mega.co.nz/#!AV5XjazD!bQkg71VmJHmW4o4VUCiPRF-mPHMfEUZ6oP1XH2ke5qE\" target=\"_blank\">Download album</a></p>"
+  }
+}

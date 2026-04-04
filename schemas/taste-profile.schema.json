@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mmm.local/schemas/taste-profile.schema.json",
+  "title": "MMM Taste Profile",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "sourceDirectories", "mixCount", "topArtists", "topTags", "recurringDescriptors", "eraHints", "sampleMixes"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "sourceDirectories": { "type": "array", "items": { "type": "string" } },
+    "mixCount": { "type": "integer", "minimum": 0 },
+    "topArtists": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "count"],
+        "properties": {
+          "name": { "type": "string" },
+          "count": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "topTags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "count"],
+        "properties": {
+          "name": { "type": "string" },
+          "count": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "recurringDescriptors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "count"],
+        "properties": {
+          "label": { "type": "string" },
+          "count": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "eraHints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "evidence", "confidence"],
+        "properties": {
+          "label": { "type": "string" },
+          "evidence": { "type": "string" },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sampleMixes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "slug", "publishedAt"],
+        "properties": {
+          "id": { "type": ["string", "null"] },
+          "title": { "type": ["string", "null"] },
+          "slug": { "type": ["string", "null"] },
+          "publishedAt": { "type": ["string", "null"], "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

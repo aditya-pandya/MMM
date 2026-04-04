@@ -1,0 +1,107 @@
+{
+  "$schema": "../schemas/taste-profile.schema.json",
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-04-04T00:42:28.406250Z",
+  "sourceDirectories": [
+    "data/published"
+  ],
+  "mixCount": 3,
+  "topArtists": [
+    {
+      "name": "Dum Dum Girls",
+      "count": 2
+    },
+    {
+      "name": "Ha Ha Tonka",
+      "count": 1
+    },
+    {
+      "name": "Bear Mountain",
+      "count": 1
+    },
+    {
+      "name": "Join the Riot",
+      "count": 1
+    },
+    {
+      "name": "Haim",
+      "count": 1
+    },
+    {
+      "name": "Pure Bathing Culture",
+      "count": 1
+    },
+    {
+      "name": "Avec Sans",
+      "count": 1
+    },
+    {
+      "name": "Cat Power",
+      "count": 1
+    },
+    {
+      "name": "Keep Shelly in Athens",
+      "count": 1
+    },
+    {
+      "name": "Tree",
+      "count": 1
+    },
+    {
+      "name": "The Weeknd",
+      "count": 1
+    },
+    {
+      "name": "Porcelain Raft",
+      "count": 1
+    }
+  ],
+  "topTags": [],
+  "recurringDescriptors": [
+    {
+      "label": "cover-heavy curation",
+      "count": 4
+    },
+    {
+      "label": "remix-friendly sequencing",
+      "count": 1
+    }
+  ],
+  "eraHints": [
+    {
+      "label": "2010s blog-era discovery",
+      "evidence": "Most imported mixes were published around 2013.",
+      "confidence": 1.0
+    },
+    {
+      "label": "Cover-blog sensibility",
+      "evidence": "Multiple tracks are tagged as covers across the imported mixes.",
+      "confidence": 0.72
+    },
+    {
+      "label": "Remix-era internet pop",
+      "evidence": "Recurring remix mentions suggest a web-music discovery context.",
+      "confidence": 0.64
+    }
+  ],
+  "sampleMixes": [
+    {
+      "id": "mix-034-thirtyfourth",
+      "title": "Monday Music Mix #34",
+      "slug": "mix-034-thirtyfourth",
+      "publishedAt": "2013-08-12T12:42:00Z"
+    },
+    {
+      "id": "mix-035-thirtyfifth",
+      "title": "Monday Music Mix #35",
+      "slug": "mix-035-thirtyfifth",
+      "publishedAt": "2013-09-23T17:32:30Z"
+    },
+    {
+      "id": "mix-036-thirtysixth",
+      "title": "Monday Music Mix #36",
+      "slug": "mix-036-thirtysixth",
+      "publishedAt": "2013-11-19T05:09:00Z"
+    }
+  ]
+}

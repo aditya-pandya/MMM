@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mmm.local/schemas/mix.schema.json",
+  "title": "MMM Mix",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "slug",
+    "status",
+    "siteSection",
+    "source",
+    "title",
+    "publishedAt",
+    "summary",
+    "intro",
+    "tags",
+    "tracks",
+    "stats"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "id": { "type": "string" },
+    "slug": { "type": "string" },
+    "status": { "enum": ["draft", "published", "imported"] },
+    "siteSection": { "const": "mixes" },
+    "source": {
+      "type": "object",
+      "required": ["platform", "feedType", "importedAt", "sourceUrl", "guid"],
+      "properties": {
+        "platform": { "type": "string" },
+        "feedType": { "type": "string" },
+        "importedAt": { "type": "string", "format": "date-time" },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "guid": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "title": { "type": "string" },
+    "displayTitle": { "type": ["string", "null"] },
+    "mixNumber": { "type": ["integer", "null"], "minimum": 1 },
+    "publishedAt": { "type": "string", "format": "date-time" },
+    "summary": { "type": "string" },
+    "intro": { "type": "array", "items": { "type": "string" } },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "cover": {
+      "type": "object",
+      "properties": {
+        "imageUrl": { "type": ["string", "null"], "format": "uri" },
+        "alt": { "type": ["string", "null"] },
+        "credit": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "download": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "url": { "type": ["string", "null"], "format": "uri" }
+      },
+      "additionalProperties": false
+    },
+    "tracks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["position", "artist", "title", "displayText", "isFavorite"],
+        "properties": {
+          "position": { "type": "integer", "minimum": 1 },
+          "artist": { "type": "string" },
+          "title": { "type": "string" },
+          "displayText": { "type": "string" },
+          "isFavorite": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "stats": {
+      "type": "object",
+      "required": ["trackCount", "favoriteCount", "favoriteTracks", "topArtists"],
+      "properties": {
+        "trackCount": { "type": "integer", "minimum": 1 },
+        "favoriteCount": { "type": "integer", "minimum": 0 },
+        "favoriteTracks": { "type": "array", "items": { "type": "string" } },
+        "topArtists": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "legacy": {
+      "type": "object",
+      "properties": {
+        "originalTitle": { "type": "string" },
+        "tumblrHeading": { "type": ["string", "null"] },
+        "descriptionHtml": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

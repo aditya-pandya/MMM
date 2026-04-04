@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mmm.local/schemas/notes-index.schema.json",
+  "title": "MMM Notes Index",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "totalNotes", "items"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "totalNotes": { "type": "integer", "minimum": 0 },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "slug", "title", "publishedAt", "summary", "path"],
+        "properties": {
+          "id": { "type": "string" },
+          "slug": { "type": "string" },
+          "title": { "type": "string" },
+          "publishedAt": { "type": "string", "format": "date-time" },
+          "summary": { "type": "string" },
+          "path": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "relatedMixSlugs": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

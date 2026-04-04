@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/note.schema.json",
+  "schemaVersion": "1.0",
+  "id": "note-rebuilding-the-archive",
+  "slug": "rebuilding-the-archive",
+  "status": "published",
+  "title": "Rebuilding the archive",
+  "publishedAt": "2026-04-03T20:00:00Z",
+  "summary": "Why the Tumblr archive is being normalized into durable JSON files and indexes.",
+  "body": [
+    "The original Monday Music Mix posts were built for Tumblr, which was great for publishing but not ideal for long-term portability.",
+    "This archive model keeps the human parts of the posts intact while separating tracklists, cover art credits, source links, and summaries into explicit fields.",
+    "The immediate goal is to make the mixes searchable, validate them with JSON Schema, and give future site-generation scripts stable input data."
+  ],
+  "relatedMixSlugs": ["mix-034-thirtyfourth", "mix-035-thirtyfifth", "mix-036-thirtysixth"],
+  "tags": ["meta", "archive", "migration"]
+}

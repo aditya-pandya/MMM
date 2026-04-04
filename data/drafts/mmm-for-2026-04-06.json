@@ -1,0 +1,53 @@
+{
+  "slug": "mmm-for-2026-04-06",
+  "title": "MMM for 2026-04-06",
+  "date": "2026-04-06",
+  "status": "draft",
+  "summary": "A warm and curious set shaped by remix-friendly sequencing.",
+  "notes": "Generated in deterministic fallback mode using Monday Music Mix as context. The sequencing nods to Dum Dum Girls / Ha Ha Tonka / Bear Mountain.",
+  "tags": [
+    "weekly-draft",
+    "ai-assisted"
+  ],
+  "generation_mode": "fallback",
+  "source_context": {
+    "site_title": "Monday Music Mix",
+    "archive_count": 3,
+    "taste_markers": [
+      "cover-heavy curation",
+      "remix-friendly sequencing"
+    ]
+  },
+  "tracks": [
+    {
+      "artist": "Mild High Club",
+      "title": "Homage",
+      "why_it_fits": "Track 1 reinforces the week's remix-friendly sequencing thread while keeping the pacing fluid.",
+      "favorite": false
+    },
+    {
+      "artist": "Boards of Canada",
+      "title": "Dayvan Cowboy",
+      "why_it_fits": "Track 2 reinforces the week's cover-heavy curation thread while keeping the pacing fluid.",
+      "favorite": false
+    },
+    {
+      "artist": "Air",
+      "title": "La Femme d'Argent",
+      "why_it_fits": "Track 3 reinforces the week's remix-friendly sequencing thread while keeping the pacing fluid.",
+      "favorite": true
+    },
+    {
+      "artist": "Men I Trust",
+      "title": "Show Me How",
+      "why_it_fits": "Track 4 reinforces the week's cover-heavy curation thread while keeping the pacing fluid.",
+      "favorite": false
+    },
+    {
+      "artist": "BADBADNOTGOOD",
+      "title": "Time Moves Slow",
+      "why_it_fits": "Track 5 reinforces the week's remix-friendly sequencing thread while keeping the pacing fluid.",
+      "favorite": false
+    }
+  ]
+}

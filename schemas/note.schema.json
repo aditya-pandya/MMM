@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mmm.local/schemas/note.schema.json",
+  "title": "MMM Note",
+  "type": "object",
+  "required": ["schemaVersion", "id", "slug", "status", "title", "publishedAt", "summary", "body", "tags"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "id": { "type": "string" },
+    "slug": { "type": "string" },
+    "status": { "enum": ["draft", "published"] },
+    "title": { "type": "string" },
+    "publishedAt": { "type": "string", "format": "date-time" },
+    "summary": { "type": "string" },
+    "body": { "type": "array", "items": { "type": "string" } },
+    "relatedMixSlugs": { "type": "array", "items": { "type": "string" } },
+    "tags": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
