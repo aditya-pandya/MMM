@@ -65,7 +65,7 @@ def test_generate_weekly_draft_writes_deterministic_fallback_mix(temp_repo):
 
 
 
-def test_auto_mode_falls_back_when_ai_is_unavailable(temp_repo, monkeypatch):
+def test_auto_mode_resolves_to_local_fallback(temp_repo, monkeypatch):
     monkeypatch.setenv("MMM_OPENAI_API_KEY", "test-key")
 
     output = generate_weekly_draft.generate_weekly_draft(
@@ -74,4 +74,5 @@ def test_auto_mode_falls_back_when_ai_is_unavailable(temp_repo, monkeypatch):
 
     mix = mmm_common.load_json(output)
     assert mix["generation_mode"] == "fallback"
-    assert mix["generation_fallback_reason"] == "ai_unavailable"
+    assert "generation_fallback_reason" not in mix
+    assert "local-generated" in mix["tags"]

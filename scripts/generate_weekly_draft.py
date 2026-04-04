@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-import os
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -32,7 +31,7 @@ FALLBACK_TRACKS = [
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate a weekly MMM draft")
     parser.add_argument("--date", dest="mix_date", help="ISO date for the mix, defaults to next Monday UTC")
-    parser.add_argument("--mode", choices=["auto", "fallback", "ai"], default="auto")
+    parser.add_argument("--mode", choices=["auto", "fallback"], default="auto")
     parser.add_argument("--force", action="store_true", help="Overwrite existing draft for the same slug")
     return parser.parse_args()
 
@@ -53,9 +52,9 @@ def resolve_mix_date(explicit: str | None) -> date:
 
 
 def choose_mode(requested: str) -> str:
-    if requested in {"fallback", "ai"}:
+    if requested == "fallback":
         return requested
-    return "ai" if os.getenv("MMM_OPENAI_API_KEY") else "fallback"
+    return "fallback"
 
 
 
@@ -134,7 +133,7 @@ def generate_fallback_mix(mix_date: date, taste: dict[str, Any], site: dict[str,
         "status": "draft",
         "summary": summary,
         "notes": notes,
-        "tags": ["weekly-draft", "ai-assisted"],
+        "tags": ["weekly-draft", "local-generated"],
         "generation_mode": "fallback",
         "source_context": {
             "site_title": site_title(site),
@@ -146,28 +145,16 @@ def generate_fallback_mix(mix_date: date, taste: dict[str, Any], site: dict[str,
 
 
 
-def generate_ai_mix(mix_date: date, taste: dict[str, Any], site: dict[str, Any], archive: dict[str, Any]) -> dict[str, Any]:
-    raise RuntimeError(
-        "AI generation is not configured in this repository yet. Set --mode fallback or omit MMM_OPENAI_API_KEY."
-    )
-
-
-
 def generate_weekly_draft(mix_date: date, mode: str = "auto", force: bool = False) -> Path:
     taste = load_json(TASTE_PROFILE_PATH)
     site = load_json(SITE_PATH)
     archive = load_json(ARCHIVE_INDEX_PATH)
 
     resolved_mode = choose_mode(mode)
-    if resolved_mode == "ai":
-        try:
-            mix = generate_ai_mix(mix_date, taste, site, archive)
-        except Exception:
-            mix = generate_fallback_mix(mix_date, taste, site, archive)
-            mix["generation_mode"] = "fallback"
-            mix["generation_fallback_reason"] = "ai_unavailable"
-    else:
-        mix = generate_fallback_mix(mix_date, taste, site, archive)
+    if resolved_mode != "fallback":
+        raise ValueError(f"Unsupported generation mode: {resolved_mode}")
+
+    mix = generate_fallback_mix(mix_date, taste, site, archive)
 
     output_path = DRAFTS_DIR / f"{mix['slug']}.json"
     if output_path.exists() and not force:

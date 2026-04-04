@@ -27,7 +27,7 @@
 ## Weekly generation automation
 
 - Local/manual: `python3 scripts/generate_weekly_draft.py --mode auto`
-- Scheduled: `.github/workflows/weekly-draft.yml`
+- Local scheduled: use the LaunchAgent template in `ops/com.aditya.mmm.weekly.plist`
 - Inputs read by the generator:
   - `data/taste-profile.json`
   - `data/site.json`
@@ -37,5 +37,5 @@
 
 ## Notes
 
-- Deterministic fallback mode is the default safe path and does not require secrets.
-- AI mode is intentionally optional. If an API key is present but AI generation is not configured or fails, the generator falls back to deterministic mode and records the fallback reason in the draft JSON.
+- Deterministic local generation is the default and only supported mode right now.
+- The hosted GitHub workflow is for deployment, not editorial generation.

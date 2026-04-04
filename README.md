@@ -11,7 +11,7 @@ What’s in here
   - /notes/
 - Tumblr/RSS import pipeline for old MMM mixes
 - Taste-profile builder from imported history
-- Weekly draft generation with deterministic fallback and optional AI mode
+- Weekly draft generation for local-machine workflows
 - Publish flow for approved mixes
 - GitHub Actions for Pages deploy and scheduled draft generation
 
@@ -75,8 +75,17 @@ python3 scripts/generate_weekly_draft.py --mode auto
 ```
 
 Notes:
-- `--mode auto` uses AI only if `MMM_OPENAI_API_KEY` is present.
-- Otherwise it safely falls back to deterministic local generation.
+- `--mode auto` is local-safe and currently resolves to deterministic generation.
+- No OpenAI or hosted AI dependency is required for the site or the weekly workflow.
+
+Run the local MMM workflow end-to-end
+```bash
+./scripts/run_local_workflow.sh
+```
+
+Optional macOS scheduling
+- Load `ops/com.aditya.mmm.weekly.plist` as a LaunchAgent after editing paths if needed.
+- That keeps weekly generation on this machine instead of GitHub Actions.
 
 Approve + publish a mix
 1. Open the draft JSON in `data/drafts/`
@@ -109,11 +118,8 @@ GitHub Actions
   - runs tests
   - builds the site
   - deploys `dist/` to GitHub Pages on push to main
-- `.github/workflows/weekly-draft.yml`
-  - runs weekly
-  - generates a draft in fallback mode when AI isn’t configured
-  - uploads the draft as an artifact
-  - can commit generated changes with the default GitHub token
+- Weekly draft generation is intended to run locally on this machine.
+- GitHub Actions is used for deploy only.
 
 Current seeded content
 - imported real mixes from the Monday Music Mix Tumblr RSS
