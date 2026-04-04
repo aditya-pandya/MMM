@@ -57,6 +57,12 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Links, provenance, and source residue" in mix_detail_html
     assert "Imported Tumblr snapshot" in mix_detail_html
     assert "Favorite tracks marked in the source" in mix_detail_html
+    assert "Honest listening fallbacks" in mix_detail_html
+    assert "Search YouTube" in mix_detail_html
+    assert "Search Spotify" in mix_detail_html
+    assert "Legacy Tumblr artwork is preserved as source context" in mix_detail_html
+    assert "Legacy downloads suppressed" in mix_detail_html
+    assert "https://mega.co.nz/" not in mix_detail_html
 
     assert "related note" in archive_html
     assert "highlighted track" in archive_html

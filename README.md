@@ -220,6 +220,7 @@ npm run build
 - Notes are loaded from `data/notes-index.json` plus matching files in `data/notes/`, with `data/notes.json` still supported as a fallback.
 - Note detail pages are emitted at `/notes/[slug]/`.
 - Mix detail pages expose previous/next archive links, related notes, highlighted tracks, and source/embed metadata when present in the JSON.
+- Tumblr-imported archive mixes fall back to typographic cover placeholders and track-level search helpers when the only artwork/download data is legacy Tumblr residue.
 - Home, archive, and notes pages surface mix-note relationships so the writing is visible without having to guess where it lives.
 
 ## Operational flow

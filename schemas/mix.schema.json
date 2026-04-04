@@ -61,6 +61,42 @@
       },
       "additionalProperties": false
     },
+    "listening": {
+      "type": "object",
+      "properties": {
+        "intro": { "type": ["string", "null"] },
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["url"],
+            "properties": {
+              "provider": { "type": ["string", "null"] },
+              "label": { "type": ["string", "null"] },
+              "url": { "type": "string", "format": "uri" },
+              "kind": { "type": ["string", "null"] },
+              "note": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          }
+        },
+        "embeds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["url"],
+            "properties": {
+              "provider": { "type": ["string", "null"] },
+              "title": { "type": ["string", "null"] },
+              "url": { "type": "string", "format": "uri" },
+              "note": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
     "tracks": {
       "type": "array",
       "minItems": 1,

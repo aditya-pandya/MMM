@@ -4,7 +4,8 @@
 - The importer only emits structured mix JSON for posts that look like actual Monday Music Mix entries (it skips asks or non-tracklist posts).
 - Mix numbers are inferred from explicit `Monday Music Mix: N` markers first, then from ordinal headings like `Thirtysixth`.
 - Tracklists are parsed from ordered-list items and favorite tracks are inferred from bold text inside list entries.
-- Cover art credits and download links are preserved when Tumblr exposes them in the post HTML.
+- Cover art credits and download links are preserved when Tumblr exposes them in the post HTML, but the site renderer treats Tumblr-hosted artwork as archive/source residue rather than canonical album art unless stronger metadata exists.
+- Dead Mega links remain in source JSON for provenance, while the published site suppresses them from primary listening UI and falls back to track-first helper searches instead.
 - Imported JSON keeps the raw Tumblr HTML under `legacy.descriptionHtml` so future cleanup can be done without re-fetching the feed.
 - The seeded `data/published/` entries were generated from a live fetch of the public Tumblr RSS snapshot saved to `data/imported/raw/mondaymusicmix-rss.xml`.
 - `data/archive-index.json`, `data/notes-index.json`, and `data/taste-profile.json` are lightweight seed outputs meant to give the future site generator stable starter data.

@@ -148,6 +148,233 @@ function sortNotes(notes) {
   });
 }
 
+function sortDrafts(drafts) {
+  return [...drafts].sort((a, b) => {
+    const aDate = a.date ? new Date(a.date).getTime() : -Infinity;
+    const bDate = b.date ? new Date(b.date).getTime() : -Infinity;
+
+    if (aDate !== bDate) return bDate - aDate;
+
+    return String(a.title ?? '').localeCompare(String(b.title ?? ''));
+  });
+}
+
+function toArray(value) {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+}
+
+function inferProviderFromUrl(url) {
+  const href = String(url || '').toLowerCase();
+  if (!href) return 'Listening link';
+  if (href.includes('spotify.com')) return 'Spotify';
+  if (href.includes('music.apple.com')) return 'Apple Music';
+  if (href.includes('youtube.com') || href.includes('youtu.be')) return 'YouTube';
+  if (href.includes('bandcamp.com')) return 'Bandcamp';
+  if (href.includes('soundcloud.com')) return 'SoundCloud';
+  if (href.includes('mixcloud.com')) return 'Mixcloud';
+  return 'Listening link';
+}
+
+function inferProviderKind(url) {
+  const href = String(url || '').toLowerCase();
+  if (!href) return 'listen';
+  if (href.includes('/playlist/')) return 'playlist';
+  if (href.includes('/album/')) return 'album';
+  if (href.includes('/track/') || href.includes('/song/')) return 'track';
+  if (href.includes('/sets/')) return 'set';
+  if (href.includes('videoseries')) return 'playlist';
+  return 'listen';
+}
+
+function isMegaUrl(url) {
+  const href = String(url || '').toLowerCase();
+  return href.includes('mega.co.nz') || href.includes('mega.nz');
+}
+
+function isTumblrLegacyCover(mix) {
+  const sourcePlatform = String(mix?.source?.platform || mix?.sourcePlatform || '').toLowerCase();
+  const imageUrl = String(mix?.cover?.imageUrl || mix?.image || '').toLowerCase();
+  return sourcePlatform === 'tumblr' && imageUrl.includes('media.tumblr.com');
+}
+
+function sanitizeLegacyHtml(html) {
+  let cleaned = String(html || '').trim();
+  if (!cleaned) return '';
+
+  cleaned = cleaned.replace(/<p>\s*<figure[\s\S]*?<\/figure>\s*<\/p>/gi, '');
+  cleaned = cleaned.replace(/<figure[\s\S]*?<\/figure>/gi, '');
+  cleaned = cleaned.replace(/<a\b[^>]*href="https?:\/\/(?:www\.)?(?:mega\.co\.nz|mega\.nz)[^"]*"[^>]*>[\s\S]*?<\/a>/gi, '');
+  cleaned = cleaned.replace(/<p>\s*(?:Download(?: album)?\s*:?)?\s*(?:\||&nbsp;|\u00a0|\s)*<\/p>/gi, '');
+  cleaned = cleaned.replace(/<p>\s*<\/p>/gi, '');
+
+  return cleaned.trim();
+}
+
+function buildTrackSearchLinks(track) {
+  if (!track || typeof track !== 'object') return null;
+
+  const artist = String(track.artist || '').trim();
+  const title = String(track.title || '').trim();
+  const displayText = String(track.displayText || '').trim();
+  const position = Number(track.position || 0);
+  const query = [artist, title].filter(Boolean).join(' ').trim() || displayText;
+
+  if (!query) return null;
+
+  return {
+    position,
+    artist,
+    title,
+    displayText: displayText || query,
+    youtubeUrl: `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`,
+    spotifyUrl: `https://open.spotify.com/search/${encodeURIComponent(query)}`,
+    isFavorite: Boolean(track.isFavorite),
+  };
+}
+
+function normalizeListeningEntries(rawEntries) {
+  const entries = [];
+
+  for (const rawEntry of toArray(rawEntries)) {
+    if (!rawEntry) continue;
+
+    if (typeof rawEntry === 'string') {
+      entries.push({
+        provider: inferProviderFromUrl(rawEntry),
+        label: '',
+        url: rawEntry,
+        kind: inferProviderKind(rawEntry),
+        note: '',
+      });
+      continue;
+    }
+
+    if (Array.isArray(rawEntry)) {
+      entries.push(...normalizeListeningEntries(rawEntry));
+      continue;
+    }
+
+    if (typeof rawEntry === 'object') {
+      const keys = Object.keys(rawEntry);
+      const looksLikeSingleEntry = ['url', 'href', 'provider', 'label', 'kind', 'note', 'title'].some((key) => key in rawEntry);
+
+      if (!looksLikeSingleEntry) {
+        for (const key of keys) {
+          const value = rawEntry[key];
+          if (typeof value === 'string' && value.trim()) {
+            entries.push({
+              provider: key,
+              label: '',
+              url: value,
+              kind: inferProviderKind(value),
+              note: '',
+            });
+          }
+        }
+        continue;
+      }
+
+      const url = String(rawEntry.url || rawEntry.href || '').trim();
+      if (!url) continue;
+      if (isMegaUrl(url)) continue;
+      entries.push({
+        provider: rawEntry.provider || inferProviderFromUrl(url),
+        label: rawEntry.label || rawEntry.title || '',
+        url,
+        kind: rawEntry.kind || inferProviderKind(url),
+        note: rawEntry.note || rawEntry.summary || '',
+      });
+    }
+  }
+
+  const deduped = new Map();
+  for (const entry of entries) {
+    const url = String(entry.url || '').trim();
+    if (!url) continue;
+    if (isMegaUrl(url)) continue;
+    const provider = String(entry.provider || inferProviderFromUrl(url)).trim() || 'Listening link';
+    const key = `${provider}::${url}`;
+    if (deduped.has(key)) continue;
+    deduped.set(key, {
+      provider,
+      label: String(entry.label || '').trim(),
+      url,
+      kind: String(entry.kind || inferProviderKind(url)).trim() || 'listen',
+      note: String(entry.note || '').trim(),
+    });
+  }
+
+  return Array.from(deduped.values());
+}
+
+function normalizeListeningEmbeds(rawEmbeds) {
+  const embeds = [];
+
+  for (const rawEmbed of toArray(rawEmbeds)) {
+    if (!rawEmbed) continue;
+
+    if (typeof rawEmbed === 'string') {
+      embeds.push({
+        provider: inferProviderFromUrl(rawEmbed),
+        title: '',
+        url: rawEmbed,
+        note: '',
+      });
+      continue;
+    }
+
+    if (typeof rawEmbed === 'object') {
+      const url = String(rawEmbed.url || rawEmbed.src || rawEmbed.href || '').trim();
+      if (!url) continue;
+      embeds.push({
+        provider: rawEmbed.provider || inferProviderFromUrl(url),
+        title: rawEmbed.title || rawEmbed.label || '',
+        url,
+        note: rawEmbed.note || rawEmbed.summary || '',
+      });
+    }
+  }
+
+  const deduped = new Map();
+  for (const embed of embeds) {
+    const url = String(embed.url || '').trim();
+    if (!url) continue;
+    const provider = String(embed.provider || inferProviderFromUrl(url)).trim() || 'Embed';
+    const key = `${provider}::${url}`;
+    if (deduped.has(key)) continue;
+    deduped.set(key, {
+      provider,
+      title: String(embed.title || '').trim(),
+      url,
+      note: String(embed.note || '').trim(),
+    });
+  }
+
+  return Array.from(deduped.values());
+}
+
+function normalizeListening(mix) {
+  const listening = mix.listening && typeof mix.listening === 'object' ? mix.listening : {};
+  const providerEntries = normalizeListeningEntries([
+    listening.providers,
+    listening.links,
+    mix.providers,
+    mix.providerLinks,
+    mix.streaming,
+  ]);
+  const embedEntries = normalizeListeningEmbeds([
+    listening.embeds,
+    mix.embeds,
+  ]);
+
+  return {
+    intro: String(listening.intro || listening.summary || mix.listeningIntro || '').trim(),
+    providers: providerEntries,
+    embeds: embedEntries,
+  };
+}
+
 function normalizeMixes(rawMixes) {
   if (!Array.isArray(rawMixes)) return [];
 
@@ -164,10 +391,18 @@ function normalizeMixes(rawMixes) {
           ? mix.tracks
           : [];
       const tags = Array.isArray(mix.tags) ? mix.tags : [];
+      const archivalCover = isTumblrLegacyCover(mix);
+      const trackSearches = tracklist.map((track) => buildTrackSearchLinks(track)).filter(Boolean);
       const links = {
         ...(mix.links && typeof mix.links === 'object' ? mix.links : {}),
         ...(mix.download?.url ? { [mix.download.label || 'Download mix']: mix.download.url } : {}),
       };
+      const primaryLinks = Object.fromEntries(
+        Object.entries(links).filter(([, href]) => typeof href === 'string' && href.trim() && !isMegaUrl(href))
+      );
+      const legacyLinks = Object.fromEntries(
+        Object.entries(links).filter(([, href]) => typeof href === 'string' && href.trim() && isMegaUrl(href))
+      );
 
       return {
         ...mix,
@@ -181,11 +416,44 @@ function normalizeMixes(rawMixes) {
         date: mix.date || mix.published_at || mix.publishDate || mix.publishedAt || '',
         number: mix.number ?? mix.issue ?? mix.volume ?? mix.mixNumber ?? '',
         runtime: mix.runtime || mix.duration || '',
-        image: mix.image || mix.coverImage || mix.heroImage || mix.cover?.imageUrl || '',
+        image: archivalCover ? '' : mix.image || mix.coverImage || mix.heroImage || mix.cover?.imageUrl || '',
         imageAlt: mix.imageAlt || mix.coverAlt || mix.cover?.alt || `${title} artwork`,
         coverCredit: mix.cover?.credit || mix.coverCredit || '',
         sourceUrl: mix.source?.sourceUrl || mix.sourceUrl || '',
-        legacyHtml: mix.legacy?.descriptionHtml || mix.descriptionHtml || '',
+        sourcePlatform: mix.source?.platform || mix.sourcePlatform || '',
+        legacyHtml: sanitizeLegacyHtml(mix.legacy?.descriptionHtml || mix.descriptionHtml || ''),
+        primaryLinks,
+        legacyLinks,
+        usesArchivalCoverFallback: archivalCover,
+        trackSearches,
+        listening: normalizeListening(mix),
+      };
+    })
+  );
+}
+
+function normalizeDrafts(rawDrafts) {
+  if (!Array.isArray(rawDrafts)) return [];
+
+  return sortDrafts(
+    rawDrafts.map((draft, index) => {
+      const title = String(draft.title || `Draft ${index + 1}`).trim();
+      const slug = String(draft.slug || slugify(title) || `draft-${index + 1}`).trim();
+      const notes = String(draft.notes || '').trim();
+      const tracks = Array.isArray(draft.tracks) ? draft.tracks : [];
+
+      return {
+        ...draft,
+        title,
+        slug,
+        status: String(draft.status || 'draft').trim(),
+        date: draft.date || '',
+        summary: String(draft.summary || '').trim(),
+        notes,
+        excerpt: String(draft.summary || notes || 'Editorial draft in progress.').trim(),
+        trackCount: tracks.length,
+        favoriteCount: tracks.filter((track) => track?.favorite || track?.is_favorite).length,
+        tags: Array.isArray(draft.tags) ? draft.tags : [],
       };
     })
   );
@@ -294,6 +562,16 @@ function loadNotes() {
   return sortNotes(merged);
 }
 
+function loadDrafts() {
+  const draftFiles = walkJsonFiles(path.join(DATA_DIR, 'drafts'));
+  const drafts = draftFiles
+    .map((filePath) => readJsonIfExists(filePath, null))
+    .filter(Boolean)
+    .filter((draft) => !draft.status || draft.status === 'draft' || draft.status === 'approved');
+
+  return normalizeDrafts(drafts);
+}
+
 function attachRelationships(mixes, notes) {
   const mixesBySlug = new Map(mixes.map((mix) => [mix.slug, mix]));
 
@@ -336,6 +614,7 @@ function navLinks(depth) {
     { href: `${base}archive/`, label: 'Archive', key: 'archive' },
     { href: `${base}about/`, label: 'About', key: 'about' },
     { href: `${base}notes/`, label: 'Notes', key: 'notes' },
+    { href: `${base}studio/`, label: 'Studio', key: 'studio' },
   ];
 }
 
@@ -397,9 +676,15 @@ function renderCover(mix, compact = false) {
   }
 
   return `<div class="mix-cover mix-cover--placeholder ${compact ? 'mix-cover--compact' : ''}">
-    <div>
-      <span class="mix-cover__kicker">No artwork yet</span>
+    <div class="mix-cover__body">
+      <span class="mix-cover__kicker">${mix.usesArchivalCoverFallback ? 'Archive mix' : 'No artwork yet'}</span>
       <strong>${escapeHtml(mix.title)}</strong>
+      <p>${escapeHtml(
+        mix.usesArchivalCoverFallback
+          ? 'Legacy Tumblr artwork is preserved as source context, but it is not being presented here as canonical album art.'
+          : 'Artwork has not been added for this mix yet.'
+      )}</p>
+      ${mix.coverCredit ? `<p class="mix-cover__credit">${escapeHtml(mix.coverCredit)}</p>` : ''}
     </div>
   </div>`;
 }
@@ -448,7 +733,7 @@ function renderResourceSection(mix) {
       <article class="resource-card">
         <p class="resource-card__eyebrow">Source</p>
         <h3>Original Tumblr post</h3>
-        <p>The imported source page stays linked so the archive can always point back to the original post.</p>
+        <p>The imported source page stays linked so the archive can always point back to the original post without pretending it is a playback destination.</p>
         <a class="text-link" href="${escapeHtml(mix.sourceUrl)}">Open source</a>
       </article>
     `);
@@ -464,17 +749,28 @@ function renderResourceSection(mix) {
     `);
   }
 
-  const linkItems = Object.entries(mix.links || {}).filter(([, href]) => typeof href === 'string' && href.trim());
+  const linkItems = Object.entries(mix.primaryLinks || {}).filter(([, href]) => typeof href === 'string' && href.trim());
   if (linkItems.length) {
     resourceCards.push(`
       <article class="resource-card">
-        <p class="resource-card__eyebrow">Links</p>
-        <h3>Listen or download</h3>
+        <p class="resource-card__eyebrow">Archive links</p>
+        <h3>Other preserved links</h3>
         <div class="button-row">
           ${linkItems
             .map(([label, href]) => `<a class="button button--secondary" href="${escapeHtml(href)}">${escapeHtml(label.replace(/_/g, ' '))}</a>`)
             .join('')}
         </div>
+      </article>
+    `);
+  }
+
+  const suppressedLinks = Object.entries(mix.legacyLinks || {}).filter(([, href]) => typeof href === 'string' && href.trim());
+  if (suppressedLinks.length) {
+    resourceCards.push(`
+      <article class="resource-card">
+        <p class="resource-card__eyebrow">Archive cleanup</p>
+        <h3>Legacy downloads suppressed</h3>
+        <p>Dead Mega download links are kept in the source data for provenance, but they are intentionally omitted from primary listening paths.</p>
       </article>
     `);
   }
@@ -503,6 +799,95 @@ function renderResourceSection(mix) {
     : ''}`;
 }
 
+function renderListeningSection(mix) {
+  const listening = mix.listening || {};
+  const providers = Array.isArray(listening.providers) ? listening.providers : [];
+  const embeds = Array.isArray(listening.embeds) ? listening.embeds : [];
+  const trackSearches = Array.isArray(mix.trackSearches) ? mix.trackSearches : [];
+
+  if (!providers.length && !embeds.length && !trackSearches.length) return '';
+
+  const providerCards = providers.length
+    ? `<div class="provider-grid">
+        ${providers
+          .map((provider) => {
+            const title = provider.label || `${provider.provider} ${provider.kind}`;
+            return `<article class="provider-card">
+              <p class="provider-card__eyebrow">${escapeHtml(provider.provider)}</p>
+              <h3>${escapeHtml(title)}</h3>
+              <p>${escapeHtml(provider.note || `Open the ${provider.kind} on ${provider.provider}.`)}</p>
+              <a class="button button--secondary" href="${escapeHtml(provider.url)}">Open ${escapeHtml(provider.provider)}</a>
+            </article>`;
+          })
+          .join('')}
+      </div>`
+    : '';
+
+  const embedCards = embeds.length
+    ? `<div class="embed-stack">
+        ${embeds
+          .map((embed) => `<article class="embed-card">
+            <div class="embed-card__frame">
+              <iframe
+                src="${escapeHtml(embed.url)}"
+                title="${escapeHtml(embed.title || `${embed.provider} embed for ${mix.title}`)}"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
+            <div class="embed-card__meta">
+              <p class="provider-card__eyebrow">${escapeHtml(embed.provider)}</p>
+              <h3>${escapeHtml(embed.title || `${embed.provider} embed`)}</h3>
+              ${embed.note ? `<p>${escapeHtml(embed.note)}</p>` : ''}
+            </div>
+          </article>`)
+          .join('')}
+      </div>`
+    : '';
+
+  const trackFallbackList = trackSearches.length
+    ? `<ol class="track-fallback-list">
+        ${trackSearches
+          .map(
+            (track) => `<li>
+              <div class="track-fallback-list__row">
+                <div>
+                  <p class="track-fallback-list__meta">Track ${escapeHtml(String(track.position || ''))}${track.isFavorite ? ' · Favorite in source' : ''}</p>
+                  <h3>${escapeHtml(track.displayText)}</h3>
+                </div>
+                <div class="button-row track-fallback-list__actions">
+                  <a class="button button--secondary" href="${escapeHtml(track.youtubeUrl)}">Search YouTube</a>
+                  <a class="button button--secondary" href="${escapeHtml(track.spotifyUrl)}">Search Spotify</a>
+                </div>
+              </div>
+            </li>`
+          )
+          .join('')}
+      </ol>`
+    : '';
+
+  return `<section class="section-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Listening</p>
+          <h2>Honest listening fallbacks</h2>
+          <p class="supporting-copy">${escapeHtml(
+            listening.intro || 'When durable playback links are missing, the archive falls back to track-first search helpers instead of pretending dead downloads still work.'
+          )}</p>
+        </div>
+      </div>
+      ${providerCards}
+      ${embedCards}
+      ${trackFallbackList ? `<div class="track-fallback-block">
+        <p class="eyebrow">Track-first listening</p>
+        <h3>Search each song where it actually lives now</h3>
+        <p class="supporting-copy">These are helper links, not claims of canonical availability. They are built from the archived tracklist so the mix stays usable.</p>
+        ${trackFallbackList}
+      </div>` : ''}
+    </section>`;
+}
+
 function renderHomePage({ mixes, notes, site }) {
   const featuredSlug = site.featuredMixSlug || site.featured_mix_slug;
   const featured = featuredSlug
@@ -513,6 +898,17 @@ function renderHomePage({ mixes, notes, site }) {
   const featuredNotes = featured?.relatedNotes?.slice(0, 2) || [];
   const intro = site.homeIntro || site.homepage_intro || 'A personal archive for mixes built slowly, sequenced by hand, and kept with just enough context to matter later.';
   const description = featured ? featured.excerpt : 'A darker editorial archive for handmade mixes and notes.';
+  const nextActions = [];
+
+  if (!featured && mixes.length) {
+    nextActions.push('Set a featured mix in data/site.json so the homepage lead is deliberate instead of automatic.');
+  }
+
+  if (notes.length < mixes.length) {
+    nextActions.push('Add another note so more archive mixes have context that points back to them.');
+  }
+
+  nextActions.push('Use the studio dashboard for draft state, validation commands, and publish prep.');
 
   const featureBlock = featured
     ? `<section class="hero-grid">
@@ -613,6 +1009,28 @@ function renderHomePage({ mixes, notes, site }) {
       <div class="prose">
         <p>${escapeHtml(intro)}</p>
         <p>${escapeHtml(site.homeSecondary || 'The visual language stays dark, editorial, and grounded: late-night listening, track sequencing, and the useful residue that remains after repeat plays.')}</p>
+        <p><a class="text-link" href="studio/">Open the local studio dashboard</a></p>
+      </div>
+    </section>`;
+  const operatorBlock = `<section class="section-block section-block--split">
+      <div>
+        <p class="eyebrow">Operator commands</p>
+        <h2>Local commands worth keeping close</h2>
+      </div>
+      <div class="command-list">
+        <code>python3 scripts/validate_content.py</code>
+        <code>python3 scripts/generate_weekly_draft.py --mode auto</code>
+        <code>python3 scripts/publish_mix.py &lt;slug-or-path&gt; --feature</code>
+        <code>npm run build</code>
+      </div>
+    </section>`;
+  const nextActionsBlock = `<section class="section-block section-block--split">
+      <div>
+        <p class="eyebrow">Next actions</p>
+        <h2>What the current data suggests</h2>
+      </div>
+      <div class="action-list">
+        ${nextActions.map((action) => `<p>${escapeHtml(action)}</p>`).join('')}
       </div>
     </section>`;
 
@@ -621,7 +1039,7 @@ function renderHomePage({ mixes, notes, site }) {
     currentNav: 'home',
     title: 'Home',
     description,
-    content: `${featureBlock}${recentBlock}${notesBlock}${featuredRelationBlock}${valuesBlock}`,
+    content: `${featureBlock}${recentBlock}${notesBlock}${featuredRelationBlock}${valuesBlock}${operatorBlock}${nextActionsBlock}`,
   });
 }
 
@@ -796,11 +1214,102 @@ function renderMixPage({ mix }) {
         ${renderCover(mix)}
       </section>
       ${notesSection}
+      ${renderListeningSection(mix)}
       ${highlightedSection}
       ${trackSection}
       ${relatedNotesSection}
       ${navigationSection}
       ${renderResourceSection(mix)}`,
+  });
+}
+
+function renderStudioPage({ site, drafts, mixes, notes }) {
+  const featuredSlug = site.featuredMixSlug || site.featured_mix_slug;
+  const featuredMix = featuredSlug ? mixes.find((mix) => mix.slug === featuredSlug) || null : null;
+  const latestDraft = drafts[0] || null;
+  const nextActions = [];
+
+  if (latestDraft) {
+    nextActions.push(`Review ${latestDraft.title} and promote it from draft to approved once the sequencing feels done.`);
+  } else {
+    nextActions.push('Generate the next weekly draft so the studio reflects the upcoming mix instead of staying empty.');
+  }
+
+  if (!featuredMix && mixes[0]) {
+    nextActions.push('Update data/site.json so a published mix is featured on the homepage instead of falling back automatically.');
+  }
+
+  if (notes.length < mixes.length) {
+    nextActions.push('Add another note to capture why a recent published mix still matters to the archive.');
+  }
+
+  if (!nextActions.length) {
+    nextActions.push('Validate, build, and publish when the next approved mix is ready.');
+  }
+
+  const statCards = [
+    {
+      label: 'Draft mixes',
+      value: String(drafts.length),
+      detail: latestDraft ? `Latest: ${latestDraft.title}` : 'No draft mix files found',
+    },
+    {
+      label: 'Published mixes',
+      value: String(mixes.length),
+      detail: mixes[0] ? `Latest published: ${mixes[0].title}` : 'No published archive yet',
+    },
+    {
+      label: 'Notes',
+      value: String(notes.length),
+      detail: notes[0] ? `Latest note: ${notes[0].title}` : 'No note files found',
+    },
+    {
+      label: 'Featured mix',
+      value: featuredMix?.displayTitle || featuredMix?.title || 'Unset',
+      detail: featuredMix ? formatDate(featuredMix.date) : 'Check data/site.json',
+    },
+  ];
+  let content = `<section class="page-intro page-intro--wide">
+      <div>
+        <p class="eyebrow">Studio</p>
+        <h1>Local editorial state</h1>
+      </div>
+      <div>
+        <p class="page-intro__copy page-intro__copy--large">A static dashboard generated from the JSON already in this repo: drafts, published mixes, notes, and the next few operator moves.</p>
+      </div>
+    </section>`;
+  content += `<section class="stats-grid">
+      ${statCards
+        .map((card) => `<article class="stat-card">
+          <p class="stat-card__label">${escapeHtml(card.label)}</p>
+          <h2>${escapeHtml(card.value)}</h2>
+          <p>${escapeHtml(card.detail)}</p>
+        </article>`)
+        .join('')}
+    </section>`;
+  content += `<section class="section-block studio-grid">
+      <article class="resource-card">
+        <p class="resource-card__eyebrow">Latest draft</p>
+        <h3>${escapeHtml(latestDraft?.title || 'No draft available')}</h3>
+        <p>${escapeHtml(latestDraft?.summary || 'Create or generate a draft mix to give the studio a working center of gravity.')}</p>
+        ${latestDraft
+          ? `<p class="supporting-copy">${escapeHtml(formatDate(latestDraft.date))} · ${escapeHtml(String(latestDraft.trackCount))} tracks · ${escapeHtml(latestDraft.status)}</p>`
+          : ''}
+      </article>
+      <article class="resource-card">
+        <p class="resource-card__eyebrow">Featured mix</p>
+        <h3>${escapeHtml(featuredMix?.title || 'No featured mix set')}</h3>
+        <p>${escapeHtml(featuredMix?.excerpt || 'The homepage feature follows data/site.json. Point it at a published mix when you want a deliberate lead story.')}</p>
+        ${featuredMix ? `<a class="text-link" href="../mixes/${escapeHtml(featuredMix.slug)}/">Open featured mix</a>` : ''}
+      </article>
+    </section>`;
+
+  return renderLayout({
+    depth: 1,
+    currentNav: 'studio',
+    title: 'Studio',
+    description: 'Local editorial dashboard for Monday Music Mix.',
+    content,
   });
 }
 
@@ -1002,6 +1511,7 @@ function build() {
   const relationshipGraph = attachRelationships(loadMixes(), loadNotes());
   const mixes = relationshipGraph.mixes;
   const notes = relationshipGraph.notes;
+  const drafts = loadDrafts();
 
   copyDir(STATIC_DIR, path.join(DIST, 'assets'));
 
@@ -1009,6 +1519,7 @@ function build() {
   writePage(path.join('archive', 'index.html'), renderArchivePage({ mixes }));
   writePage(path.join('about', 'index.html'), renderAboutPage({ site, about }));
   writePage(path.join('notes', 'index.html'), renderNotesPage({ notes }));
+  writePage(path.join('studio', 'index.html'), renderStudioPage({ site, drafts, mixes, notes }));
 
   for (const mix of mixes) {
     writePage(path.join('mixes', mix.slug, 'index.html'), renderMixPage({ mix }));
