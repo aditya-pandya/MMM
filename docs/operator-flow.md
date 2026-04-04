@@ -1,33 +1,44 @@
 # MMM Operator Flow
 
-## End-to-end workflow
+## End-to-end editorial workflow
 
-1. Import
-   - Bring source listening notes or imported historical mixes into the repository as JSON drafts under `data/drafts/`.
-   - Each draft should follow the MMM mix shape used by `scripts/publish_mix.py`.
+1. Validate the repo before touching content.
+   - Run `python3 scripts/validate_content.py`.
+   - Fix any actionable errors before creating or publishing anything.
 
-2. Review draft
-   - Check title, date, summary, notes, and track ordering.
-   - Confirm every track has `artist`, `title`, and `why_it_fits`.
-   - Set `status` to `approved` once editorial review is complete.
+2. Start with a template instead of blank JSON.
+   - New draft mix: `python3 scripts/create_content.py draft-mix --date 2026-04-13`
+   - New note: `python3 scripts/create_content.py note --title "A note title" --related-mix mix-036-thirtysixth`
+   - Note creation writes the note file and refreshes `data/notes-index.json` in one step.
 
-3. Approve
+3. Review and edit content.
+   - Mix drafts live under `data/drafts/`.
+   - Notes live under `data/notes/`.
+   - Check title, date, summary, notes/body copy, tags, and relationships.
+   - For mixes, confirm every track has `artist`, `title`, and `why_it_fits`.
+
+4. Re-run validation.
+   - Run `python3 scripts/validate_content.py` again after edits.
+   - The validator checks site metadata, notes, drafts, published mixes, `data/archive/index.json`, `data/archive-index.json`, and `data/mixes.json`.
+   - Expected output is a clean report with `errors: 0`.
+
+5. Approve a mix.
    - Approval is represented in the draft JSON itself by `"status": "approved"`.
    - Optional: set `"featured": true` in the draft or pass `--feature` during publish.
 
-4. Publish
+6. Publish.
    - Run `python3 scripts/publish_mix.py <slug-or-path>`.
-   - The publisher validates the draft, requires approved status, converts it to `published`, writes it to `data/published/`, and refreshes `data/archive/index.json`.
    - Use `--validate-only` to verify a draft before changing repository state.
+   - The publisher validates the draft, requires approved status, converts it to `published`, writes it to `data/published/`, and refreshes the archive indexes.
 
-5. Deploy
+7. Preview and deploy.
    - Run `npm run build` locally if desired.
-   - The static build emits `/notes/[slug]/` pages automatically and wires note-to-mix relationships into the homepage, notes index, archive, and mix detail pages.
+   - `npm run dev` previews the static site.
    - Push to `main` to trigger the GitHub Pages deployment workflow.
 
 ## Weekly generation automation
 
-- Local/manual: `python3 scripts/generate_weekly_draft.py --mode auto`
+- Local/manual generation: `python3 scripts/generate_weekly_draft.py --mode auto`
 - Local/manual end-to-end: `./scripts/run_local_workflow.sh`
 - Local scheduled: use `./scripts/run_local_workflow.sh --scheduled` via the LaunchAgent template in `ops/com.aditya.mmm.weekly.plist`
 - Inputs read by the generator:
@@ -47,4 +58,5 @@ Scheduled local runs:
 
 - Deterministic local generation is the default and only supported mode right now.
 - The hosted GitHub workflow is for deployment, not editorial generation.
-- Notes can be authored as standalone JSON files in `data/notes/` and indexed in `data/notes-index.json`; the build merges them by slug so short index metadata and full note bodies can evolve separately.
+- `npm run content:validate`, `npm run draft:new`, and `npm run note:new` wrap the new editor-facing commands.
+- Notes are indexed through `data/notes-index.json`, but the detail files in `data/notes/` remain the primary authored source.

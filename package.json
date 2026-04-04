@@ -9,7 +9,10 @@
     "preview": "npm run build && python3 -m http.server 4173 -d dist",
     "test": "python3 -m pytest",
     "draft:generate": "python3 scripts/generate_weekly_draft.py --mode auto",
-    "publish": "python3 scripts/publish_mix.py"
+    "publish": "python3 scripts/publish_mix.py",
+    "content:validate": "python3 scripts/validate_content.py",
+    "draft:new": "python3 scripts/create_content.py draft-mix",
+    "note:new": "python3 scripts/create_content.py note"
   },
   "keywords": [
     "music",

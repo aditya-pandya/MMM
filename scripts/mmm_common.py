@@ -12,10 +12,12 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 DRAFTS_DIR = DATA_DIR / "drafts"
 PUBLISHED_DIR = DATA_DIR / "published"
+NOTES_DIR = DATA_DIR / "notes"
 ARCHIVE_DIR = DATA_DIR / "archive"
 ARCHIVE_INDEX_PATH = ARCHIVE_DIR / "index.json"
 LEGACY_ARCHIVE_INDEX_PATH = DATA_DIR / "archive-index.json"
 MIXES_JSON_PATH = DATA_DIR / "mixes.json"
+NOTES_INDEX_PATH = DATA_DIR / "notes-index.json"
 SITE_PATH = DATA_DIR / "site.json"
 TASTE_PROFILE_PATH = DATA_DIR / "taste-profile.json"
 
@@ -45,7 +47,20 @@ PUBLISHED_REQUIRED_MIX_FIELDS = {
     "stats",
 }
 PUBLISHED_REQUIRED_TRACK_FIELDS = {"position", "artist", "title", "displayText", "isFavorite"}
+NOTE_REQUIRED_FIELDS = {
+    "schemaVersion",
+    "id",
+    "slug",
+    "status",
+    "title",
+    "publishedAt",
+    "summary",
+    "body",
+    "tags",
+}
 VALID_STATUSES = {"draft", "approved", "published", "imported"}
+NOTE_VALID_STATUSES = {"draft", "published"}
+SLUG_PATTERN = r"[a-z0-9]+(?:-[a-z0-9]+)*"
 
 
 class ValidationError(ValueError):
@@ -83,15 +98,27 @@ def slugify(value: str) -> str:
     return lowered or "mix"
 
 
+def ensure_kebab_case_slug(slug: str, label: str = "slug") -> str:
+    normalized = str(slug).strip()
+    if not re.fullmatch(SLUG_PATTERN, normalized):
+        raise ValidationError(f"{label} must be lowercase kebab-case")
+    return normalized
+
+
+def ensure_non_empty_string(value: Any, label: str) -> str:
+    normalized = str(value).strip()
+    if not normalized:
+        raise ValidationError(f"{label} must not be empty")
+    return normalized
+
+
 
 def _validate_editorial_mix(mix: dict[str, Any]) -> ValidationResult:
     missing = EDITORIAL_REQUIRED_MIX_FIELDS - set(mix)
     if missing:
         raise ValidationError(f"Missing required fields: {', '.join(sorted(missing))}")
 
-    slug = str(mix["slug"]).strip()
-    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
-        raise ValidationError("slug must be lowercase kebab-case")
+    slug = ensure_kebab_case_slug(mix["slug"])
 
     status = str(mix["status"]).strip()
     if status not in VALID_STATUSES:
@@ -102,15 +129,9 @@ def _validate_editorial_mix(mix: dict[str, Any]) -> ValidationResult:
     except ValueError as exc:
         raise ValidationError("date must be ISO-8601 YYYY-MM-DD") from exc
 
-    title = str(mix["title"]).strip()
-    summary = str(mix["summary"]).strip()
-    notes = str(mix["notes"]).strip()
-    if not title:
-        raise ValidationError("title must not be empty")
-    if not summary:
-        raise ValidationError("summary must not be empty")
-    if not notes:
-        raise ValidationError("notes must not be empty")
+    title = ensure_non_empty_string(mix["title"], "title")
+    summary = ensure_non_empty_string(mix["summary"], "summary")
+    notes = ensure_non_empty_string(mix["notes"], "notes")
 
     tracks = mix["tracks"]
     if not isinstance(tracks, list) or not tracks:
@@ -129,11 +150,9 @@ def _validate_editorial_mix(mix: dict[str, Any]) -> ValidationResult:
             raise ValidationError(
                 f"track {index} missing fields: {', '.join(sorted(track_missing))}"
             )
-        artist = str(track["artist"]).strip()
-        title_ = str(track["title"]).strip()
-        why = str(track["why_it_fits"]).strip()
-        if not artist or not title_ or not why:
-            raise ValidationError(f"track {index} fields must not be empty")
+        artist = ensure_non_empty_string(track["artist"], f"track {index} artist")
+        title_ = ensure_non_empty_string(track["title"], f"track {index} title")
+        why = ensure_non_empty_string(track["why_it_fits"], f"track {index} why_it_fits")
         cleaned_track = deepcopy(track)
         cleaned_track["artist"] = artist
         cleaned_track["title"] = title_
@@ -159,8 +178,7 @@ def _validate_published_mix(mix: dict[str, Any]) -> ValidationResult:
 
     slug = str(mix["slug"]).strip()
     status = str(mix["status"]).strip()
-    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
-        raise ValidationError("slug must be lowercase kebab-case")
+    ensure_kebab_case_slug(slug)
     if status not in VALID_STATUSES:
         raise ValidationError(f"status must be one of: {', '.join(sorted(VALID_STATUSES))}")
     try:
