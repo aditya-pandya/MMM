@@ -145,7 +145,9 @@ npm run draft:generate
 ```
 
 Notes:
-- `--mode auto` is local-safe and currently resolves to deterministic generation.
+- `--mode auto` is local-safe and currently resolves to deterministic local heuristics.
+- Draft generation now pulls from local published mixes, archive summaries, taste-profile cues, and editorial notes before choosing tracks or writing copy.
+- Covers, remixes, recurring artists, and bolded-favorite style signals can now show up in generated summary, notes, tags, and track rationale when that pattern already exists in local data.
 - No OpenAI or hosted AI dependency is required for the site or the weekly workflow.
 - `create_content.py note` writes the note file and refreshes the notes index entry in one step.
 - `create_content.py note-from-mix` seeds a note slug, title, summary, related mix, and starter body from the published mix JSON.

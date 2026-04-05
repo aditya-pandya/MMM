@@ -3,11 +3,13 @@ from __future__ import annotations
 import argparse
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from mmm_common import (
     ARCHIVE_INDEX_PATH,
     DRAFTS_DIR,
+    NOTES_DIR,
+    PUBLISHED_DIR,
     SITE_PATH,
     TASTE_PROFILE_PATH,
     dump_json,
@@ -26,15 +28,29 @@ FALLBACK_TRACKS = [
     ("BADBADNOTGOOD", "Time Moves Slow"),
 ]
 
+SUMMARY_SIGNAL_RULES = [
+    ("late-night catch-up energy", ("late", "last hour", "tuesday", "absence", "not dead")),
+    ("some-new-some-old reimagining", ("reimagined", "new", "old")),
+    ("overflow-without-apology editing", ("left out", "rejects edition")),
+    ("new-week reset momentum", ("new week", "prod me", "birdy")),
+]
+NOTE_SIGNAL_RULES = [
+    ("blog-era indie", ("blog-era indie", "indie")),
+    ("dreamy pop", ("dreamy pop", "dream pop")),
+    ("left-field electronic drift", ("left-field electronic", "electronic")),
+    ("cover-version pivots", ("cover version", "cover-heavy", "cover")),
+    ("favorite-track cues", ("favorite", "bold")),
+    ("remix release valves", ("remix", "remix-friendly")),
+]
+GENERIC_DESCRIPTOR_PREFIXES = ("2010s",)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate a weekly MMM draft")
     parser.add_argument("--date", dest="mix_date", help="ISO date for the mix, defaults to next Monday UTC")
-    parser.add_argument("--mode", choices=["auto", "fallback"], default="auto")
+    parser.add_argument("--mode", choices=["auto", "local", "fallback"], default="auto")
     parser.add_argument("--force", action="store_true", help="Overwrite existing draft for the same slug")
     return parser.parse_args()
-
 
 
 def next_monday(today: date | None = None) -> date:
@@ -45,43 +61,38 @@ def next_monday(today: date | None = None) -> date:
     return today + timedelta(days=days_ahead)
 
 
-
 def resolve_mix_date(explicit: str | None) -> date:
     return date.fromisoformat(explicit) if explicit else next_monday()
 
 
-
 def choose_mode(requested: str) -> str:
-    if requested == "fallback":
-        return requested
-    return "fallback"
-
+    if requested in {"auto", "local", "fallback"}:
+        return "local"
+    raise ValueError(f"Unsupported generation mode: {requested}")
 
 
 def extract_genres(taste: dict[str, Any]) -> list[str]:
     if isinstance(taste.get("favorite_genres"), list):
-        return [str(item) for item in taste["favorite_genres"]]
+        return [str(item).strip() for item in taste["favorite_genres"] if str(item).strip()]
     if isinstance(taste.get("recurringDescriptors"), list):
-        labels = [str(item.get("label")) for item in taste["recurringDescriptors"] if item.get("label")]
+        labels = [str(item.get("label")).strip() for item in taste["recurringDescriptors"] if item.get("label")]
         if labels:
             return labels
     if isinstance(taste.get("eraHints"), list):
-        labels = [str(item.get("label")) for item in taste["eraHints"] if item.get("label")]
+        labels = [str(item.get("label")).strip() for item in taste["eraHints"] if item.get("label")]
         if labels:
             return labels
     return ["eclectic discovery"]
 
 
-
 def extract_top_artists(taste: dict[str, Any]) -> list[str]:
     if isinstance(taste.get("recurring_artists"), list):
-        return [str(item) for item in taste["recurring_artists"]]
+        return [str(item).strip() for item in taste["recurring_artists"] if str(item).strip()]
     if isinstance(taste.get("topArtists"), list):
-        names = [str(item.get("name")) for item in taste["topArtists"] if item.get("name")]
+        names = [str(item.get("name")).strip() for item in taste["topArtists"] if item.get("name")]
         if names:
             return names
     return [artist for artist, _ in FALLBACK_TRACKS[:4]]
-
 
 
 def archive_count(archive: dict[str, Any]) -> int:
@@ -92,69 +103,445 @@ def archive_count(archive: dict[str, Any]) -> int:
     return 0
 
 
-
 def site_title(site: dict[str, Any]) -> str:
     return str(site.get("site_title") or site.get("name") or "MMM")
 
 
+def stable_score(value: str) -> int:
+    return sum((index + 1) * ord(char) for index, char in enumerate(value))
 
-def generate_fallback_mix(mix_date: date, taste: dict[str, Any], site: dict[str, Any], archive: dict[str, Any]) -> dict[str, Any]:
-    count = archive_count(archive)
-    genres = extract_genres(taste)
+
+def dedupe_preserving_order(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for value in values:
+        normalized = value.strip()
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        ordered.append(normalized)
+    return ordered
+
+
+def load_directory_payloads(directory: Path) -> list[dict[str, Any]]:
+    if not directory.exists():
+        return []
+
+    payloads: list[dict[str, Any]] = []
+    for path in sorted(directory.glob("*.json")):
+        payload = load_json(path)
+        if isinstance(payload, dict):
+            payloads.append(payload)
+    return payloads
+
+
+def track_display_text(track: dict[str, Any]) -> str:
+    artist = str(track.get("artist") or "").strip()
+    title = str(track.get("title") or "").strip()
+    return str(track.get("displayText") or f"{artist} - {title}").strip()
+
+
+def is_cover_track(track: dict[str, Any]) -> bool:
+    return "cover" in str(track.get("title") or "").lower()
+
+
+def is_remix_track(track: dict[str, Any]) -> bool:
+    title = str(track.get("title") or "").lower()
+    return "remix" in title or "edit" in title
+
+
+def build_summary_tone(archive: dict[str, Any]) -> list[str]:
+    summaries: list[str] = []
+    for item in archive.get("mixes", []) or archive.get("items", []) or []:
+        summary = str(item.get("summary") or "").strip().lower()
+        if summary:
+            summaries.append(summary)
+
+    matches: list[tuple[int, int, str]] = []
+    for label, keywords in SUMMARY_SIGNAL_RULES:
+        count = sum(1 for summary in summaries if any(keyword in summary for keyword in keywords))
+        if count:
+            matches.append((-count, stable_score(label), label))
+    if matches:
+        return [label for _, _, label in sorted(matches)]
+    return ["weekly reset energy"]
+
+
+def build_note_signals(notes: list[dict[str, Any]]) -> list[str]:
+    haystacks: list[str] = []
+    for note in notes:
+        haystacks.append(str(note.get("summary") or "").lower())
+        for paragraph in note.get("body", []) if isinstance(note.get("body"), list) else []:
+            haystacks.append(str(paragraph).lower())
+
+    matches: list[tuple[int, int, str]] = []
+    for label, keywords in NOTE_SIGNAL_RULES:
+        count = sum(1 for haystack in haystacks if any(keyword in haystack for keyword in keywords))
+        if count:
+            matches.append((-count, stable_score(label), label))
+    return [label for _, _, label in sorted(matches)]
+
+
+def clean_descriptor(label: str) -> str:
+    normalized = label.strip()
+    for prefix in GENERIC_DESCRIPTOR_PREFIXES:
+        if normalized.lower().startswith(prefix.lower() + " "):
+            parts = normalized.split(" ", 1)
+            if len(parts) == 2:
+                return parts[1].strip()
+    return normalized
+
+
+def build_track_pool(published_mixes: list[dict[str, Any]], top_artist_names: list[str]) -> list[dict[str, Any]]:
+    artist_occurrences: dict[str, int] = {}
+    for mix in published_mixes:
+        for track in mix.get("tracks", []):
+            artist = str(track.get("artist") or "").strip()
+            if artist:
+                artist_occurrences[artist] = artist_occurrences.get(artist, 0) + 1
+
+    top_artist_set = set(top_artist_names)
+    pool: list[dict[str, Any]] = []
+    for mix in published_mixes:
+        stats = mix.get("stats") if isinstance(mix.get("stats"), dict) else {}
+        for track in mix.get("tracks", []):
+            artist = str(track.get("artist") or "").strip()
+            title = str(track.get("title") or "").strip()
+            if not artist or not title:
+                continue
+            display = track_display_text(track)
+            pool.append(
+                {
+                    "artist": artist,
+                    "title": title,
+                    "display": display,
+                    "position": int(track.get("position") or 0),
+                    "is_favorite": bool(track.get("isFavorite")),
+                    "is_cover": is_cover_track(track) or display in set(stats.get("coverTracks", [])),
+                    "is_remix": is_remix_track(track) or display in set(stats.get("remixTracks", [])),
+                    "artist_occurrences": artist_occurrences.get(artist, 1),
+                    "top_artist": artist in top_artist_set,
+                    "mix_slug": str(mix.get("slug") or ""),
+                    "mix_title": str(mix.get("title") or ""),
+                    "mix_summary": str(mix.get("summary") or "").strip(),
+                }
+            )
+    return sorted(pool, key=lambda item: (item["mix_slug"], item["position"], item["display"]))
+
+
+def choose_track_candidate(
+    candidates: list[dict[str, Any]],
+    selected_artists: set[str],
+    slot_name: str,
+    mix_date: date,
+    predicate: Callable[[dict[str, Any]], bool],
+    preferred: Callable[[dict[str, Any]], int],
+) -> dict[str, Any] | None:
+    viable = [candidate for candidate in candidates if predicate(candidate) and candidate["artist"] not in selected_artists]
+    if not viable:
+        viable = [candidate for candidate in candidates if candidate["artist"] not in selected_artists]
+    if not viable:
+        return None
+
+    seed = f"{mix_date.isoformat()}::{slot_name}"
+    return sorted(
+        viable,
+        key=lambda candidate: (
+            -preferred(candidate),
+            -candidate["artist_occurrences"],
+            candidate["position"],
+            stable_score(candidate["display"] + seed),
+        ),
+    )[0]
+
+
+def infer_track_slots(
+    candidates: list[dict[str, Any]],
+    mix_date: date,
+    wants_cover: bool,
+    wants_remix: bool,
+) -> list[tuple[str, dict[str, Any]]]:
+    selected: list[tuple[str, dict[str, Any]]] = []
+    selected_artists: set[str] = set()
+
+    slot_plan: list[tuple[str, Callable[[dict[str, Any]], bool], Callable[[dict[str, Any]], int]]] = [
+        (
+            "opener",
+            lambda candidate: candidate["position"] <= 4 and not candidate["is_cover"] and not candidate["is_remix"],
+            lambda candidate: (5 if candidate["top_artist"] else 0) + candidate["artist_occurrences"] + (2 if candidate["is_favorite"] else 0),
+        ),
+        (
+            "builder",
+            lambda candidate: candidate["position"] <= 8 and not candidate["is_remix"],
+            lambda candidate: candidate["artist_occurrences"] + (4 if candidate["is_favorite"] else 0),
+        ),
+    ]
+    if wants_cover:
+        slot_plan.append(
+            (
+                "cover-pivot",
+                lambda candidate: candidate["is_cover"],
+                lambda candidate: 8 + candidate["artist_occurrences"] + (4 if candidate["is_favorite"] else 0),
+            )
+        )
+    slot_plan.append(
+        (
+            "favorite-anchor",
+            lambda candidate: candidate["is_favorite"],
+            lambda candidate: 8 + candidate["artist_occurrences"] + (3 if candidate["top_artist"] else 0),
+        )
+    )
+    if wants_remix:
+        slot_plan.append(
+            (
+                "remix-release",
+                lambda candidate: candidate["is_remix"],
+                lambda candidate: 9 + candidate["artist_occurrences"] + (3 if candidate["is_favorite"] else 0),
+            )
+        )
+    else:
+        slot_plan.append(
+            (
+                "closer",
+                lambda candidate: candidate["position"] >= 10,
+                lambda candidate: candidate["artist_occurrences"] + (4 if candidate["is_favorite"] else 0),
+            )
+        )
+
+    for slot_name, predicate, preferred in slot_plan:
+        chosen = choose_track_candidate(candidates, selected_artists, slot_name, mix_date, predicate, preferred)
+        if chosen is None:
+            continue
+        selected.append((slot_name, chosen))
+        selected_artists.add(chosen["artist"])
+
+    while len(selected) < 5:
+        slot_name = f"support-{len(selected) + 1}"
+        chosen = choose_track_candidate(
+            candidates,
+            selected_artists,
+            slot_name,
+            mix_date,
+            lambda candidate: True,
+            lambda candidate: candidate["artist_occurrences"] + (4 if candidate["is_favorite"] else 0),
+        )
+        if chosen is None:
+            break
+        selected.append((slot_name, chosen))
+        selected_artists.add(chosen["artist"])
+
+    return selected[:5]
+
+
+def build_track_reason(
+    slot_name: str,
+    track: dict[str, Any],
+    summary_tone: list[str],
+    note_signals: list[str],
+) -> str:
+    reasons: list[str] = []
+    if slot_name == "opener":
+        reasons.append(f"Opens with the archive's {summary_tone[0]} instead of starting from a blank template.")
+    elif slot_name == "builder":
+        reasons.append("Keeps the early run moving the way the archive usually stacks discovery tracks.")
+    elif slot_name == "cover-pivot":
+        reasons.append("Keeps the cover-heavy thread active because that recurrence shows up clearly in the local archive.")
+    elif slot_name == "favorite-anchor":
+        reasons.append("Reads like one of the bolded favorite moments the archive notes keep calling out.")
+    elif slot_name == "remix-release":
+        reasons.append("Lets the sequence exhale with the same late remix turn that already appears in local MMM history.")
+    else:
+        reasons.append("Supports the sequence without breaking the archive's pacing habits.")
+
+    if track["artist_occurrences"] > 1:
+        reasons.append(f"{track['artist']} is already a recurring archive artist.")
+    if track["is_cover"] and "cover-heavy" not in reasons[0]:
+        reasons.append("It also reinforces the archive's cover-version habit.")
+    if track["is_remix"] and "remix" not in reasons[0]:
+        reasons.append("It adds a remix cue instead of flattening the draft into one texture.")
+    if note_signals:
+        reasons.append(f"It fits the note-aware {note_signals[0]} lane already present in local data.")
+    return " ".join(reasons[:3])
+
+
+def build_local_tags(primary_descriptor: str, selected_tracks: list[dict[str, Any]], note_signals: list[str]) -> list[str]:
+    tags = ["weekly-draft", "local-generated"]
+    if primary_descriptor:
+        tags.append(slugify(primary_descriptor))
+    if any(track["is_cover"] for track in selected_tracks):
+        tags.append("cover-thread")
+    if any(track["is_remix"] for track in selected_tracks):
+        tags.append("remix-thread")
+    elif note_signals and any("favorite" in signal for signal in note_signals):
+        tags.append("favorite-signals")
+    return dedupe_preserving_order(tags[:5])
+
+
+def build_local_summary(
+    tone: str,
+    primary_descriptor: str,
+    summary_tone: list[str],
+    note_signals: list[str],
+    selected_tracks: list[dict[str, Any]],
+) -> str:
+    descriptor = clean_descriptor(primary_descriptor) if primary_descriptor else "local archive curation"
+    clauses = [descriptor, summary_tone[0]]
+    if note_signals:
+        clauses.append(note_signals[0])
+
+    ending = "a favorite-led late run"
+    if any(track["is_cover"] for track in selected_tracks) and any(track["is_remix"] for track in selected_tracks):
+        ending = "a cover pivot and a late remix release"
+    elif any(track["is_cover"] for track in selected_tracks):
+        ending = "a cover pivot that keeps the sequence from settling"
+    elif any(track["is_remix"] for track in selected_tracks):
+        ending = "a late remix release"
+
+    return f"A {tone} draft shaped by {', '.join(clauses[:-1])}, and {clauses[-1]}, with {ending}."
+
+
+def build_local_notes(
+    site: dict[str, Any],
+    archive: dict[str, Any],
+    notes: list[dict[str, Any]],
+    summary_tone: list[str],
+    note_signals: list[str],
+    top_artists: list[str],
+    selected_tracks: list[dict[str, Any]],
+) -> str:
+    cover_count = sum(1 for track in selected_tracks if track["is_cover"])
+    remix_count = sum(1 for track in selected_tracks if track["is_remix"])
+    favorite_count = sum(1 for track in selected_tracks if track["is_favorite"])
+    signal_bits = []
+    if note_signals:
+        signal_bits.append(f"note cues around {', '.join(note_signals[:2])}")
+    if top_artists:
+        signal_bits.append(f"recurring artists like {', '.join(top_artists[:3])}")
+    signal_bits.append(f"{cover_count} cover turn{'s' if cover_count != 1 else ''}")
+    signal_bits.append(f"{remix_count} remix release{'s' if remix_count != 1 else ''}")
+    signal_bits.append(f"{favorite_count} bolded-favorite style peaks")
+
+    return (
+        f"Generated entirely from local {site_title(site)} data: {archive_count(archive)} archived mixes and {len(notes)} notes informed this pass. "
+        f"It leans into {summary_tone[0]} while keeping {', '.join(signal_bits)} visible in the sequence."
+    )
+
+
+def generate_archive_informed_mix(
+    mix_date: date,
+    taste: dict[str, Any],
+    site: dict[str, Any],
+    archive: dict[str, Any],
+    published_mixes: list[dict[str, Any]],
+    notes: list[dict[str, Any]],
+) -> dict[str, Any]:
     top_artists = extract_top_artists(taste)
-    tone = taste.get("tone") or "warm and curious"
-    start_index = count % len(FALLBACK_TRACKS)
-    selected = [FALLBACK_TRACKS[(start_index + offset) % len(FALLBACK_TRACKS)] for offset in range(5)]
+    primary_descriptor = extract_genres(taste)[0]
+    tone = str(taste.get("tone") or "warm and curious").strip()
+    summary_tone = build_summary_tone(archive)
+    note_signals = build_note_signals(notes)
+    track_pool = build_track_pool(published_mixes, top_artists)
 
     title = f"MMM for {mix_date.isoformat()}"
     slug = slugify(title)
-    summary = f"A {tone} set shaped by {genres[count % len(genres)]}."
-    notes = (
-        f"Generated in deterministic fallback mode using {site_title(site)} as context. "
-        f"The sequencing nods to {' / '.join(top_artists[:3])}."
-    )
 
-    tracks = []
-    for idx, (artist, track_title) in enumerate(selected, start=1):
-        genre = genres[(count + idx - 1) % len(genres)]
-        tracks.append(
+    if not track_pool:
+        count = archive_count(archive)
+        selected = [FALLBACK_TRACKS[(count + offset) % len(FALLBACK_TRACKS)] for offset in range(5)]
+        tracks = []
+        for index, (artist, track_title) in enumerate(selected, start=1):
+            tracks.append(
+                {
+                    "artist": artist,
+                    "title": track_title,
+                    "why_it_fits": "Falls back to the local emergency list because no published track archive is available yet.",
+                    "favorite": index in {3, 5},
+                }
+            )
+        return {
+            "slug": slug,
+            "title": title,
+            "date": mix_date.isoformat(),
+            "status": "draft",
+            "summary": f"A {tone} draft preserved in local-only mode while the archive track pool is still empty.",
+            "notes": "Generated without hosted AI and without published track history; once local mixes exist this will become archive-informed automatically.",
+            "tags": ["weekly-draft", "local-generated", "archive-bootstrap"],
+            "generation_mode": "local",
+            "source_context": {
+                "site_title": site_title(site),
+                "archive_count": count,
+                "published_mix_count": 0,
+                "note_count": len(notes),
+                "primary_descriptor": primary_descriptor,
+            },
+            "tracks": tracks,
+        }
+
+    cover_occurrences = sum(1 for track in track_pool if track["is_cover"])
+    remix_occurrences = sum(1 for track in track_pool if track["is_remix"])
+    wants_cover = cover_occurrences > 0
+    wants_remix = remix_occurrences > 0
+
+    selected_slots = infer_track_slots(track_pool, mix_date, wants_cover=wants_cover, wants_remix=wants_remix)
+    selected_tracks: list[dict[str, Any]] = []
+    for slot_name, candidate in selected_slots:
+        selected_tracks.append(
             {
-                "artist": artist,
-                "title": track_title,
-                "why_it_fits": f"Track {idx} reinforces the week's {genre} thread while keeping the pacing fluid.",
-                "favorite": idx == 3,
+                "artist": candidate["artist"],
+                "title": candidate["title"],
+                "why_it_fits": build_track_reason(slot_name, candidate, summary_tone, note_signals),
+                "favorite": slot_name in {"favorite-anchor", "remix-release"} or candidate["is_favorite"],
+                "is_favorite": slot_name in {"favorite-anchor", "remix-release"} or candidate["is_favorite"],
+                "is_cover": candidate["is_cover"],
+                "is_remix": candidate["is_remix"],
             }
         )
+
+    editorial_tracks = [
+        {
+            "artist": track["artist"],
+            "title": track["title"],
+            "why_it_fits": track["why_it_fits"],
+            "favorite": track["favorite"],
+        }
+        for track in selected_tracks
+    ]
 
     return {
         "slug": slug,
         "title": title,
         "date": mix_date.isoformat(),
         "status": "draft",
-        "summary": summary,
-        "notes": notes,
-        "tags": ["weekly-draft", "local-generated"],
-        "generation_mode": "fallback",
+        "summary": build_local_summary(tone, primary_descriptor, summary_tone, note_signals, selected_tracks),
+        "notes": build_local_notes(site, archive, notes, summary_tone, note_signals, top_artists, selected_tracks),
+        "tags": build_local_tags(primary_descriptor, selected_tracks, note_signals),
+        "generation_mode": "local",
         "source_context": {
             "site_title": site_title(site),
-            "archive_count": count,
-            "taste_markers": genres[:3],
+            "archive_count": archive_count(archive),
+            "published_mix_count": len(published_mixes),
+            "note_count": len(notes),
+            "primary_descriptor": primary_descriptor,
+            "summary_tone": summary_tone[:2],
+            "note_signals": note_signals[:3],
+            "top_artists": top_artists[:5],
         },
-        "tracks": tracks,
+        "tracks": editorial_tracks,
     }
-
 
 
 def generate_weekly_draft(mix_date: date, mode: str = "auto", force: bool = False) -> Path:
     taste = load_json(TASTE_PROFILE_PATH)
     site = load_json(SITE_PATH)
     archive = load_json(ARCHIVE_INDEX_PATH)
+    published_mixes = load_directory_payloads(PUBLISHED_DIR)
+    notes = load_directory_payloads(NOTES_DIR)
 
     resolved_mode = choose_mode(mode)
-    if resolved_mode != "fallback":
+    if resolved_mode != "local":
         raise ValueError(f"Unsupported generation mode: {resolved_mode}")
 
-    mix = generate_fallback_mix(mix_date, taste, site, archive)
+    mix = generate_archive_informed_mix(mix_date, taste, site, archive, published_mixes, notes)
 
     output_path = DRAFTS_DIR / f"{mix['slug']}.json"
     if output_path.exists() and not force:
@@ -162,7 +549,6 @@ def generate_weekly_draft(mix_date: date, mode: str = "auto", force: bool = Fals
 
     dump_json(output_path, mix)
     return output_path
-
 
 
 def main() -> int:
