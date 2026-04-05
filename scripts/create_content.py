@@ -4,7 +4,17 @@ import argparse
 from datetime import date
 from pathlib import Path
 
-from mmm_common import DRAFTS_DIR, NOTES_DIR, NOTES_INDEX_PATH, ValidationError, dump_json, load_json, now_iso, slugify
+from mmm_common import (
+    DRAFTS_DIR,
+    NOTES_DIR,
+    NOTES_INDEX_PATH,
+    ValidationError,
+    dump_json,
+    ensure_iso8601_datetime,
+    load_json,
+    now_iso,
+    slugify,
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -39,6 +49,18 @@ def ensure_slug(value: str) -> str:
     if not slug:
         raise ValidationError("slug must not be empty")
     return slug
+
+
+def normalize_related_mix_slugs(related_mixes: list[str] | None) -> list[str]:
+    normalized: list[str] = []
+    seen: set[str] = set()
+    for item in related_mixes or []:
+        slug = ensure_slug(item)
+        if slug in seen:
+            continue
+        seen.add(slug)
+        normalized.append(slug)
+    return normalized
 
 
 def build_draft_mix_template(mix_date: str, title: str | None = None, slug: str | None = None) -> dict:
@@ -100,6 +122,7 @@ def build_note_template(
     if not resolved_title:
         raise ValidationError("note title must not be empty")
     resolved_slug = ensure_slug(slug or slugify(resolved_title))
+    resolved_published_at = ensure_iso8601_datetime(published_at or now_iso(), "note publishedAt")
     return {
         "$schema": "../../schemas/note.schema.json",
         "schemaVersion": "1.0",
@@ -107,14 +130,14 @@ def build_note_template(
         "slug": resolved_slug,
         "status": "draft",
         "title": resolved_title,
-        "publishedAt": published_at or now_iso(),
+        "publishedAt": resolved_published_at,
         "summary": summary or "A short editorial summary for notes index and previews.",
         "body": [
             "Start with the editorial context or question that prompted this note.",
             "Add one paragraph on what changed in the archive, mix, or listening thread.",
             "Close with the detail worth remembering when returning to this later.",
         ],
-        "relatedMixSlugs": [ensure_slug(item) for item in (related_mixes or [])],
+        "relatedMixSlugs": normalize_related_mix_slugs(related_mixes),
         "tags": ["editorial-note"],
     }
 

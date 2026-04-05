@@ -186,3 +186,29 @@ def test_validate_content_reports_actionable_mismatches(tmp_path):
     assert report["warnings"] >= 1
     assert any("featured mix slug 'missing-mix'" in message for message in messages)
     assert any("field 'summary' is out of sync" in message for message in messages)
+
+
+def test_validate_content_rejects_note_without_datetime_timezone(tmp_path):
+    seed_repo(tmp_path)
+    note_path = tmp_path / "data" / "notes" / "seeded-note.json"
+    note = mmm_common.load_json(note_path)
+    note["publishedAt"] = "2026-04-03T13:00:00"
+    mmm_common.dump_json(note_path, note)
+
+    report = validate_content.build_report(tmp_path)
+    messages = [issue["message"] for issue in report["issues"] if issue["severity"] == "error"]
+
+    assert any("note publishedAt must be ISO-8601 date-time with timezone" in message for message in messages)
+
+
+def test_validate_content_rejects_duplicate_related_mix_slugs(tmp_path):
+    seed_repo(tmp_path)
+    note_path = tmp_path / "data" / "notes" / "seeded-note.json"
+    note = mmm_common.load_json(note_path)
+    note["relatedMixSlugs"] = ["mix-001-test", "mix-001-test"]
+    mmm_common.dump_json(note_path, note)
+
+    report = validate_content.build_report(tmp_path)
+    messages = [issue["message"] for issue in report["issues"] if issue["severity"] == "error"]
+
+    assert any("note relatedMixSlugs must not contain duplicates" in message for message in messages)

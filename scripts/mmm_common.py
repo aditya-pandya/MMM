@@ -112,6 +112,23 @@ def ensure_non_empty_string(value: Any, label: str) -> str:
     return normalized
 
 
+def ensure_iso8601_datetime(value: Any, label: str) -> str:
+    normalized = ensure_non_empty_string(value, label)
+    if "T" not in normalized:
+        raise ValidationError(f"{label} must be ISO-8601 date-time")
+
+    candidate = normalized.replace("Z", "+00:00")
+    parsed: datetime
+    try:
+        parsed = datetime.fromisoformat(candidate)
+    except ValueError as exc:
+        raise ValidationError(f"{label} must be ISO-8601 date-time") from exc
+
+    if parsed.tzinfo is None:
+        raise ValidationError(f"{label} must be ISO-8601 date-time with timezone")
+    return normalized
+
+
 
 def _validate_editorial_mix(mix: dict[str, Any]) -> ValidationResult:
     missing = EDITORIAL_REQUIRED_MIX_FIELDS - set(mix)
@@ -181,10 +198,7 @@ def _validate_published_mix(mix: dict[str, Any]) -> ValidationResult:
     ensure_kebab_case_slug(slug)
     if status not in VALID_STATUSES:
         raise ValidationError(f"status must be one of: {', '.join(sorted(VALID_STATUSES))}")
-    try:
-        datetime.fromisoformat(str(mix["publishedAt"]).replace("Z", "+00:00"))
-    except ValueError as exc:
-        raise ValidationError("publishedAt must be ISO-8601 date-time") from exc
+    ensure_iso8601_datetime(mix["publishedAt"], "publishedAt")
 
     tracks = mix["tracks"]
     if not isinstance(tracks, list) or not tracks:

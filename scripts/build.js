@@ -43,8 +43,8 @@ function readJsonIfExists(filePath, fallback) {
   try {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
   } catch (error) {
-    console.warn(`Could not parse ${path.relative(ROOT, filePath)}: ${error.message}`);
-    return fallback;
+    error.message = `Could not parse ${path.relative(ROOT, filePath)}: ${error.message}`;
+    throw error;
   }
 }
 

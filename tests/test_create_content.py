@@ -64,6 +64,34 @@ def test_create_note_writes_note_and_updates_index(temp_paths):
     assert index["items"][0]["summary"] == "A note about the archive refresh."
 
 
+def test_create_note_normalizes_and_deduplicates_related_mix_slugs(temp_paths):
+    _, notes_dir, notes_index_path = temp_paths
+
+    output = create_content.create_note(
+        title="Normalized note",
+        related_mixes=[" Mix 036 Thirtysixth ", "mix-036-thirtysixth", "MIX 035 THIRTYFIFTH"],
+        published_at="2026-04-05T12:00:00Z",
+        notes_dir=notes_dir,
+        notes_index_path=notes_index_path,
+    )
+
+    note = mmm_common.load_json(output)
+
+    assert note["relatedMixSlugs"] == ["mix-036-thirtysixth", "mix-035-thirtyfifth"]
+
+
+def test_create_note_rejects_published_at_without_timezone(temp_paths):
+    _, notes_dir, notes_index_path = temp_paths
+
+    with pytest.raises(mmm_common.ValidationError, match="note publishedAt must be ISO-8601 date-time with timezone"):
+        create_content.create_note(
+            title="Bad timestamp",
+            published_at="2026-04-05T12:00:00",
+            notes_dir=notes_dir,
+            notes_index_path=notes_index_path,
+        )
+
+
 def test_create_draft_mix_rejects_existing_file_without_force(temp_paths):
     drafts_dir, _, _ = temp_paths
     create_content.create_draft_mix(mix_date="2026-04-13", drafts_dir=drafts_dir)

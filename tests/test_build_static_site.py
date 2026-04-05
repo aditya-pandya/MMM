@@ -190,3 +190,20 @@ def test_static_build_only_derives_youtube_playlist_embeds_from_real_playlist_da
 
     assert "youtube.com/embed/videoseries" in youtube_mix_html
     assert "open.spotify.com/embed/playlist" not in spotify_mix_html
+
+
+def test_static_build_fails_loudly_on_malformed_canonical_note_json(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+    malformed_note_path = repo / "data" / "notes" / "rebuilding-the-archive.json"
+    malformed_note_path.write_text("{\n  \"slug\": \"broken-note\",\n", encoding="utf-8")
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode != 0
+    assert "Could not parse data/notes/rebuilding-the-archive.json" in (result.stderr or result.stdout)
