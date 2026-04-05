@@ -179,6 +179,22 @@ function isLikelyUrl(value) {
   return /^https?:\/\//i.test(String(value || '').trim());
 }
 
+const SUPPORTED_LISTENING_KINDS = new Set(['listen', 'playlist', 'album', 'track', 'set', 'embed']);
+const PROVIDER_HOST_MATCHERS = {
+  applemusic: (host) => host === 'music.apple.com',
+  bandcamp: (host) => host === 'daily.bandcamp.com' || host.endsWith('.bandcamp.com'),
+  mixcloud: (host) => host.endsWith('mixcloud.com'),
+  soundcloud: (host) => host.endsWith('soundcloud.com'),
+  spotify: (host) => host === 'open.spotify.com',
+  youtube: (host) => ['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtu.be'].includes(host),
+};
+const EMBED_URL_MATCHERS = {
+  mixcloud: (host, pathname) => host.endsWith('mixcloud.com') && pathname.includes('/widget/'),
+  soundcloud: (host, pathname) => host === 'w.soundcloud.com' && pathname.startsWith('/player'),
+  spotify: (host, pathname) => host === 'open.spotify.com' && pathname.includes('/embed/'),
+  youtube: (host, pathname) => host.endsWith('youtube.com') && pathname.includes('/embed/'),
+};
+
 function normalizeListeningKey(value) {
   return String(value || '')
     .trim()
@@ -233,6 +249,23 @@ function inferProviderKind(url) {
   if (href.includes('/sets/')) return 'set';
   if (href.includes('videoseries')) return 'playlist';
   return 'listen';
+}
+
+function getUrlParts(url) {
+  try {
+    const parsed = new URL(String(url || '').trim());
+    return {
+      host: parsed.hostname.toLowerCase(),
+      pathname: parsed.pathname.toLowerCase(),
+      searchParams: parsed.searchParams,
+    };
+  } catch {
+    return {
+      host: '',
+      pathname: '',
+      searchParams: new URLSearchParams(),
+    };
+  }
 }
 
 function isMegaUrl(url) {
@@ -530,6 +563,88 @@ function normalizeListening(mix) {
   };
 }
 
+function auditListeningPayload(mix) {
+  const warnings = [];
+  const title = String(mix.displayTitle || mix.title || mix.slug || 'Untitled mix').trim();
+  const listening = mix.listening;
+
+  if (listening != null && (typeof listening !== 'object' || Array.isArray(listening))) {
+    return {
+      warnings: ['listening must be an object when present'],
+      warningCount: 1,
+      hasListeningSurface: false,
+      summary: `${title}: listening must be an object when present`,
+    };
+  }
+
+  const normalizedListening = normalizeListening(mix);
+  const providerEntries = Array.isArray(normalizedListening.providers) ? normalizedListening.providers : [];
+  const embedEntries = Array.isArray(normalizedListening.embeds) ? normalizedListening.embeds : [];
+  const youtubeProviderIds = new Set(
+    providerEntries
+      .filter((entry) => normalizeListeningKey(entry.provider) === 'youtube')
+      .map((entry) => getYouTubePlaylistId(entry.url))
+      .filter(Boolean)
+  );
+
+  for (const provider of providerEntries) {
+    const providerName = String(provider.provider || inferProviderFromUrl(provider.url)).trim();
+    const providerKey = normalizeListeningKey(providerName);
+    const url = String(provider.url || '').trim();
+    const kind = String(provider.kind || inferProviderKind(url)).trim().toLowerCase();
+    const inferredProvider = inferProviderFromUrl(url);
+    const { host } = getUrlParts(url);
+    if (!isLikelyUrl(url)) {
+      warnings.push(`provider "${providerName}" is missing a valid http(s) URL`);
+      continue;
+    }
+    if (!SUPPORTED_LISTENING_KINDS.has(kind) || kind === 'embed') {
+      warnings.push(`provider "${providerName}" uses unsupported kind "${provider.kind}"`);
+    }
+    const matcher = PROVIDER_HOST_MATCHERS[providerKey];
+    if (matcher && !matcher(host)) {
+      warnings.push(`provider "${providerName}" URL does not match the expected domain`);
+    } else if (inferredProvider !== 'Listening link' && normalizeListeningKey(inferredProvider) !== providerKey) {
+      warnings.push(`provider "${providerName}" looks mismatched for its URL`);
+    }
+  }
+
+  for (const embed of embedEntries) {
+    const providerName = String(embed.provider || inferProviderFromUrl(embed.url)).trim();
+    const providerKey = normalizeListeningKey(providerName);
+    const url = String(embed.url || '').trim();
+    const inferredProvider = inferProviderFromUrl(url);
+    const { host, pathname } = getUrlParts(url);
+    if (!isLikelyUrl(url)) {
+      warnings.push(`embed "${providerName}" is missing a valid http(s) URL`);
+      continue;
+    }
+    const matcher = EMBED_URL_MATCHERS[providerKey];
+    if (!matcher || !matcher(host, pathname)) {
+      warnings.push(`embed "${providerName}" is not using a trusted provider/embed URL pair`);
+      continue;
+    }
+    if (inferredProvider !== 'Listening link' && normalizeListeningKey(inferredProvider) !== providerKey) {
+      warnings.push(`embed "${providerName}" looks mismatched for its URL`);
+      continue;
+    }
+    if (providerKey === 'youtube' && youtubeProviderIds.size) {
+      const playlistId = getYouTubePlaylistId(url);
+      if (playlistId && !youtubeProviderIds.has(playlistId)) {
+        warnings.push(`embed "${providerName}" playlist does not match the published provider URL`);
+      }
+    }
+  }
+
+  const dedupedWarnings = Array.from(new Set(warnings));
+  return {
+    warnings: dedupedWarnings,
+    warningCount: dedupedWarnings.length,
+    hasListeningSurface: providerEntries.length > 0 || embedEntries.length > 0,
+    summary: dedupedWarnings.length ? `${title}: ${dedupedWarnings[0]}` : '',
+  };
+}
+
 function normalizeMixes(rawMixes) {
   if (!Array.isArray(rawMixes)) return [];
 
@@ -580,6 +695,7 @@ function normalizeMixes(rawMixes) {
         legacyLinks,
         usesArchivalCoverFallback: archivalCover,
         listening: normalizeListening(mix),
+        listeningHealth: auditListeningPayload(mix),
       };
     })
   );
@@ -1422,8 +1538,13 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
   const latestPublishedWithoutNote = mixes.find((mix) => mix.relatedNotes.length === 0) || null;
   const publishedWithNotes = mixes.filter((mix) => mix.relatedNotes.length > 0).length;
   const notesWithRelations = notes.filter((note) => note.relatedMixes.length > 0).length;
+  const orphanNotes = notes.filter((note) => note.relatedMixes.length === 0);
   const approvedDrafts = drafts.filter((draft) => draft.status === 'approved').length;
   const draftDrafts = drafts.filter((draft) => draft.status === 'draft').length;
+  const listeningIssueMixes = mixes.filter((mix) => (mix.listeningHealth?.warningCount || 0) > 0);
+  const listeningIssueCount = listeningIssueMixes.reduce((total, mix) => total + (mix.listeningHealth?.warningCount || 0), 0);
+  const mixesWithListening = mixes.filter((mix) => mix.listeningHealth?.hasListeningSurface).length;
+  const noteCoverageGaps = mixes.length - publishedWithNotes;
   const nextActions = [];
   const validationSignals = [];
 
@@ -1444,6 +1565,12 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
       ? `${publishedWithNotes} of ${mixes.length} published mix${mixes.length === 1 ? '' : 'es'} already have note context attached.`
       : 'There are no published mixes to validate against note coverage yet.'
   );
+  if (orphanNotes.length) {
+    validationSignals.push(`${orphanNotes.length} note${orphanNotes.length === 1 ? '' : 's'} currently sit without a related published mix.`);
+  }
+  if (listeningIssueCount) {
+    validationSignals.push(`${listeningIssueCount} listening/provider warning${listeningIssueCount === 1 ? '' : 's'} need a manual pass.`);
+  }
 
   const validationHeadline = !featuredSlug || featuredMix
     ? latestDraft?.status === 'approved'
@@ -1472,6 +1599,10 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
 
   if (latestPublishedWithoutNote) {
     nextActions.push(`Add a note or mix-context paragraph for ${latestPublishedWithoutNote.title} so the archive coverage does not stall at the latest listening work.`);
+  }
+
+  if (listeningIssueMixes.length) {
+    nextActions.push(`Review listening/provider payloads for ${listeningIssueMixes[0].title} so the archive only signals trustworthy playback surfaces.`);
   }
 
   if (notes.length < mixes.length && !latestPublishedWithoutNote) {
@@ -1508,6 +1639,11 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
       value: validationHeadline,
       detail: 'Schema validation is still a separate local command.',
     },
+    {
+      label: 'Listening warnings',
+      value: String(listeningIssueCount),
+      detail: listeningIssueMixes.length ? `Latest flagged: ${listeningIssueMixes[0].title}` : 'No suspicious listening/provider payloads surfaced',
+    },
   ];
   const healthCards = [
     {
@@ -1522,9 +1658,29 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
       eyebrow: 'Archive coverage',
       title: `${publishedWithNotes}/${mixes.length || 0} published mixes carry note context`,
       body: mixes.length
-        ? `${notesWithRelations} of ${notes.length} note${notes.length === 1 ? '' : 's'} already point back into the archive.`
+        ? `${noteCoverageGaps} published gap${noteCoverageGaps === 1 ? '' : 's'} remain. ${notesWithRelations} of ${notes.length} note${notes.length === 1 ? '' : 's'} already point back into the archive.`
         : 'Coverage will appear here once published mixes land in the archive.',
-      detail: latestPublishedWithoutNote ? `Latest gap: ${latestPublishedWithoutNote.title}` : 'Recent published mixes all have at least one related note.',
+      detail: latestPublishedWithoutNote
+        ? `Latest gap: ${latestPublishedWithoutNote.title}${orphanNotes.length ? ` · Orphan note${orphanNotes.length === 1 ? '' : 's'}: ${orphanNotes.length}` : ''}`
+        : orphanNotes.length
+          ? `Recent published mixes are covered, but ${orphanNotes.length} note${orphanNotes.length === 1 ? '' : 's'} still have no archive attachment.`
+          : 'Recent published mixes all have at least one related note.',
+    },
+    {
+      eyebrow: 'Listening health',
+      title: listeningIssueCount
+        ? `${listeningIssueCount} warning${listeningIssueCount === 1 ? '' : 's'} across ${listeningIssueMixes.length} mix${listeningIssueMixes.length === 1 ? '' : 'es'}`
+        : `${mixesWithListening}/${mixes.length || 0} published mixes carry listening surfaces`,
+      body: listeningIssueCount
+        ? 'The page can still build cleanly, but these listening/provider payloads look suspicious enough to review before they read as authoritative.'
+        : mixesWithListening
+          ? `${mixes.length - mixesWithListening} published mix${mixes.length - mixesWithListening === 1 ? '' : 'es'} still rely on the archive page alone with no provider mirror attached.`
+          : 'No published mixes carry explicit listening/provider data yet.',
+      detail: listeningIssueMixes.length
+        ? listeningIssueMixes.slice(0, 3).map((mix) => mix.listeningHealth.summary).filter(Boolean).join(' · ')
+        : mixesWithListening
+          ? 'Current listening surfaces resolve to supported provider and embed patterns.'
+          : 'Add explicit provider data only when the archive has something real to point at.',
     },
     {
       eyebrow: 'Validation posture',

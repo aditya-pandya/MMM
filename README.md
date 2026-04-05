@@ -249,7 +249,7 @@ These documents cover:
 - Mix detail pages expose previous/next archive links, related notes, highlighted tracks, and source/embed metadata when present in the JSON.
 - Dedicated listening sections render automatically when mix JSON includes provider links or embeds under `listening`, including nested provider maps and embedded-player groups.
 - `/archive/` and `/notes/` include lightweight client-side search and filter controls driven by the metadata already rendered into each page.
-- `/studio/` is generated from local JSON and now summarizes draft count, published count, notes count, featured mix state, validation posture, recent routes, and recommended next actions.
+- `/studio/` is generated from local JSON and now summarizes draft count, published count, notes count, featured mix state, note coverage gaps, listening/provider warning counts, validation posture, recent routes, and recommended next actions.
 - Tumblr-imported archive mixes fall back to typographic cover placeholders and track-level search helpers when the only artwork/download data is legacy Tumblr residue.
 - Home, archive, and notes pages surface mix-note relationships so the writing is visible without having to guess where it lives.
 

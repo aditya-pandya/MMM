@@ -20,7 +20,9 @@
 4. Re-run validation.
    - Run `python3 scripts/validate_content.py` again after edits.
    - The validator checks site metadata, notes, drafts, published mixes, `data/archive/index.json`, `data/archive-index.json`, and `data/mixes.json`.
-   - Expected output is a clean report with `errors: 0`.
+   - Expected output before publish is `errors: 0`.
+   - Warnings are non-blocking, but published mixes can now emit listening/provider warnings when a mirror URL, provider label, embed host, or playlist pairing looks suspicious.
+   - Use `/studio/` after a build for a quick local summary of note coverage gaps, orphan notes, and listening/provider warning counts.
 
 5. Approve a mix.
    - Approval is represented in the draft JSON itself by `"status": "approved"`.

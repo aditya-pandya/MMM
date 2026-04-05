@@ -212,3 +212,42 @@ def test_validate_content_rejects_duplicate_related_mix_slugs(tmp_path):
     messages = [issue["message"] for issue in report["issues"] if issue["severity"] == "error"]
 
     assert any("note relatedMixSlugs must not contain duplicates" in message for message in messages)
+
+
+def test_validate_content_warns_on_suspicious_listening_provider_payloads(tmp_path):
+    seed_repo(tmp_path)
+    mix_path = tmp_path / "data" / "published" / "mix-001-test.json"
+    mix = mmm_common.load_json(mix_path)
+    mix["listening"] = {
+        "providers": [
+            {
+                "provider": "Spotify",
+                "label": "Broken mirror",
+                "url": "ftp://open.spotify.com/playlist/not-valid",
+                "kind": "playlist",
+            },
+            {
+                "provider": "YouTube",
+                "label": "Odd mirror",
+                "url": "https://open.spotify.com/playlist/37i9dQZF1DX4WYpdgoIcn6",
+                "kind": "mixtape",
+            },
+        ],
+        "embeds": [
+            {
+                "provider": "Spotify",
+                "title": "Wrong embed host",
+                "url": "https://www.youtube.com/embed/videoseries?list=PL1234567890",
+            }
+        ],
+    }
+    mmm_common.dump_json(mix_path, mix)
+
+    report = validate_content.build_report(tmp_path)
+    warning_messages = [issue["message"] for issue in report["issues"] if issue["severity"] == "warning"]
+
+    assert report["errors"] == 0
+    assert any("provider entry uses a non-http(s) URL" in message for message in warning_messages)
+    assert any("provider 'YouTube' uses unsupported kind 'mixtape'" in message for message in warning_messages)
+    assert any("provider 'YouTube' URL does not match the expected domain" in message for message in warning_messages)
+    assert any("embed 'Spotify' is not using a trusted provider/embed URL pair" in message for message in warning_messages)

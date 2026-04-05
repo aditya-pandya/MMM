@@ -192,6 +192,50 @@ def test_static_build_only_derives_youtube_playlist_embeds_from_real_playlist_da
     assert "open.spotify.com/embed/playlist" not in spotify_mix_html
 
 
+def test_static_build_surfaces_listening_warnings_in_studio_health(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    mix_path = repo / "data" / "published" / "mix-035-thirtyfifth.json"
+    mix = json.loads(read_text(mix_path))
+    mix["listening"] = {
+        "intro": "Suspicious listening data should show up in studio health.",
+        "providers": [
+            {
+                "provider": "YouTube",
+                "label": "Broken provider mirror",
+                "url": "https://open.spotify.com/playlist/37i9dQZF1DX4WYpdgoIcn6",
+                "kind": "mixtape",
+            }
+        ],
+        "embeds": [
+            {
+                "provider": "Spotify",
+                "title": "Wrong embed host",
+                "url": "https://www.youtube.com/embed/videoseries?list=PL1234567890",
+            }
+        ],
+    }
+    write_json(mix_path, mix)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    studio_html = read_text(repo / "dist" / "studio" / "index.html")
+
+    assert "Listening warnings" in studio_html
+    assert "Latest flagged: Thirtyfifth" in studio_html
+    assert "Listening health" in studio_html
+    assert "Review listening/provider payloads for Thirtyfifth" in studio_html
+    assert "provider &quot;YouTube&quot; uses unsupported kind &quot;mixtape&quot;" in studio_html
+
+
 def test_static_build_fails_loudly_on_malformed_canonical_note_json(tmp_path):
     repo = prepare_temp_repo(tmp_path)
     malformed_note_path = repo / "data" / "notes" / "rebuilding-the-archive.json"
