@@ -1,0 +1,47 @@
+TITLE: Home · Monday Music Mix
+EYEBROW: Current mix
+H1: Thirtysixth
+COPY: Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.
+BUTTON: Open mix
+BUTTON: Browse archive
+TEXT: Legacy Tumblr artwork is preserved as source context, but it is not being presented here as canonical album art.
+META: Album art featuring work by Erik Jones
+EYEBROW: Recent mixes
+H2: Small archive, real entries.
+LINK: See all
+META: September 2013 · Mix 35
+H3: Thirtyfifth
+META: 3 highlighted tracks · 2 related notes
+TEXT: A bit late given this is going up in the last hour of Monday but it still counts, right? Right. Left out a lot of really great music off this mix. Maybe someday I should do a Monday Music Mix: Rejects edition. Soon.
+META: August 2013 · Mix 34
+H3: Thirtyfourth
+META: 4 highlighted tracks · 1 related note
+TEXT: New week, new mix. A little birdy from the mountains had to prod me to post this today.
+META: July 2013 · Mix 33
+H3: Thirtythird
+META: 3 highlighted tracks
+TEXT: As always, back after a fairly long period of absence. MMM isn’t dead, not just yet.
+EYEBROW: From the notebook
+H2: Notes that explain why a mix stayed around.
+COPY: Short editorial fragments now have their own pages and stay wired back into the archive.
+BUTTON: Browse notes
+META: April 3, 2026
+H3: How the mixes are read
+TEXT: A lightweight editorial note on what stands out in the seeded 2013 mixes.
+META: April 3, 2026
+H3: Rebuilding the archive
+TEXT: Why the Tumblr archive is being normalized into durable JSON files and indexes.
+EYEBROW: Connected reading
+H2: Notes related to Thirtysixth
+COPY: The homepage now exposes the writing closest to the featured mix instead of leaving it stranded on a separate index.
+META: April 3, 2026
+H3: How the mixes are read
+TEXT: A lightweight editorial note on what stands out in the seeded 2013 mixes.
+META: April 3, 2026
+H3: Rebuilding the archive
+TEXT: Why the Tumblr archive is being normalized into durable JSON files and indexes.
+EYEBROW: Why it exists
+H2: Less brand world, more listening habit.
+COPY: A personal archive for mixes built slowly, sequenced by hand, and kept with just enough context to matter later.
+COPY: The visual language stays dark, editorial, and grounded: late-night listening, track sequencing, and the useful residue that remains after repeat plays.
+LINK: Open the local studio dashboard

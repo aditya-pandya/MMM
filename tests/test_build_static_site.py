@@ -1,12 +1,18 @@
 from __future__ import annotations
 
+import difflib
 import json
+import os
+import re
 import shutil
 import subprocess
+from html.parser import HTMLParser
 from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+STATIC_OUTPUT_FIXTURES = REPO_ROOT / "tests" / "fixtures" / "static_output"
+UPDATE_STATIC_OUTPUT_FIXTURES = os.environ.get("MMM_UPDATE_STATIC_FIXTURES") == "1"
 
 
 def prepare_temp_repo(tmp_path: Path) -> Path:
@@ -23,6 +29,147 @@ def read_text(path: Path) -> str:
 
 def write_json(path: Path, payload: object) -> None:
     path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+
+class StaticOutputDigestParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.node_stack: list[dict[str, object]] = []
+        self.capture_stack: list[dict[str, object]] = []
+        self.lines: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attrs_dict = dict(attrs)
+        classes = set((attrs_dict.get("class") or "").split())
+        self.node_stack.append({"tag": tag, "classes": classes})
+
+        if self._should_capture(tag, classes):
+            self.capture_stack.append(
+                {
+                    "tag": tag,
+                    "classes": classes,
+                    "chunks": [],
+                    "track": self._within_class("tracklist"),
+                }
+            )
+
+    def handle_endtag(self, tag: str) -> None:
+        if self.capture_stack and self.capture_stack[-1]["tag"] == tag:
+            capture = self.capture_stack.pop()
+            text = self._normalize_text("".join(capture["chunks"]))
+            if text:
+                self.lines.append(f"{self._label_for_capture(capture)}: {text}")
+
+        for index in range(len(self.node_stack) - 1, -1, -1):
+            if self.node_stack[index]["tag"] == tag:
+                del self.node_stack[index]
+                break
+
+    def handle_data(self, data: str) -> None:
+        if self.capture_stack:
+            self.capture_stack[-1]["chunks"].append(data)
+
+    def _should_capture(self, tag: str, classes: set[str]) -> bool:
+        if tag == "title":
+            return True
+
+        if not self._within_tag("main") or self._inside_ignored_context():
+            return False
+
+        if tag in {"h1", "h2", "h3", "code"}:
+            return True
+
+        if tag == "button" and "discovery-filter" in classes:
+            return True
+
+        if tag == "a" and classes.intersection({"button", "text-link"}):
+            return True
+
+        if tag == "li" and (self._within_class("tracklist") or self._within_class("tag-list")):
+            return True
+
+        return tag == "p"
+
+    def _label_for_capture(self, capture: dict[str, object]) -> str:
+        tag = str(capture["tag"])
+        classes = set(capture["classes"])
+
+        if tag == "title":
+            return "TITLE"
+        if tag in {"h1", "h2", "h3"}:
+            return tag.upper()
+        if tag == "code":
+            return "COMMAND"
+        if tag == "button":
+            return "FILTER"
+        if tag == "a":
+            return "BUTTON" if "button" in classes else "LINK"
+        if tag == "li":
+            return "TRACK" if capture["track"] else "TAG"
+
+        if "eyebrow" in classes or any(name.endswith("__eyebrow") for name in classes):
+            return "EYEBROW"
+        if classes.intersection({"hero-copy", "page-intro__copy", "page-intro__copy--large", "supporting-copy"}) or self._within_class("prose"):
+            return "COPY"
+        if any(
+            name.endswith(suffix)
+            for name in classes
+            for suffix in ("__meta", "__submeta", "__label", "__link", "__credit")
+        ):
+            return "META"
+
+        return "TEXT"
+
+    def _inside_ignored_context(self) -> bool:
+        return any(
+            self._within_tag(tag)
+            for tag in ("header", "footer", "nav", "script", "style")
+        )
+
+    def _within_tag(self, tag: str) -> bool:
+        return any(entry["tag"] == tag for entry in self.node_stack)
+
+    def _within_class(self, class_name: str) -> bool:
+        return any(class_name in entry["classes"] for entry in self.node_stack)
+
+    @staticmethod
+    def _normalize_text(value: str) -> str:
+        return re.sub(r"\s+", " ", value).strip()
+
+
+def build_static_output_digest(html: str) -> str:
+    parser = StaticOutputDigestParser()
+    parser.feed(html)
+    return "\n".join(parser.lines) + "\n"
+
+
+def assert_matches_static_output_fixture(
+    *,
+    html: str,
+    fixture_name: str,
+) -> None:
+    fixture_path = STATIC_OUTPUT_FIXTURES / fixture_name
+    digest = build_static_output_digest(html)
+
+    if UPDATE_STATIC_OUTPUT_FIXTURES:
+        fixture_path.parent.mkdir(parents=True, exist_ok=True)
+        fixture_path.write_text(digest, encoding="utf-8")
+
+    expected = fixture_path.read_text(encoding="utf-8")
+    if digest != expected:
+        diff = "".join(
+            difflib.unified_diff(
+                expected.splitlines(keepends=True),
+                digest.splitlines(keepends=True),
+                fromfile=str(fixture_path.relative_to(REPO_ROOT)),
+                tofile=f"{fixture_path.relative_to(REPO_ROOT)} (actual)",
+            )
+        )
+        raise AssertionError(
+            f"Static output fixture mismatch for {fixture_name}.\n"
+            f"Set MMM_UPDATE_STATIC_FIXTURES=1 to refresh intentional changes.\n"
+            f"{diff}"
+        )
 
 
 def test_static_build_emits_note_routes_and_relationships(tmp_path):
@@ -108,6 +255,34 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Recommended next actions" in studio_html
     assert "Local commands worth keeping close" in studio_html
     assert "updateDiscovery" in site_js
+
+
+def test_static_build_matches_golden_route_digests(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    route_fixtures = {
+        repo / "dist" / "index.html": "home.txt",
+        repo / "dist" / "archive" / "index.html": "archive.txt",
+        repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html": "mix-036-thirtysixth.txt",
+        repo / "dist" / "notes" / "index.html": "notes.txt",
+        repo / "dist" / "studio" / "index.html": "studio.txt",
+    }
+
+    for route_path, fixture_name in route_fixtures.items():
+        assert_matches_static_output_fixture(
+            html=read_text(route_path),
+            fixture_name=fixture_name,
+        )
 
 
 def test_static_build_normalizes_discovery_tags_for_notes_facets(tmp_path):

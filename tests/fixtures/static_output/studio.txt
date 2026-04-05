@@ -1,0 +1,65 @@
+TITLE: Studio · Monday Music Mix
+EYEBROW: Studio
+H1: Local editorial state
+COPY: A static dashboard generated from the JSON already in this repo: drafts, published mixes, notes, and the next few operator moves.
+META: Draft mixes
+H2: 1
+TEXT: Latest: MMM for 2026-04-06
+META: Published mixes
+H2: 4
+TEXT: Latest published: Thirtysixth
+META: Notes
+H2: 2
+TEXT: Latest note: How the mixes are read
+META: Featured mix
+H2: Thirtysixth
+TEXT: November 19, 2013
+META: Validation posture
+H2: Editorial review still pending
+TEXT: Schema validation is still a separate local command.
+META: Listening warnings
+H2: 0
+TEXT: No suspicious listening/provider payloads surfaced
+EYEBROW: Draft queue
+H3: MMM for 2026-04-06
+TEXT: 1 draft waiting on review, 0 approved.
+COPY: April 5, 2026 · 5 tracks · draft
+EYEBROW: Archive coverage
+H3: 3/4 published mixes carry note context
+TEXT: 1 published gap remain. 2 of 2 notes already point back into the archive.
+COPY: Latest gap: Thirtythird
+EYEBROW: Listening health
+H3: 1/4 published mixes carry listening surfaces
+TEXT: 3 published mixes still rely on the archive page alone with no provider mirror attached.
+COPY: Current listening surfaces resolve to supported provider and embed patterns.
+EYEBROW: Validation posture
+H3: Editorial review still pending
+TEXT: The site can render the current state cleanly, but the latest draft still needs review before it feels publishable.
+COPY: Featured mix slug resolves to a published mix. Latest draft is currently marked draft. 3 of 4 published mixes already have note context attached.
+EYEBROW: Recent routes
+H2: What to open next
+META: Latest mix
+H3: Thirtysixth
+TEXT: November 19, 2013 · 2 related notes
+META: Featured
+H3: Thirtysixth
+TEXT: Current homepage lead story.
+META: Latest note
+H3: How the mixes are read
+TEXT: A lightweight editorial note on what stands out in the seeded 2013 mixes.
+META: Overview
+H3: Archive
+TEXT: Check the full published run and scan for thin metadata.
+META: Overview
+H3: Notes
+TEXT: Review what writing is already attached to the archive.
+EYEBROW: Operator commands
+H2: Local commands worth keeping close
+COMMAND: python3 scripts/validate_content.py
+COMMAND: python3 scripts/generate_weekly_draft.py --mode auto
+COMMAND: python3 scripts/publish_mix.py <slug-or-path> --feature
+COMMAND: npm run build
+EYEBROW: Recommended next actions
+H2: What the current data suggests
+TEXT: Review MMM for 2026-04-06 and promote it from draft to approved once the sequencing feels done.
+TEXT: Add a note or mix-context paragraph for Thirtythird so the archive coverage does not stall at the latest listening work.

@@ -1,0 +1,31 @@
+TITLE: Notes · Monday Music Mix
+EYEBROW: Notes
+H1: Notebook fragments
+COPY: Small observations around sequencing, atmosphere, and the songs that took time to reveal themselves.
+EYEBROW: Discovery
+H2: Search notes
+COPY: Filter by note text, related mixes, and the small set of tags already carried in the notebook.
+TEXT: Showing all 2 notes.
+FILTER: All notes
+FILTER: Linked mixes · 2
+FILTER: Tag: archive · 1
+FILTER: Tag: editorial · 1
+FILTER: Tag: meta · 1
+META: April 3, 2026
+H2: How the mixes are read
+TEXT: A lightweight editorial note on what stands out in the seeded 2013 mixes.
+TAG: editorial
+TAG: taste
+TAG: seed-data
+META: Related mixes: Thirtyfifth, Thirtysixth
+META: Read note
+META: April 3, 2026
+H2: Rebuilding the archive
+TEXT: Why the Tumblr archive is being normalized into durable JSON files and indexes.
+TAG: meta
+TAG: archive
+TAG: migration
+META: Related mixes: Thirtyfourth, Thirtyfifth, Thirtysixth
+META: Read note
+EYEBROW: No matches
+TEXT: Try a different tag, clear the search, or return to all notes.

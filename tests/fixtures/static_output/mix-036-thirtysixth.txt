@@ -1,0 +1,51 @@
+TITLE: Thirtysixth · Monday Music Mix
+EYEBROW: Mix detail
+H1: Thirtysixth
+COPY: Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.
+BUTTON: Back to archive
+TEXT: Legacy Tumblr artwork is preserved as source context, but it is not being presented here as canonical album art.
+META: Album art featuring work by Erik Jones
+EYEBROW: Tracklist
+H2: Full sequence
+COPY: 14 tracks · 3 favorites marked in source
+TRACK: 01 Tennis Court (Lorde cover) — The Kite String Tangle
+TRACK: 02 Beloved — Say Lou Lou
+TRACK: 03 Realize You — Empress Of
+TRACK: 04 Lost Boys and Girls Club — Dum Dum Girls
+TRACK: 05 (I Just) Died In Your Arms Tonight (Cutting Crew cover) — Bastille
+TRACK: 06 You’re Not Good Enough — Blood Orange Favorite
+TRACK: 07 Old Love New Love — Twin Shadow
+TRACK: 08 London Light — STRANGERS
+TRACK: 09 Will Calls — Grizzly Bear
+TRACK: 10 Remurdered — Mogwai
+TRACK: 11 A Real Hero (College & Electric Youth cover) — High Highs
+TRACK: 12 Summer Time Sadness (Lana Del Rey cover) — Angel Haze Favorite
+TRACK: 13 Mirror — Ellie Goulding
+TRACK: 14 Love You Better (John Dillinger remix) — Oh Land Favorite
+EYEBROW: Context
+H2: Archive notes
+COPY: Contains some of the best music I have heard in a quite a192 while.
+EYEBROW: Related notes
+H2: Writing tied to this mix
+META: April 3, 2026
+H3: How the mixes are read
+TEXT: A lightweight editorial note on what stands out in the seeded 2013 mixes.
+META: April 3, 2026
+H3: Rebuilding the archive
+TEXT: Why the Tumblr archive is being normalized into durable JSON files and indexes.
+EYEBROW: Archive
+H2: More mixes
+EYEBROW: Previous mix
+H3: Thirtyfifth
+TEXT: September 23, 2013
+EYEBROW: Source
+H2: Provenance
+EYEBROW: Source
+H3: Original post
+LINK: Open source
+EYEBROW: Artwork
+H3: Cover credit
+TEXT: Album art featuring work by Erik Jones
+EYEBROW: Archive cleanup
+H3: Legacy download removed
+TEXT: Dead Mega links stay in the JSON for provenance but are intentionally hidden from the page.
