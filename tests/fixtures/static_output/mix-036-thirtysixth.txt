@@ -40,12 +40,16 @@ H3: Thirtyfifth
 TEXT: September 23, 2013
 EYEBROW: Source
 H2: Provenance
-EYEBROW: Source
+EYEBROW: Original source
 H3: Original post
-LINK: Open source
-EYEBROW: Artwork
-H3: Cover credit
-TEXT: Album art featuring work by Erik Jones
+TEXT: Imported from Tumblr RSS on April 4, 2026.
+LINK: Open original post
 EYEBROW: Archive cleanup
-H3: Legacy download removed
-TEXT: Dead Mega links stay in the JSON for provenance but are intentionally hidden from the page.
+H3: Cleanup choices
+TEXT: A legacy Mega download URL survives in the archived source data, but it is intentionally withheld from the published page.
+TEXT: Tumblr-hosted artwork stays available as archival context, but it is not promoted into the primary cover slot without stronger metadata.
+EYEBROW: Preserved residue
+H3: Legacy snapshot
+TEXT: A sanitized copy of the original post HTML is kept for repair and import cleanup work.
+TEXT: It still preserves the original Tumblr heading, favorite-track cue, archived artwork credit, and download trace.
+TEXT: Archived artwork credit: Album art featuring work by Erik Jones.

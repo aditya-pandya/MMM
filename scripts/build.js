@@ -111,6 +111,40 @@ function formatMonthYear(value) {
   }).format(date);
 }
 
+function formatUtcDate(value) {
+  if (!value) return 'Date forthcoming';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'UTC',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+}
+
+function formatInlineList(items) {
+  const values = items.map((item) => String(item || '').trim()).filter(Boolean);
+  if (!values.length) return '';
+  if (values.length === 1) return values[0];
+  if (values.length === 2) return `${values[0]} and ${values[1]}`;
+  return `${values.slice(0, -1).join(', ')}, and ${values.at(-1)}`;
+}
+
+function humanizeToken(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return '';
+  if (/^[a-z]{2,5}$/i.test(raw)) return raw.toUpperCase();
+
+  return raw
+    .replace(/[_-]+/g, ' ')
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
 function slugify(value) {
   return String(value ?? '')
     .toLowerCase()
@@ -1338,23 +1372,57 @@ function renderNoteMiniList(notes, { basePath = '', emptyMessage = '' } = {}) {
 
 function renderResourceSection(mix) {
   const resourceCards = [];
+  const sourcePlatform = providerLabelFromKey(mix.sourcePlatform || mix.source?.platform || '');
+  const sourceFeedType = humanizeToken(mix.source?.feedType || '');
+  const importedAt = mix.source?.importedAt || '';
+  const guid = String(mix.source?.guid || '').trim();
+  const sourceSummaryParts = [];
+  const cleanupParagraphs = [];
+  const residueParagraphs = [];
+  const suppressedLinks = Object.entries(mix.legacyLinks || {}).filter(([, href]) => typeof href === 'string' && href.trim());
 
   if (mix.sourceUrl) {
+    const importSource = [sourcePlatform, sourceFeedType].filter(Boolean).join(' ');
+    if (importSource && importedAt) {
+      sourceSummaryParts.push(`Imported from ${importSource} on ${formatUtcDate(importedAt)}.`);
+    } else if (importSource) {
+      sourceSummaryParts.push(`Imported from ${importSource}.`);
+    } else if (importedAt) {
+      sourceSummaryParts.push(`Imported on ${formatUtcDate(importedAt)}.`);
+    }
+
+    if (guid && guid !== mix.sourceUrl) {
+      sourceSummaryParts.push('A separate source GUID is preserved alongside the post URL.');
+    }
+
     resourceCards.push(`
       <article class="resource-card">
-        <p class="resource-card__eyebrow">Source</p>
+        <p class="resource-card__eyebrow">Original source</p>
         <h3>Original post</h3>
-        <a class="text-link" href="${escapeHtml(mix.sourceUrl)}">Open source</a>
+        ${sourceSummaryParts.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}
+        <a class="text-link" href="${escapeHtml(mix.sourceUrl)}">Open original post</a>
       </article>
     `);
   }
 
-  if (mix.coverCredit) {
+  if (suppressedLinks.length) {
+    cleanupParagraphs.push(
+      suppressedLinks.length === 1
+        ? 'A legacy Mega download URL survives in the archived source data, but it is intentionally withheld from the published page.'
+        : `${suppressedLinks.length} legacy Mega download URLs survive in the archived source data, but they are intentionally withheld from the published page.`
+    );
+  }
+
+  if (mix.usesArchivalCoverFallback) {
+    cleanupParagraphs.push('Tumblr-hosted artwork stays available as archival context, but it is not promoted into the primary cover slot without stronger metadata.');
+  }
+
+  if (cleanupParagraphs.length) {
     resourceCards.push(`
       <article class="resource-card">
-        <p class="resource-card__eyebrow">Artwork</p>
-        <h3>Cover credit</h3>
-        <p>${escapeHtml(mix.coverCredit)}</p>
+        <p class="resource-card__eyebrow">Archive cleanup</p>
+        <h3>Cleanup choices</h3>
+        ${cleanupParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}
       </article>
     `);
   }
@@ -1374,13 +1442,34 @@ function renderResourceSection(mix) {
     `);
   }
 
-  const suppressedLinks = Object.entries(mix.legacyLinks || {}).filter(([, href]) => typeof href === 'string' && href.trim());
-  if (suppressedLinks.length) {
+  if (mix.legacyHtml) {
+    residueParagraphs.push('A sanitized copy of the original post HTML is kept for repair and import cleanup work.');
+
+    const residueDetails = [];
+    if (mix.legacy?.tumblrHeading) residueDetails.push('original Tumblr heading');
+    if (mix.legacy?.favoriteTrackCue) residueDetails.push('favorite-track cue');
+    if (mix.coverCredit && mix.usesArchivalCoverFallback) residueDetails.push('archived artwork credit');
+    if (suppressedLinks.length) residueDetails.push('download trace');
+
+    if (residueDetails.length) {
+      residueParagraphs.push(`It still preserves the ${formatInlineList(residueDetails)}.`);
+    }
+  } else if (mix.coverCredit && mix.usesArchivalCoverFallback) {
+    residueParagraphs.push('Archived artwork credit survives in the source data even though it is not treated as canonical cover metadata.');
+  }
+
+  if (mix.coverCredit && mix.usesArchivalCoverFallback) {
+    residueParagraphs.push(`Archived artwork credit: ${mix.coverCredit}.`);
+  } else if (mix.coverCredit) {
+    residueParagraphs.push(`Cover credit: ${mix.coverCredit}.`);
+  }
+
+  if (residueParagraphs.length) {
     resourceCards.push(`
       <article class="resource-card">
-        <p class="resource-card__eyebrow">Archive cleanup</p>
-        <h3>Legacy download removed</h3>
-        <p>Dead Mega links stay in the JSON for provenance but are intentionally hidden from the page.</p>
+        <p class="resource-card__eyebrow">Preserved residue</p>
+        <h3>Legacy snapshot</h3>
+        ${residueParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}
       </article>
     `);
   }

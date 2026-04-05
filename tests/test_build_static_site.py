@@ -233,7 +233,14 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "More mixes" in mix_detail_html
     assert "Full sequence" in mix_detail_html
     assert "Provenance" in mix_detail_html
-    assert "Legacy download removed" in mix_detail_html
+    assert "Original source" in mix_detail_html
+    assert "Archive cleanup" in mix_detail_html
+    assert "Preserved residue" in mix_detail_html
+    assert "Imported from Tumblr RSS on April 4, 2026." in mix_detail_html
+    assert "Open original post" in mix_detail_html
+    assert "A legacy Mega download URL survives in the archived source data" in mix_detail_html
+    assert "A sanitized copy of the original post HTML is kept for repair and import cleanup work." in mix_detail_html
+    assert "Archived artwork credit: Album art featuring work by Erik Jones." in mix_detail_html
     assert "Listening" not in mix_detail_html
     assert "Imported Tumblr snapshot" not in mix_detail_html
     assert "Search YouTube" not in mix_detail_html

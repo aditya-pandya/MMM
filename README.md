@@ -313,7 +313,7 @@ These documents cover:
 
 - Notes are loaded from `data/notes-index.json` plus matching files in `data/notes/`, with `data/notes.json` still supported as a fallback.
 - Note detail pages are emitted at `/notes/[slug]/`.
-- Mix detail pages expose previous/next archive links, related notes, highlighted tracks, and source/embed metadata when present in the JSON.
+- Mix detail pages expose previous/next archive links, related notes, highlighted tracks, and provenance grouped into original source, archive cleanup decisions, and preserved residue when that context exists in the JSON.
 - Dedicated listening sections render automatically when mix JSON includes provider links or embeds under `listening`, including nested provider maps and embedded-player groups.
 - Listening confidence is derived from `data/listening-provider-catalog.json`, so verified previews require an explicit curated embed URL and verified links stay clearly separate from uncertain leads.
 - `/archive/` and `/notes/` include lightweight client-side search and filter controls driven by the metadata already rendered into each page.

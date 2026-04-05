@@ -216,6 +216,7 @@ These matter because future agents may get too clever.
 - require explicit embed URLs before rendering inline playback
 - show track-first search helpers when provider confidence is low
 - preserve Tumblr source links as provenance
+- separate original source, cleanup choices, and preserved residue instead of flattening them into one metadata block
 - suppress dead Mega links from primary listening UI
 
 ### Bad behavior
