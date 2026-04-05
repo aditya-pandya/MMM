@@ -55,16 +55,27 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Search archive" in archive_html
     assert 'data-discovery-filter="state:has-related"' in archive_html
     assert 'data-discovery-filter="state:has-highlights"' in archive_html
+    assert 'data-discovery-filter="state:has-listening"' in archive_html
+    assert 'data-discovery-filter="source:tumblr"' in archive_html
+    assert 'data-discovery-filter="texture:covers"' in archive_html
+    assert 'data-discovery-filter="texture:remixes"' in archive_html
     assert 'data-discovery-item' in archive_html
     assert 'data-discovery-tags="' in archive_html
+    assert 'data-discovery-filters="' in archive_html
     assert 'data-discovery-search="' in archive_html
+    assert "Rebuilding the archive" in archive_html
+    assert "The Kite String Tangle - Tennis Court" in archive_html
+    assert "Companion playlist on YouTube" in archive_html
 
     assert "./rebuilding-the-archive/" in notes_index_html
     assert "../mixes/mix-036-thirtysixth/" in notes_index_html
     assert "Related mixes:" in notes_index_html
     assert "Search notes" in notes_index_html
     assert 'data-discovery-filter="state:has-related"' in notes_index_html
+    assert 'data-discovery-filter="tag:archive"' in notes_index_html
     assert 'data-discovery-item' in notes_index_html
+    assert 'data-discovery-filters="' in notes_index_html
+    assert "Dum Dum Girls" in notes_index_html
 
     assert "../../mixes/mix-034-thirtyfourth/" in note_detail_html
     assert "../../mixes/mix-036-thirtysixth/" in note_detail_html
@@ -97,6 +108,37 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Recommended next actions" in studio_html
     assert "Local commands worth keeping close" in studio_html
     assert "updateDiscovery" in site_js
+
+
+def test_static_build_normalizes_discovery_tags_for_notes_facets(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    first_note_path = repo / "data" / "notes" / "how-the-mixes-are-read.json"
+    first_note = json.loads(read_text(first_note_path))
+    first_note["tags"] = ["Seed Data", "Late/Night", "Editorial Notes"]
+    write_json(first_note_path, first_note)
+
+    second_note_path = repo / "data" / "notes" / "rebuilding-the-archive.json"
+    second_note = json.loads(read_text(second_note_path))
+    second_note["tags"] = ["Seed Data", "Late/Night", "Editorial Notes"]
+    write_json(second_note_path, second_note)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    notes_index_html = read_text(repo / "dist" / "notes" / "index.html")
+
+    assert 'data-discovery-filter="tag:seed-data"' in notes_index_html
+    assert 'data-discovery-filter="tag:late-night"' in notes_index_html
+    assert 'data-discovery-filter="tag:editorial-notes"' in notes_index_html
+    assert 'data-discovery-tags="seed-data|late-night|editorial-notes"' in notes_index_html
 
 
 def test_static_build_recursively_flattens_nested_listening_provider_shapes(tmp_path):

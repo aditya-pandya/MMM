@@ -315,6 +315,8 @@ These documents cover:
 - Dedicated listening sections render automatically when mix JSON includes provider links or embeds under `listening`, including nested provider maps and embedded-player groups.
 - Listening confidence is derived from `data/listening-provider-catalog.json`, so verified previews require an explicit curated embed URL and verified links stay clearly separate from uncertain leads.
 - `/archive/` and `/notes/` include lightweight client-side search and filter controls driven by the metadata already rendered into each page.
+- Discovery now normalizes tag variants at build time and folds real mix/note context into each page's search blob, so archive queries can match track names, related note titles, provider labels, and linked mix context without inventing extra metadata.
+- Archive facets stay small on purpose: they only surface content-backed states such as related notes, listening surfaces, Tumblr source provenance, covers, remixes, and the few tags already present in the data.
 - `/studio/` is generated from local JSON and now summarizes draft count, published count, notes count, featured mix state, note coverage gaps, listening/provider warning counts, validation posture, recent routes, and recommended next actions.
 - Tumblr-imported archive mixes fall back to typographic cover placeholders and track-level search helpers when the only artwork/download data is legacy Tumblr residue.
 - Home, archive, and notes pages surface mix-note relationships so the writing is visible without having to guess where it lives.

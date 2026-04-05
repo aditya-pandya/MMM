@@ -1,6 +1,10 @@
 function normalizeDiscoveryText(value) {
   return String(value || '')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -17,8 +21,14 @@ function readPipeSet(value) {
 function matchesFilter(item, filterValue) {
   if (!filterValue || filterValue === 'all') return true;
 
+  const normalizedFilterValue = normalizeDiscoveryText(filterValue).replace(/\s+/g, '-');
+  const genericFilters = readPipeSet(item.dataset.discoveryFilters);
+  if (genericFilters.has(normalizedFilterValue)) {
+    return true;
+  }
+
   const [kind, rawValue] = filterValue.split(':');
-  const value = String(rawValue || '').trim().toLowerCase();
+  const value = normalizeDiscoveryText(rawValue).replace(/\s+/g, '-');
 
   if (kind === 'tag') {
     return readPipeSet(item.dataset.discoveryTags).has(value);

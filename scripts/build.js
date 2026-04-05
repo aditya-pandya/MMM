@@ -951,25 +951,83 @@ function renderTagList(tags) {
   return `<ul class="tag-list">${tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join('')}</ul>`;
 }
 
+function normalizeTagLabel(value) {
+  return String(value || '')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+function normalizeFacetToken(value) {
+  const normalized = normalizeTagLabel(value)
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+  return normalized;
+}
+
+function pluralize(count, singular, plural = `${singular}s`) {
+  return count === 1 ? singular : plural;
+}
+
+function uniqueValues(values) {
+  return Array.from(
+    new Set(
+      flattenToArray(values)
+        .map((value) => String(value || '').trim())
+        .filter(Boolean)
+    )
+  );
+}
+
+function joinFilterValues(values) {
+  return uniqueValues(values).join('|');
+}
+
+function buildTagMetadata(tags) {
+  const deduped = new Map();
+
+  for (const tag of flattenToArray(tags)) {
+    const label = normalizeTagLabel(tag);
+    const value = normalizeFacetToken(label);
+    if (!label || !value || deduped.has(value)) continue;
+
+    deduped.set(value, {
+      label,
+      value,
+      searchTerms: uniqueValues([
+        label,
+        label.replace(/[-_]+/g, ' '),
+        value,
+        value.replace(/-/g, ' '),
+      ]),
+    });
+  }
+
+  return Array.from(deduped.values());
+}
+
 function countTopTags(items, limit = 3) {
   const counts = new Map();
 
   for (const item of items) {
-    const tags = Array.isArray(item?.tags) ? item.tags : [];
+    const tags = Array.isArray(item?.discovery?.tags) ? item.discovery.tags : buildTagMetadata(item?.tags);
     for (const tag of tags) {
-      const normalized = String(tag || '').trim();
-      if (!normalized) continue;
-      counts.set(normalized, (counts.get(normalized) || 0) + 1);
+      const current = counts.get(tag.value) || { ...tag, count: 0 };
+      current.count += 1;
+      counts.set(tag.value, current);
     }
   }
 
-  return Array.from(counts.entries())
+  return Array.from(counts.values())
     .sort((a, b) => {
-      if (b[1] !== a[1]) return b[1] - a[1];
-      return a[0].localeCompare(b[0]);
+      if (b.count !== a.count) return b.count - a.count;
+      return a.label.localeCompare(b.label);
     })
-    .slice(0, limit)
-    .map(([tag]) => tag);
+    .slice(0, limit);
 }
 
 function buildSearchBlob(parts) {
@@ -980,6 +1038,174 @@ function buildSearchBlob(parts) {
     .join(' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function makeDiscoveryFilter(value, label, count) {
+  return {
+    value,
+    label: count > 0 ? `${label} · ${count}` : label,
+  };
+}
+
+function buildMixDiscovery(mix) {
+  const tags = buildTagMetadata(mix.tags);
+  const filterValues = [];
+  const facetLabels = [];
+  const trackArtists = mix.tracklist.map((track) => track?.artist).filter(Boolean);
+  const trackTitles = mix.tracklist.map((track) => track?.title || track?.displayText).filter(Boolean);
+  const relatedNoteTags = mix.relatedNotes.flatMap((note) => buildTagMetadata(note.tags).flatMap((tag) => tag.searchTerms));
+  const relatedNoteTitles = mix.relatedNotes.map((note) => note.title).filter(Boolean);
+  const relatedNoteExcerpts = mix.relatedNotes.map((note) => note.excerpt || note.body).filter(Boolean);
+  const topArtists = Array.isArray(mix.stats?.topArtists) ? mix.stats.topArtists : [];
+  const favoriteTracks = Array.isArray(mix.stats?.favoriteTracks) ? mix.stats.favoriteTracks : [];
+  const coverTracks = Array.isArray(mix.stats?.coverTracks) ? mix.stats.coverTracks : [];
+  const remixTracks = Array.isArray(mix.stats?.remixTracks) ? mix.stats.remixTracks : [];
+  const listeningProviders = Array.isArray(mix.listening?.providers) ? mix.listening.providers : [];
+  const listeningEmbeds = Array.isArray(mix.listening?.embeds) ? mix.listening.embeds : [];
+
+  for (const tag of tags) {
+    filterValues.push(`tag:${tag.value}`);
+  }
+
+  if (mix.relatedNotes.length) {
+    filterValues.push('state:has-related');
+    facetLabels.push('related notes');
+  }
+  if (mix.highlightedTracks.length) {
+    filterValues.push('state:has-highlights');
+    facetLabels.push('highlighted tracks');
+  }
+  if ((mix.listening?.summary?.surfaceCount || 0) > 0) {
+    filterValues.push('state:has-listening');
+    facetLabels.push('listening surfaces');
+  }
+
+  const sourceValue = normalizeFacetToken(mix.sourcePlatform);
+  if (sourceValue) {
+    filterValues.push(`source:${sourceValue}`);
+    facetLabels.push(`${mix.sourcePlatform} source`);
+  }
+  if ((mix.stats?.coverCount || 0) > 0) {
+    filterValues.push('texture:covers');
+    facetLabels.push('cover versions');
+  }
+  if ((mix.stats?.remixCount || 0) > 0) {
+    filterValues.push('texture:remixes');
+    facetLabels.push('remixes');
+  }
+
+  return {
+    tags,
+    filters: uniqueValues(filterValues),
+    filtersText: joinFilterValues(filterValues),
+    tagsText: joinFilterValues(tags.map((tag) => tag.value)),
+    searchBlob: buildSearchBlob([
+      mix.title,
+      mix.displayTitle,
+      mix.slug.replace(/-/g, ' '),
+      mix.excerpt,
+      mix.notes,
+      mix.coverCredit,
+      mix.sourcePlatform,
+      formatDate(mix.date),
+      formatMonthYear(mix.date),
+      mix.number !== '' ? `mix ${mix.number}` : '',
+      mix.highlightedTracks.length ? `${mix.highlightedTracks.length} highlighted tracks` : '',
+      mix.relatedNotes.length ? `${mix.relatedNotes.length} related notes` : 'no related notes',
+      mix.listening?.summary?.surfaceCount ? `${mix.listening.summary.surfaceCount} listening surfaces` : '',
+      mix.usesArchivalCoverFallback ? 'archival cover fallback tumblr import' : '',
+      tags.flatMap((tag) => tag.searchTerms),
+      facetLabels,
+      trackArtists,
+      trackTitles,
+      topArtists,
+      favoriteTracks,
+      coverTracks,
+      remixTracks,
+      relatedNoteTitles,
+      relatedNoteExcerpts,
+      relatedNoteTags,
+      listeningProviders.flatMap((provider) => [provider.provider, provider.label, provider.note, provider.kind]),
+      listeningEmbeds.flatMap((embed) => [embed.provider, embed.title, embed.note]),
+    ]),
+  };
+}
+
+function buildNoteDiscovery(note) {
+  const tags = buildTagMetadata(note.tags);
+  const filterValues = tags.map((tag) => `tag:${tag.value}`);
+  const relatedMixTags = note.relatedMixes.flatMap((mix) => mix.discovery?.tags?.flatMap((tag) => tag.searchTerms) || []);
+  const relatedMixTracks = note.relatedMixes.flatMap((mix) => mix.tracklist.map((track) => track?.displayText || track?.title).filter(Boolean));
+  const relatedMixArtists = note.relatedMixes.flatMap((mix) => mix.tracklist.map((track) => track?.artist).filter(Boolean));
+  const relatedMixNotes = note.relatedMixes.flatMap((mix) => mix.relatedNotes.map((relatedNote) => relatedNote.title).filter(Boolean));
+
+  if (note.relatedMixes.length) {
+    filterValues.push('state:has-related');
+  }
+
+  return {
+    tags,
+    filters: uniqueValues(filterValues),
+    filtersText: joinFilterValues(filterValues),
+    tagsText: joinFilterValues(tags.map((tag) => tag.value)),
+    searchBlob: buildSearchBlob([
+      note.title,
+      note.slug.replace(/-/g, ' '),
+      note.excerpt,
+      note.body,
+      note.date ? formatDate(note.date) : '',
+      note.relatedMixes.length ? `${note.relatedMixes.length} related mixes` : 'standalone note',
+      tags.flatMap((tag) => tag.searchTerms),
+      note.relatedMixes.flatMap((mix) => [
+        mix.title,
+        mix.displayTitle,
+        mix.excerpt,
+        mix.sourcePlatform,
+        mix.number !== '' ? `mix ${mix.number}` : '',
+      ]),
+      relatedMixTags,
+      relatedMixArtists,
+      relatedMixTracks,
+      relatedMixNotes,
+    ]),
+  };
+}
+
+function annotateDiscovery(mixes, notes) {
+  const mixesWithDiscovery = mixes.map((mix) => ({
+    ...mix,
+    discovery: buildMixDiscovery(mix),
+  }));
+  const mixBySlug = new Map(mixesWithDiscovery.map((mix) => [mix.slug, mix]));
+  const notesWithResolvedMixes = notes.map((note) => ({
+    ...note,
+    relatedMixes: note.relatedMixSlugs.map((slug) => mixBySlug.get(slug)).filter(Boolean),
+  }));
+  const notesWithDiscovery = notesWithResolvedMixes.map((note) => ({
+    ...note,
+    discovery: buildNoteDiscovery(note),
+  }));
+  const notesByMixSlug = new Map();
+
+  for (const note of notesWithDiscovery) {
+    for (const slug of note.relatedMixSlugs) {
+      const current = notesByMixSlug.get(slug) || [];
+      current.push(note);
+      notesByMixSlug.set(slug, current);
+    }
+  }
+
+  return {
+    mixes: mixesWithDiscovery.map((mix) => ({
+      ...mix,
+      relatedNotes: notesByMixSlug.get(mix.slug) || mix.relatedNotes || [],
+      discovery: buildMixDiscovery({
+        ...mix,
+        relatedNotes: notesByMixSlug.get(mix.slug) || mix.relatedNotes || [],
+      }),
+    })),
+    notes: notesWithDiscovery,
+  };
 }
 
 function renderDiscoveryControls({
@@ -1389,11 +1615,21 @@ function renderHomePage({ mixes, notes, site }) {
 
 function renderArchivePage({ mixes }) {
   const topTags = countTopTags(mixes);
+  const relatedCount = mixes.filter((mix) => mix.relatedNotes.length > 0).length;
+  const highlightCount = mixes.filter((mix) => mix.highlightedTracks.length > 0).length;
+  const listeningCount = mixes.filter((mix) => (mix.listening?.summary?.surfaceCount || 0) > 0).length;
+  const tumblrCount = mixes.filter((mix) => normalizeFacetToken(mix.sourcePlatform) === 'tumblr').length;
+  const coverCount = mixes.filter((mix) => (mix.stats?.coverCount || 0) > 0).length;
+  const remixCount = mixes.filter((mix) => (mix.stats?.remixCount || 0) > 0).length;
   const discoveryFilters = [
     { label: 'All mixes', value: 'all' },
-    { label: 'Related notes', value: 'state:has-related' },
-    { label: 'Highlighted tracks', value: 'state:has-highlights' },
-    ...topTags.map((tag) => ({ label: `Tag: ${tag}`, value: `tag:${tag}` })),
+    makeDiscoveryFilter('state:has-related', 'Related notes', relatedCount),
+    makeDiscoveryFilter('state:has-highlights', 'Highlighted tracks', highlightCount),
+    ...(listeningCount ? [makeDiscoveryFilter('state:has-listening', 'Listening surfaces', listeningCount)] : []),
+    ...(tumblrCount ? [makeDiscoveryFilter('source:tumblr', 'Tumblr source', tumblrCount)] : []),
+    ...(coverCount ? [makeDiscoveryFilter('texture:covers', 'Covers', coverCount)] : []),
+    ...(remixCount ? [makeDiscoveryFilter('texture:remixes', 'Remixes', remixCount)] : []),
+    ...topTags.map((tag) => makeDiscoveryFilter(`tag:${tag.value}`, `Tag: ${tag.label}`, tag.count)),
   ];
   const body = mixes.length
     ? `<section class="page-intro">
@@ -1403,9 +1639,9 @@ function renderArchivePage({ mixes }) {
       </section>
       ${renderDiscoveryControls({
         title: 'Search archive',
-        description: 'Filter by title, tags, dates, highlighted tracks, or whether a mix already has notes attached.',
+        description: 'Filter by titles, tracks, notes, and a few grounded archive signals pulled directly from the mix data.',
         queryLabel: 'Search archive',
-        queryPlaceholder: 'Title, tag, date, note count...',
+        queryPlaceholder: 'Title, artist, track, note, year...',
         itemLabelSingular: 'mix',
         itemLabelPlural: 'mixes',
         totalCount: mixes.length,
@@ -1418,24 +1654,10 @@ function renderArchivePage({ mixes }) {
               class="archive-row archive-row--full"
               href="../mixes/${escapeHtml(mix.slug)}/"
               data-discovery-item
-              data-discovery-tags="${escapeHtml(mix.tags.join('|'))}"
-              data-discovery-states="${escapeHtml(
-                [mix.relatedNotes.length ? 'has-related' : '', mix.highlightedTracks.length ? 'has-highlights' : '']
-                  .filter(Boolean)
-                  .join('|')
-              )}"
-              data-discovery-search="${escapeHtml(
-                buildSearchBlob([
-                  mix.title,
-                  mix.excerpt,
-                  mix.tags,
-                  formatDate(mix.date),
-                  formatMonthYear(mix.date),
-                  mix.number !== '' ? `mix ${mix.number}` : '',
-                  mix.highlightedTracks.length ? `${mix.highlightedTracks.length} highlighted tracks` : '',
-                  mix.relatedNotes.length ? `${mix.relatedNotes.length} related notes` : 'no related notes',
-                ])
-              )}"
+              data-discovery-tags="${escapeHtml(mix.discovery.tagsText)}"
+              data-discovery-states="${escapeHtml(joinFilterValues(mix.discovery.filters.filter((value) => value.startsWith('state:')).map((value) => value.slice(6))))}"
+              data-discovery-filters="${escapeHtml(mix.discovery.filtersText)}"
+              data-discovery-search="${escapeHtml(mix.discovery.searchBlob)}"
             >
               <div>
                 <p class="archive-row__meta">${escapeHtml(formatDate(mix.date))}${mix.number !== '' ? ` · Mix ${escapeHtml(mix.number)}` : ''}</p>
@@ -1919,10 +2141,11 @@ function renderAboutPage({ site, about }) {
 function renderNotesPage({ notes }) {
   const hasNotes = notes.length > 0;
   const topTags = countTopTags(notes);
+  const linkedCount = notes.filter((note) => note.relatedMixes.length > 0).length;
   const discoveryFilters = [
     { label: 'All notes', value: 'all' },
-    { label: 'Linked mixes', value: 'state:has-related' },
-    ...topTags.map((tag) => ({ label: `Tag: ${tag}`, value: `tag:${tag}` })),
+    makeDiscoveryFilter('state:has-related', 'Linked mixes', linkedCount),
+    ...topTags.map((tag) => makeDiscoveryFilter(`tag:${tag.value}`, `Tag: ${tag.label}`, tag.count)),
   ];
   const body = hasNotes
     ? `<section class="page-intro">
@@ -1932,9 +2155,9 @@ function renderNotesPage({ notes }) {
       </section>
       ${renderDiscoveryControls({
         title: 'Search notes',
-        description: 'Filter by note title, tags, dates, or whether a note already connects back to published mixes.',
+        description: 'Filter by note text, related mixes, and the small set of tags already carried in the notebook.',
         queryLabel: 'Search notes',
-        queryPlaceholder: 'Title, tag, date, related mix...',
+        queryPlaceholder: 'Title, phrase, mix, tag...',
         itemLabelSingular: 'note',
         itemLabelPlural: 'notes',
         totalCount: notes.length,
@@ -1946,19 +2169,10 @@ function renderNotesPage({ notes }) {
             (note) => `<article
               class="note-card"
               data-discovery-item
-              data-discovery-tags="${escapeHtml(note.tags.join('|'))}"
-              data-discovery-states="${escapeHtml(note.relatedMixes.length ? 'has-related' : '')}"
-              data-discovery-search="${escapeHtml(
-                buildSearchBlob([
-                  note.title,
-                  note.excerpt,
-                  note.body,
-                  note.tags,
-                  formatDate(note.date),
-                  note.relatedMixes.map((mix) => mix.title),
-                  note.relatedMixes.length ? `${note.relatedMixes.length} related mixes` : 'standalone note',
-                ])
-              )}"
+              data-discovery-tags="${escapeHtml(note.discovery.tagsText)}"
+              data-discovery-states="${escapeHtml(joinFilterValues(note.discovery.filters.filter((value) => value.startsWith('state:')).map((value) => value.slice(6))))}"
+              data-discovery-filters="${escapeHtml(note.discovery.filtersText)}"
+              data-discovery-search="${escapeHtml(note.discovery.searchBlob)}"
             >
               <p class="note-card__meta">${escapeHtml(note.date ? formatDate(note.date) : 'Undated note')}</p>
               <h2>${escapeHtml(note.title)}</h2>
@@ -2097,8 +2311,9 @@ function build() {
     homeIntro: siteSource.homeIntro || siteSource.homepage_intro || '',
   };
   const relationshipGraph = attachRelationships(loadMixes(), loadNotes());
-  const mixes = relationshipGraph.mixes;
-  const notes = relationshipGraph.notes;
+  const discoveryGraph = annotateDiscovery(relationshipGraph.mixes, relationshipGraph.notes);
+  const mixes = discoveryGraph.mixes;
+  const notes = discoveryGraph.notes;
   const drafts = loadDrafts();
 
   copyDir(STATIC_DIR, path.join(DIST, 'assets'));
