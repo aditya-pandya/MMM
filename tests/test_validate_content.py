@@ -20,6 +20,11 @@ def seed_repo(root: Path) -> None:
     (data_dir / "archive").mkdir(parents=True)
 
     mmm_common.dump_json(
+        data_dir / "listening-provider-catalog.json",
+        mmm_common.load_json(REPO_ROOT / "data" / "listening-provider-catalog.json"),
+    )
+
+    mmm_common.dump_json(
         data_dir / "site.json",
         {
             "schemaVersion": "1.0",
@@ -249,5 +254,5 @@ def test_validate_content_warns_on_suspicious_listening_provider_payloads(tmp_pa
     assert report["errors"] == 0
     assert any("provider entry uses a non-http(s) URL" in message for message in warning_messages)
     assert any("provider 'YouTube' uses unsupported kind 'mixtape'" in message for message in warning_messages)
-    assert any("provider 'YouTube' URL does not match the expected domain" in message for message in warning_messages)
-    assert any("embed 'Spotify' is not using a trusted provider/embed URL pair" in message for message in warning_messages)
+    assert any("provider 'YouTube' URL does not match the curated host list" in message for message in warning_messages)
+    assert any("embed 'Spotify' is not using a curated provider/embed URL pair" in message for message in warning_messages)

@@ -4,8 +4,8 @@ import argparse
 import json
 from pathlib import Path
 from typing import Any
-from urllib.parse import parse_qs, urlparse
 
+from listening_confidence import load_provider_catalog, normalize_published_listening
 from mmm_common import (
     ValidationError,
     ensure_iso8601_datetime,
@@ -16,29 +16,6 @@ from mmm_common import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-SUPPORTED_LISTENING_KINDS = {"listen", "playlist", "album", "track", "set", "embed"}
-KNOWN_PROVIDER_LABELS = {
-    "applemusic": "Apple Music",
-    "bandcamp": "Bandcamp",
-    "mixcloud": "Mixcloud",
-    "soundcloud": "SoundCloud",
-    "spotify": "Spotify",
-    "youtube": "YouTube",
-}
-PROVIDER_HOST_MATCHERS = {
-    "applemusic": lambda host: host == "music.apple.com",
-    "bandcamp": lambda host: host == "daily.bandcamp.com" or host.endswith(".bandcamp.com"),
-    "mixcloud": lambda host: host.endswith("mixcloud.com"),
-    "soundcloud": lambda host: host.endswith("soundcloud.com"),
-    "spotify": lambda host: host == "open.spotify.com",
-    "youtube": lambda host: host in {"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"},
-}
-EMBED_URL_MATCHERS = {
-    "mixcloud": lambda host, path: host.endswith("mixcloud.com") and "/widget/" in path,
-    "soundcloud": lambda host, path: host == "w.soundcloud.com" and path.startswith("/player"),
-    "spotify": lambda host, path: host == "open.spotify.com" and "/embed/" in path,
-    "youtube": lambda host, path: host.endswith("youtube.com") and "/embed/" in path,
-}
 
 
 def parse_args() -> argparse.Namespace:
@@ -66,249 +43,9 @@ def require_non_empty_string(payload: dict[str, Any], key: str, label: str) -> s
     return value
 
 
-def normalize_listening_key(value: Any) -> str:
-    return "".join(character for character in str(value or "").strip().lower() if character.isalnum())
-
-
-def provider_label_from_key(value: Any) -> str:
-    raw = str(value or "").strip()
-    normalized = normalize_listening_key(raw)
-    if not normalized:
-        return ""
-    if normalized in KNOWN_PROVIDER_LABELS:
-        return KNOWN_PROVIDER_LABELS[normalized]
-    return " ".join(part for part in raw.replace("_", " ").replace("-", " ").split() if part).title()
-
-
-def is_http_url(value: Any) -> bool:
-    raw = str(value or "").strip()
-    parsed = urlparse(raw)
-    return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
-
-
-def parse_url_parts(value: Any) -> tuple[str, str]:
-    parsed = urlparse(str(value or "").strip())
-    return parsed.netloc.lower(), parsed.path.lower()
-
-
-def infer_provider_from_url(value: Any) -> str:
-    host, _ = parse_url_parts(value)
-    if "spotify.com" in host:
-        return "Spotify"
-    if host == "music.apple.com":
-        return "Apple Music"
-    if "youtube.com" in host or host == "youtu.be":
-        return "YouTube"
-    if "bandcamp.com" in host:
-        return "Bandcamp"
-    if "soundcloud.com" in host:
-        return "SoundCloud"
-    if "mixcloud.com" in host:
-        return "Mixcloud"
-    return "Listening link"
-
-
-def infer_provider_kind(value: Any) -> str:
-    href = str(value or "").strip().lower()
-    if not href:
-        return "listen"
-    if "/embed/" in href or "/embed?" in href or "youtube.com/embed/" in href or "/oembed" in href:
-        return "embed"
-    if "/playlist/" in href or "videoseries" in href:
-        return "playlist"
-    if "/album/" in href:
-        return "album"
-    if "/track/" in href or "/song/" in href:
-        return "track"
-    if "/sets/" in href:
-        return "set"
-    return "listen"
-
-
-def youtube_list_id(value: Any) -> str:
-    parsed = urlparse(str(value or "").strip())
-    return str(parse_qs(parsed.query).get("list", [""])[0]).strip()
-
-
-def collect_listening_entries(raw_entries: list[Any], mode: str = "provider", start_mode: str | None = None) -> tuple[list[dict[str, str]], list[str]]:
-    items: list[dict[str, str]] = []
-    warnings: list[str] = []
-    provider_container_keys = {"providers", "links", "providerlinks", "streaming", "entries", "items", "sources"}
-    embed_container_keys = {"embeds", "embed", "players", "iframes"}
-    meta_keys = {"url", "href", "src", "provider", "label", "title", "kind", "note", "summary", "intro", "description"}
-    start_mode = start_mode or mode
-
-    def visit(value: Any, current_mode: str, provider_hint: str) -> None:
-        if value is None:
-            return
-
-        if isinstance(value, list):
-            for entry in value:
-                visit(entry, current_mode, provider_hint)
-            return
-
-        if isinstance(value, str):
-            url = value.strip()
-            if not url:
-                return
-            if not is_http_url(url):
-                warnings.append(f"{current_mode} entry uses a non-http(s) URL: {url}")
-                return
-            if current_mode == "embed":
-                items.append(
-                    {
-                        "mode": current_mode,
-                        "provider": provider_hint or infer_provider_from_url(url),
-                        "title": "",
-                        "url": url,
-                        "kind": "embed",
-                    }
-                )
-                return
-            items.append(
-                {
-                    "mode": current_mode,
-                    "provider": provider_hint or infer_provider_from_url(url),
-                    "label": "",
-                    "url": url,
-                    "kind": infer_provider_kind(url),
-                }
-            )
-            return
-
-        if not isinstance(value, dict):
-            warnings.append(f"{current_mode} entry should be an object, array, or URL string")
-            return
-
-        url = str(value.get("url") or value.get("href") or value.get("src") or "").strip()
-        has_entry_shape = any(str(value.get(key, "")).strip() for key in ("provider", "label", "title", "kind", "note", "summary"))
-        if url:
-            if not is_http_url(url):
-                warnings.append(f"{current_mode} entry uses a non-http(s) URL: {url}")
-            elif current_mode == "embed":
-                items.append(
-                    {
-                        "mode": current_mode,
-                        "provider": str(value.get("provider") or provider_hint or infer_provider_from_url(url)).strip(),
-                        "title": str(value.get("title") or value.get("label") or "").strip(),
-                        "url": url,
-                        "kind": "embed",
-                    }
-                )
-            else:
-                items.append(
-                    {
-                        "mode": current_mode,
-                        "provider": str(value.get("provider") or provider_hint or infer_provider_from_url(url)).strip(),
-                        "label": str(value.get("label") or value.get("title") or "").strip(),
-                        "url": url,
-                        "kind": str(value.get("kind") or infer_provider_kind(url)).strip(),
-                    }
-                )
-        elif has_entry_shape:
-            warnings.append(f"{current_mode} entry is missing a valid http(s) URL")
-
-        for key, child in value.items():
-            normalized_key = normalize_listening_key(key)
-            if normalized_key in meta_keys or child is None:
-                continue
-            next_mode = "embed" if normalized_key in embed_container_keys else "provider" if normalized_key in provider_container_keys else current_mode
-            next_hint = provider_hint if normalized_key in provider_container_keys | embed_container_keys else provider_label_from_key(key) or provider_hint
-            visit(child, next_mode, next_hint)
-
-    for entry in raw_entries:
-        visit(entry, start_mode, "")
-
-    deduped: dict[tuple[str, str, str], dict[str, str]] = {}
-    for item in items:
-        if item["mode"] != mode:
-            continue
-        provider = str(item.get("provider") or infer_provider_from_url(item.get("url"))).strip() or ("Embed" if mode == "embed" else "Listening link")
-        url = str(item.get("url") or "").strip()
-        kind = str(item.get("kind") or ("embed" if mode == "embed" else "listen")).strip()
-        key = (provider, url, kind)
-        deduped.setdefault(key, {**item, "provider": provider, "url": url, "kind": kind})
-
-    return list(deduped.values()), warnings
-
-
-def audit_published_listening(mix: dict[str, Any]) -> tuple[list[str], list[str]]:
-    listening = mix.get("listening")
-    errors: list[str] = []
-    warnings: list[str] = []
-
-    if listening is not None and not isinstance(listening, dict):
-        errors.append("listening must be an object when present")
-        return errors, warnings
-
-    listening_obj = listening if isinstance(listening, dict) else {}
-    provider_roots = [
-        listening_obj.get("providers"),
-        listening_obj.get("links"),
-        mix.get("providers"),
-        mix.get("providerLinks"),
-        mix.get("streaming"),
-    ]
-    embed_roots = [
-        listening_obj.get("embeds"),
-        mix.get("embeds"),
-    ]
-    providers, provider_warnings = collect_listening_entries(provider_roots, "provider", "provider")
-    embeds_from_providers, embed_from_provider_warnings = collect_listening_entries(provider_roots, "embed", "provider")
-    embeds, embed_warnings = collect_listening_entries(embed_roots, "embed", "embed")
-    warnings.extend(provider_warnings)
-    warnings.extend(embed_from_provider_warnings)
-    warnings.extend(embed_warnings)
-
-    all_embeds = list({(entry["provider"], entry["url"]): entry for entry in [*embeds_from_providers, *embeds]}.values())
-    provider_urls = {entry["url"] for entry in providers}
-
-    for provider in providers:
-        provider_name = str(provider.get("provider") or "").strip() or infer_provider_from_url(provider.get("url"))
-        provider_key = normalize_listening_key(provider_name)
-        url = str(provider.get("url") or "").strip()
-        kind = str(provider.get("kind") or "listen").strip().lower()
-        inferred_provider = infer_provider_from_url(url)
-        if not is_http_url(url):
-            warnings.append(f"provider '{provider_name}' is missing a valid http(s) URL")
-            continue
-        if kind not in SUPPORTED_LISTENING_KINDS - {"embed"}:
-            warnings.append(f"provider '{provider_name}' uses unsupported kind '{provider.get('kind')}'")
-        matcher = PROVIDER_HOST_MATCHERS.get(provider_key)
-        host, _ = parse_url_parts(url)
-        if matcher and not matcher(host):
-            warnings.append(f"provider '{provider_name}' URL does not match the expected domain: {url}")
-        elif inferred_provider != "Listening link" and provider_name and normalize_listening_key(inferred_provider) != provider_key:
-            warnings.append(f"provider '{provider_name}' looks mismatched for URL: {url}")
-
-    for embed in all_embeds:
-        provider_name = str(embed.get("provider") or "").strip() or infer_provider_from_url(embed.get("url"))
-        provider_key = normalize_listening_key(provider_name)
-        url = str(embed.get("url") or "").strip()
-        inferred_provider = infer_provider_from_url(url)
-        if not is_http_url(url):
-            warnings.append(f"embed '{provider_name}' is missing a valid http(s) URL")
-            continue
-        host, path = parse_url_parts(url)
-        matcher = EMBED_URL_MATCHERS.get(provider_key)
-        if not matcher or not matcher(host, path):
-            warnings.append(f"embed '{provider_name}' is not using a trusted provider/embed URL pair: {url}")
-        elif inferred_provider != "Listening link" and normalize_listening_key(inferred_provider) != provider_key:
-            warnings.append(f"embed '{provider_name}' looks mismatched for URL: {url}")
-        elif provider_key == "youtube":
-            playlist_url = next((provider_url for provider_url in provider_urls if "youtube" in parse_url_parts(provider_url)[0] or parse_url_parts(provider_url)[0] == "youtu.be"), "")
-            if provider_urls and playlist_url and youtube_list_id(url) and youtube_list_id(playlist_url) and youtube_list_id(url) != youtube_list_id(playlist_url):
-                warnings.append(f"embed '{provider_name}' playlist does not match the published provider URL")
-
-    deduped_warnings: list[str] = []
-    seen: set[str] = set()
-    for warning in warnings:
-        if warning in seen:
-            continue
-        seen.add(warning)
-        deduped_warnings.append(warning)
-
-    return errors, deduped_warnings
+def audit_published_listening(mix: dict[str, Any], catalog: dict[str, Any]) -> tuple[list[str], list[str]]:
+    _, warnings = normalize_published_listening(mix, catalog)
+    return [], warnings
 
 
 def validate_site_payload(site: dict[str, Any]) -> None:
@@ -341,7 +78,13 @@ def load_json_with_issue(path: Path, issues: list[dict[str, str]], scope: str) -
     return None
 
 
-def validate_mix_collection(directory: Path, expected_flavor: str, issues: list[dict[str, str]], scope: str) -> dict[str, dict[str, Any]]:
+def validate_mix_collection(
+    directory: Path,
+    expected_flavor: str,
+    issues: list[dict[str, str]],
+    scope: str,
+    listening_catalog: dict[str, Any],
+) -> dict[str, dict[str, Any]]:
     mixes_by_slug: dict[str, dict[str, Any]] = {}
     for path in sorted(directory.glob("*.json")):
         payload = load_json_with_issue(path, issues, scope)
@@ -366,7 +109,7 @@ def validate_mix_collection(directory: Path, expected_flavor: str, issues: list[
         for warning in result.warnings:
             add_issue(issues, "warning", scope, path, warning)
         if expected_flavor == "published":
-            listening_errors, listening_warnings = audit_published_listening(result.mix)
+            listening_errors, listening_warnings = audit_published_listening(result.mix, listening_catalog)
             for message in listening_errors:
                 add_issue(issues, "error", scope, path, message)
             for message in listening_warnings:
@@ -510,6 +253,7 @@ def validate_archive_indexes(
 def build_report(root: Path) -> dict[str, Any]:
     data_dir = root / "data"
     issues: list[dict[str, str]] = []
+    listening_catalog = load_provider_catalog(root)
 
     site_path = data_dir / "site.json"
     site = load_json_with_issue(site_path, issues, "site")
@@ -519,8 +263,8 @@ def build_report(root: Path) -> dict[str, Any]:
         except ValidationError as exc:
             add_issue(issues, "error", "site", site_path, str(exc))
 
-    drafts_by_slug = validate_mix_collection(data_dir / "drafts", "editorial", issues, "drafts")
-    published_by_slug = validate_mix_collection(data_dir / "published", "published", issues, "published")
+    drafts_by_slug = validate_mix_collection(data_dir / "drafts", "editorial", issues, "drafts", listening_catalog)
+    published_by_slug = validate_mix_collection(data_dir / "published", "published", issues, "published", listening_catalog)
     known_mix_slugs = set(drafts_by_slug) | set(published_by_slug)
 
     if isinstance(site, dict):

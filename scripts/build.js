@@ -179,21 +179,14 @@ function isLikelyUrl(value) {
   return /^https?:\/\//i.test(String(value || '').trim());
 }
 
+const LISTENING_PROVIDER_CATALOG = readJsonIfExists(path.join(DATA_DIR, 'listening-provider-catalog.json'), {
+  schemaVersion: '1.0',
+  providers: {},
+});
 const SUPPORTED_LISTENING_KINDS = new Set(['listen', 'playlist', 'album', 'track', 'set', 'embed']);
-const PROVIDER_HOST_MATCHERS = {
-  applemusic: (host) => host === 'music.apple.com',
-  bandcamp: (host) => host === 'daily.bandcamp.com' || host.endsWith('.bandcamp.com'),
-  mixcloud: (host) => host.endsWith('mixcloud.com'),
-  soundcloud: (host) => host.endsWith('soundcloud.com'),
-  spotify: (host) => host === 'open.spotify.com',
-  youtube: (host) => ['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtu.be'].includes(host),
-};
-const EMBED_URL_MATCHERS = {
-  mixcloud: (host, pathname) => host.endsWith('mixcloud.com') && pathname.includes('/widget/'),
-  soundcloud: (host, pathname) => host === 'w.soundcloud.com' && pathname.startsWith('/player'),
-  spotify: (host, pathname) => host === 'open.spotify.com' && pathname.includes('/embed/'),
-  youtube: (host, pathname) => host.endsWith('youtube.com') && pathname.includes('/embed/'),
-};
+const PROVIDER_CONTAINER_KEYS = new Set(['providers', 'links', 'providerlinks', 'streaming', 'entries', 'items', 'sources']);
+const EMBED_CONTAINER_KEYS = new Set(['embeds', 'embed', 'players', 'iframes']);
+const LISTENING_META_KEYS = new Set(['url', 'href', 'src', 'provider', 'label', 'title', 'kind', 'note', 'summary', 'intro', 'description']);
 
 function normalizeListeningKey(value) {
   return String(value || '')
@@ -207,17 +200,8 @@ function providerLabelFromKey(value) {
   const normalized = normalizeListeningKey(raw);
 
   if (!normalized) return '';
-
-  const knownProviders = {
-    applemusic: 'Apple Music',
-    bandcamp: 'Bandcamp',
-    mixcloud: 'Mixcloud',
-    soundcloud: 'SoundCloud',
-    spotify: 'Spotify',
-    youtube: 'YouTube',
-  };
-
-  if (knownProviders[normalized]) return knownProviders[normalized];
+  const provider = LISTENING_PROVIDER_CATALOG.providers?.[normalized];
+  if (provider?.label) return String(provider.label).trim();
 
   return raw
     .replace(/[_-]+/g, ' ')
@@ -228,14 +212,15 @@ function providerLabelFromKey(value) {
 }
 
 function inferProviderFromUrl(url) {
-  const href = String(url || '').toLowerCase();
-  if (!href) return 'Listening link';
-  if (href.includes('spotify.com')) return 'Spotify';
-  if (href.includes('music.apple.com')) return 'Apple Music';
-  if (href.includes('youtube.com') || href.includes('youtu.be')) return 'YouTube';
-  if (href.includes('bandcamp.com')) return 'Bandcamp';
-  if (href.includes('soundcloud.com')) return 'SoundCloud';
-  if (href.includes('mixcloud.com')) return 'Mixcloud';
+  const { host } = getUrlParts(url);
+  if (!host) return 'Listening link';
+
+  for (const [key, provider] of Object.entries(LISTENING_PROVIDER_CATALOG.providers || {})) {
+    if (hostMatchesProvider(host, provider)) {
+      return String(provider.label || providerLabelFromKey(key)).trim() || 'Listening link';
+    }
+  }
+
   return 'Listening link';
 }
 
@@ -266,6 +251,23 @@ function getUrlParts(url) {
       searchParams: new URLSearchParams(),
     };
   }
+}
+
+function hostMatchesProvider(host, provider) {
+  const exactHosts = new Set((provider?.trustedHosts || []).map((entry) => String(entry || '').trim().toLowerCase()).filter(Boolean));
+  const suffixes = (provider?.trustedHostSuffixes || []).map((entry) => String(entry || '').trim().toLowerCase()).filter(Boolean);
+  if (exactHosts.has(host)) return true;
+  return suffixes.some((suffix) => host.endsWith(suffix));
+}
+
+function embedMatchesProvider(host, pathname, provider) {
+  const exactHosts = new Set((provider?.embedHosts || []).map((entry) => String(entry || '').trim().toLowerCase()).filter(Boolean));
+  const suffixes = (provider?.embedHostSuffixes || []).map((entry) => String(entry || '').trim().toLowerCase()).filter(Boolean);
+  const pathHints = (provider?.embedPathHints || []).map((entry) => String(entry || '').trim().toLowerCase()).filter(Boolean);
+  const hostOk = exactHosts.has(host) || suffixes.some((suffix) => host.endsWith(suffix));
+  if (!hostOk) return false;
+  if (!pathHints.length) return true;
+  return pathHints.some((hint) => pathname.includes(hint));
 }
 
 function isMegaUrl(url) {
@@ -341,17 +343,6 @@ function getYouTubePlaylistId(value) {
   }
 }
 
-function isYouTubePlaylistProvider(provider) {
-  if (!provider || typeof provider !== 'object') return false;
-  return provider.provider === 'YouTube' && Boolean(getYouTubePlaylistId(provider.url));
-}
-
-function isYouTubePlaylistEmbed(embed) {
-  if (!embed || typeof embed !== 'object') return false;
-  const url = String(embed.url || '');
-  return embed.provider === 'YouTube' && Boolean(getYouTubePlaylistId(url)) && url.includes('/embed/videoseries');
-}
-
 function getDistinctMixNotes(mix) {
   const blocked = new Set(
     [mix.excerpt, mix.coverCredit, mix.summary]
@@ -367,39 +358,8 @@ function getDistinctMixNotes(mix) {
   });
 }
 
-function resolvePlaylistEmbed(mix) {
-  const providers = Array.isArray(mix.listening?.providers) ? mix.listening.providers : [];
-  const embeds = Array.isArray(mix.listening?.embeds) ? mix.listening.embeds : [];
-  const providerIds = new Set(providers.map((provider) => getYouTubePlaylistId(provider.url)).filter(Boolean));
-
-  for (const embed of embeds) {
-    if (!isYouTubePlaylistEmbed(embed)) continue;
-
-    const playlistId = getYouTubePlaylistId(embed.url);
-    if (!providerIds.size || providerIds.has(playlistId)) return embed;
-  }
-
-  return null;
-}
-
-function getCompactListeningLinks(mix) {
-  const providers = Array.isArray(mix.listening?.providers) ? mix.listening.providers : [];
-  const allowedKinds = new Set(['playlist', 'album', 'track', 'set']);
-
-  return providers.filter((provider) => {
-    if (!provider || typeof provider !== 'object') return false;
-    const url = String(provider.url || '').trim();
-    const kind = String(provider.kind || '').trim().toLowerCase();
-    if (!url) return false;
-    return allowedKinds.has(kind);
-  });
-}
-
 function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode) {
   const items = [];
-  const providerContainerKeys = new Set(['providers', 'links', 'providerlinks', 'streaming', 'entries', 'items', 'sources']);
-  const embedContainerKeys = new Set(['embeds', 'embed', 'players', 'iframes']);
-  const metaKeys = new Set(['url', 'href', 'src', 'provider', 'label', 'title', 'kind', 'note', 'summary', 'intro', 'description']);
 
   function visit(value, currentMode = startMode, providerHint = '') {
     if (!value) return;
@@ -414,13 +374,16 @@ function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode
     if (typeof value === 'string') {
       const url = value.trim();
       if (!url || !isLikelyUrl(url) || isMegaUrl(url)) return;
+      const providerSource = providerHint ? 'key' : 'url-inferred';
 
       if (currentMode === 'embed') {
         items.push({
           mode: currentMode,
           provider: providerHint || inferProviderFromUrl(url),
+          providerSource,
           title: '',
           url,
+          kind: 'embed',
           note: '',
         });
         return;
@@ -429,6 +392,7 @@ function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode
       items.push({
         mode: currentMode,
         provider: providerHint || inferProviderFromUrl(url),
+        providerSource,
         label: '',
         url,
         kind: inferProviderKind(url),
@@ -440,19 +404,24 @@ function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode
     if (typeof value !== 'object') return;
 
     const url = String(value.url || value.href || value.src || '').trim();
+    const explicitProvider = String(value.provider || '').trim();
+    const providerSource = explicitProvider ? 'field' : providerHint ? 'key' : 'url-inferred';
     if (url && !isMegaUrl(url)) {
       if (currentMode === 'embed') {
         items.push({
           mode: currentMode,
-          provider: value.provider || providerHint || inferProviderFromUrl(url),
+          provider: explicitProvider || providerHint || inferProviderFromUrl(url),
+          providerSource,
           title: value.title || value.label || '',
           url,
+          kind: 'embed',
           note: value.note || value.summary || '',
         });
       } else {
         items.push({
           mode: currentMode,
-          provider: value.provider || providerHint || inferProviderFromUrl(url),
+          provider: explicitProvider || providerHint || inferProviderFromUrl(url),
+          providerSource,
           label: value.label || value.title || '',
           url,
           kind: value.kind || inferProviderKind(url),
@@ -463,14 +432,14 @@ function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode
 
     for (const [key, child] of Object.entries(value)) {
       const normalizedKey = normalizeListeningKey(key);
-      if (!child || metaKeys.has(normalizedKey)) continue;
+      if (!child || LISTENING_META_KEYS.has(normalizedKey)) continue;
 
-      const nextMode = embedContainerKeys.has(normalizedKey)
+      const nextMode = EMBED_CONTAINER_KEYS.has(normalizedKey)
         ? 'embed'
-        : providerContainerKeys.has(normalizedKey)
+        : PROVIDER_CONTAINER_KEYS.has(normalizedKey)
           ? 'provider'
           : currentMode;
-      const nextHint = providerContainerKeys.has(normalizedKey) || embedContainerKeys.has(normalizedKey)
+      const nextHint = PROVIDER_CONTAINER_KEYS.has(normalizedKey) || EMBED_CONTAINER_KEYS.has(normalizedKey)
         ? providerHint
         : providerLabelFromKey(key) || providerHint;
 
@@ -490,14 +459,17 @@ function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode
     if (!url) continue;
 
     const provider = String(item.provider || inferProviderFromUrl(url)).trim() || (mode === 'embed' ? 'Embed' : 'Listening link');
+    const providerSource = String(item.providerSource || 'url-inferred').trim() || 'url-inferred';
     const key = `${provider}::${url}`;
     if (deduped.has(key)) continue;
 
     if (mode === 'embed') {
       deduped.set(key, {
         provider,
+        providerSource,
         title: String(item.title || '').trim(),
         url,
+        kind: 'embed',
         note: String(item.note || '').trim(),
       });
       continue;
@@ -505,6 +477,7 @@ function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode
 
     deduped.set(key, {
       provider,
+      providerSource,
       label: String(item.label || '').trim(),
       url,
       kind: String(item.kind || inferProviderKind(url)).trim() || 'listen',
@@ -513,6 +486,83 @@ function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode
   }
 
   return Array.from(deduped.values());
+}
+
+function classifyListeningSurface(entry, mode, providerUrlsByKey = new Map()) {
+  const semantics = mode === 'embed' ? 'embedded-preview' : 'external-link';
+  const url = String(entry?.url || '').trim();
+  const provider = String(entry?.provider || inferProviderFromUrl(url)).trim() || 'Listening link';
+  const providerKey = normalizeListeningKey(provider);
+  const providerSource = String(entry?.providerSource || 'url-inferred').trim() || 'url-inferred';
+  const providerCatalog = LISTENING_PROVIDER_CATALOG.providers?.[providerKey];
+  const kind = String(entry?.kind || (mode === 'embed' ? 'embed' : inferProviderKind(url))).trim().toLowerCase();
+  const warnings = [];
+  let confidenceLevel = 'uncertain';
+  let confidenceReason = 'This stays visible as a lead, not a verified listening mirror.';
+
+  if (!isLikelyUrl(url)) {
+    warnings.push(`${mode} "${provider}" is missing a valid http(s) URL`);
+  } else if (providerSource === 'url-inferred') {
+    warnings.push(`${mode} "${provider}" only infers its provider from the URL and stays uncertain until curated explicitly`);
+  } else if (!providerCatalog || typeof providerCatalog !== 'object') {
+    warnings.push(`${mode} "${provider}" is not in the curated listening provider catalog`);
+  } else {
+    const { host, pathname } = getUrlParts(url);
+    if (mode === 'provider') {
+      let validProvider = true;
+      if (!SUPPORTED_LISTENING_KINDS.has(kind) || kind === 'embed') {
+        warnings.push(`provider "${provider}" uses unsupported kind "${entry?.kind}"`);
+        validProvider = false;
+      }
+      if (!hostMatchesProvider(host, providerCatalog)) {
+        warnings.push(`provider "${provider}" URL does not match the curated host list`);
+        validProvider = false;
+      }
+      if (validProvider) {
+        const supportedKinds = new Set((providerCatalog.supportedKinds || []).map((value) => String(value || '').trim().toLowerCase()).filter(Boolean));
+        if (supportedKinds.size && !supportedKinds.has(kind)) {
+          warnings.push(`provider "${provider}" kind "${kind}" is outside the curated support list`);
+        } else {
+          confidenceLevel = 'trusted-link-only';
+          confidenceReason = 'Provider label, URL, and link shape match the curated listening data.';
+        }
+      }
+    } else {
+      let validEmbed = true;
+      if (!embedMatchesProvider(host, pathname, providerCatalog)) {
+        warnings.push(`embed "${provider}" is not using a curated provider/embed URL pair`);
+        validEmbed = false;
+      }
+      if (validEmbed) {
+        const expectedProviderUrls = providerUrlsByKey.get(providerKey) || new Set();
+        if (providerKey === 'youtube' && expectedProviderUrls.size) {
+          const embedListId = getYouTubePlaylistId(url);
+          const knownListIds = new Set(Array.from(expectedProviderUrls).map((providerUrl) => getYouTubePlaylistId(providerUrl)).filter(Boolean));
+          if (embedListId && knownListIds.size && !knownListIds.has(embedListId)) {
+            warnings.push(`embed "${provider}" playlist does not match the curated provider URL`);
+          } else {
+            confidenceLevel = 'trusted-embed-ready';
+            confidenceReason = 'Provider label and embed URL match the curated playback data.';
+          }
+        } else {
+          confidenceLevel = 'trusted-embed-ready';
+          confidenceReason = 'Provider label and embed URL match the curated playback data.';
+        }
+      }
+    }
+  }
+
+  return {
+    ...entry,
+    provider,
+    providerKey,
+    providerSource,
+    kind,
+    semantics,
+    confidenceLevel,
+    confidenceReason,
+    warnings,
+  };
 }
 
 function normalizeListening(mix) {
@@ -529,42 +579,58 @@ function normalizeListening(mix) {
     mix.embeds,
   ];
   const providerEntries = collectListeningEntries(providerRoots, 'provider', 'provider');
-  const explicitEmbeds = [
-    ...collectListeningEntries(providerRoots, 'embed', 'provider').filter((entry) => inferProviderKind(entry.url) === 'embed'),
-    ...collectListeningEntries(embedRoots, 'embed', 'embed'),
-  ];
-  const derivedEmbeds = providerEntries
-    .filter((provider) => isYouTubePlaylistProvider(provider))
-    .map((provider) => {
-      const playlistId = getYouTubePlaylistId(provider.url);
-      return {
-        provider: provider.provider,
-        title: provider.label || `${provider.provider} playlist`,
-        url: `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(playlistId)}`,
-        note: provider.note,
-      };
-    });
+  const providerEmbedEntries = collectListeningEntries(providerRoots, 'embed', 'provider')
+    .filter((entry) => inferProviderKind(entry.url) === 'embed');
+  const explicitEmbeds = collectListeningEntries(embedRoots, 'embed', 'embed');
   const embedEntries = Array.from(
     new Map(
-      [...derivedEmbeds, ...explicitEmbeds]
-        .filter((entry) => {
-          if (!entry || typeof entry !== 'object') return false;
-          if (isYouTubePlaylistEmbed(entry)) return true;
-          return Boolean(String(entry.provider || '').trim() && String(entry.url || '').trim());
-        })
+      [...providerEmbedEntries, ...explicitEmbeds]
+        .filter((entry) => entry && typeof entry === 'object' && String(entry.url || '').trim())
         .map((entry) => [`${entry.provider}::${entry.url}`, entry])
     ).values()
   );
 
+  const warnings = [];
+  const providerUrlsByKey = new Map();
+  const normalizedProviders = providerEntries.map((entry) => classifyListeningSurface(entry, 'provider'));
+  for (const entry of normalizedProviders) {
+    warnings.push(...entry.warnings);
+    if (entry.confidenceLevel === 'trusted-link-only' && entry.providerKey) {
+      if (!providerUrlsByKey.has(entry.providerKey)) providerUrlsByKey.set(entry.providerKey, new Set());
+      providerUrlsByKey.get(entry.providerKey).add(entry.url);
+    }
+  }
+
+  const normalizedEmbeds = embedEntries.map((entry) => classifyListeningSurface(entry, 'embed', providerUrlsByKey));
+  for (const entry of normalizedEmbeds) {
+    warnings.push(...entry.warnings);
+  }
+
+  const trustedProviders = normalizedProviders.filter((entry) => entry.confidenceLevel === 'trusted-link-only');
+  const uncertainProviders = normalizedProviders.filter((entry) => entry.confidenceLevel === 'uncertain');
+  const trustedEmbeds = normalizedEmbeds.filter((entry) => entry.confidenceLevel === 'trusted-embed-ready');
+  const uncertainEmbeds = normalizedEmbeds.filter((entry) => entry.confidenceLevel === 'uncertain');
+  const dedupedWarnings = Array.from(new Set(warnings));
+
   return {
     intro: String(listening.intro || listening.summary || mix.listeningIntro || '').trim(),
-    providers: providerEntries,
-    embeds: embedEntries,
+    providers: normalizedProviders,
+    embeds: normalizedEmbeds,
+    trustedProviders,
+    uncertainProviders,
+    trustedEmbeds,
+    uncertainEmbeds,
+    warnings: dedupedWarnings,
+    summary: {
+      trustedLinkCount: trustedProviders.length,
+      trustedEmbedCount: trustedEmbeds.length,
+      uncertainCount: uncertainProviders.length + uncertainEmbeds.length,
+      surfaceCount: normalizedProviders.length + normalizedEmbeds.length,
+    },
   };
 }
 
 function auditListeningPayload(mix) {
-  const warnings = [];
   const title = String(mix.displayTitle || mix.title || mix.slug || 'Untitled mix').trim();
   const listening = mix.listening;
 
@@ -578,69 +644,14 @@ function auditListeningPayload(mix) {
   }
 
   const normalizedListening = normalizeListening(mix);
-  const providerEntries = Array.isArray(normalizedListening.providers) ? normalizedListening.providers : [];
-  const embedEntries = Array.isArray(normalizedListening.embeds) ? normalizedListening.embeds : [];
-  const youtubeProviderIds = new Set(
-    providerEntries
-      .filter((entry) => normalizeListeningKey(entry.provider) === 'youtube')
-      .map((entry) => getYouTubePlaylistId(entry.url))
-      .filter(Boolean)
-  );
-
-  for (const provider of providerEntries) {
-    const providerName = String(provider.provider || inferProviderFromUrl(provider.url)).trim();
-    const providerKey = normalizeListeningKey(providerName);
-    const url = String(provider.url || '').trim();
-    const kind = String(provider.kind || inferProviderKind(url)).trim().toLowerCase();
-    const inferredProvider = inferProviderFromUrl(url);
-    const { host } = getUrlParts(url);
-    if (!isLikelyUrl(url)) {
-      warnings.push(`provider "${providerName}" is missing a valid http(s) URL`);
-      continue;
-    }
-    if (!SUPPORTED_LISTENING_KINDS.has(kind) || kind === 'embed') {
-      warnings.push(`provider "${providerName}" uses unsupported kind "${provider.kind}"`);
-    }
-    const matcher = PROVIDER_HOST_MATCHERS[providerKey];
-    if (matcher && !matcher(host)) {
-      warnings.push(`provider "${providerName}" URL does not match the expected domain`);
-    } else if (inferredProvider !== 'Listening link' && normalizeListeningKey(inferredProvider) !== providerKey) {
-      warnings.push(`provider "${providerName}" looks mismatched for its URL`);
-    }
-  }
-
-  for (const embed of embedEntries) {
-    const providerName = String(embed.provider || inferProviderFromUrl(embed.url)).trim();
-    const providerKey = normalizeListeningKey(providerName);
-    const url = String(embed.url || '').trim();
-    const inferredProvider = inferProviderFromUrl(url);
-    const { host, pathname } = getUrlParts(url);
-    if (!isLikelyUrl(url)) {
-      warnings.push(`embed "${providerName}" is missing a valid http(s) URL`);
-      continue;
-    }
-    const matcher = EMBED_URL_MATCHERS[providerKey];
-    if (!matcher || !matcher(host, pathname)) {
-      warnings.push(`embed "${providerName}" is not using a trusted provider/embed URL pair`);
-      continue;
-    }
-    if (inferredProvider !== 'Listening link' && normalizeListeningKey(inferredProvider) !== providerKey) {
-      warnings.push(`embed "${providerName}" looks mismatched for its URL`);
-      continue;
-    }
-    if (providerKey === 'youtube' && youtubeProviderIds.size) {
-      const playlistId = getYouTubePlaylistId(url);
-      if (playlistId && !youtubeProviderIds.has(playlistId)) {
-        warnings.push(`embed "${providerName}" playlist does not match the published provider URL`);
-      }
-    }
-  }
-
-  const dedupedWarnings = Array.from(new Set(warnings));
+  const dedupedWarnings = Array.isArray(normalizedListening.warnings) ? normalizedListening.warnings : [];
   return {
     warnings: dedupedWarnings,
     warningCount: dedupedWarnings.length,
-    hasListeningSurface: providerEntries.length > 0 || embedEntries.length > 0,
+    hasListeningSurface: (normalizedListening.summary?.surfaceCount || 0) > 0,
+    trustedLinkCount: normalizedListening.summary?.trustedLinkCount || 0,
+    trustedEmbedCount: normalizedListening.summary?.trustedEmbedCount || 0,
+    uncertainCount: normalizedListening.summary?.uncertainCount || 0,
     summary: dedupedWarnings.length ? `${title}: ${dedupedWarnings[0]}` : '',
   };
 }
@@ -1162,38 +1173,93 @@ function renderResourceSection(mix) {
 }
 
 function renderListeningSection(mix) {
-  const playlistEmbed = resolvePlaylistEmbed(mix);
-  const listeningLinks = getCompactListeningLinks(mix);
+  const listening = mix.listening && typeof mix.listening === 'object' ? mix.listening : {};
+  const trustedEmbeds = Array.isArray(listening.trustedEmbeds) ? listening.trustedEmbeds : [];
+  const trustedProviders = Array.isArray(listening.trustedProviders) ? listening.trustedProviders : [];
+  const uncertainProviders = Array.isArray(listening.uncertainProviders) ? listening.uncertainProviders : [];
+  const uncertainEmbeds = Array.isArray(listening.uncertainEmbeds) ? listening.uncertainEmbeds : [];
+  const actionableTrustedLinks = trustedProviders.filter((provider) => {
+    const kind = String(provider.kind || '').trim().toLowerCase();
+    return ['playlist', 'album', 'track', 'set'].includes(kind);
+  });
+  const uncertainSurfaces = [...uncertainEmbeds, ...uncertainProviders];
 
-  if (!playlistEmbed && !listeningLinks.length) return '';
+  if (!trustedEmbeds.length && !actionableTrustedLinks.length && !uncertainSurfaces.length) return '';
+
+  const intro = listening.intro ? `<p class="listening-section__intro">${escapeHtml(listening.intro)}</p>` : '';
+  const summaryBits = [];
+  if (trustedEmbeds.length) summaryBits.push(`${trustedEmbeds.length} verified preview${trustedEmbeds.length === 1 ? '' : 's'}`);
+  if (actionableTrustedLinks.length) summaryBits.push(`${actionableTrustedLinks.length} verified external link${actionableTrustedLinks.length === 1 ? '' : 's'}`);
+  if (uncertainSurfaces.length) summaryBits.push(`${uncertainSurfaces.length} uncertain lead${uncertainSurfaces.length === 1 ? '' : 's'}`);
+  const summary = summaryBits.length ? `<p class="listening-section__summary">${escapeHtml(summaryBits.join(' · '))}</p>` : '';
 
   return `<section class="section-block section-block--compact">
       <div class="section-heading">
         <div>
           <p class="eyebrow">Listening</p>
-          <h2>${playlistEmbed ? 'Playlist' : 'Links'}</h2>
+          <h2>Listening surfaces</h2>
         </div>
       </div>
-      ${playlistEmbed
-        ? `<div class="embed-stack">
-            <article class="embed-card">
-              <div class="embed-card__frame">
-                <iframe
-                  src="${escapeHtml(playlistEmbed.url)}"
-                  title="${escapeHtml(playlistEmbed.title || `YouTube playlist for ${mix.title}`)}"
-                  loading="lazy"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                ></iframe>
-              </div>
-            </article>
+      ${intro}
+      ${summary}
+      ${trustedEmbeds.length
+        ? `<div class="listening-subsection">
+            <p class="listening-subsection__title">Embedded preview</p>
+            <div class="embed-stack">
+              ${trustedEmbeds
+                .map((embed) => `<article class="embed-card">
+                    <div class="embed-card__frame">
+                      <iframe
+                        src="${escapeHtml(embed.url)}"
+                        title="${escapeHtml(embed.title || `${embed.provider} preview for ${mix.title}`)}"
+                        loading="lazy"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                      ></iframe>
+                    </div>
+                    <div class="embed-card__meta">
+                      <p class="provider-card__eyebrow">${escapeHtml(embed.confidenceLevel === 'trusted-embed-ready' ? 'Trusted embed-ready' : 'Embedded preview')}</p>
+                      <h3>${escapeHtml(embed.title || `${embed.provider} preview`)}</h3>
+                      <p>${escapeHtml(embed.confidenceReason)}</p>
+                      ${embed.note ? `<p>${escapeHtml(embed.note)}</p>` : ''}
+                    </div>
+                  </article>`)
+                .join('')}
+            </div>
           </div>`
         : ''}
-      ${listeningLinks.length
-        ? `<div class="button-row button-row--compact">
-            ${listeningLinks
-              .map((provider) => `<a class="button button--secondary" href="${escapeHtml(provider.url)}">${escapeHtml(provider.label || `Open on ${provider.provider}`)}</a>`)
-              .join('')}
+      ${actionableTrustedLinks.length
+        ? `<div class="listening-subsection">
+            <p class="listening-subsection__title">External links</p>
+            <div class="provider-grid">
+              ${actionableTrustedLinks
+                .map((provider) => `<article class="provider-card">
+                    <p class="provider-card__eyebrow">Trusted link only</p>
+                    <h3>${escapeHtml(provider.label || `Open on ${provider.provider}`)}</h3>
+                    <p>${escapeHtml(provider.confidenceReason)}</p>
+                    ${provider.note ? `<p>${escapeHtml(provider.note)}</p>` : ''}
+                    <div class="button-row button-row--compact">
+                      <a class="button button--secondary" href="${escapeHtml(provider.url)}">${escapeHtml(provider.label || `Open on ${provider.provider}`)}</a>
+                    </div>
+                  </article>`)
+                .join('')}
+            </div>
+          </div>`
+        : ''}
+      ${uncertainSurfaces.length
+        ? `<div class="listening-subsection">
+            <p class="listening-subsection__title">Uncertain leads</p>
+            <div class="provider-grid">
+              ${uncertainSurfaces
+                .map((entry) => `<article class="provider-card provider-card--uncertain">
+                    <p class="provider-card__eyebrow">Uncertain</p>
+                    <h3>${escapeHtml(entry.title || entry.label || entry.provider || 'Listening lead')}</h3>
+                    <p>${escapeHtml(entry.confidenceReason || 'This stays visible as a lead, not a verified listening mirror.')}</p>
+                    ${entry.note ? `<p>${escapeHtml(entry.note)}</p>` : ''}
+                    ${entry.url ? `<div class="button-row button-row--compact"><a class="button button--secondary" href="${escapeHtml(entry.url)}">Inspect link</a></div>` : ''}
+                  </article>`)
+                .join('')}
+            </div>
           </div>`
         : ''}
     </section>`;

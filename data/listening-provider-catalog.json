@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0",
+  "providers": {
+    "applemusic": {
+      "label": "Apple Music",
+      "trustedHosts": ["music.apple.com"],
+      "trustedHostSuffixes": [],
+      "supportedKinds": ["listen", "playlist", "album", "track"],
+      "embedHosts": [],
+      "embedHostSuffixes": [],
+      "embedPathHints": []
+    },
+    "bandcamp": {
+      "label": "Bandcamp",
+      "trustedHosts": ["daily.bandcamp.com"],
+      "trustedHostSuffixes": [".bandcamp.com"],
+      "supportedKinds": ["listen", "album", "track"],
+      "embedHosts": [],
+      "embedHostSuffixes": [],
+      "embedPathHints": []
+    },
+    "mixcloud": {
+      "label": "Mixcloud",
+      "trustedHosts": [],
+      "trustedHostSuffixes": [".mixcloud.com"],
+      "supportedKinds": ["listen", "playlist", "set"],
+      "embedHosts": [],
+      "embedHostSuffixes": [".mixcloud.com"],
+      "embedPathHints": ["/widget/"]
+    },
+    "soundcloud": {
+      "label": "SoundCloud",
+      "trustedHosts": [],
+      "trustedHostSuffixes": [".soundcloud.com"],
+      "supportedKinds": ["listen", "playlist", "album", "track", "set"],
+      "embedHosts": ["w.soundcloud.com"],
+      "embedHostSuffixes": [],
+      "embedPathHints": ["/player"]
+    },
+    "spotify": {
+      "label": "Spotify",
+      "trustedHosts": ["open.spotify.com"],
+      "trustedHostSuffixes": [],
+      "supportedKinds": ["listen", "playlist", "album", "track"],
+      "embedHosts": ["open.spotify.com"],
+      "embedHostSuffixes": [],
+      "embedPathHints": ["/embed/"]
+    },
+    "youtube": {
+      "label": "YouTube",
+      "trustedHosts": ["youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"],
+      "trustedHostSuffixes": [],
+      "supportedKinds": ["listen", "playlist", "track"],
+      "embedHosts": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "embedHostSuffixes": [],
+      "embedPathHints": ["/embed/"]
+    }
+  }
+}

@@ -23,7 +23,8 @@
    - Run `python3 scripts/validate_content.py` again after edits.
    - The validator checks site metadata, notes, drafts, published mixes, `data/archive/index.json`, `data/archive-index.json`, and `data/mixes.json`.
    - Expected output before publish is `errors: 0`.
-   - Warnings are non-blocking, but published mixes can now emit listening/provider warnings when a mirror URL, provider label, embed host, or playlist pairing looks suspicious.
+   - Warnings are non-blocking, but published mixes can now emit listening/provider warnings when a surface falls outside the curated trust rules in `data/listening-provider-catalog.json`.
+   - Explicit embeds are required for inline playback. Trusted provider links alone stay link-only.
    - Use `/studio/` after a build for a quick local summary of note coverage gaps, orphan notes, and listening/provider warning counts.
    - If you edited canonical note or published mix JSON directly, run `python3 scripts/refresh_indexes.py` to rebuild `data/notes-index.json`, `data/archive/index.json`, `data/archive-index.json`, and `data/mixes.json`.
 
@@ -71,3 +72,4 @@ Scheduled local runs:
 - `npm run content:validate`, `npm run draft:new`, and `npm run note:new` wrap the new editor-facing commands.
 - `npm run note:suggest`, `npm run note:new-from-mix`, `npm run content:refresh`, and `npm run preview:latest` cover the new low-friction maintenance helpers.
 - Notes are indexed through `data/notes-index.json`, but the detail files in `data/notes/` remain the primary authored source.
+- Listening confidence is local-first and explicit: uncertain surfaces may still appear as leads, but the site will not style them like verified playback.

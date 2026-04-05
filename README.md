@@ -35,6 +35,7 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
   - `notes/` editorial notes
   - `archive/` generated archive index
   - `site.json`, `archive-index.json`, `notes-index.json`, `taste-profile.json`
+  - `listening-provider-catalog.json` curated trust map for listening providers and embeds
 - `schemas/`
   - JSON schemas for site, mixes, notes, archive, taste profile
 - `scripts/`
@@ -80,6 +81,12 @@ Validate all local content and report actionable issues:
 python3 scripts/validate_content.py
 npm run content:validate
 ```
+
+Listening-specific operator notes:
+
+- Treat `data/listening-provider-catalog.json` as the trust source for listening surfaces.
+- Add explicit embed URLs only when the curated data genuinely supports inline playback.
+- If validation warns that a listening surface is uncertain, the build will demote it instead of presenting it as a verified mirror.
 
 Create a new draft mix template instead of starting from blank JSON:
 
@@ -292,6 +299,7 @@ These documents cover:
 - Note detail pages are emitted at `/notes/[slug]/`.
 - Mix detail pages expose previous/next archive links, related notes, highlighted tracks, and source/embed metadata when present in the JSON.
 - Dedicated listening sections render automatically when mix JSON includes provider links or embeds under `listening`, including nested provider maps and embedded-player groups.
+- Listening confidence is derived from `data/listening-provider-catalog.json`, so verified previews require an explicit curated embed URL and verified links stay clearly separate from uncertain leads.
 - `/archive/` and `/notes/` include lightweight client-side search and filter controls driven by the metadata already rendered into each page.
 - `/studio/` is generated from local JSON and now summarizes draft count, published count, notes count, featured mix state, note coverage gaps, listening/provider warning counts, validation posture, recent routes, and recommended next actions.
 - Tumblr-imported archive mixes fall back to typographic cover placeholders and track-level search helpers when the only artwork/download data is legacy Tumblr residue.

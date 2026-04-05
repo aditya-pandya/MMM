@@ -85,7 +85,9 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "related note" in archive_html
     assert "highlighted track" in archive_html
     assert "Companion playlist on YouTube" in mix_with_youtube_html
-    assert "Playlist" in mix_with_youtube_html
+    assert "Listening surfaces" in mix_with_youtube_html
+    assert "Embedded preview" in mix_with_youtube_html
+    assert "External links" in mix_with_youtube_html
     assert "youtube.com/embed/videoseries" in mix_with_youtube_html
     assert "Bandcamp starting point" not in mix_with_youtube_html
     assert "Local editorial state" in studio_html
@@ -147,11 +149,12 @@ def test_static_build_recursively_flattens_nested_listening_provider_shapes(tmp_
 
     assert "Companion playlist on YouTube" in mix_html
     assert "Bandcamp starting point" not in mix_html
-    assert "Listening" in mix_html
+    assert "Listening surfaces" in mix_html
+    assert "Trusted link only" in mix_html
+    assert "Trusted embed-ready" in mix_html
     assert "youtube.com/embed/videoseries" in mix_html
 
-
-def test_static_build_only_derives_youtube_playlist_embeds_from_real_playlist_data(tmp_path):
+def test_static_build_requires_explicit_trusted_embed_data_before_rendering_preview(tmp_path):
     repo = prepare_temp_repo(tmp_path)
 
     youtube_mix_path = repo / "data" / "published" / "mix-035-thirtyfifth.json"
@@ -169,7 +172,7 @@ def test_static_build_only_derives_youtube_playlist_embeds_from_real_playlist_da
                 "label": "Archive reconstruction playlist",
                 "url": "https://open.spotify.com/playlist/37i9dQZF1DX4WYpdgoIcn6",
                 "kind": "playlist",
-                "note": "Useful as a direct playlist link, but not enough to claim embed support."
+                "note": "Useful as a direct playlist link, but not enough to claim embedded playback."
             }
         ]
     }
@@ -188,8 +191,54 @@ def test_static_build_only_derives_youtube_playlist_embeds_from_real_playlist_da
     youtube_mix_html = read_text(repo / "dist" / "mixes" / "mix-035-thirtyfifth" / "index.html")
     spotify_mix_html = read_text(repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html")
 
-    assert "youtube.com/embed/videoseries" in youtube_mix_html
+    assert "youtube.com/embed/videoseries" not in youtube_mix_html
+    assert "External links" in youtube_mix_html
+    assert "Trusted link only" in spotify_mix_html
     assert "open.spotify.com/embed/playlist" not in spotify_mix_html
+
+
+def test_static_build_demotes_uncertain_listening_data_on_mix_detail_pages(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    mix_path = repo / "data" / "published" / "mix-036-thirtysixth.json"
+    mix = json.loads(read_text(mix_path))
+    mix["listening"] = {
+        "intro": "These links should stay visibly tentative.",
+        "providers": [
+            {
+                "provider": "YouTube",
+                "label": "Questionable mirror",
+                "url": "https://open.spotify.com/playlist/37i9dQZF1DX4WYpdgoIcn6",
+                "kind": "mixtape"
+            }
+        ],
+        "embeds": [
+            {
+                "provider": "Spotify",
+                "title": "Untrusted preview",
+                "url": "https://www.youtube.com/embed/videoseries?list=PL1234567890"
+            }
+        ]
+    }
+    write_json(mix_path, mix)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    mix_html = read_text(repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html")
+
+    assert "Uncertain leads" in mix_html
+    assert "Questionable mirror" in mix_html
+    assert "Inspect link" in mix_html
+    assert "<iframe" not in mix_html
+    assert "Trusted embed-ready" not in mix_html
 
 
 def test_static_build_surfaces_listening_warnings_in_studio_health(tmp_path):

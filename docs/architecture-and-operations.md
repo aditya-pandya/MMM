@@ -208,12 +208,15 @@ These matter because future agents may get too clever.
 
 ### Good behavior
 - show real provider/embed data when trustworthy
+- derive listening confidence from the curated provider catalog instead of URL wishfulness
+- require explicit embed URLs before rendering inline playback
 - show track-first search helpers when provider confidence is low
 - preserve Tumblr source links as provenance
 - suppress dead Mega links from primary listening UI
 
 ### Bad behavior
 - fabricate “official” listening paths from weak evidence
+- infer embed readiness just because a provider usually supports embeds
 - present legacy Tumblr artwork as definitive album art when it is only archival source art
 - hide provenance because it looks messy
 
