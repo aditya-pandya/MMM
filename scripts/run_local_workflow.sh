@@ -37,7 +37,17 @@ if [ "${#forwarded_args[@]}" -gt 0 ]; then
   generate_args+=("${forwarded_args[@]}")
 fi
 
-python3 "${generate_args[@]}"
+generate_output=""
+if ! generate_output=$(python3 "${generate_args[@]}" 2>&1); then
+  printf '%s\n' "$generate_output"
+  if [ "$scheduled_run" = true ] && printf '%s\n' "$generate_output" | grep -Fq "Draft already exists:"; then
+    echo "Scheduled run found an existing draft; leaving it untouched."
+  else
+    exit 1
+  fi
+else
+  printf '%s\n' "$generate_output"
+fi
 
 if [ "$scheduled_run" = false ]; then
   npm run build
