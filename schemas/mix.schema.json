@@ -120,7 +120,11 @@
         "trackCount": { "type": "integer", "minimum": 1 },
         "favoriteCount": { "type": "integer", "minimum": 0 },
         "favoriteTracks": { "type": "array", "items": { "type": "string" } },
-        "topArtists": { "type": "array", "items": { "type": "string" } }
+        "topArtists": { "type": "array", "items": { "type": "string" } },
+        "coverCount": { "type": "integer", "minimum": 0 },
+        "coverTracks": { "type": "array", "items": { "type": "string" } },
+        "remixCount": { "type": "integer", "minimum": 0 },
+        "remixTracks": { "type": "array", "items": { "type": "string" } }
       },
       "additionalProperties": false
     },
@@ -129,7 +133,12 @@
       "properties": {
         "originalTitle": { "type": "string" },
         "tumblrHeading": { "type": ["string", "null"] },
-        "descriptionHtml": { "type": "string" }
+        "descriptionHtml": { "type": "string" },
+        "favoriteTrackCue": { "type": ["string", "null"] },
+        "editorialHighlights": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
       },
       "additionalProperties": true
     }

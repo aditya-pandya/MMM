@@ -42,6 +42,10 @@ All tooling lives under `scripts/`.
 - preserves provenance
 - parses tracklists and favorites
 
+`repair_legacy_imports.py`
+- refreshes derived Tumblr legacy fields from saved `legacy.descriptionHtml`
+- stays local-safe and file-based
+
 `build_taste_profile.py`
 - derives recurring artist/taste hints from imported material
 

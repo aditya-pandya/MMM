@@ -18,9 +18,7 @@
   "publishedAt": "2013-07-01T15:07:00Z",
   "summary": "As always, back after a fairly long period of absence. MMM isn’t dead, not just yet.",
   "intro": [
-    "As always, back after a fairly long period of absence. MMM isn’t dead, not just yet.",
-    "Album art featuring work by Fernando Vincente",
-    "Hat tip: Rhea R for introducing me to Klingande"
+    "As always, back after a fairly long period of absence. MMM isn’t dead, not just yet."
   ],
   "tags": [],
   "cover": {
@@ -146,11 +144,21 @@
       "Poolside",
       "Mikky Ekko",
       "Isle"
-    ]
+    ],
+    "coverCount": 1,
+    "coverTracks": [
+      "Solid Gold - Danger Zone (Kenny Loggins cover)"
+    ],
+    "remixCount": 0,
+    "remixTracks": []
   },
   "legacy": {
     "originalTitle": "Thirtythird As always, back after a fairly long period of absence. MMM isn’t dead, not just...",
     "tumblrHeading": "Thirtythird",
-    "descriptionHtml": "<h2>Thirtythird</h2>\n<p>As always, back after a fairly long period of absence. MMM isn&rsquo;t dead, not just yet.</p>\n<p><strong>Monday Music Mix: 33</strong></p>\n<p><figure class=\"tmblr-full\" data-orig-height=\"400\" data-orig-width=\"400\"><img alt=\"image\" src=\"https://64.media.tumblr.com/ccc9153b3efa9c534bd2dc9200fe9be7/63b303fc6b7d990e-70/s540x810/e20d95d57e2904084b901c62fe17b128dfdacdb0.jpg\" data-orig-height=\"400\" data-orig-width=\"400\"/></figure></p>\n<p>Album art featuring work by <a href=\"http://www.fernandovicente.es/\" target=\"_blank\">F</a><a href=\"http://www.fernandovicente.es/\" target=\"_blank\">ernando Vincente</a></p>\n<p>Tracklist:</p>\n<ol><li>Bell X1 - Starlings Over Brighton Pier</li>\n<li>Galleries - Midnight Rush</li>\n<li>Poolside - If We Make It</li>\n<li>Mikky Ekko - Kids</li>\n<li>Isle - Bayview</li>\n<li>Chvurches - Gun</li>\n<li><strong>Gold Panda - We Work Nights</strong></li>\n<li>Little Daylight - Name In Lights</li>\n<li>Reviving Cecilia - Two Kinds</li>\n<li>jj - Fågelsången</li>\n<li>Lolo - Weapon For Saturday</li>\n<li>Solid Gold - Danger Zone (Kenny Loggins cover)</li>\n<li><strong>Zaz - Eblouie Par La Nuit</strong></li>\n<li><strong>Klingande - Jubel</strong></li>\n</ol><p>* Tracks in bold indicate my favourites</p>\n<p>Hat tip: Rhea R for introducing me to Klingande</p>\n<p><a href=\"https://mega.co.nz/#!lQgGlYJJ!c8ogPGWn4DhiBmxb77-C4lJm3-sUbRukXI5w_fgTDHc\" target=\"_blank\">Download album</a></p>"
+    "descriptionHtml": "<h2>Thirtythird</h2>\n<p>As always, back after a fairly long period of absence. MMM isn&rsquo;t dead, not just yet.</p>\n<p><strong>Monday Music Mix: 33</strong></p>\n<p><figure class=\"tmblr-full\" data-orig-height=\"400\" data-orig-width=\"400\"><img alt=\"image\" src=\"https://64.media.tumblr.com/ccc9153b3efa9c534bd2dc9200fe9be7/63b303fc6b7d990e-70/s540x810/e20d95d57e2904084b901c62fe17b128dfdacdb0.jpg\" data-orig-height=\"400\" data-orig-width=\"400\"/></figure></p>\n<p>Album art featuring work by <a href=\"http://www.fernandovicente.es/\" target=\"_blank\">F</a><a href=\"http://www.fernandovicente.es/\" target=\"_blank\">ernando Vincente</a></p>\n<p>Tracklist:</p>\n<ol><li>Bell X1 - Starlings Over Brighton Pier</li>\n<li>Galleries - Midnight Rush</li>\n<li>Poolside - If We Make It</li>\n<li>Mikky Ekko - Kids</li>\n<li>Isle - Bayview</li>\n<li>Chvurches - Gun</li>\n<li><strong>Gold Panda - We Work Nights</strong></li>\n<li>Little Daylight - Name In Lights</li>\n<li>Reviving Cecilia - Two Kinds</li>\n<li>jj - Fågelsången</li>\n<li>Lolo - Weapon For Saturday</li>\n<li>Solid Gold - Danger Zone (Kenny Loggins cover)</li>\n<li><strong>Zaz - Eblouie Par La Nuit</strong></li>\n<li><strong>Klingande - Jubel</strong></li>\n</ol><p>* Tracks in bold indicate my favourites</p>\n<p>Hat tip: Rhea R for introducing me to Klingande</p>\n<p><a href=\"https://mega.co.nz/#!lQgGlYJJ!c8ogPGWn4DhiBmxb77-C4lJm3-sUbRukXI5w_fgTDHc\" target=\"_blank\">Download album</a></p>",
+    "favoriteTrackCue": "* Tracks in bold indicate my favourites",
+    "editorialHighlights": [
+      "Hat tip: Rhea R for introducing me to Klingande"
+    ]
   }
 }

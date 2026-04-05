@@ -9,6 +9,7 @@ import json
 import re
 import sys
 from collections import Counter
+from copy import deepcopy
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -99,6 +100,15 @@ class ParsedDescription:
     track_candidates: list[TrackCandidate] = field(default_factory=list)
     download_links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
+
+
+@dataclass
+class IntroMetadata:
+    summary: str
+    intro: list[str]
+    cover_credit: Optional[str] = None
+    editorial_highlights: list[str] = field(default_factory=list)
+    favorite_track_cue: Optional[str] = None
 
 
 class TumblrDescriptionParser(HTMLParser):
@@ -257,18 +267,176 @@ def build_slug(mix_number: Optional[int], heading: Optional[str], title: str) ->
     return slugify(heading or title)
 
 
-def paragraphs_to_intro(paragraphs: Iterable[Paragraph]) -> tuple[str, list[str]]:
-    cleaned: list[str] = []
+FAVORITE_TRACK_CUE_RE = re.compile(
+    r"^\*?\s*tracks?\s+in\s+(?P<style>[a-z0-9 #/_-]+)\s+indicate my favou?rites\b",
+    re.IGNORECASE,
+)
+EDITORIAL_HIGHLIGHT_RE = re.compile(r"^(hat tip|h/t)\s*:", re.IGNORECASE)
+TRACK_DOWNLOAD_LABEL_RE = re.compile(
+    r"^(download album|part\s+\d+\b.*(?:\|\s*part\s+\d+\b.*)*)$",
+    re.IGNORECASE,
+)
+TRACK_COVER_RE = re.compile(r"\([^)]*\bcover\b[^)]*\)", re.IGNORECASE)
+TRACK_REMIX_RE = re.compile(r"\([^)]*\b(remix|mix)\b[^)]*\)", re.IGNORECASE)
+
+
+def is_cover_credit_line(text: str) -> bool:
+    lowered = normalize_whitespace(text).lower()
+    return lowered.startswith(
+        (
+            "album art featuring",
+            "album art by",
+            "cover art featuring",
+            "cover art by",
+            "artwork by",
+            "art by",
+        )
+    )
+
+
+def paragraphs_to_intro_metadata(paragraphs: Iterable[Paragraph]) -> IntroMetadata:
+    intro: list[str] = []
+    editorial_highlights: list[str] = []
+    cover_credit: Optional[str] = None
+    favorite_track_cue: Optional[str] = None
+
     for paragraph in paragraphs:
         text = paragraph.text
         lowered = text.lower()
-        if lowered.startswith("tracklist") or lowered.startswith("* tracks in bold"):
+        if lowered.startswith("tracklist"):
             continue
-        if text.startswith("Monday Music Mix:") or lowered == "download album":
+        if text.startswith("Monday Music Mix:"):
             continue
-        cleaned.append(text)
-    summary = cleaned[0] if cleaned else ""
-    return summary, cleaned
+        if TRACK_DOWNLOAD_LABEL_RE.fullmatch(text):
+            continue
+        if is_cover_credit_line(text):
+            cover_credit = text
+            continue
+        if FAVORITE_TRACK_CUE_RE.match(text):
+            favorite_track_cue = text
+            continue
+        if EDITORIAL_HIGHLIGHT_RE.match(text):
+            editorial_highlights.append(text)
+            continue
+        intro.append(text)
+
+    return IntroMetadata(
+        summary=intro[0] if intro else "",
+        intro=intro,
+        cover_credit=cover_credit,
+        editorial_highlights=editorial_highlights,
+        favorite_track_cue=favorite_track_cue,
+    )
+
+
+def build_tracks_from_candidates(candidates: Iterable[TrackCandidate]) -> tuple[list[dict], Counter[str]]:
+    tracks = []
+    artist_counter: Counter[str] = Counter()
+    for idx, candidate in enumerate(candidates, start=1):
+        artist, track_title = split_track_line(candidate.text)
+        primary_artist = artist or "Unknown Artist"
+        artist_counter[primary_artist] += 1
+        tracks.append(
+            {
+                "position": idx,
+                "artist": primary_artist,
+                "title": track_title or candidate.text,
+                "displayText": candidate.text,
+                "isFavorite": candidate.is_favorite,
+            }
+        )
+    return tracks, artist_counter
+
+
+def detect_track_mentions(tracks: Iterable[dict]) -> tuple[list[str], list[str]]:
+    cover_tracks: list[str] = []
+    remix_tracks: list[str] = []
+    for track in tracks:
+        display_text = normalize_whitespace(track.get("displayText") or f"{track.get('artist', '')} - {track.get('title', '')}")
+        if TRACK_COVER_RE.search(display_text):
+            cover_tracks.append(display_text)
+        if TRACK_REMIX_RE.search(display_text):
+            remix_tracks.append(display_text)
+    return cover_tracks, remix_tracks
+
+
+def build_track_stats(tracks: list[dict], top_artists: list[str] | None = None) -> dict:
+    favorite_tracks = [track["displayText"] for track in tracks if track["isFavorite"]]
+    cover_tracks, remix_tracks = detect_track_mentions(tracks)
+    return {
+        "trackCount": len(tracks),
+        "favoriteCount": len(favorite_tracks),
+        "favoriteTracks": favorite_tracks,
+        "topArtists": (top_artists or [])[:5],
+        "coverCount": len(cover_tracks),
+        "coverTracks": cover_tracks,
+        "remixCount": len(remix_tracks),
+        "remixTracks": remix_tracks,
+    }
+
+
+def refresh_mix_from_legacy_html(mix: dict) -> dict:
+    legacy = deepcopy(mix.get("legacy") or {})
+    description_html = legacy.get("descriptionHtml")
+    if not description_html:
+        return deepcopy(mix)
+
+    parsed = parse_description(description_html)
+    intro_metadata = paragraphs_to_intro_metadata(parsed.paragraphs)
+
+    updated = deepcopy(mix)
+    heading = legacy.get("tumblrHeading") or parsed.heading or updated.get("displayTitle") or updated.get("title")
+
+    if intro_metadata.summary:
+        updated["summary"] = intro_metadata.summary
+    if intro_metadata.intro:
+        updated["intro"] = intro_metadata.intro
+
+    tracks = deepcopy(updated.get("tracks") or [])
+    parsed_tracks, artist_counter = build_tracks_from_candidates(parsed.track_candidates)
+    if parsed_tracks and len(parsed_tracks) == len(tracks):
+        for existing_track, parsed_track in zip(tracks, parsed_tracks):
+            existing_track["isFavorite"] = parsed_track["isFavorite"]
+            existing_track["displayText"] = parsed_track["displayText"]
+    elif parsed_tracks and not tracks:
+        tracks = parsed_tracks
+
+    if tracks:
+        top_artists = [name for name, _ in artist_counter.most_common(5)] if artist_counter else [
+            track["artist"] for track in tracks if track.get("artist")
+        ]
+        deduped_top_artists: list[str] = []
+        for artist in top_artists:
+            if artist not in deduped_top_artists:
+                deduped_top_artists.append(artist)
+        updated["tracks"] = tracks
+        updated["stats"] = build_track_stats(tracks, top_artists=deduped_top_artists)
+
+    cover = deepcopy(updated.get("cover") or {})
+    if parsed.images and not cover.get("imageUrl"):
+        cover["imageUrl"] = parsed.images[0]
+    if cover.get("imageUrl") and not cover.get("alt"):
+        cover["alt"] = f"Cover art for {heading}"
+    if intro_metadata.cover_credit is not None:
+        cover["credit"] = intro_metadata.cover_credit
+    if cover:
+        updated["cover"] = {
+            "imageUrl": cover.get("imageUrl"),
+            "alt": cover.get("alt"),
+            "credit": cover.get("credit"),
+        }
+
+    legacy["tumblrHeading"] = heading
+    if intro_metadata.favorite_track_cue:
+        legacy["favoriteTrackCue"] = intro_metadata.favorite_track_cue
+    else:
+        legacy.pop("favoriteTrackCue", None)
+    if intro_metadata.editorial_highlights:
+        legacy["editorialHighlights"] = intro_metadata.editorial_highlights
+    else:
+        legacy.pop("editorialHighlights", None)
+    updated["legacy"] = legacy
+    return updated
 
 
 def convert_item_to_mix(item: ET.Element) -> Optional[dict]:
@@ -283,34 +451,19 @@ def convert_item_to_mix(item: ET.Element) -> Optional[dict]:
     slug = build_slug(mix_number, heading, title)
     published_at = parse_pubdate(item.findtext("pubDate"))
     source_url = normalize_whitespace(item.findtext("link", ""))
-    summary, intro_paragraphs = paragraphs_to_intro(parsed.paragraphs)
+    intro_metadata = paragraphs_to_intro_metadata(parsed.paragraphs)
     download_url = parsed.download_links[0] if parsed.download_links else None
     cover_image = parsed.images[0] if parsed.images else None
 
-    tracks = []
-    artist_counter: Counter[str] = Counter()
-    for idx, candidate in enumerate(parsed.track_candidates, start=1):
-        artist, track_title = split_track_line(candidate.text)
-        primary_artist = artist or "Unknown Artist"
-        artist_counter[primary_artist] += 1
-        tracks.append(
-            {
-                "position": idx,
-                "artist": primary_artist,
-                "title": track_title or candidate.text,
-                "displayText": candidate.text,
-                "isFavorite": candidate.is_favorite,
-            }
-        )
+    tracks, artist_counter = build_tracks_from_candidates(parsed.track_candidates)
 
     if not tracks:
         return None
 
     tags = [normalize_whitespace(cat.text or "") for cat in item.findall("category") if normalize_whitespace(cat.text or "")]
-    favourite_tracks = [track["displayText"] for track in tracks if track["isFavorite"]]
     top_artists = [name for name, _ in artist_counter.most_common(5)]
 
-    return {
+    mix = {
         "$schema": "schemas/mix.schema.json",
         "schemaVersion": SCHEMA_VERSION,
         "id": slug,
@@ -328,31 +481,31 @@ def convert_item_to_mix(item: ET.Element) -> Optional[dict]:
         "displayTitle": heading,
         "mixNumber": mix_number,
         "publishedAt": published_at,
-        "summary": summary,
-        "intro": intro_paragraphs,
+        "summary": intro_metadata.summary,
+        "intro": intro_metadata.intro,
         "tags": tags,
         "cover": {
             "imageUrl": cover_image,
             "alt": f"Cover art for {heading}" if cover_image else None,
-            "credit": next((p.text for p in parsed.paragraphs if p.text.lower().startswith("album art featuring")), None),
+            "credit": intro_metadata.cover_credit,
         },
         "download": {
             "label": "Download mix",
             "url": download_url,
         },
         "tracks": tracks,
-        "stats": {
-            "trackCount": len(tracks),
-            "favoriteCount": len(favourite_tracks),
-            "favoriteTracks": favourite_tracks,
-            "topArtists": top_artists,
-        },
+        "stats": build_track_stats(tracks, top_artists=top_artists),
         "legacy": {
             "originalTitle": title,
             "tumblrHeading": heading,
             "descriptionHtml": description_html,
         },
     }
+    if intro_metadata.favorite_track_cue:
+        mix["legacy"]["favoriteTrackCue"] = intro_metadata.favorite_track_cue
+    if intro_metadata.editorial_highlights:
+        mix["legacy"]["editorialHighlights"] = intro_metadata.editorial_highlights
+    return mix
 
 
 def iter_feed_items(root: ET.Element) -> Iterable[ET.Element]:

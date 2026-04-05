@@ -123,6 +123,13 @@ python3 scripts/refresh_indexes.py
 npm run content:refresh
 ```
 
+Refresh imported/published Tumblr-derived fields from the saved `legacy.descriptionHtml` without re-fetching RSS:
+
+```bash
+python3 scripts/repair_legacy_imports.py
+python3 scripts/repair_legacy_imports.py --dry-run data/imported/mixes data/published
+```
+
 Print local-safe previews for the latest draft, published mix, and note:
 
 ```bash
@@ -190,13 +197,20 @@ npm run preview:latest
 From RSS URL:
 
 ```bash
-python3 scripts/import_tumblr.py --source https://mondaymusicmix.tumblr.com/rss --output data/imported/mixes
+python3 scripts/import_tumblr.py https://mondaymusicmix.tumblr.com/rss --output-dir data/imported/mixes
 ```
 
 From a local file:
 
 ```bash
-python3 scripts/import_tumblr.py --source data/imported/raw/mondaymusicmix-rss.xml --output data/imported/mixes
+python3 scripts/import_tumblr.py data/imported/raw/mondaymusicmix-rss.xml --output-dir data/imported/mixes
+```
+
+Repair existing imported or published mix JSON from the preserved legacy HTML snapshot:
+
+```bash
+python3 scripts/repair_legacy_imports.py
+python3 scripts/repair_legacy_imports.py data/imported/mixes/mix-033-thirtythird.json
 ```
 
 ## Rebuild taste profile
