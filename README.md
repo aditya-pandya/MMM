@@ -166,8 +166,17 @@ Scheduled local run without overwrite/build:
 ./scripts/run_local_workflow.sh --scheduled
 ```
 
+Scheduled local run with tests enabled:
+
+```bash
+./scripts/run_local_workflow.sh --scheduled --run-tests
+```
+
 Optional macOS scheduling:
-- Load `ops/com.aditya.mmm.weekly.plist` as a LaunchAgent after editing paths if needed.
+- Render and install a machine-local LaunchAgent with `python3 ops/install_launch_agent.py`.
+- By default this writes `~/Library/LaunchAgents/com.mmm.weekly.plist` with the current repo root, workflow script path, and `logs/launchd-weekly.*.log` paths embedded automatically.
+- Load it with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.mmm.weekly.plist`.
+- Re-run it on demand with `launchctl kickstart -k gui/$(id -u)/com.mmm.weekly`.
 - That keeps weekly generation on this machine instead of GitHub Actions.
 - Local workflow logs are written to `logs/run-local-workflow-YYYY-MM-DD.log`.
 

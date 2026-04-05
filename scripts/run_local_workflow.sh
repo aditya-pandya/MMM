@@ -12,6 +12,8 @@ LOG_FILE="$LOG_DIR/run-local-workflow-$(date '+%Y-%m-%d').log"
 exec >> "$LOG_FILE" 2>&1
 
 scheduled_run=false
+run_tests=true
+run_tests_override=false
 forwarded_args=()
 
 for arg in "$@"; do
@@ -19,15 +21,26 @@ for arg in "$@"; do
     --scheduled)
       scheduled_run=true
       ;;
+    --run-tests)
+      run_tests_override=true
+      ;;
     *)
       forwarded_args+=("$arg")
       ;;
   esac
 done
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting local MMM workflow (scheduled=$scheduled_run)"
+if [ "$scheduled_run" = true ] && [ "$run_tests_override" = false ]; then
+  run_tests=false
+fi
 
-python3 -m pytest -q
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting local MMM workflow (scheduled=$scheduled_run, run_tests=$run_tests)"
+
+if [ "$run_tests" = true ]; then
+  python3 -m pytest -q
+else
+  echo "Skipping pytest for scheduled run."
+fi
 
 generate_args=(scripts/generate_weekly_draft.py --mode auto)
 if [ "$scheduled_run" = false ]; then

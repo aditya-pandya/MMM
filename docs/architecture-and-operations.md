@@ -64,6 +64,8 @@ All tooling lives under `scripts/`.
 
 `run_local_workflow.sh`
 - convenience runner for scheduled/local editorial workflow
+- manual runs execute pytest before generation
+- scheduled runs skip pytest unless `--run-tests` is passed
 
 ## 3. Static rendering and deploy
 
@@ -174,6 +176,7 @@ Reasons:
 - avoids fragile CI-as-editor patterns
 - matches Aditya’s preference for local ops
 - keeps the deployed site dumb and stable
+- keeps machine-specific LaunchAgent paths out of tracked files by rendering them locally via `ops/install_launch_agent.py`
 
 ## GitHub Actions role
 

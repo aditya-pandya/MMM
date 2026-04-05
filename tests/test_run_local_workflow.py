@@ -82,12 +82,33 @@ def test_manual_run_forces_generation_and_builds(tmp_path):
     log_path = repo / "logs" / f"run-local-workflow-{date.today().isoformat()}.log"
     assert log_path.exists()
     assert "scheduled=false" in log_path.read_text(encoding="utf-8")
+    assert "run_tests=true" in log_path.read_text(encoding="utf-8")
 
 
 def test_scheduled_run_skips_force_and_build(tmp_path):
     repo = prepare_temp_repo(tmp_path)
 
     result, invocation_log = run_workflow(repo, "--scheduled")
+
+    assert result.returncode == 0
+    calls = invocation_log.read_text(encoding="utf-8").splitlines()
+    assert "python3:-m pytest -q" not in calls
+    assert "python3:scripts/generate_weekly_draft.py --mode auto" in calls
+    assert "python3:scripts/generate_weekly_draft.py --mode auto --force" not in calls
+    assert not any(call == "npm:run build" for call in calls)
+
+    log_files = list((repo / "logs").glob("run-local-workflow-*.log"))
+    assert len(log_files) == 1
+    log_text = log_files[0].read_text(encoding="utf-8")
+    assert "scheduled=true" in log_text
+    assert "run_tests=false" in log_text
+    assert "Skipping pytest for scheduled run." in log_text
+
+
+def test_scheduled_run_can_explicitly_run_tests(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result, invocation_log = run_workflow(repo, "--scheduled", "--run-tests")
 
     assert result.returncode == 0
     calls = invocation_log.read_text(encoding="utf-8").splitlines()
@@ -98,7 +119,9 @@ def test_scheduled_run_skips_force_and_build(tmp_path):
 
     log_files = list((repo / "logs").glob("run-local-workflow-*.log"))
     assert len(log_files) == 1
-    assert "scheduled=true" in log_files[0].read_text(encoding="utf-8")
+    log_text = log_files[0].read_text(encoding="utf-8")
+    assert "scheduled=true" in log_text
+    assert "run_tests=true" in log_text
 
 
 def test_scheduled_run_treats_existing_draft_as_clean_noop(tmp_path):
@@ -115,7 +138,7 @@ def test_scheduled_run_treats_existing_draft_as_clean_noop(tmp_path):
 
     assert result.returncode == 0
     calls = invocation_log.read_text(encoding="utf-8").splitlines()
-    assert "python3:-m pytest -q" in calls
+    assert "python3:-m pytest -q" not in calls
     assert "python3:scripts/generate_weekly_draft.py --mode auto" in calls
     assert not any(call == "npm:run build" for call in calls)
 

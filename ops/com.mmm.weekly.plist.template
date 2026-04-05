@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.aditya.mmm.weekly</string>
+  <string>com.mmm.weekly</string>
 
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM/scripts/run_local_workflow.sh</string>
+    <string>__RUN_SCRIPT__</string>
     <string>--scheduled</string>
   </array>
 
   <key>WorkingDirectory</key>
-  <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM</string>
+  <string>__REPO_ROOT__</string>
 
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key>
-    <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <string>__PATH__</string>
   </dict>
 
   <key>StartCalendarInterval</key>
@@ -32,9 +32,9 @@
   </dict>
 
   <key>StandardOutPath</key>
-  <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM/logs/launchd-weekly.stdout.log</string>
+  <string>__STDOUT_LOG__</string>
   <key>StandardErrorPath</key>
-  <string>/Users/aditya/Library/Mobile Documents/com~apple~CloudDocs/GitHub/MMM/logs/launchd-weekly.stderr.log</string>
+  <string>__STDERR_LOG__</string>
 
   <key>RunAtLoad</key>
   <false/>

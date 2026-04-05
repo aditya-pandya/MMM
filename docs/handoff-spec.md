@@ -232,6 +232,7 @@ Current implementation:
 Required behavior:
 - scheduled runs must not overwrite active drafts blindly
 - scheduled runs should not do unnecessary site builds
+- scheduled runs should skip pytest by default, with an explicit override available
 - logs should be durable enough for local inspection
 
 ### FR10 — Deploy to GitHub Pages
@@ -389,6 +390,10 @@ Run tests:
 
 Run local scheduled workflow manually:
 - `./scripts/run_local_workflow.sh --scheduled`
+- `./scripts/run_local_workflow.sh --scheduled --run-tests`
+
+Install the local LaunchAgent:
+- `python3 ops/install_launch_agent.py`
 
 ## Rules for future agents
 
