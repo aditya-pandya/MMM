@@ -129,6 +129,58 @@ def ensure_iso8601_datetime(value: Any, label: str) -> str:
     return normalized
 
 
+def validate_note_payload(note: dict[str, Any]) -> dict[str, Any]:
+    missing = NOTE_REQUIRED_FIELDS - set(note)
+    if missing:
+        raise ValidationError(f"note missing field: {', '.join(sorted(missing))}")
+
+    status = str(note.get("status", "")).strip()
+    if status not in NOTE_VALID_STATUSES:
+        raise ValidationError("note status must be draft or published")
+
+    slug = ensure_kebab_case_slug(note.get("slug"), "note slug")
+    note_id = ensure_non_empty_string(note.get("id"), "note id")
+    title = ensure_non_empty_string(note.get("title"), "note title")
+    published_at = ensure_iso8601_datetime(note.get("publishedAt"), "note publishedAt")
+    summary = ensure_non_empty_string(note.get("summary"), "note summary")
+
+    body = note.get("body")
+    if not isinstance(body, list) or not body:
+        raise ValidationError("note body must be a non-empty array")
+    normalized_body: list[str] = []
+    for index, paragraph in enumerate(body, start=1):
+        normalized_paragraph = ensure_non_empty_string(paragraph, f"note body paragraph {index}")
+        normalized_body.append(normalized_paragraph)
+
+    tags = note.get("tags")
+    if not isinstance(tags, list):
+        raise ValidationError("note tags must be an array")
+
+    related = note.get("relatedMixSlugs", [])
+    if related is not None and not isinstance(related, list):
+        raise ValidationError("note relatedMixSlugs must be an array when present")
+
+    normalized_related: list[str] = []
+    seen_related: set[str] = set()
+    for index, related_slug in enumerate(related or [], start=1):
+        normalized_related_slug = ensure_kebab_case_slug(related_slug, f"note relatedMixSlugs[{index}]")
+        if normalized_related_slug in seen_related:
+            raise ValidationError("note relatedMixSlugs must not contain duplicates")
+        seen_related.add(normalized_related_slug)
+        normalized_related.append(normalized_related_slug)
+
+    normalized = deepcopy(note)
+    normalized["status"] = status
+    normalized["slug"] = slug
+    normalized["id"] = note_id
+    normalized["title"] = title
+    normalized["publishedAt"] = published_at
+    normalized["summary"] = summary
+    normalized["body"] = normalized_body
+    normalized["relatedMixSlugs"] = normalized_related
+    return normalized
+
+
 
 def _validate_editorial_mix(mix: dict[str, Any]) -> ValidationResult:
     missing = EDITORIAL_REQUIRED_MIX_FIELDS - set(mix)
@@ -379,3 +431,110 @@ def update_archive_index(
     dump_json(legacy_index_path, legacy_archive)
     dump_json(mixes_json_path, mixes_for_build)
     return legacy_archive
+
+
+def load_published_mixes(published_dir: Path | None = None) -> list[dict[str, Any]]:
+    published_dir = published_dir or PUBLISHED_DIR
+    mixes: list[dict[str, Any]] = []
+    for path in sorted(published_dir.glob("*.json")):
+        result = validate_mix(load_json(path))
+        if result.flavor != "published":
+            raise ValidationError(f"Expected published mix content in {path}")
+        if result.mix.get("status") != "published":
+            continue
+        mixes.append(result.mix)
+    mixes.sort(key=lambda item: (item.get("publishedAt") or item.get("date") or "", item["slug"]), reverse=True)
+    return mixes
+
+
+def build_note_index_entry(note: dict[str, Any]) -> dict[str, Any]:
+    validated = validate_note_payload(note)
+    return {
+        "id": validated["id"],
+        "slug": validated["slug"],
+        "title": validated["title"],
+        "publishedAt": validated["publishedAt"],
+        "summary": validated["summary"],
+        "path": f"data/notes/{validated['slug']}.json",
+        "tags": validated["tags"],
+        "relatedMixSlugs": validated["relatedMixSlugs"],
+    }
+
+
+def refresh_notes_index(
+    notes_dir: Path | None = None,
+    notes_index_path: Path | None = None,
+) -> dict[str, Any]:
+    notes_dir = notes_dir or NOTES_DIR
+    notes_index_path = notes_index_path or NOTES_INDEX_PATH
+
+    items = []
+    for path in sorted(notes_dir.glob("*.json")):
+        note = validate_note_payload(load_json(path))
+        items.append(build_note_index_entry(note))
+
+    items.sort(key=lambda item: (item["publishedAt"], item["slug"]), reverse=True)
+    payload = {
+        "$schema": "../schemas/notes-index.schema.json",
+        "schemaVersion": "1.0",
+        "generatedAt": now_iso(),
+        "totalNotes": len(items),
+        "items": items,
+    }
+    dump_json(notes_index_path, payload)
+    return payload
+
+
+def load_notes(notes_dir: Path | None = None) -> list[dict[str, Any]]:
+    notes_dir = notes_dir or NOTES_DIR
+    notes = []
+    for path in sorted(notes_dir.glob("*.json")):
+        notes.append(validate_note_payload(load_json(path)))
+    notes.sort(key=lambda item: (item["publishedAt"], item["slug"]), reverse=True)
+    return notes
+
+
+def published_mixes_without_note_coverage(
+    published_dir: Path | None = None,
+    notes_dir: Path | None = None,
+) -> list[dict[str, Any]]:
+    published_mixes = load_published_mixes(published_dir=published_dir)
+    notes = load_notes(notes_dir=notes_dir)
+    covered_mix_slugs = {
+        related_slug
+        for note in notes
+        for related_slug in note.get("relatedMixSlugs", [])
+    }
+    return [mix for mix in published_mixes if mix["slug"] not in covered_mix_slugs]
+
+
+def find_published_mix(slug_or_path: str, published_dir: Path | None = None) -> dict[str, Any]:
+    published_dir = published_dir or PUBLISHED_DIR
+    candidate = Path(slug_or_path)
+    if candidate.exists():
+        result = validate_mix(load_json(candidate))
+        if result.flavor != "published":
+            raise ValidationError(f"Expected a published mix JSON, got {result.flavor}")
+        return result.mix
+
+    target_path = published_dir / f"{slug_or_path}.json"
+    if not target_path.exists():
+        raise FileNotFoundError(f"Published mix not found: {slug_or_path}")
+    result = validate_mix(load_json(target_path))
+    if result.flavor != "published":
+        raise ValidationError(f"Expected a published mix JSON, got {result.flavor}")
+    return result.mix
+
+
+def latest_item(items: list[dict[str, Any]], *date_fields: str) -> dict[str, Any] | None:
+    if not items:
+        return None
+
+    def sort_key(item: dict[str, Any]) -> tuple[str, str]:
+        for field in date_fields:
+            value = str(item.get(field) or "").strip()
+            if value:
+                return value, str(item.get("slug") or item.get("id") or "")
+        return "", str(item.get("slug") or item.get("id") or "")
+
+    return max(items, key=sort_key)

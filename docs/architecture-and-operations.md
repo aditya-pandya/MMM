@@ -52,6 +52,8 @@ All tooling lives under `scripts/`.
 `create_content.py`
 - creates new draft mix templates
 - creates note templates and updates note index
+- suggests published mixes with no note coverage
+- can scaffold a note from a published mix
 
 `validate_content.py`
 - validates content health across repo data
@@ -61,6 +63,12 @@ All tooling lives under `scripts/`.
 - promotes approved draft mix to published state
 - rebuilds aggregate files
 - can update featured mix
+
+`refresh_indexes.py`
+- regenerates notes/archive aggregate JSON from canonical note and published mix files
+
+`preview_latest.py`
+- prints or opens local-only previews for the latest draft, published mix, and note
 
 `run_local_workflow.sh`
 - convenience runner for scheduled/local editorial workflow
@@ -161,12 +169,13 @@ Local/editorial orientation route
 1. validate repo content
 2. create/generate draft
 3. edit content JSON
-4. validate again
-5. approve mix
-6. publish
-7. build preview
-8. push to `main`
-9. GitHub deploys Pages
+4. refresh generated aggregates if canonical files were edited directly
+5. validate again
+6. approve mix
+7. publish
+8. build preview
+9. push to `main`
+10. GitHub deploys Pages
 
 ### Why local-first matters
 This project intentionally keeps editorial decisions and generation on the local machine.
@@ -245,6 +254,7 @@ When changing MMM, future agents should prefer this order:
 ## Safe extension areas
 
 These are good places to keep building:
+- content creation helpers
 - archive discovery
 - better studio summaries
 - note/mix relationship quality

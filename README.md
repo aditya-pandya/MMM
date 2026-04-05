@@ -18,6 +18,10 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
   - weekly draft generation
   - draft mix templates
   - note templates with notes-index updates
+  - note scaffolds from published mixes
+  - note coverage suggestions
+  - aggregate index refresh helpers
+  - latest route/file preview helpers
   - content validation and reporting
   - publish flow for approved mixes
 - GitHub Actions for Pages deploy only
@@ -91,6 +95,34 @@ python3 scripts/create_content.py note --title "Why this mix lingers" --related-
 npm run note:new -- --title "Why this mix lingers" --related-mix mix-036-thirtysixth
 ```
 
+Suggest published mixes that still do not have note coverage:
+
+```bash
+python3 scripts/create_content.py suggest-notes
+npm run note:suggest
+```
+
+Scaffold a note directly from a published mix:
+
+```bash
+python3 scripts/create_content.py note-from-mix mix-036-thirtysixth
+npm run note:new-from-mix -- mix-036-thirtysixth
+```
+
+Refresh aggregate note/archive indexes from canonical files:
+
+```bash
+python3 scripts/refresh_indexes.py
+npm run content:refresh
+```
+
+Print local-safe previews for the latest draft, published mix, and note:
+
+```bash
+python3 scripts/preview_latest.py
+npm run preview:latest
+```
+
 Generate the next weekly draft from local context:
 
 ```bash
@@ -102,6 +134,9 @@ Notes:
 - `--mode auto` is local-safe and currently resolves to deterministic generation.
 - No OpenAI or hosted AI dependency is required for the site or the weekly workflow.
 - `create_content.py note` writes the note file and refreshes the notes index entry in one step.
+- `create_content.py note-from-mix` seeds a note slug, title, summary, related mix, and starter body from the published mix JSON.
+- `create_content.py suggest-notes` still prints a clear zero-state when every published mix already has note coverage.
+- `preview_latest.py --open` only opens local file previews or localhost routes.
 
 ## Local editorial workflow
 
@@ -116,22 +151,31 @@ python3 scripts/validate_content.py
 ```bash
 python3 scripts/create_content.py draft-mix --date 2026-04-13
 python3 scripts/create_content.py note --title "A note title"
+python3 scripts/create_content.py suggest-notes
+python3 scripts/create_content.py note-from-mix mix-036-thirtysixth
 ```
 
 3. Edit the new JSON under `data/drafts/` or `data/notes/`.
 4. Re-run validation and fix anything it reports.
-5. Change a mix `status` from `draft` to `approved` once editorial review is complete.
-6. Publish the approved mix.
+5. Refresh generated aggregates if you hand-edited canonical files directly.
+
+```bash
+python3 scripts/refresh_indexes.py
+```
+
+6. Change a mix `status` from `draft` to `approved` once editorial review is complete.
+7. Publish the approved mix.
 
 ```bash
 python3 scripts/publish_mix.py <slug-or-path> --feature
 ```
 
-7. Build the static site and preview it locally.
+8. Build the static site and preview it locally.
 
 ```bash
 npm run build
 npm run dev
+npm run preview:latest
 ```
 
 ## Import old Tumblr mixes

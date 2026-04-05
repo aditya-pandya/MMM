@@ -11,8 +11,12 @@
     "draft:generate": "python3 scripts/generate_weekly_draft.py --mode auto",
     "publish": "python3 scripts/publish_mix.py",
     "content:validate": "python3 scripts/validate_content.py",
+    "content:refresh": "python3 scripts/refresh_indexes.py",
     "draft:new": "python3 scripts/create_content.py draft-mix",
-    "note:new": "python3 scripts/create_content.py note"
+    "note:new": "python3 scripts/create_content.py note",
+    "note:new-from-mix": "python3 scripts/create_content.py note-from-mix",
+    "note:suggest": "python3 scripts/create_content.py suggest-notes",
+    "preview:latest": "python3 scripts/preview_latest.py"
   },
   "keywords": [
     "music",

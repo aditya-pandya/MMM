@@ -6,7 +6,14 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlparse
 
-from mmm_common import ValidationError, ensure_iso8601_datetime, ensure_kebab_case_slug, load_json, validate_mix
+from mmm_common import (
+    ValidationError,
+    ensure_iso8601_datetime,
+    ensure_kebab_case_slug,
+    load_json,
+    validate_mix,
+    validate_note_payload,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 SUPPORTED_LISTENING_KINDS = {"listen", "playlist", "album", "track", "set", "embed"}
@@ -322,39 +329,6 @@ def validate_site_payload(site: dict[str, Any]) -> None:
             raise ValidationError(f"site navigation item {index} must be an object")
         require_non_empty_string(item, "label", f"site navigation item {index} label")
         require_non_empty_string(item, "path", f"site navigation item {index} path")
-
-
-def validate_note_payload(note: dict[str, Any]) -> None:
-    required = ["schemaVersion", "id", "slug", "status", "title", "publishedAt", "summary", "body", "tags"]
-    for key in required:
-        if key not in note:
-            raise ValidationError(f"note missing field: {key}")
-    if note.get("status") not in {"draft", "published"}:
-        raise ValidationError("note status must be draft or published")
-    require_non_empty_string(note, "slug", "note slug")
-    require_non_empty_string(note, "id", "note id")
-    require_non_empty_string(note, "title", "note title")
-    ensure_iso8601_datetime(note.get("publishedAt"), "note publishedAt")
-    require_non_empty_string(note, "summary", "note summary")
-    body = note.get("body")
-    if not isinstance(body, list) or not body:
-        raise ValidationError("note body must be a non-empty array")
-    for index, paragraph in enumerate(body, start=1):
-        if not str(paragraph).strip():
-            raise ValidationError(f"note body paragraph {index} must not be empty")
-    tags = note.get("tags")
-    if not isinstance(tags, list):
-        raise ValidationError("note tags must be an array")
-    related = note.get("relatedMixSlugs", [])
-    if related is not None and not isinstance(related, list):
-        raise ValidationError("note relatedMixSlugs must be an array when present")
-    if isinstance(related, list):
-        seen_related: set[str] = set()
-        for index, related_slug in enumerate(related, start=1):
-            normalized_related_slug = ensure_kebab_case_slug(related_slug, f"note relatedMixSlugs[{index}]")
-            if normalized_related_slug in seen_related:
-                raise ValidationError("note relatedMixSlugs must not contain duplicates")
-            seen_related.add(normalized_related_slug)
 
 
 def load_json_with_issue(path: Path, issues: list[dict[str, str]], scope: str) -> Any | None:

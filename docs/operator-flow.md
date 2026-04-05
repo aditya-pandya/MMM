@@ -9,6 +9,8 @@
 2. Start with a template instead of blank JSON.
    - New draft mix: `python3 scripts/create_content.py draft-mix --date 2026-04-13`
    - New note: `python3 scripts/create_content.py note --title "A note title" --related-mix mix-036-thirtysixth`
+   - Suggest uncovered published mixes: `python3 scripts/create_content.py suggest-notes`
+   - Scaffold a note from a published mix: `python3 scripts/create_content.py note-from-mix mix-036-thirtysixth`
    - Note creation writes the note file and refreshes `data/notes-index.json` in one step.
 
 3. Review and edit content.
@@ -23,6 +25,7 @@
    - Expected output before publish is `errors: 0`.
    - Warnings are non-blocking, but published mixes can now emit listening/provider warnings when a mirror URL, provider label, embed host, or playlist pairing looks suspicious.
    - Use `/studio/` after a build for a quick local summary of note coverage gaps, orphan notes, and listening/provider warning counts.
+   - If you edited canonical note or published mix JSON directly, run `python3 scripts/refresh_indexes.py` to rebuild `data/notes-index.json`, `data/archive/index.json`, `data/archive-index.json`, and `data/mixes.json`.
 
 5. Approve a mix.
    - Approval is represented in the draft JSON itself by `"status": "approved"`.
@@ -36,6 +39,8 @@
 7. Preview and deploy.
    - Run `npm run build` locally if desired.
    - `npm run dev` previews the static site.
+   - `python3 scripts/preview_latest.py` or `npm run preview:latest` prints the latest draft/mix/note paths and local preview targets.
+   - `python3 scripts/preview_latest.py --open` opens only local file previews or localhost routes.
    - Push to `main` to trigger the GitHub Pages deployment workflow.
 
 ## Weekly generation automation
@@ -64,4 +69,5 @@ Scheduled local runs:
 - Deterministic local generation is the default and only supported mode right now.
 - The hosted GitHub workflow is for deployment, not editorial generation.
 - `npm run content:validate`, `npm run draft:new`, and `npm run note:new` wrap the new editor-facing commands.
+- `npm run note:suggest`, `npm run note:new-from-mix`, `npm run content:refresh`, and `npm run preview:latest` cover the new low-friction maintenance helpers.
 - Notes are indexed through `data/notes-index.json`, but the detail files in `data/notes/` remain the primary authored source.
