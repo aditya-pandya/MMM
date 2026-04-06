@@ -9,6 +9,7 @@ from listening_confidence import load_provider_catalog, normalize_published_list
 from mmm_common import (
     ARTWORK_REGISTRY_PATH,
     ValidationError,
+    YOUTUBE_DIR,
     ensure_iso8601_datetime,
     ensure_kebab_case_slug,
     load_json,
@@ -152,6 +153,7 @@ def load_json_with_issue(path: Path, issues: list[dict[str, str]], scope: str) -
 
 
 def validate_mix_collection(
+    root: Path,
     directory: Path,
     expected_flavor: str,
     issues: list[dict[str, str]],
@@ -182,6 +184,18 @@ def validate_mix_collection(
         for warning in result.warnings:
             add_issue(issues, "warning", scope, path, warning)
         if expected_flavor == "published":
+            cover = result.mix.get("cover")
+            if isinstance(cover, dict):
+                canonical_asset = str(cover.get("canonicalAssetPath") or "").strip()
+                if canonical_asset:
+                    candidate = (root / canonical_asset).resolve()
+                    try:
+                        candidate.relative_to((root / "data" / "media").resolve())
+                    except ValueError:
+                        add_issue(issues, "error", scope, path, "cover.canonicalAssetPath must stay under data/media/")
+                    else:
+                        if not candidate.exists():
+                            add_issue(issues, "warning", scope, path, f"cover.canonicalAssetPath is missing on disk: {canonical_asset}")
             listening_errors, listening_warnings = audit_published_listening(result.mix, listening_catalog)
             for message in listening_errors:
                 add_issue(issues, "error", scope, path, message)
@@ -375,8 +389,22 @@ def validate_artwork_registry(root: Path, issues: list[dict[str, str]]) -> int:
                 raise ValidationError(f"artwork item {index} provenance must be an object")
             require_non_empty_string(provenance, "sourceType", f"artwork item {index} provenance.sourceType")
             require_non_empty_string(provenance, "sourceLabel", f"artwork item {index} provenance.sourceLabel")
+            require_non_empty_string(provenance, "sourceUrl", f"artwork item {index} provenance.sourceUrl")
+            require_non_empty_string(provenance, "discoveredFrom", f"artwork item {index} provenance.discoveredFrom")
             if provenance.get("notes") is None:
                 raise ValidationError(f"artwork item {index} provenance.notes must be present")
+            file_meta = item.get("file")
+            if not isinstance(file_meta, dict):
+                raise ValidationError(f"artwork item {index} file must be an object")
+            if not isinstance(file_meta.get("byteSize"), int) or isinstance(file_meta.get("byteSize"), bool) or int(file_meta.get("byteSize")) < 0:
+                raise ValidationError(f"artwork item {index} file.byteSize must be a non-negative integer")
+            require_non_empty_string(file_meta, "mediaType", f"artwork item {index} file.mediaType")
+            checksum = item.get("checksum")
+            if not isinstance(checksum, dict):
+                raise ValidationError(f"artwork item {index} checksum must be an object")
+            if checksum.get("algorithm") != "sha256":
+                raise ValidationError(f"artwork item {index} checksum.algorithm must be sha256")
+            require_non_empty_string(checksum, "value", f"artwork item {index} checksum.value")
             if item_id in seen_ids:
                 raise ValidationError(f"duplicate artwork id '{item_id}'")
             seen_ids.add(item_id)
@@ -402,6 +430,97 @@ def validate_artwork_registry(root: Path, issues: list[dict[str, str]]) -> int:
     return len(items)
 
 
+def validate_youtube_match_data(root: Path, published_by_slug: dict[str, dict[str, Any]], issues: list[dict[str, str]]) -> int:
+    youtube_dir = root / YOUTUBE_DIR.relative_to(ROOT)
+    if not youtube_dir.exists():
+        for slug, record in published_by_slug.items():
+            source_platform = str(record["mix"].get("source", {}).get("platform") or "").strip().lower()
+            if source_platform == "tumblr":
+                add_issue(issues, "warning", "youtube", root / "data" / "published" / f"{slug}.json", "missing YouTube match state under data/youtube/")
+        return 0
+
+    count = 0
+    seen_slugs: set[str] = set()
+    for path in sorted(youtube_dir.glob("*.json")):
+        payload = load_json_with_issue(path, issues, "youtube")
+        if not isinstance(payload, dict):
+            continue
+        count += 1
+        try:
+            require_non_empty_string(payload, "schemaVersion", f"{path.name} schemaVersion")
+            mix_slug = ensure_kebab_case_slug(payload.get("mixSlug"), f"{path.name} mixSlug")
+            ensure_iso8601_datetime(payload.get("updatedAt"), f"{path.name} updatedAt")
+            if mix_slug in seen_slugs:
+                raise ValidationError(f"duplicate YouTube match state for '{mix_slug}'")
+            seen_slugs.add(mix_slug)
+            if mix_slug not in published_by_slug:
+                raise ValidationError(f"YouTube match state points to missing published mix '{mix_slug}'")
+            tracks = payload.get("tracks")
+            if not isinstance(tracks, list):
+                raise ValidationError("tracks must be an array")
+            summary = payload.get("summary")
+            if not isinstance(summary, dict):
+                raise ValidationError("summary must be an object")
+        except ValidationError as exc:
+            add_issue(issues, "error", "youtube", path, str(exc))
+            continue
+
+        selected_video_ids: list[str] = []
+        for index, track in enumerate(tracks, start=1):
+            if not isinstance(track, dict):
+                add_issue(issues, "error", "youtube", path, f"track {index} must be an object")
+                continue
+            try:
+                position = track.get("position")
+                if not isinstance(position, int) or isinstance(position, bool) or position < 1:
+                    raise ValidationError(f"track {index} position must be a positive integer")
+                require_non_empty_string(track, "displayText", f"track {index} displayText")
+                require_non_empty_string(track, "query", f"track {index} query")
+                resolution = track.get("resolution")
+                if not isinstance(resolution, dict):
+                    raise ValidationError(f"track {index} resolution must be an object")
+                status = require_non_empty_string(resolution, "status", f"track {index} resolution.status")
+                if status not in {"auto-resolved", "manual-selected", "pending-review", "no-candidate"}:
+                    raise ValidationError(f"track {index} resolution.status is invalid")
+                selected_video_id = str(resolution.get("selectedVideoId") or "").strip()
+                if status in {"auto-resolved", "manual-selected"} and not selected_video_id:
+                    raise ValidationError(f"track {index} resolved status requires selectedVideoId")
+                if selected_video_id:
+                    selected_video_ids.append(selected_video_id)
+                candidates = track.get("candidates")
+                if not isinstance(candidates, list):
+                    raise ValidationError(f"track {index} candidates must be an array")
+            except ValidationError as exc:
+                add_issue(issues, "error", "youtube", path, str(exc))
+
+        generated_embed = summary.get("generatedEmbed")
+        unresolved_tracks = summary.get("unresolvedTracks")
+        if generated_embed is not None:
+            if unresolved_tracks:
+                add_issue(issues, "error", "youtube", path, "generatedEmbed must be absent while unresolved tracks remain")
+            elif not isinstance(generated_embed, dict):
+                add_issue(issues, "error", "youtube", path, "generatedEmbed must be an object when present")
+            else:
+                embed_ids = generated_embed.get("videoIds")
+                if not isinstance(embed_ids, list) or not embed_ids or any(not str(value).strip() for value in embed_ids):
+                    add_issue(issues, "error", "youtube", path, "generatedEmbed.videoIds must be a non-empty array")
+                elif [str(value).strip() for value in embed_ids] != selected_video_ids:
+                    add_issue(issues, "error", "youtube", path, "generatedEmbed.videoIds must match resolved track selections in order")
+                embed_url = str(generated_embed.get("embedUrl") or "").strip()
+                if not embed_url:
+                    add_issue(issues, "error", "youtube", path, "generatedEmbed.embedUrl must not be empty")
+
+        if unresolved_tracks:
+            add_issue(issues, "warning", "youtube", path, f"{payload['mixSlug']} still has {unresolved_tracks} unresolved YouTube track match(es)")
+
+    for slug, record in published_by_slug.items():
+        source_platform = str(record["mix"].get("source", {}).get("platform") or "").strip().lower()
+        if source_platform == "tumblr" and slug not in seen_slugs:
+            add_issue(issues, "warning", "youtube", Path(record["path"]), "missing YouTube match state under data/youtube/")
+
+    return count
+
+
 def build_report(root: Path) -> dict[str, Any]:
     data_dir = root / "data"
     issues: list[dict[str, str]] = []
@@ -423,8 +542,8 @@ def build_report(root: Path) -> dict[str, Any]:
         except ValidationError as exc:
             add_issue(issues, "error", "about", about_path, str(exc))
 
-    drafts_by_slug = validate_mix_collection(data_dir / "drafts", "editorial", issues, "drafts", listening_catalog)
-    published_by_slug = validate_mix_collection(data_dir / "published", "published", issues, "published", listening_catalog)
+    drafts_by_slug = validate_mix_collection(root, data_dir / "drafts", "editorial", issues, "drafts", listening_catalog)
+    published_by_slug = validate_mix_collection(root, data_dir / "published", "published", issues, "published", listening_catalog)
     known_mix_slugs = set(drafts_by_slug) | set(published_by_slug)
 
     if isinstance(site, dict):
@@ -437,6 +556,7 @@ def build_report(root: Path) -> dict[str, Any]:
     notes_by_slug = validate_notes(data_dir / "notes", notes_index if isinstance(notes_index, dict) else None, known_mix_slugs, issues)
     validate_archive_indexes(root, published_by_slug, issues)
     artwork_count = validate_artwork_registry(root, issues)
+    youtube_count = validate_youtube_match_data(root, published_by_slug, issues)
 
     return {
         "root": str(root),
@@ -445,6 +565,7 @@ def build_report(root: Path) -> dict[str, Any]:
             "published": len(published_by_slug),
             "notes": len(notes_by_slug),
             "artwork": artwork_count,
+            "youtube": youtube_count,
         },
         "issues": issues,
         "errors": sum(1 for issue in issues if issue["severity"] == "error"),
@@ -456,7 +577,7 @@ def render_text_report(report: dict[str, Any]) -> str:
     lines = [
         "MMM content validation report",
         f"root: {report['root']}",
-        f"checked: {report['counts']['drafts']} drafts, {report['counts']['published']} published mixes, {report['counts']['notes']} notes, {report['counts'].get('artwork', 0)} artwork records",
+        f"checked: {report['counts']['drafts']} drafts, {report['counts']['published']} published mixes, {report['counts']['notes']} notes, {report['counts'].get('artwork', 0)} artwork records, {report['counts'].get('youtube', 0)} YouTube match files",
         f"errors: {report['errors']}",
         f"warnings: {report['warnings']}",
     ]

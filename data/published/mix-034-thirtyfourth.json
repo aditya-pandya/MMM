@@ -24,7 +24,8 @@
   "cover": {
     "imageUrl": "https://64.media.tumblr.com/b73c1db6dfb13c8fab236ed521780a93/93684f9912d6730d-14/s540x810/6a3caa5cb1fe01397903d11a807718686ea7867c.jpg",
     "alt": "Cover art for Thirtyfourth",
-    "credit": "Album art featuring work by Mapache Salado"
+    "credit": "Album art featuring work by Mapache Salado",
+    "canonicalAssetPath": "data/media/tumblr/mix-034-thirtyfourth/cover.jpg"
   },
   "download": {
     "label": "Download mix",

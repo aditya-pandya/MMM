@@ -1,6 +1,82 @@
 {
   "$schema": "../../schemas/artwork-registry.schema.json",
   "schemaVersion": "1.0",
-  "updatedAt": "2026-04-05T00:00:00Z",
-  "items": []
+  "updatedAt": "2026-04-06T05:09:04Z",
+  "items": [
+    {
+      "id": "mix-034-thirtyfourth-cover-art-tumblr-original",
+      "mixSlug": "mix-034-thirtyfourth",
+      "role": "cover-art",
+      "assetPath": "data/media/tumblr/mix-034-thirtyfourth/cover.jpg",
+      "workspacePath": "data/media/tumblr/mix-034-thirtyfourth",
+      "registeredAt": "2026-04-06T05:09:04Z",
+      "file": {
+        "byteSize": 90079,
+        "mediaType": "image/jpeg",
+        "etag": "\"5dc5b837f6e220068af0679f51b3f78f-1498089600-2869d8e\"",
+        "lastModified": "Tue, 07 Sep 2021 10:37:53 GMT"
+      },
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "0541dec55ed38b19c76579ca00b6144b2d62dae777bc583b038b920ca6d81795"
+      },
+      "provenance": {
+        "sourceType": "tumblr-original",
+        "sourceLabel": "Exact Tumblr-hosted cover image bytes",
+        "sourceUrl": "https://64.media.tumblr.com/b73c1db6dfb13c8fab236ed521780a93/93684f9912d6730d-14/s540x810/6a3caa5cb1fe01397903d11a807718686ea7867c.jpg",
+        "discoveredFrom": "cover.imageUrl",
+        "notes": "Downloaded from Tumblr for data/imported/mixes/mix-034-thirtyfourth.json and promoted to canonical local artwork."
+      }
+    },
+    {
+      "id": "mix-035-thirtyfifth-cover-art-tumblr-original",
+      "mixSlug": "mix-035-thirtyfifth",
+      "role": "cover-art",
+      "assetPath": "data/media/tumblr/mix-035-thirtyfifth/cover.jpg",
+      "workspacePath": "data/media/tumblr/mix-035-thirtyfifth",
+      "registeredAt": "2026-04-06T05:09:04Z",
+      "file": {
+        "byteSize": 70445,
+        "mediaType": "image/jpeg",
+        "etag": "\"98ea129c1b6a395571a1f41c3fe9fe86-1498089600-2869d8e\"",
+        "lastModified": "Wed, 15 Apr 2020 18:27:19 GMT"
+      },
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "db093c4ffeab246d9eb96c488c10cc36c42ab43c83b6395f3a452dd9b208f11d"
+      },
+      "provenance": {
+        "sourceType": "tumblr-original",
+        "sourceLabel": "Exact Tumblr-hosted cover image bytes",
+        "sourceUrl": "https://64.media.tumblr.com/555f756c6ac8f15c99699f1aff623d66/a9ae05f1087cd924-30/s540x810/5460a8cf8f174fb3e930b5f4a08734ed1a200fbd.jpg",
+        "discoveredFrom": "cover.imageUrl",
+        "notes": "Downloaded from Tumblr for data/imported/mixes/mix-035-thirtyfifth.json and promoted to canonical local artwork."
+      }
+    },
+    {
+      "id": "mix-036-thirtysixth-cover-art-tumblr-original",
+      "mixSlug": "mix-036-thirtysixth",
+      "role": "cover-art",
+      "assetPath": "data/media/tumblr/mix-036-thirtysixth/cover.jpg",
+      "workspacePath": "data/media/tumblr/mix-036-thirtysixth",
+      "registeredAt": "2026-04-06T05:09:04Z",
+      "file": {
+        "byteSize": 98114,
+        "mediaType": "image/jpeg",
+        "etag": "\"fa9a2af3f07ea93597e9a7f2fe4f580e-1498089600-2869d8e\"",
+        "lastModified": "Sun, 18 Aug 2019 17:14:45 GMT"
+      },
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "c271f64ce4a25d6dfd2f4ec5e8f27fd17c45d590539571d9ce7edce77679a7d5"
+      },
+      "provenance": {
+        "sourceType": "tumblr-original",
+        "sourceLabel": "Exact Tumblr-hosted cover image bytes",
+        "sourceUrl": "https://64.media.tumblr.com/323412fd886c4ef193aa4ff6d874ec7d/7c1052bf17558af1-ac/s540x810/1dd5548517bdfc2f5267db236a2474b478091f6b.jpg",
+        "discoveredFrom": "cover.imageUrl",
+        "notes": "Downloaded from Tumblr for data/imported/mixes/mix-036-thirtysixth.json and promoted to canonical local artwork."
+      }
+    }
+  ]
 }

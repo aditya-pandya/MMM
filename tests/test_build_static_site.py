@@ -227,7 +227,7 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert 'data-discovery-search="' in archive_html
     assert "Rebuilding the archive" in archive_html
     assert "The Kite String Tangle - Tennis Court" in archive_html
-    assert "Companion playlist on YouTube" in archive_html
+    assert "Resolved YouTube queue" in archive_html
 
     assert "Built like an archive, not a content machine." in about_html
     assert "Browse the archive" in about_html
@@ -266,20 +266,21 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Open original post" in mix_detail_html
     assert "A legacy Mega download URL survives in the archived source data" in mix_detail_html
     assert "A sanitized copy of the original post HTML is kept for repair and import cleanup work." in mix_detail_html
-    assert "Archived artwork credit: Album art featuring work by Erik Jones." in mix_detail_html
-    assert "Listening" not in mix_detail_html
+    assert "Cover credit: Album art featuring work by Erik Jones." in mix_detail_html
+    assert "Listening surfaces" in mix_detail_html
+    assert "YouTube full-mix embed is blocked" in mix_detail_html
     assert "Imported Tumblr snapshot" not in mix_detail_html
     assert "Search YouTube" not in mix_detail_html
-    assert "Legacy Tumblr artwork is preserved as source context" in mix_detail_html
+    assert "canonical cover slot" in mix_detail_html
     assert "https://mega.co.nz/" not in mix_detail_html
 
     assert "related note" in archive_html
     assert "highlighted track" in archive_html
-    assert "Companion playlist on YouTube" in mix_with_youtube_html
+    assert "Resolved YouTube queue" in mix_with_youtube_html
     assert "Listening surfaces" in mix_with_youtube_html
     assert "Embedded preview" in mix_with_youtube_html
     assert "External links" in mix_with_youtube_html
-    assert "youtube.com/embed/videoseries" in mix_with_youtube_html
+    assert "youtube.com/embed/ehpYg0NsGqA" in mix_with_youtube_html
     assert "Bandcamp starting point" not in mix_with_youtube_html
     assert "Local editorial state" in studio_html
     assert "Validation posture" in studio_html

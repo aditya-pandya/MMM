@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import mimetypes
 from pathlib import Path
 from typing import Any
 
@@ -20,7 +22,7 @@ from mmm_common import (
 )
 
 VALID_ROLES = {"cover-art", "cover-source", "social-card", "detail", "alternate"}
-VALID_SOURCE_TYPES = {"handmade", "scan", "screenshot", "collage", "reference", "restoration", "unknown"}
+VALID_SOURCE_TYPES = {"handmade", "scan", "screenshot", "collage", "reference", "restoration", "tumblr-original", "unknown"}
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -163,6 +165,8 @@ def build_registry_item(
     ensure_media_relative_path(workspace_relative)
 
     item_id = slugify(f"{normalized_mix_slug}-{role}-{asset_path.stem}")
+    file_bytes = asset_path.read_bytes()
+    media_type = mimetypes.guess_type(asset_path.name)[0] or "application/octet-stream"
     return {
         "id": item_id,
         "mixSlug": normalized_mix_slug,
@@ -170,9 +174,21 @@ def build_registry_item(
         "assetPath": asset_relative,
         "workspacePath": workspace_relative,
         "registeredAt": now_iso(),
+        "file": {
+            "byteSize": len(file_bytes),
+            "mediaType": media_type,
+            "etag": None,
+            "lastModified": None,
+        },
+        "checksum": {
+            "algorithm": "sha256",
+            "value": hashlib.sha256(file_bytes).hexdigest(),
+        },
         "provenance": {
             "sourceType": source_type,
             "sourceLabel": ensure_non_empty_string(source_label, "source label"),
+            "sourceUrl": "",
+            "discoveredFrom": "manual-register",
             "notes": notes.strip(),
         },
     }

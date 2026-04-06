@@ -24,9 +24,12 @@
    - The validator checks site metadata, notes, drafts, published mixes, `data/archive/index.json`, `data/archive-index.json`, `data/mixes.json`, and `data/media/artwork-registry.json` when present.
    - Expected output before publish is `errors: 0`.
    - Warnings are non-blocking, but published mixes can now emit listening/provider warnings when a surface falls outside the curated trust rules in `data/listening-provider-catalog.json`.
+   - Tumblr-derived published mixes can also emit YouTube review warnings when `data/youtube/<mix-slug>.json` is missing or still has unresolved tracks.
    - Explicit embeds are required for inline playback. Trusted provider links alone stay link-only.
-   - Use `/studio/` after a build for a quick local summary of note coverage gaps, orphan notes, and listening/provider warning counts.
+   - Use `/studio/` after a build for a quick local summary of note coverage gaps, orphan notes, listening/provider warning counts, and blocked YouTube review queues.
    - If a Tumblr-imported mix still has messy intro/cover/favorite legacy fields, run `python3 scripts/repair_legacy_imports.py [file-or-dir]` to refresh those fields from the saved `legacy.descriptionHtml` snapshot without touching the network.
+   - If a Tumblr-derived mix still points at remote cover art only, run `python3 scripts/sync_tumblr_artwork.py <mix-slug>` to download the exact Tumblr bytes locally and promote them into the canonical cover slot.
+   - If a published mix needs a YouTube queue, run `python3 scripts/sync_youtube_matches.py <mix-slug>` and review `data/youtube/<mix-slug>.json` before trusting the embed.
    - If you edited canonical note or published mix JSON directly, run `python3 scripts/refresh_indexes.py` to rebuild `data/notes-index.json`, `data/archive/index.json`, `data/archive-index.json`, and `data/mixes.json`.
 
 5. Approve a mix.
@@ -52,6 +55,24 @@
 - Register a chosen asset in the canonical registry:
   - `python3 scripts/manage_artwork.py register mix-036-thirtysixth --asset-path data/media/workspaces/mix-036-thirtysixth/exports/cover.jpg --source-label "Local collage"`
 - `data/media/artwork-registry.json` is the plain-JSON provenance source of truth.
+- Tumblr-exact local artwork sync:
+  - `python3 scripts/sync_tumblr_artwork.py mix-034-thirtyfourth mix-035-thirtyfifth`
+  - This downloads the exact Tumblr-hosted bytes into `data/media/tumblr/<mix-slug>/cover.<ext>`, updates the mix JSON with `cover.canonicalAssetPath`, and records SHA-256 plus source provenance in the registry.
+- Published pages prefer `cover.canonicalAssetPath` when present and only fall back to the remote Tumblr URL when no canonical local asset exists yet.
+
+## YouTube queue workflow
+
+- Generate candidate state:
+  - `python3 scripts/sync_youtube_matches.py mix-035-thirtyfifth`
+- Review the saved JSON in `data/youtube/<mix-slug>.json`.
+  - `auto-resolved` means the matcher found a clearly dominant hit.
+  - `pending-review` means the stored candidates were too ambiguous, duplicate-prone, or low-confidence to pick safely.
+  - `manual-selected` is the human-reviewed escape hatch once you have checked the candidate set.
+- Do not force a mix-level embed while any track remains unresolved.
+- When every track has a selected video ID, the build generates:
+  - a queue-style YouTube embed from explicit video IDs
+  - a queue-style watch URL from explicit video IDs
+- The build never invents a playlist ID to make the embed look cleaner than the underlying data.
 
 ## Weekly generation automation
 

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mmm.local/schemas/youtube-match.schema.json",
+  "title": "MMM YouTube Match State",
+  "type": "object",
+  "required": ["schemaVersion", "mixSlug", "updatedAt", "tracks", "summary"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "mixSlug": { "type": "string" },
+    "updatedAt": { "type": "string", "format": "date-time" },
+    "sourceMixPath": { "type": ["string", "null"] },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["position", "displayText", "query", "resolution", "candidates"],
+        "properties": {
+          "position": { "type": "integer", "minimum": 1 },
+          "displayText": { "type": "string" },
+          "query": { "type": "string" },
+          "resolution": {
+            "type": "object",
+            "required": ["status", "confidenceScore", "reason"],
+            "properties": {
+              "status": {
+                "enum": ["auto-resolved", "manual-selected", "pending-review", "no-candidate"]
+              },
+              "selectedVideoId": { "type": ["string", "null"] },
+              "confidenceScore": { "type": "number", "minimum": 0, "maximum": 1 },
+              "reason": { "type": "string" },
+              "holdbackReason": { "type": ["string", "null"] }
+            }
+          },
+          "candidates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["rank", "videoId", "title", "url", "score"],
+              "properties": {
+                "rank": { "type": "integer", "minimum": 1 },
+                "videoId": { "type": "string" },
+                "title": { "type": "string" },
+                "url": { "type": "string", "format": "uri" },
+                "channel": { "type": ["string", "null"] },
+                "durationSeconds": { "type": ["number", "null"], "minimum": 0 },
+                "score": { "type": "number", "minimum": 0, "maximum": 1 },
+                "signals": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["totalTracks", "resolvedTracks", "unresolvedTracks", "requiresReview"],
+      "properties": {
+        "totalTracks": { "type": "integer", "minimum": 0 },
+        "resolvedTracks": { "type": "integer", "minimum": 0 },
+        "unresolvedTracks": { "type": "integer", "minimum": 0 },
+        "requiresReview": { "type": "boolean" },
+        "generatedEmbed": {
+          "type": ["object", "null"],
+          "properties": {
+            "provider": { "type": "string" },
+            "kind": { "type": "string" },
+            "title": { "type": "string" },
+            "embedUrl": { "type": "string", "format": "uri" },
+            "watchUrl": { "type": "string", "format": "uri" },
+            "videoIds": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

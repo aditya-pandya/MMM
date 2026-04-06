@@ -1,0 +1,1331 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-035-thirtyfifth",
+  "updatedAt": "2026-04-06T05:15:00Z",
+  "sourceMixPath": "data/published/mix-035-thirtyfifth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Chromeo - Over Your Shoulder",
+      "query": "Chromeo Over Your Shoulder",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "ehpYg0NsGqA",
+        "confidenceScore": 0.999,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ehpYg0NsGqA",
+          "title": "Chromeo - Over Your Shoulder [Official Audio]",
+          "url": "https://www.youtube.com/watch?v=ehpYg0NsGqA",
+          "channel": "Chromeo",
+          "durationSeconds": 277.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "XYDg27tqXkI",
+          "title": "Chromeo - Over Your Shoulder",
+          "url": "https://www.youtube.com/watch?v=XYDg27tqXkI",
+          "channel": "takeSomeCrime",
+          "durationSeconds": 277.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "SzQGJ8D4Y68",
+          "title": "Chromeo - Over Your Shoulder",
+          "url": "https://www.youtube.com/watch?v=SzQGJ8D4Y68",
+          "channel": "LastGangRadio",
+          "durationSeconds": 277.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "OVD8x2NWt0A",
+          "title": "Watch\u00a0@chromeo\u00a0perform \"Over Your Shoulder\" on CBC Music Live",
+          "url": "https://www.youtube.com/watch?v=OVD8x2NWt0A",
+          "channel": "CBC Music",
+          "durationSeconds": 291.0,
+          "score": 0.871,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "4Bj10eHq4YA",
+          "title": "Chromeo - Over Your Shoulder [live in San Francisco]\u2063 (Official Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=4Bj10eHq4YA",
+          "channel": "Chromeo",
+          "durationSeconds": 313.0,
+          "score": 0.779,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "White Denim - Pretty Green",
+      "query": "White Denim Pretty Green",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "vMCoiehkH8U",
+        "confidenceScore": 0.999,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "vMCoiehkH8U",
+          "title": "White Denim - Pretty Green Video",
+          "url": "https://www.youtube.com/watch?v=vMCoiehkH8U",
+          "channel": "White Denim",
+          "durationSeconds": 252.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "1vIP45MK0Og",
+          "title": "White Denim \"Pretty Green\" (Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=1vIP45MK0Og",
+          "channel": "White Denim",
+          "durationSeconds": 250.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "G5UAfiNIUVI",
+          "title": "White Denim on Austin City Limits \"Pretty Green\"",
+          "url": "https://www.youtube.com/watch?v=G5UAfiNIUVI",
+          "channel": "Austin City Limits",
+          "durationSeconds": 290.0,
+          "score": 0.88,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "qqbm85w1UPo",
+          "title": "[HD] White Denim - \"Pretty Green\" 10/18/13 David Letterman",
+          "url": "https://www.youtube.com/watch?v=qqbm85w1UPo",
+          "channel": "LOUDSTER",
+          "durationSeconds": 287.0,
+          "score": 0.857,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "K5D6pxf1rAc",
+          "title": "White Denim - Pretty Green (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=K5D6pxf1rAc",
+          "channel": "KEXP",
+          "durationSeconds": 285.0,
+          "score": 0.744,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Young Galaxy - Sea Drug",
+      "query": "Young Galaxy Sea Drug",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "SOB7gYnKioc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "SOB7gYnKioc",
+          "title": "YOUNG GALAXY - Sea Drug",
+          "url": "https://www.youtube.com/watch?v=SOB7gYnKioc",
+          "channel": "Paper Bag Records",
+          "durationSeconds": 183.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "o5HMq7yKtaw",
+          "title": "Young Galaxy - Sea Drug (WoodysProduce Remix)",
+          "url": "https://www.youtube.com/watch?v=o5HMq7yKtaw",
+          "channel": "RushSoundz",
+          "durationSeconds": 188.0,
+          "score": 0.782,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "UHbiEVo4cVw",
+          "title": "Sea Drug",
+          "url": "https://www.youtube.com/watch?v=UHbiEVo4cVw",
+          "channel": "Young Galaxy - Topic",
+          "durationSeconds": 183.0,
+          "score": 0.566,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "oIxz7whD9pU",
+          "title": "YOUNG GALAXY - Dreams",
+          "url": "https://www.youtube.com/watch?v=oIxz7whD9pU",
+          "channel": "Paper Bag Records",
+          "durationSeconds": 271.0,
+          "score": 0.378,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "VZ78v5KZfJA",
+          "title": "YOUNG GALAXY - Youth Is Wasted On The Young",
+          "url": "https://www.youtube.com/watch?v=VZ78v5KZfJA",
+          "channel": "Paper Bag Records",
+          "durationSeconds": 192.0,
+          "score": 0.311,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Wolf Alice - Blush",
+      "query": "Wolf Alice Blush",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "O_QBC_pDkeU",
+        "confidenceScore": 0.999,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "O_QBC_pDkeU",
+          "title": "Wolf Alice - Blush",
+          "url": "https://www.youtube.com/watch?v=O_QBC_pDkeU",
+          "channel": "Wolf Alice",
+          "durationSeconds": 260.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "iyQIGqMDoJ0",
+          "title": "Wolf Alice - Blush (Live)",
+          "url": "https://www.youtube.com/watch?v=iyQIGqMDoJ0",
+          "channel": "Fred Perry",
+          "durationSeconds": 211.0,
+          "score": 0.929,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "liYyyoAgc_4",
+          "title": "Wolf Alice - Blush (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=liYyyoAgc_4",
+          "channel": "Neptune Beam",
+          "durationSeconds": 253.0,
+          "score": 0.85,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "WjuoD-Uisy8",
+          "title": "Wolf Alice - Blush (Live 2018)",
+          "url": "https://www.youtube.com/watch?v=WjuoD-Uisy8",
+          "channel": "Declan K",
+          "durationSeconds": 260.0,
+          "score": 0.707,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "os2VbK-dRkU",
+          "title": "Wolf Alice | Blush live at Glastonbury 2016",
+          "url": "https://www.youtube.com/watch?v=os2VbK-dRkU",
+          "channel": "planet hunter",
+          "durationSeconds": 260.0,
+          "score": 0.628,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Meg Myers - Desire",
+      "query": "Meg Myers Desire",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "bR5u9jb0PJE",
+        "confidenceScore": 0.962,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "bR5u9jb0PJE",
+          "title": "Meg Myers - Desire [Music Video]",
+          "url": "https://www.youtube.com/watch?v=bR5u9jb0PJE",
+          "channel": "MEG MYERS",
+          "durationSeconds": 285.0,
+          "score": 0.962,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "DF1dSVQSxY0",
+          "title": "Meg Myers - Desire (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=DF1dSVQSxY0",
+          "channel": "Tropic Lyrics",
+          "durationSeconds": 302.0,
+          "score": 0.861,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "AKOZ0BO1nJg",
+          "title": "Meg Myers - Desire (Hucci Remix) { \ud835\udc94\ud835\udc8d\ud835\udc90\ud835\udc98\ud835\udc86\ud835\udc85 & \ud835\udc93\ud835\udc86\ud835\udc97\ud835\udc86\ud835\udc93\ud835\udc83 }",
+          "url": "https://www.youtube.com/watch?v=AKOZ0BO1nJg",
+          "channel": "lucylev",
+          "durationSeconds": 282.0,
+          "score": 0.802,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "iwH14TJTBFE",
+          "title": "Meg Myers - Desire | Live @ JBTV",
+          "url": "https://www.youtube.com/watch?v=iwH14TJTBFE",
+          "channel": "JBTV Music Television",
+          "durationSeconds": 275.0,
+          "score": 0.716,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "g6SVzgSjJck",
+          "title": "Desire (Hucci Remix)",
+          "url": "https://www.youtube.com/watch?v=g6SVzgSjJck",
+          "channel": "MEG MYERS",
+          "durationSeconds": 234.0,
+          "score": 0.276,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Phantogram - Black Out Days",
+      "query": "Phantogram Black Out Days",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "a0ul-BghOAs",
+        "confidenceScore": 0.999,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "a0ul-BghOAs",
+          "title": "Phantogram - Black Out Days",
+          "url": "https://www.youtube.com/watch?v=a0ul-BghOAs",
+          "channel": "Phantogram",
+          "durationSeconds": 230.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "G3OihW5MPKA",
+          "title": "Phantogram - Black Out Days",
+          "url": "https://www.youtube.com/watch?v=G3OihW5MPKA",
+          "channel": "Phantogram",
+          "durationSeconds": 228.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ihv7q3BkrmY",
+          "title": "Phantogram - Black Out Days (Vevo LIFT Live)",
+          "url": "https://www.youtube.com/watch?v=ihv7q3BkrmY",
+          "channel": "Phantogram",
+          "durationSeconds": 232.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "84yTSiRCCp8",
+          "title": "Phantogram - Black Out Days (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=84yTSiRCCp8",
+          "channel": "Dan Music",
+          "durationSeconds": 226.0,
+          "score": 0.913,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Q-qgMT1QrwQ",
+          "title": "Phantogram - Black Out Days (Future Islands Remix/Audio)",
+          "url": "https://www.youtube.com/watch?v=Q-qgMT1QrwQ",
+          "channel": "Phantogram",
+          "durationSeconds": 249.0,
+          "score": 0.871,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Society - 14 Hours",
+      "query": "Society 14 Hours",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "J4pbI8sH2mE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "J4pbI8sH2mE",
+          "title": "Society - 14 Hours",
+          "url": "https://www.youtube.com/watch?v=J4pbI8sH2mE",
+          "channel": "Society-Music",
+          "durationSeconds": 234.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "5sIQ7Cl_f5w",
+          "title": "14 Hours - Society",
+          "url": "https://www.youtube.com/watch?v=5sIQ7Cl_f5w",
+          "channel": "Letter & Sound",
+          "durationSeconds": 234.0,
+          "score": 0.87,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "W_NRXuGQmGY",
+          "title": "14 Hours",
+          "url": "https://www.youtube.com/watch?v=W_NRXuGQmGY",
+          "channel": "Society - Topic",
+          "durationSeconds": 256.0,
+          "score": 0.6,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "HE8y5V235ps",
+          "title": "Society - Protocol",
+          "url": "https://www.youtube.com/watch?v=HE8y5V235ps",
+          "channel": "SocietyVEVO",
+          "durationSeconds": 250.0,
+          "score": 0.379,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ixkKwzwdkw8",
+          "title": "Philosophy and Society | Complete Album 04 | Alan Watts | Essential Lectures",
+          "url": "https://www.youtube.com/watch?v=ixkKwzwdkw8",
+          "channel": "Zen Bones",
+          "durationSeconds": 19999.0,
+          "score": 0.214,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Braids - Hossak",
+      "query": "Braids Hossak",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "8Ffe8rkza5o",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "8Ffe8rkza5o",
+          "title": "BRAIDS - HOSSAK",
+          "url": "https://www.youtube.com/watch?v=8Ffe8rkza5o",
+          "channel": "Braids",
+          "durationSeconds": 197.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "qxK7yNp75Nk",
+          "title": "Traxxion Install Video 4",
+          "url": "https://www.youtube.com/watch?v=qxK7yNp75Nk",
+          "channel": "matt caradonna",
+          "durationSeconds": 157.0,
+          "score": 0.117,
+          "signals": []
+        },
+        {
+          "rank": 3,
+          "videoId": "RvI6fp9CmVw",
+          "title": "My First Pow Wow",
+          "url": "https://www.youtube.com/watch?v=RvI6fp9CmVw",
+          "channel": "Marielle Hossack",
+          "durationSeconds": 56.0,
+          "score": 0.099,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "AggEtStSMcE",
+          "title": "Suspension For Mortals, Chapter 1,  Reality Check  by Max McAllister of Traxxion Dynamics",
+          "url": "https://www.youtube.com/watch?v=AggEtStSMcE",
+          "channel": "Max McAllister & Traxxion Dynamics",
+          "durationSeconds": 404.0,
+          "score": 0.049,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "qBGpPTS7Wug",
+          "title": "Well (Live @ Artlife)",
+          "url": "https://www.youtube.com/watch?v=qBGpPTS7Wug",
+          "channel": "Morgan Greenwood",
+          "durationSeconds": 165.0,
+          "score": 0.0,
+          "signals": [
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Anna Lunoe - Breathe",
+      "query": "Anna Lunoe Breathe",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "9VtUrv2UBQs",
+        "confidenceScore": 0.915,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9VtUrv2UBQs",
+          "title": "Anna Lunoe - Breathe (Official Video)",
+          "url": "https://www.youtube.com/watch?v=9VtUrv2UBQs",
+          "channel": "Ultra Records",
+          "durationSeconds": 253.0,
+          "score": 0.915,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "l-bQmLcasCQ",
+          "title": "Anna Lunoe - Breathe (Extended)",
+          "url": "https://www.youtube.com/watch?v=l-bQmLcasCQ",
+          "channel": "PonYourTone",
+          "durationSeconds": 343.0,
+          "score": 0.914,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "h6itPRGxS3s",
+          "title": "Anna Lunoe - Breathe (Danny T Remix)",
+          "url": "https://www.youtube.com/watch?v=h6itPRGxS3s",
+          "channel": "Anna Lunoe",
+          "durationSeconds": 289.0,
+          "score": 0.881,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "bpXvzUd1CKo",
+          "title": "Anna Lunoe - Breathe (Sleepy Tom Remix)",
+          "url": "https://www.youtube.com/watch?v=bpXvzUd1CKo",
+          "channel": "Anna Lunoe",
+          "durationSeconds": 323.0,
+          "score": 0.864,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "EdQ9Yk5ruuw",
+          "title": "Anna Lunoe - Breathe (Cover Art)",
+          "url": "https://www.youtube.com/watch?v=EdQ9Yk5ruuw",
+          "channel": "Ultra Records",
+          "durationSeconds": 232.0,
+          "score": 0.787,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-cover-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Jungle - The Heat",
+      "query": "Jungle The Heat",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Y4UckOGdZtI",
+        "confidenceScore": 0.996,
+        "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Y4UckOGdZtI",
+          "title": "Jungle - The Heat (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Y4UckOGdZtI",
+          "channel": "Jungle4eva",
+          "durationSeconds": 196.0,
+          "score": 0.996,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "rx3bDQhq3R8",
+          "title": "Jungle - The Heat (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=rx3bDQhq3R8",
+          "channel": "KEXP",
+          "durationSeconds": 193.0,
+          "score": 0.709,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "YccJ8NFrU_4",
+          "title": "Jungle - The Heat (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=YccJ8NFrU_4",
+          "channel": "KEXP",
+          "durationSeconds": 214.0,
+          "score": 0.709,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "1BJ1IVMjbj8",
+          "title": "The Heat",
+          "url": "https://www.youtube.com/watch?v=1BJ1IVMjbj8",
+          "channel": "Jungle4eva",
+          "durationSeconds": 195.0,
+          "score": 0.549,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "w4LkSRXrK34",
+          "title": "Jungle - Heavy, California",
+          "url": "https://www.youtube.com/watch?v=w4LkSRXrK34",
+          "channel": "Jungle4eva",
+          "durationSeconds": 200.0,
+          "score": 0.396,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "Yamantaka // Sonic Titan - One",
+      "query": "Yamantaka // Sonic Titan One",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "pIo3swynly0",
+        "confidenceScore": 0.939,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "pIo3swynly0",
+          "title": "YAMANTAKA // SONIC TITAN - One",
+          "url": "https://www.youtube.com/watch?v=pIo3swynly0",
+          "channel": "Paper Bag Records",
+          "durationSeconds": 322.0,
+          "score": 0.939,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "KH3X4D0NyS8",
+          "title": "Yamantaka // Sonic Titan - \"One\" (Official Video)",
+          "url": "https://www.youtube.com/watch?v=KH3X4D0NyS8",
+          "channel": "Noisey",
+          "durationSeconds": 339.0,
+          "score": 0.896,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "rR0YpXt-0d8",
+          "title": "Yamantaka // Sonic Titan Perform \"One\"",
+          "url": "https://www.youtube.com/watch?v=rR0YpXt-0d8",
+          "channel": "Pitchfork",
+          "durationSeconds": 323.0,
+          "score": 0.889,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "MA3nPxx-yZY",
+          "title": "Yamantaka // Sonic Titan - One | Audiotree Live",
+          "url": "https://www.youtube.com/watch?v=MA3nPxx-yZY",
+          "channel": "Audiotree",
+          "durationSeconds": 246.0,
+          "score": 0.856,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "5cgy2xRhxR8",
+          "title": "Yamantaka // Sonic Titan | One | First Play Live",
+          "url": "https://www.youtube.com/watch?v=5cgy2xRhxR8",
+          "channel": "CBC Music",
+          "durationSeconds": 379.0,
+          "score": 0.852,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Shy Girls - Still Not Falling",
+      "query": "Shy Girls Still Not Falling",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "wXX7YIC5vJU",
+        "confidenceScore": 0.999,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "wXX7YIC5vJU",
+          "title": "Shy Girls: \"Still Not Falling\"",
+          "url": "https://www.youtube.com/watch?v=wXX7YIC5vJU",
+          "channel": "Hit City U.S.A.",
+          "durationSeconds": 252.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "hynPrOm19ko",
+          "title": "Shy Girls - Still Not Falling",
+          "url": "https://www.youtube.com/watch?v=hynPrOm19ko",
+          "channel": "LAB344",
+          "durationSeconds": 253.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "SrveBH34GQQ",
+          "title": "Shy Girls - Still Not Falling | stamPAlinski",
+          "url": "https://www.youtube.com/watch?v=SrveBH34GQQ",
+          "channel": "ALEK PALI\u0143SKI",
+          "durationSeconds": 193.0,
+          "score": 0.949,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "rJXLoTaq32Y",
+          "title": "Don't Feel So Good w/o/u",
+          "url": "https://www.youtube.com/watch?v=rJXLoTaq32Y",
+          "channel": "Shy Girls",
+          "durationSeconds": 182.0,
+          "score": 0.203,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "OYKCKS_l9RI",
+          "title": "Don't Look Back",
+          "url": "https://www.youtube.com/watch?v=OYKCKS_l9RI",
+          "channel": "Shy Girls",
+          "durationSeconds": 257.0,
+          "score": 0.182,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "The Wyld - Odyssey",
+      "query": "The Wyld Odyssey",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "Ulbt3tASoxw",
+        "confidenceScore": 0.503,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "zVIE-G_o2j4",
+          "title": "Odyssey",
+          "url": "https://www.youtube.com/watch?v=zVIE-G_o2j4",
+          "channel": "No Wyld - Topic",
+          "durationSeconds": 240.0,
+          "score": 0.503,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Ulbt3tASoxw",
+          "title": "No Wyld - Odyssey (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Ulbt3tASoxw",
+          "channel": "NoWyldVEVO",
+          "durationSeconds": 241.0,
+          "score": 0.358,
+          "signals": [
+            "song-title-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "7-Y5mkRFcZ0",
+          "title": "Odyssey (Old Version)",
+          "url": "https://www.youtube.com/watch?v=7-Y5mkRFcZ0",
+          "channel": "No Wyld - Topic",
+          "durationSeconds": 244.0,
+          "score": 0.357,
+          "signals": [
+            "song-title-in-title",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "IglKhUZnYRQ",
+          "title": "No Wyld - ODYSSEY (Official Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=IglKhUZnYRQ",
+          "channel": "No Wyld",
+          "durationSeconds": 256.0,
+          "score": 0.329,
+          "signals": [
+            "song-title-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "QDaWWoCs4L8",
+          "title": "Odyssey (Garage Version) (Clean)",
+          "url": "https://www.youtube.com/watch?v=QDaWWoCs4L8",
+          "channel": "Toni's Music Library",
+          "durationSeconds": 239.0,
+          "score": 0.247,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Goldroom - Embrace",
+      "query": "Goldroom Embrace",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "l35GTSbKMpY",
+        "confidenceScore": 0.999,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "JSZy8tzGOsw",
+          "title": "Goldroom - Embrace",
+          "url": "https://www.youtube.com/watch?v=JSZy8tzGOsw",
+          "channel": "MrSuicideSheep",
+          "durationSeconds": 345.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "2ntpeMtA1Fs",
+          "title": "Goldroom - Embrace",
+          "url": "https://www.youtube.com/watch?v=2ntpeMtA1Fs",
+          "channel": "Goldroom",
+          "durationSeconds": 275.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "l35GTSbKMpY",
+          "title": "Goldroom - Embrace (Official Video)",
+          "url": "https://www.youtube.com/watch?v=l35GTSbKMpY",
+          "channel": "Goldroom",
+          "durationSeconds": 205.0,
+          "score": 0.991,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "r5lk8sn3q7I",
+          "title": "Goldroom - Embrace (feat. George Maple)",
+          "url": "https://www.youtube.com/watch?v=r5lk8sn3q7I",
+          "channel": "Goldroom",
+          "durationSeconds": 236.0,
+          "score": 0.933,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "wuZ_na40uWc",
+          "title": "Goldroom - Embrace (Dara Remix)",
+          "url": "https://www.youtube.com/watch?v=wuZ_na40uWc",
+          "channel": "TFB Records",
+          "durationSeconds": 359.0,
+          "score": 0.817,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 15,
+      "displayText": "Laura Welsh - Undiscovered",
+      "query": "Laura Welsh Undiscovered",
+      "resolution": {
+        "status": "manual-selected",
+        "selectedVideoId": "kUTLoClmsBk",
+        "confidenceScore": 0.999,
+        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "kUTLoClmsBk",
+          "title": "Laura Welsh - Undiscovered",
+          "url": "https://www.youtube.com/watch?v=kUTLoClmsBk",
+          "channel": "Laura Welsh",
+          "durationSeconds": 177.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "MvcoOlj6u3o",
+          "title": "Laura Welsh - Undiscovered",
+          "url": "https://www.youtube.com/watch?v=MvcoOlj6u3o",
+          "channel": "Laura Welsh",
+          "durationSeconds": 175.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "O7ImvYt-naA",
+          "title": "Undiscovered Laura Welsh Music Video",
+          "url": "https://www.youtube.com/watch?v=O7ImvYt-naA",
+          "channel": "Anastasia Steele",
+          "durationSeconds": 157.0,
+          "score": 0.84,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "n1Nf--1pkxA",
+          "title": "Laura Welsh - Undiscovered (Mike Mago Remix)",
+          "url": "https://www.youtube.com/watch?v=n1Nf--1pkxA",
+          "channel": "Selected.",
+          "durationSeconds": 330.0,
+          "score": 0.828,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "UtyFK8SeMic",
+          "title": "Laura Welsh - Undiscovered (Live from Hype Hotel) - Powered by #HypeON",
+          "url": "https://www.youtube.com/watch?v=UtyFK8SeMic",
+          "channel": "Hype Machine",
+          "durationSeconds": 168.0,
+          "score": 0.643,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 15,
+    "resolvedTracks": 15,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "video-queue",
+      "title": "Full mix queue for Thirtyfifth",
+      "embedUrl": "https://www.youtube.com/embed/ehpYg0NsGqA?playlist=vMCoiehkH8U,SOB7gYnKioc,O_QBC_pDkeU,bR5u9jb0PJE,a0ul-BghOAs,J4pbI8sH2mE,8Ffe8rkza5o,9VtUrv2UBQs,Y4UckOGdZtI,pIo3swynly0,wXX7YIC5vJU,Ulbt3tASoxw,l35GTSbKMpY,kUTLoClmsBk",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=ehpYg0NsGqA,vMCoiehkH8U,SOB7gYnKioc,O_QBC_pDkeU,bR5u9jb0PJE,a0ul-BghOAs,J4pbI8sH2mE,8Ffe8rkza5o,9VtUrv2UBQs,Y4UckOGdZtI,pIo3swynly0,wXX7YIC5vJU,Ulbt3tASoxw,l35GTSbKMpY,kUTLoClmsBk",
+      "videoIds": [
+        "ehpYg0NsGqA",
+        "vMCoiehkH8U",
+        "SOB7gYnKioc",
+        "O_QBC_pDkeU",
+        "bR5u9jb0PJE",
+        "a0ul-BghOAs",
+        "J4pbI8sH2mE",
+        "8Ffe8rkza5o",
+        "9VtUrv2UBQs",
+        "Y4UckOGdZtI",
+        "pIo3swynly0",
+        "wXX7YIC5vJU",
+        "Ulbt3tASoxw",
+        "l35GTSbKMpY",
+        "kUTLoClmsBk"
+      ],
+      "generatedAt": "2026-04-06T05:15:00Z"
+    }
+  }
+}

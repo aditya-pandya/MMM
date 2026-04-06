@@ -35,6 +35,7 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
   - `notes/` editorial notes
   - `archive/` generated archive index
   - `media/` local artwork registry plus mix-specific asset workspaces
+  - `youtube/` persisted per-track YouTube candidate + review state
   - `site.json`, `about.json`, `archive-index.json`, `notes-index.json`, `taste-profile.json`
   - `listening-provider-catalog.json` curated trust map for listening providers and embeds
 - `schemas/`
@@ -88,6 +89,7 @@ Listening-specific operator notes:
 - Treat `data/listening-provider-catalog.json` as the trust source for listening surfaces.
 - Add explicit embed URLs only when the curated data genuinely supports inline playback.
 - If validation warns that a listening surface is uncertain, the build will demote it instead of presenting it as a verified mirror.
+- YouTube full-mix embeds now come only from `data/youtube/*.json` files with a fully resolved per-track queue. Ambiguous or low-confidence track matches stay blocked for review.
 
 Create a new draft mix template instead of starting from blank JSON:
 
@@ -178,6 +180,21 @@ python3 scripts/manage_artwork.py register mix-036-thirtysixth \
 Notes:
 - `data/media/artwork-registry.json` is the canonical local artwork/provenance index.
 - Keep registered asset paths inside `data/media/` so the registry stays local-safe and portable with the repo.
+- Use `python3 scripts/sync_tumblr_artwork.py mix-034-thirtyfourth mix-035-thirtyfifth` or `npm run artwork:sync:tumblr -- mix-034-thirtyfourth` to download the exact Tumblr-hosted cover bytes into `data/media/tumblr/<mix-slug>/` and promote them into the canonical cover slot.
+- Tumblr artwork sync records SHA-256, byte size, media type, ETag/Last-Modified when available, original source URL, and the field that discovered the image.
+
+Persist YouTube per-track candidate state locally:
+
+```bash
+python3 scripts/sync_youtube_matches.py mix-035-thirtyfifth
+npm run youtube:match -- mix-035-thirtyfifth
+```
+
+Notes:
+- Match state lives in `data/youtube/<mix-slug>.json`.
+- The matcher stores the scored candidate set for each track and only auto-resolves clearly dominant hits.
+- `pending-review`, `no-candidate`, and duplicate holdbacks are intentional. The build will not render a fake or implied full-mix embed while any track is unresolved.
+- Once every track is explicitly resolved, the build renders an honest YouTube queue embed from explicit video IDs instead of a claimed playlist ID.
 
 ## Local editorial workflow
 
@@ -241,6 +258,18 @@ Repair existing imported or published mix JSON from the preserved legacy HTML sn
 ```bash
 python3 scripts/repair_legacy_imports.py
 python3 scripts/repair_legacy_imports.py data/imported/mixes/mix-033-thirtythird.json
+```
+
+Download Tumblr-hosted cover art into the repo and promote it to canonical local artwork:
+
+```bash
+python3 scripts/sync_tumblr_artwork.py mix-034-thirtyfourth mix-035-thirtyfifth mix-036-thirtysixth
+```
+
+Generate persisted YouTube candidate/match state for published mixes:
+
+```bash
+python3 scripts/sync_youtube_matches.py mix-035-thirtyfifth mix-036-thirtysixth
 ```
 
 ## Rebuild taste profile

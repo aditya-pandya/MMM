@@ -48,6 +48,7 @@
       "type": "object",
       "properties": {
         "imageUrl": { "type": ["string", "null"], "format": "uri" },
+        "canonicalAssetPath": { "type": ["string", "null"] },
         "alt": { "type": ["string", "null"] },
         "credit": { "type": ["string", "null"] }
       },

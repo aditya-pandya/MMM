@@ -16,6 +16,7 @@ NOTES_DIR = DATA_DIR / "notes"
 ARCHIVE_DIR = DATA_DIR / "archive"
 MEDIA_DIR = DATA_DIR / "media"
 MEDIA_WORKSPACES_DIR = MEDIA_DIR / "workspaces"
+YOUTUBE_DIR = DATA_DIR / "youtube"
 ARCHIVE_INDEX_PATH = ARCHIVE_DIR / "index.json"
 LEGACY_ARCHIVE_INDEX_PATH = DATA_DIR / "archive-index.json"
 MIXES_JSON_PATH = DATA_DIR / "mixes.json"
@@ -300,6 +301,14 @@ def _validate_published_mix(mix: dict[str, Any]) -> ValidationResult:
     if status not in VALID_STATUSES:
         raise ValidationError(f"status must be one of: {', '.join(sorted(VALID_STATUSES))}")
     ensure_iso8601_datetime(mix["publishedAt"], "publishedAt")
+
+    cover = mix.get("cover")
+    if cover is not None:
+        if not isinstance(cover, dict):
+            raise ValidationError("cover must be an object when present")
+        for key in ("imageUrl", "alt", "credit", "canonicalAssetPath"):
+            if key in cover and cover[key] is not None and not str(cover[key]).strip():
+                raise ValidationError(f"cover.{key} must not be empty when present")
 
     tracks = mix["tracks"]
     if not isinstance(tracks, list) or not tracks:

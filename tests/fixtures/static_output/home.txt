@@ -4,8 +4,6 @@ H1: Thirtysixth
 COPY: Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.
 BUTTON: Open mix
 BUTTON: Browse archive
-TEXT: Legacy Tumblr artwork is preserved as source context, but it is not being presented here as canonical album art.
-META: Album art featuring work by Erik Jones
 EYEBROW: Recent mixes
 H2: Small archive, real entries.
 LINK: See all

@@ -208,9 +208,21 @@ def seed_repo(root: Path) -> None:
                     "assetPath": "data/media/workspaces/mix-001-test/exports/cover.jpg",
                     "workspacePath": "data/media/workspaces/mix-001-test",
                     "registeredAt": "2026-04-03T14:05:00Z",
+                    "file": {
+                        "byteSize": 5,
+                        "mediaType": "image/jpeg",
+                        "etag": None,
+                        "lastModified": None
+                    },
+                    "checksum": {
+                        "algorithm": "sha256",
+                        "value": "dcover"
+                    },
                     "provenance": {
                         "sourceType": "handmade",
                         "sourceLabel": "Local test art",
+                        "sourceUrl": "https://example.com/local-test-art",
+                        "discoveredFrom": "manual-register",
                         "notes": ""
                     }
                 }
@@ -230,6 +242,7 @@ def test_validate_content_reports_clean_repo(tmp_path):
     assert report["counts"]["drafts"] == 1
     assert report["counts"]["notes"] == 1
     assert report["counts"]["artwork"] == 1
+    assert report["counts"]["youtube"] == 0
 
 
 def test_validate_content_reports_actionable_mismatches(tmp_path):
@@ -251,6 +264,65 @@ def test_validate_content_reports_actionable_mismatches(tmp_path):
     assert report["warnings"] >= 1
     assert any("featured mix slug 'missing-mix'" in message for message in messages)
     assert any("field 'summary' is out of sync" in message for message in messages)
+
+
+def test_validate_content_surfaces_unresolved_youtube_review_work(tmp_path):
+    seed_repo(tmp_path)
+    data_dir = tmp_path / "data"
+    published_mix_path = data_dir / "published" / "mix-001-test.json"
+    published_mix = mmm_common.load_json(published_mix_path)
+    published_mix["source"]["platform"] = "tumblr"
+    mmm_common.dump_json(published_mix_path, published_mix)
+    (data_dir / "youtube").mkdir(parents=True)
+    mmm_common.dump_json(
+        data_dir / "youtube" / "mix-001-test.json",
+        {
+            "$schema": "../../schemas/youtube-match.schema.json",
+            "schemaVersion": "1.0",
+            "mixSlug": "mix-001-test",
+            "updatedAt": "2026-04-06T00:00:00Z",
+            "sourceMixPath": "data/published/mix-001-test.json",
+            "tracks": [
+                {
+                    "position": 1,
+                    "displayText": "Artist - Song",
+                    "query": "Artist Song",
+                    "resolution": {
+                        "status": "pending-review",
+                        "selectedVideoId": None,
+                        "confidenceScore": 0.84,
+                        "reason": "Close candidates need review.",
+                        "holdbackReason": "ambiguous-top-candidates",
+                    },
+                    "candidates": [
+                        {
+                            "rank": 1,
+                            "videoId": "abc123",
+                            "title": "Artist - Song",
+                            "url": "https://www.youtube.com/watch?v=abc123",
+                            "channel": "Artist",
+                            "durationSeconds": 200,
+                            "score": 0.84,
+                            "signals": ["artist-name-in-title"],
+                        }
+                    ],
+                }
+            ],
+            "summary": {
+                "totalTracks": 1,
+                "resolvedTracks": 0,
+                "unresolvedTracks": 1,
+                "requiresReview": True,
+                "generatedEmbed": None,
+            },
+        },
+    )
+
+    report = validate_content.build_report(tmp_path)
+    messages = [issue["message"] for issue in report["issues"]]
+
+    assert report["errors"] == 0
+    assert any("still has 1 unresolved YouTube track match" in message for message in messages)
 
 
 def test_validate_content_rejects_note_without_datetime_timezone(tmp_path):

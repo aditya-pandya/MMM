@@ -25,7 +25,8 @@
   "cover": {
     "imageUrl": "https://64.media.tumblr.com/323412fd886c4ef193aa4ff6d874ec7d/7c1052bf17558af1-ac/s540x810/1dd5548517bdfc2f5267db236a2474b478091f6b.jpg",
     "alt": "Cover art for Thirtysixth",
-    "credit": "Album art featuring work by Erik Jones"
+    "credit": "Album art featuring work by Erik Jones",
+    "canonicalAssetPath": "data/media/tumblr/mix-036-thirtysixth/cover.jpg"
   },
   "download": {
     "label": "Download mix",

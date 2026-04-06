@@ -63,4 +63,8 @@ def test_register_artwork_writes_canonical_registry_item(media_paths):
     assert item["mixSlug"] == "mix-036-thirtysixth"
     assert item["assetPath"] == "data/media/workspaces/mix-036-thirtysixth/exports/cover.jpg"
     assert registry["items"][0]["provenance"]["sourceLabel"] == "Local collage"
+    assert registry["items"][0]["provenance"]["sourceUrl"] == ""
+    assert registry["items"][0]["provenance"]["discoveredFrom"] == "manual-register"
     assert registry["items"][0]["provenance"]["notes"] == "Built from local scans."
+    assert registry["items"][0]["checksum"]["algorithm"] == "sha256"
+    assert registry["items"][0]["file"]["byteSize"] == 5

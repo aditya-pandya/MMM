@@ -24,6 +24,8 @@
           "assetPath",
           "workspacePath",
           "registeredAt",
+          "file",
+          "checksum",
           "provenance"
         ],
         "properties": {
@@ -33,12 +35,32 @@
           "assetPath": { "type": "string" },
           "workspacePath": { "type": "string" },
           "registeredAt": { "type": "string" },
+          "file": {
+            "type": "object",
+            "required": ["byteSize", "mediaType"],
+            "properties": {
+              "byteSize": { "type": "integer", "minimum": 0 },
+              "mediaType": { "type": "string" },
+              "etag": { "type": ["string", "null"] },
+              "lastModified": { "type": ["string", "null"] }
+            }
+          },
+          "checksum": {
+            "type": "object",
+            "required": ["algorithm", "value"],
+            "properties": {
+              "algorithm": { "const": "sha256" },
+              "value": { "type": "string" }
+            }
+          },
           "provenance": {
             "type": "object",
-            "required": ["sourceType", "sourceLabel", "notes"],
+            "required": ["sourceType", "sourceLabel", "sourceUrl", "discoveredFrom", "notes"],
             "properties": {
               "sourceType": { "type": "string" },
               "sourceLabel": { "type": "string" },
+              "sourceUrl": { "type": "string" },
+              "discoveredFrom": { "type": "string" },
               "notes": { "type": "string" }
             }
           }

@@ -5,6 +5,8 @@ const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const DATA_DIR = path.join(ROOT, 'data');
 const STATIC_DIR = path.join(ROOT, 'src', 'static');
+const MEDIA_DIR = path.join(DATA_DIR, 'media');
+const YOUTUBE_DIR = path.join(DATA_DIR, 'youtube');
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
@@ -231,10 +233,27 @@ const LISTENING_PROVIDER_CATALOG = readJsonIfExists(path.join(DATA_DIR, 'listeni
   schemaVersion: '1.0',
   providers: {},
 });
+const ARTWORK_REGISTRY = readJsonIfExists(path.join(MEDIA_DIR, 'artwork-registry.json'), {
+  schemaVersion: '1.0',
+  items: [],
+});
 const SUPPORTED_LISTENING_KINDS = new Set(['listen', 'playlist', 'album', 'track', 'set', 'embed']);
 const PROVIDER_CONTAINER_KEYS = new Set(['providers', 'links', 'providerlinks', 'streaming', 'entries', 'items', 'sources']);
 const EMBED_CONTAINER_KEYS = new Set(['embeds', 'embed', 'players', 'iframes']);
 const LISTENING_META_KEYS = new Set(['url', 'href', 'src', 'provider', 'label', 'title', 'kind', 'note', 'summary', 'intro', 'description']);
+
+function loadYouTubeMatchStates() {
+  return walkJsonFiles(YOUTUBE_DIR)
+    .map((filePath) => readJsonIfExists(filePath, null))
+    .filter(Boolean)
+    .reduce((map, payload) => {
+      const slug = String(payload.mixSlug || '').trim();
+      if (slug) map.set(slug, payload);
+      return map;
+    }, new Map());
+}
+
+const YOUTUBE_MATCH_STATES = loadYouTubeMatchStates();
 
 function normalizeListeningKey(value) {
   return String(value || '')
@@ -404,6 +423,72 @@ function getDistinctMixNotes(mix) {
     if (mix.coverCredit && normalized.includes(normalizeComparableText(mix.coverCredit))) return false;
     return true;
   });
+}
+
+function mediaPathToPublicHref(assetPath, depth = 0) {
+  const relative = String(assetPath || '').trim().replace(/^data\/media\//, '');
+  if (!relative) return '';
+  return `${relativePrefix(depth)}media/${relative}`;
+}
+
+function canonicalArtworkRecordForMix(slug) {
+  const items = Array.isArray(ARTWORK_REGISTRY.items) ? ARTWORK_REGISTRY.items : [];
+  return items.find((item) => item && item.mixSlug === slug && item.role === 'cover-art') || null;
+}
+
+function normalizeYouTubeMatchState(payload, mix) {
+  if (!payload || typeof payload !== 'object') return null;
+  const tracks = Array.isArray(payload.tracks) ? payload.tracks : [];
+  const summary = payload.summary && typeof payload.summary === 'object' ? payload.summary : {};
+  const unresolvedTracks = tracks.filter((track) => {
+    const resolution = track?.resolution || {};
+    return !['auto-resolved', 'manual-selected'].includes(String(resolution.status || '')) || !String(resolution.selectedVideoId || '').trim();
+  });
+  const generatedEmbed = summary.generatedEmbed && typeof summary.generatedEmbed === 'object' ? summary.generatedEmbed : null;
+  const embedReady = Boolean(generatedEmbed && unresolvedTracks.length === 0);
+
+  return {
+    mixSlug: String(payload.mixSlug || '').trim(),
+    updatedAt: String(payload.updatedAt || '').trim(),
+    tracks,
+    unresolvedTracks,
+    summary: {
+      totalTracks: Number(summary.totalTracks || tracks.length || 0),
+      resolvedTracks: Number(summary.resolvedTracks || 0),
+      unresolvedTracks: Number(summary.unresolvedTracks || unresolvedTracks.length || 0),
+      requiresReview: Boolean(summary.requiresReview ?? unresolvedTracks.length > 0),
+      generatedEmbed,
+      embedReady,
+    },
+    unresolvedMessage: unresolvedTracks.length
+      ? `YouTube matching is still waiting on review for ${unresolvedTracks.length} track${unresolvedTracks.length === 1 ? '' : 's'} before a full-mix queue can render.`
+      : '',
+    unresolvedTitles: unresolvedTracks.map((track) => track?.displayText).filter(Boolean),
+    generatedProvider: embedReady
+      ? {
+          provider: 'YouTube',
+          label: 'Resolved YouTube queue',
+          url: generatedEmbed.watchUrl,
+          kind: 'playlist',
+          note: 'Built locally from explicit per-track video selections.',
+          providerSource: 'generated',
+          confidenceLevel: 'trusted-link-only',
+          confidenceReason: 'Built locally from resolved per-track YouTube matches.',
+        }
+      : null,
+    generatedEmbedEntry: embedReady
+      ? {
+          provider: 'YouTube',
+          title: generatedEmbed.title || `Full mix queue for ${mix.title}`,
+          url: generatedEmbed.embedUrl,
+          note: 'Built locally from explicit per-track video IDs instead of a claimed playlist ID.',
+          providerSource: 'generated',
+          kind: 'embed',
+          confidenceLevel: 'trusted-embed-ready',
+          confidenceReason: 'Built locally from resolved per-track YouTube matches.',
+        }
+      : null,
+  };
 }
 
 function collectListeningEntries(rawEntries, mode = 'provider', startMode = mode) {
@@ -659,7 +744,16 @@ function normalizeListening(mix) {
   const trustedEmbeds = normalizedEmbeds.filter((entry) => entry.confidenceLevel === 'trusted-embed-ready');
   const uncertainEmbeds = normalizedEmbeds.filter((entry) => entry.confidenceLevel === 'uncertain');
   const dedupedWarnings = Array.from(new Set(warnings));
+  const youtubeMatch = mix.youtubeMatch && typeof mix.youtubeMatch === 'object' ? mix.youtubeMatch : null;
 
+  if (youtubeMatch?.generatedProvider) {
+    normalizedProviders.unshift(youtubeMatch.generatedProvider);
+    trustedProviders.unshift(youtubeMatch.generatedProvider);
+  }
+  if (youtubeMatch?.generatedEmbedEntry) {
+    normalizedEmbeds.unshift(youtubeMatch.generatedEmbedEntry);
+    trustedEmbeds.unshift(youtubeMatch.generatedEmbedEntry);
+  }
   return {
     intro: String(listening.intro || listening.summary || mix.listeningIntro || '').trim(),
     providers: normalizedProviders,
@@ -720,7 +814,11 @@ function normalizeMixes(rawMixes) {
           ? mix.tracks
           : [];
       const tags = Array.isArray(mix.tags) ? mix.tags : [];
-      const archivalCover = isTumblrLegacyCover(mix);
+      const artworkRecord = canonicalArtworkRecordForMix(mix.slug || mix.id || mix.title);
+      const cover = mix.cover && typeof mix.cover === 'object' ? mix.cover : {};
+      const canonicalAssetPath = String(cover.canonicalAssetPath || artworkRecord?.assetPath || '').trim();
+      const canonicalCoverExists = canonicalAssetPath && fs.existsSync(path.join(ROOT, canonicalAssetPath));
+      const archivalCover = !canonicalCoverExists && isTumblrLegacyCover(mix);
       const links = {
         ...(mix.links && typeof mix.links === 'object' ? mix.links : {}),
         ...(mix.download?.url ? { [mix.download.label || 'Download mix']: mix.download.url } : {}),
@@ -731,6 +829,7 @@ function normalizeMixes(rawMixes) {
       const legacyLinks = Object.fromEntries(
         Object.entries(links).filter(([, href]) => typeof href === 'string' && href.trim() && isMegaUrl(href))
       );
+      const youtubeMatch = normalizeYouTubeMatchState(YOUTUBE_MATCH_STATES.get(mix.slug || ''), mix);
 
       return {
         ...mix,
@@ -744,7 +843,13 @@ function normalizeMixes(rawMixes) {
         date: mix.date || mix.published_at || mix.publishDate || mix.publishedAt || '',
         number: mix.number ?? mix.issue ?? mix.volume ?? mix.mixNumber ?? '',
         runtime: mix.runtime || mix.duration || '',
-        image: archivalCover ? '' : mix.image || mix.coverImage || mix.heroImage || mix.cover?.imageUrl || '',
+        image: canonicalCoverExists
+          ? canonicalAssetPath
+          : archivalCover
+            ? ''
+            : mix.image || mix.coverImage || mix.heroImage || mix.cover?.imageUrl || '',
+        imageIsLocal: Boolean(canonicalCoverExists),
+        imageAssetPath: canonicalCoverExists ? canonicalAssetPath : '',
         imageAlt: mix.imageAlt || mix.coverAlt || mix.cover?.alt || `${title} artwork`,
         coverCredit: mix.cover?.credit || mix.coverCredit || '',
         sourceUrl: mix.source?.sourceUrl || mix.sourceUrl || '',
@@ -753,8 +858,10 @@ function normalizeMixes(rawMixes) {
         primaryLinks,
         legacyLinks,
         usesArchivalCoverFallback: archivalCover,
-        listening: normalizeListening(mix),
-        listeningHealth: auditListeningPayload(mix),
+        artworkRecord,
+        youtubeMatch,
+        listening: normalizeListening({ ...mix, youtubeMatch }),
+        listeningHealth: auditListeningPayload({ ...mix, youtubeMatch }),
       };
     })
   );
@@ -1449,9 +1556,10 @@ function renderAboutSection(section) {
     </section>`;
 }
 
-function renderCover(mix, compact = false) {
+function renderCover(mix, compact = false, depth = 0) {
   if (mix.image) {
-    return `<figure class="mix-cover ${compact ? 'mix-cover--compact' : ''}"><img src="${escapeHtml(mix.image)}" alt="${escapeHtml(mix.imageAlt)}"></figure>`;
+    const imageSrc = mix.imageIsLocal ? mediaPathToPublicHref(mix.image, depth) : mix.image;
+    return `<figure class="mix-cover ${compact ? 'mix-cover--compact' : ''}"><img src="${escapeHtml(imageSrc)}" alt="${escapeHtml(mix.imageAlt)}"></figure>`;
   }
 
   return `<div class="mix-cover mix-cover--placeholder ${compact ? 'mix-cover--compact' : ''}">
@@ -1460,7 +1568,7 @@ function renderCover(mix, compact = false) {
       <strong>${escapeHtml(mix.title)}</strong>
       <p>${escapeHtml(
         mix.usesArchivalCoverFallback
-          ? 'Legacy Tumblr artwork is preserved as source context, but it is not being presented here as canonical album art.'
+          ? 'Legacy Tumblr artwork is preserved as source context, but it is not yet available as canonical local artwork.'
           : 'Artwork has not been added for this mix yet.'
       )}</p>
       ${mix.coverCredit ? `<p class="mix-cover__credit">${escapeHtml(mix.coverCredit)}</p>` : ''}
@@ -1547,8 +1655,10 @@ function renderResourceSection(mix) {
     );
   }
 
-  if (mix.usesArchivalCoverFallback) {
-    cleanupParagraphs.push('Tumblr-hosted artwork stays available as archival context, but it is not promoted into the primary cover slot without stronger metadata.');
+  if (mix.imageIsLocal) {
+    cleanupParagraphs.push('The exact Tumblr-hosted cover image has been downloaded locally and now fills the canonical cover slot for this mix.');
+  } else if (mix.usesArchivalCoverFallback) {
+    cleanupParagraphs.push('Tumblr-hosted artwork stays available as archival context, but it is not promoted into the primary cover slot until the exact bytes are downloaded locally.');
   }
 
   if (cleanupParagraphs.length) {
@@ -1592,6 +1702,10 @@ function renderResourceSection(mix) {
     residueParagraphs.push('Archived artwork credit survives in the source data even though it is not treated as canonical cover metadata.');
   }
 
+  if (mix.artworkRecord?.provenance?.sourceType === 'tumblr-original') {
+    residueParagraphs.push(`Canonical local artwork checksum: ${mix.artworkRecord.checksum?.value || 'unknown'}.`);
+  }
+
   if (mix.coverCredit && mix.usesArchivalCoverFallback) {
     residueParagraphs.push(`Archived artwork credit: ${mix.coverCredit}.`);
   } else if (mix.coverCredit) {
@@ -1627,13 +1741,14 @@ function renderListeningSection(mix) {
   const trustedProviders = Array.isArray(listening.trustedProviders) ? listening.trustedProviders : [];
   const uncertainProviders = Array.isArray(listening.uncertainProviders) ? listening.uncertainProviders : [];
   const uncertainEmbeds = Array.isArray(listening.uncertainEmbeds) ? listening.uncertainEmbeds : [];
+  const youtubeMatch = mix.youtubeMatch && typeof mix.youtubeMatch === 'object' ? mix.youtubeMatch : null;
   const actionableTrustedLinks = trustedProviders.filter((provider) => {
     const kind = String(provider.kind || '').trim().toLowerCase();
     return ['playlist', 'album', 'track', 'set'].includes(kind);
   });
   const uncertainSurfaces = [...uncertainEmbeds, ...uncertainProviders];
 
-  if (!trustedEmbeds.length && !actionableTrustedLinks.length && !uncertainSurfaces.length) return '';
+  if (!trustedEmbeds.length && !actionableTrustedLinks.length && !uncertainSurfaces.length && !youtubeMatch?.summary?.requiresReview) return '';
 
   const intro = listening.intro ? `<p class="listening-section__intro">${escapeHtml(listening.intro)}</p>` : '';
   const summaryBits = [];
@@ -1651,6 +1766,21 @@ function renderListeningSection(mix) {
       </div>
       ${intro}
       ${summary}
+      ${youtubeMatch?.summary?.requiresReview
+        ? `<div class="listening-subsection">
+            <p class="listening-subsection__title">YouTube review queue</p>
+            <div class="provider-grid">
+              <article class="provider-card provider-card--uncertain">
+                <p class="provider-card__eyebrow">Needs review</p>
+                <h3>YouTube full-mix embed is blocked</h3>
+                <p>${escapeHtml(youtubeMatch.unresolvedMessage || 'A human review pass is still needed before the YouTube queue can be claimed as resolved.')}</p>
+                ${youtubeMatch.unresolvedTitles.length
+                  ? `<p>${escapeHtml(`Open data/youtube/${mix.slug}.json to review: ${youtubeMatch.unresolvedTitles.slice(0, 4).join('; ')}${youtubeMatch.unresolvedTitles.length > 4 ? '…' : ''}`)}</p>`
+                  : ''}
+              </article>
+            </div>
+          </div>`
+        : ''}
       ${trustedEmbeds.length
         ? `<div class="listening-subsection">
             <p class="listening-subsection__title">Embedded preview</p>
@@ -1743,7 +1873,7 @@ function renderHomePage({ mixes, notes, site }) {
             <a class="button button--secondary" href="archive/">Browse archive</a>
           </div>
         </div>
-        ${renderCover(featured)}
+        ${renderCover(featured, false, 0)}
       </section>`
     : `<section class="hero-grid hero-grid--empty">
         <div>
@@ -2029,7 +2159,7 @@ function renderMixPage({ mix }) {
             <a class="button button--secondary" href="../../archive/">Back to archive</a>
           </div>
         </div>
-        ${renderCover(mix)}
+        ${renderCover(mix, false, 2)}
       </section>
       ${trackSection}
       ${renderListeningSection(mix)}
@@ -2054,6 +2184,7 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
   const draftDrafts = drafts.filter((draft) => draft.status === 'draft').length;
   const listeningIssueMixes = mixes.filter((mix) => (mix.listeningHealth?.warningCount || 0) > 0);
   const listeningIssueCount = listeningIssueMixes.reduce((total, mix) => total + (mix.listeningHealth?.warningCount || 0), 0);
+  const youtubeReviewMixes = mixes.filter((mix) => mix.youtubeMatch?.summary?.requiresReview);
   const mixesWithListening = mixes.filter((mix) => mix.listeningHealth?.hasListeningSurface).length;
   const noteCoverageGaps = mixes.length - publishedWithNotes;
   const nextActions = [];
@@ -2081,6 +2212,9 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
   }
   if (listeningIssueCount) {
     validationSignals.push(`${listeningIssueCount} listening/provider warning${listeningIssueCount === 1 ? '' : 's'} need a manual pass.`);
+  }
+  if (youtubeReviewMixes.length) {
+    validationSignals.push(`${youtubeReviewMixes.length} mix${youtubeReviewMixes.length === 1 ? '' : 'es'} still need YouTube track-match review before a full embed can render.`);
   }
 
   const validationHeadline = !featuredSlug || featuredMix
@@ -2114,6 +2248,9 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
 
   if (listeningIssueMixes.length) {
     nextActions.push(`Review listening/provider payloads for ${listeningIssueMixes[0].title} so the archive only signals trustworthy playback surfaces.`);
+  }
+  if (youtubeReviewMixes.length) {
+    nextActions.push(`Review YouTube match candidates for ${youtubeReviewMixes[0].title} so the full-mix queue can unlock without guessing through ambiguous tracks.`);
   }
 
   if (notes.length < mixes.length && !latestPublishedWithoutNote) {
@@ -2155,6 +2292,11 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
       value: String(listeningIssueCount),
       detail: listeningIssueMixes.length ? `Latest flagged: ${listeningIssueMixes[0].title}` : 'No suspicious listening/provider payloads surfaced',
     },
+    {
+      label: 'YouTube review',
+      value: String(youtubeReviewMixes.length),
+      detail: youtubeReviewMixes.length ? `Latest blocked: ${youtubeReviewMixes[0].title}` : 'No unresolved YouTube match queues',
+    },
   ];
   const healthCards = [
     {
@@ -2192,6 +2334,18 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
         : mixesWithListening
           ? 'Current listening surfaces resolve to supported provider and embed patterns.'
           : 'Add explicit provider data only when the archive has something real to point at.',
+    },
+    {
+      eyebrow: 'YouTube match state',
+      title: youtubeReviewMixes.length
+        ? `${youtubeReviewMixes.length} mix${youtubeReviewMixes.length === 1 ? '' : 'es'} blocked on track review`
+        : `${mixes.filter((mix) => mix.youtubeMatch?.summary?.embedReady).length}/${mixes.length || 0} published mixes have generated YouTube queues`,
+      body: youtubeReviewMixes.length
+        ? 'Ambiguous, duplicate, or low-confidence track matches are being held back explicitly instead of auto-picked into a misleading embed.'
+        : 'Resolved YouTube embeds are only generated from explicit per-track video IDs.',
+      detail: youtubeReviewMixes.length
+        ? youtubeReviewMixes.slice(0, 2).map((mix) => mix.youtubeMatch?.unresolvedMessage).filter(Boolean).join(' · ')
+        : 'Generated queues use explicit video IDs, not claimed playlist IDs.',
     },
     {
       eyebrow: 'Validation posture',
@@ -2620,6 +2774,7 @@ function build() {
   const drafts = loadDrafts();
 
   copyDir(STATIC_DIR, path.join(DIST, 'assets'));
+  copyDir(MEDIA_DIR, path.join(DIST, 'media'));
 
   writePage('index.html', renderHomePage({ mixes, notes, site }));
   writePage(path.join('archive', 'index.html'), renderArchivePage({ mixes }));

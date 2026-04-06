@@ -24,39 +24,23 @@
   "cover": {
     "imageUrl": "https://64.media.tumblr.com/555f756c6ac8f15c99699f1aff623d66/a9ae05f1087cd924-30/s540x810/5460a8cf8f174fb3e930b5f4a08734ed1a200fbd.jpg",
     "alt": "Cover art for Thirtyfifth",
-    "credit": "Album art featuring work by Andrew Salgado"
+    "credit": "Album art featuring work by Andrew Salgado",
+    "canonicalAssetPath": "data/media/tumblr/mix-035-thirtyfifth/cover.jpg"
   },
   "download": {
     "label": "Download mix",
     "url": "https://mega.co.nz/#!wRoTFI4b!LoNgkTb7YUmss7dwmS53NxZrMgcFqeC6jvmbaICvB4Y"
   },
   "listening": {
-    "intro": "This archived mix now carries a couple of modern listening mirrors without disturbing the original Tumblr source and download history.",
+    "intro": "The YouTube queue on this page is generated locally from reviewed per-track matches. Other nearby listening context can stay link-only.",
     "providers": {
-      "playlistMirrors": [
-        {
-          "provider": "YouTube",
-          "label": "Companion playlist on YouTube",
-          "url": "https://www.youtube.com/playlist?list=PL4fGSI1pDJn7gB0v9wN6Q8hX1QyQ1Z5wA",
-          "kind": "playlist",
-          "note": "Useful for a quick browser pass through the sequence."
-        }
-      ],
       "editorial": {
         "bandcamp": {
           "label": "Bandcamp starting point",
           "url": "https://daily.bandcamp.com/best-of-2013",
           "kind": "listen",
           "note": "Not a mirror of the exact mix, but a nearby source for several artists in this run."
-        },
-        "embeds": [
-          {
-            "provider": "YouTube",
-            "title": "Thirtyfifth playlist embed",
-            "url": "https://www.youtube.com/embed/videoseries?list=PL4fGSI1pDJn7gB0v9wN6Q8hX1QyQ1Z5wA",
-            "note": "Inline playback for a quick editorial spot-check."
-          }
-        ]
+        }
       }
     }
   },

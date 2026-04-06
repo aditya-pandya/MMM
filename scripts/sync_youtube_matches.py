@@ -1,0 +1,334 @@
+#!/usr/bin/env python3
+"""Search YouTube per track and persist explicit match state for review."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import subprocess
+from dataclasses import dataclass
+from difflib import SequenceMatcher
+from pathlib import Path
+from typing import Any
+from urllib.parse import quote
+
+from mmm_common import PUBLISHED_DIR, ROOT, ValidationError, YOUTUBE_DIR, dump_json, ensure_kebab_case_slug, load_json, now_iso
+
+SCHEMA_VERSION = "1.0"
+SEARCH_LIMIT = 5
+AUTO_ACCEPT_SCORE = 0.90
+AUTO_ACCEPT_MARGIN = 0.12
+STRONG_CONTENDER_SCORE = 0.82
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Persist YouTube per-track match candidates for MMM mixes.")
+    parser.add_argument("mixes", nargs="*", help="Published mix slugs to scan. Defaults to all published mixes.")
+    return parser.parse_args()
+
+
+def normalize_text(value: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9]+", " ", str(value or "").lower())).strip()
+
+
+def tokenize(value: str) -> set[str]:
+    return {part for part in normalize_text(value).split(" ") if part}
+
+
+def overlaps_needed(track_text: str, candidate_text: str) -> float:
+    expected = tokenize(track_text)
+    if not expected:
+        return 0.0
+    present = expected.intersection(tokenize(candidate_text))
+    return len(present) / len(expected)
+
+
+def similarity(a: str, b: str) -> float:
+    return SequenceMatcher(a=normalize_text(a), b=normalize_text(b)).ratio()
+
+
+@dataclass
+class ScoredCandidate:
+    video_id: str
+    title: str
+    url: str
+    channel: str
+    duration_seconds: float | None
+    score: float
+    signals: list[str]
+
+
+def score_candidate(track: dict[str, Any], entry: dict[str, Any]) -> ScoredCandidate:
+    artist = str(track.get("artist") or "").strip()
+    title = str(track.get("title") or "").strip()
+    display = str(track.get("displayText") or f"{artist} - {title}").strip()
+    candidate_title = str(entry.get("title") or "").strip()
+    channel = str(entry.get("channel") or entry.get("uploader") or "").strip()
+    normalized_candidate = normalize_text(candidate_title)
+    normalized_display = normalize_text(display)
+    normalized_artist = normalize_text(artist)
+    normalized_title = normalize_text(title)
+    signals: list[str] = []
+    score = 0.0
+
+    overlap = overlaps_needed(display, candidate_title)
+    if overlap >= 0.95:
+      score += 0.42
+      signals.append("candidate-title-covers-track-tokens")
+    elif overlap >= 0.80:
+      score += 0.30
+      signals.append("candidate-title-covers-most-track-tokens")
+
+    display_similarity = similarity(display, candidate_title)
+    title_similarity = similarity(title, candidate_title)
+    score += display_similarity * 0.30
+    score += title_similarity * 0.18
+    if display_similarity >= 0.90:
+        signals.append("display-text-near-exact-match")
+    if title_similarity >= 0.92:
+        signals.append("song-title-near-exact-match")
+
+    if normalized_artist and normalized_artist in normalized_candidate:
+        score += 0.10
+        signals.append("artist-name-in-title")
+    if normalized_title and normalized_title in normalized_candidate:
+        score += 0.08
+        signals.append("song-title-in-title")
+
+    normalized_channel = normalize_text(channel)
+    if normalized_artist and normalized_artist in normalized_channel:
+        score += 0.08
+        signals.append("artist-name-in-channel")
+    if normalized_channel.endswith(" topic"):
+        score += 0.06
+        signals.append("topic-channel")
+    if "official" in normalized_candidate:
+        score += 0.04
+        signals.append("official-upload")
+    if "[live" in candidate_title.lower() or " live " in normalized_candidate:
+        score -= 0.18
+        signals.append("live-version-penalty")
+    if "cover" in normalized_candidate and "cover" not in normalized_title:
+        score -= 0.12
+        signals.append("unexpected-cover-penalty")
+    if "remix" in normalized_candidate and "remix" not in normalized_title:
+        score -= 0.08
+        signals.append("unexpected-remix-penalty")
+    if "lyrics" in normalized_candidate and "lyrics" not in normalized_title:
+        score -= 0.06
+        signals.append("lyric-video-penalty")
+
+    return ScoredCandidate(
+        video_id=str(entry.get("id") or "").strip(),
+        title=candidate_title,
+        url=str(entry.get("url") or f"https://www.youtube.com/watch?v={entry.get('id')}").strip(),
+        channel=channel,
+        duration_seconds=entry.get("duration"),
+        score=max(0.0, min(score, 0.999)),
+        signals=signals,
+    )
+
+
+def search_youtube(query: str) -> list[dict[str, Any]]:
+    command = [
+        "yt-dlp",
+        "--flat-playlist",
+        "--dump-single-json",
+        f"ytsearch{SEARCH_LIMIT}:{query}",
+    ]
+    result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, check=False)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or result.stdout.strip() or f"yt-dlp failed for {query}")
+    payload = json.loads(result.stdout)
+    return payload.get("entries") or []
+
+
+def derive_resolution(scored: list[ScoredCandidate]) -> dict[str, Any]:
+    if not scored:
+        return {
+            "status": "no-candidate",
+            "selectedVideoId": None,
+            "confidenceScore": 0.0,
+            "reason": "No YouTube candidates were returned for this track query.",
+            "holdbackReason": "no-candidates",
+        }
+
+    top = scored[0]
+    runner_up = scored[1] if len(scored) > 1 else None
+    if top.score >= AUTO_ACCEPT_SCORE and (runner_up is None or top.score - runner_up.score >= AUTO_ACCEPT_MARGIN or runner_up.score < STRONG_CONTENDER_SCORE):
+        return {
+            "status": "auto-resolved",
+            "selectedVideoId": top.video_id,
+            "confidenceScore": round(top.score, 3),
+            "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+            "holdbackReason": None,
+        }
+
+    holdback_reason = "ambiguous-top-candidates" if runner_up and runner_up.score >= STRONG_CONTENDER_SCORE else "low-confidence-top-candidate"
+    return {
+        "status": "pending-review",
+        "selectedVideoId": None,
+        "confidenceScore": round(top.score, 3),
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": holdback_reason,
+    }
+
+
+def apply_duplicate_holdbacks(tracks: list[dict[str, Any]]) -> None:
+    seen: dict[str, list[dict[str, Any]]] = {}
+    for track in tracks:
+        resolution = track.get("resolution") or {}
+        selected = str(resolution.get("selectedVideoId") or "").strip()
+        if not selected:
+            continue
+        seen.setdefault(selected, []).append(track)
+
+    for video_id, entries in seen.items():
+        if len(entries) < 2:
+            continue
+        for track in entries:
+            track["resolution"] = {
+                **track["resolution"],
+                "status": "pending-review",
+                "selectedVideoId": None,
+                "reason": "The same YouTube video landed on multiple tracks, so this needs a human duplicate check.",
+                "holdbackReason": "possible-duplicate-video",
+                "confidenceScore": min(float(track["resolution"].get("confidenceScore") or 0.0), 0.89),
+            }
+
+
+def build_generated_embed(mix: dict[str, Any], track_states: list[dict[str, Any]]) -> dict[str, Any] | None:
+    video_ids = [str(track["resolution"].get("selectedVideoId") or "").strip() for track in track_states]
+    if not video_ids or any(not video_id for video_id in video_ids):
+        return None
+
+    first_video = video_ids[0]
+    remainder = video_ids[1:]
+    embed_url = f"https://www.youtube.com/embed/{first_video}"
+    if remainder:
+        embed_url = f"{embed_url}?playlist={quote(','.join(remainder), safe=',')}"
+
+    return {
+        "provider": "YouTube",
+        "kind": "video-queue",
+        "title": f"Full mix queue for {mix.get('displayTitle') or mix.get('title') or mix.get('slug')}",
+        "embedUrl": embed_url,
+        "watchUrl": f"https://www.youtube.com/watch_videos?video_ids={quote(','.join(video_ids), safe=',')}",
+        "videoIds": video_ids,
+        "generatedAt": now_iso(),
+    }
+
+
+def build_track_state(track: dict[str, Any], existing_track: dict[str, Any] | None = None) -> dict[str, Any]:
+    query = " ".join(part for part in [track.get("artist"), track.get("title")] if str(part or "").strip())
+    existing_resolution = existing_track.get("resolution") if isinstance(existing_track, dict) else {}
+    if isinstance(existing_resolution, dict) and existing_resolution.get("status") == "manual-selected":
+        candidates = existing_track.get("candidates") if isinstance(existing_track.get("candidates"), list) else []
+        return {
+            "position": track["position"],
+            "displayText": track["displayText"],
+            "query": query,
+            "resolution": existing_resolution,
+            "candidates": candidates,
+        }
+
+    candidates = search_youtube(query)
+    scored = sorted((score_candidate(track, candidate) for candidate in candidates if candidate.get("id")), key=lambda item: item.score, reverse=True)
+    return {
+        "position": track["position"],
+        "displayText": track["displayText"],
+        "query": query,
+        "resolution": derive_resolution(scored),
+        "candidates": [
+            {
+                "rank": index,
+                "videoId": candidate.video_id,
+                "title": candidate.title,
+                "url": candidate.url,
+                "channel": candidate.channel,
+                "durationSeconds": candidate.duration_seconds,
+                "score": round(candidate.score, 3),
+                "signals": candidate.signals,
+            }
+            for index, candidate in enumerate(scored, start=1)
+        ],
+    }
+
+
+def state_path_for_slug(slug: str) -> Path:
+    return YOUTUBE_DIR / f"{slug}.json"
+
+
+def load_existing_state(slug: str) -> dict[str, Any]:
+    state_path = state_path_for_slug(slug)
+    if not state_path.exists():
+        return {}
+    payload = load_json(state_path)
+    return payload if isinstance(payload, dict) else {}
+
+
+def sync_mix(path: Path) -> dict[str, Any]:
+    mix = load_json(path)
+    slug = ensure_kebab_case_slug(mix.get("slug"), "mix slug")
+    tracks = mix.get("tracks")
+    if not isinstance(tracks, list) or not tracks:
+        raise ValidationError(f"{slug} has no published tracklist to search")
+
+    existing = load_existing_state(slug)
+    existing_by_position = {
+        int(track.get("position")): track
+        for track in existing.get("tracks", [])
+        if isinstance(track, dict) and str(track.get("position") or "").isdigit()
+    }
+
+    track_states = [build_track_state(track, existing_by_position.get(int(track["position"]))) for track in tracks]
+    apply_duplicate_holdbacks(track_states)
+    resolved_tracks = sum(1 for track in track_states if track["resolution"]["status"] in {"auto-resolved", "manual-selected"} and track["resolution"].get("selectedVideoId"))
+    unresolved_tracks = len(track_states) - resolved_tracks
+    generated_embed = build_generated_embed(mix, track_states) if unresolved_tracks == 0 else None
+    payload = {
+        "$schema": "../../schemas/youtube-match.schema.json",
+        "schemaVersion": SCHEMA_VERSION,
+        "mixSlug": slug,
+        "updatedAt": now_iso(),
+        "sourceMixPath": path.relative_to(ROOT).as_posix(),
+        "tracks": track_states,
+        "summary": {
+            "totalTracks": len(track_states),
+            "resolvedTracks": resolved_tracks,
+            "unresolvedTracks": unresolved_tracks,
+            "requiresReview": unresolved_tracks > 0,
+            "generatedEmbed": generated_embed,
+        },
+    }
+    dump_json(state_path_for_slug(slug), payload)
+    return payload
+
+
+def resolve_mix_paths(slugs: list[str]) -> list[Path]:
+    if not slugs:
+        return sorted(PUBLISHED_DIR.glob("*.json"))
+    requested = {ensure_kebab_case_slug(slug, "mix slug") for slug in slugs}
+    matches = [path for path in sorted(PUBLISHED_DIR.glob("*.json")) if path.stem in requested]
+    missing = sorted(requested - {path.stem for path in matches})
+    if missing:
+        raise FileNotFoundError(f"Could not find published mix JSON for: {', '.join(missing)}")
+    return matches
+
+
+def main() -> int:
+    args = parse_args()
+    YOUTUBE_DIR.mkdir(parents=True, exist_ok=True)
+    results = [sync_mix(path) for path in resolve_mix_paths(args.mixes)]
+    for result in results:
+        summary = result["summary"]
+        print(
+            f"{result['mixSlug']}: {summary['resolvedTracks']}/{summary['totalTracks']} resolved"
+            + (" (review needed)" if summary["requiresReview"] else " (embed ready)")
+        )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

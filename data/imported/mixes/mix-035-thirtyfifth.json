@@ -24,7 +24,8 @@
   "cover": {
     "imageUrl": "https://64.media.tumblr.com/555f756c6ac8f15c99699f1aff623d66/a9ae05f1087cd924-30/s540x810/5460a8cf8f174fb3e930b5f4a08734ed1a200fbd.jpg",
     "alt": "Cover art for Thirtyfifth",
-    "credit": "Album art featuring work by Andrew Salgado"
+    "credit": "Album art featuring work by Andrew Salgado",
+    "canonicalAssetPath": "data/media/tumblr/mix-035-thirtyfifth/cover.jpg"
   },
   "download": {
     "label": "Download mix",
