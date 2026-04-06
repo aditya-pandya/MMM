@@ -1760,6 +1760,15 @@ function renderListeningSection(mix) {
   const uncertainEmbeds = Array.isArray(listening.uncertainEmbeds) ? listening.uncertainEmbeds : [];
   const generatedQueue = listening.generatedQueue && typeof listening.generatedQueue === 'object' ? listening.generatedQueue : null;
   const youtubeMatch = mix.youtubeMatch && typeof mix.youtubeMatch === 'object' ? mix.youtubeMatch : null;
+  const generatedEmbed = youtubeMatch?.summary?.generatedEmbed && typeof youtubeMatch.summary.generatedEmbed === 'object'
+    ? youtubeMatch.summary.generatedEmbed
+    : null;
+  const generatedVideoIds = Array.isArray(generatedEmbed?.videoIds)
+    ? generatedEmbed.videoIds.map((value) => String(value || '').trim()).filter(Boolean)
+    : [];
+  const generatedTrackLabels = Array.isArray(youtubeMatch?.tracks)
+    ? youtubeMatch.tracks.map((track, index) => String(track?.displayText || `Track ${index + 1}`).trim()).filter(Boolean)
+    : [];
   const actionableTrustedLinks = trustedProviders.filter((provider) => {
     const kind = String(provider.kind || '').trim().toLowerCase();
     return ['playlist', 'album', 'track', 'set'].includes(kind);
@@ -1804,14 +1813,49 @@ function renderListeningSection(mix) {
         ? `<div class="listening-subsection">
             <p class="listening-subsection__title">Audio-first queue</p>
             <div class="provider-grid">
-              <article class="provider-card">
-                <p class="provider-card__eyebrow">Audio-first, honest fallback</p>
-                <h3>${escapeHtml(generatedQueue.label || 'Audio-first YouTube queue')}</h3>
-                <p>${escapeHtml(generatedQueue.confidenceReason || 'Built locally from resolved per-track YouTube matches.')}</p>
-                <p>${escapeHtml(generatedQueue.note || 'MMM does not pretend YouTube offers a true audio-only embed when it does not.')}</p>
-                <div class="button-row button-row--compact">
-                  <a class="button button--secondary" href="${escapeHtml(generatedQueue.url)}">${escapeHtml(generatedQueue.label || 'Open queue on YouTube')}</a>
+              <article
+                class="provider-card provider-card--player"
+                data-youtube-audio-player
+                data-video-ids="${escapeHtml(JSON.stringify(generatedVideoIds))}"
+                data-track-labels="${escapeHtml(JSON.stringify(generatedTrackLabels))}"
+                data-watch-url="${escapeHtml(generatedQueue.url || generatedEmbed?.watchUrl || '')}"
+                data-queue-title="${escapeHtml(generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}"
+              >
+                <div class="youtube-audio-player__header">
+                  <div>
+                    <p class="provider-card__eyebrow">YouTube queue</p>
+                    <h3>${escapeHtml(generatedQueue.label || 'Audio-first YouTube queue')}</h3>
+                  </div>
+                  <span class="youtube-audio-player__state" data-youtube-player-state>Ready</span>
                 </div>
+                <p class="youtube-audio-player__copy">Resolved from reviewed track matches.</p>
+                <div class="youtube-audio-player__track">
+                  <strong data-youtube-player-track>${escapeHtml(generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}</strong>
+                  <p data-youtube-player-meta>Press play to start this queue.</p>
+                </div>
+                <div class="youtube-audio-player__scrub">
+                  <input type="range" min="0" max="1000" value="0" aria-label="Queue progress" data-youtube-player-progress disabled>
+                  <div class="youtube-audio-player__timing">
+                    <span data-youtube-player-elapsed>0:00</span>
+                    <span data-youtube-player-duration>0:00</span>
+                  </div>
+                </div>
+                <div class="youtube-audio-player__controls">
+                  <div class="youtube-audio-player__transport">
+                    <button type="button" class="youtube-audio-player__button" data-youtube-player-previous disabled>Prev</button>
+                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--primary" data-youtube-player-toggle disabled>Play</button>
+                    <button type="button" class="youtube-audio-player__button" data-youtube-player-next disabled>Next</button>
+                  </div>
+                  <label class="youtube-audio-player__volume">
+                    <span>Volume</span>
+                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--quiet" data-youtube-player-mute disabled>Mute</button>
+                    <input type="range" min="0" max="100" value="100" aria-label="Volume" data-youtube-player-volume disabled>
+                  </label>
+                </div>
+                <div class="button-row button-row--compact">
+                  <a class="button button--secondary" href="${escapeHtml(generatedQueue.url)}">Open queue on YouTube</a>
+                </div>
+                <div class="youtube-player-host" data-youtube-player-host aria-hidden="true"></div>
               </article>
             </div>
           </div>`

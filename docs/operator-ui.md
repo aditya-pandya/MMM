@@ -11,7 +11,7 @@ The operator UI is a private, local-first control surface for MMM editorial work
 - approves a reviewed draft
 - releases an approved draft through the guarded publish flow
 - reviews YouTube candidate state, auto-selects strong matches above `0.8` when safe, and stores explicit per-track selections in `data/youtube/<slug>.json`
-- when a mix queue is fully resolved, loads a private minimized YouTube player with audio-style controls that still uses official YouTube playback under the hood
+- when a mix queue is fully resolved, loads a private minimized YouTube player with audio-style controls that still uses official YouTube playback under the hood, matching the public mix-page playback pattern
 - shows local preview routes plus an in-session workflow log
 
 ## Run it locally

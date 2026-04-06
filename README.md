@@ -119,7 +119,7 @@ Listening-specific operator notes:
 - Treat `data/listening-provider-catalog.json` as the trust source for listening surfaces.
 - Add explicit embed URLs only when the curated data genuinely supports inline playback.
 - If validation warns that a listening surface is uncertain, the build will demote it instead of presenting it as a verified mirror.
-- YouTube full-mix queues now come only from `data/youtube/*.json` files with a fully resolved per-track queue. MMM keeps those queues audio-first and link-based when needed instead of pretending YouTube offers a true audio-only iframe.
+- YouTube full-mix queues now come only from `data/youtube/*.json` files with a fully resolved per-track queue. MMM keeps those queues audio-first and restrained: public mix pages can load a minimized YouTube-backed player when the queue is fully resolved, and they still keep a direct YouTube escape hatch.
 - The YouTube matcher now works against the canonical archive view: published plus imported mixes, deduped by slug and preferring published JSON when both exist.
 
 Create a new draft mix template instead of starting from blank JSON:

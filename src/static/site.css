@@ -703,6 +703,162 @@ h3 {
   transform: none;
 }
 
+.provider-card--player,
+.provider-card--player:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015)),
+    radial-gradient(circle at top right, rgba(217, 164, 65, 0.12), transparent 40%),
+    var(--panel);
+  border-color: rgba(217, 164, 65, 0.22);
+  transform: none;
+}
+
+.youtube-audio-player__header,
+.youtube-audio-player__timing,
+.youtube-audio-player__controls,
+.youtube-audio-player__volume,
+.youtube-audio-player__transport {
+  display: flex;
+  align-items: center;
+}
+
+.youtube-audio-player__header,
+.youtube-audio-player__controls {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.youtube-audio-player__state {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.8rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(217, 164, 65, 0.18);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--soft);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.youtube-audio-player__state.is-active {
+  color: var(--accent);
+  border-color: rgba(217, 164, 65, 0.34);
+}
+
+.youtube-audio-player__copy,
+.youtube-audio-player__volume span,
+.youtube-audio-player__track p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.youtube-audio-player__copy {
+  margin-top: 0.6rem;
+}
+
+.youtube-audio-player__track {
+  margin-top: 1rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(223, 202, 173, 0.1);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.youtube-audio-player__track strong {
+  display: block;
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+}
+
+.youtube-audio-player__track p {
+  margin-top: 0.35rem;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.youtube-audio-player__scrub {
+  margin-top: 1rem;
+}
+
+.youtube-audio-player__scrub input[type="range"],
+.youtube-audio-player__volume input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.youtube-audio-player__timing {
+  justify-content: space-between;
+  margin-top: 0.45rem;
+  color: var(--soft);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.youtube-audio-player__controls {
+  margin-top: 1rem;
+  align-items: end;
+}
+
+.youtube-audio-player__transport,
+.youtube-audio-player__volume {
+  gap: 0.65rem;
+}
+
+.youtube-audio-player__button {
+  min-height: 2.45rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(223, 202, 173, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.youtube-audio-player__button--primary {
+  background: rgba(217, 164, 65, 0.16);
+  border-color: rgba(217, 164, 65, 0.28);
+  color: var(--accent);
+}
+
+.youtube-audio-player__button--quiet {
+  min-width: 5.6rem;
+}
+
+.youtube-audio-player__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.youtube-audio-player__volume {
+  flex: 1;
+  justify-content: flex-end;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.youtube-player-host {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .command-list,
 .action-list {
   display: grid;
@@ -941,6 +1097,26 @@ h3 {
 
   .track-fallback-list__actions {
     justify-content: flex-start;
+  }
+
+  .youtube-audio-player__header,
+  .youtube-audio-player__controls,
+  .youtube-audio-player__volume {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .youtube-audio-player__transport {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .youtube-audio-player__button {
+    flex: 1 1 0;
+  }
+
+  .youtube-audio-player__volume {
+    width: 100%;
   }
 }
 

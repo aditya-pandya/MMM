@@ -279,7 +279,8 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Audio-first queue" in mix_with_youtube_html
     assert "Audio-first YouTube queue" in mix_with_youtube_html
     assert "Listening surfaces" in mix_with_youtube_html
-    assert "Built locally from explicit per-track video selections and presented as an audio-first queue." in mix_with_youtube_html
+    assert "Resolved from reviewed track matches." in mix_with_youtube_html
+    assert 'data-youtube-audio-player' in mix_with_youtube_html
     assert 'href="https://www.youtube.com/watch_videos?video_ids=' in mix_with_youtube_html
     assert "youtube.com/embed/ehpYg0NsGqA" not in mix_with_youtube_html
     assert "Bandcamp starting point" not in mix_with_youtube_html
@@ -290,6 +291,7 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Recommended next actions" in studio_html
     assert "Local commands worth keeping close" in studio_html
     assert "updateDiscovery" in site_js
+    assert "youtube.com/iframe_api" in site_js
 
 
 def test_static_build_matches_golden_route_digests(tmp_path):
