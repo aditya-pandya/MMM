@@ -134,6 +134,36 @@ def ensure_iso8601_datetime(value: Any, label: str) -> str:
     return normalized
 
 
+def normalize_mix_approval(approval: Any, *, required: bool) -> dict[str, Any] | None:
+    if approval is None:
+        if required:
+            raise ValidationError("approved mixes must include approval metadata")
+        return None
+
+    if not isinstance(approval, dict):
+        raise ValidationError("approval must be an object when present")
+
+    normalized: dict[str, Any] = {}
+    reviewed_at = approval.get("reviewedAt")
+    approved_at = approval.get("approvedAt")
+
+    if required:
+        normalized["reviewedAt"] = ensure_iso8601_datetime(reviewed_at, "approval.reviewedAt")
+        normalized["approvedAt"] = ensure_iso8601_datetime(approved_at, "approval.approvedAt")
+    else:
+        if reviewed_at is not None:
+            normalized["reviewedAt"] = ensure_iso8601_datetime(reviewed_at, "approval.reviewedAt")
+        if approved_at is not None:
+            normalized["approvedAt"] = ensure_iso8601_datetime(approved_at, "approval.approvedAt")
+
+    for field in ("reviewedBy", "approvedBy", "notes"):
+        value = approval.get(field)
+        if value is not None:
+            normalized[field] = ensure_non_empty_string(value, f"approval.{field}")
+
+    return normalized
+
+
 def validate_note_payload(note: dict[str, Any]) -> dict[str, Any]:
     missing = NOTE_REQUIRED_FIELDS - set(note)
     if missing:
@@ -252,6 +282,7 @@ def _validate_editorial_mix(mix: dict[str, Any]) -> ValidationResult:
     title = ensure_non_empty_string(mix["title"], "title")
     summary = ensure_non_empty_string(mix["summary"], "summary")
     notes = ensure_non_empty_string(mix["notes"], "notes")
+    approval = normalize_mix_approval(mix.get("approval"), required=status == "approved")
 
     tracks = mix["tracks"]
     if not isinstance(tracks, list) or not tracks:
@@ -286,6 +317,7 @@ def _validate_editorial_mix(mix: dict[str, Any]) -> ValidationResult:
     normalized["notes"] = notes
     normalized["status"] = status
     normalized["tracks"] = cleaned_tracks
+    normalized["approval"] = approval
     normalized.setdefault("featured", False)
     return ValidationResult(mix=normalized, warnings=warnings, flavor="editorial")
 

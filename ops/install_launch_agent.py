@@ -16,13 +16,30 @@ def repo_root_from_script() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
-def render_launch_agent(template_path: Path, repo_root: Path, path_value: str) -> str:
+def render_program_arguments(program_arguments: list[str]) -> str:
+    return "\n".join(f"    <string>{argument}</string>" for argument in program_arguments)
+
+
+def render_launch_agent(
+    template_path: Path,
+    repo_root: Path,
+    path_value: str,
+    *,
+    weekday: int,
+    hour: int,
+    minute: int,
+    workflow_args: list[str],
+) -> str:
     repo_root = repo_root.resolve()
     logs_dir = repo_root / "logs"
+    program_arguments = ["/bin/bash", str((repo_root / "scripts" / "run_local_workflow.sh").resolve()), "--scheduled", *workflow_args]
     replacements = {
-        "__RUN_SCRIPT__": str((repo_root / "scripts" / "run_local_workflow.sh").resolve()),
+        "__PROGRAM_ARGUMENTS__": render_program_arguments(program_arguments),
         "__REPO_ROOT__": str(repo_root),
         "__PATH__": path_value,
+        "__WEEKDAY__": str(weekday),
+        "__HOUR__": str(hour),
+        "__MINUTE__": str(minute),
         "__STDOUT_LOG__": str((logs_dir / "launchd-weekly.stdout.log").resolve()),
         "__STDERR_LOG__": str((logs_dir / "launchd-weekly.stderr.log").resolve()),
     }
@@ -103,6 +120,39 @@ def build_parser() -> argparse.ArgumentParser:
         default="launchctl",
         help="launchctl binary or shim to use for bootstrap/verify.",
     )
+    parser.add_argument(
+        "--weekday",
+        type=int,
+        default=1,
+        help="LaunchAgent weekday (1=Sunday, 2=Monday, ... 7=Saturday). Default keeps the Monday local run.",
+    )
+    parser.add_argument(
+        "--hour",
+        type=int,
+        default=8,
+        help="LaunchAgent hour in 24-hour local time.",
+    )
+    parser.add_argument(
+        "--minute",
+        type=int,
+        default=0,
+        help="LaunchAgent minute in local time.",
+    )
+    parser.add_argument(
+        "--ai",
+        action="store_true",
+        help="Run the scheduled workflow in AI draft generation mode.",
+    )
+    parser.add_argument(
+        "--with-ai-artwork",
+        action="store_true",
+        help="Run the scheduled workflow with AI draft artwork generation after the draft is created.",
+    )
+    parser.add_argument(
+        "--run-tests",
+        action="store_true",
+        help="Opt scheduled runs back into pytest before draft generation.",
+    )
     return parser
 
 
@@ -163,7 +213,30 @@ def main() -> int:
     backup_path = backup_existing_plist(output_path, args.backup_dir)
 
     path_value = args.path_value or DEFAULT_PATH.format(repo_root=repo_root)
-    rendered = render_launch_agent(template_path, repo_root, path_value)
+    if args.weekday < 1 or args.weekday > 7:
+        raise SystemExit("--weekday must be between 1 and 7")
+    if args.hour < 0 or args.hour > 23:
+        raise SystemExit("--hour must be between 0 and 23")
+    if args.minute < 0 or args.minute > 59:
+        raise SystemExit("--minute must be between 0 and 59")
+
+    workflow_args: list[str] = []
+    if args.ai:
+        workflow_args.append("--ai")
+    if args.with_ai_artwork:
+        workflow_args.append("--with-ai-artwork")
+    if args.run_tests:
+        workflow_args.append("--run-tests")
+
+    rendered = render_launch_agent(
+        template_path,
+        repo_root,
+        path_value,
+        weekday=args.weekday,
+        hour=args.hour,
+        minute=args.minute,
+        workflow_args=workflow_args,
+    )
 
     if args.stdout_log is not None:
         rendered = rendered.replace(
@@ -182,6 +255,10 @@ def main() -> int:
         print(f"Backed up previous plist to {backup_path}")
     print("Load it with: launchctl bootstrap gui/$(id -u) " f"{output_path}")
     print("Kick it once with: launchctl kickstart -k gui/$(id -u)/" f"{DEFAULT_LABEL}")
+    print(
+        "Workflow flags: "
+        + (" ".join(workflow_args) if workflow_args else "(deterministic local default)")
+    )
 
     if args.bootstrap:
         bootstrap_launch_agent(args.launchctl_bin, output_path, DEFAULT_LABEL)

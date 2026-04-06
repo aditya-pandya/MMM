@@ -35,11 +35,15 @@
    - If you edited canonical note or published mix JSON directly, run `python3 scripts/refresh_indexes.py` to rebuild `data/notes-index.json`, `data/archive/index.json`, `data/archive-index.json`, and `data/mixes.json`.
 
 5. Approve a mix.
-   - Approval is represented in the draft JSON itself by `"status": "approved"`.
+   - Run `python3 scripts/approve_mix.py mmm-for-2026-04-13 --by "Aditya"`.
+   - Approval is still represented by `"status": "approved"` in the draft JSON, but the operator command also records lightweight provenance under `approval`.
+   - Approved drafts must now include at least `approval.reviewedAt` and `approval.approvedAt`.
    - Optional: set `"featured": true` in the draft or pass `--feature` during publish.
 
 6. Publish.
-   - Run `python3 scripts/publish_mix.py <slug-or-path>`.
+   - Preferred Monday path: `python3 scripts/release_weekly.py <slug-or-path>`.
+   - Manual fallback: `python3 scripts/publish_mix.py <slug-or-path>`.
+   - The release wrapper validates the repo, publishes the approved draft, validates again, runs `npm run build`, and prints the manual push/deploy reminder.
    - Use `--validate-only` to verify a draft before changing repository state.
    - The publisher validates the draft, requires approved status, converts it to `published`, writes it to `data/published/`, and refreshes the archive indexes.
 
@@ -93,6 +97,9 @@
 - Local scheduled: use `./scripts/run_local_workflow.sh --scheduled`
 - Install the matching LaunchAgent with `python3 ops/install_launch_agent.py --install`
 - Bootstrap immediately when wanted: `python3 ops/install_launch_agent.py --install --bootstrap --verify`
+- Customize schedule/flags locally when needed:
+  - `python3 ops/install_launch_agent.py --install --weekday 2 --hour 9 --minute 30`
+  - `python3 ops/install_launch_agent.py --install --ai --with-ai-artwork`
 - Optional scheduled run with tests: `./scripts/run_local_workflow.sh --scheduled --run-tests`
 - Skip aggregate refresh only when indexes are already known-good: `./scripts/run_local_workflow.sh --skip-refresh`
 - Inputs read by the generator:
@@ -113,6 +120,7 @@ Scheduled local runs:
 - can opt back into tests with `--run-tests`
 - do not pass `--force` to draft generation
 - do not run `npm run build` after writing the draft
+- still run content validation before generation and again after draft/artwork changes
 - still refresh aggregate indexes before generation unless `--skip-refresh` is passed
 
 ## Notes
@@ -122,7 +130,7 @@ Scheduled local runs:
 - AI artwork generation is also opt-in and records prompt/model provenance instead of pretending the cover was handmade.
 - Local plugin refinement is optional and still must emit a valid editorial draft JSON object.
 - The hosted GitHub workflow is for deployment, not editorial generation.
-- `npm run content:validate`, `npm run draft:new`, and `npm run note:new` wrap the new editor-facing commands.
+- `npm run content:validate`, `npm run draft:new`, `npm run draft:approve`, `npm run release:weekly`, and `npm run note:new` wrap the new editor-facing commands.
 - `npm run note:suggest`, `npm run note:new-from-mix`, `npm run content:refresh`, and `npm run preview:latest` cover the new low-friction maintenance helpers.
 - Notes are indexed through `data/notes-index.json`, but the detail files in `data/notes/` remain the primary authored source.
 - Listening confidence is local-first and explicit: uncertain surfaces may still appear as leads, but the site will not style them like verified playback.

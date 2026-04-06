@@ -45,6 +45,7 @@ def test_install_launch_agent_renders_repo_specific_paths(tmp_path):
     )
     assert str((repo_root / "logs" / "launchd-weekly.stdout.log").resolve()) in rendered
     assert str((repo_root / "logs" / "launchd-weekly.stderr.log").resolve()) in rendered
+    assert "<string>--scheduled</string>" in rendered
     assert "Weekday" in rendered
     assert "Hour" in rendered
     assert "Minute" in rendered
@@ -52,6 +53,7 @@ def test_install_launch_agent_renders_repo_specific_paths(tmp_path):
     assert f"Wrote LaunchAgent to {output_path}" in result.stdout
     assert "launchctl bootstrap gui/$(id -u)" in result.stdout
     assert "launchctl kickstart -k gui/$(id -u)/com.mmm.weekly" in result.stdout
+    assert "Workflow flags: (deterministic local default)" in result.stdout
 
 
 def test_install_launch_agent_accepts_path_and_log_overrides(tmp_path):
@@ -91,6 +93,47 @@ def test_install_launch_agent_accepts_path_and_log_overrides(tmp_path):
     assert f"<string>{path_value}</string>" in rendered
     assert str(stdout_log.resolve()) in rendered
     assert str(stderr_log.resolve()) in rendered
+
+
+def test_install_launch_agent_accepts_schedule_and_workflow_flags(tmp_path):
+    repo_root = tmp_path / "mmm-checkout"
+    (repo_root / "scripts").mkdir(parents=True)
+    (repo_root / "scripts" / "run_local_workflow.sh").write_text("#!/bin/bash\n", encoding="utf-8")
+    output_path = tmp_path / "rendered.plist"
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(REPO_ROOT / "ops" / "install_launch_agent.py"),
+            "--repo-root",
+            str(repo_root),
+            "--output",
+            str(output_path),
+            "--weekday",
+            "2",
+            "--hour",
+            "9",
+            "--minute",
+            "30",
+            "--ai",
+            "--with-ai-artwork",
+            "--run-tests",
+        ],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0
+    rendered = output_path.read_text(encoding="utf-8")
+    assert "<integer>2</integer>" in rendered
+    assert "<integer>9</integer>" in rendered
+    assert "<integer>30</integer>" in rendered
+    assert "<string>--ai</string>" in rendered
+    assert "<string>--with-ai-artwork</string>" in rendered
+    assert "<string>--run-tests</string>" in rendered
+    assert "Workflow flags: --ai --with-ai-artwork --run-tests" in result.stdout
 
 
 def test_install_launch_agent_can_backup_and_verify_with_launchctl_shim(tmp_path):

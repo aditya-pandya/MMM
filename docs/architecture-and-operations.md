@@ -71,6 +71,10 @@ All tooling lives under `scripts/`.
 - suggests published mixes with no note coverage
 - can scaffold a note from a published mix
 
+`approve_mix.py`
+- validates the repo/draft and marks a reviewed draft approved
+- stores lightweight review/approval provenance on the draft
+
 `validate_content.py`
 - validates content health across repo data
 - should be run before publishing or handoff
@@ -79,6 +83,11 @@ All tooling lives under `scripts/`.
 - promotes approved draft mix to published state
 - rebuilds aggregate files
 - can update featured mix
+
+`release_weekly.py`
+- guarded release wrapper for an approved draft
+- validates the repo before and after publish
+- runs the static build and prints the manual deploy step
 
 `refresh_indexes.py`
 - regenerates notes/archive aggregate JSON from canonical note and published mix files
@@ -91,6 +100,7 @@ All tooling lives under `scripts/`.
 - manual runs execute pytest before generation
 - scheduled runs skip pytest unless `--run-tests` is passed
 - refreshes note/archive aggregates before generation unless `--skip-refresh` is passed
+- runs content validation before generation and again after the draft/artwork step
 - can opt into AI draft generation with `--ai`
 - can opt into end-to-end AI draft plus AI artwork with `--with-ai-artwork`
 
@@ -190,8 +200,8 @@ Local/editorial orientation route
 3. edit content JSON
 4. refresh generated aggregates if canonical files were edited directly
 5. validate again
-6. approve mix
-7. publish
+6. approve mix explicitly and capture lightweight provenance
+7. run the guarded release wrapper or publish manually
 8. build preview
 9. push to `main`
 10. GitHub deploys Pages

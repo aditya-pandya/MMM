@@ -23,7 +23,7 @@
     "schemaVersion": { "type": "string" },
     "id": { "type": "string" },
     "slug": { "type": "string" },
-    "status": { "enum": ["draft", "published", "imported"] },
+    "status": { "enum": ["draft", "approved", "published", "imported"] },
     "siteSection": { "const": "mixes" },
     "source": {
       "type": "object",
@@ -59,6 +59,17 @@
       "properties": {
         "label": { "type": "string" },
         "url": { "type": ["string", "null"], "format": "uri" }
+      },
+      "additionalProperties": false
+    },
+    "approval": {
+      "type": "object",
+      "properties": {
+        "reviewedAt": { "type": "string", "format": "date-time" },
+        "approvedAt": { "type": "string", "format": "date-time" },
+        "reviewedBy": { "type": ["string", "null"] },
+        "approvedBy": { "type": ["string", "null"] },
+        "notes": { "type": ["string", "null"] }
       },
       "additionalProperties": false
     },

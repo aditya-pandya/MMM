@@ -7,9 +7,7 @@
 
   <key>ProgramArguments</key>
   <array>
-    <string>/bin/bash</string>
-    <string>__RUN_SCRIPT__</string>
-    <string>--scheduled</string>
+__PROGRAM_ARGUMENTS__
   </array>
 
   <key>WorkingDirectory</key>
@@ -24,11 +22,11 @@
   <key>StartCalendarInterval</key>
   <dict>
     <key>Weekday</key>
-    <integer>1</integer>
+    <integer>__WEEKDAY__</integer>
     <key>Hour</key>
-    <integer>8</integer>
+    <integer>__HOUR__</integer>
     <key>Minute</key>
-    <integer>0</integer>
+    <integer>__MINUTE__</integer>
   </dict>
 
   <key>StandardOutPath</key>

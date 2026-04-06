@@ -60,6 +60,8 @@ else
   echo "Skipping aggregate refresh."
 fi
 
+python3 scripts/validate_content.py
+
 generate_args=(scripts/generate_weekly_draft.py --mode "$generation_mode")
 if [ "$scheduled_run" = false ]; then
   generate_args+=(--force)
@@ -88,6 +90,8 @@ if [ "$generate_ai_artwork" = true ]; then
   fi
   python3 scripts/generate_ai_artwork.py "$draft_output_path" --force
 fi
+
+python3 scripts/validate_content.py
 
 if [ "$scheduled_run" = false ]; then
   npm run build

@@ -18,6 +18,7 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
   - weekly draft generation
   - AI weekly draft generation from the full 36-mix archive
   - AI draft artwork generation with local provenance capture
+  - explicit draft approval with lightweight provenance
   - draft mix templates
   - note templates with notes-index updates
   - note scaffolds from published mixes
@@ -45,10 +46,12 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
 - `scripts/`
   - `import_tumblr.py`
   - `build_taste_profile.py`
-  - `generate_weekly_draft.py`
+- `generate_weekly_draft.py`
   - `create_content.py`
+  - `approve_mix.py`
   - `validate_content.py`
   - `publish_mix.py`
+  - `release_weekly.py`
   - `build.js`
   - `dev-server.js`
 - `src/static/`
@@ -225,8 +228,42 @@ npm run workflow:weekly:ai-art
 
 Notes:
 - Default workflow behavior stays deterministic and local-first.
+- The weekly workflow now runs content validation before generation and again after the draft/artwork step.
 - `--ai` switches draft generation to OpenAI-backed structured output.
 - `--with-ai-artwork` adds AI cover generation for the draft that was just created.
+
+Approve a reviewed draft explicitly:
+
+```bash
+python3 scripts/approve_mix.py mmm-for-2026-04-13 --by "Aditya"
+npm run draft:approve -- mmm-for-2026-04-13 --by "Aditya"
+```
+
+Notes:
+- Approval stores lightweight provenance in the draft JSON under `approval`.
+- Approved drafts must now include `approval.reviewedAt` and `approval.approvedAt`.
+
+Run the guarded Monday release wrapper:
+
+```bash
+python3 scripts/release_weekly.py mmm-for-2026-04-13
+npm run release:weekly -- mmm-for-2026-04-13
+```
+
+Notes:
+- The release wrapper validates the repo, publishes the approved draft, validates again, runs `npm run build`, and then prints the manual push/deploy reminder.
+- Git push remains manual by design.
+
+Install a customized LaunchAgent locally:
+
+```bash
+python3 ops/install_launch_agent.py --install --verify --weekday 2 --hour 9 --minute 30
+python3 ops/install_launch_agent.py --install --verify --ai --with-ai-artwork
+```
+
+Notes:
+- The deterministic local Monday default still applies when no extra flags are passed.
+- Optional workflow flags like `--ai`, `--with-ai-artwork`, and `--run-tests` now render into the local plist at install time instead of tracked files.
 
 ## Local editorial workflow
 
@@ -256,8 +293,17 @@ python3 scripts/create_content.py note-from-mix mix-036-thirtysixth
 python3 scripts/refresh_indexes.py
 ```
 
-6. Change a mix `status` from `draft` to `approved` once editorial review is complete.
-7. Publish the approved mix.
+6. Approve the reviewed draft explicitly.
+
+```bash
+python3 scripts/approve_mix.py mmm-for-2026-04-13 --by "Aditya"
+```
+
+7. Release the approved mix.
+
+```bash
+python3 scripts/release_weekly.py mmm-for-2026-04-13
+```
 
 ```bash
 python3 scripts/publish_mix.py <slug-or-path> --feature
@@ -350,9 +396,12 @@ Scheduled local run with tests enabled:
 Optional macOS scheduling:
 - Render and install a machine-local LaunchAgent with `python3 ops/install_launch_agent.py`.
 - `./scripts/run_local_workflow.sh` now refreshes note/archive aggregates before draft generation unless `--skip-refresh` is passed.
+- `./scripts/run_local_workflow.sh` also validates content before generation and again after draft/artwork changes.
 - By default this writes `~/Library/LaunchAgents/com.mmm.weekly.plist` with the current repo root, workflow script path, and `logs/launchd-weekly.*.log` paths embedded automatically.
 - Safe install + verify in one command: `python3 ops/install_launch_agent.py --install --verify`
 - Install + bootstrap + verify immediately: `python3 ops/install_launch_agent.py --install --bootstrap --verify`
+- Customize the schedule/time locally: `python3 ops/install_launch_agent.py --install --weekday 2 --hour 9 --minute 30`
+- Add workflow mode flags when wanted: `python3 ops/install_launch_agent.py --install --ai --with-ai-artwork`
 - Load it with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.mmm.weekly.plist`.
 - Re-run it on demand with `launchctl kickstart -k gui/$(id -u)/com.mmm.weekly`.
 - Re-installs keep a timestamped backup under `~/Library/LaunchAgents/backups/` unless `--backup-dir` is overridden.
@@ -363,17 +412,25 @@ Optional macOS scheduling:
 
 1. Open the draft JSON in `data/drafts/`.
 2. Edit copy, tracks, tags, art, notes.
-3. Change `status` from `draft` to `approved`.
-4. Validate the repo again.
-5. Publish it:
+3. Approve it explicitly:
 
 ```bash
-python3 scripts/publish_mix.py <slug-or-path> --feature
+python3 scripts/approve_mix.py <slug-or-path> --by "Aditya"
 ```
+
+4. Release it through the guarded wrapper:
+
+```bash
+python3 scripts/release_weekly.py <slug-or-path> --feature
+```
+
+5. Push manually when the local build looks right.
 
 Useful commands:
 
 ```bash
+python3 scripts/approve_mix.py <slug-or-path>
+python3 scripts/release_weekly.py <slug-or-path>
 python3 scripts/publish_mix.py <slug-or-path> --validate-only
 python3 scripts/validate_content.py
 npm run build
@@ -382,6 +439,7 @@ npm run build
 ## What publish does
 
 - validates the editorial draft
+- requires explicit approval metadata on approved drafts
 - writes schema-compatible published JSON into `data/published/`
 - rebuilds:
   - `data/archive/index.json`

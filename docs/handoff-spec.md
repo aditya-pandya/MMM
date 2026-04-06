@@ -111,8 +111,10 @@ Most important scripts:
 - `build_taste_profile.py` — derive taste profile from imported material
 - `generate_weekly_draft.py` — deterministic local draft generation
 - `create_content.py` — draft mix/note template generation
+- `approve_mix.py` — explicit draft approval plus lightweight provenance capture
 - `validate_content.py` — repo content health checks
 - `publish_mix.py` — publish approved draft to archive
+- `release_weekly.py` — guarded release wrapper for an approved draft
 - `run_local_workflow.sh` — local weekly workflow wrapper
 
 ### `src/static/`
@@ -209,6 +211,7 @@ Required behavior:
 - archive indexes
 - notes indexes
 - generated aggregate files
+- run at real workflow/release checkpoints, not just as an optional side command
 - produce actionable output
 
 ### FR8 — Publish flow
@@ -219,6 +222,8 @@ Current implementation:
 
 Required behavior:
 - only approved mixes publish
+- approval should have an explicit local operator command, not just raw status editing
+- lightweight review/approval provenance should live with the draft JSON
 - write into `data/published/`
 - rebuild aggregate indexes
 - optionally set featured mix
@@ -233,6 +238,7 @@ Required behavior:
 - scheduled runs must not overwrite active drafts blindly
 - scheduled runs should not do unnecessary site builds
 - scheduled runs should skip pytest by default, with an explicit override available
+- LaunchAgent install should support local schedule/time customization and optional workflow flags without tracking machine-local plist output
 - logs should be durable enough for local inspection
 
 ### FR10 — Deploy to GitHub Pages

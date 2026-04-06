@@ -11,6 +11,7 @@ if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
 import mmm_common
+import approve_mix
 import publish_mix
 
 
@@ -63,6 +64,12 @@ def approved_mix(slug: str = "mmm-for-2026-04-06"):
             {"artist": "Air", "title": "All I Need", "why_it_fits": "Keeps things warm."},
             {"artist": "Stereolab", "title": "French Disko", "why_it_fits": "Adds momentum."},
         ],
+        "approval": {
+            "reviewedAt": "2026-04-06T10:00:00Z",
+            "approvedAt": "2026-04-06T10:00:00Z",
+            "reviewedBy": "Aditya",
+            "approvedBy": "Aditya",
+        },
     }
 
 
@@ -106,4 +113,14 @@ def test_publish_mix_requires_approved_status(temp_repo):
     mmm_common.dump_json(draft_path, mix)
 
     with pytest.raises(mmm_common.ValidationError):
+        publish_mix.publish_mix(draft_path)
+
+
+def test_publish_mix_requires_approval_metadata_for_approved_draft(temp_repo):
+    draft_path = temp_repo / "data" / "drafts" / "mmm-for-2026-04-06.json"
+    mix = approved_mix()
+    mix.pop("approval")
+    mmm_common.dump_json(draft_path, mix)
+
+    with pytest.raises(mmm_common.ValidationError, match="approval metadata"):
         publish_mix.publish_mix(draft_path)
