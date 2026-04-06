@@ -123,3 +123,49 @@ def test_sync_tumblr_artwork_uses_legacy_html_when_cover_url_missing(tmp_path, m
     summary = sync_tumblr_artwork.sync_mix_artwork(published_path, media_dir / "artwork-registry.json")
 
     assert summary["discoveredFrom"] == "legacy.descriptionHtml img"
+
+
+def test_sync_tumblr_artwork_prefers_local_archive_bytes_over_remote_url(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    published_dir = data_dir / "published"
+    media_dir = data_dir / "media"
+    archive_root = tmp_path / "archive-export"
+    published_dir.mkdir(parents=True)
+    (media_dir / "tumblr").mkdir(parents=True)
+    (archive_root / "media").mkdir(parents=True)
+
+    published_path = published_dir / "mix-036-thirtysixth.json"
+    seed_mix(published_path, with_cover_url=True)
+
+    payload = json.loads(published_path.read_text(encoding="utf-8"))
+    payload["slug"] = "mix-036-thirtysixth"
+    payload["id"] = "mix-036-thirtysixth"
+    payload["source"]["sourceUrl"] = "https://mondaymusicmix.tumblr.com/post/67441502817"
+    payload["source"]["guid"] = "https://mondaymusicmix.tumblr.com/post/67441502817"
+    payload["source"]["archiveExport"] = {
+        "postId": "67441502817",
+        "mediaPath": "media/67441502817_0.jpg",
+    }
+    mmm_common.dump_json(published_path, payload)
+    (archive_root / "media" / "67441502817_0.jpg").write_bytes(b"archive-jpeg-bytes")
+
+    def fail_urlopen(request, timeout=30):  # pragma: no cover - defensive assertion path
+        raise AssertionError("urlopen should not be used when local archive bytes are available")
+
+    monkeypatch.setattr(sync_tumblr_artwork, "ROOT", tmp_path)
+    monkeypatch.setattr(sync_tumblr_artwork, "DATA_DIR", data_dir)
+    monkeypatch.setattr(sync_tumblr_artwork, "PUBLISHED_DIR", published_dir)
+    monkeypatch.setattr(sync_tumblr_artwork, "IMPORTED_DIR", data_dir / "imported" / "mixes")
+    monkeypatch.setattr(sync_tumblr_artwork, "MEDIA_TUMBLR_DIR", media_dir / "tumblr")
+    monkeypatch.setattr(sync_tumblr_artwork, "DEFAULT_ARCHIVE_ROOT", archive_root)
+    monkeypatch.setattr(sync_tumblr_artwork, "urlopen", fail_urlopen)
+
+    summary = sync_tumblr_artwork.sync_mix_artwork(published_path, media_dir / "artwork-registry.json")
+
+    asset_path = tmp_path / "data" / "media" / "tumblr" / "mix-036-thirtysixth" / "cover.jpg"
+    registry = json.loads((media_dir / "artwork-registry.json").read_text(encoding="utf-8"))
+
+    assert summary["discoveredFrom"] == "source.archiveExport.mediaPath"
+    assert asset_path.read_bytes() == b"archive-jpeg-bytes"
+    assert registry["items"][0]["provenance"]["sourceLabel"] == "Exact Tumblr archive export cover image bytes"
+    assert registry["items"][0]["provenance"]["sourceUrl"].startswith("file://")

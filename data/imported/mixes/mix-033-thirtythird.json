@@ -24,7 +24,8 @@
   "cover": {
     "imageUrl": "https://64.media.tumblr.com/ccc9153b3efa9c534bd2dc9200fe9be7/63b303fc6b7d990e-70/s540x810/e20d95d57e2904084b901c62fe17b128dfdacdb0.jpg",
     "alt": "Cover art for Thirtythird",
-    "credit": "Album art featuring work by Fernando Vincente"
+    "credit": "Album art featuring work by Fernando Vincente",
+    "canonicalAssetPath": "data/media/tumblr/mix-033-thirtythird/cover.jpg"
   },
   "download": {
     "label": "Download mix",

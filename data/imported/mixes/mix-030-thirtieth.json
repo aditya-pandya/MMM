@@ -1,0 +1,224 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-030-thirtieth",
+  "slug": "mix-030-thirtieth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517673559",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517673559",
+    "archiveExport": {
+      "postId": "43517673559",
+      "htmlPath": "posts/html/43517673559.html",
+      "timestampText": "October 22nd, 2012 11:57pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517673559.jpg"
+    }
+  },
+  "title": "Monday Music Mix #30",
+  "displayTitle": "Thirtieth",
+  "mixNumber": 30,
+  "publishedAt": "2012-10-22T18:27:00Z",
+  "summary": "Late.",
+  "intro": [
+    "Late.",
+    "Happy birthday, L (it’s still your birthday in some time zone).",
+    "Download album | Mirror"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Thirtieth",
+    "credit": "Album art featuring work by Stella Im Hultberg",
+    "canonicalAssetPath": "data/media/tumblr/mix-030-thirtieth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/?l6laq7tlw2o5wkm"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Toro y Moi",
+      "title": "So Many Details",
+      "displayText": "Toro y Moi - So Many Details",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Halina Larsson",
+      "title": "Fires and French Horns",
+      "displayText": "Halina Larsson - Fires and French Horns",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Twin Shadow",
+      "title": "Five Seconds",
+      "displayText": "Twin Shadow - Five Seconds",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Sun Kil Moon",
+      "title": "Sunshine in Chicago",
+      "displayText": "Sun Kil Moon - Sunshine in Chicago",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Dust Covered Carpet",
+      "title": "Fragile Soul Heavy Heart",
+      "displayText": "Dust Covered Carpet - Fragile Soul Heavy Heart",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Brythoniaid Male Voice Choir",
+      "title": "Blue Monday (New World Order cover)",
+      "displayText": "Brythoniaid Male Voice Choir - Blue Monday (New World Order cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Mike Landry",
+      "title": "Heartbeat",
+      "displayText": "Mike Landry - Heartbeat",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Françoise Hardy",
+      "title": "Le Temps De L'amour",
+      "displayText": "Françoise Hardy - Le Temps De L'amour",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Said The Whale",
+      "title": "Heavy Ceiling",
+      "displayText": "Said The Whale - Heavy Ceiling",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Friends",
+      "title": "Mind Control",
+      "displayText": "Friends - Mind Control",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "A.C. Newman",
+      "title": "Encyclopedia of Classic Takedowns",
+      "displayText": "A.C. Newman - Encyclopedia of Classic Takedowns",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Death Grips",
+      "title": "@deathgripz",
+      "displayText": "Death Grips - @deathgripz",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Lace Curtains",
+      "title": "Bedroom Honesty",
+      "displayText": "Lace Curtains - Bedroom Honesty",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Jessie Ware",
+      "title": "Night Light (Wild Beasts remix)",
+      "displayText": "Jessie Ware - Night Light (Wild Beasts remix)",
+      "isFavorite": false
+    },
+    {
+      "position": 15,
+      "artist": "Empress Of",
+      "title": "Don’t Tell Me",
+      "displayText": "Empress Of - Don’t Tell Me",
+      "isFavorite": false
+    },
+    {
+      "position": 16,
+      "artist": "Nicole Miglis",
+      "title": "Stay Small",
+      "displayText": "Nicole Miglis - Stay Small",
+      "isFavorite": false
+    },
+    {
+      "position": 17,
+      "artist": "Dean Blunt",
+      "title": "Track 2 (feat. Inga Copeland)",
+      "displayText": "Dean Blunt - Track 2 (feat. Inga Copeland)",
+      "isFavorite": false
+    },
+    {
+      "position": 18,
+      "artist": "The Stills",
+      "title": "Don’t Talk Down",
+      "displayText": "The Stills - Don’t Talk Down",
+      "isFavorite": false
+    },
+    {
+      "position": 19,
+      "artist": "Crystal Castles",
+      "title": "Wrath of God",
+      "displayText": "Crystal Castles - Wrath of God",
+      "isFavorite": false
+    },
+    {
+      "position": 20,
+      "artist": "Atlas Genius",
+      "title": "Islands (The xx cover)",
+      "displayText": "Atlas Genius - Islands (The xx cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 21,
+      "artist": "Black City Lights",
+      "title": "Rivers",
+      "displayText": "Black City Lights - Rivers",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 21,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Toro y Moi",
+      "Halina Larsson",
+      "Twin Shadow",
+      "Sun Kil Moon",
+      "Dust Covered Carpet"
+    ],
+    "coverCount": 2,
+    "coverTracks": [
+      "Brythoniaid Male Voice Choir - Blue Monday (New World Order cover)",
+      "Atlas Genius - Islands (The xx cover)"
+    ],
+    "remixCount": 1,
+    "remixTracks": [
+      "Jessie Ware - Night Light (Wild Beasts remix)"
+    ]
+  },
+  "legacy": {
+    "originalTitle": "Thirtieth",
+    "tumblrHeading": "Thirtieth",
+    "descriptionHtml": "<h2>Thirtieth</h2><p>Late.</p>\n<p>Happy birthday, L (it&rsquo;s still your birthday in some time zone).</p>\n<p><strong>Monday Music Mix: 30</strong></p>\n\n<p>Album art featuring work by <a href=\"http://stellaimhultberg.com/\">Stella Im Hultberg</a></p>\n<p>Tracklist:</p>\n<ol>\n<li>Toro y Moi - So Many Details</li>\n<li>Halina Larsson - Fires and French Horns</li>\n<li>Twin Shadow - Five Seconds</li>\n<li>Sun Kil Moon - Sunshine in Chicago</li>\n<li>Dust Covered Carpet - Fragile Soul  Heavy Heart</li>\n<li>Brythoniaid Male Voice Choir - Blue Monday (New World Order cover)</li>\n<li>Mike Landry - Heartbeat</li>\n<li>Françoise Hardy - Le Temps De L'amour</li>\n<li>Said The Whale - Heavy Ceiling</li>\n<li>Friends - Mind Control</li>\n<li>A.C. Newman - Encyclopedia of Classic Takedowns</li>\n<li>Death Grips - @deathgripz</li>\n<li>Lace Curtains - Bedroom Honesty</li>\n<li>Jessie Ware - Night Light (Wild Beasts remix)</li>\n<li>Empress Of - Don&rsquo;t Tell Me</li>\n<li>Nicole Miglis - Stay Small</li>\n<li>Dean Blunt  - Track 2 (feat. Inga Copeland)</li>\n<li>The Stills - Don&rsquo;t Talk Down</li>\n<li>Crystal Castles - Wrath of God</li>\n<li>Atlas Genius - Islands (The xx cover)</li>\n<li>Black City Lights - Rivers</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.mediafire.com/?l6laq7tlw2o5wkm\">Download album</a> | <a href=\"https://www.dropbox.com/s/irmlbylrfmt6szd/MondayMusicMix-30.zip\">Mirror</a></p>",
+    "archiveHtmlPath": "posts/html/43517673559.html",
+    "archiveTimestampText": "October 22nd, 2012 11:57pm",
+    "archiveMediaPath": "media/43517673559.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

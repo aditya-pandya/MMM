@@ -1,0 +1,170 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-021-twentyfirst",
+  "slug": "mix-021-twentyfirst",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517733141",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517733141",
+    "archiveExport": {
+      "postId": "43517733141",
+      "htmlPath": "posts/html/43517733141.html",
+      "timestampText": "August 8th, 2011 12:45am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517733141.jpg"
+    }
+  },
+  "title": "Monday Music Mix #21",
+  "displayTitle": "Twentyfirst",
+  "mixNumber": 21,
+  "publishedAt": "2011-08-07T19:15:00Z",
+  "summary": "For once, on time. I think this mix is pretty interesting. Lots of diverse beats - lots of trippy goodness. Download, listen, spread the love and all that.",
+  "intro": [
+    "For once, on time. I think this mix is pretty interesting. Lots of diverse beats - lots of trippy goodness. Download, listen, spread the love and all that."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twentyfirst",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-021-twentyfirst/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/?gzybcyl52xdo3os"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Jens Lekman",
+      "title": "An Argument With Myself",
+      "displayText": "Jens Lekman - An Argument With Myself",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Best Coast",
+      "title": "Gone Again",
+      "displayText": "Best Coast - Gone Again",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "SLEEP ∞ OVER",
+      "title": "Romantic-Streams",
+      "displayText": "SLEEP ∞ OVER - Romantic-Streams",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Work Drugs",
+      "title": "Catalina Wine Mixer",
+      "displayText": "Work Drugs - Catalina Wine Mixer",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Chelan",
+      "title": "On the Water",
+      "displayText": "Chelan - On the Water",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "New Animal",
+      "title": "Last Winter",
+      "displayText": "New Animal - Last Winter",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Stray Kites",
+      "title": "Mieux",
+      "displayText": "Stray Kites - Mieux",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Air France",
+      "title": "It Feels Good to Be Around You",
+      "displayText": "Air France - It Feels Good to Be Around You",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Canon Blue",
+      "title": "A Native (Madison)",
+      "displayText": "Canon Blue - A Native (Madison)",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Holy Ghost!",
+      "title": "Some Children",
+      "displayText": "Holy Ghost! - Some Children",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "The Rapture",
+      "title": "How Deep Is Your Love",
+      "displayText": "The Rapture - How Deep Is Your Love",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "San Cisco",
+      "title": "Golden Revolver",
+      "displayText": "San Cisco - Golden Revolver",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Loney Dear",
+      "title": "Ignorant Boy, Beautiful Girl",
+      "displayText": "Loney Dear - Ignorant Boy, Beautiful Girl",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Florence & The Machine",
+      "title": "Halo (Beyonce cover)",
+      "displayText": "Florence & The Machine - Halo (Beyonce cover)",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 14,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Jens Lekman",
+      "Best Coast",
+      "SLEEP ∞ OVER",
+      "Work Drugs",
+      "Chelan"
+    ],
+    "coverCount": 1,
+    "coverTracks": [
+      "Florence & The Machine - Halo (Beyonce cover)"
+    ],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Twentyfirst",
+    "tumblrHeading": "Twentyfirst",
+    "descriptionHtml": "<h2>Twentyfirst</h2><p>For once, on time. I think this mix is pretty interesting. Lots of diverse beats - lots of trippy goodness. Download, listen, spread the love and all that.</p>\n<p><strong>Monday Music Mix: 21</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Jens Lekman - An Argument With Myself</li>\n<li>Best Coast - Gone Again</li>\n<li>SLEEP ∞ OVER - Romantic-Streams</li>\n<li>Work Drugs - Catalina Wine Mixer </li>\n<li>Chelan - On the Water</li>\n<li>New Animal - Last Winter</li>\n<li>Stray Kites - Mieux</li>\n<li>Air France - It Feels Good to Be Around You</li>\n<li>Canon Blue - A Native (Madison)</li>\n<li>Holy Ghost! - Some Children</li>\n<li>The Rapture - How Deep Is Your Love</li>\n<li>San Cisco - Golden Revolver</li>\n<li>Loney Dear - Ignorant Boy, Beautiful Girl</li>\n<li>Florence &amp; The Machine - Halo (Beyonce cover)</li>\n</ol> <ol> </ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://www.mediafire.com/?gzybcyl52xdo3os\">Download album</a></p>",
+    "archiveHtmlPath": "posts/html/43517733141.html",
+    "archiveTimestampText": "August 8th, 2011 12:45am",
+    "archiveMediaPath": "media/43517733141.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

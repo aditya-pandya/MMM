@@ -1,0 +1,124 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-001-first",
+  "slug": "mix-001-first",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517876936",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517876936",
+    "archiveExport": {
+      "postId": "43517876936",
+      "htmlPath": "posts/html/43517876936.html",
+      "timestampText": "December 27th, 2010 5:24pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517876936.jpg"
+    }
+  },
+  "title": "Monday Music Mix #1",
+  "displayTitle": "First",
+  "mixNumber": 1,
+  "publishedAt": "2010-12-27T11:54:00Z",
+  "summary": "And so it begins! Monday Music Mix is a project close to my heart - something that has been in works for quite some time (in my head, of course).",
+  "intro": [
+    "And so it begins! Monday Music Mix is a project close to my heart - something that has been in works for quite some time (in my head, of course).",
+    "The objective is simple: every Monday a new mix will be put up here. While the mix will mostly focus on Indie music, every now and then you might find tracks that surprise you. If you like the music, spread the love.",
+    "My aim is to introduce people to interesting music that I’ve come across, and in the process also extend their musical preferences to genres they may not be necessarily exposed to.",
+    "Download",
+    "Listen on Grooveshark",
+    "Like it? Love it? Let me know."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for First",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-001-first/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?cukw9wncvb27ws1"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Diamond Rings",
+      "title": "All Yr Songs",
+      "displayText": "Diamond Rings - All Yr Songs",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Benjamin Biolay",
+      "title": "Dans La Merco Benz",
+      "displayText": "Benjamin Biolay - Dans La Merco Benz",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Marina & The Diamonds",
+      "title": "Are You Satisfied",
+      "displayText": "Marina & The Diamonds - Are You Satisfied",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "The Dirty Heads",
+      "title": "Lay Me Down",
+      "displayText": "The Dirty Heads - Lay Me Down",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Yeasayer",
+      "title": "Madder Red",
+      "displayText": "Yeasayer - Madder Red",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Ben Harper and The Innocent Criminals",
+      "title": "Fight Outta You",
+      "displayText": "Ben Harper and The Innocent Criminals - Fight Outta You",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Animal Collective",
+      "title": "My Girls",
+      "displayText": "Animal Collective - My Girls",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Diamond Rings",
+      "Benjamin Biolay",
+      "Marina & The Diamonds",
+      "The Dirty Heads",
+      "Yeasayer"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "First",
+    "tumblrHeading": "First",
+    "descriptionHtml": "<h2>First</h2><p>And so it begins! Monday Music Mix is a project close to my heart - something that has been in works for quite some time (in my head, of course).</p>\n<p>The objective is simple: every Monday a new mix will be put up here. While the mix will mostly focus on Indie music, every now and then you might find tracks that surprise you. If you like the music, spread the love.</p>\n<p>My aim is to introduce people to interesting music that I&rsquo;ve come across, and in the process also extend their musical preferences to genres they may not be necessarily exposed to.</p>\n<p><strong>Monday Music Mix: 01</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Diamond Rings - All Yr Songs</li>\n<li>Benjamin Biolay - Dans La Merco Benz</li>\n<li>Marina &amp; The Diamonds - Are You Satisfied</li>\n<li>The Dirty Heads - Lay Me Down</li>\n<li>Yeasayer - Madder Red</li>\n<li>Ben Harper and The Innocent Criminals - Fight Outta You</li>\n<li>Animal Collective - My Girls</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://www.mediafire.com/download.php?cukw9wncvb27ws1\">Download</a></p>\n<p><a href=\"http://listen.grooveshark.com/#/playlist/Monday+Music+Mix+01/42078207\">Listen on Grooveshark</a></p>\n<p>Like it? Love it? Let me know.</p>",
+    "archiveHtmlPath": "posts/html/43517876936.html",
+    "archiveTimestampText": "December 27th, 2010 5:24pm",
+    "archiveMediaPath": "media/43517876936.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

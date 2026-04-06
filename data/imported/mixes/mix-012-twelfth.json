@@ -1,0 +1,124 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-012-twelfth",
+  "slug": "mix-012-twelfth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517794318",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517794318",
+    "archiveExport": {
+      "postId": "43517794318",
+      "htmlPath": "posts/html/43517794318.html",
+      "timestampText": "March 14th, 2011 9:23am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517794318.jpg"
+    }
+  },
+  "title": "Monday Music Mix #12",
+  "displayTitle": "Twelfth",
+  "mixNumber": 12,
+  "publishedAt": "2011-03-14T03:53:00Z",
+  "summary": "Welcome to Monday Music Mix - Crowdsourced edition! This week’s mix features some great tracks, handpicked by some of you. A big thanks to Nitin, Ananya, Joogz, fine_whining, Coke, and Cyrus for some fantastic suggestions. I haven’t been able to feature all the excellent which has been suggested last week (sorry Shreyansh, jigabachi and others) - but I promise to feature it in coming weeks - please bear with me :)",
+  "intro": [
+    "Welcome to Monday Music Mix - Crowdsourced edition! This week’s mix features some great tracks, handpicked by some of you. A big thanks to Nitin, Ananya, Joogz, fine_whining, Coke, and Cyrus for some fantastic suggestions. I haven’t been able to feature all the excellent which has been suggested last week (sorry Shreyansh, jigabachi and others) - but I promise to feature it in coming weeks - please bear with me :)",
+    "So without further ado:",
+    "Download album (zip format)",
+    "Subscribe to Monday Music Mix podcast (coming whenever I stop feeling lazy)",
+    "Listen to Grooveshark playlist *NEW*",
+    "Like what you heard? Send some love through the comments section, if you please."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twelfth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-012-twelfth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?g0dz4ag1gj58at6"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "The Books",
+      "title": "Tokyo",
+      "displayText": "The Books - Tokyo",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Guster",
+      "title": "Satellite",
+      "displayText": "Guster - Satellite",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Chairlift",
+      "title": "Bruises",
+      "displayText": "Chairlift - Bruises",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Paolo Nutini",
+      "title": "New Shoes",
+      "displayText": "Paolo Nutini - New Shoes",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Luke Doucet And The White Falcon",
+      "title": "Monkeys",
+      "displayText": "Luke Doucet And The White Falcon - Monkeys",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Wax Tailor",
+      "title": "Que Sera",
+      "displayText": "Wax Tailor - Que Sera",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Belleruche",
+      "title": "Clockwatching",
+      "displayText": "Belleruche - Clockwatching",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "The Books",
+      "Guster",
+      "Chairlift",
+      "Paolo Nutini",
+      "Luke Doucet And The White Falcon"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Twelfth",
+    "tumblrHeading": "Twelfth",
+    "descriptionHtml": "<h2>Twelfth</h2><p>Welcome to Monday Music Mix - Crowdsourced edition! This week&rsquo;s mix features some great tracks, handpicked by some of you. A big thanks to Nitin, Ananya, Joogz, fine_whining, Coke, and Cyrus for some fantastic suggestions. I haven&rsquo;t been able to feature all the excellent which has been suggested last week (sorry Shreyansh, jigabachi and others) - but I promise to feature it in coming weeks - please bear with me :)</p>\n<p>So without further ado:</p>\n<p><strong>Monday Music Mix: 12</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>The Books - Tokyo</li>\n<li>Guster - Satellite</li>\n<li>Chairlift - Bruises</li>\n<li>Paolo Nutini - New Shoes</li>\n<li>Luke Doucet And The White Falcon - Monkeys</li>\n<li>Wax Tailor - Que Sera</li>\n<li>Belleruche - Clockwatching</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.mediafire.com/download.php?g0dz4ag1gj58at6\">Download album</a> (zip format)</p>\n<p>Subscribe to Monday Music Mix podcast (coming whenever I stop feeling lazy)</p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+12/50379010?src=5\">Listen to Grooveshark playlist</a> <em>*NEW*</em></p>\n<p>Like what you heard? Send some love through the comments section, if you please.</p>",
+    "archiveHtmlPath": "posts/html/43517794318.html",
+    "archiveTimestampText": "March 14th, 2011 9:23am",
+    "archiveMediaPath": "media/43517794318.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

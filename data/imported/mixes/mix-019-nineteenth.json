@@ -1,0 +1,172 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-019-nineteenth",
+  "slug": "mix-019-nineteenth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517745817",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517745817",
+    "archiveExport": {
+      "postId": "43517745817",
+      "htmlPath": "posts/html/43517745817.html",
+      "timestampText": "June 24th, 2011 6:20pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517745817.jpg"
+    }
+  },
+  "title": "Monday Music Mix #19",
+  "displayTitle": "Nineteenth",
+  "mixNumber": 19,
+  "publishedAt": "2011-06-24T12:50:00Z",
+  "summary": "Late yet again, but that’s only because I’ve been neck deep in work. And, I celebrated my birthday last weekend. Still hungover a bit, but life’s swell.",
+  "intro": [
+    "Late yet again, but that’s only because I’ve been neck deep in work. And, I celebrated my birthday last weekend. Still hungover a bit, but life’s swell.",
+    "Monday Friday Music Mix: 19",
+    "Listen online"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Nineteenth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-019-nineteenth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://dl.dropbox.com/u/96311/MondayMusicMix-19.zip"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Laura Veirs",
+      "title": "Saltbreakers",
+      "displayText": "Laura Veirs - Saltbreakers",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "My Morning Jacket",
+      "title": "Circuital",
+      "displayText": "My Morning Jacket - Circuital",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Badly Drawn Boy",
+      "title": "This Electric",
+      "displayText": "Badly Drawn Boy - This Electric",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Clap Your Hands Say Yeah",
+      "title": "Same Mistake",
+      "displayText": "Clap Your Hands Say Yeah - Same Mistake",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Cansei de Ser Sexy (CSS)",
+      "title": "Hits Me Like A Rock",
+      "displayText": "Cansei de Ser Sexy (CSS) - Hits Me Like A Rock",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Beirut",
+      "title": "East Harlem",
+      "displayText": "Beirut - East Harlem",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Iron & Wine",
+      "title": "Biting Your Tail",
+      "displayText": "Iron & Wine - Biting Your Tail",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Ghost Estates",
+      "title": "Paris",
+      "displayText": "Ghost Estates - Paris",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Owl Eyes",
+      "title": "Pumped Up Kicks (Foster the People cover)",
+      "displayText": "Owl Eyes - Pumped Up Kicks (Foster the People cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Starfucker",
+      "title": "Born",
+      "displayText": "Starfucker - Born",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "Cults",
+      "title": "You Know What I Mean",
+      "displayText": "Cults - You Know What I Mean",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Art Brut",
+      "title": "Unprofessional Wrestling",
+      "displayText": "Art Brut - Unprofessional Wrestling",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Gang Gang Dance",
+      "title": "Mindkilla",
+      "displayText": "Gang Gang Dance - Mindkilla",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Future Islands",
+      "title": "Before the Bridge",
+      "displayText": "Future Islands - Before the Bridge",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 14,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Laura Veirs",
+      "My Morning Jacket",
+      "Badly Drawn Boy",
+      "Clap Your Hands Say Yeah",
+      "Cansei de Ser Sexy (CSS)"
+    ],
+    "coverCount": 1,
+    "coverTracks": [
+      "Owl Eyes - Pumped Up Kicks (Foster the People cover)"
+    ],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Nineteenth",
+    "tumblrHeading": "Nineteenth",
+    "descriptionHtml": "<h2>Nineteenth</h2><p>Late yet again, but that&rsquo;s only because I&rsquo;ve been neck deep in work. And, I celebrated my birthday last weekend. Still hungover a bit, but life&rsquo;s swell.</p>\n<p><strong>Monday Friday Music Mix: 19</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Laura Veirs - Saltbreakers</li>\n<li>My Morning Jacket - Circuital</li>\n<li>Badly Drawn Boy - This Electric</li>\n<li>Clap Your Hands Say Yeah - Same Mistake</li>\n<li>Cansei de Ser Sexy (CSS) - Hits Me Like A Rock</li>\n<li>Beirut - East Harlem</li>\n<li>Iron &amp; Wine - Biting Your Tail</li>\n<li>Ghost Estates - Paris</li>\n<li>Owl Eyes - Pumped Up Kicks (Foster the People cover)</li>\n<li>Starfucker - Born</li>\n<li>Cults - You Know What I Mean</li>\n<li>Art Brut - Unprofessional Wrestling</li>\n<li>Gang Gang Dance - Mindkilla</li>\n<li>Future Islands - Before the Bridge</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://dl.dropbox.com/u/96311/MondayMusicMix-19.zip\">Download album</a></p>\n<p><a href=\"http://min.us/mv2019\">Listen online</a></p>",
+    "archiveHtmlPath": "posts/html/43517745817.html",
+    "archiveTimestampText": "June 24th, 2011 6:20pm",
+    "archiveMediaPath": "media/43517745817.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

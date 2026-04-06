@@ -1,0 +1,123 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-013-thirteenth",
+  "slug": "mix-013-thirteenth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517789384",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517789384",
+    "archiveExport": {
+      "postId": "43517789384",
+      "htmlPath": "posts/html/43517789384.html",
+      "timestampText": "March 21st, 2011 7:28pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517789384.jpg"
+    }
+  },
+  "title": "Monday Music Mix #13",
+  "displayTitle": "Thirteenth",
+  "mixNumber": 13,
+  "publishedAt": "2011-03-21T13:58:00Z",
+  "summary": "I’m getting a bit lethargic after long weekends, which is why these mixes are getting posted this late. However there’s a silver lining - with this laziness, I do get to sample some excellent music - and this week’s mix is as eclectic as it gets. Some very interesting styles being covered in this one.",
+  "intro": [
+    "I’m getting a bit lethargic after long weekends, which is why these mixes are getting posted this late. However there’s a silver lining - with this laziness, I do get to sample some excellent music - and this week’s mix is as eclectic as it gets. Some very interesting styles being covered in this one.",
+    "As always, suggestions, comments and ideas are always welcome.",
+    "Download album (zip format)",
+    "Listen to Grooveshark playlist",
+    "Like what you heard? Send some love through the comments section, if you please."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Thirteenth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-013-thirteenth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?s64jfu4166i74rg"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Seekae",
+      "title": "Gnor",
+      "displayText": "Seekae - Gnor",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Sandra Kolstad",
+      "title": "The Devil",
+      "displayText": "Sandra Kolstad - The Devil",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Ikea Satan",
+      "title": "The Wait",
+      "displayText": "Ikea Satan - The Wait",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Zebra Tracks",
+      "title": "Isabelle Creeps",
+      "displayText": "Zebra Tracks - Isabelle Creeps",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Young Michelin",
+      "title": "Les Copains",
+      "displayText": "Young Michelin - Les Copains",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Aluna George",
+      "title": "Disobey",
+      "displayText": "Aluna George - Disobey",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Robin Pecknold",
+      "title": "I’m Losing Myself (Feat. Ed Droste)",
+      "displayText": "Robin Pecknold - I’m Losing Myself (Feat. Ed Droste)",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Seekae",
+      "Sandra Kolstad",
+      "Ikea Satan",
+      "Zebra Tracks",
+      "Young Michelin"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Thirteenth",
+    "tumblrHeading": "Thirteenth",
+    "descriptionHtml": "<h2>Thirteenth</h2><p>I&rsquo;m getting a bit lethargic after long weekends, which is why these mixes are getting posted this late. However there&rsquo;s a silver lining - with this laziness, I do get to sample some excellent music - and this week&rsquo;s mix is as eclectic as it gets. Some very interesting styles being covered in this one. </p>\n<p>As always, suggestions, comments and ideas are always welcome. </p>\n<p><strong>Monday Music Mix: 13</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Seekae - Gnor</li>\n<li>Sandra Kolstad - The Devil</li>\n<li>Ikea Satan - The Wait</li>\n<li>Zebra Tracks - Isabelle Creeps</li>\n<li>Young Michelin - Les Copains</li>\n<li>Aluna George - Disobey</li>\n<li>Robin Pecknold - I&rsquo;m Losing Myself (Feat. Ed Droste)</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.mediafire.com/download.php?s64jfu4166i74rg\">Download album</a> (zip format) </p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+13/50679007?src=5\">Listen to Grooveshark playlist</a> </p>\n<p>Like what you heard? Send some love through the comments section, if you please.</p>",
+    "archiveHtmlPath": "posts/html/43517789384.html",
+    "archiveTimestampText": "March 21st, 2011 7:28pm",
+    "archiveMediaPath": "media/43517789384.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

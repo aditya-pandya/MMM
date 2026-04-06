@@ -1,0 +1,123 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-014-fourteenth",
+  "slug": "mix-014-fourteenth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517781217",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517781217",
+    "archiveExport": {
+      "postId": "43517781217",
+      "htmlPath": "posts/html/43517781217.html",
+      "timestampText": "March 31st, 2011 2:45pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517781217.jpg"
+    }
+  },
+  "title": "Monday Music Mix #14",
+  "displayTitle": "Fourteenth",
+  "mixNumber": 14,
+  "publishedAt": "2011-03-31T09:15:00Z",
+  "summary": "I’m not eloquent with words so I’m not even going to try - but my sincere apologies to all the wonderful folks who tune in religiously every week expecting a great mix. I know I have been extremely late with this week’s mix and it is for a good reason. I think personal crisis trumps everything else. Last couple of days have been the toughest of my life so far (I’m not going to go into details now) - so I just needed some time off to introspect, think hard and make some tough decisions. While not yet completely resolved, I will get there in a couple of days.",
+  "intro": [
+    "I’m not eloquent with words so I’m not even going to try - but my sincere apologies to all the wonderful folks who tune in religiously every week expecting a great mix. I know I have been extremely late with this week’s mix and it is for a good reason. I think personal crisis trumps everything else. Last couple of days have been the toughest of my life so far (I’m not going to go into details now) - so I just needed some time off to introspect, think hard and make some tough decisions. While not yet completely resolved, I will get there in a couple of days.",
+    "To make up for the lost time, I promise you an excellent mix - something that will (attempt to) blow your socks off, give you goosebumps.. you get the drift. New DCFC, TV on the Radio, and some other excellent tracks in there - including a somewhat-old mashup that I’ve loved over the years. Hope the song selection makes up for all those agonizing moments.",
+    "Download album (zip format)",
+    "Listen to Grooveshark playlist (soon, stuck because one song is not getting uploaded)",
+    "Like what you heard? Send some love through the comments section, if you please."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Fourteenth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-014-fourteenth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": null
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "White Rabbits",
+      "title": "Percussion Gun",
+      "displayText": "White Rabbits - Percussion Gun",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Hot Club de Paris",
+      "title": "Hello. I Wrote A Song For You Called Welcome To The Jungle",
+      "displayText": "Hot Club de Paris - Hello. I Wrote A Song For You Called Welcome To The Jungle",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Brand New vs. Dashboard Confessional",
+      "title": "The Quiet Screaming",
+      "displayText": "Brand New vs. Dashboard Confessional - The Quiet Screaming",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Ben Harper & The Innocent Criminals",
+      "title": "In The Colors",
+      "displayText": "Ben Harper & The Innocent Criminals - In The Colors",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Thurston Moore",
+      "title": "Benediction",
+      "displayText": "Thurston Moore - Benediction",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "TV on the Radio",
+      "title": "Caffeinated Consciousness",
+      "displayText": "TV on the Radio - Caffeinated Consciousness",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Death Cab For Cutie",
+      "title": "You Are A Tourist",
+      "displayText": "Death Cab For Cutie - You Are A Tourist",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "White Rabbits",
+      "Hot Club de Paris",
+      "Brand New vs. Dashboard Confessional",
+      "Ben Harper & The Innocent Criminals",
+      "Thurston Moore"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Fourteenth",
+    "tumblrHeading": "Fourteenth",
+    "descriptionHtml": "<h2>Fourteenth</h2><p>I&rsquo;m not eloquent with words so I&rsquo;m not even going to try - but my sincere apologies to all the wonderful folks who tune in religiously every week expecting a great mix. I know I have been extremely late with this week&rsquo;s mix and it is for a good reason. I think personal crisis trumps everything else. Last couple of days have been the toughest of my life so far (I&rsquo;m not going to go into details now) - so I just needed some time off to introspect, think hard and make some tough decisions. While not yet completely resolved, I will get there in a couple of days.</p>\n<p>To make up for the lost time, I promise you an excellent mix - something that will (attempt to) blow your socks off, give you goosebumps.. you get the drift. New DCFC, TV on the Radio, and some other excellent tracks in there - including a somewhat-old mashup that I&rsquo;ve loved over the years. Hope the song selection makes up for all those agonizing moments.</p>\n<p><strong>Monday Music Mix: 14</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>White Rabbits - Percussion Gun</li>\n<li>Hot Club de Paris - Hello. I Wrote A Song For You Called Welcome To The Jungle</li>\n<li>Brand New vs. Dashboard Confessional - The Quiet Screaming</li>\n<li>Ben Harper &amp; The Innocent Criminals - In The Colors</li>\n<li>Thurston Moore - Benediction</li>\n<li>TV on the Radio - Caffeinated Consciousness</li>\n<li>Death Cab For Cutie - You Are A Tourist</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.filefactory.com/file/ca677a2/n/MondayMusicMix-14_zip\">Download album</a> (zip format) </p>\n<p>Listen to Grooveshark playlist (soon, stuck because one song is not getting uploaded)</p>\n<p>Like what you heard? Send some love through the comments section, if you please.</p>",
+    "archiveHtmlPath": "posts/html/43517781217.html",
+    "archiveTimestampText": "March 31st, 2011 2:45pm",
+    "archiveMediaPath": "media/43517781217.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

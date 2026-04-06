@@ -1,0 +1,124 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-002-second",
+  "slug": "mix-002-second",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517870849",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517870849",
+    "archiveExport": {
+      "postId": "43517870849",
+      "htmlPath": "posts/html/43517870849.html",
+      "timestampText": "January 3rd, 2011 9:32pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517870849.jpg"
+    }
+  },
+  "title": "Monday Music Mix #2",
+  "displayTitle": "Second",
+  "mixNumber": 2,
+  "publishedAt": "2011-01-03T16:02:00Z",
+  "summary": "Happy new year, everyone! I know I am bending the rules a little by putting up the mix when Monday is almost over - but blame it on having a full time job and the ever so clichéd Monday blues.",
+  "intro": [
+    "Happy new year, everyone! I know I am bending the rules a little by putting up the mix when Monday is almost over - but blame it on having a full time job and the ever so clichéd Monday blues.",
+    "Right, so I’ve tried to change things up a bit - this time not only do you get to download the mix in album format, but for all you podcast lovers, there is (an almost) gapless podcast in mp3 format as well. Not a big fan of downloading music? Use the Grooveshark playlist to stream the mix.",
+    "Links at the end of the post.",
+    "Download",
+    "Listen on Grooveshark",
+    "Send feedback, suggest a song, or say hello by leaving a comment."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Second",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-002-second/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?ujiwylz2w8ij100"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Vampire Weekend",
+      "title": "Ottoman",
+      "displayText": "Vampire Weekend - Ottoman",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Kate Nash",
+      "title": "I’m Not Gonna Teach Your Boyfriend How to Dance (originally by The Black Kids)",
+      "displayText": "Kate Nash - I’m Not Gonna Teach Your Boyfriend How to Dance (originally by The Black Kids)",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Great Northern",
+      "title": "Houses",
+      "displayText": "Great Northern - Houses",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Iglu & Hartly",
+      "title": "Violent And Young",
+      "displayText": "Iglu & Hartly - Violent And Young",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "The Very Best",
+      "title": "Warm Heart Of Africa (feat. Ezra Koenig of Vampire Weekend)",
+      "displayText": "The Very Best - Warm Heart Of Africa (feat. Ezra Koenig of Vampire Weekend)",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Florence & The Machine",
+      "title": "Rabbit Heart (Lift Me Up)",
+      "displayText": "Florence & The Machine - Rabbit Heart (Lift Me Up)",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Islands",
+      "title": "Rough Gem",
+      "displayText": "Islands - Rough Gem",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Vampire Weekend",
+      "Kate Nash",
+      "Great Northern",
+      "Iglu & Hartly",
+      "The Very Best"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Second",
+    "tumblrHeading": "Second",
+    "descriptionHtml": "<h2>Second</h2><p>Happy new year, everyone! I know I am bending the rules a little by putting up the mix when Monday is almost over - but blame it on having a full time job and the ever so clichéd Monday blues.</p>\n<p>Right, so I&rsquo;ve tried to change things up a bit - this time not only do you get to download the mix in album format, but for all you podcast lovers, there is (an almost) gapless podcast in mp3 format as well. Not a big fan of downloading music? Use the Grooveshark playlist to stream the mix.</p>\n<p>Links at the end of the post.</p>\n<p><strong>Monday Music Mix: 02</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Vampire Weekend - Ottoman</li>\n<li>Kate Nash - I&rsquo;m Not Gonna Teach Your Boyfriend How to Dance (originally by The Black Kids)</li>\n<li>Great Northern - Houses</li>\n<li>Iglu &amp; Hartly - Violent And Young</li>\n<li>The Very Best - Warm Heart Of Africa (feat. Ezra Koenig of Vampire Weekend)</li>\n<li>Florence &amp; The Machine - Rabbit Heart (Lift Me Up)</li>\n<li>Islands - Rough Gem</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://www.mediafire.com/download.php?ujiwylz2w8ij100\">Download</a></p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+02/41785390\">Listen on Grooveshark</a></p>\n<p>Send feedback, suggest a song, or say hello by leaving a comment.</p>",
+    "archiveHtmlPath": "posts/html/43517870849.html",
+    "archiveTimestampText": "January 3rd, 2011 9:32pm",
+    "archiveMediaPath": "media/43517870849.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

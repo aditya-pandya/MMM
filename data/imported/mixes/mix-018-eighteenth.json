@@ -1,0 +1,169 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-018-eighteenth",
+  "slug": "mix-018-eighteenth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517751489",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517751489",
+    "archiveExport": {
+      "postId": "43517751489",
+      "htmlPath": "posts/html/43517751489.html",
+      "timestampText": "June 13th, 2011 2:24am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517751489.jpg"
+    }
+  },
+  "title": "Monday Music Mix #18",
+  "displayTitle": "Eighteenth",
+  "mixNumber": 18,
+  "publishedAt": "2011-06-12T20:54:00Z",
+  "summary": "A Monday mix to give you the blues.",
+  "intro": [
+    "A Monday mix to give you the blues.",
+    "Download album (zip format)"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Eighteenth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-018-eighteenth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": null
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Pinback",
+      "title": "Boo",
+      "displayText": "Pinback - Boo",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Sparrow House",
+      "title": "When I Am Gone",
+      "displayText": "Sparrow House - When I Am Gone",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Noah And The Whale",
+      "title": "Second Lover",
+      "displayText": "Noah And The Whale - Second Lover",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "The Get Up Kids",
+      "title": "No Love",
+      "displayText": "The Get Up Kids - No Love",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Blur",
+      "title": "No Distance Left To Run",
+      "displayText": "Blur - No Distance Left To Run",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Bright Eyes",
+      "title": "It’s Cool, We Can Still Be Friends",
+      "displayText": "Bright Eyes - It’s Cool, We Can Still Be Friends",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Coldplay",
+      "title": "Warning Sign",
+      "displayText": "Coldplay - Warning Sign",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Elliott Smith",
+      "title": "I Didn’t Understand",
+      "displayText": "Elliott Smith - I Didn’t Understand",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Johnny Cash",
+      "title": "Hurt",
+      "displayText": "Johnny Cash - Hurt",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "The Mountain Goats",
+      "title": "No Children",
+      "displayText": "The Mountain Goats - No Children",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "dios Malos",
+      "title": "Asshole",
+      "displayText": "dios Malos - Asshole",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Kid Cudi",
+      "title": "Erase Me",
+      "displayText": "Kid Cudi - Erase Me",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Glee Cast",
+      "title": "Songbird (originally by Fleetwood Mac)",
+      "displayText": "Glee Cast - Songbird (originally by Fleetwood Mac)",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Guillemots",
+      "title": "Blue Would Still Be Blue",
+      "displayText": "Guillemots - Blue Would Still Be Blue",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 14,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Pinback",
+      "Sparrow House",
+      "Noah And The Whale",
+      "The Get Up Kids",
+      "Blur"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Eighteenth",
+    "tumblrHeading": "Eighteenth",
+    "descriptionHtml": "<h2>Eighteenth</h2><p>A Monday mix to give you the blues.</p>\n<p>Monday<strong> Music Mix: 18</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Pinback - Boo</li>\n<li>Sparrow House - When I Am Gone</li>\n<li>Noah And The Whale - Second Lover</li>\n<li>The Get Up Kids - No Love</li>\n<li>Blur - No Distance Left To Run</li>\n<li>Bright Eyes - It&rsquo;s Cool, We Can Still Be Friends</li>\n<li>Coldplay - Warning Sign</li>\n<li>Elliott Smith - I Didn&rsquo;t Understand</li>\n<li>Johnny Cash - Hurt</li>\n<li>The Mountain Goats - No Children</li>\n<li>dios Malos - Asshole</li>\n<li>Kid Cudi - Erase Me</li>\n<li>Glee Cast - Songbird (originally by Fleetwood Mac)</li>\n<li>Guillemots - Blue Would Still Be Blue</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.filefactory.com/file/c231d89/n/18.zip\">Download album</a> (zip format)</p>",
+    "archiveHtmlPath": "posts/html/43517751489.html",
+    "archiveTimestampText": "June 13th, 2011 2:24am",
+    "archiveMediaPath": "media/43517751489.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

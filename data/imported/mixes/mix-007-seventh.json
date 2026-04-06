@@ -1,0 +1,123 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-007-seventh",
+  "slug": "mix-007-seventh",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517835498",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517835498",
+    "archiveExport": {
+      "postId": "43517835498",
+      "htmlPath": "posts/html/43517835498.html",
+      "timestampText": "February 7th, 2011 9:00am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517835498.jpg"
+    }
+  },
+  "title": "Monday Music Mix #7",
+  "displayTitle": "Seventh",
+  "mixNumber": 7,
+  "publishedAt": "2011-02-07T03:30:00Z",
+  "summary": "Another week, another mix.",
+  "intro": [
+    "Another week, another mix.",
+    "Special thanks: Ananya for her recommendation (Holy Fuck) :)",
+    "Download album (zip format)",
+    "Subscribe to Monday Music Mix podcast (you’ll need Winamp, iTunes or any other music player that supports podcasts)",
+    "Listen to Grooveshark playlist"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Seventh",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-007-seventh/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://dl.dropbox.com/u/96311/MondayMusicMix-07.zip"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Keep Shelly in Athens",
+      "title": "Hauntin’ Me",
+      "displayText": "Keep Shelly in Athens - Hauntin’ Me",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Work Drugs",
+      "title": "Third Wave",
+      "displayText": "Work Drugs - Third Wave",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "John Vanderslice",
+      "title": "Sea Salt",
+      "displayText": "John Vanderslice - Sea Salt",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Young Galaxy",
+      "title": "We Have Everything",
+      "displayText": "Young Galaxy - We Have Everything",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "The Luyas",
+      "title": "Too Beautiful To Work",
+      "displayText": "The Luyas - Too Beautiful To Work",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Fleet Foxes",
+      "title": "Helplessness Blues",
+      "displayText": "Fleet Foxes - Helplessness Blues",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Holy Fuck",
+      "title": "Latin America",
+      "displayText": "Holy Fuck - Latin America",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Keep Shelly in Athens",
+      "Work Drugs",
+      "John Vanderslice",
+      "Young Galaxy",
+      "The Luyas"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Seventh",
+    "tumblrHeading": "Seventh",
+    "descriptionHtml": "<h2>Seventh</h2><p>Another week, another mix. </p>\n<p><strong>Monday Music Mix: 07</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Keep Shelly in Athens - Hauntin&rsquo; Me</li>\n<li>Work Drugs - Third Wave</li>\n<li>John Vanderslice - Sea Salt</li>\n<li>Young Galaxy - We Have Everything</li>\n<li>The Luyas - Too Beautiful To Work</li>\n<li>Fleet Foxes - Helplessness Blues</li>\n<li>Holy Fuck - Latin America</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p>Special thanks: Ananya for her recommendation (Holy Fuck) :)</p>\n<ol> </ol>\n<p><a href=\"http://dl.dropbox.com/u/96311/MondayMusicMix-07.zip\">Download album</a> (zip format)</p>\n<p><a href=\"http://dl.dropbox.com/u/96311/podcast/podcast.xml\">Subscribe to Monday Music Mix podcas</a>t (you&rsquo;ll need Winamp, iTunes or any other music player that supports podcasts)</p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+07/43300861?src=5\">Listen to Grooveshark playlist</a></p>",
+    "archiveHtmlPath": "posts/html/43517835498.html",
+    "archiveTimestampText": "February 7th, 2011 9:00am",
+    "archiveMediaPath": "media/43517835498.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

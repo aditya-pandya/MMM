@@ -19,6 +19,10 @@ META: July 2013 · Mix 33
 H3: Thirtythird
 META: 3 highlighted tracks
 TEXT: As always, back after a fairly long period of absence. MMM isn’t dead, not just yet.
+META: March 2013 · Mix 32
+H3: Thirtysecond
+META: 3 highlighted tracks
+TEXT: Brand new mix at a brand new address. New Postal Service demo, a fantastic AlunaGeorge track and some other surprises.
 EYEBROW: From the notebook
 H2: Notes that explain why a mix stayed around.
 COPY: Short editorial fragments now have their own pages and stay wired back into the archive.

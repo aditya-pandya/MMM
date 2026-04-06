@@ -1,0 +1,123 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-023-twentythird",
+  "slug": "mix-023-twentythird",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517718124",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517718124",
+    "archiveExport": {
+      "postId": "43517718124",
+      "htmlPath": "posts/html/43517718124.html",
+      "timestampText": "January 9th, 2012 8:44pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517718124.jpg"
+    }
+  },
+  "title": "Monday Music Mix #23",
+  "displayTitle": "Twentythird",
+  "mixNumber": 23,
+  "publishedAt": "2012-01-09T15:14:00Z",
+  "summary": "So after four odd months of absence, MMM is back. With a bang? Probably not.",
+  "intro": [
+    "So after four odd months of absence, MMM is back. With a bang? Probably not.",
+    "I had plans to make this a bit of an elaborate affair with a bit of commentary and such, but thanks to a bit of hectic schedule (work and personal life), it wasn’t meant to be. Perhaps next time.",
+    "The format of this project is going to change, more on that soon. In all likelihood there will be a new mix out once every two or three weeks as opposed to every week. If you’d like more recommendations, follow me on Twitter instead.",
+    "Also, happy new year.",
+    "Monday Music Mix 23"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twentythird",
+    "credit": "Album art featuring photography by Bharat Sikka",
+    "canonicalAssetPath": "data/media/tumblr/mix-023-twentythird/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?wmce3rhat0zof3w"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Cults",
+      "title": "Go Outside",
+      "displayText": "Cults - Go Outside",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Atlas Sound",
+      "title": "Te Amo",
+      "displayText": "Atlas Sound - Te Amo",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Pearl and the Puppets",
+      "title": "Little Diamonds",
+      "displayText": "Pearl and the Puppets - Little Diamonds",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Jim Ward",
+      "title": "Broken Songs",
+      "displayText": "Jim Ward - Broken Songs",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Wu Lyf",
+      "title": "We Bros",
+      "displayText": "Wu Lyf - We Bros",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Rich Aucoin",
+      "title": "It",
+      "displayText": "Rich Aucoin - It",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Bombay Bicycle Club",
+      "title": "Lights Out, Words Gone",
+      "displayText": "Bombay Bicycle Club - Lights Out, Words Gone",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Cults",
+      "Atlas Sound",
+      "Pearl and the Puppets",
+      "Jim Ward",
+      "Wu Lyf"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Twentythird",
+    "tumblrHeading": "Twentythird",
+    "descriptionHtml": "<h2>Twentythird</h2><p>So after four odd months of absence, MMM is back. With a bang? Probably not.</p>\n<p>I had plans to make this a bit of an elaborate affair with a bit of commentary and such, but thanks to a bit of hectic schedule (work and personal life), it wasn&rsquo;t meant to be. Perhaps next time.</p>\n<p>The format of this project is going to change, more on that soon. In all likelihood there will be a new mix out once every two or three weeks as opposed to every week. If you&rsquo;d like more recommendations, <a href=\"http://twitter.com/laemo\">follow me on Twitter</a> instead.</p>\n<p>Also, happy new year.<br/></p>\n<p>Album art featuring photography by <a href=\"http://www.bharatsikka.com/\">Bharat Sikka</a></p>\n<p><strong>Monday Music Mix 23</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Cults - Go Outside</li>\n<li>Atlas Sound - Te Amo</li>\n<li>Pearl and the Puppets - Little Diamonds</li>\n<li>Jim Ward - Broken Songs </li>\n<li>Wu Lyf - We Bros</li>\n<li>Rich Aucoin - It</li>\n<li>Bombay Bicycle Club - Lights Out, Words Gone</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.mediafire.com/download.php?wmce3rhat0zof3w\">Download album</a></p>",
+    "archiveHtmlPath": "posts/html/43517718124.html",
+    "archiveTimestampText": "January 9th, 2012 8:44pm",
+    "archiveMediaPath": "media/43517718124.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-022-twentysecond",
+  "slug": "mix-022-twentysecond",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517724338",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517724338",
+    "archiveExport": {
+      "postId": "43517724338",
+      "htmlPath": "posts/html/43517724338.html",
+      "timestampText": "August 15th, 2011 11:52pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517724338.jpg"
+    }
+  },
+  "title": "Monday Music Mix #22",
+  "displayTitle": "Twentysecond",
+  "mixNumber": 22,
+  "publishedAt": "2011-08-15T18:22:00Z",
+  "summary": "This is the sequel (sort of) to the eighteenth mix. A friend asked for it, and I got carried away. Yes, some artists are a bit mainstream, some tracks are done to death, but that’s not the point.",
+  "intro": [
+    "This is the sequel (sort of) to the eighteenth mix. A friend asked for it, and I got carried away. Yes, some artists are a bit mainstream, some tracks are done to death, but that’s not the point.",
+    "Listen to eighteenth, then listen to this. Repeat.",
+    "Monday Music Mix 22: The Blues, Deus Ex",
+    "So this one’s a monster of a mix. So, I’ve split it up in two parts.",
+    "Download: Part 1 | Part 2"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twentysecond",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-022-twentysecond/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?zd0uvraos1z6ba7"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Snow Patrol",
+      "title": "You Could Be Happy",
+      "displayText": "Snow Patrol - You Could Be Happy",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Girls",
+      "title": "Broken Dreams Club",
+      "displayText": "Girls - Broken Dreams Club",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Rachael Yamagata",
+      "title": "Over And Over",
+      "displayText": "Rachael Yamagata - Over And Over",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Bon Iver",
+      "title": "Flume",
+      "displayText": "Bon Iver - Flume",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "The Honorary Title",
+      "title": "Everything I Once Had",
+      "displayText": "The Honorary Title - Everything I Once Had",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Florence and the Machine",
+      "title": "Hardest Of Hearts",
+      "displayText": "Florence and the Machine - Hardest Of Hearts",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Wilco",
+      "title": "We’re Just Friends",
+      "displayText": "Wilco - We’re Just Friends",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Modest Mouse",
+      "title": "Edit The Sad Parts (has a 1+ minute silence in the end)",
+      "displayText": "Modest Mouse - Edit The Sad Parts (has a 1+ minute silence in the end)",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "The Get Up Kids",
+      "title": "Overdue",
+      "displayText": "The Get Up Kids - Overdue",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Mumford & Sons",
+      "title": "I Gave You All",
+      "displayText": "Mumford & Sons - I Gave You All",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "Switchfoot",
+      "title": "On Fire",
+      "displayText": "Switchfoot - On Fire",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Billy Bragg & Wilco",
+      "title": "At My Window Sad And Lonely",
+      "displayText": "Billy Bragg & Wilco - At My Window Sad And Lonely",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Blue October",
+      "title": "Congratulations (Feat. Imogen Heap)",
+      "displayText": "Blue October - Congratulations (Feat. Imogen Heap)",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Great Lake Swimmers",
+      "title": "Stealing Tomorrow",
+      "displayText": "Great Lake Swimmers - Stealing Tomorrow",
+      "isFavorite": false
+    },
+    {
+      "position": 15,
+      "artist": "Nick Cave & The Bad Seeds",
+      "title": "O Children",
+      "displayText": "Nick Cave & The Bad Seeds - O Children",
+      "isFavorite": false
+    },
+    {
+      "position": 16,
+      "artist": "Citizen Cope",
+      "title": "Sideways",
+      "displayText": "Citizen Cope - Sideways",
+      "isFavorite": false
+    },
+    {
+      "position": 17,
+      "artist": "Longwave",
+      "title": "Tidal Wave",
+      "displayText": "Longwave - Tidal Wave",
+      "isFavorite": false
+    },
+    {
+      "position": 18,
+      "artist": "Bell X1",
+      "title": "Eve, The Apple Of My Eye",
+      "displayText": "Bell X1 - Eve, The Apple Of My Eye",
+      "isFavorite": false
+    },
+    {
+      "position": 19,
+      "artist": "Joseph Gordon-Levitt",
+      "title": "I Don’t Want To Live On The Moon",
+      "displayText": "Joseph Gordon-Levitt - I Don’t Want To Live On The Moon",
+      "isFavorite": false
+    },
+    {
+      "position": 20,
+      "artist": "The Cure",
+      "title": "Pictures Of You",
+      "displayText": "The Cure - Pictures Of You",
+      "isFavorite": false
+    },
+    {
+      "position": 21,
+      "artist": "Falling Up",
+      "title": "Islander",
+      "displayText": "Falling Up - Islander",
+      "isFavorite": false
+    },
+    {
+      "position": 22,
+      "artist": "Jenny Lewis",
+      "title": "Godspeed",
+      "displayText": "Jenny Lewis - Godspeed",
+      "isFavorite": false
+    },
+    {
+      "position": 23,
+      "artist": "Carole King",
+      "title": "It’s Too Late Baby",
+      "displayText": "Carole King - It’s Too Late Baby",
+      "isFavorite": false
+    },
+    {
+      "position": 24,
+      "artist": "My Drunken Haze",
+      "title": "Too Afraid To Love You (Black Keys cover)",
+      "displayText": "My Drunken Haze - Too Afraid To Love You (Black Keys cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 25,
+      "artist": "Five for Fighting",
+      "title": "Dying",
+      "displayText": "Five for Fighting - Dying",
+      "isFavorite": false
+    },
+    {
+      "position": 26,
+      "artist": "Bat for Lashes",
+      "title": "I’m On Fire",
+      "displayText": "Bat for Lashes - I’m On Fire",
+      "isFavorite": false
+    },
+    {
+      "position": 27,
+      "artist": "Cursive",
+      "title": "What Have I Done",
+      "displayText": "Cursive - What Have I Done",
+      "isFavorite": false
+    },
+    {
+      "position": 28,
+      "artist": "Josh Groban",
+      "title": "February Song",
+      "displayText": "Josh Groban - February Song",
+      "isFavorite": false
+    },
+    {
+      "position": 29,
+      "artist": "Death Cab for Cutie",
+      "title": "The Ice Is Getting Thinner",
+      "displayText": "Death Cab for Cutie - The Ice Is Getting Thinner",
+      "isFavorite": false
+    },
+    {
+      "position": 30,
+      "artist": "Arcade Fire",
+      "title": "Crown Of Love",
+      "displayText": "Arcade Fire - Crown Of Love",
+      "isFavorite": false
+    },
+    {
+      "position": 31,
+      "artist": "The Gaslight Anthem",
+      "title": "Here’s Looking At You, Kid",
+      "displayText": "The Gaslight Anthem - Here’s Looking At You, Kid",
+      "isFavorite": false
+    },
+    {
+      "position": 32,
+      "artist": "Band of Horses",
+      "title": "The Funeral",
+      "displayText": "Band of Horses - The Funeral",
+      "isFavorite": false
+    },
+    {
+      "position": 33,
+      "artist": "Jimmy Eat World",
+      "title": "23",
+      "displayText": "Jimmy Eat World - 23",
+      "isFavorite": false
+    },
+    {
+      "position": 34,
+      "artist": "Angus & Julia Stone",
+      "title": "What You Wanted",
+      "displayText": "Angus & Julia Stone - What You Wanted",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 34,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Snow Patrol",
+      "Girls",
+      "Rachael Yamagata",
+      "Bon Iver",
+      "The Honorary Title"
+    ],
+    "coverCount": 1,
+    "coverTracks": [
+      "My Drunken Haze - Too Afraid To Love You (Black Keys cover)"
+    ],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Twentysecond",
+    "tumblrHeading": "Twentysecond",
+    "descriptionHtml": "<h2>Twentysecond</h2><p>This is the sequel (sort of) to the <a href=\"http://mondaymusicmix.posterous.com/eighteenth\">eighteenth mix</a>. A friend asked for it, and I got carried away. Yes, some artists are a bit mainstream, some tracks are done to death, but that&rsquo;s not the point.</p>\n<p>Listen to eighteenth, then listen to this. Repeat.</p>\n<p><strong>Monday Music Mix 22: The Blues, Deus Ex</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Snow Patrol - You Could Be Happy</li>\n<li>Girls - Broken Dreams Club</li>\n<li>Rachael Yamagata - Over And Over</li>\n<li>Bon Iver - Flume</li>\n<li>The Honorary Title - Everything I Once Had</li>\n<li>Florence and the Machine - Hardest Of Hearts</li>\n<li>Wilco - We&rsquo;re Just Friends</li>\n<li>Modest Mouse - Edit The Sad Parts (has a 1+ minute silence in the end)</li>\n<li>The Get Up Kids - Overdue</li>\n<li>Mumford &amp; Sons - I Gave You All</li>\n<li>Switchfoot - On Fire</li>\n<li>Billy Bragg &amp; Wilco - At My Window Sad And Lonely</li>\n<li>Blue October - Congratulations (Feat. Imogen Heap)</li>\n<li>Great Lake Swimmers - Stealing Tomorrow</li>\n<li>Nick Cave &amp; The Bad Seeds - O Children</li>\n<li>Citizen Cope - Sideways</li>\n<li>Longwave - Tidal Wave</li>\n<li>Bell X1 - Eve, The Apple Of My Eye</li>\n<li>Joseph Gordon-Levitt - I Don&rsquo;t Want To Live On The Moon</li>\n<li>The Cure - Pictures Of You</li>\n<li>Falling Up - Islander</li>\n<li>Jenny Lewis - Godspeed</li>\n<li>Carole King - It&rsquo;s Too Late Baby</li>\n<li>My Drunken Haze - Too Afraid To Love You (Black Keys cover)</li>\n<li>Five for Fighting - Dying</li>\n<li>Bat for Lashes - I&rsquo;m On Fire</li>\n<li>Cursive - What Have I Done</li>\n<li>Josh Groban - February Song</li>\n<li>Death Cab for Cutie - The Ice Is Getting Thinner</li>\n<li>Arcade Fire - Crown Of Love</li>\n<li>The Gaslight Anthem - Here&rsquo;s Looking At You, Kid</li>\n<li>Band of Horses - The Funeral</li>\n<li>Jimmy Eat World - 23</li>\n<li>Angus &amp; Julia Stone - What You Wanted</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p>So this one&rsquo;s a monster of a mix. So, I&rsquo;ve split it up in two parts. </p>\n<p>Download: <a href=\"http://www.mediafire.com/download.php?zd0uvraos1z6ba7\">Part 1</a> | <a href=\"http://www.mediafire.com/download.php?cwvosjk5i7ov4vd\">Part 2</a></p>",
+    "archiveHtmlPath": "posts/html/43517724338.html",
+    "archiveTimestampText": "August 15th, 2011 11:52pm",
+    "archiveMediaPath": "media/43517724338.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

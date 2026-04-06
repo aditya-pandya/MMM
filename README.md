@@ -180,8 +180,9 @@ python3 scripts/manage_artwork.py register mix-036-thirtysixth \
 Notes:
 - `data/media/artwork-registry.json` is the canonical local artwork/provenance index.
 - Keep registered asset paths inside `data/media/` so the registry stays local-safe and portable with the repo.
-- Use `python3 scripts/sync_tumblr_artwork.py mix-034-thirtyfourth mix-035-thirtyfifth` or `npm run artwork:sync:tumblr -- mix-034-thirtyfourth` to download the exact Tumblr-hosted cover bytes into `data/media/tumblr/<mix-slug>/` and promote them into the canonical cover slot.
-- Tumblr artwork sync records SHA-256, byte size, media type, ETag/Last-Modified when available, original source URL, and the field that discovered the image.
+- Use `python3 scripts/sync_tumblr_artwork.py mix-034-thirtyfourth mix-035-thirtyfifth` or `npm run artwork:sync:tumblr -- mix-034-thirtyfourth` to promote canonical Tumblr artwork into `data/media/tumblr/<mix-slug>/`.
+- When a local Tumblr export is available at `/tmp/mmm-tumblr-archive`, the sync prefers those exact exported bytes and only falls back to downloading remote Tumblr-hosted bytes when no archive asset can be found.
+- Tumblr artwork sync records SHA-256, byte size, media type, original source provenance, and the field that discovered the image.
 
 Persist YouTube per-track candidate state locally:
 
@@ -193,7 +194,8 @@ npm run youtube:match -- mix-035-thirtyfifth
 Notes:
 - Match state lives in `data/youtube/<mix-slug>.json`.
 - The matcher stores the scored candidate set for each track and only auto-resolves clearly dominant hits.
-- `pending-review`, `no-candidate`, and duplicate holdbacks are intentional. The build will not render a fake or implied full-mix embed while any track is unresolved.
+- `pending-review`, `no-candidate`, and duplicate holdbacks are intentional human-review checkpoints.
+- Do not manually bless a full-mix YouTube embed until every track has a reviewed `selectedVideoId`. The build will keep the embed blocked while any track is unresolved.
 - Once every track is explicitly resolved, the build renders an honest YouTube queue embed from explicit video IDs instead of a claimed playlist ID.
 
 ## Local editorial workflow
@@ -253,6 +255,18 @@ From a local file:
 python3 scripts/import_tumblr.py data/imported/raw/mondaymusicmix-rss.xml --output-dir data/imported/mixes
 ```
 
+From the extracted Tumblr archive HTML export:
+
+```bash
+python3 scripts/import_tumblr_archive.py
+npm run tumblr:archive:import
+```
+
+Notes:
+- The archive importer reads `/tmp/mmm-tumblr-archive/posts/html`, skips non-mix asks, and safely fills `data/imported/mixes/` without rewriting the existing RSS-derived 33-36 files unless `--rewrite-existing` is passed.
+- Archive footer timestamps omit timezone. The importer currently assumes `+05:30` because mixes 33-36 overlap with the RSS export and match that local clock exactly; the raw footer timestamp is also preserved in the JSON.
+- Archive-derived mixes use the exact exported `media/*.jpg` bytes as canonical local artwork and record that provenance in `data/media/artwork-registry.json`.
+
 Repair existing imported or published mix JSON from the preserved legacy HTML snapshot:
 
 ```bash
@@ -271,6 +285,11 @@ Generate persisted YouTube candidate/match state for published mixes:
 ```bash
 python3 scripts/sync_youtube_matches.py mix-035-thirtyfifth mix-036-thirtysixth
 ```
+
+Review rule:
+- ambiguous, duplicate, or low-confidence matches stay pending on purpose
+- the site only renders a full-mix YouTube embed when every track is resolved
+- validation and `/studio/` call out blocked YouTube review work explicitly
 
 ## Rebuild taste profile
 

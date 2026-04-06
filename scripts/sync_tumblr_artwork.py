@@ -6,6 +6,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import mimetypes
+import os
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
@@ -18,6 +20,7 @@ from mmm_common import DATA_DIR, ROOT, ValidationError, dump_json, ensure_kebab_
 PUBLISHED_DIR = DATA_DIR / "published"
 IMPORTED_DIR = DATA_DIR / "imported" / "mixes"
 MEDIA_TUMBLR_DIR = DATA_DIR / "media" / "tumblr"
+DEFAULT_ARCHIVE_ROOT = Path(os.environ.get("MMM_TUMBLR_ARCHIVE_ROOT", "/tmp/mmm-tumblr-archive"))
 
 
 class LegacyImageParser(HTMLParser):
@@ -61,6 +64,57 @@ def extract_legacy_image(description_html: str) -> str:
     return parser.images[0] if parser.images else ""
 
 
+def infer_post_id(mix: dict[str, Any]) -> str:
+    source = mix.get("source") if isinstance(mix.get("source"), dict) else {}
+    archive_export = source.get("archiveExport") if isinstance(source.get("archiveExport"), dict) else {}
+    legacy = mix.get("legacy") if isinstance(mix.get("legacy"), dict) else {}
+    cover = mix.get("cover") if isinstance(mix.get("cover"), dict) else {}
+
+    candidates = [
+        archive_export.get("postId"),
+        archive_export.get("mediaPath"),
+        archive_export.get("htmlPath"),
+        source.get("guid"),
+        source.get("sourceUrl"),
+        legacy.get("archiveMediaPath"),
+        legacy.get("archiveHtmlPath"),
+        cover.get("imageUrl"),
+    ]
+    for candidate in candidates:
+        match = re.search(r"(\d{8,})", str(candidate or ""))
+        if match:
+            return match.group(1)
+    return ""
+
+
+def resolve_archive_media_path(mix: dict[str, Any], archive_root: Path | None = None) -> tuple[Path | None, str | None]:
+    archive_root = archive_root or DEFAULT_ARCHIVE_ROOT
+    source = mix.get("source") if isinstance(mix.get("source"), dict) else {}
+    archive_export = source.get("archiveExport") if isinstance(source.get("archiveExport"), dict) else {}
+    legacy = mix.get("legacy") if isinstance(mix.get("legacy"), dict) else {}
+
+    for relative_path, discovered_from in (
+        (archive_export.get("mediaPath"), "source.archiveExport.mediaPath"),
+        (legacy.get("archiveMediaPath"), "legacy.archiveMediaPath"),
+    ):
+        relative = str(relative_path or "").strip()
+        if not relative:
+            continue
+        candidate = (archive_root / relative).resolve()
+        if candidate.is_file():
+            return candidate, discovered_from
+
+    post_id = infer_post_id(mix)
+    if not post_id:
+        return None, None
+
+    media_dir = archive_root / "media"
+    for candidate in sorted(media_dir.glob(f"{post_id}*")):
+        if candidate.is_file():
+            return candidate, "archive-export/media by post id"
+    return None, None
+
+
 def resolve_cover_url(mix: dict[str, Any]) -> tuple[str, str]:
     cover = mix.get("cover") if isinstance(mix.get("cover"), dict) else {}
     image_url = str(cover.get("imageUrl") or "").strip()
@@ -88,6 +142,17 @@ def download_bytes(url: str) -> tuple[bytes, dict[str, str | None]]:
     return body, metadata
 
 
+def load_local_bytes(path: Path) -> tuple[bytes, dict[str, str | None]]:
+    return (
+        path.read_bytes(),
+        {
+            "mediaType": mimetypes.guess_type(path.name)[0] or "application/octet-stream",
+            "etag": None,
+            "lastModified": None,
+        },
+    )
+
+
 def determine_extension(url: str, media_type: str | None) -> str:
     guessed = mimetypes.guess_extension(media_type or "", strict=False)
     if guessed:
@@ -102,17 +167,28 @@ def sync_mix_artwork(path: Path, registry_path: Path) -> dict[str, Any]:
     if str(source.get("platform") or "").strip().lower() != "tumblr":
         raise ValidationError(f"{path.name} is not marked as a Tumblr-derived mix")
 
-    url, discovered_from = resolve_cover_url(mix)
-    body, remote_meta = download_bytes(url)
-    extension = determine_extension(url, remote_meta.get("mediaType"))
+    local_archive_path, discovered_from = resolve_archive_media_path(mix)
+    cover = mix.get("cover") if isinstance(mix.get("cover"), dict) else {}
+    source_reference = str(cover.get("imageUrl") or "").strip()
+    if local_archive_path is not None:
+        body, remote_meta = load_local_bytes(local_archive_path)
+        extension = local_archive_path.suffix or determine_extension(local_archive_path.as_uri(), remote_meta.get("mediaType"))
+        source_reference = local_archive_path.as_uri()
+        provenance_label = "Exact Tumblr archive export cover image bytes"
+        provenance_notes = f"Copied from the local Tumblr archive export for {path.relative_to(ROOT).as_posix()} and promoted to canonical local artwork."
+    else:
+        url, discovered_from = resolve_cover_url(mix)
+        body, remote_meta = download_bytes(url)
+        extension = determine_extension(url, remote_meta.get("mediaType"))
+        source_reference = url
+        provenance_label = "Exact Tumblr-hosted cover image bytes"
+        provenance_notes = f"Downloaded from Tumblr for {path.relative_to(ROOT).as_posix()} and promoted to canonical local artwork."
     destination_dir = MEDIA_TUMBLR_DIR / mix["slug"]
     destination_dir.mkdir(parents=True, exist_ok=True)
     asset_path = destination_dir / f"cover{extension}"
     asset_path.write_bytes(body)
 
     asset_relative = asset_path.relative_to(ROOT).as_posix()
-    cover = mix.get("cover") if isinstance(mix.get("cover"), dict) else {}
-    cover["imageUrl"] = cover.get("imageUrl") or url
     cover["canonicalAssetPath"] = asset_relative
     mix["cover"] = cover
     dump_json(path, mix)
@@ -137,10 +213,10 @@ def sync_mix_artwork(path: Path, registry_path: Path) -> dict[str, Any]:
         },
         "provenance": {
             "sourceType": "tumblr-original",
-            "sourceLabel": "Exact Tumblr-hosted cover image bytes",
-            "sourceUrl": url,
+            "sourceLabel": provenance_label,
+            "sourceUrl": source_reference,
             "discoveredFrom": discovered_from,
-            "notes": f"Downloaded from Tumblr for {path.relative_to(ROOT).as_posix()} and promoted to canonical local artwork.",
+            "notes": provenance_notes,
         },
     }
     registry["schemaVersion"] = "1.0"

@@ -1,0 +1,124 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-011-eleventh",
+  "slug": "mix-011-eleventh",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517802721",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517802721",
+    "archiveExport": {
+      "postId": "43517802721",
+      "htmlPath": "posts/html/43517802721.html",
+      "timestampText": "March 7th, 2011 7:00pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517802721.jpg"
+    }
+  },
+  "title": "Monday Music Mix #11",
+  "displayTitle": "Eleventh",
+  "mixNumber": 11,
+  "publishedAt": "2011-03-07T13:30:00Z",
+  "summary": "Wow, this has been a tough one. Selecting songs, selecting art - it’s never been this difficult. I’ve tried to mix it up a bit, and sadly I’ve sort of gone with the popular route a bit. You might recognize some songs, and if you do - I apologize for failing in my attempt to introduce you to some new bits of music. At the end of the day, you win some, you lose some.",
+  "intro": [
+    "Wow, this has been a tough one. Selecting songs, selecting art - it’s never been this difficult. I’ve tried to mix it up a bit, and sadly I’ve sort of gone with the popular route a bit. You might recognize some songs, and if you do - I apologize for failing in my attempt to introduce you to some new bits of music. At the end of the day, you win some, you lose some.",
+    "This week’s mix features some fantastic music - my personal favourite British sensation Ellie Goulding whose album hits US shores tomorrow, the mighty talented Adele with a cover of Cure’s Lovesong, latest from Panda Bear and more.",
+    "Next edition is going to be all about you. Suggest art, artists, tracks you like - and I’ll be sure to feature ‘em (at least try to!) Leave a comment if you’d like to collaborate. Hope you enjoy this week’s mix.",
+    "Download album (zip format)",
+    "Subscribe to Monday Music Mix podcast (coming whenever I stop feeling lazy)",
+    "Listen to Grooveshark playlist *NEW*"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Eleventh",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-011-eleventh/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?b69sa80x80j92hv"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Ellie Goulding",
+      "title": "Guns and Horses",
+      "displayText": "Ellie Goulding - Guns and Horses",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Summer Camp",
+      "title": "I Want You",
+      "displayText": "Summer Camp - I Want You",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Adele",
+      "title": "Lovesong (originally by The Cure)",
+      "displayText": "Adele - Lovesong (originally by The Cure)",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Panda Bear",
+      "title": "Last Night At The Jetty",
+      "displayText": "Panda Bear - Last Night At The Jetty",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Beirut",
+      "title": "Elephant Gun",
+      "displayText": "Beirut - Elephant Gun",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Interpol",
+      "title": "No I In Threesome",
+      "displayText": "Interpol - No I In Threesome",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "The Morning Benders",
+      "title": "Excuses",
+      "displayText": "The Morning Benders - Excuses",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Ellie Goulding",
+      "Summer Camp",
+      "Adele",
+      "Panda Bear",
+      "Beirut"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Eleventh",
+    "tumblrHeading": "Eleventh",
+    "descriptionHtml": "<h2>Eleventh</h2><p>Wow, this has been a tough one. Selecting songs, selecting art - it&rsquo;s never been this difficult. I&rsquo;ve tried to mix it up a bit, and sadly I&rsquo;ve sort of gone with the popular route a bit. You might recognize some songs, and if you do - I apologize for failing in my attempt to introduce you to some new bits of music. At the end of the day, you win some, you lose some.</p>\n<p>This week&rsquo;s mix features some fantastic music - my personal favourite British sensation Ellie Goulding whose album hits US shores tomorrow, the mighty talented Adele with a cover of Cure&rsquo;s Lovesong, latest from Panda Bear and more.</p>\n<p>Next edition is going to be all about <em>you</em>. Suggest art, artists, tracks you like - and I&rsquo;ll be sure to feature &lsquo;em (at least try to!)<br/>Leave a comment if you&rsquo;d like to collaborate. Hope you enjoy this week&rsquo;s mix. </p>\n<p><strong>Monday Music Mix: 11 (UPDATED)</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Ellie Goulding - Guns and Horses</li>\n<li>Summer Camp - I Want You</li>\n<li>Adele - Lovesong (originally by The Cure)</li>\n<li>Panda Bear - Last Night At The Jetty</li>\n<li>Beirut - Elephant Gun</li>\n<li>Interpol - No I In Threesome</li>\n<li>The Morning Benders - Excuses</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://www.mediafire.com/download.php?b69sa80x80j92hv\">Download album</a> (zip format)</p>\n<p>Subscribe to Monday Music Mix podcast (coming whenever I stop feeling lazy)</p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+11/50051099?src=5\">Listen to Grooveshark playlist</a> <em>*NEW*</em></p>",
+    "archiveHtmlPath": "posts/html/43517802721.html",
+    "archiveTimestampText": "March 7th, 2011 7:00pm",
+    "archiveMediaPath": "media/43517802721.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

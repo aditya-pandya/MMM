@@ -15,6 +15,7 @@
     "artwork:scaffold": "python3 scripts/manage_artwork.py scaffold",
     "artwork:register": "python3 scripts/manage_artwork.py register",
     "artwork:sync:tumblr": "python3 scripts/sync_tumblr_artwork.py",
+    "tumblr:archive:import": "python3 scripts/import_tumblr_archive.py",
     "youtube:match": "python3 scripts/sync_youtube_matches.py",
     "draft:new": "python3 scripts/create_content.py draft-mix",
     "note:new": "python3 scripts/create_content.py note",

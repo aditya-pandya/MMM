@@ -1,0 +1,122 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-004-fourth",
+  "slug": "mix-004-fourth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517856294",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517856294",
+    "archiveExport": {
+      "postId": "43517856294",
+      "htmlPath": "posts/html/43517856294.html",
+      "timestampText": "January 17th, 2011 4:46pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517856294.jpg"
+    }
+  },
+  "title": "Monday Music Mix #4",
+  "displayTitle": "Fourth",
+  "mixNumber": 4,
+  "publishedAt": "2011-01-17T11:16:00Z",
+  "summary": "This has been the toughest mix to put together. Three days of work, very little sleep and time. There isn’t a podcast version yet, stay tuned for the same. Download link at the end of the post.",
+  "intro": [
+    "This has been the toughest mix to put together. Three days of work, very little sleep and time. There isn’t a podcast version yet, stay tuned for the same. Download link at the end of the post.",
+    "Download",
+    "Listen on Grooveshark",
+    "Send your love (if any) and feedback through the comments."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Fourth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-004-fourth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?has8lv31529jljs"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Mumford & Sons",
+      "title": "Hold On To What You Believe",
+      "displayText": "Mumford & Sons - Hold On To What You Believe",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Passion Pit",
+      "title": "The Reeling",
+      "displayText": "Passion Pit - The Reeling",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "White Lies",
+      "title": "Death",
+      "displayText": "White Lies - Death",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Maximo Park",
+      "title": "In Another World (You’d Have Found Yourself By Now)",
+      "displayText": "Maximo Park - In Another World (You’d Have Found Yourself By Now)",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Noisettes",
+      "title": "Never Forget You",
+      "displayText": "Noisettes - Never Forget You",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Gossip",
+      "title": "Love Long Distance",
+      "displayText": "Gossip - Love Long Distance",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Caribou",
+      "title": "Odessa (DJ Koze’s Campfire)",
+      "displayText": "Caribou - Odessa (DJ Koze’s Campfire)",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Mumford & Sons",
+      "Passion Pit",
+      "White Lies",
+      "Maximo Park",
+      "Noisettes"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Fourth",
+    "tumblrHeading": "Fourth",
+    "descriptionHtml": "<h2>Fourth</h2><p>This has been the toughest mix to put together. Three days of work, very little sleep and time. There isn&rsquo;t a podcast version yet, stay tuned for the same. Download link at the end of the post.</p>\n<p><strong>Monday Music Mix: 04</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Mumford &amp; Sons - Hold On To What You Believe</li>\n<li>Passion Pit - The Reeling</li>\n<li>White Lies - Death</li>\n<li>Maximo Park - In Another World (You&rsquo;d Have Found Yourself By Now)</li>\n<li>Noisettes - Never Forget You</li>\n<li>Gossip - Love Long Distance</li>\n<li>Caribou - Odessa (DJ Koze&rsquo;s Campfire)</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://www.mediafire.com/download.php?has8lv31529jljs\">Download</a></p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+04/42388208\">Listen on Grooveshark</a></p>\n<p>Send your love (if any) and feedback through the comments.</p>",
+    "archiveHtmlPath": "posts/html/43517856294.html",
+    "archiveTimestampText": "January 17th, 2011 4:46pm",
+    "archiveMediaPath": "media/43517856294.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

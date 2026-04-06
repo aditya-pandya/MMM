@@ -1,0 +1,172 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-032-thirtysecond",
+  "slug": "mix-032-thirtysecond",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/46233489989",
+    "guid": "https://mondaymusicmix.tumblr.com/post/46233489989",
+    "archiveExport": {
+      "postId": "46233489989",
+      "htmlPath": "posts/html/46233489989.html",
+      "timestampText": "March 25th, 2013 11:22am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/46233489989_0.jpg"
+    }
+  },
+  "title": "Monday Music Mix #32",
+  "displayTitle": "Thirtysecond",
+  "mixNumber": 32,
+  "publishedAt": "2013-03-25T05:52:00Z",
+  "summary": "Brand new mix at a brand new address. New Postal Service demo, a fantastic AlunaGeorge track and some other surprises.",
+  "intro": [
+    "Brand new mix at a brand new address. New Postal Service demo, a fantastic AlunaGeorge track and some other surprises."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": "https://64.media.tumblr.com/3bfa63663261a850f1d3f49748ff8a49/ff661167c2d924d3-15/s540x810/6349e5962fd596dbff0f3a5a11212ea0703d0730.jpg",
+    "alt": "Cover art for Thirtysecond",
+    "credit": "Album art featuring work by Yuko Shimizu",
+    "canonicalAssetPath": "data/media/tumblr/mix-032-thirtysecond/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "https://mega.co.nz/#!IdwwBLwC!NWupKj8bqpNfoJnjqNhpKF1EBGZMCUjdR1lTSJtUQ6o"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Phoenix",
+      "title": "Entertainment",
+      "displayText": "Phoenix - Entertainment",
+      "isFavorite": true
+    },
+    {
+      "position": 2,
+      "artist": "Haim",
+      "title": "Falling",
+      "displayText": "Haim - Falling",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Lemolo",
+      "title": "Open Air",
+      "displayText": "Lemolo - Open Air",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Now, Now",
+      "title": "Dead Oaks",
+      "displayText": "Now, Now - Dead Oaks",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Magic Man",
+      "title": "Paris",
+      "displayText": "Magic Man - Paris",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "James Blake",
+      "title": "Digital Lion",
+      "displayText": "James Blake - Digital Lion",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Earl Sweatshirt",
+      "title": "Chum",
+      "displayText": "Earl Sweatshirt - Chum",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Dirty Projectors",
+      "title": "There’s A Fire",
+      "displayText": "Dirty Projectors - There’s A Fire",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Jamaican Queens",
+      "title": "Kids Get Away",
+      "displayText": "Jamaican Queens - Kids Get Away",
+      "isFavorite": true
+    },
+    {
+      "position": 10,
+      "artist": "The Postal Service",
+      "title": "A Tattered Line Of String",
+      "displayText": "The Postal Service - A Tattered Line Of String",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "Slowdance",
+      "title": "Boyfriend",
+      "displayText": "Slowdance - Boyfriend",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Weeknight",
+      "title": "Devil",
+      "displayText": "Weeknight - Devil",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "London Grammar",
+      "title": "Hey Now",
+      "displayText": "London Grammar - Hey Now",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "AlunaGeorge",
+      "title": "Attracting Flies",
+      "displayText": "AlunaGeorge - Attracting Flies",
+      "isFavorite": true
+    }
+  ],
+  "stats": {
+    "trackCount": 14,
+    "favoriteCount": 3,
+    "favoriteTracks": [
+      "Phoenix - Entertainment",
+      "Jamaican Queens - Kids Get Away",
+      "AlunaGeorge - Attracting Flies"
+    ],
+    "topArtists": [
+      "Phoenix",
+      "Haim",
+      "Lemolo",
+      "Now, Now",
+      "Magic Man"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Thirtysecond",
+    "tumblrHeading": "Thirtysecond",
+    "descriptionHtml": "<h2>Thirtysecond</h2>\n<p>Brand new mix at a brand new address. New Postal Service demo, a fantastic AlunaGeorge track and some other surprises.</p>\n<p><strong>Monday Music Mix: 32</strong></p>\n<p><strong><figure class=\"tmblr-full\" data-orig-height=\"400\" data-orig-width=\"400\"><img alt=\"image\" src=\"https://64.media.tumblr.com/3bfa63663261a850f1d3f49748ff8a49/ff661167c2d924d3-15/s540x810/6349e5962fd596dbff0f3a5a11212ea0703d0730.jpg\" data-orig-height=\"400\" data-orig-width=\"400\"/></figure></strong></p>\n\n<p>Album art featuring work by <a href=\"http://www.behance.net/yuko\" target=\"_blank\">Yuko Shimizu</a></p>\n<p>Tracklist:</p>\n<ol><li><strong>Phoenix - Entertainment</strong></li>\n<li>Haim - Falling</li>\n<li>Lemolo - Open Air</li>\n<li>Now, Now - Dead Oaks</li>\n<li>Magic Man - Paris</li>\n<li>James Blake - Digital Lion</li>\n<li>Earl Sweatshirt - Chum</li>\n<li>Dirty Projectors - There&rsquo;s A Fire</li>\n<li><strong>Jamaican Queens - Kids Get Away</strong></li>\n<li>The Postal Service - A Tattered Line Of String</li>\n<li>Slowdance - Boyfriend</li>\n<li>Weeknight - Devil</li>\n<li>London Grammar - Hey Now</li>\n<li><strong>AlunaGeorge - Attracting Flies</strong></li>\n</ol><p>* Tracks in bold indicate my favourites</p>\n<p><a href=\"https://mega.co.nz/#!IdwwBLwC!NWupKj8bqpNfoJnjqNhpKF1EBGZMCUjdR1lTSJtUQ6o\" target=\"_blank\">Download album</a></p>",
+    "archiveHtmlPath": "posts/html/46233489989.html",
+    "archiveTimestampText": "March 25th, 2013 11:22am",
+    "archiveMediaPath": "media/46233489989_0.jpg",
+    "favoriteTrackCue": "* Tracks in bold indicate my favourites"
+  }
+}

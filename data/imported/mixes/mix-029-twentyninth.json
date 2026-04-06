@@ -1,0 +1,221 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-029-twentyninth",
+  "slug": "mix-029-twentyninth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517680083",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517680083",
+    "archiveExport": {
+      "postId": "43517680083",
+      "htmlPath": "posts/html/43517680083.html",
+      "timestampText": "September 3rd, 2012 9:36am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517680083.jpg"
+    }
+  },
+  "title": "Monday Music Mix #29",
+  "displayTitle": "Twentyninth",
+  "mixNumber": 29,
+  "publishedAt": "2012-09-03T04:06:00Z",
+  "summary": "Finally! I’m making a habit out of this aren’t I? But the truth is, I’ve heard so much awful music of late that I haven’t been compelled to put out a mix. That, and trips back home and everything in between. I’m going to try and make this a fortnightly affair but my other pet project completes three years on the 19th, so there’s plenty on my plate and simply not enough clones.",
+  "intro": [
+    "Finally! I’m making a habit out of this aren’t I? But the truth is, I’ve heard so much awful music of late that I haven’t been compelled to put out a mix. That, and trips back home and everything in between. I’m going to try and make this a fortnightly affair but my other pet project completes three years on the 19th, so there’s plenty on my plate and simply not enough clones.",
+    "This one has a lot of standout tracks, so happy listening my fellow indie enthusiast.",
+    "Download album | Mirror"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twentyninth",
+    "credit": "Album art featuring work by Andrew Bannecker",
+    "canonicalAssetPath": "data/media/tumblr/mix-029-twentyninth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/?a563cwo85kg9xbb"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Reptile Youth",
+      "title": "Shooting Up Sunshine",
+      "displayText": "Reptile Youth - Shooting Up Sunshine",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Jesca Hoop",
+      "title": "Hospital (Win Your Love)",
+      "displayText": "Jesca Hoop - Hospital (Win Your Love)",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Best Coast",
+      "title": "The Only Place",
+      "displayText": "Best Coast - The Only Place",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "The Noisettes",
+      "title": "That Girl",
+      "displayText": "The Noisettes - That Girl",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Michael Kiwanuka",
+      "title": "Bones",
+      "displayText": "Michael Kiwanuka - Bones",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Azure Ray",
+      "title": "Scattered Like Leaves",
+      "displayText": "Azure Ray - Scattered Like Leaves",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Eternal Summers",
+      "title": "You Kill",
+      "displayText": "Eternal Summers - You Kill",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Deap Vally",
+      "title": "Gonna Make My Own Money",
+      "displayText": "Deap Vally - Gonna Make My Own Money",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Passion Pit",
+      "title": "Constant Conversations",
+      "displayText": "Passion Pit - Constant Conversations",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Kid Cudi",
+      "title": "Dennis, Hook Me Up With Some More Of This Whiskey!",
+      "displayText": "Kid Cudi - Dennis, Hook Me Up With Some More Of This Whiskey!",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "Bat For Lashes",
+      "title": "Laura",
+      "displayText": "Bat For Lashes - Laura",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Purity Ring",
+      "title": "Fineshrine",
+      "displayText": "Purity Ring - Fineshrine",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Ellie Goulding",
+      "title": "Anything Could Happen",
+      "displayText": "Ellie Goulding - Anything Could Happen",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Stars",
+      "title": "Hold On When You Get Love and Let Go When You Give It",
+      "displayText": "Stars - Hold On When You Get Love and Let Go When You Give It",
+      "isFavorite": false
+    },
+    {
+      "position": 15,
+      "artist": "Two Door Cinema Club",
+      "title": "Sleep Alone",
+      "displayText": "Two Door Cinema Club - Sleep Alone",
+      "isFavorite": false
+    },
+    {
+      "position": 16,
+      "artist": "d’Eon",
+      "title": "Now You Do",
+      "displayText": "d’Eon - Now You Do",
+      "isFavorite": false
+    },
+    {
+      "position": 17,
+      "artist": "Dum Dum Girls",
+      "title": "Lord Knows",
+      "displayText": "Dum Dum Girls - Lord Knows",
+      "isFavorite": false
+    },
+    {
+      "position": 18,
+      "artist": "Jens Lekman",
+      "title": "I Know What Love Isn’t",
+      "displayText": "Jens Lekman - I Know What Love Isn’t",
+      "isFavorite": false
+    },
+    {
+      "position": 19,
+      "artist": "LP",
+      "title": "Halo (Beyoncé cover)",
+      "displayText": "LP - Halo (Beyoncé cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 20,
+      "artist": "jj",
+      "title": "High Summer",
+      "displayText": "jj - High Summer",
+      "isFavorite": false
+    },
+    {
+      "position": 21,
+      "artist": "Jinja Safari",
+      "title": "Peter Pan",
+      "displayText": "Jinja Safari - Peter Pan",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 21,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Reptile Youth",
+      "Jesca Hoop",
+      "Best Coast",
+      "The Noisettes",
+      "Michael Kiwanuka"
+    ],
+    "coverCount": 1,
+    "coverTracks": [
+      "LP - Halo (Beyoncé cover)"
+    ],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Twentyninth",
+    "tumblrHeading": "Twentyninth",
+    "descriptionHtml": "<h2>Twentyninth</h2>\n<p>Finally! I’m making a habit out of this aren’t I? But the truth is, I’ve heard so much awful music of late that I haven’t been compelled to put out a mix. That, and trips back home and everything in between. I’m going to try and make this a fortnightly affair but my other pet project completes three years on the 19th, so there’s plenty on my plate and simply not enough clones.</p>\n<p>This one has a lot of standout tracks, so happy listening my fellow indie enthusiast.</p>\n<p><strong>Monday Music Mix: 29</strong></p>\n<p>Album art featuring work by <a href=\"http://www.andrewbannecker.com/\">Andrew Bannecker</a></p>\n<p>Tracklist:</p>\n<ol>\n<li>Reptile Youth - Shooting Up Sunshine</li>\n<li>Jesca Hoop - Hospital (Win Your Love)</li>\n<li>Best Coast - The Only Place</li>\n<li>The Noisettes - That Girl</li>\n<li>Michael Kiwanuka - Bones</li>\n<li>Azure Ray - Scattered Like Leaves</li>\n<li>Eternal Summers - You Kill</li>\n<li>Deap Vally - Gonna Make My Own Money</li>\n<li>Passion Pit - Constant Conversations</li>\n<li>Kid Cudi - Dennis, Hook Me Up With Some More Of This Whiskey!</li>\n<li>Bat For Lashes - Laura</li>\n<li>Purity Ring - Fineshrine</li>\n<li>Ellie Goulding - Anything Could Happen</li>\n<li>Stars - Hold On When You Get Love and Let Go When You Give It</li>\n<li>Two Door Cinema Club - Sleep Alone</li>\n<li>d’Eon - Now You Do </li>\n<li>Dum Dum Girls - Lord Knows</li>\n<li>Jens Lekman - I Know What Love Isn’t</li>\n<li>LP - Halo (Beyoncé cover)</li>\n<li>jj - High Summer</li>\n<li>Jinja Safari - Peter Pan</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.mediafire.com/?a563cwo85kg9xbb\">Download album</a> | <a href=\"https://dl.dropboxusercontent.com/u/96311/MMM-29.zip\">Mirror</a></p>",
+    "archiveHtmlPath": "posts/html/43517680083.html",
+    "archiveTimestampText": "September 3rd, 2012 9:36am",
+    "archiveMediaPath": "media/43517680083.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

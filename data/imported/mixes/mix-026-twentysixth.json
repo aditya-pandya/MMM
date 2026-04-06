@@ -1,0 +1,120 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-026-twentysixth",
+  "slug": "mix-026-twentysixth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517697006",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517697006",
+    "archiveExport": {
+      "postId": "43517697006",
+      "htmlPath": "posts/html/43517697006.html",
+      "timestampText": "March 19th, 2012 2:16am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517697006.jpg"
+    }
+  },
+  "title": "Monday Music Mix #26",
+  "displayTitle": "Twentysixth",
+  "mixNumber": 26,
+  "publishedAt": "2012-03-18T20:46:00Z",
+  "summary": "For you.",
+  "intro": [
+    "For you.",
+    "Got feedback? Who cares. Go away. I don’t want any of it."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twentysixth",
+    "credit": "Album art featuring work by Tony Larson",
+    "canonicalAssetPath": "data/media/tumblr/mix-026-twentysixth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/?p349bs4nkccizxe"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Owl Eyes",
+      "title": "Raiders",
+      "displayText": "Owl Eyes - Raiders",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Wu Lyf",
+      "title": "Dirt",
+      "displayText": "Wu Lyf - Dirt",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Gorillaz",
+      "title": "Do Ya Thing (feat. Andre 3000 and James Murphy)",
+      "displayText": "Gorillaz - Do Ya Thing (feat. Andre 3000 and James Murphy)",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Loon Lake",
+      "title": "Bad To Me",
+      "displayText": "Loon Lake - Bad To Me",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "The Antlers",
+      "title": "Putting The Dog To Sleep",
+      "displayText": "The Antlers - Putting The Dog To Sleep",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "The Mountain Goats",
+      "title": "High Hawk Season",
+      "displayText": "The Mountain Goats - High Hawk Season",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Beach House",
+      "title": "Myth",
+      "displayText": "Beach House - Myth",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Owl Eyes",
+      "Wu Lyf",
+      "Gorillaz",
+      "Loon Lake",
+      "The Antlers"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Twentysixth",
+    "tumblrHeading": "Twentysixth",
+    "descriptionHtml": "<h2>Twentysixth</h2><p>For you.</p>\n<p><strong>Monday Music Mix: 26</strong></p>\n\n<p>Album art featuring work by <a href=\"http://www.tonylarsonstudio.com/\">Tony Larson</a></p>\n<p>Tracklist:</p>\n<ol>\n<li>Owl Eyes - Raiders</li>\n<li>Wu Lyf - Dirt</li>\n<li>Gorillaz - Do Ya Thing (feat. Andre 3000 and James Murphy)</li>\n<li>Loon Lake - Bad To Me</li>\n<li>The Antlers - Putting The Dog To Sleep</li>\n<li>The Mountain Goats - High Hawk Season</li>\n<li>Beach House - Myth</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.mediafire.com/?p349bs4nkccizxe\">Download album</a></p>\n<p>Got feedback? Who cares. Go away. I don&rsquo;t want any of it.</p>",
+    "archiveHtmlPath": "posts/html/43517697006.html",
+    "archiveTimestampText": "March 19th, 2012 2:16am",
+    "archiveMediaPath": "media/43517697006.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

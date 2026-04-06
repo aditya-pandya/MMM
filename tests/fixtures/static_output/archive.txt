@@ -5,14 +5,14 @@ COPY: A chronological run of finished mixes, each with whatever notes, artwork, 
 EYEBROW: Discovery
 H2: Search archive
 COPY: Filter by titles, tracks, notes, and a few grounded archive signals pulled directly from the mix data.
-TEXT: Showing all 4 mixes.
+TEXT: Showing all 36 mixes.
 FILTER: All mixes
 FILTER: Related notes · 3
-FILTER: Highlighted tracks · 4
+FILTER: Highlighted tracks · 5
 FILTER: Listening surfaces · 1
-FILTER: Tumblr source · 4
-FILTER: Covers · 2
-FILTER: Remixes · 1
+FILTER: Tumblr source · 36
+FILTER: Covers · 10
+FILTER: Remixes · 7
 META: November 19, 2013 · Mix 36
 H2: Thirtysixth
 META: 3 highlighted tracks · 2 related notes
@@ -29,5 +29,133 @@ META: July 1, 2013 · Mix 33
 H2: Thirtythird
 META: 3 highlighted tracks
 TEXT: As always, back after a fairly long period of absence. MMM isn’t dead, not just yet.
+META: March 25, 2013 · Mix 32
+H2: Thirtysecond
+META: 3 highlighted tracks
+TEXT: Brand new mix at a brand new address. New Postal Service demo, a fantastic AlunaGeorge track and some other surprises.
+META: February 4, 2013 · Mix 31
+H2: Thirtyfirst
+META: No highlighted tracks marked
+TEXT: First mix of 2013! There’s been a lot of good music that has been listened to while I was gone. Someone asked me to put a mix out today, so here it is.
+META: October 22, 2012 · Mix 30
+H2: Thirtieth
+META: No highlighted tracks marked
+TEXT: Late.
+META: September 3, 2012 · Mix 29
+H2: Twentyninth
+META: No highlighted tracks marked
+TEXT: Finally! I’m making a habit out of this aren’t I? But the truth is, I’ve heard so much awful music of late that I haven’t been compelled to put out a mix. That, and trips back home and everything in between. I’m going to try and make this a fortnightly affair but my other pet project completes three years on the 19th, so there’s plenty on my plate and simply not enough clones.
+META: June 25, 2012 · Mix 28
+H2: Twentyeighth
+META: No highlighted tracks marked
+TEXT: It’s been a busy couple of weeks. I moved to New Delhi not too long ago and I’m still in the middle of rebuilding my life here. I haven’t heard a lot of exceptional music, unfortunately (given the lack of time at hand). But this will have to do, for now.
+META: April 8, 2012 · Mix 27
+H2: Twentyseventh
+META: No highlighted tracks marked
+TEXT: It’s been a while since I did a doubleheader. So there you have it, fourteen instead of the usual seven. For an exceptional week, and everything else that goes with it.
+META: March 18, 2012 · Mix 26
+H2: Twentysixth
+META: No highlighted tracks marked
+TEXT: For you.
+META: February 26, 2012 · Mix 25
+H2: Twentyfifth
+META: No highlighted tracks marked
+TEXT: I am home.
+META: February 19, 2012 · Mix 24
+H2: Twentyfourth
+META: No highlighted tracks marked
+TEXT: This is getting a bit irregular, isn’t it? The last six weeks have been hellishly busy to say the least. I’ve heard plenty of great music, and it was hard to narrow it down to just seven tracks. Hopefully this will do.
+META: January 9, 2012 · Mix 23
+H2: Twentythird
+META: No highlighted tracks marked
+TEXT: So after four odd months of absence, MMM is back. With a bang? Probably not.
+META: August 15, 2011 · Mix 22
+H2: Twentysecond
+META: No highlighted tracks marked
+TEXT: This is the sequel (sort of) to the eighteenth mix. A friend asked for it, and I got carried away. Yes, some artists are a bit mainstream, some tracks are done to death, but that’s not the point.
+META: August 7, 2011 · Mix 21
+H2: Twentyfirst
+META: No highlighted tracks marked
+TEXT: For once, on time. I think this mix is pretty interesting. Lots of diverse beats - lots of trippy goodness. Download, listen, spread the love and all that.
+META: August 1, 2011 · Mix 20
+H2: Twentieth
+META: No highlighted tracks marked
+TEXT: A mix after a month, and then some. As always, compensating for the lack of regular updates, a fourteen track mix to keep you swell folks happy.
+META: June 24, 2011 · Mix 19
+H2: Nineteenth
+META: No highlighted tracks marked
+TEXT: Late yet again, but that’s only because I’ve been neck deep in work. And, I celebrated my birthday last weekend. Still hungover a bit, but life’s swell.
+META: June 12, 2011 · Mix 18
+H2: Eighteenth
+META: No highlighted tracks marked
+TEXT: A Monday mix to give you the blues.
+META: June 2, 2011 · Mix 17
+H2: Seventeenth
+META: No highlighted tracks marked
+TEXT: I’ve been busy like never before. Dealing with crises, a sea of emotions and that sinking feeling. But life goes on, and so must the show.
+META: April 11, 2011 · Mix 16
+H2: Sixteenth - The Covers Edition
+META: No highlighted tracks marked
+TEXT: I wanted to add a bit of details and provide links to the originals, but I guess that will have to wait. Busy day. But listen to these songs well. All of these are handpicked brilliant covers, some in the same vein as the originals, some even better. More description to follow later.
+META: April 4, 2011 · Mix 15
+H2: Fifteenth
+META: No highlighted tracks marked
+TEXT: Not much to say, new mix within a span of a week. Enjoy.
+META: March 31, 2011 · Mix 14
+H2: Fourteenth
+META: No highlighted tracks marked
+TEXT: I’m not eloquent with words so I’m not even going to try - but my sincere apologies to all the wonderful folks who tune in religiously every week expecting a great mix. I know I have been extremely late with this week’s mix and it is for a good reason. I think personal crisis trumps everything else. Last couple of days have been the toughest of my life so far (I’m not going to go into details now) - so I just needed some time off to introspect, think hard and make some tough decisions. While not yet completely resolved, I will get there in a couple of days.
+META: March 21, 2011 · Mix 13
+H2: Thirteenth
+META: No highlighted tracks marked
+TEXT: I’m getting a bit lethargic after long weekends, which is why these mixes are getting posted this late. However there’s a silver lining - with this laziness, I do get to sample some excellent music - and this week’s mix is as eclectic as it gets. Some very interesting styles being covered in this one.
+META: March 14, 2011 · Mix 12
+H2: Twelfth
+META: No highlighted tracks marked
+TEXT: Welcome to Monday Music Mix - Crowdsourced edition! This week’s mix features some great tracks, handpicked by some of you. A big thanks to Nitin, Ananya, Joogz, fine_whining, Coke, and Cyrus for some fantastic suggestions. I haven’t been able to feature all the excellent which has been suggested last week (sorry Shreyansh, jigabachi and others) - but I promise to feature it in coming weeks - please bear with me :)
+META: March 7, 2011 · Mix 11
+H2: Eleventh
+META: No highlighted tracks marked
+TEXT: Wow, this has been a tough one. Selecting songs, selecting art - it’s never been this difficult. I’ve tried to mix it up a bit, and sadly I’ve sort of gone with the popular route a bit. You might recognize some songs, and if you do - I apologize for failing in my attempt to introduce you to some new bits of music. At the end of the day, you win some, you lose some.
+META: February 28, 2011 · Mix 10
+H2: Tenth
+META: No highlighted tracks marked
+TEXT: Okay, YOU WIN! So after a week of badgering and constant protests, I’ve decided to continue. For now.
+META: February 21, 2011 · Mix 9
+H2: Ninth
+META: No highlighted tracks marked
+TEXT: This is probably going to be the last one. Seems nobody gives a shit about interesting music - thus defeating the goal of starting this blog. Was fun while it lasted.
+META: February 14, 2011 · Mix 8
+H2: Eighth
+META: No highlighted tracks marked
+TEXT: And we’re back with yet another edition of MMM!
+META: February 7, 2011 · Mix 7
+H2: Seventh
+META: No highlighted tracks marked
+TEXT: Another week, another mix.
+META: January 31, 2011 · Mix 6
+H2: Sixth
+META: No highlighted tracks marked
+TEXT: Hoppy Chinese New Year folks! Yes, there’s still a couple of days left, but it’ll be a bit too late by the time next mix is up, so I figured might as well wish my (five odd) readers. No - it’s not a typo. 2011 is the year of rabbit - see what I did there?
+META: January 24, 2011 · Mix 5
+H2: Fifth
+META: No highlighted tracks marked
+TEXT: Another busy weekend gone by. I’ve lost track of time and it’s hard to tell apart the days. This is a perfect mix to get anyone through the start of the week. And maybe more. Playback options at the end of the post.
+META: January 17, 2011 · Mix 4
+H2: Fourth
+META: No highlighted tracks marked
+TEXT: This has been the toughest mix to put together. Three days of work, very little sleep and time. There isn’t a podcast version yet, stay tuned for the same. Download link at the end of the post.
+META: January 10, 2011 · Mix 3
+H2: Third
+META: No highlighted tracks marked
+TEXT: As promised last time, here’s the third edition uploaded, much before end of the day.
+META: January 3, 2011 · Mix 2
+H2: Second
+META: No highlighted tracks marked
+TEXT: Happy new year, everyone! I know I am bending the rules a little by putting up the mix when Monday is almost over - but blame it on having a full time job and the ever so clichéd Monday blues.
+META: December 27, 2010 · Mix 1
+H2: First
+META: No highlighted tracks marked
+TEXT: And so it begins! Monday Music Mix is a project close to my heart - something that has been in works for quite some time (in my head, of course).
 EYEBROW: No matches
 TEXT: Try a different tag, clear the search, or return to all mixes.

@@ -1,0 +1,286 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-031-thirtyfirst",
+  "slug": "mix-031-thirtyfirst",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517668095",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517668095",
+    "archiveExport": {
+      "postId": "43517668095",
+      "htmlPath": "posts/html/43517668095.html",
+      "timestampText": "February 4th, 2013 6:26pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517668095.jpg"
+    }
+  },
+  "title": "Monday Music Mix #31",
+  "displayTitle": "Thirtyfirst",
+  "mixNumber": 31,
+  "publishedAt": "2013-02-04T12:56:00Z",
+  "summary": "First mix of 2013! There’s been a lot of good music that has been listened to while I was gone. Someone asked me to put a mix out today, so here it is.",
+  "intro": [
+    "First mix of 2013! There’s been a lot of good music that has been listened to while I was gone. Someone asked me to put a mix out today, so here it is."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Thirtyfirst",
+    "credit": "Album art featuring work by Feline Zegers",
+    "canonicalAssetPath": "data/media/tumblr/mix-031-thirtyfirst/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "https://mega.co.nz/#!5N4SgaRI!JiToNja86ihMABls1HZBqGQQfHUw-y5GVm7gw650fAg"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "A.C. Newman",
+      "title": "I’m Not Talking",
+      "displayText": "A.C. Newman - I’m Not Talking",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Slam Donahue",
+      "title": "Bug in the Sun",
+      "displayText": "Slam Donahue - Bug in the Sun",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Churchill",
+      "title": "Change",
+      "displayText": "Churchill - Change",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "The Ampersands",
+      "title": "Try This",
+      "displayText": "The Ampersands - Try This",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Tegan & Sara",
+      "title": "Fool to Cry",
+      "displayText": "Tegan & Sara - Fool to Cry",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Hundred Waters",
+      "title": "Me & Anodyne",
+      "displayText": "Hundred Waters - Me & Anodyne",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "WhoMadeWho",
+      "title": "Inside World",
+      "displayText": "WhoMadeWho - Inside World",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "The Vaccines",
+      "title": "Aftershave Ocean",
+      "displayText": "The Vaccines - Aftershave Ocean",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Jenny Owen Youngs",
+      "title": "Pirates",
+      "displayText": "Jenny Owen Youngs - Pirates",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Alt-J",
+      "title": "Breezeblocks",
+      "displayText": "Alt-J - Breezeblocks",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "AlunaGeorge",
+      "title": "Thinkin Bout You (Frank Ocean cover)",
+      "displayText": "AlunaGeorge - Thinkin Bout You (Frank Ocean cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Frank Ocean",
+      "title": "Wise Man",
+      "displayText": "Frank Ocean - Wise Man",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Rhye",
+      "title": "The Fall",
+      "displayText": "Rhye - The Fall",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Kids Without Instruments",
+      "title": "Stardust",
+      "displayText": "Kids Without Instruments - Stardust",
+      "isFavorite": false
+    },
+    {
+      "position": 15,
+      "artist": "Jeff Rosenstock",
+      "title": "Twinkle",
+      "displayText": "Jeff Rosenstock - Twinkle",
+      "isFavorite": false
+    },
+    {
+      "position": 16,
+      "artist": "The One AM Radio",
+      "title": "In A City Without Seasons",
+      "displayText": "The One AM Radio - In A City Without Seasons",
+      "isFavorite": false
+    },
+    {
+      "position": 17,
+      "artist": "TV Girl",
+      "title": "I Wonder Who She’s Kissing Now",
+      "displayText": "TV Girl - I Wonder Who She’s Kissing Now",
+      "isFavorite": false
+    },
+    {
+      "position": 18,
+      "artist": "The Bloody Beetroots",
+      "title": "Chronicles of a Fallen Love (feat. Greta Svabo Bech)",
+      "displayText": "The Bloody Beetroots - Chronicles of a Fallen Love (feat. Greta Svabo Bech)",
+      "isFavorite": false
+    },
+    {
+      "position": 19,
+      "artist": "The Weeknd",
+      "title": "Enemy",
+      "displayText": "The Weeknd - Enemy",
+      "isFavorite": false
+    },
+    {
+      "position": 20,
+      "artist": "French Kiwi Juice",
+      "title": "Lying Together",
+      "displayText": "French Kiwi Juice - Lying Together",
+      "isFavorite": false
+    },
+    {
+      "position": 21,
+      "artist": "Local Natives",
+      "title": "Heavy Feet",
+      "displayText": "Local Natives - Heavy Feet",
+      "isFavorite": false
+    },
+    {
+      "position": 22,
+      "artist": "MØ",
+      "title": "Pilgrim",
+      "displayText": "MØ - Pilgrim",
+      "isFavorite": false
+    },
+    {
+      "position": 23,
+      "artist": "Sky Ferreira",
+      "title": "Everything Is Embarrassing",
+      "displayText": "Sky Ferreira - Everything Is Embarrassing",
+      "isFavorite": false
+    },
+    {
+      "position": 24,
+      "artist": "BJ Tran, Arct Tabanas, Gerald Fermin, & Jayne Baltazar",
+      "title": "Erase Me (Kid Cudi cover)",
+      "displayText": "BJ Tran, Arct Tabanas, Gerald Fermin, & Jayne Baltazar - Erase Me (Kid Cudi cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 25,
+      "artist": "Free Energy",
+      "title": "Girls Want Rock",
+      "displayText": "Free Energy - Girls Want Rock",
+      "isFavorite": false
+    },
+    {
+      "position": 26,
+      "artist": "Sick Sad World",
+      "title": "Alone All the Time (Leisure mix)",
+      "displayText": "Sick Sad World - Alone All the Time (Leisure mix)",
+      "isFavorite": false
+    },
+    {
+      "position": 27,
+      "artist": "Wild Ones",
+      "title": "It’s Real",
+      "displayText": "Wild Ones - It’s Real",
+      "isFavorite": false
+    },
+    {
+      "position": 28,
+      "artist": "Friends",
+      "title": "Friend Crush",
+      "displayText": "Friends - Friend Crush",
+      "isFavorite": false
+    },
+    {
+      "position": 29,
+      "artist": "WU LYF",
+      "title": "Triumph",
+      "displayText": "WU LYF - Triumph",
+      "isFavorite": false
+    },
+    {
+      "position": 30,
+      "artist": "Jordan Corey",
+      "title": "Let Your Love Walk In (Paloma Faith cover)",
+      "displayText": "Jordan Corey - Let Your Love Walk In (Paloma Faith cover)",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 30,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "A.C. Newman",
+      "Slam Donahue",
+      "Churchill",
+      "The Ampersands",
+      "Tegan & Sara"
+    ],
+    "coverCount": 3,
+    "coverTracks": [
+      "AlunaGeorge - Thinkin Bout You (Frank Ocean cover)",
+      "BJ Tran, Arct Tabanas, Gerald Fermin, & Jayne Baltazar - Erase Me (Kid Cudi cover)",
+      "Jordan Corey - Let Your Love Walk In (Paloma Faith cover)"
+    ],
+    "remixCount": 1,
+    "remixTracks": [
+      "Sick Sad World - Alone All the Time (Leisure mix)"
+    ]
+  },
+  "legacy": {
+    "originalTitle": "Thirtyfirst",
+    "tumblrHeading": "Thirtyfirst",
+    "descriptionHtml": "<h2>Thirtyfirst</h2><p>First mix of 2013! There&rsquo;s been a lot of good music that has been listened to while I was gone. Someone asked me to put a mix out today, so here it is.</p>\n<p><strong>Monday Music Mix: 31</strong></p>\n\n<p>Album art featuring work by <a href=\"http://www.felinezegers.com\" target=\"_blank\">Feline Zegers</a></p>\n<p>Tracklist:</p>\n<ol>\n<li>A.C. Newman - I&rsquo;m Not Talking</li>\n<li>Slam Donahue - Bug in the Sun</li>\n<li>Churchill - Change</li>\n<li>The Ampersands - Try This</li>\n<li>Tegan &amp; Sara - Fool to Cry</li>\n<li>Hundred Waters - Me &amp; Anodyne</li>\n<li>WhoMadeWho - Inside World</li>\n<li>The Vaccines - Aftershave Ocean</li>\n<li>Jenny Owen Youngs - Pirates</li>\n<li>Alt-J - Breezeblocks</li>\n<li>AlunaGeorge - Thinkin Bout You (Frank Ocean cover)</li>\n<li>Frank Ocean - Wise Man</li>\n<li>Rhye - The Fall</li>\n<li>Kids Without Instruments - Stardust</li>\n<li>Jeff Rosenstock - Twinkle</li>\n<li>The One AM Radio - In A City Without Seasons</li>\n<li>TV Girl - I Wonder Who She&rsquo;s Kissing Now</li>\n<li>The Bloody Beetroots - Chronicles of a Fallen Love (feat. Greta Svabo Bech)</li>\n<li>The Weeknd - Enemy</li>\n<li>French Kiwi Juice - Lying Together</li>\n<li>Local Natives - Heavy Feet</li>\n<li>MØ - Pilgrim</li>\n<li>Sky Ferreira - Everything Is Embarrassing</li>\n<li>BJ Tran, Arct Tabanas, Gerald Fermin, &amp; Jayne Baltazar - Erase Me (Kid Cudi cover)</li>\n<li>Free Energy - Girls Want Rock</li>\n<li>Sick Sad World - Alone All the Time (Leisure mix)</li>\n<li>Wild Ones - It&rsquo;s Real</li>\n<li>Friends - Friend Crush</li>\n<li>WU LYF - Triumph</li>\n<li>Jordan Corey - Let Your Love Walk In (Paloma Faith cover)</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"https://mega.co.nz/#!5N4SgaRI!JiToNja86ihMABls1HZBqGQQfHUw-y5GVm7gw650fAg\">Part 1 (1-15)</a> | <a href=\"https://mega.co.nz/#!wBZGBDgD!Qj4eITJZ8pa1vzXun3ebampc08RnwydAvaBD48W8rk8\">Part 2 (16-30)</a></p>",
+    "archiveHtmlPath": "posts/html/43517668095.html",
+    "archiveTimestampText": "February 4th, 2013 6:26pm",
+    "archiveMediaPath": "media/43517668095.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-015-fifteenth",
+  "slug": "mix-015-fifteenth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517775456",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517775456",
+    "archiveExport": {
+      "postId": "43517775456",
+      "htmlPath": "posts/html/43517775456.html",
+      "timestampText": "April 4th, 2011 8:10pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517775456.jpg"
+    }
+  },
+  "title": "Monday Music Mix #15",
+  "displayTitle": "Fifteenth",
+  "mixNumber": 15,
+  "publishedAt": "2011-04-04T14:40:00Z",
+  "summary": "Not much to say, new mix within a span of a week. Enjoy.",
+  "intro": [
+    "Not much to say, new mix within a span of a week. Enjoy.",
+    "Download album (zip format)",
+    "Listen to Grooveshark playlist",
+    "Like what you heard? Send some love through the comments section, if you please."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Fifteenth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-015-fifteenth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": null
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "The Ting Tings",
+      "title": "Be The One",
+      "displayText": "The Ting Tings - Be The One",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Fucked Up",
+      "title": "The Other Shoe",
+      "displayText": "Fucked Up - The Other Shoe",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Cults",
+      "title": "You Know What I Mean",
+      "displayText": "Cults - You Know What I Mean",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Golden Silvers",
+      "title": "Please Venus",
+      "displayText": "Golden Silvers - Please Venus",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Friendly Fires",
+      "title": "Live Those Days Tonight",
+      "displayText": "Friendly Fires - Live Those Days Tonight",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Low",
+      "title": "Especially Me",
+      "displayText": "Low - Especially Me",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Work Drugs",
+      "title": "Curious Serge",
+      "displayText": "Work Drugs - Curious Serge",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "The Ting Tings",
+      "Fucked Up",
+      "Cults",
+      "Golden Silvers",
+      "Friendly Fires"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Fifteenth",
+    "tumblrHeading": "Fifteenth",
+    "descriptionHtml": "<h2>Fifteenth</h2><p>Not much to say, new mix within a span of a week. Enjoy.</p>\n<p><strong>Monday Music Mix: 15</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>The Ting Tings - Be The One</li>\n<li>Fucked Up - The Other Shoe</li>\n<li>Cults - You Know What I Mean</li>\n<li>Golden Silvers - Please Venus</li>\n<li>Friendly Fires - Live Those Days Tonight</li>\n<li>Low - Especially Me</li>\n<li>Work Drugs - Curious Serge</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.filefactory.com/file/ca8f26c/n/MondayMusicMix-15_zip\">Download album</a> (zip format) </p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+15/51341140?src=5\">Listen to Grooveshark playlist</a></p>\n<p>Like what you heard? Send some love through the comments section, if you please.</p>",
+    "archiveHtmlPath": "posts/html/43517775456.html",
+    "archiveTimestampText": "April 4th, 2011 8:10pm",
+    "archiveMediaPath": "media/43517775456.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

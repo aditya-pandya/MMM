@@ -1,0 +1,126 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-006-sixth",
+  "slug": "mix-006-sixth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517844847",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517844847",
+    "archiveExport": {
+      "postId": "43517844847",
+      "htmlPath": "posts/html/43517844847.html",
+      "timestampText": "January 31st, 2011 9:00am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517844847.jpg"
+    }
+  },
+  "title": "Monday Music Mix #6",
+  "displayTitle": "Sixth",
+  "mixNumber": 6,
+  "publishedAt": "2011-01-31T03:30:00Z",
+  "summary": "Hoppy Chinese New Year folks! Yes, there’s still a couple of days left, but it’ll be a bit too late by the time next mix is up, so I figured might as well wish my (five odd) readers. No - it’s not a typo. 2011 is the year of rabbit - see what I did there?",
+  "intro": [
+    "Hoppy Chinese New Year folks! Yes, there’s still a couple of days left, but it’ll be a bit too late by the time next mix is up, so I figured might as well wish my (five odd) readers. No - it’s not a typo. 2011 is the year of rabbit - see what I did there?",
+    "Anyway, Being sick through the weekend, I figured it would be nice to offer a proper podcast to those who like listening to gapless music on the go. So for those of you, there’s a podcast subscription link at the end of the post. As always, download link and Grooveshark playlist link too are located at the end of the post.",
+    "Since I’ve completed a month with my pet project - how do you guys find the mixes so far? Any feedback would be appreciated! Right now it feels like I’m making these for myself, since there’s hardly any interaction with all you swell folks who download/listen to these mixes. So let me know what you think - please leave a comment.",
+    "This week’s mix is a bit interesting, one of my favourites to say the least as it spans across some interesting/diverse genres ranging from soul to punk to old school rock, and indie of course. The album art too is personally my favourite so far.",
+    "Alright, enough talk.",
+    "Download album (zip format)",
+    "Subscribe to Monday Music Mix podcast (you’ll need Winamp, iTunes or any other music player that supports podcasts)",
+    "Listen to Grooveshark playlist"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Sixth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-006-sixth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://dl.dropbox.com/u/96311/MondayMusicMix-06.zip"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Aloe Blacc",
+      "title": "I Need A Dollar",
+      "displayText": "Aloe Blacc - I Need A Dollar",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Hey Rosetta!",
+      "title": "Yer Spring",
+      "displayText": "Hey Rosetta! - Yer Spring",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Against Me!",
+      "title": "I Was A Teenage Anarchist",
+      "displayText": "Against Me! - I Was A Teenage Anarchist",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "The xx",
+      "title": "Islands",
+      "displayText": "The xx - Islands",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "HUNX and his PUNX",
+      "title": "Lovers Lane",
+      "displayText": "HUNX and his PUNX - Lovers Lane",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "The Mountain Goats",
+      "title": "Damn These Vampires",
+      "displayText": "The Mountain Goats - Damn These Vampires",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Lykke Li",
+      "title": "I Follow Rivers",
+      "displayText": "Lykke Li - I Follow Rivers",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Aloe Blacc",
+      "Hey Rosetta!",
+      "Against Me!",
+      "The xx",
+      "HUNX and his PUNX"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Sixth",
+    "tumblrHeading": "Sixth",
+    "descriptionHtml": "<h2>Sixth</h2><p>Hoppy Chinese New Year folks! Yes, there&rsquo;s still a couple of days left, but it&rsquo;ll be a bit too late by the time next mix is up, so I figured might as well wish my (five odd) readers. No - it&rsquo;s not a typo. 2011 is the year of rabbit - see what I did there?</p>\n<p>Anyway, Being sick through the weekend, I figured it would be nice to offer a proper podcast to those who like listening to gapless music on the go. So for those of you, there&rsquo;s a podcast subscription link at the end of the post. As always, download link and Grooveshark playlist link too are located at the end of the post.</p>\n<p>Since I&rsquo;ve completed a month with my pet project - how do you guys find the mixes so far? Any feedback would be appreciated! Right now it feels like I&rsquo;m making these for myself, since there&rsquo;s hardly any interaction with all you swell folks who download/listen to these mixes. So let me know what you think - please leave a comment.</p>\n<p>This week&rsquo;s mix is a bit interesting, one of my favourites to say the least as it spans across some interesting/diverse genres ranging from soul to punk to old school rock, and indie of course. The album art too is personally my favourite so far.</p>\n<p>Alright, enough talk.</p>\n<p><strong>Monday Music Mix: 06</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Aloe Blacc - I Need A Dollar</li>\n<li>Hey Rosetta! - Yer Spring</li>\n<li>Against Me! - I Was A Teenage Anarchist</li>\n<li>The xx - Islands</li>\n<li>HUNX and his PUNX - Lovers Lane</li>\n<li>The Mountain Goats - Damn These Vampires</li>\n<li>Lykke Li - I Follow Rivers</li>\n</ol>\n<p>* Tracks in blue indicate my favourites<br/>Special thanks: Christoffer for his off-beat but great recommendation (Aloe Blacc) :) </p>\n<ol> </ol>\n<p><a href=\"http://dl.dropbox.com/u/96311/MondayMusicMix-06.zip\">Download album</a> (zip format)</p>\n<p><a href=\"http://dl.dropbox.com/u/96311/podcast/podcast.xml\">Subscribe to Monday Music Mix podcas</a>t (you&rsquo;ll need Winamp, iTunes or any other music player that supports podcasts)</p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+06/42997282?src=5\">Listen to Grooveshark playlist</a></p>",
+    "archiveHtmlPath": "posts/html/43517844847.html",
+    "archiveTimestampText": "January 31st, 2011 9:00am",
+    "archiveMediaPath": "media/43517844847.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites Special thanks: Christoffer for his off-beat but great recommendation (Aloe Blacc) :)"
+  }
+}

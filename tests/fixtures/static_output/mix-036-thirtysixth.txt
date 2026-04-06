@@ -57,5 +57,5 @@ EYEBROW: Preserved residue
 H3: Legacy snapshot
 TEXT: A sanitized copy of the original post HTML is kept for repair and import cleanup work.
 TEXT: It still preserves the original Tumblr heading, favorite-track cue, and download trace.
-TEXT: Canonical local artwork checksum: c271f64ce4a25d6dfd2f4ec5e8f27fd17c45d590539571d9ce7edce77679a7d5.
+TEXT: Canonical local artwork checksum: 6718e49775e4ae7d475d9120fcf2de78ba373f6949dd4b57becdf7e407bd4e29.
 TEXT: Cover credit: Album art featuring work by Erik Jones.

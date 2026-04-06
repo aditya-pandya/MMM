@@ -1,0 +1,176 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-017-seventeenth",
+  "slug": "mix-017-seventeenth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517758648",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517758648",
+    "archiveExport": {
+      "postId": "43517758648",
+      "htmlPath": "posts/html/43517758648.html",
+      "timestampText": "June 2nd, 2011 5:35pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517758648.jpg"
+    }
+  },
+  "title": "Monday Music Mix #17",
+  "displayTitle": "Seventeenth",
+  "mixNumber": 17,
+  "publishedAt": "2011-06-02T12:05:00Z",
+  "summary": "I’ve been busy like never before. Dealing with crises, a sea of emotions and that sinking feeling. But life goes on, and so must the show.",
+  "intro": [
+    "I’ve been busy like never before. Dealing with crises, a sea of emotions and that sinking feeling. But life goes on, and so must the show.",
+    "I like sharing good music, music that makes me happy and I think I’m going to keep exploring, going down that path. While I do enjoy recommendations and unsolicitied advice, the objective of this blog is for me to share music that *I* like, so I’m going to leave it at just that. So without further ado.",
+    "Monday Thursday Music Mix: 17",
+    "Download album (zip format)",
+    "Have something to say? Bark in the comments section, if you will."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Seventeenth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-017-seventeenth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://dl.dropbox.com/u/96311/17.zip"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Luísa Maita",
+      "title": "Lero-Lero (DJ Tudo Remix)",
+      "displayText": "Luísa Maita - Lero-Lero (DJ Tudo Remix)",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Mr. Little Jeans",
+      "title": "The Suburbs (Arcade Fire cover)",
+      "displayText": "Mr. Little Jeans - The Suburbs (Arcade Fire cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Nero Ft. Sub Focus",
+      "title": "Promises",
+      "displayText": "Nero Ft. Sub Focus - Promises",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Pamela Méndez",
+      "title": "Bubble Bubble",
+      "displayText": "Pamela Méndez - Bubble Bubble",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Battle Beyond The Stars",
+      "title": "Desert",
+      "displayText": "Battle Beyond The Stars - Desert",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Cassettes Won’t Listen",
+      "title": "Perfect Day",
+      "displayText": "Cassettes Won’t Listen - Perfect Day",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Foster the People",
+      "title": "Call It What You Want",
+      "displayText": "Foster the People - Call It What You Want",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Moonface",
+      "title": "Fast Peter",
+      "displayText": "Moonface - Fast Peter",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Dora Alexander",
+      "title": "Travelers",
+      "displayText": "Dora Alexander - Travelers",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Bon Iver",
+      "title": "Calgary",
+      "displayText": "Bon Iver - Calgary",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "The National",
+      "title": "Exile Vilify",
+      "displayText": "The National - Exile Vilify",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Adele",
+      "title": "Set Fire To The Rain (feat. Gilbere Forte) must listen - this isn’t the album version",
+      "displayText": "Adele - Set Fire To The Rain (feat. Gilbere Forte) must listen - this isn’t the album version",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Man Man",
+      "title": "Life Fantastic",
+      "displayText": "Man Man - Life Fantastic",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Purity Ring",
+      "title": "Lofticries",
+      "displayText": "Purity Ring - Lofticries",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 14,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Luísa Maita",
+      "Mr. Little Jeans",
+      "Nero Ft. Sub Focus",
+      "Pamela Méndez",
+      "Battle Beyond The Stars"
+    ],
+    "coverCount": 1,
+    "coverTracks": [
+      "Mr. Little Jeans - The Suburbs (Arcade Fire cover)"
+    ],
+    "remixCount": 1,
+    "remixTracks": [
+      "Luísa Maita - Lero-Lero (DJ Tudo Remix)"
+    ]
+  },
+  "legacy": {
+    "originalTitle": "Seventeenth",
+    "tumblrHeading": "Seventeenth",
+    "descriptionHtml": "<h2>Seventeenth</h2><p>I&rsquo;ve been busy like never before. Dealing with crises, a sea of emotions and that sinking feeling. But life goes on, and so must the show.</p>\n<p>I like sharing good music, music that makes me happy and I think I&rsquo;m going to keep exploring, going down that path. While I do enjoy recommendations and unsolicitied advice, the objective of this blog is for me to share music that *I* like, so I&rsquo;m going to leave it at just that. So without further ado.</p>\n<p>Monday<strong> Thursday Music Mix: 17</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Luísa Maita - Lero-Lero (DJ Tudo Remix)</li>\n<li>Mr. Little Jeans - The Suburbs (Arcade Fire cover)</li>\n<li>Nero Ft. Sub Focus - Promises</li>\n<li>Pamela Méndez - Bubble Bubble</li>\n<li>Battle Beyond The Stars - Desert</li>\n<li>Cassettes Won&rsquo;t Listen - Perfect Day</li>\n<li>Foster the People - Call It What You Want</li>\n<li>Moonface - Fast Peter</li>\n<li>Dora Alexander - Travelers</li>\n<li>Bon Iver - Calgary</li>\n<li>The National - Exile Vilify</li>\n<li>Adele - Set Fire To The Rain (feat. Gilbere Forte) <em>must listen - this isn&rsquo;t the album version</em></li>\n<li>Man Man - Life Fantastic</li>\n<li>Purity Ring - Lofticries</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://dl.dropbox.com/u/96311/17.zip\">Download album</a> (zip format) </p>\n<p>Have something to say? Bark in the comments section, if you will.</p>",
+    "archiveHtmlPath": "posts/html/43517758648.html",
+    "archiveTimestampText": "June 2nd, 2011 5:35pm",
+    "archiveMediaPath": "media/43517758648.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

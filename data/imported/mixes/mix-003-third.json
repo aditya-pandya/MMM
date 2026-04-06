@@ -1,0 +1,124 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-003-third",
+  "slug": "mix-003-third",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517865220",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517865220",
+    "archiveExport": {
+      "postId": "43517865220",
+      "htmlPath": "posts/html/43517865220.html",
+      "timestampText": "January 10th, 2011 3:26pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517865220.jpg"
+    }
+  },
+  "title": "Monday Music Mix #3",
+  "displayTitle": "Third",
+  "mixNumber": 3,
+  "publishedAt": "2011-01-10T09:56:00Z",
+  "summary": "As promised last time, here’s the third edition uploaded, much before end of the day.",
+  "intro": [
+    "As promised last time, here’s the third edition uploaded, much before end of the day.",
+    "Grooveshark playlist will be up later - it’s not letting me upload the tracks that aren’t on it. Meanwhile you can directly stream the podcast by opening the link in your favourite MP3 player.",
+    "Links at the end of the post.",
+    "Download",
+    "Listen on Grooveshark",
+    "Send your love (if any) and feedback through the comments."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Third",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-003-third/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?w9i3c2st6n6x5hn"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Mickey Mickey Rourke",
+      "title": "Gloomy Guts (Feat. Craft Spells)",
+      "displayText": "Mickey Mickey Rourke - Gloomy Guts (Feat. Craft Spells)",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "The Thrills",
+      "title": "Midnight Choir",
+      "displayText": "The Thrills - Midnight Choir",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Tapes ‘n Tapes",
+      "title": "Omaha",
+      "displayText": "Tapes ‘n Tapes - Omaha",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "The Ordinary Boys",
+      "title": "Lonely at the Top",
+      "displayText": "The Ordinary Boys - Lonely at the Top",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Noah And The Whale",
+      "title": "5 Years Time",
+      "displayText": "Noah And The Whale - 5 Years Time",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Kleerup",
+      "title": "Until We Bleed (Feat. Lykke Li)",
+      "displayText": "Kleerup - Until We Bleed (Feat. Lykke Li)",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Labyrinth Ear",
+      "title": "White Gold",
+      "displayText": "Labyrinth Ear - White Gold",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Mickey Mickey Rourke",
+      "The Thrills",
+      "Tapes ‘n Tapes",
+      "The Ordinary Boys",
+      "Noah And The Whale"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Third",
+    "tumblrHeading": "Third",
+    "descriptionHtml": "<h2>Third</h2><p>As promised last time, here&rsquo;s the third edition uploaded, much before end of the day.</p>\n<p>Grooveshark playlist will be up later - it&rsquo;s not letting me upload the tracks that aren&rsquo;t on it. Meanwhile you can directly stream the podcast by opening the link in your favourite MP3 player.</p>\n<p>Links at the end of the post.</p>\n<p><strong>Monday Music Mix: 03</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Mickey Mickey Rourke - Gloomy Guts (Feat. Craft Spells)</li>\n<li>The Thrills - Midnight Choir</li>\n<li>Tapes &lsquo;n Tapes - Omaha</li>\n<li>The Ordinary Boys - Lonely at the Top</li>\n<li>Noah And The Whale - 5 Years Time</li>\n<li>Kleerup - Until We Bleed (Feat. Lykke Li)</li>\n<li>Labyrinth Ear - White Gold</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://www.mediafire.com/download.php?w9i3c2st6n6x5hn\">Download</a></p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+03/42388487\">Listen on Grooveshark</a></p>\n<p>Send your love (if any) and feedback through the comments.</p>",
+    "archiveHtmlPath": "posts/html/43517865220.html",
+    "archiveTimestampText": "January 10th, 2011 3:26pm",
+    "archiveMediaPath": "media/43517865220.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-008-eighth",
+  "slug": "mix-008-eighth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517830401",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517830401",
+    "archiveExport": {
+      "postId": "43517830401",
+      "htmlPath": "posts/html/43517830401.html",
+      "timestampText": "February 14th, 2011 3:20pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517830401.jpg"
+    }
+  },
+  "title": "Monday Music Mix #8",
+  "displayTitle": "Eighth",
+  "mixNumber": 8,
+  "publishedAt": "2011-02-14T09:50:00Z",
+  "summary": "And we’re back with yet another edition of MMM!",
+  "intro": [
+    "And we’re back with yet another edition of MMM!",
+    "This week’s mix consists of new singles by The Strokes and the very excellent J Mascis (of Dinosaur Jr. fame), a feet tapping mashup by Girl Talk, and This Is Ivy League’s balladesque take on Crown Of Love by the Grammy winning The Arcade Fire.",
+    "Special thanks: Zara for her excellent recommendation (Foster The People) :)",
+    "Download album | Mirror (in case the first link doesn’t work) (zip format)",
+    "Subscribe to Monday Music Mix podcast (coming soon)",
+    "Listen to Grooveshark playlist"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Eighth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-008-eighth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://dl.dropbox.com/u/96311/MondayMusicMix-08.zip"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Sleigh Bells",
+      "title": "Tell ‘em",
+      "displayText": "Sleigh Bells - Tell ‘em",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "J Mascis",
+      "title": "Is It Done",
+      "displayText": "J Mascis - Is It Done",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "White Hinterland",
+      "title": "Icarus",
+      "displayText": "White Hinterland - Icarus",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "This Is Ivy League",
+      "title": "Crown Of Love (originally by The Arcade Fire)",
+      "displayText": "This Is Ivy League - Crown Of Love (originally by The Arcade Fire)",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "The Strokes",
+      "title": "Under The Cover Of Darkness",
+      "displayText": "The Strokes - Under The Cover Of Darkness",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Foster The People",
+      "title": "Pumped Up Kicks",
+      "displayText": "Foster The People - Pumped Up Kicks",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Girl Talk",
+      "title": "Here’s The Thing",
+      "displayText": "Girl Talk - Here’s The Thing",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Sleigh Bells",
+      "J Mascis",
+      "White Hinterland",
+      "This Is Ivy League",
+      "The Strokes"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Eighth",
+    "tumblrHeading": "Eighth",
+    "descriptionHtml": "<h2>Eighth</h2><p>And we&rsquo;re back with yet another edition of MMM! </p>\n<p>This week&rsquo;s mix consists of new singles by The Strokes and the very excellent J Mascis (of Dinosaur Jr. fame), a feet tapping mashup by Girl Talk, and This Is Ivy League&rsquo;s balladesque take on <em>Crown Of Love</em> by the Grammy winning The Arcade Fire.</p>\n<p><strong>Monday Music Mix: 08</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Sleigh Bells - Tell &lsquo;em</li>\n<li>J Mascis - Is It Done</li>\n<li>White Hinterland - Icarus</li>\n<li>This Is Ivy League - Crown Of Love (originally by The Arcade Fire)</li>\n<li>The Strokes - Under The Cover Of Darkness</li>\n<li>Foster The People - Pumped Up Kicks</li>\n<li>Girl Talk - Here&rsquo;s The Thing</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p>Special thanks: Zara for her excellent recommendation (Foster The People) :)</p>\n<ol> </ol>\n<p><a href=\"http://dl.dropbox.com/u/96311/MondayMusicMix-08.zip\">Download album</a> | <a href=\"http://www.filefactory.com/file/b566f5b/n/MondayMusicMix-08.zip\">Mirror</a> (in case the first link doesn&rsquo;t work) (zip format)</p>\n<p>Subscribe to Monday Music Mix podcast (coming soon)</p>\n<p><a href=\"http://listen.grooveshark.com/playlist/Monday+Music+Mix+08/43608902?src=5\">Listen to Grooveshark playlist</a></p>",
+    "archiveHtmlPath": "posts/html/43517830401.html",
+    "archiveTimestampText": "February 14th, 2011 3:20pm",
+    "archiveMediaPath": "media/43517830401.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

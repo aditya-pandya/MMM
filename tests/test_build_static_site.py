@@ -407,6 +407,25 @@ def test_static_build_recursively_flattens_nested_listening_provider_shapes(tmp_
     assert "Trusted embed-ready" in mix_html
     assert "youtube.com/embed/videoseries" in mix_html
 
+
+def test_static_build_prefers_canonical_tumblr_cover_asset_when_present(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    mix_html = read_text(repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html")
+
+    assert "../../media/tumblr/mix-036-thirtysixth/cover.jpg" in mix_html
+
+
 def test_static_build_requires_explicit_trusted_embed_data_before_rendering_preview(tmp_path):
     repo = prepare_temp_repo(tmp_path)
 

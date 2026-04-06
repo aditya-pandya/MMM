@@ -1,0 +1,171 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-020-twentieth",
+  "slug": "mix-020-twentieth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517739038",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517739038",
+    "archiveExport": {
+      "postId": "43517739038",
+      "htmlPath": "posts/html/43517739038.html",
+      "timestampText": "August 2nd, 2011 1:15am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517739038.jpg"
+    }
+  },
+  "title": "Monday Music Mix #20",
+  "displayTitle": "Twentieth",
+  "mixNumber": 20,
+  "publishedAt": "2011-08-01T19:45:00Z",
+  "summary": "A mix after a month, and then some. As always, compensating for the lack of regular updates, a fourteen track mix to keep you swell folks happy.",
+  "intro": [
+    "A mix after a month, and then some. As always, compensating for the lack of regular updates, a fourteen track mix to keep you swell folks happy.",
+    "Monday Tuesday Music Mix: 20"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twentieth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-020-twentieth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/?vuqsidkmaawpki1"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Sebastien Tellier",
+      "title": "La Ritournelle (Mr. Dan’s Mix)",
+      "displayText": "Sebastien Tellier - La Ritournelle (Mr. Dan’s Mix)",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Pepper Rabbit",
+      "title": "Murder Room",
+      "displayText": "Pepper Rabbit - Murder Room",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Mates of State",
+      "title": "Maracas",
+      "displayText": "Mates of State - Maracas",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "I Break Horses",
+      "title": "Winter Beats",
+      "displayText": "I Break Horses - Winter Beats",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Teen Daze",
+      "title": "The Harvest",
+      "displayText": "Teen Daze - The Harvest",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Active Child",
+      "title": "Hanging On",
+      "displayText": "Active Child - Hanging On",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Girls",
+      "title": "Vomit",
+      "displayText": "Girls - Vomit",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "My Brightest Diamond",
+      "title": "Reaching Through to the Other Side",
+      "displayText": "My Brightest Diamond - Reaching Through to the Other Side",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "M83",
+      "title": "Midnight City",
+      "displayText": "M83 - Midnight City",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Clap Your Hands Say Yeah",
+      "title": "Maniac",
+      "displayText": "Clap Your Hands Say Yeah - Maniac",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "Southern Shores",
+      "title": "Bonfire",
+      "displayText": "Southern Shores - Bonfire",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Unknown Artist",
+      "title": "Björk- Crystalline",
+      "displayText": "Björk- Crystalline",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Beirut",
+      "title": "Santa Fe",
+      "displayText": "Beirut - Santa Fe",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "The Morning Benders",
+      "title": "Last Night",
+      "displayText": "The Morning Benders - Last Night",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 14,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Sebastien Tellier",
+      "Pepper Rabbit",
+      "Mates of State",
+      "I Break Horses",
+      "Teen Daze"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 1,
+    "remixTracks": [
+      "Sebastien Tellier - La Ritournelle (Mr. Dan’s Mix)"
+    ]
+  },
+  "legacy": {
+    "originalTitle": "Twentieth",
+    "tumblrHeading": "Twentieth",
+    "descriptionHtml": "<h2>Twentieth</h2><p>A mix after a month, and then some. As always, compensating for the lack of regular updates, a fourteen track mix to keep you swell folks happy. </p>\n<p><strong>Monday Tuesday Music Mix: 20</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Sebastien Tellier - La Ritournelle (Mr. Dan&rsquo;s Mix)</li>\n<li>Pepper Rabbit - Murder Room</li>\n<li>Mates of State - Maracas</li>\n<li>I Break Horses - Winter Beats</li>\n<li>Teen Daze - The Harvest</li>\n<li>Active Child - Hanging On</li>\n<li>Girls - Vomit</li>\n<li>My Brightest Diamond - Reaching Through to the Other Side</li>\n<li>M83 - Midnight City</li>\n<li>Clap Your Hands Say Yeah - Maniac</li>\n<li>Southern Shores - Bonfire</li>\n<li>Björk- Crystalline</li>\n<li>Beirut - Santa Fe</li>\n<li>The Morning Benders - Last Night</li>\n</ol>\n\n<ol> </ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://www.mediafire.com/?vuqsidkmaawpki1\">Download album</a></p>",
+    "archiveHtmlPath": "posts/html/43517739038.html",
+    "archiveTimestampText": "August 2nd, 2011 1:15am",
+    "archiveMediaPath": "media/43517739038.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

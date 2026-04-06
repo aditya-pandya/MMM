@@ -1,0 +1,169 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-027-twentyseventh",
+  "slug": "mix-027-twentyseventh",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517691280",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517691280",
+    "archiveExport": {
+      "postId": "43517691280",
+      "htmlPath": "posts/html/43517691280.html",
+      "timestampText": "April 9th, 2012 2:28am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517691280.jpg"
+    }
+  },
+  "title": "Monday Music Mix #27",
+  "displayTitle": "Twentyseventh",
+  "mixNumber": 27,
+  "publishedAt": "2012-04-08T20:58:00Z",
+  "summary": "It’s been a while since I did a doubleheader. So there you have it, fourteen instead of the usual seven. For an exceptional week, and everything else that goes with it.",
+  "intro": [
+    "It’s been a while since I did a doubleheader. So there you have it, fourteen instead of the usual seven. For an exceptional week, and everything else that goes with it.",
+    "Download album | Mirror"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twentyseventh",
+    "credit": "Album art featuring work by Raphël Vicenzi",
+    "canonicalAssetPath": "data/media/tumblr/mix-027-twentyseventh/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/?psjvwufcmu5gpqy"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Longwave",
+      "title": "Tidal Wave",
+      "displayText": "Longwave - Tidal Wave",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "JJ",
+      "title": "Beautiful Life",
+      "displayText": "JJ - Beautiful Life",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Arcade Fire",
+      "title": "Abraham’s Daughter",
+      "displayText": "Arcade Fire - Abraham’s Daughter",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Chairlift",
+      "title": "Guilty As Charged",
+      "displayText": "Chairlift - Guilty As Charged",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Dntel",
+      "title": "Bright Night",
+      "displayText": "Dntel - Bright Night",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Little Scream",
+      "title": "The Heron and the Fox",
+      "displayText": "Little Scream - The Heron and the Fox",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Múm",
+      "title": "Don’t Be Afraid, You Have Just Got Your Eyes Closed",
+      "displayText": "Múm - Don’t Be Afraid, You Have Just Got Your Eyes Closed",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Van She",
+      "title": "Idea Of Happiness",
+      "displayText": "Van She - Idea Of Happiness",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Thievery Corporation",
+      "title": "The Time We Lost Our Way (featuring Loulou)",
+      "displayText": "Thievery Corporation - The Time We Lost Our Way (featuring Loulou)",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Ramona Falls",
+      "title": "Spore",
+      "displayText": "Ramona Falls - Spore",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "Hot Chip",
+      "title": "Flutes",
+      "displayText": "Hot Chip - Flutes",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Cats On Fire",
+      "title": "A Few Empty Waves",
+      "displayText": "Cats On Fire - A Few Empty Waves",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Lower Dens",
+      "title": "Brains",
+      "displayText": "Lower Dens - Brains",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Radical Face",
+      "title": "Welcome Home",
+      "displayText": "Radical Face - Welcome Home",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 14,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Longwave",
+      "JJ",
+      "Arcade Fire",
+      "Chairlift",
+      "Dntel"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Twentyseventh",
+    "tumblrHeading": "Twentyseventh",
+    "descriptionHtml": "<h2>Twentyseventh</h2>\n<p>It’s been a while since I did a doubleheader. So there you have it, fourteen instead of the usual seven. For an exceptional week, and everything else that goes with it.</p>\n<p><strong>Monday Music Mix: 27</strong></p>\n<p>Album art featuring work by <a href=\"http://mydeadpony.com/\">Raphël Vicenzi</a></p>\n<p>Tracklist:</p>\n<ol>\n<li>Longwave - Tidal Wave</li>\n<li>JJ - Beautiful Life</li>\n<li>Arcade Fire - Abraham’s Daughter</li>\n<li>Chairlift - Guilty As Charged</li>\n<li>Dntel - Bright Night</li>\n<li>Little Scream - The Heron and the Fox</li>\n<li>Múm - Don’t Be Afraid, You Have Just Got Your Eyes Closed</li>\n<li>Van She - Idea Of Happiness</li>\n<li>Thievery Corporation - The Time We Lost Our Way (featuring Loulou)</li>\n<li>Ramona Falls - Spore</li>\n<li>Hot Chip - Flutes</li>\n<li>Cats On Fire - A Few Empty Waves</li>\n<li>Lower Dens - Brains</li>\n<li>Radical Face - Welcome Home</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.mediafire.com/?psjvwufcmu5gpqy\">Download album</a> | <a href=\"https://dl.dropboxusercontent.com/u/96311/MMM-27.zip\">Mirror</a></p>",
+    "archiveHtmlPath": "posts/html/43517691280.html",
+    "archiveTimestampText": "April 9th, 2012 2:28am",
+    "archiveMediaPath": "media/43517691280.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

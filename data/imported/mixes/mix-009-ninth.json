@@ -1,0 +1,125 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-009-ninth",
+  "slug": "mix-009-ninth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517821028",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517821028",
+    "archiveExport": {
+      "postId": "43517821028",
+      "htmlPath": "posts/html/43517821028.html",
+      "timestampText": "February 21st, 2011 4:00pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517821028.jpg"
+    }
+  },
+  "title": "Monday Music Mix #9",
+  "displayTitle": "Ninth",
+  "mixNumber": 9,
+  "publishedAt": "2011-02-21T10:30:00Z",
+  "summary": "This is probably going to be the last one. Seems nobody gives a shit about interesting music - thus defeating the goal of starting this blog. Was fun while it lasted.",
+  "intro": [
+    "This is probably going to be the last one. Seems nobody gives a shit about interesting music - thus defeating the goal of starting this blog. Was fun while it lasted.",
+    "Thanks for checking out this blog out every week. Appreciate it. Wish this could have been a longer fixture - but without the carrot, there’s not much to look forward to.",
+    "Download album (zip format)",
+    "Subscribe to Monday Music Mix podcast (coming soon)",
+    "Listen to Grooveshark playlist (coming soon)"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Ninth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-009-ninth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?tp246rsbib97das"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Generationals",
+      "title": "Greenleaf",
+      "displayText": "Generationals - Greenleaf",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "The Annuals",
+      "title": "Dry Clothes",
+      "displayText": "The Annuals - Dry Clothes",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Rawayana",
+      "title": "Bahía",
+      "displayText": "Rawayana - Bahía",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Toro y Moi",
+      "title": "Still Sound",
+      "displayText": "Toro y Moi - Still Sound",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Early Winters",
+      "title": "Spanish Burn",
+      "displayText": "Early Winters - Spanish Burn",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Two Door Cinema Club",
+      "title": "What You Know (Young Empires Remix)",
+      "displayText": "Two Door Cinema Club - What You Know (Young Empires Remix)",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "The Rescue",
+      "title": "Teenage Dream (originally by Katy Perry)",
+      "displayText": "The Rescue - Teenage Dream (originally by Katy Perry)",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Generationals",
+      "The Annuals",
+      "Rawayana",
+      "Toro y Moi",
+      "Early Winters"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 1,
+    "remixTracks": [
+      "Two Door Cinema Club - What You Know (Young Empires Remix)"
+    ]
+  },
+  "legacy": {
+    "originalTitle": "Ninth",
+    "tumblrHeading": "Ninth",
+    "descriptionHtml": "<h2>Ninth</h2><p>This is probably going to be the last one. Seems nobody gives a shit about interesting music - thus defeating the goal of starting this blog. Was fun while it lasted.</p>\n<p>Thanks for checking out this blog out every week. Appreciate it. Wish this could have been a longer fixture - but without the carrot, there&rsquo;s not much to look forward to.</p>\n<p><strong>Monday Music Mix: 09</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Generationals - Greenleaf</li>\n<li>The Annuals - Dry Clothes</li>\n<li>Rawayana - Bahía</li>\n<li>Toro y Moi - Still Sound</li>\n<li>Early Winters - Spanish Burn</li>\n<li>Two Door Cinema Club - What You Know (Young Empires Remix)</li>\n<li>The Rescue - Teenage Dream (originally by Katy Perry)</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://www.mediafire.com/download.php?tp246rsbib97das\">Download album</a> (zip format)</p>\n<p>Subscribe to Monday Music Mix podcast (coming soon)</p>\n<p>Listen to Grooveshark playlist (coming soon)</p>",
+    "archiveHtmlPath": "posts/html/43517821028.html",
+    "archiveTimestampText": "February 21st, 2011 4:00pm",
+    "archiveMediaPath": "media/43517821028.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

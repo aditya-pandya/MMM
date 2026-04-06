@@ -1,0 +1,121 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-024-twentyfourth",
+  "slug": "mix-024-twentyfourth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517711979",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517711979",
+    "archiveExport": {
+      "postId": "43517711979",
+      "htmlPath": "posts/html/43517711979.html",
+      "timestampText": "February 20th, 2012 1:48am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517711979.jpg"
+    }
+  },
+  "title": "Monday Music Mix #24",
+  "displayTitle": "Twentyfourth",
+  "mixNumber": 24,
+  "publishedAt": "2012-02-19T20:18:00Z",
+  "summary": "This is getting a bit irregular, isn’t it? The last six weeks have been hellishly busy to say the least. I’ve heard plenty of great music, and it was hard to narrow it down to just seven tracks. Hopefully this will do.",
+  "intro": [
+    "This is getting a bit irregular, isn’t it? The last six weeks have been hellishly busy to say the least. I’ve heard plenty of great music, and it was hard to narrow it down to just seven tracks. Hopefully this will do.",
+    "Without further ado.",
+    "Send your love (if any) and feedback through the comments."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twentyfourth",
+    "credit": "Album art featuring splendid work by Sam Chivers",
+    "canonicalAssetPath": "data/media/tumblr/mix-024-twentyfourth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/?p51av7ruqot2p5m"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Korallreven",
+      "title": "Sa Sa Samoa (For Real For Sure For You Version)",
+      "displayText": "Korallreven - Sa Sa Samoa (For Real For Sure For You Version)",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Wild Flag",
+      "title": "Romance",
+      "displayText": "Wild Flag - Romance",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Roxy Music",
+      "title": "Avalon",
+      "displayText": "Roxy Music - Avalon",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Black Marble",
+      "title": "Pretender",
+      "displayText": "Black Marble - Pretender",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Bowerbirds",
+      "title": "In the Yard",
+      "displayText": "Bowerbirds - In the Yard",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "AU",
+      "title": "Solid Gold",
+      "displayText": "AU - Solid Gold",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Grouplove",
+      "title": "Tongue Tied",
+      "displayText": "Grouplove - Tongue Tied",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Korallreven",
+      "Wild Flag",
+      "Roxy Music",
+      "Black Marble",
+      "Bowerbirds"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Twentyfourth",
+    "tumblrHeading": "Twentyfourth",
+    "descriptionHtml": "<h2>Twentyfourth</h2><p>This is getting a bit irregular, isn&rsquo;t it? The last six weeks have been hellishly busy to say the least. I&rsquo;ve heard plenty of great music, and it was hard to narrow it down to just seven tracks. Hopefully this will do.</p>\n<p>Without further ado.</p>\n<p><strong>Monday Music Mix: 24</strong></p>\n\n<p>Album art featuring splendid work by <a href=\"http://samchivers.com/\">Sam Chivers</a></p>\n<p>Tracklist:</p>\n<ol>\n<li>Korallreven - Sa Sa Samoa (For Real For Sure For You Version)</li>\n<li>Wild Flag - Romance</li>\n<li>Roxy Music - Avalon</li>\n<li>Black Marble - Pretender</li>\n<li>Bowerbirds - In the Yard</li>\n<li>AU - Solid Gold</li>\n<li>Grouplove - Tongue Tied</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://www.mediafire.com/?p51av7ruqot2p5m\">Download album</a></p>\n<p>Send your love (if any) and feedback through the comments.</p>",
+    "archiveHtmlPath": "posts/html/43517711979.html",
+    "archiveTimestampText": "February 20th, 2012 1:48am",
+    "archiveMediaPath": "media/43517711979.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

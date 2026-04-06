@@ -1,0 +1,122 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-005-fifth",
+  "slug": "mix-005-fifth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517850334",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517850334",
+    "archiveExport": {
+      "postId": "43517850334",
+      "htmlPath": "posts/html/43517850334.html",
+      "timestampText": "January 24th, 2011 9:00am",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517850334.jpg"
+    }
+  },
+  "title": "Monday Music Mix #5",
+  "displayTitle": "Fifth",
+  "mixNumber": 5,
+  "publishedAt": "2011-01-24T03:30:00Z",
+  "summary": "Another busy weekend gone by. I’ve lost track of time and it’s hard to tell apart the days. This is a perfect mix to get anyone through the start of the week. And maybe more. Playback options at the end of the post.",
+  "intro": [
+    "Another busy weekend gone by. I’ve lost track of time and it’s hard to tell apart the days. This is a perfect mix to get anyone through the start of the week. And maybe more. Playback options at the end of the post.",
+    "Download in album format (zip)",
+    "Listen to Grooveshark playlist",
+    "Send your love (if any) and feedback through the comments."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Fifth",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-005-fifth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://dl.dropbox.com/u/96311/MondayMusicMix-05.zip"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Coeur de Pirate",
+      "title": "Ensemble",
+      "displayText": "Coeur de Pirate - Ensemble",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Bang Gang",
+      "title": "Follow",
+      "displayText": "Bang Gang - Follow",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Editors",
+      "title": "No Sound But The Wind",
+      "displayText": "Editors - No Sound But The Wind",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Dinosaur Pile-Up",
+      "title": "Love Is A Boat And We’re Sinking",
+      "displayText": "Dinosaur Pile-Up - Love Is A Boat And We’re Sinking",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Rooney",
+      "title": "I Can’t Get Enough",
+      "displayText": "Rooney - I Can’t Get Enough",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Mogwai",
+      "title": "The Sun Smells Too Loud",
+      "displayText": "Mogwai - The Sun Smells Too Loud",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Stars",
+      "title": "Celebration Guns",
+      "displayText": "Stars - Celebration Guns",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Coeur de Pirate",
+      "Bang Gang",
+      "Editors",
+      "Dinosaur Pile-Up",
+      "Rooney"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Fifth",
+    "tumblrHeading": "Fifth",
+    "descriptionHtml": "<h2>Fifth</h2><p>Another busy weekend gone by. I&rsquo;ve lost track of time and it&rsquo;s hard to tell apart the days. This is a perfect mix to get anyone through the start of the week. And maybe more. Playback options at the end of the post.</p>\n<p><strong>Monday Music Mix: 05</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Coeur de Pirate - Ensemble</li>\n<li>Bang Gang - Follow</li>\n<li>Editors - No Sound But The Wind</li>\n<li>Dinosaur Pile-Up - Love Is A Boat And We&rsquo;re Sinking</li>\n<li>Rooney - I Can&rsquo;t Get Enough</li>\n<li>Mogwai - The Sun Smells Too Loud</li>\n<li>Stars - Celebration Guns</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<ol> </ol>\n<p><a href=\"http://dl.dropbox.com/u/96311/MondayMusicMix-05.zip\">Download in album format</a> (zip)</p>\n<p><a href=\"http://listen.grooveshark.com/#/playlist/Monday+Music+Mix+05/42673719\">Listen to Grooveshark playlist</a></p>\n<p>Send your love (if any) and feedback through the comments.</p>",
+    "archiveHtmlPath": "posts/html/43517850334.html",
+    "archiveTimestampText": "January 24th, 2011 9:00am",
+    "archiveMediaPath": "media/43517850334.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

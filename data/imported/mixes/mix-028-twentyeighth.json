@@ -1,0 +1,218 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-028-twentyeighth",
+  "slug": "mix-028-twentyeighth",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517685881",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517685881",
+    "archiveExport": {
+      "postId": "43517685881",
+      "htmlPath": "posts/html/43517685881.html",
+      "timestampText": "June 25th, 2012 4:51pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517685881.jpg"
+    }
+  },
+  "title": "Monday Music Mix #28",
+  "displayTitle": "Twentyeighth",
+  "mixNumber": 28,
+  "publishedAt": "2012-06-25T11:21:00Z",
+  "summary": "It’s been a busy couple of weeks. I moved to New Delhi not too long ago and I’m still in the middle of rebuilding my life here. I haven’t heard a lot of exceptional music, unfortunately (given the lack of time at hand). But this will have to do, for now.",
+  "intro": [
+    "It’s been a busy couple of weeks. I moved to New Delhi not too long ago and I’m still in the middle of rebuilding my life here. I haven’t heard a lot of exceptional music, unfortunately (given the lack of time at hand). But this will have to do, for now.",
+    "Download album | Mirror"
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Twentyeighth",
+    "credit": "Album art featuring work by Pavel Ripley",
+    "canonicalAssetPath": "data/media/tumblr/mix-028-twentyeighth/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/?c6ywfbeevyed9jh"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Javelin",
+      "title": "Soda Popinski",
+      "displayText": "Javelin - Soda Popinski",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Beat Culture",
+      "title": "Useless",
+      "displayText": "Beat Culture - Useless",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "Ben Folds Five",
+      "title": "Do It Anyway",
+      "displayText": "Ben Folds Five - Do It Anyway",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Haim",
+      "title": "Go Slow",
+      "displayText": "Haim - Go Slow",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Charlotte Gainsbourg",
+      "title": "Anna",
+      "displayText": "Charlotte Gainsbourg - Anna",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Charli xcx",
+      "title": "I’ll Never Know",
+      "displayText": "Charli xcx - I’ll Never Know",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Air",
+      "title": "Seven Stars",
+      "displayText": "Air - Seven Stars",
+      "isFavorite": false
+    },
+    {
+      "position": 8,
+      "artist": "Elika",
+      "title": "No One Gets Lost",
+      "displayText": "Elika - No One Gets Lost",
+      "isFavorite": false
+    },
+    {
+      "position": 9,
+      "artist": "Tiny Victories",
+      "title": "Lost Weekend",
+      "displayText": "Tiny Victories - Lost Weekend",
+      "isFavorite": false
+    },
+    {
+      "position": 10,
+      "artist": "Dirty Three",
+      "title": "Rising Below",
+      "displayText": "Dirty Three - Rising Below",
+      "isFavorite": false
+    },
+    {
+      "position": 11,
+      "artist": "Led Er Est",
+      "title": "Kaiyo Maru",
+      "displayText": "Led Er Est - Kaiyo Maru",
+      "isFavorite": false
+    },
+    {
+      "position": 12,
+      "artist": "Gitar",
+      "title": "Hippie Dream",
+      "displayText": "Gitar - Hippie Dream",
+      "isFavorite": false
+    },
+    {
+      "position": 13,
+      "artist": "Polica",
+      "title": "Lay Your Cards Out",
+      "displayText": "Polica - Lay Your Cards Out",
+      "isFavorite": false
+    },
+    {
+      "position": 14,
+      "artist": "Grizzly Bear",
+      "title": "Sleeping Ute",
+      "displayText": "Grizzly Bear - Sleeping Ute",
+      "isFavorite": false
+    },
+    {
+      "position": 15,
+      "artist": "The Lost Lovers Brigade",
+      "title": "Lonely Neighbour",
+      "displayText": "The Lost Lovers Brigade - Lonely Neighbour",
+      "isFavorite": false
+    },
+    {
+      "position": 16,
+      "artist": "Emika",
+      "title": "Drop The Other",
+      "displayText": "Emika - Drop The Other",
+      "isFavorite": false
+    },
+    {
+      "position": 17,
+      "artist": "Daughter",
+      "title": "Love",
+      "displayText": "Daughter - Love",
+      "isFavorite": false
+    },
+    {
+      "position": 18,
+      "artist": "Catcall",
+      "title": "Paralysed",
+      "displayText": "Catcall - Paralysed",
+      "isFavorite": false
+    },
+    {
+      "position": 19,
+      "artist": "Harry Rag",
+      "title": "Tiny Painting",
+      "displayText": "Harry Rag - Tiny Painting",
+      "isFavorite": false
+    },
+    {
+      "position": 20,
+      "artist": "Feist",
+      "title": "Black Tongue",
+      "displayText": "Feist - Black Tongue",
+      "isFavorite": false
+    },
+    {
+      "position": 21,
+      "artist": "Major Lazer",
+      "title": "Get Free (feat. Amber of Dirty Projectors)",
+      "displayText": "Major Lazer - Get Free (feat. Amber of Dirty Projectors)",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 21,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Javelin",
+      "Beat Culture",
+      "Ben Folds Five",
+      "Haim",
+      "Charlotte Gainsbourg"
+    ],
+    "coverCount": 0,
+    "coverTracks": [],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Twentyeighth",
+    "tumblrHeading": "Twentyeighth",
+    "descriptionHtml": "<h2>Twentyeighth</h2>\n<p>It’s been a busy couple of weeks. I moved to New Delhi not too long ago and I’m still in the middle of rebuilding my life here. I haven’t heard a lot of exceptional music, unfortunately (given the lack of time at hand). But this will have to do, for now.</p>\n<p><strong>Monday Music Mix: 28</strong></p>\n<p>Album art featuring work by <a href=\"http://pavelripley.com/\">Pavel Ripley</a></p>\n<p>Tracklist:</p>\n<ol>\n<li>Javelin - Soda Popinski</li>\n<li>Beat Culture - Useless</li>\n<li>Ben Folds Five - Do It Anyway</li>\n<li>Haim - Go Slow</li>\n<li>Charlotte Gainsbourg - Anna</li>\n<li>Charli xcx - I’ll Never Know</li>\n<li>Air - Seven Stars</li>\n<li>Elika - No One Gets Lost</li>\n<li>Tiny Victories - Lost Weekend</li>\n<li>Dirty Three - Rising Below</li>\n<li>Led Er Est - Kaiyo Maru</li>\n<li>Gitar - Hippie Dream</li>\n<li>Polica - Lay Your Cards Out</li>\n<li>Grizzly Bear - Sleeping Ute</li>\n<li>The Lost Lovers Brigade - Lonely Neighbour</li>\n<li>Emika - Drop The Other</li>\n<li>Daughter - Love</li>\n<li>Catcall - Paralysed</li>\n<li>Harry Rag - Tiny Painting</li>\n<li>Feist - Black Tongue</li>\n<li>Major Lazer - Get Free (feat. Amber of Dirty Projectors)</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.mediafire.com/?c6ywfbeevyed9jh\">Download album</a> | <a href=\"https://dl.dropboxusercontent.com/u/96311/MMM-28.zip\">Mirror</a></p>",
+    "archiveHtmlPath": "posts/html/43517685881.html",
+    "archiveTimestampText": "June 25th, 2012 4:51pm",
+    "archiveMediaPath": "media/43517685881.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}

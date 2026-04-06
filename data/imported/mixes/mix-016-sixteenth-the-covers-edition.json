@@ -1,0 +1,130 @@
+{
+  "$schema": "schemas/mix.schema.json",
+  "schemaVersion": "1.0",
+  "id": "mix-016-sixteenth-the-covers-edition",
+  "slug": "mix-016-sixteenth-the-covers-edition",
+  "status": "published",
+  "siteSection": "mixes",
+  "source": {
+    "platform": "tumblr",
+    "feedType": "archive-html",
+    "importedAt": "2026-04-06T05:25:07Z",
+    "sourceUrl": "https://mondaymusicmix.tumblr.com/post/43517769275",
+    "guid": "https://mondaymusicmix.tumblr.com/post/43517769275",
+    "archiveExport": {
+      "postId": "43517769275",
+      "htmlPath": "posts/html/43517769275.html",
+      "timestampText": "April 11th, 2011 6:40pm",
+      "timezoneAssumed": "+05:30",
+      "timezoneInference": "Archive footer omits timezone; +05:30 inferred from mixes 33-36 that also survive in the RSS export.",
+      "sourceUrlInferred": true,
+      "mediaPath": "media/43517769275.jpg"
+    }
+  },
+  "title": "Monday Music Mix #16",
+  "displayTitle": "Sixteenth - The Covers Edition",
+  "mixNumber": 16,
+  "publishedAt": "2011-04-11T13:10:00Z",
+  "summary": "I wanted to add a bit of details and provide links to the originals, but I guess that will have to wait. Busy day. But listen to these songs well. All of these are handpicked brilliant covers, some in the same vein as the originals, some even better. More description to follow later.",
+  "intro": [
+    "I wanted to add a bit of details and provide links to the originals, but I guess that will have to wait. Busy day. But listen to these songs well. All of these are handpicked brilliant covers, some in the same vein as the originals, some even better. More description to follow later.",
+    "Download album (zip format)",
+    "Listen to Grooveshark playlist (Soon, problem with one file, yet again)",
+    "Like what you heard? Send some love through the comments section, if you please."
+  ],
+  "tags": [],
+  "cover": {
+    "imageUrl": null,
+    "alt": "Cover art for Sixteenth - The Covers Edition",
+    "credit": null,
+    "canonicalAssetPath": "data/media/tumblr/mix-016-sixteenth-the-covers-edition/cover.jpg"
+  },
+  "download": {
+    "label": "Download mix",
+    "url": "http://www.mediafire.com/download.php?zwjewaavpi20eer"
+  },
+  "tracks": [
+    {
+      "position": 1,
+      "artist": "Cansei de Ser Sexy",
+      "title": "Knife (Grizzly Bear cover)",
+      "displayText": "Cansei de Ser Sexy - Knife (Grizzly Bear cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 2,
+      "artist": "Adele",
+      "title": "Promise This (Cheryl Cole cover)",
+      "displayText": "Adele - Promise This (Cheryl Cole cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 3,
+      "artist": "The New Standards",
+      "title": "Such Great Heights (The Postal Service cover)",
+      "displayText": "The New Standards - Such Great Heights (The Postal Service cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 4,
+      "artist": "Sarah Winters",
+      "title": "Dynamite (Taio Cruz cover)",
+      "displayText": "Sarah Winters - Dynamite (Taio Cruz cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 5,
+      "artist": "Bat for Lashes",
+      "title": "Strangelove (Depeche Mode cover)",
+      "displayText": "Bat for Lashes - Strangelove (Depeche Mode cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 6,
+      "artist": "Shakira",
+      "title": "Islands (The xx cover)",
+      "displayText": "Shakira - Islands (The xx cover)",
+      "isFavorite": false
+    },
+    {
+      "position": 7,
+      "artist": "Cee Lo Green",
+      "title": "No One’s Gonna Love You (Band of Horses cover)",
+      "displayText": "Cee Lo Green - No One’s Gonna Love You (Band of Horses cover)",
+      "isFavorite": false
+    }
+  ],
+  "stats": {
+    "trackCount": 7,
+    "favoriteCount": 0,
+    "favoriteTracks": [],
+    "topArtists": [
+      "Cansei de Ser Sexy",
+      "Adele",
+      "The New Standards",
+      "Sarah Winters",
+      "Bat for Lashes"
+    ],
+    "coverCount": 7,
+    "coverTracks": [
+      "Cansei de Ser Sexy - Knife (Grizzly Bear cover)",
+      "Adele - Promise This (Cheryl Cole cover)",
+      "The New Standards - Such Great Heights (The Postal Service cover)",
+      "Sarah Winters - Dynamite (Taio Cruz cover)",
+      "Bat for Lashes - Strangelove (Depeche Mode cover)",
+      "Shakira - Islands (The xx cover)",
+      "Cee Lo Green - No One’s Gonna Love You (Band of Horses cover)"
+    ],
+    "remixCount": 0,
+    "remixTracks": []
+  },
+  "legacy": {
+    "originalTitle": "Sixteenth - The Covers Edition",
+    "tumblrHeading": "Sixteenth - The Covers Edition",
+    "descriptionHtml": "<h2>Sixteenth - The Covers Edition</h2><p>I wanted to add a bit of details and provide links to the originals, but I guess that will have to wait. Busy day. But listen to these songs well. All of these are handpicked brilliant covers, some in the same vein as the originals, some even better. More description to follow later.</p>\n<p><strong>Monday Music Mix: 16</strong></p>\n\n<p>Tracklist:</p>\n<ol>\n<li>Cansei de Ser Sexy - Knife (<a href=\"http://listen.grooveshark.com/#/s/Knife/3BDQF1?src=5\">Grizzly Bear cover</a>)</li>\n<li>Adele - Promise This (<a href=\"http://listen.grooveshark.com/#/s/Promise+This/3aslYx?src=5\">Cheryl Cole cover</a>)</li>\n<li>The New Standards - Such Great Heights (<a href=\"http://listen.grooveshark.com/#/s/Such+Great+Heights/21SqF9?src=5\">The Postal Service cover</a>)</li>\n<li>Sarah Winters - Dynamite (Taio Cruz cover)</li>\n<li>Bat for Lashes - Strangelove (<a href=\"http://listen.grooveshark.com/#/s/Strangelove/2fqMJo?src=5\">Depeche Mode cover</a>)</li>\n<li>Shakira - Islands (<a href=\"http://listen.grooveshark.com/#/s/Islands/2nKroy?src=5\">The xx cover</a>)</li>\n<li>Cee Lo Green - No One&rsquo;s Gonna Love You (<a href=\"http://listen.grooveshark.com/#/s/No+One+s+Gonna+Love+You/2nyysi?src=5\">Band of Horses cover</a>)</li>\n</ol>\n<p>* Tracks in blue indicate my favourites</p>\n<p><a href=\"http://www.mediafire.com/download.php?zwjewaavpi20eer\">Download album</a> (zip format) </p>\n<p>Listen to Grooveshark playlist (Soon, problem with one file, yet again)</p>\n<p>Like what you heard? Send some love through the comments section, if you please.</p>",
+    "archiveHtmlPath": "posts/html/43517769275.html",
+    "archiveTimestampText": "April 11th, 2011 6:40pm",
+    "archiveMediaPath": "media/43517769275.jpg",
+    "favoriteTrackCue": "* Tracks in blue indicate my favourites"
+  }
+}
