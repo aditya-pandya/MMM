@@ -23,6 +23,20 @@ def prepare_temp_repo(tmp_path: Path) -> Path:
     return repo
 
 
+def stabilize_static_output_inputs(repo: Path) -> None:
+    """Keep golden-route inputs pinned to the seeded editorial snapshot.
+
+    The live repo can accumulate additional weekly draft files over time, but the
+    static-output fixtures should only change when we intentionally update them.
+    """
+    drafts_dir = repo / "data" / "drafts"
+    retained_draft = drafts_dir / "mmm-for-2026-04-06.json"
+
+    for draft_path in drafts_dir.glob("*.json"):
+        if draft_path != retained_draft:
+            draft_path.unlink()
+
+
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
@@ -278,6 +292,7 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
 
 def test_static_build_matches_golden_route_digests(tmp_path):
     repo = prepare_temp_repo(tmp_path)
+    stabilize_static_output_inputs(repo)
 
     result = subprocess.run(
         ["node", "scripts/build.js"],
