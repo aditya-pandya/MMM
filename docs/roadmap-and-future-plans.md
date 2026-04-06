@@ -145,6 +145,10 @@ Potential work:
 Important rule:
 - hosted AI should stay optional, not foundational
 
+Current status:
+- deterministic archive-informed generation is live
+- local plugin hook now exists for explicit machine-local refinement without making hosted AI foundational
+
 ## Lower-priority ideas
 
 These are interesting but not urgent.
@@ -166,6 +170,10 @@ Only if explicitly requested.
 - local artwork generation/crafting pipeline
 - local media asset management
 - art provenance tracking
+
+Current status:
+- lightweight local artwork registry/workspace scaffolding now exists
+- it remains file-based, optional, and local-safe rather than becoming a product subsystem
 
 ## Things future agents should probably NOT do
 

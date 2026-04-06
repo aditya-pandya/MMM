@@ -2,6 +2,9 @@
 from __future__ import annotations
 
 import argparse
+import os
+import shutil
+import subprocess
 from pathlib import Path
 
 
@@ -74,7 +77,77 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Print the rendered plist after writing it.",
     )
+    parser.add_argument(
+        "--install",
+        action="store_true",
+        help="Write the plist in place and keep a timestamped backup if one already exists.",
+    )
+    parser.add_argument(
+        "--bootstrap",
+        action="store_true",
+        help="Run launchctl bootstrap for the rendered plist after writing it.",
+    )
+    parser.add_argument(
+        "--verify",
+        action="store_true",
+        help="Run launchctl print for the agent label after writing or bootstrapping it.",
+    )
+    parser.add_argument(
+        "--backup-dir",
+        type=Path,
+        default=None,
+        help="Directory for timestamped plist backups. Defaults next to the output plist.",
+    )
+    parser.add_argument(
+        "--launchctl-bin",
+        default="launchctl",
+        help="launchctl binary or shim to use for bootstrap/verify.",
+    )
     return parser
+
+
+def backup_existing_plist(output_path: Path, backup_dir: Path | None = None) -> Path | None:
+    if not output_path.exists():
+        return None
+
+    stamp = str(int(output_path.stat().st_mtime))
+    target_dir = (backup_dir or output_path.parent / "backups").expanduser()
+    target_dir.mkdir(parents=True, exist_ok=True)
+    backup_path = target_dir / f"{output_path.stem}.{stamp}.bak{output_path.suffix}"
+    shutil.copy2(output_path, backup_path)
+    return backup_path
+
+
+def launchctl_target(label: str) -> str:
+    return f"gui/{os.getuid()}/{label}"
+
+
+def run_launchctl(launchctl_bin: str, *args: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        [launchctl_bin, *args],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+
+def bootstrap_launch_agent(launchctl_bin: str, output_path: Path, label: str) -> None:
+    target = launchctl_target(label)
+    bootout = run_launchctl(launchctl_bin, "bootout", target)
+    if bootout.returncode not in {0, 3, 36, 113} and "Could not find service" not in (bootout.stderr or ""):
+        raise RuntimeError(bootout.stderr.strip() or bootout.stdout.strip() or "launchctl bootout failed")
+
+    result = run_launchctl(launchctl_bin, "bootstrap", f"gui/{os.getuid()}", str(output_path))
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or result.stdout.strip() or "launchctl bootstrap failed")
+
+
+def verify_launch_agent(launchctl_bin: str, label: str) -> str:
+    target = launchctl_target(label)
+    result = run_launchctl(launchctl_bin, "print", target)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or result.stdout.strip() or "launchctl print failed")
+    return result.stdout.strip()
 
 
 def main() -> int:
@@ -87,6 +160,7 @@ def main() -> int:
     logs_dir = repo_root / "logs"
     logs_dir.mkdir(parents=True, exist_ok=True)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    backup_path = backup_existing_plist(output_path, args.backup_dir)
 
     path_value = args.path_value or DEFAULT_PATH.format(repo_root=repo_root)
     rendered = render_launch_agent(template_path, repo_root, path_value)
@@ -104,8 +178,21 @@ def main() -> int:
 
     output_path.write_text(rendered, encoding="utf-8")
     print(f"Wrote LaunchAgent to {output_path}")
+    if backup_path is not None:
+        print(f"Backed up previous plist to {backup_path}")
     print("Load it with: launchctl bootstrap gui/$(id -u) " f"{output_path}")
     print("Kick it once with: launchctl kickstart -k gui/$(id -u)/" f"{DEFAULT_LABEL}")
+
+    if args.bootstrap:
+        bootstrap_launch_agent(args.launchctl_bin, output_path, DEFAULT_LABEL)
+        print(f"Bootstrapped LaunchAgent: {launchctl_target(DEFAULT_LABEL)}")
+
+    if args.verify:
+        verification = verify_launch_agent(args.launchctl_bin, DEFAULT_LABEL)
+        print(f"Verified LaunchAgent: {launchctl_target(DEFAULT_LABEL)}")
+        if verification:
+            print(verification)
+
     if args.print:
         print("")
         print(rendered)

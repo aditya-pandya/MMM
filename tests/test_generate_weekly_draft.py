@@ -258,6 +258,43 @@ def test_auto_mode_stays_local_even_with_hosted_key_present(temp_repo, monkeypat
 
     mix = mmm_common.load_json(output)
     assert mix["generation_mode"] == "local"
+
+
+def test_plugin_command_can_refine_local_draft(temp_repo, tmp_path):
+    plugin_path = tmp_path / "draft_plugin.py"
+    plugin_path.write_text(
+        "\n".join(
+            [
+                "import json",
+                "import sys",
+                "from pathlib import Path",
+                "",
+                "context = json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))",
+                "draft = context['baseline_draft']",
+                "draft['summary'] = draft['summary'] + ' Refined locally via plugin.'",
+                "draft['notes'] = draft['notes'] + ' Plugin kept this local-only.'",
+                "draft['tags'] = draft.get('tags', []) + ['plugin-refined']",
+                "Path(sys.argv[2]).write_text(json.dumps(draft, indent=2), encoding='utf-8')",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    output = generate_weekly_draft.generate_weekly_draft(
+        generate_weekly_draft.resolve_mix_date("2026-04-27"),
+        mode="local",
+        plugin_command=f"{sys.executable} {plugin_path} {{context_path}} {{output_path}}",
+    )
+
+    mix = mmm_common.load_json(output)
+    assert mix["generation_mode"] == "local-plugin"
+    assert "Refined locally via plugin." in mix["summary"]
+    assert "Plugin kept this local-only." in mix["notes"]
+    assert "plugin-refined" in mix["tags"]
+    assert mix["plugin_source"]["type"] == "local-command"
+    assert "draft_plugin.py" in mix["plugin_source"]["command"]
+    assert mix["source_context"]["plugin_enabled"] is True
     assert "generation_fallback_reason" not in mix
     assert mix["source_context"]["published_mix_count"] == 3
     assert mix["source_context"]["note_count"] == 1

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MMM Artwork Registry",
+  "type": "object",
+  "required": ["schemaVersion", "updatedAt", "items"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "mixSlug",
+          "role",
+          "assetPath",
+          "workspacePath",
+          "registeredAt",
+          "provenance"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "mixSlug": { "type": "string" },
+          "role": { "type": "string" },
+          "assetPath": { "type": "string" },
+          "workspacePath": { "type": "string" },
+          "registeredAt": { "type": "string" },
+          "provenance": {
+            "type": "object",
+            "required": ["sourceType", "sourceLabel", "notes"],
+            "properties": {
+              "sourceType": { "type": "string" },
+              "sourceLabel": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

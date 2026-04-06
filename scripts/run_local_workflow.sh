@@ -14,6 +14,7 @@ exec >> "$LOG_FILE" 2>&1
 scheduled_run=false
 run_tests=true
 run_tests_override=false
+refresh_indexes=true
 forwarded_args=()
 
 for arg in "$@"; do
@@ -23,6 +24,9 @@ for arg in "$@"; do
       ;;
     --run-tests)
       run_tests_override=true
+      ;;
+    --skip-refresh)
+      refresh_indexes=false
       ;;
     *)
       forwarded_args+=("$arg")
@@ -34,12 +38,18 @@ if [ "$scheduled_run" = true ] && [ "$run_tests_override" = false ]; then
   run_tests=false
 fi
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting local MMM workflow (scheduled=$scheduled_run, run_tests=$run_tests)"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting local MMM workflow (scheduled=$scheduled_run, run_tests=$run_tests, refresh_indexes=$refresh_indexes)"
 
 if [ "$run_tests" = true ]; then
   python3 -m pytest -q
 else
   echo "Skipping pytest for scheduled run."
+fi
+
+if [ "$refresh_indexes" = true ]; then
+  python3 scripts/refresh_indexes.py
+else
+  echo "Skipping aggregate refresh."
 fi
 
 generate_args=(scripts/generate_weekly_draft.py --mode auto)
@@ -67,5 +77,6 @@ if [ "$scheduled_run" = false ]; then
 fi
 
 echo "Local MMM workflow complete."
+echo "Workflow log: $LOG_FILE"
 echo "Latest drafts:"
 ls -1 data/drafts/*.json 2>/dev/null | tail -n 5 || true

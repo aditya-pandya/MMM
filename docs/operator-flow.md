@@ -21,7 +21,7 @@
 
 4. Re-run validation.
    - Run `python3 scripts/validate_content.py` again after edits.
-   - The validator checks site metadata, notes, drafts, published mixes, `data/archive/index.json`, `data/archive-index.json`, and `data/mixes.json`.
+   - The validator checks site metadata, notes, drafts, published mixes, `data/archive/index.json`, `data/archive-index.json`, `data/mixes.json`, and `data/media/artwork-registry.json` when present.
    - Expected output before publish is `errors: 0`.
    - Warnings are non-blocking, but published mixes can now emit listening/provider warnings when a surface falls outside the curated trust rules in `data/listening-provider-catalog.json`.
    - Explicit embeds are required for inline playback. Trusted provider links alone stay link-only.
@@ -45,17 +45,31 @@
    - `python3 scripts/preview_latest.py --open` opens only local file previews or localhost routes.
    - Push to `main` to trigger the GitHub Pages deployment workflow.
 
+## Local artwork workflow
+
+- Scaffold a per-mix workspace: `python3 scripts/manage_artwork.py scaffold mix-036-thirtysixth`
+- Keep raw ingredients in `source/`, exports in `exports/`, and quick process notes in `notes/`.
+- Register a chosen asset in the canonical registry:
+  - `python3 scripts/manage_artwork.py register mix-036-thirtysixth --asset-path data/media/workspaces/mix-036-thirtysixth/exports/cover.jpg --source-label "Local collage"`
+- `data/media/artwork-registry.json` is the plain-JSON provenance source of truth.
+
 ## Weekly generation automation
 
 - Local/manual generation: `python3 scripts/generate_weekly_draft.py --mode auto`
 - Local/manual end-to-end: `./scripts/run_local_workflow.sh`
 - Local scheduled: use `./scripts/run_local_workflow.sh --scheduled`
-- Install the matching LaunchAgent with `python3 ops/install_launch_agent.py`
+- Install the matching LaunchAgent with `python3 ops/install_launch_agent.py --install`
+- Bootstrap immediately when wanted: `python3 ops/install_launch_agent.py --install --bootstrap --verify`
 - Optional scheduled run with tests: `./scripts/run_local_workflow.sh --scheduled --run-tests`
+- Skip aggregate refresh only when indexes are already known-good: `./scripts/run_local_workflow.sh --skip-refresh`
 - Inputs read by the generator:
   - `data/taste-profile.json`
   - `data/site.json`
   - `data/archive/index.json`
+- Optional local plugin input:
+  - `--plugin-command "<local command>"`
+  - `MMM_DRAFT_PLUGIN_COMMAND="<local command>"`
+  - The command gets JSON context on stdin and may also use `{context_path}`, `{output_path}`, and `{repo_root}` placeholders.
 - Output:
   - A new JSON draft in `data/drafts/`
   - A dated workflow log in `logs/run-local-workflow-YYYY-MM-DD.log`
@@ -65,10 +79,12 @@ Scheduled local runs:
 - can opt back into tests with `--run-tests`
 - do not pass `--force` to draft generation
 - do not run `npm run build` after writing the draft
+- still refresh aggregate indexes before generation unless `--skip-refresh` is passed
 
 ## Notes
 
-- Deterministic local generation is the default and only supported mode right now.
+- Deterministic local generation is the default mode.
+- Local plugin refinement is optional and still must emit a valid editorial draft JSON object.
 - The hosted GitHub workflow is for deployment, not editorial generation.
 - `npm run content:validate`, `npm run draft:new`, and `npm run note:new` wrap the new editor-facing commands.
 - `npm run note:suggest`, `npm run note:new-from-mix`, `npm run content:refresh`, and `npm run preview:latest` cover the new low-friction maintenance helpers.

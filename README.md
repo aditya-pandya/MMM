@@ -34,6 +34,7 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
   - `published/` published mix JSON
   - `notes/` editorial notes
   - `archive/` generated archive index
+  - `media/` local artwork registry plus mix-specific asset workspaces
   - `site.json`, `about.json`, `archive-index.json`, `notes-index.json`, `taste-profile.json`
   - `listening-provider-catalog.json` curated trust map for listening providers and embeds
 - `schemas/`
@@ -148,11 +149,35 @@ Notes:
 - `--mode auto` is local-safe and currently resolves to deterministic local heuristics.
 - Draft generation now pulls from local published mixes, archive summaries, taste-profile cues, and editorial notes before choosing tracks or writing copy.
 - Covers, remixes, recurring artists, and bolded-favorite style signals can now show up in generated summary, notes, tags, and track rationale when that pattern already exists in local data.
+- Optional local plugin hook: pass `--plugin-command` or set `MMM_DRAFT_PLUGIN_COMMAND` to a machine-local command. The command receives JSON context on stdin and can also use `{context_path}`, `{output_path}`, and `{repo_root}` placeholders.
+- Plugin output still has to be a valid MMM editorial draft JSON object.
 - No OpenAI or hosted AI dependency is required for the site or the weekly workflow.
 - `create_content.py note` writes the note file and refreshes the notes index entry in one step.
 - `create_content.py note-from-mix` seeds a note slug, title, summary, related mix, and starter body from the published mix JSON.
 - `create_content.py suggest-notes` still prints a clear zero-state when every published mix already has note coverage.
 - `preview_latest.py --open` only opens local file previews or localhost routes.
+
+Scaffold a local artwork workspace for a mix:
+
+```bash
+python3 scripts/manage_artwork.py scaffold mix-036-thirtysixth
+npm run artwork:scaffold -- mix-036-thirtysixth
+```
+
+Register a local artwork file with provenance in the canonical registry:
+
+```bash
+python3 scripts/manage_artwork.py register mix-036-thirtysixth \
+  --asset-path data/media/workspaces/mix-036-thirtysixth/exports/cover.jpg \
+  --role cover-art \
+  --source-type handmade \
+  --source-label "Local collage pass" \
+  --notes "Built from scans and local type."
+```
+
+Notes:
+- `data/media/artwork-registry.json` is the canonical local artwork/provenance index.
+- Keep registered asset paths inside `data/media/` so the registry stays local-safe and portable with the repo.
 
 ## Local editorial workflow
 
@@ -228,12 +253,14 @@ python3 scripts/build_taste_profile.py
 
 ```bash
 ./scripts/run_local_workflow.sh
+npm run workflow:weekly
 ```
 
 Scheduled local run without overwrite/build:
 
 ```bash
 ./scripts/run_local_workflow.sh --scheduled
+npm run workflow:weekly:scheduled
 ```
 
 Scheduled local run with tests enabled:
@@ -244,9 +271,13 @@ Scheduled local run with tests enabled:
 
 Optional macOS scheduling:
 - Render and install a machine-local LaunchAgent with `python3 ops/install_launch_agent.py`.
+- `./scripts/run_local_workflow.sh` now refreshes note/archive aggregates before draft generation unless `--skip-refresh` is passed.
 - By default this writes `~/Library/LaunchAgents/com.mmm.weekly.plist` with the current repo root, workflow script path, and `logs/launchd-weekly.*.log` paths embedded automatically.
+- Safe install + verify in one command: `python3 ops/install_launch_agent.py --install --verify`
+- Install + bootstrap + verify immediately: `python3 ops/install_launch_agent.py --install --bootstrap --verify`
 - Load it with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.mmm.weekly.plist`.
 - Re-run it on demand with `launchctl kickstart -k gui/$(id -u)/com.mmm.weekly`.
+- Re-installs keep a timestamped backup under `~/Library/LaunchAgents/backups/` unless `--backup-dir` is overridden.
 - That keeps weekly generation on this machine instead of GitHub Actions.
 - Local workflow logs are written to `logs/run-local-workflow-YYYY-MM-DD.log`.
 

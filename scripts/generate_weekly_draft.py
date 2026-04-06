@@ -1,6 +1,11 @@
 from __future__ import annotations
 
 import argparse
+import json
+import os
+import shlex
+import subprocess
+import tempfile
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Callable
@@ -12,9 +17,11 @@ from mmm_common import (
     PUBLISHED_DIR,
     SITE_PATH,
     TASTE_PROFILE_PATH,
+    ValidationError,
     dump_json,
     load_json,
     slugify,
+    validate_mix,
 )
 
 FALLBACK_TRACKS = [
@@ -50,6 +57,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--date", dest="mix_date", help="ISO date for the mix, defaults to next Monday UTC")
     parser.add_argument("--mode", choices=["auto", "local", "fallback"], default="auto")
     parser.add_argument("--force", action="store_true", help="Overwrite existing draft for the same slug")
+    parser.add_argument(
+        "--plugin-command",
+        help="Optional local command that can refine or replace the deterministic draft using JSON context.",
+    )
     return parser.parse_args()
 
 
@@ -530,7 +541,171 @@ def generate_archive_informed_mix(
     }
 
 
-def generate_weekly_draft(mix_date: date, mode: str = "auto", force: bool = False) -> Path:
+def build_plugin_context(
+    mix_date: date,
+    mode: str,
+    site: dict[str, Any],
+    taste: dict[str, Any],
+    archive: dict[str, Any],
+    published_mixes: list[dict[str, Any]],
+    notes: list[dict[str, Any]],
+    baseline_mix: dict[str, Any],
+) -> dict[str, Any]:
+    return {
+        "version": "1.0",
+        "mix_date": mix_date.isoformat(),
+        "requested_mode": mode,
+        "site": {
+            "title": site_title(site),
+            "featured_mix_slug": site.get("featuredMixSlug") or site.get("featured_mix_slug"),
+        },
+        "taste_profile": {
+            "tone": taste.get("tone"),
+            "favorite_genres": extract_genres(taste),
+            "top_artists": extract_top_artists(taste),
+        },
+        "archive_summary": {
+            "mix_count": archive_count(archive),
+            "summary_tone": build_summary_tone(archive),
+            "published_mix_count": len(published_mixes),
+            "note_count": len(notes),
+            "recent_mix_slugs": [str(mix.get("slug") or "") for mix in published_mixes[:5]],
+            "note_signals": build_note_signals(notes)[:5],
+        },
+        "published_mixes": published_mixes,
+        "notes": notes,
+        "baseline_draft": baseline_mix,
+        "instructions": {
+            "local_only": True,
+            "hosted_ai_not_required": True,
+            "expected_output": "Return one editorial draft JSON object compatible with MMM validate_mix().",
+            "stdin_supported": True,
+        },
+    }
+
+
+def resolve_plugin_command(explicit_command: str | None) -> str | None:
+    if explicit_command and explicit_command.strip():
+        return explicit_command.strip()
+    env_value = os.environ.get("MMM_DRAFT_PLUGIN_COMMAND", "").strip()
+    return env_value or None
+
+
+def _load_plugin_output(stdout: str, output_path: Path) -> dict[str, Any]:
+    if output_path.exists():
+        payload = load_json(output_path)
+        if not isinstance(payload, dict):
+            raise ValidationError("plugin output file must contain a JSON object")
+        return payload
+
+    if not stdout.strip():
+        raise ValidationError("plugin produced no JSON output")
+    payload = json.loads(stdout)
+    if not isinstance(payload, dict):
+        raise ValidationError("plugin stdout must be a JSON object")
+    return payload
+
+
+def run_plugin_command(
+    plugin_command: str,
+    context: dict[str, Any],
+    repo_root: Path,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    with tempfile.TemporaryDirectory(prefix="mmm-draft-plugin-") as temp_dir:
+        temp_root = Path(temp_dir)
+        context_path = temp_root / "draft-context.json"
+        output_path = temp_root / "draft-output.json"
+        dump_json(context_path, context)
+
+        formatted_command = plugin_command.format(
+            context_path=str(context_path),
+            output_path=str(output_path),
+            repo_root=str(repo_root),
+        )
+        command_parts = shlex.split(formatted_command)
+        if not command_parts:
+            raise ValueError("plugin command resolved to an empty command")
+
+        completed = subprocess.run(
+            command_parts,
+            cwd=repo_root,
+            input=json.dumps(context, indent=2),
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if completed.returncode != 0:
+            stderr = completed.stderr.strip()
+            stdout = completed.stdout.strip()
+            detail = stderr or stdout or f"exit code {completed.returncode}"
+            raise RuntimeError(f"plugin command failed: {detail}")
+
+        payload = _load_plugin_output(completed.stdout, output_path)
+        result = validate_mix(payload)
+        if result.flavor != "editorial":
+            raise ValidationError("plugin command must return an editorial draft payload")
+
+        metadata = {
+            "command": formatted_command,
+            "stdout": completed.stdout.strip(),
+            "stderr": completed.stderr.strip(),
+        }
+        return result.mix, metadata
+
+
+def apply_plugin_hook(
+    mix_date: date,
+    mode: str,
+    site: dict[str, Any],
+    taste: dict[str, Any],
+    archive: dict[str, Any],
+    published_mixes: list[dict[str, Any]],
+    notes: list[dict[str, Any]],
+    baseline_mix: dict[str, Any],
+    plugin_command: str | None,
+) -> dict[str, Any]:
+    resolved_command = resolve_plugin_command(plugin_command)
+    if not resolved_command:
+        return baseline_mix
+
+    context = build_plugin_context(
+        mix_date,
+        mode,
+        site,
+        taste,
+        archive,
+        published_mixes,
+        notes,
+        baseline_mix,
+    )
+    plugin_mix, plugin_metadata = run_plugin_command(resolved_command, context, Path(__file__).resolve().parents[1])
+
+    plugin_source = dict(plugin_mix.get("plugin_source") or {})
+    plugin_source.update(
+        {
+            "type": "local-command",
+            "command": plugin_metadata["command"],
+        }
+    )
+
+    plugin_mix = dict(plugin_mix)
+    plugin_mix["generation_mode"] = "local-plugin"
+    plugin_mix["plugin_source"] = plugin_source
+
+    source_context = dict(plugin_mix.get("source_context") or {})
+    if "baseline_generation_mode" not in source_context:
+        source_context["baseline_generation_mode"] = baseline_mix.get("generation_mode", "local")
+    source_context["plugin_enabled"] = True
+    plugin_mix["source_context"] = source_context
+    return plugin_mix
+
+
+def generate_weekly_draft(
+    mix_date: date,
+    mode: str = "auto",
+    force: bool = False,
+    plugin_command: str | None = None,
+) -> Path:
     taste = load_json(TASTE_PROFILE_PATH)
     site = load_json(SITE_PATH)
     archive = load_json(ARCHIVE_INDEX_PATH)
@@ -541,7 +716,18 @@ def generate_weekly_draft(mix_date: date, mode: str = "auto", force: bool = Fals
     if resolved_mode != "local":
         raise ValueError(f"Unsupported generation mode: {resolved_mode}")
 
-    mix = generate_archive_informed_mix(mix_date, taste, site, archive, published_mixes, notes)
+    baseline_mix = generate_archive_informed_mix(mix_date, taste, site, archive, published_mixes, notes)
+    mix = apply_plugin_hook(
+        mix_date,
+        resolved_mode,
+        site,
+        taste,
+        archive,
+        published_mixes,
+        notes,
+        baseline_mix,
+        plugin_command,
+    )
 
     output_path = DRAFTS_DIR / f"{mix['slug']}.json"
     if output_path.exists() and not force:
@@ -555,7 +741,12 @@ def main() -> int:
     args = parse_args()
     try:
         mix_date = resolve_mix_date(args.mix_date)
-        output = generate_weekly_draft(mix_date, mode=args.mode, force=args.force)
+        output = generate_weekly_draft(
+            mix_date,
+            mode=args.mode,
+            force=args.force,
+            plugin_command=args.plugin_command,
+        )
     except Exception as exc:
         print(f"ERROR: {exc}")
         return 1

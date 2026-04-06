@@ -14,12 +14,15 @@ DRAFTS_DIR = DATA_DIR / "drafts"
 PUBLISHED_DIR = DATA_DIR / "published"
 NOTES_DIR = DATA_DIR / "notes"
 ARCHIVE_DIR = DATA_DIR / "archive"
+MEDIA_DIR = DATA_DIR / "media"
+MEDIA_WORKSPACES_DIR = MEDIA_DIR / "workspaces"
 ARCHIVE_INDEX_PATH = ARCHIVE_DIR / "index.json"
 LEGACY_ARCHIVE_INDEX_PATH = DATA_DIR / "archive-index.json"
 MIXES_JSON_PATH = DATA_DIR / "mixes.json"
 NOTES_INDEX_PATH = DATA_DIR / "notes-index.json"
 SITE_PATH = DATA_DIR / "site.json"
 TASTE_PROFILE_PATH = DATA_DIR / "taste-profile.json"
+ARTWORK_REGISTRY_PATH = MEDIA_DIR / "artwork-registry.json"
 
 EDITORIAL_REQUIRED_MIX_FIELDS = {
     "slug",

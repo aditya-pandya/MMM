@@ -12,11 +12,16 @@
     "publish": "python3 scripts/publish_mix.py",
     "content:validate": "python3 scripts/validate_content.py",
     "content:refresh": "python3 scripts/refresh_indexes.py",
+    "artwork:scaffold": "python3 scripts/manage_artwork.py scaffold",
+    "artwork:register": "python3 scripts/manage_artwork.py register",
     "draft:new": "python3 scripts/create_content.py draft-mix",
     "note:new": "python3 scripts/create_content.py note",
     "note:new-from-mix": "python3 scripts/create_content.py note-from-mix",
     "note:suggest": "python3 scripts/create_content.py suggest-notes",
-    "preview:latest": "python3 scripts/preview_latest.py"
+    "preview:latest": "python3 scripts/preview_latest.py",
+    "workflow:weekly": "./scripts/run_local_workflow.sh",
+    "workflow:weekly:scheduled": "./scripts/run_local_workflow.sh --scheduled",
+    "workflow:schedule:install": "python3 ops/install_launch_agent.py --install --verify"
   },
   "keywords": [
     "music",

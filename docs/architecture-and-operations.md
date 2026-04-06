@@ -18,6 +18,7 @@ It is made of three major subsystems:
 - `data/notes/` — note detail records
 - `data/imported/` — imported Tumblr/RSS source and normalized mix records
 - `data/archive/` — generated archive index
+- `data/media/` — local artwork registry plus per-mix asset workspaces
 
 ### Aggregates and config
 - `data/site.json`
@@ -51,7 +52,12 @@ All tooling lives under `scripts/`.
 
 `generate_weekly_draft.py`
 - generates a local deterministic weekly draft
+- can optionally hand JSON context to a machine-local plugin command
 - writes into `data/drafts/`
+
+`manage_artwork.py`
+- scaffolds local artwork workspaces per mix
+- registers local asset paths plus provenance into canonical JSON
 
 `create_content.py`
 - creates new draft mix templates
@@ -78,6 +84,7 @@ All tooling lives under `scripts/`.
 - convenience runner for scheduled/local editorial workflow
 - manual runs execute pytest before generation
 - scheduled runs skip pytest unless `--run-tests` is passed
+- refreshes note/archive aggregates before generation unless `--skip-refresh` is passed
 
 ## 3. Static rendering and deploy
 
@@ -190,6 +197,7 @@ Reasons:
 - matches Aditya’s preference for local ops
 - keeps the deployed site dumb and stable
 - keeps machine-specific LaunchAgent paths out of tracked files by rendering them locally via `ops/install_launch_agent.py`
+- keeps artwork provenance visible in canonical JSON instead of scattered across untracked folders
 
 ## GitHub Actions role
 

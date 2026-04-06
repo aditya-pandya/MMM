@@ -7,6 +7,7 @@ from typing import Any
 
 from listening_confidence import load_provider_catalog, normalize_published_listening
 from mmm_common import (
+    ARTWORK_REGISTRY_PATH,
     ValidationError,
     ensure_iso8601_datetime,
     ensure_kebab_case_slug,
@@ -333,6 +334,74 @@ def validate_archive_indexes(
                     add_issue(issues, "warning", "mixes-json", mixes_json_path, f"contains slugs not found in published/: {', '.join(extra)}")
 
 
+def validate_artwork_registry(root: Path, issues: list[dict[str, str]]) -> int:
+    path = root / ARTWORK_REGISTRY_PATH.relative_to(ROOT)
+    if not path.exists():
+        return 0
+
+    registry = load_json_with_issue(path, issues, "artwork")
+    if not isinstance(registry, dict):
+        return 0
+
+    try:
+        require_non_empty_string(registry, "schemaVersion", "artwork schemaVersion")
+        ensure_iso8601_datetime(registry.get("updatedAt"), "artwork updatedAt")
+    except ValidationError as exc:
+        add_issue(issues, "error", "artwork", path, str(exc))
+        return 0
+
+    items = registry.get("items")
+    if not isinstance(items, list):
+        add_issue(issues, "error", "artwork", path, "items must be an array")
+        return 0
+
+    seen_ids: set[str] = set()
+    media_root = root / "data" / "media"
+
+    for index, item in enumerate(items, start=1):
+        if not isinstance(item, dict):
+            add_issue(issues, "error", "artwork", path, f"item {index} must be an object")
+            continue
+
+        try:
+            item_id = require_non_empty_string(item, "id", f"artwork item {index} id")
+            mix_slug = ensure_kebab_case_slug(item.get("mixSlug"), f"artwork item {index} mixSlug")
+            require_non_empty_string(item, "role", f"artwork item {index} role")
+            ensure_iso8601_datetime(item.get("registeredAt"), f"artwork item {index} registeredAt")
+            asset_path_value = require_non_empty_string(item, "assetPath", f"artwork item {index} assetPath")
+            workspace_path_value = require_non_empty_string(item, "workspacePath", f"artwork item {index} workspacePath")
+            provenance = item.get("provenance")
+            if not isinstance(provenance, dict):
+                raise ValidationError(f"artwork item {index} provenance must be an object")
+            require_non_empty_string(provenance, "sourceType", f"artwork item {index} provenance.sourceType")
+            require_non_empty_string(provenance, "sourceLabel", f"artwork item {index} provenance.sourceLabel")
+            if provenance.get("notes") is None:
+                raise ValidationError(f"artwork item {index} provenance.notes must be present")
+            if item_id in seen_ids:
+                raise ValidationError(f"duplicate artwork id '{item_id}'")
+            seen_ids.add(item_id)
+        except ValidationError as exc:
+            add_issue(issues, "error", "artwork", path, str(exc))
+            continue
+
+        for label, relative_value, must_be_file in (
+            ("assetPath", asset_path_value, True),
+            ("workspacePath", workspace_path_value, False),
+        ):
+            candidate = (root / relative_value).resolve()
+            try:
+                candidate.relative_to(media_root.resolve())
+            except ValueError:
+                add_issue(issues, "error", "artwork", path, f"{mix_slug} {label} must stay under data/media/")
+                continue
+            if must_be_file and not candidate.exists():
+                add_issue(issues, "warning", "artwork", path, f"{mix_slug} assetPath is missing on disk: {relative_value}")
+            if not must_be_file and not candidate.exists():
+                add_issue(issues, "warning", "artwork", path, f"{mix_slug} workspacePath is missing on disk: {relative_value}")
+
+    return len(items)
+
+
 def build_report(root: Path) -> dict[str, Any]:
     data_dir = root / "data"
     issues: list[dict[str, str]] = []
@@ -367,6 +436,7 @@ def build_report(root: Path) -> dict[str, Any]:
     notes_index = load_json_with_issue(notes_index_path, issues, "notes-index")
     notes_by_slug = validate_notes(data_dir / "notes", notes_index if isinstance(notes_index, dict) else None, known_mix_slugs, issues)
     validate_archive_indexes(root, published_by_slug, issues)
+    artwork_count = validate_artwork_registry(root, issues)
 
     return {
         "root": str(root),
@@ -374,6 +444,7 @@ def build_report(root: Path) -> dict[str, Any]:
             "drafts": len(drafts_by_slug),
             "published": len(published_by_slug),
             "notes": len(notes_by_slug),
+            "artwork": artwork_count,
         },
         "issues": issues,
         "errors": sum(1 for issue in issues if issue["severity"] == "error"),
@@ -385,7 +456,7 @@ def render_text_report(report: dict[str, Any]) -> str:
     lines = [
         "MMM content validation report",
         f"root: {report['root']}",
-        f"checked: {report['counts']['drafts']} drafts, {report['counts']['published']} published mixes, {report['counts']['notes']} notes",
+        f"checked: {report['counts']['drafts']} drafts, {report['counts']['published']} published mixes, {report['counts']['notes']} notes, {report['counts'].get('artwork', 0)} artwork records",
         f"errors: {report['errors']}",
         f"warnings: {report['warnings']}",
     ]

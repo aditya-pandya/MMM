@@ -18,6 +18,7 @@ def seed_repo(root: Path) -> None:
     (data_dir / "published").mkdir(parents=True)
     (data_dir / "notes").mkdir(parents=True)
     (data_dir / "archive").mkdir(parents=True)
+    (data_dir / "media" / "workspaces" / "mix-001-test" / "exports").mkdir(parents=True)
 
     mmm_common.dump_json(
         data_dir / "listening-provider-catalog.json",
@@ -189,6 +190,33 @@ def seed_repo(root: Path) -> None:
         },
     )
     mmm_common.dump_json(data_dir / "mixes.json", [published_mix])
+    (data_dir / "media" / "workspaces" / "mix-001-test" / "exports" / "cover.jpg").write_text(
+        "cover",
+        encoding="utf-8",
+    )
+    mmm_common.dump_json(
+        data_dir / "media" / "artwork-registry.json",
+        {
+            "$schema": "../../schemas/artwork-registry.schema.json",
+            "schemaVersion": "1.0",
+            "updatedAt": "2026-04-03T14:05:00Z",
+            "items": [
+                {
+                    "id": "mix-001-test-cover-art-cover",
+                    "mixSlug": "mix-001-test",
+                    "role": "cover-art",
+                    "assetPath": "data/media/workspaces/mix-001-test/exports/cover.jpg",
+                    "workspacePath": "data/media/workspaces/mix-001-test",
+                    "registeredAt": "2026-04-03T14:05:00Z",
+                    "provenance": {
+                        "sourceType": "handmade",
+                        "sourceLabel": "Local test art",
+                        "notes": ""
+                    }
+                }
+            ]
+        },
+    )
 
 
 def test_validate_content_reports_clean_repo(tmp_path):
@@ -201,6 +229,7 @@ def test_validate_content_reports_clean_repo(tmp_path):
     assert report["counts"]["published"] == 1
     assert report["counts"]["drafts"] == 1
     assert report["counts"]["notes"] == 1
+    assert report["counts"]["artwork"] == 1
 
 
 def test_validate_content_reports_actionable_mismatches(tmp_path):

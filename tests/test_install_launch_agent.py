@@ -91,3 +91,64 @@ def test_install_launch_agent_accepts_path_and_log_overrides(tmp_path):
     assert f"<string>{path_value}</string>" in rendered
     assert str(stdout_log.resolve()) in rendered
     assert str(stderr_log.resolve()) in rendered
+
+
+def test_install_launch_agent_can_backup_and_verify_with_launchctl_shim(tmp_path):
+    repo_root = tmp_path / "mmm-checkout"
+    (repo_root / "scripts").mkdir(parents=True)
+    (repo_root / "scripts" / "run_local_workflow.sh").write_text("#!/bin/bash\n", encoding="utf-8")
+    output_path = tmp_path / "LaunchAgents" / "com.mmm.weekly.plist"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text("old", encoding="utf-8")
+
+    shim_path = tmp_path / "launchctl"
+    shim_log = tmp_path / "launchctl.log"
+    shim_path.write_text(
+        "\n".join(
+            [
+                "#!/bin/sh",
+                "echo \"$@\" >> \"$LAUNCHCTL_LOG\"",
+                "if [ \"$1\" = \"bootout\" ]; then",
+                "  exit 36",
+                "fi",
+                "if [ \"$1\" = \"print\" ]; then",
+                "  echo 'service = com.mmm.weekly'",
+                "fi",
+                "exit 0",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    shim_path.chmod(0o755)
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(REPO_ROOT / "ops" / "install_launch_agent.py"),
+            "--repo-root",
+            str(repo_root),
+            "--output",
+            str(output_path),
+            "--bootstrap",
+            "--verify",
+            "--launchctl-bin",
+            str(shim_path),
+        ],
+        cwd=REPO_ROOT,
+        env={"LAUNCHCTL_LOG": str(shim_log)},
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0
+    backups = list((output_path.parent / "backups").glob("com.mmm.weekly.*.bak.plist"))
+    assert len(backups) == 1
+    shim_calls = shim_log.read_text(encoding="utf-8").splitlines()
+    assert any(call.startswith("bootout gui/") for call in shim_calls)
+    assert any(call.startswith("bootstrap gui/") for call in shim_calls)
+    assert any(call.startswith("print gui/") for call in shim_calls)
+    assert "Backed up previous plist" in result.stdout
+    assert "Bootstrapped LaunchAgent" in result.stdout
+    assert "Verified LaunchAgent" in result.stdout
