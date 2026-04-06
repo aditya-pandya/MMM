@@ -1,0 +1,1326 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-034-thirtyfourth",
+  "updatedAt": "2026-04-06T05:28:15Z",
+  "sourceMixPath": "data/published/mix-034-thirtyfourth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Ha Ha Tonka - Colorful Kids",
+      "query": "Ha Ha Tonka Colorful Kids",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Uq1-DPL7wpg",
+          "title": "Ha Ha Tonka - Colorful Kids",
+          "url": "https://www.youtube.com/watch?v=Uq1-DPL7wpg",
+          "channel": "Sergio Lugo",
+          "durationSeconds": 251.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Yw7nOEND310",
+          "title": "Ha Ha Tonka: \"Colorful Kids\"",
+          "url": "https://www.youtube.com/watch?v=Yw7nOEND310",
+          "channel": "Michael Boothillier",
+          "durationSeconds": 253.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "4ozqSV8Etp4",
+          "title": "a SOUNDSCAPEset with HA HA TONKA - \"Colorful Kids\" (feat. SAMANTHA CRAIN)",
+          "url": "https://www.youtube.com/watch?v=4ozqSV8Etp4",
+          "channel": "Mark Stastny",
+          "durationSeconds": 259.0,
+          "score": 0.824,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "e0BJ9cbJMpw",
+          "title": "Ha Ha Tonka \"Colorful Kids\" Live at KDHX 11/29/13",
+          "url": "https://www.youtube.com/watch?v=e0BJ9cbJMpw",
+          "channel": "KDHX",
+          "durationSeconds": 258.0,
+          "score": 0.706,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "64oDfMUxklo",
+          "title": "Colorful Kids",
+          "url": "https://www.youtube.com/watch?v=64oDfMUxklo",
+          "channel": "Ha Ha Tonka - Topic",
+          "durationSeconds": 250.0,
+          "score": 0.605,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Bear Mountain - Congo",
+      "query": "Bear Mountain Congo",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.981,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "nnX5QsnphdI",
+          "title": "Bear Mountain - Congo (Official Video)",
+          "url": "https://www.youtube.com/watch?v=nnX5QsnphdI",
+          "channel": "Bear Mountain",
+          "durationSeconds": 281.0,
+          "score": 0.981,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "HEQOiLebZY8",
+          "title": "Bear Mountain - Congo",
+          "url": "https://www.youtube.com/watch?v=HEQOiLebZY8",
+          "channel": "LastGangRadio",
+          "durationSeconds": 199.0,
+          "score": 0.975,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "QTARucjZXHQ",
+          "title": "Bear Mountain - Congo [Official Audio] - XO",
+          "url": "https://www.youtube.com/watch?v=QTARucjZXHQ",
+          "channel": "Bear Mountain",
+          "durationSeconds": 199.0,
+          "score": 0.966,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "70AJRMpiWe8",
+          "title": "Bear Mountain - Congo | Live @ JBTV",
+          "url": "https://www.youtube.com/watch?v=70AJRMpiWe8",
+          "channel": "JBTV Music Television",
+          "durationSeconds": 241.0,
+          "score": 0.71,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "XxlMKPm1F8A",
+          "title": "Congo (Extended Mix)",
+          "url": "https://www.youtube.com/watch?v=XxlMKPm1F8A",
+          "channel": "Bear Mountain - Topic",
+          "durationSeconds": 292.0,
+          "score": 0.379,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Join the Riot - Queen Marmalade",
+      "query": "Join the Riot Queen Marmalade",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2_rCnlCPk04",
+          "title": "Join The Riot - Queen Marmalade",
+          "url": "https://www.youtube.com/watch?v=2_rCnlCPk04",
+          "channel": "jointheriotvideo",
+          "durationSeconds": 162.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "960qpEmdpcc",
+          "title": "Join The Riot - Queen Marmalade [Indie Pop]",
+          "url": "https://www.youtube.com/watch?v=960qpEmdpcc",
+          "channel": "Beyond Radio",
+          "durationSeconds": 162.0,
+          "score": 0.956,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "d8w3CkU22LQ",
+          "title": "Join The Riot - Queen Marmalade [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=d8w3CkU22LQ",
+          "channel": "jointheriotvideo",
+          "durationSeconds": 186.0,
+          "score": 0.943,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "j_uc-vHiRlo",
+          "title": "Join The Riot - Queen Marmalade (Emil Heró Remix)",
+          "url": "https://www.youtube.com/watch?v=j_uc-vHiRlo",
+          "channel": "Emil Heró",
+          "durationSeconds": 232.0,
+          "score": 0.85,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ROxtBukRI58",
+          "title": "Join The Riot - Reunion [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=ROxtBukRI58",
+          "channel": "jointheriotvideo",
+          "durationSeconds": 255.0,
+          "score": 0.362,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Haim - The Wire",
+      "query": "Haim The Wire",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "1TffpkE2GU4",
+          "title": "HAIM - The Wire",
+          "url": "https://www.youtube.com/watch?v=1TffpkE2GU4",
+          "channel": "HAIM",
+          "durationSeconds": 254.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "7_B2tK0IEHY",
+          "title": "HAIM - The Wire (acoustic)",
+          "url": "https://www.youtube.com/watch?v=7_B2tK0IEHY",
+          "channel": "HAIM videos",
+          "durationSeconds": 220.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "1Vh0iP5BziQ",
+          "title": "HAIM - The Wire (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=1Vh0iP5BziQ",
+          "channel": "HAIM",
+          "durationSeconds": 246.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ye8riKVX_Ss",
+          "title": "HAIM - The Wire (Radio 1's Big Weekend 2025) @HaimTheBand",
+          "url": "https://www.youtube.com/watch?v=ye8riKVX_Ss",
+          "channel": "BBC Radio 1",
+          "durationSeconds": 282.0,
+          "score": 0.768,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "AtADweFd5AE",
+          "title": "HAIM - The Wire (Live @ Red Bull Sound Space by KROQ)",
+          "url": "https://www.youtube.com/watch?v=AtADweFd5AE",
+          "channel": "HAIM",
+          "durationSeconds": 258.0,
+          "score": 0.682,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Dum Dum Girls - Mine Tonight",
+      "query": "Dum Dum Girls Mine Tonight",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.9,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "xBUCnRk_dWM",
+          "title": "Dum Dum Girls - \"Mine Tonight\" (End of Daze - EP) [HQ]",
+          "url": "https://www.youtube.com/watch?v=xBUCnRk_dWM",
+          "channel": "GeorgeHarrisonIsSexy",
+          "durationSeconds": 203.0,
+          "score": 0.9,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "yhJNQV5FsEw",
+          "title": "01. Mine Tonight - The Dum Dum Girls",
+          "url": "https://www.youtube.com/watch?v=yhJNQV5FsEw",
+          "channel": "Virginia Delaware Music",
+          "durationSeconds": 208.0,
+          "score": 0.828,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "K6NBG2j6qsY",
+          "title": "Dum Dum Girls \"Mine Tonight\" Live Acoustic Performance",
+          "url": "https://www.youtube.com/watch?v=K6NBG2j6qsY",
+          "channel": "Napster (Music Legacy Account)",
+          "durationSeconds": 267.0,
+          "score": 0.688,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "dfcwC8cfs-0",
+          "title": "DUM DUM GIRLS \"Mine Tonight\" Live at Brighton Music Hall, Allston, MA",
+          "url": "https://www.youtube.com/watch?v=dfcwC8cfs-0",
+          "channel": "Avi Paul Weinstein",
+          "durationSeconds": 231.0,
+          "score": 0.648,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "CaWB7lbiBUk",
+          "title": "Mine Tonight",
+          "url": "https://www.youtube.com/watch?v=CaWB7lbiBUk",
+          "channel": "Dum Dum Girls - Topic",
+          "durationSeconds": 209.0,
+          "score": 0.589,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Pure Bathing Culture - Dream the Dare",
+      "query": "Pure Bathing Culture Dream the Dare",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "PxCeCWecDOE",
+          "title": "Pure Bathing Culture - Dream The Dare (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=PxCeCWecDOE",
+          "channel": "Pure Bathing Culture",
+          "durationSeconds": 253.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "koOx5j_ezyU",
+          "title": "Pure Bathing Culture: Dream the Dare",
+          "url": "https://www.youtube.com/watch?v=koOx5j_ezyU",
+          "channel": "Pure Bathing Culture",
+          "durationSeconds": 256.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "CdEs5Y0u4uc",
+          "title": "Pure Bathing Culture - Dream the Dare",
+          "url": "https://www.youtube.com/watch?v=CdEs5Y0u4uc",
+          "channel": "songsfewpeoplelike",
+          "durationSeconds": 254.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "65VU_Bro9dc",
+          "title": "Pure Bathing Culture - Dream The Dare | The Wild Honey Pie Buzzsession",
+          "url": "https://www.youtube.com/watch?v=65VU_Bro9dc",
+          "channel": "The Wild Honey Pie",
+          "durationSeconds": 296.0,
+          "score": 0.871,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "10RrQjJRi5A",
+          "title": "Pure Bathing Culture - \"Dream to Dare\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=10RrQjJRi5A",
+          "channel": "WFUV Public Radio",
+          "durationSeconds": 249.0,
+          "score": 0.532,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Avec Sans - Hold On",
+      "query": "Avec Sans Hold On",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "SXVLMtXDNNw",
+          "title": "Avec Sans - Hold On",
+          "url": "https://www.youtube.com/watch?v=SXVLMtXDNNw",
+          "channel": "Avec Sans",
+          "durationSeconds": 228.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "c4BC9GK_07Q",
+          "title": "Avec Sans - Hold On (Live)",
+          "url": "https://www.youtube.com/watch?v=c4BC9GK_07Q",
+          "channel": "SB 9000",
+          "durationSeconds": 96.0,
+          "score": 0.948,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "LovjV3ADi48",
+          "title": "Avec Sans - Hold On (HD) - Old Blue Last - 09.03.16",
+          "url": "https://www.youtube.com/watch?v=LovjV3ADi48",
+          "channel": "Planet Music Reviews HD: Upcoming",
+          "durationSeconds": 237.0,
+          "score": 0.82,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "X7CNgzLojHo",
+          "title": "Avec Sans - Hold On - Live - The Lexington - London 24/07/14",
+          "url": "https://www.youtube.com/watch?v=X7CNgzLojHo",
+          "channel": "Concert Archives",
+          "durationSeconds": 254.0,
+          "score": 0.611,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ebPDMUsXQnY",
+          "title": "Avec Sans - Perth",
+          "url": "https://www.youtube.com/watch?v=ebPDMUsXQnY",
+          "channel": "Avec Sans",
+          "durationSeconds": 226.0,
+          "score": 0.403,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Cat Power - Cherokee",
+      "query": "Cat Power Cherokee",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "PDbPrOuXq2s",
+          "title": "Cat Power - Cherokee",
+          "url": "https://www.youtube.com/watch?v=PDbPrOuXq2s",
+          "channel": "Cat Power",
+          "durationSeconds": 228.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "4_Mww_XVU1s",
+          "title": "Cat Power - Cherokee",
+          "url": "https://www.youtube.com/watch?v=4_Mww_XVU1s",
+          "channel": "skary13",
+          "durationSeconds": 239.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ybjpIt9oPuo",
+          "title": "Cat Power - Manhattan",
+          "url": "https://www.youtube.com/watch?v=ybjpIt9oPuo",
+          "channel": "Cat Power",
+          "durationSeconds": 191.0,
+          "score": 0.398,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "BX2bCSoMOOc",
+          "title": "Cat Power: NPR Music Tiny Desk Concert",
+          "url": "https://www.youtube.com/watch?v=BX2bCSoMOOc",
+          "channel": "NPR Music",
+          "durationSeconds": 567.0,
+          "score": 0.282,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "4uybaVUym1A",
+          "title": "Cherokee (Nicolas Jaar Remix)",
+          "url": "https://www.youtube.com/watch?v=4uybaVUym1A",
+          "channel": "Cat Power",
+          "durationSeconds": 254.0,
+          "score": 0.269,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Keep Shelly in Athens - Oostende",
+      "query": "Keep Shelly in Athens Oostende",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.976,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "IcMFXuRJjIc",
+          "title": "Keep Shelly in Athens - Oostende",
+          "url": "https://www.youtube.com/watch?v=IcMFXuRJjIc",
+          "channel": "CascineLabel",
+          "durationSeconds": 290.0,
+          "score": 0.976,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "a4TQt1s-Go0",
+          "title": "Keep Shelly In Athens - Oostende",
+          "url": "https://www.youtube.com/watch?v=a4TQt1s-Go0",
+          "channel": "KeepShellyinATHVEVO",
+          "durationSeconds": 290.0,
+          "score": 0.976,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "RcGeYef4fpY",
+          "title": "Keep Shelly In Athens - Oostende",
+          "url": "https://www.youtube.com/watch?v=RcGeYef4fpY",
+          "channel": "idl333",
+          "durationSeconds": 296.0,
+          "score": 0.976,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "sfvDQEPm3kQ",
+          "title": "Keep Shelly in Athens - Flyway",
+          "url": "https://www.youtube.com/watch?v=sfvDQEPm3kQ",
+          "channel": "CascineLabel",
+          "durationSeconds": 264.0,
+          "score": 0.668,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "0lIQH6AlPTQ",
+          "title": "Oostende (Postiljonen Remix)",
+          "url": "https://www.youtube.com/watch?v=0lIQH6AlPTQ",
+          "channel": "Keep Shelly in Athens",
+          "durationSeconds": 218.0,
+          "score": 0.25,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Tree - Demons (feat. Beat Culture and Lena Kuhn)",
+      "query": "Tree Demons (feat. Beat Culture and Lena Kuhn)",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.611,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "low-confidence-top-candidate"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "qsVHDGxhPJ8",
+          "title": "Tree - Demons (ft. Beat Culture & Lena Kuhn)",
+          "url": "https://www.youtube.com/watch?v=qsVHDGxhPJ8",
+          "channel": "oliver tree b-sides",
+          "durationSeconds": 230.0,
+          "score": 0.611,
+          "signals": [
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "IKgwKHbaK4I",
+          "title": "Tree - Demons ft. Beat Culture & Lena Kuhn - Music Video",
+          "url": "https://www.youtube.com/watch?v=IKgwKHbaK4I",
+          "channel": "Tree Collaborations",
+          "durationSeconds": 250.0,
+          "score": 0.554,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "4kCta14BBi8",
+          "title": "Tree - Demons (ft. Beat Culture & Lena Kuhn)",
+          "url": "https://www.youtube.com/watch?v=4kCta14BBi8",
+          "channel": "Apollo Records",
+          "durationSeconds": 229.0,
+          "score": 0.531,
+          "signals": [
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "KTn3ZSi8-AE",
+          "title": "Tree - Demons (ft. Beat Culture & Lena Kuhn)",
+          "url": "https://www.youtube.com/watch?v=KTn3ZSi8-AE",
+          "channel": "Eeuphonious",
+          "durationSeconds": 230.0,
+          "score": 0.531,
+          "signals": [
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "5p8r36r_maE",
+          "title": "Tree - Stuck Down the Wrong Rabbit Hole (ft. Beat Culture & Lena Kuhn)",
+          "url": "https://www.youtube.com/watch?v=5p8r36r_maE",
+          "channel": "Tree Collaborations",
+          "durationSeconds": 361.0,
+          "score": 0.485,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "The Weeknd - Love in the Sky",
+      "query": "The Weeknd Love in the Sky",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "weweLG6Or-g",
+          "title": "The Weeknd - Love In The Sky",
+          "url": "https://www.youtube.com/watch?v=weweLG6Or-g",
+          "channel": "The Weeknd",
+          "durationSeconds": 103.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "QZjA4mD29I4",
+          "title": "04. The Weeknd - Love In The Sky [HD]",
+          "url": "https://www.youtube.com/watch?v=QZjA4mD29I4",
+          "channel": "GNNNNNNable",
+          "durationSeconds": 269.0,
+          "score": 0.984,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "B1HyjitZqtY",
+          "title": "The Weeknd - Love In The Sky (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=B1HyjitZqtY",
+          "channel": "Santiago99",
+          "durationSeconds": 271.0,
+          "score": 0.917,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "AU3D8Yfzlxs",
+          "title": "Love In The Sky",
+          "url": "https://www.youtube.com/watch?v=AU3D8Yfzlxs",
+          "channel": "The Weeknd",
+          "durationSeconds": 268.0,
+          "score": 0.86,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "WlccKBPJYVU",
+          "title": "Love In The Sky",
+          "url": "https://www.youtube.com/watch?v=WlccKBPJYVU",
+          "channel": "The Weeknd",
+          "durationSeconds": 268.0,
+          "score": 0.86,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Porcelain Raft - The Way Out",
+      "query": "Porcelain Raft The Way Out",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2_JnlKn6AMo",
+          "title": "Porcelain Raft - The Way Out",
+          "url": "https://www.youtube.com/watch?v=2_JnlKn6AMo",
+          "channel": "Naftelyn",
+          "durationSeconds": 233.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ZLNeAEMU7AI",
+          "title": "Porcelain Raft - The Way Out (Official Video)",
+          "url": "https://www.youtube.com/watch?v=ZLNeAEMU7AI",
+          "channel": "PorcelainRaftVEVO",
+          "durationSeconds": 233.0,
+          "score": 0.949,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "US4mwyujjFE",
+          "title": "Porcelain Raft - \"The Way Out\" (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=US4mwyujjFE",
+          "channel": "Secretly Canadian",
+          "durationSeconds": 231.0,
+          "score": 0.949,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "24KWVTj-jt0",
+          "title": "The Way In",
+          "url": "https://www.youtube.com/watch?v=24KWVTj-jt0",
+          "channel": "Porcelain Raft - Topic",
+          "durationSeconds": 208.0,
+          "score": 0.41,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "nMQ7f-zW73k",
+          "title": "Porcelain Raft - \"Drifting In And Out\" (Official Video)",
+          "url": "https://www.youtube.com/watch?v=nMQ7f-zW73k",
+          "channel": "Secretly Canadian",
+          "durationSeconds": 209.0,
+          "score": 0.358,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Lolo - Heard it from a Friend",
+      "query": "Lolo Heard it from a Friend",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9cVownGhTyA",
+          "title": "LOLO - Heard It From A Friend [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=9cVownGhTyA",
+          "channel": "LOLO",
+          "durationSeconds": 245.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "9JPX65nE80w",
+          "title": "Heard It From A Friend - LOLO",
+          "url": "https://www.youtube.com/watch?v=9JPX65nE80w",
+          "channel": "Beth Agar",
+          "durationSeconds": 270.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "OZceJCmacHs",
+          "title": "Heard it from a Friend - LOLO (lyrics)",
+          "url": "https://www.youtube.com/watch?v=OZceJCmacHs",
+          "channel": "LuliiLIE",
+          "durationSeconds": 232.0,
+          "score": 0.898,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "rkGKKw9pM7c",
+          "title": "LOLO - Heard It From A Friend - Daytrotter Session - 1/22/2016",
+          "url": "https://www.youtube.com/watch?v=rkGKKw9pM7c",
+          "channel": "Paste Magazine",
+          "durationSeconds": 253.0,
+          "score": 0.897,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "1T55AKGTg20",
+          "title": "LOLO - Heard It From A Friend - Live at Daytrotter - 2/20/2016",
+          "url": "https://www.youtube.com/watch?v=1T55AKGTg20",
+          "channel": "Paste Magazine",
+          "durationSeconds": 235.0,
+          "score": 0.717,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "RJD2 - Her Majesty’s Socialist Request",
+      "query": "RJD2 Her Majesty’s Socialist Request",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.999,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "_li_oIKDcgU",
+          "title": "RJD2 - Her Majesty's Socialist Request",
+          "url": "https://www.youtube.com/watch?v=_li_oIKDcgU",
+          "channel": "RJD2",
+          "durationSeconds": 233.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "LxalyXKp-GQ",
+          "title": "RJD2 - Her Majesty's Socialist Request",
+          "url": "https://www.youtube.com/watch?v=LxalyXKp-GQ",
+          "channel": "satgui",
+          "durationSeconds": 226.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "wgElr_9Aggc",
+          "title": "RJD2 - Her Majesty's Socialist Request",
+          "url": "https://www.youtube.com/watch?v=wgElr_9Aggc",
+          "channel": "BLes75 Oldschool",
+          "durationSeconds": 226.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "wgNtt4A18bU",
+          "title": "RJD2 - Her Majesty's Socialist Request (Figure Remix)",
+          "url": "https://www.youtube.com/watch?v=wgNtt4A18bU",
+          "channel": "MA Music",
+          "durationSeconds": 209.0,
+          "score": 0.914,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ckj1J0N97mg",
+          "title": "RJD2 - Her Majesty's Socialist Request feat. J-Live (Candy Panther remix)",
+          "url": "https://www.youtube.com/watch?v=ckj1J0N97mg",
+          "channel": "jamutka777",
+          "durationSeconds": 241.0,
+          "score": 0.66,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 15,
+      "displayText": "Happy Hollows - Endless",
+      "query": "Happy Hollows Endless",
+      "resolution": {
+        "status": "pending-review",
+        "selectedVideoId": null,
+        "confidenceScore": 0.99,
+        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
+        "holdbackReason": "ambiguous-top-candidates"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "oL6jOEbzQxs",
+          "title": "Happy Hollows - Endless",
+          "url": "https://www.youtube.com/watch?v=oL6jOEbzQxs",
+          "channel": "HappyHollowsVEVO",
+          "durationSeconds": 214.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "6OTwHNePtMo",
+          "title": "Happy Hollows \"Endless\"",
+          "url": "https://www.youtube.com/watch?v=6OTwHNePtMo",
+          "channel": "thehappyhollows",
+          "durationSeconds": 213.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "4msPhh5lwPo",
+          "title": "The Happy Hollows - Endless | Sofar Los Angeles",
+          "url": "https://www.youtube.com/watch?v=4msPhh5lwPo",
+          "channel": "Sofar Global",
+          "durationSeconds": 210.0,
+          "score": 0.847,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "TuqQU0HsRK8",
+          "title": "Crown City Sessions:  Happy Hollows - \"Endless\" (Live)",
+          "url": "https://www.youtube.com/watch?v=TuqQU0HsRK8",
+          "channel": "CrownCityStudio",
+          "durationSeconds": 263.0,
+          "score": 0.836,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "E_rlQ2APs6Q",
+          "title": "Endless",
+          "url": "https://www.youtube.com/watch?v=E_rlQ2APs6Q",
+          "channel": "The Happy Hollows - Topic",
+          "durationSeconds": 213.0,
+          "score": 0.55,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 15,
+    "resolvedTracks": 0,
+    "unresolvedTracks": 15,
+    "requiresReview": true,
+    "generatedEmbed": null
+  }
+}
