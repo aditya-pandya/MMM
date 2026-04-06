@@ -1829,10 +1829,10 @@ function renderListeningSection(mix) {
                   </div>
                   <span class="youtube-audio-player__state" data-youtube-player-state>Ready</span>
                 </div>
-                <p class="youtube-audio-player__copy">Resolved from reviewed track matches.</p>
+                <p class="youtube-audio-player__copy">Play here or jump from the tracklist below.</p>
                 <div class="youtube-audio-player__track">
                   <strong data-youtube-player-track>${escapeHtml(generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}</strong>
-                  <p data-youtube-player-meta>Press play to start this queue.</p>
+                  <p data-youtube-player-meta>Press play or choose a track below.</p>
                 </div>
                 <div class="youtube-audio-player__scrub">
                   <input type="range" min="0" max="1000" value="0" aria-label="Queue progress" data-youtube-player-progress disabled>
@@ -2149,7 +2149,7 @@ function renderMixPage({ mix }) {
           <div>
             <p class="eyebrow">Tracklist</p>
             <h2>Full sequence</h2>
-            <p class="supporting-copy">${escapeHtml(String(mix.tracklist.length))} tracks${mix.highlightedTracks.length ? ` · ${escapeHtml(String(mix.highlightedTracks.length))} favorites marked in source` : ''}</p>
+            <p class="supporting-copy">${escapeHtml(String(mix.tracklist.length))} tracks${mix.highlightedTracks.length ? ` · ${escapeHtml(String(mix.highlightedTracks.length))} favorites marked in source` : ''}${queueTrackMap.size ? ' · Tap any marked row to play it above' : ''}</p>
           </div>
         </div>
         <ol class="tracklist"${queueTrackMap.size ? ` data-youtube-queue-tracklist="${escapeHtml(mix.slug)}"` : ''}>
@@ -2165,13 +2165,14 @@ function renderMixPage({ mix }) {
                 : ' class="tracklist__item"';
               const rowTag = queueTrack ? 'button' : 'div';
               const rowAttributes = queueTrack
-                ? ` type="button" class="tracklist__button" data-youtube-track-trigger aria-label="${escapeHtml(`Play ${title}`)}"`
+                ? ` type="button" class="tracklist__button" data-youtube-track-trigger aria-label="${escapeHtml(`Play ${title} in the queue above`)}"`
                 : ' class="tracklist__row"';
               return `<li${itemAttributes}>
                 <${rowTag}${rowAttributes}>
                   <strong>${String(normalized.position || index + 1).padStart(2, '0')}</strong>
-                  <span>${escapeHtml(title)}${artist}</span>
+                  <span class="tracklist__title">${escapeHtml(title)}${artist}</span>
                   ${normalized.isFavorite ? '<em class="track-favorite">Favorite</em>' : ''}
+                  ${queueTrack ? '<span class="tracklist__affordance" aria-hidden="true"><span class="tracklist__affordance-icon">Play</span><span class="tracklist__affordance-label">Queue above</span></span>' : ''}
                 </${rowTag}>
                 ${annotation}
               </li>`;

@@ -108,6 +108,7 @@ function syncYoutubeTracklistUi(instance) {
     const isActive = itemIndex === activeIndex;
     item.classList.toggle('is-active', isActive);
     item.element?.setAttribute('aria-current', isActive ? 'true' : 'false');
+    item.trigger?.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
 }
 
@@ -123,11 +124,12 @@ function syncYoutubeAudioPlayerUi(instance) {
   const videoData = typeof player.getVideoData === 'function' ? player.getVideoData() || {} : {};
   const queueCount = instance.videoIds.length;
   const resolvedLabel = instance.trackLabels[index] || videoData.title || `Track ${index + 1}`;
+  const hasLinkedTracklist = instance.trackItems.length > 0;
 
   instance.state.textContent = youtubePlayerStateLabel(playerState);
   instance.state.classList.toggle('is-active', Boolean(isPlaying));
   instance.track.textContent = resolvedLabel;
-  instance.meta.textContent = `Track ${index + 1} of ${queueCount}${videoData.title ? ` · YouTube: ${videoData.title}` : ''}`;
+  instance.meta.textContent = `Track ${index + 1} of ${queueCount}${hasLinkedTracklist ? ' · tracklist below stays in sync' : ''}${videoData.title ? ` · YouTube: ${videoData.title}` : ''}`;
   instance.elapsed.textContent = formatClock(currentTime);
   instance.duration.textContent = formatClock(duration);
   instance.toggle.textContent = isPlaying ? 'Pause' : 'Play';
@@ -339,7 +341,7 @@ async function initYoutubeAudioPlayer(root, index) {
       },
       onError: () => {
         if (instance.meta) {
-          instance.meta.textContent = 'Playback hit a YouTube error. Open the queue on YouTube instead.';
+          instance.meta.textContent = 'That YouTube item failed here. Open the queue on YouTube instead.';
         }
         if (instance.state) {
           instance.state.textContent = 'Error';

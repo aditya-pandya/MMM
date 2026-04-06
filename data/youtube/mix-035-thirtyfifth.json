@@ -2,7 +2,7 @@
   "$schema": "../../schemas/youtube-match.schema.json",
   "schemaVersion": "1.0",
   "mixSlug": "mix-035-thirtyfifth",
-  "updatedAt": "2026-04-06T05:15:00Z",
+  "updatedAt": "2026-04-06T16:30:00Z",
   "sourceMixPath": "data/published/mix-035-thirtyfifth.json",
   "tracks": [
     {
@@ -11,9 +11,9 @@
       "query": "Chromeo Over Your Shoulder",
       "resolution": {
         "status": "manual-selected",
-        "selectedVideoId": "ehpYg0NsGqA",
+        "selectedVideoId": "XYDg27tqXkI",
         "confidenceScore": 0.999,
-        "reason": "Human-reviewed against the stored candidate set and selected explicitly.",
+        "reason": "Human-reviewed against the stored candidate set and switched to a public mirror after the original official-audio pick showed playback/auth friction in the live queue.",
         "holdbackReason": null
       },
       "candidates": [
@@ -1306,10 +1306,10 @@
       "provider": "YouTube",
       "kind": "video-queue",
       "title": "Full mix queue for Thirtyfifth",
-      "embedUrl": "https://www.youtube.com/embed/ehpYg0NsGqA?playlist=vMCoiehkH8U,SOB7gYnKioc,O_QBC_pDkeU,bR5u9jb0PJE,a0ul-BghOAs,J4pbI8sH2mE,8Ffe8rkza5o,9VtUrv2UBQs,Y4UckOGdZtI,pIo3swynly0,wXX7YIC5vJU,Ulbt3tASoxw,l35GTSbKMpY,kUTLoClmsBk",
-      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=ehpYg0NsGqA,vMCoiehkH8U,SOB7gYnKioc,O_QBC_pDkeU,bR5u9jb0PJE,a0ul-BghOAs,J4pbI8sH2mE,8Ffe8rkza5o,9VtUrv2UBQs,Y4UckOGdZtI,pIo3swynly0,wXX7YIC5vJU,Ulbt3tASoxw,l35GTSbKMpY,kUTLoClmsBk",
+      "embedUrl": "https://www.youtube.com/embed/XYDg27tqXkI?playlist=vMCoiehkH8U,SOB7gYnKioc,O_QBC_pDkeU,bR5u9jb0PJE,a0ul-BghOAs,J4pbI8sH2mE,8Ffe8rkza5o,9VtUrv2UBQs,Y4UckOGdZtI,pIo3swynly0,wXX7YIC5vJU,Ulbt3tASoxw,l35GTSbKMpY,kUTLoClmsBk",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=XYDg27tqXkI,vMCoiehkH8U,SOB7gYnKioc,O_QBC_pDkeU,bR5u9jb0PJE,a0ul-BghOAs,J4pbI8sH2mE,8Ffe8rkza5o,9VtUrv2UBQs,Y4UckOGdZtI,pIo3swynly0,wXX7YIC5vJU,Ulbt3tASoxw,l35GTSbKMpY,kUTLoClmsBk",
       "videoIds": [
-        "ehpYg0NsGqA",
+        "XYDg27tqXkI",
         "vMCoiehkH8U",
         "SOB7gYnKioc",
         "O_QBC_pDkeU",
@@ -1325,7 +1325,7 @@
         "l35GTSbKMpY",
         "kUTLoClmsBk"
       ],
-      "generatedAt": "2026-04-06T05:15:00Z"
+      "generatedAt": "2026-04-06T16:30:00Z"
     }
   }
 }

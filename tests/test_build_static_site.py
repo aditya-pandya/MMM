@@ -279,12 +279,13 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Audio-first queue" in mix_with_youtube_html
     assert "Audio-first YouTube queue" in mix_with_youtube_html
     assert "Listening surfaces" in mix_with_youtube_html
-    assert "Resolved from reviewed track matches." in mix_with_youtube_html
+    assert "Play here or jump from the tracklist below." in mix_with_youtube_html
+    assert "Tap any marked row to play it above" in mix_with_youtube_html
     assert 'data-youtube-audio-player' in mix_with_youtube_html
     assert 'data-queue-key="mix-035-thirtyfifth"' in mix_with_youtube_html
     assert 'data-youtube-queue-tracklist="mix-035-thirtyfifth"' in mix_with_youtube_html
     assert 'data-youtube-queue-index="0"' in mix_with_youtube_html
-    assert 'data-youtube-video-id="ehpYg0NsGqA"' in mix_with_youtube_html
+    assert 'data-youtube-video-id="XYDg27tqXkI"' in mix_with_youtube_html
     assert 'data-youtube-track-trigger' in mix_with_youtube_html
     assert 'href="https://www.youtube.com/watch_videos?video_ids=' in mix_with_youtube_html
     assert "youtube.com/embed/ehpYg0NsGqA" not in mix_with_youtube_html
