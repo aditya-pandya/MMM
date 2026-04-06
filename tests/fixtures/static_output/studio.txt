@@ -23,7 +23,7 @@ TEXT: No suspicious listening/provider payloads surfaced
 EYEBROW: Draft queue
 H3: MMM for 2026-04-06
 TEXT: 1 draft waiting on review, 0 approved.
-COPY: April 5, 2026 · 5 tracks · draft
+COPY: April 6, 2026 · 5 tracks · draft
 EYEBROW: Archive coverage
 H3: 3/4 published mixes carry note context
 TEXT: 1 published gap remain. 2 of 2 notes already point back into the archive.

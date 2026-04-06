@@ -107,6 +107,7 @@ function formatDate(value) {
   if (Number.isNaN(date.getTime())) return String(value);
 
   return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'UTC',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
