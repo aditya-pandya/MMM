@@ -2,6 +2,11 @@
 
 ## End-to-end editorial workflow
 
+Operator UI option:
+- `npm run operator`
+- With a token gate: `MMM_OPERATOR_TOKEN="choose-a-long-random-string" npm run operator`
+- The UI stays local-first, edits draft JSON atomically, and can sit behind a private tunnel later if needed. See `docs/operator-ui.md`.
+
 1. Validate the repo before touching content.
    - Run `python3 scripts/validate_content.py`.
    - Fix any actionable errors before creating or publishing anything.

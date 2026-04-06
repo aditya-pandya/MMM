@@ -80,6 +80,31 @@ Then open:
 - http://localhost:3000/notes/rebuilding-the-archive/
 - http://localhost:3000/studio/
 
+## Private operator UI
+
+Run the public-site preview in one terminal and the private operator UI in another:
+
+```bash
+npm run dev
+npm run operator
+```
+
+Then open:
+
+- http://127.0.0.1:4199
+
+Optional token gate:
+
+```bash
+MMM_OPERATOR_TOKEN="choose-a-long-random-string" npm run operator
+```
+
+Notes:
+- The operator UI is local-first and separate from the public static build.
+- It edits draft JSON, runs approval/release flows, and reviews YouTube candidate state without changing the public Pages runtime.
+- It defaults to preview links on `http://127.0.0.1:3000`, matching `npm run dev`.
+- See `docs/operator-ui.md` for Cloudflare/private exposure guidance.
+
 ## Editorial commands
 
 Validate all local content and report actionable issues:

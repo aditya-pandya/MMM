@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "dev": "node scripts/dev-server.js",
+    "operator": "python3 scripts/operator_server.py",
     "preview": "npm run build && python3 -m http.server 4173 -d dist",
     "test": "python3 -m pytest",
     "draft:generate": "python3 scripts/generate_weekly_draft.py --mode auto",
