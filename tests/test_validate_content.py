@@ -37,6 +37,23 @@ def seed_repo(root: Path) -> None:
             "navigation": [{"label": "Home", "path": "/"}],
         },
     )
+    mmm_common.dump_json(
+        data_dir / "about.json",
+        {
+            "$schema": "../schemas/about.schema.json",
+            "schemaVersion": "1.0",
+            "title": "About MMM",
+            "headline": "A data-first music archive.",
+            "intro": ["A short introduction."],
+            "sections": [
+                {
+                    "label": "Scope",
+                    "title": "What is here",
+                    "body": ["Mixes and notes."],
+                }
+            ],
+        },
+    )
 
     published_mix = {
         "$schema": "schemas/mix.schema.json",
@@ -95,6 +112,13 @@ def seed_repo(root: Path) -> None:
         "publishedAt": "2026-04-03T13:00:00Z",
         "summary": "A seeded note.",
         "body": ["A note body."],
+        "relatedNoteSlugs": [],
+        "series": {
+            "slug": "seeded-series",
+            "title": "Seeded series",
+            "description": "Test-only note grouping.",
+            "order": 1,
+        },
         "relatedMixSlugs": ["mix-001-test"],
         "tags": ["seed"],
     }
@@ -116,6 +140,13 @@ def seed_repo(root: Path) -> None:
                     "path": "data/notes/seeded-note.json",
                     "tags": ["seed"],
                     "relatedMixSlugs": ["mix-001-test"],
+                    "relatedNoteSlugs": [],
+                    "series": {
+                        "slug": "seeded-series",
+                        "title": "Seeded series",
+                        "description": "Test-only note grouping.",
+                        "order": 1,
+                    },
                 }
             ],
         },
@@ -256,3 +287,29 @@ def test_validate_content_warns_on_suspicious_listening_provider_payloads(tmp_pa
     assert any("provider 'YouTube' uses unsupported kind 'mixtape'" in message for message in warning_messages)
     assert any("provider 'YouTube' URL does not match the curated host list" in message for message in warning_messages)
     assert any("embed 'Spotify' is not using a curated provider/embed URL pair" in message for message in warning_messages)
+
+
+def test_validate_content_rejects_note_with_self_referential_related_note_slug(tmp_path):
+    seed_repo(tmp_path)
+    note_path = tmp_path / "data" / "notes" / "seeded-note.json"
+    note = mmm_common.load_json(note_path)
+    note["relatedNoteSlugs"] = ["seeded-note"]
+    mmm_common.dump_json(note_path, note)
+
+    report = validate_content.build_report(tmp_path)
+    messages = [issue["message"] for issue in report["issues"] if issue["severity"] == "error"]
+
+    assert any("note relatedNoteSlugs must not include the note slug itself" in message for message in messages)
+
+
+def test_validate_content_rejects_malformed_about_payload(tmp_path):
+    seed_repo(tmp_path)
+    about_path = tmp_path / "data" / "about.json"
+    about = mmm_common.load_json(about_path)
+    about["sections"] = [{"label": "Broken"}]
+    mmm_common.dump_json(about_path, about)
+
+    report = validate_content.build_report(tmp_path)
+    messages = [issue["message"] for issue in report["issues"] if issue["severity"] == "error"]
+
+    assert any("about section 1 title must not be empty" in message for message in messages)

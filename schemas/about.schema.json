@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mmm.local/schemas/about.schema.json",
+  "title": "MMM About Page",
+  "type": "object",
+  "required": ["schemaVersion", "title", "headline", "intro", "sections"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "title": { "type": "string" },
+    "headline": { "type": "string" },
+    "intro": { "type": "array", "items": { "type": "string" } },
+    "editorialNote": {
+      "$ref": "#/$defs/section"
+    },
+    "sections": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/section" }
+    },
+    "closing": {
+      "$ref": "#/$defs/section"
+    }
+  },
+  "$defs": {
+    "section": {
+      "type": "object",
+      "required": ["label", "title"],
+      "properties": {
+        "label": { "type": "string" },
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "body": { "type": "array", "items": { "type": "string" } },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "text"],
+            "properties": {
+              "label": { "type": "string" },
+              "text": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "href"],
+            "properties": {
+              "label": { "type": "string" },
+              "href": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

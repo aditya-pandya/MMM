@@ -188,6 +188,7 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     dist_dir = repo / "dist"
     home_html = read_text(dist_dir / "index.html")
     archive_html = read_text(dist_dir / "archive" / "index.html")
+    about_html = read_text(dist_dir / "about" / "index.html")
     notes_index_html = read_text(dist_dir / "notes" / "index.html")
     note_detail_html = read_text(dist_dir / "notes" / "rebuilding-the-archive" / "index.html")
     mix_detail_html = read_text(dist_dir / "mixes" / "mix-036-thirtysixth" / "index.html")
@@ -214,18 +215,29 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "The Kite String Tangle - Tennis Court" in archive_html
     assert "Companion playlist on YouTube" in archive_html
 
+    assert "Built like an archive, not a content machine." in about_html
+    assert "Browse the archive" in about_html
+    assert "Read the notebook" in about_html
+
     assert "./rebuilding-the-archive/" in notes_index_html
     assert "../mixes/mix-036-thirtysixth/" in notes_index_html
     assert "Related mixes:" in notes_index_html
     assert "Search notes" in notes_index_html
     assert 'data-discovery-filter="state:has-related"' in notes_index_html
+    assert 'data-discovery-filter="state:in-series"' in notes_index_html
+    assert 'data-discovery-filter="state:has-note-links"' in notes_index_html
+    assert 'data-discovery-filter="series:archive-notebook"' in notes_index_html
     assert 'data-discovery-filter="tag:archive"' in notes_index_html
     assert 'data-discovery-item' in notes_index_html
     assert 'data-discovery-filters="' in notes_index_html
     assert "Dum Dum Girls" in notes_index_html
+    assert "Small runs of related notes" in notes_index_html
+    assert "Nearby notes:" in notes_index_html
 
     assert "../../mixes/mix-034-thirtyfourth/" in note_detail_html
     assert "../../mixes/mix-036-thirtysixth/" in note_detail_html
+    assert "Archive notebook" in note_detail_html
+    assert "Nearby reading from the notebook" in note_detail_html
     assert "Prev and next notes" in note_detail_html
 
     assert "Writing tied to this mix" in mix_detail_html
@@ -280,6 +292,7 @@ def test_static_build_matches_golden_route_digests(tmp_path):
     route_fixtures = {
         repo / "dist" / "index.html": "home.txt",
         repo / "dist" / "archive" / "index.html": "archive.txt",
+        repo / "dist" / "about" / "index.html": "about.txt",
         repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html": "mix-036-thirtysixth.txt",
         repo / "dist" / "notes" / "index.html": "notes.txt",
         repo / "dist" / "studio" / "index.html": "studio.txt",

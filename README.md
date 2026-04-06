@@ -34,7 +34,7 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
   - `published/` published mix JSON
   - `notes/` editorial notes
   - `archive/` generated archive index
-  - `site.json`, `archive-index.json`, `notes-index.json`, `taste-profile.json`
+  - `site.json`, `about.json`, `archive-index.json`, `notes-index.json`, `taste-profile.json`
   - `listening-provider-catalog.json` curated trust map for listening providers and embeds
 - `schemas/`
   - JSON schemas for site, mixes, notes, archive, taste profile
@@ -172,6 +172,9 @@ python3 scripts/create_content.py note-from-mix mix-036-thirtysixth
 ```
 
 3. Edit the new JSON under `data/drafts/` or `data/notes/`.
+   Optional note metadata:
+   - `series` can group a restrained run of related notes with `slug`, `title`, optional `description`, and optional `order`.
+   - `relatedNoteSlugs` can link directly to other real note files when a local reading path is worth surfacing.
 4. Re-run validation and fix anything it reports.
 5. Refresh generated aggregates if you hand-edited canonical files directly.
 
@@ -311,7 +314,9 @@ These documents cover:
 
 ## Static build behavior
 
+- The About page now reads from `data/about.json` when present, with structured intro/editorial/section content and a restrained fallback only when that file is absent.
 - Notes are loaded from `data/notes-index.json` plus matching files in `data/notes/`, with `data/notes.json` still supported as a fallback.
+- Note relationships stay data-backed: `relatedMixSlugs` links notes to mixes, while optional `series` and `relatedNoteSlugs` organize nearby reading without inventing synthetic graph data.
 - Note detail pages are emitted at `/notes/[slug]/`.
 - Mix detail pages expose previous/next archive links, related notes, highlighted tracks, and provenance grouped into original source, archive cleanup decisions, and preserved residue when that context exists in the JSON.
 - Dedicated listening sections render automatically when mix JSON includes provider links or embeds under `listening`, including nested provider maps and embedded-player groups.

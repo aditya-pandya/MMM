@@ -169,6 +169,50 @@ def validate_note_payload(note: dict[str, Any]) -> dict[str, Any]:
         seen_related.add(normalized_related_slug)
         normalized_related.append(normalized_related_slug)
 
+    related_notes = note.get("relatedNoteSlugs", [])
+    if related_notes is not None and not isinstance(related_notes, list):
+        raise ValidationError("note relatedNoteSlugs must be an array when present")
+
+    normalized_related_notes: list[str] = []
+    seen_related_notes: set[str] = set()
+    for index, related_note_slug in enumerate(related_notes or [], start=1):
+        normalized_related_note_slug = ensure_kebab_case_slug(
+            related_note_slug,
+            f"note relatedNoteSlugs[{index}]",
+        )
+        if normalized_related_note_slug == slug:
+            raise ValidationError("note relatedNoteSlugs must not include the note slug itself")
+        if normalized_related_note_slug in seen_related_notes:
+            raise ValidationError("note relatedNoteSlugs must not contain duplicates")
+        seen_related_notes.add(normalized_related_note_slug)
+        normalized_related_notes.append(normalized_related_note_slug)
+
+    series = note.get("series")
+    normalized_series: dict[str, Any] | None = None
+    if series is not None:
+        if not isinstance(series, dict):
+            raise ValidationError("note series must be an object when present")
+
+        series_slug = ensure_kebab_case_slug(series.get("slug"), "note series.slug")
+        series_title = ensure_non_empty_string(series.get("title"), "note series.title")
+        series_description = series.get("description")
+        if series_description is not None:
+            series_description = ensure_non_empty_string(series_description, "note series.description")
+
+        series_order = series.get("order")
+        if series_order is not None:
+            if not isinstance(series_order, int) or isinstance(series_order, bool) or series_order < 1:
+                raise ValidationError("note series.order must be a positive integer when present")
+
+        normalized_series = {
+            "slug": series_slug,
+            "title": series_title,
+        }
+        if series_description is not None:
+            normalized_series["description"] = series_description
+        if series_order is not None:
+            normalized_series["order"] = series_order
+
     normalized = deepcopy(note)
     normalized["status"] = status
     normalized["slug"] = slug
@@ -178,6 +222,8 @@ def validate_note_payload(note: dict[str, Any]) -> dict[str, Any]:
     normalized["summary"] = summary
     normalized["body"] = normalized_body
     normalized["relatedMixSlugs"] = normalized_related
+    normalized["relatedNoteSlugs"] = normalized_related_notes
+    normalized["series"] = normalized_series
     return normalized
 
 
@@ -449,7 +495,7 @@ def load_published_mixes(published_dir: Path | None = None) -> list[dict[str, An
 
 def build_note_index_entry(note: dict[str, Any]) -> dict[str, Any]:
     validated = validate_note_payload(note)
-    return {
+    entry = {
         "id": validated["id"],
         "slug": validated["slug"],
         "title": validated["title"],
@@ -459,6 +505,11 @@ def build_note_index_entry(note: dict[str, Any]) -> dict[str, Any]:
         "tags": validated["tags"],
         "relatedMixSlugs": validated["relatedMixSlugs"],
     }
+    if validated["relatedNoteSlugs"]:
+        entry["relatedNoteSlugs"] = validated["relatedNoteSlugs"]
+    if validated["series"]:
+        entry["series"] = validated["series"]
+    return entry
 
 
 def refresh_notes_index(

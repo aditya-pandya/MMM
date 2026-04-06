@@ -12,4 +12,6 @@
 - The seeded `data/published/` entries were generated from a live fetch of the public Tumblr RSS snapshot saved to `data/imported/raw/mondaymusicmix-rss.xml`.
 - `data/archive-index.json`, `data/notes-index.json`, and `data/taste-profile.json` are lightweight seed outputs meant to give the future site generator stable starter data.
 - Notes are expected to live as full JSON entries under `data/notes/` and be referenced from `data/notes-index.json`; the static build merges those sources by slug and uses `relatedMixSlugs` to drive note detail pages and mix cross-links.
+- Optional note-to-note organization should stay restrained and data-backed: use `series` for small ordered runs of notes and `relatedNoteSlugs` only when there is a real neighboring note worth linking.
+- The About page can now be authored as structured local data in `data/about.json`, with intro/editorial/section blocks instead of relying on renderer fallback prose.
 - Taste-profile derivation is heuristic rather than authoritative; it counts recurring artists and scans track text for cover/remix-era hints.

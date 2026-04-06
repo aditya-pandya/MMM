@@ -12,6 +12,13 @@
     "The Tumblr posts also signal favorites in bold, which the importer preserves as a first-class boolean field on each track.",
     "That structure makes it easy to surface recurring artists, covers, remixes, and other taste signals without rewriting the original posts."
   ],
+  "relatedNoteSlugs": ["rebuilding-the-archive"],
+  "series": {
+    "slug": "archive-notebook",
+    "title": "Archive notebook",
+    "description": "Short editorial notes about what the rebuild is preserving and how the mixes are being read.",
+    "order": 2
+  },
   "relatedMixSlugs": ["mix-035-thirtyfifth", "mix-036-thirtysixth"],
   "tags": ["editorial", "taste", "seed-data"]
 }

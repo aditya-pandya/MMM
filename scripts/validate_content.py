@@ -68,6 +68,78 @@ def validate_site_payload(site: dict[str, Any]) -> None:
         require_non_empty_string(item, "path", f"site navigation item {index} path")
 
 
+def validate_about_section(section: dict[str, Any], label: str) -> None:
+    require_non_empty_string(section, "label", f"{label} label")
+    require_non_empty_string(section, "title", f"{label} title")
+
+    summary = section.get("summary")
+    if summary is not None:
+        require_non_empty_string(section, "summary", f"{label} summary")
+
+    body = section.get("body", [])
+    if body is not None:
+        if not isinstance(body, list):
+            raise ValidationError(f"{label} body must be an array when present")
+        for index, paragraph in enumerate(body, start=1):
+            if not str(paragraph).strip():
+                raise ValidationError(f"{label} body paragraph {index} must not be empty")
+
+    items = section.get("items", [])
+    if items is not None:
+        if not isinstance(items, list):
+            raise ValidationError(f"{label} items must be an array when present")
+        for index, item in enumerate(items, start=1):
+            if not isinstance(item, dict):
+                raise ValidationError(f"{label} item {index} must be an object")
+            require_non_empty_string(item, "label", f"{label} item {index} label")
+            require_non_empty_string(item, "text", f"{label} item {index} text")
+
+    links = section.get("links", [])
+    if links is not None:
+        if not isinstance(links, list):
+            raise ValidationError(f"{label} links must be an array when present")
+        for index, item in enumerate(links, start=1):
+            if not isinstance(item, dict):
+                raise ValidationError(f"{label} link {index} must be an object")
+            require_non_empty_string(item, "label", f"{label} link {index} label")
+            require_non_empty_string(item, "href", f"{label} link {index} href")
+            if item.get("description") is not None:
+                require_non_empty_string(item, "description", f"{label} link {index} description")
+
+
+def validate_about_payload(about: dict[str, Any]) -> None:
+    require_non_empty_string(about, "schemaVersion", "about schemaVersion")
+    require_non_empty_string(about, "title", "about title")
+    require_non_empty_string(about, "headline", "about headline")
+
+    intro = about.get("intro")
+    if not isinstance(intro, list) or not intro:
+        raise ValidationError("about intro must be a non-empty array")
+    for index, paragraph in enumerate(intro, start=1):
+        if not str(paragraph).strip():
+            raise ValidationError(f"about intro paragraph {index} must not be empty")
+
+    editorial_note = about.get("editorialNote")
+    if editorial_note is not None:
+        if not isinstance(editorial_note, dict):
+            raise ValidationError("about editorialNote must be an object when present")
+        validate_about_section(editorial_note, "about editorialNote")
+
+    sections = about.get("sections")
+    if not isinstance(sections, list) or not sections:
+        raise ValidationError("about sections must be a non-empty array")
+    for index, section in enumerate(sections, start=1):
+        if not isinstance(section, dict):
+            raise ValidationError(f"about section {index} must be an object")
+        validate_about_section(section, f"about section {index}")
+
+    closing = about.get("closing")
+    if closing is not None:
+        if not isinstance(closing, dict):
+            raise ValidationError("about closing must be an object when present")
+        validate_about_section(closing, "about closing")
+
+
 def load_json_with_issue(path: Path, issues: list[dict[str, str]], scope: str) -> Any | None:
     try:
         return load_json(path)
@@ -144,6 +216,17 @@ def validate_notes(notes_dir: Path, notes_index: dict[str, Any] | None, known_mi
 
         notes_by_slug[slug] = {"note": payload, "path": str(path)}
 
+    for slug, note_record in notes_by_slug.items():
+        for related_note_slug in note_record["note"].get("relatedNoteSlugs", []):
+            if related_note_slug not in notes_by_slug:
+                add_issue(
+                    issues,
+                    "warning",
+                    "notes",
+                    Path(note_record["path"]),
+                    f"related note slug '{related_note_slug}' does not exist under data/notes/",
+                )
+
     if notes_index is None:
         return notes_by_slug
 
@@ -169,7 +252,7 @@ def validate_notes(notes_dir: Path, notes_index: dict[str, Any] | None, known_mi
         expected_path = f"data/notes/{slug}.json"
         if item.get("path") != expected_path:
             add_issue(issues, "warning", "notes-index", notes_dir.parent / "notes-index.json", f"indexed note '{slug}' should point to {expected_path}")
-        for field in ("title", "summary", "publishedAt"):
+        for field in ("title", "summary", "publishedAt", "relatedMixSlugs", "relatedNoteSlugs", "series"):
             if item.get(field) != note_record["note"].get(field):
                 add_issue(issues, "warning", "notes-index", notes_dir.parent / "notes-index.json", f"indexed note '{slug}' field '{field}' is out of sync with note file")
 
@@ -262,6 +345,14 @@ def build_report(root: Path) -> dict[str, Any]:
             validate_site_payload(site)
         except ValidationError as exc:
             add_issue(issues, "error", "site", site_path, str(exc))
+
+    about_path = data_dir / "about.json"
+    about = load_json_with_issue(about_path, issues, "about")
+    if isinstance(about, dict):
+        try:
+            validate_about_payload(about)
+        except ValidationError as exc:
+            add_issue(issues, "error", "about", about_path, str(exc))
 
     drafts_by_slug = validate_mix_collection(data_dir / "drafts", "editorial", issues, "drafts", listening_catalog)
     published_by_slug = validate_mix_collection(data_dir / "published", "published", issues, "published", listening_catalog)

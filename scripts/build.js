@@ -88,6 +88,19 @@ function paragraphize(text) {
     .join('');
 }
 
+function normalizeParagraphs(value) {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item || '').trim()).filter(Boolean);
+  }
+
+  const raw = String(value || '').trim();
+  return raw ? [raw] : [];
+}
+
+function renderParagraphs(value) {
+  return normalizeParagraphs(value).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('');
+}
+
 function formatDate(value) {
   if (!value) return 'Date forthcoming';
   const date = new Date(value);
@@ -786,6 +799,16 @@ function normalizeNote(note, index = 0) {
     : note.mixSlug || note.mix_slug
       ? [note.mixSlug || note.mix_slug]
       : [];
+  const relatedNoteSlugs = Array.isArray(note.relatedNoteSlugs) ? note.relatedNoteSlugs.filter(Boolean) : [];
+  const rawSeries = note.series && typeof note.series === 'object' ? note.series : null;
+  const series = rawSeries
+    ? {
+        slug: String(rawSeries.slug || '').trim(),
+        title: String(rawSeries.title || '').trim(),
+        description: String(rawSeries.description || '').trim(),
+        order: Number.isInteger(rawSeries.order) ? rawSeries.order : null,
+      }
+    : null;
 
   return {
     ...note,
@@ -796,6 +819,8 @@ function normalizeNote(note, index = 0) {
     body: bodyParagraphs.join('\n\n'),
     bodyParagraphs,
     relatedMixSlugs,
+    relatedNoteSlugs,
+    series: series && series.slug && series.title ? series : null,
     tags: Array.isArray(note.tags) ? note.tags : [],
   };
 }
@@ -915,6 +940,46 @@ function attachRelationships(mixes, notes) {
     mixes: mixesWithRelations,
     notes: notesWithRelations,
   };
+}
+
+function buildSeriesGroups(notes) {
+  const groups = new Map();
+
+  for (const note of notes) {
+    if (!note.series?.slug || !note.series?.title) continue;
+    const existing = groups.get(note.series.slug) || {
+      slug: note.series.slug,
+      title: note.series.title,
+      description: note.series.description || '',
+      notes: [],
+    };
+    existing.notes.push(note);
+    if (!existing.description && note.series.description) {
+      existing.description = note.series.description;
+    }
+    groups.set(note.series.slug, existing);
+  }
+
+  return Array.from(groups.values())
+    .map((group) => ({
+      ...group,
+      notes: [...group.notes].sort((a, b) => {
+        const aOrder = Number.isInteger(a.series?.order) ? a.series.order : Infinity;
+        const bOrder = Number.isInteger(b.series?.order) ? b.series.order : Infinity;
+        if (aOrder !== bOrder) return aOrder - bOrder;
+
+        const aDate = a.date ? new Date(a.date).getTime() : -Infinity;
+        const bDate = b.date ? new Date(b.date).getTime() : -Infinity;
+        if (aDate !== bDate) return bDate - aDate;
+
+        return String(a.title || '').localeCompare(String(b.title || ''));
+      }),
+    }))
+    .sort((a, b) => {
+      const aDate = a.notes[0]?.date ? new Date(a.notes[0].date).getTime() : -Infinity;
+      const bDate = b.notes[0]?.date ? new Date(b.notes[0].date).getTime() : -Infinity;
+      return bDate - aDate;
+    });
 }
 
 function relativePrefix(depth) {
@@ -1172,9 +1237,17 @@ function buildNoteDiscovery(note) {
   const relatedMixTracks = note.relatedMixes.flatMap((mix) => mix.tracklist.map((track) => track?.displayText || track?.title).filter(Boolean));
   const relatedMixArtists = note.relatedMixes.flatMap((mix) => mix.tracklist.map((track) => track?.artist).filter(Boolean));
   const relatedMixNotes = note.relatedMixes.flatMap((mix) => mix.relatedNotes.map((relatedNote) => relatedNote.title).filter(Boolean));
+  const relatedNoteTitles = (note.relatedNotes || []).map((relatedNote) => relatedNote.title).filter(Boolean);
 
   if (note.relatedMixes.length) {
     filterValues.push('state:has-related');
+  }
+  if (note.series?.slug) {
+    filterValues.push('state:in-series');
+    filterValues.push(`series:${note.series.slug}`);
+  }
+  if ((note.relatedNotes || []).length) {
+    filterValues.push('state:has-note-links');
   }
 
   return {
@@ -1188,7 +1261,10 @@ function buildNoteDiscovery(note) {
       note.excerpt,
       note.body,
       note.date ? formatDate(note.date) : '',
+      note.series?.title || '',
+      note.series?.description || '',
       note.relatedMixes.length ? `${note.relatedMixes.length} related mixes` : 'standalone note',
+      note.relatedNotes?.length ? `${note.relatedNotes.length} related notes` : '',
       tags.flatMap((tag) => tag.searchTerms),
       note.relatedMixes.flatMap((mix) => [
         mix.title,
@@ -1201,6 +1277,7 @@ function buildNoteDiscovery(note) {
       relatedMixArtists,
       relatedMixTracks,
       relatedMixNotes,
+      relatedNoteTitles,
     ]),
   };
 }
@@ -1215,7 +1292,26 @@ function annotateDiscovery(mixes, notes) {
     ...note,
     relatedMixes: note.relatedMixSlugs.map((slug) => mixBySlug.get(slug)).filter(Boolean),
   }));
-  const notesWithDiscovery = notesWithResolvedMixes.map((note) => ({
+  const notesBySlug = new Map(notesWithResolvedMixes.map((note) => [note.slug, note]));
+  const seriesGroups = buildSeriesGroups(notesWithResolvedMixes);
+  const seriesBySlug = new Map(seriesGroups.map((group) => [group.slug, group]));
+  const notesWithNoteLinks = notesWithResolvedMixes.map((note) => {
+    const seriesGroup = note.series?.slug ? seriesBySlug.get(note.series.slug) || null : null;
+    const seriesNotes = seriesGroup ? seriesGroup.notes.filter((candidate) => candidate.slug !== note.slug) : [];
+    const explicitRelatedNotes = note.relatedNoteSlugs.map((slug) => notesBySlug.get(slug)).filter(Boolean);
+    const relatedNotes = Array.from(
+      new Map([...seriesNotes, ...explicitRelatedNotes].map((candidate) => [candidate.slug, candidate])).values()
+    );
+
+    return {
+      ...note,
+      seriesGroup,
+      seriesNotes,
+      explicitRelatedNotes,
+      relatedNotes,
+    };
+  });
+  const notesWithDiscovery = notesWithNoteLinks.map((note) => ({
     ...note,
     discovery: buildNoteDiscovery(note),
   }));
@@ -1239,6 +1335,7 @@ function annotateDiscovery(mixes, notes) {
       }),
     })),
     notes: notesWithDiscovery,
+    noteSeries: seriesGroups,
   };
 }
 
@@ -1313,6 +1410,42 @@ function renderRouteList(routes) {
       )
       .join('')}
   </div>`;
+}
+
+function renderAboutSection(section) {
+  const summary = section.summary ? `<p class="supporting-copy">${escapeHtml(section.summary)}</p>` : '';
+  const body = renderParagraphs(section.body);
+  const items = Array.isArray(section.items) && section.items.length
+    ? `<div class="prose">${section.items
+        .map((item) => `<p><strong>${escapeHtml(item.label)}:</strong> ${escapeHtml(item.text)}</p>`)
+        .join('')}</div>`
+    : '';
+  const links = Array.isArray(section.links) && section.links.length
+    ? `<div class="related-list">
+        ${section.links
+          .map(
+            (link) => `<a class="related-card" href="${escapeHtml(link.href)}">
+              <p class="related-card__meta">${escapeHtml(section.label)}</p>
+              <h3>${escapeHtml(link.label)}</h3>
+              <p>${escapeHtml(link.description || '')}</p>
+            </a>`
+          )
+          .join('')}
+      </div>`
+    : '';
+
+  return `<section class="section-block section-block--split">
+      <div>
+        <p class="eyebrow">${escapeHtml(section.label || 'About')}</p>
+        <h2>${escapeHtml(section.title || '')}</h2>
+        ${summary}
+      </div>
+      <div>
+        <div class="prose">${body}</div>
+        ${items}
+        ${links}
+      </div>
+    </section>`;
 }
 
 function renderCover(mix, compact = false) {
@@ -2177,18 +2310,14 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
 function renderAboutPage({ site, about }) {
   const headline = about.headline || site.tagline || 'A personal archive for mixes built slowly and kept with care.';
   const sections = Array.isArray(about.sections) ? about.sections : [];
-  const body = sections.length
-    ? sections
-        .map(
-          (section) => `<section class="section-block section-block--split">
-            <div>
-              <p class="eyebrow">${escapeHtml(section.label || 'About')}</p>
-              <h2>${escapeHtml(section.title || '')}</h2>
-            </div>
-            <div class="prose">${paragraphize(section.body || section.text || '')}</div>
-          </section>`
-        )
-        .join('')
+  const introParagraphs = normalizeParagraphs(about.intro);
+  const structuredSections = [
+    about.editorialNote ? renderAboutSection(about.editorialNote) : '',
+    ...sections.map((section) => renderAboutSection(section)),
+    about.closing ? renderAboutSection(about.closing) : '',
+  ].filter(Boolean);
+  const body = structuredSections.length
+    ? structuredSections.join('')
     : `<section class="section-block section-block--split">
         <div>
           <p class="eyebrow">Why build it this way</p>
@@ -2221,6 +2350,7 @@ function renderAboutPage({ site, about }) {
         </div>
         <div>
           <p class="page-intro__copy page-intro__copy--large">${escapeHtml(headline)}</p>
+          ${introParagraphs.length ? `<div class="prose">${renderParagraphs(introParagraphs)}</div>` : ''}
         </div>
       </section>
       ${body}`,
@@ -2231,17 +2361,46 @@ function renderNotesPage({ notes }) {
   const hasNotes = notes.length > 0;
   const topTags = countTopTags(notes);
   const linkedCount = notes.filter((note) => note.relatedMixes.length > 0).length;
+  const seriesGroups = buildSeriesGroups(notes);
   const discoveryFilters = [
     { label: 'All notes', value: 'all' },
     makeDiscoveryFilter('state:has-related', 'Linked mixes', linkedCount),
+    makeDiscoveryFilter('state:in-series', 'In a series', notes.filter((note) => note.series?.slug).length),
+    makeDiscoveryFilter('state:has-note-links', 'Linked notes', notes.filter((note) => note.relatedNotes?.length).length),
+    ...seriesGroups.map((group) => makeDiscoveryFilter(`series:${group.slug}`, `Series: ${group.title}`, group.notes.length)),
     ...topTags.map((tag) => makeDiscoveryFilter(`tag:${tag.value}`, `Tag: ${tag.label}`, tag.count)),
   ];
+  const seriesSection = seriesGroups.length
+    ? `<section class="section-block section-block--compact">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Series</p>
+            <h2>Small runs of related notes</h2>
+          </div>
+          <p class="supporting-copy">Series stay lightweight: just note metadata and direct links back into the notebook.</p>
+        </div>
+        <div class="related-list">
+          ${seriesGroups
+            .map((group) => {
+              const anchor = group.notes[0];
+              const description = group.description || `${group.notes.length} note${group.notes.length === 1 ? '' : 's'} currently grouped under ${group.title}.`;
+              return `<a class="related-card" href="./${escapeHtml(anchor.slug)}/">
+                <p class="related-card__meta">${escapeHtml(`${group.notes.length} note${group.notes.length === 1 ? '' : 's'} in series`)}</p>
+                <h3>${escapeHtml(group.title)}</h3>
+                <p>${escapeHtml(description)}</p>
+              </a>`;
+            })
+            .join('')}
+        </div>
+      </section>`
+    : '';
   const body = hasNotes
     ? `<section class="page-intro">
         <p class="eyebrow">Notes</p>
         <h1>Notebook fragments</h1>
         <p class="page-intro__copy">Small observations around sequencing, atmosphere, and the songs that took time to reveal themselves.</p>
       </section>
+      ${seriesSection}
       ${renderDiscoveryControls({
         title: 'Search notes',
         description: 'Filter by note text, related mixes, and the small set of tags already carried in the notebook.',
@@ -2264,12 +2423,24 @@ function renderNotesPage({ notes }) {
               data-discovery-search="${escapeHtml(note.discovery.searchBlob)}"
             >
               <p class="note-card__meta">${escapeHtml(note.date ? formatDate(note.date) : 'Undated note')}</p>
+              ${note.series?.title
+                ? `<p class="note-card__meta">${escapeHtml(
+                    note.series.order && note.seriesGroup?.notes?.length
+                      ? `${note.series.title} · Part ${note.series.order} of ${note.seriesGroup.notes.length}`
+                      : note.series.title
+                  )}</p>`
+                : ''}
               <h2>${escapeHtml(note.title)}</h2>
               <p>${escapeHtml(note.excerpt || stripHtml(note.body).slice(0, 180) || 'A short note waiting for more context.')}</p>
               ${note.tags.length ? renderTagList(note.tags) : ''}
               ${note.relatedMixes.length
                 ? `<p class="note-card__link">Related mixes: ${note.relatedMixes
                     .map((mix) => `<a href="../mixes/${escapeHtml(mix.slug)}/">${escapeHtml(mix.title)}</a>`)
+                    .join(', ')}</p>`
+                : ''}
+              ${note.relatedNotes?.length
+                ? `<p class="note-card__link">Nearby notes: ${note.relatedNotes
+                    .map((relatedNote) => `<a href="./${escapeHtml(relatedNote.slug)}/">${escapeHtml(relatedNote.title)}</a>`)
                     .join(', ')}</p>`
                 : ''}
               <p class="note-card__link"><a href="./${escapeHtml(note.slug)}/">Read note</a></p>
@@ -2313,6 +2484,12 @@ function renderNotePage({ note, allNotes }) {
   const previousNote = currentIndex >= 0 && currentIndex < allNotes.length - 1 ? allNotes[currentIndex + 1] : null;
   const nextNote = currentIndex > 0 ? allNotes[currentIndex - 1] : null;
   const adjacentNotes = [previousNote, nextNote].filter(Boolean);
+  const seriesSummary = note.series?.title
+    ? note.series.order && note.seriesGroup?.notes?.length
+      ? `${note.series.title} · Part ${note.series.order} of ${note.seriesGroup.notes.length}`
+      : note.series.title
+    : '';
+  const contextualRelatedNotes = note.explicitRelatedNotes || [];
 
   return renderLayout({
     depth: 2,
@@ -2327,6 +2504,7 @@ function renderNotePage({ note, allNotes }) {
           <div class="meta-row">
             <span>${escapeHtml(note.date ? formatDate(note.date) : 'Undated note')}</span>
             ${note.relatedMixes.length ? `<span>${escapeHtml(String(note.relatedMixes.length))} related mix${note.relatedMixes.length === 1 ? '' : 'es'}</span>` : ''}
+            ${seriesSummary ? `<span>${escapeHtml(seriesSummary)}</span>` : ''}
           </div>
           ${renderTagList(note.tags)}
         </div>
@@ -2356,6 +2534,41 @@ function renderNotePage({ note, allNotes }) {
           })}
         </div>
       </section>
+      ${note.seriesGroup
+        ? `<section class="section-block section-block--split">
+            <div>
+              <p class="eyebrow">Series</p>
+              <h2>${escapeHtml(note.seriesGroup.title)}</h2>
+            </div>
+            <div>
+              <div class="prose">
+                ${note.seriesGroup.description ? `<p>${escapeHtml(note.seriesGroup.description)}</p>` : ''}
+                <p>${escapeHtml(
+                  note.series?.order && note.seriesGroup.notes.length
+                    ? `This note sits at part ${note.series.order} of ${note.seriesGroup.notes.length} in the series.`
+                    : `This note is part of a ${note.seriesGroup.notes.length}-note series.`
+                )}</p>
+              </div>
+              ${renderNoteMiniList(note.seriesNotes || [], {
+                basePath: '../',
+                emptyMessage: 'This series currently only contains this note.',
+              })}
+            </div>
+          </section>`
+        : ''}
+      ${contextualRelatedNotes.length
+        ? `<section class="section-block section-block--split">
+            <div>
+              <p class="eyebrow">Related notes</p>
+              <h2>Nearby reading from the notebook</h2>
+            </div>
+            <div>
+              ${renderNoteMiniList(contextualRelatedNotes, {
+                basePath: '../',
+              })}
+            </div>
+          </section>`
+        : ''}
       ${adjacentNotes.length
         ? `<section class="section-block section-block--split">
             <div>

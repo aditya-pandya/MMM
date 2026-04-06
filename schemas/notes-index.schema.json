@@ -22,7 +22,19 @@
           "summary": { "type": "string" },
           "path": { "type": "string" },
           "tags": { "type": "array", "items": { "type": "string" } },
-          "relatedMixSlugs": { "type": "array", "items": { "type": "string" } }
+          "relatedMixSlugs": { "type": "array", "items": { "type": "string" } },
+          "relatedNoteSlugs": { "type": "array", "items": { "type": "string" } },
+          "series": {
+            "type": "object",
+            "required": ["slug", "title"],
+            "properties": {
+              "slug": { "type": "string" },
+              "title": { "type": "string" },
+              "description": { "type": "string" },
+              "order": { "type": "integer", "minimum": 1 }
+            },
+            "additionalProperties": false
+          }
         },
         "additionalProperties": false
       }

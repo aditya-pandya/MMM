@@ -1,0 +1,36 @@
+TITLE: About · Monday Music Mix
+EYEBROW: About
+H1: About Monday Music Mix
+COPY: A small archive for mixes, notes, and the residue worth keeping after the post itself is gone.
+COPY: Monday Music Mix started as a habit: sequence a run of songs, publish it, and leave just enough writing around it to remember the mood later.
+COPY: The rebuild is deliberately local-first. The point is not to scale the project into a platform, but to keep the mixes portable, legible, and easy to tend without depending on a hosted stack.
+EYEBROW: Editorial frame
+H2: Built like an archive, not a content machine.
+COPY: The site keeps its center of gravity on the mixes and the listening habit behind them.
+COPY: That means published pages can stay spare. The richer structure lives in JSON so the archive can grow without forcing every route to become an application.
+COPY: When new context is added, it should explain sequencing, provenance, or return paths into the archive. If it cannot do that, it probably belongs in the notebook or not at all.
+EYEBROW: What lives here
+H2: Mixes first, notes when they earn their place.
+COPY: The archive holds published mixes, normalized tracklists, and the bits of source context that still matter: artwork credits, preserved Tumblr residue, and careful listening links when the data supports them.
+COPY: Notes are separate on purpose. They can be small, but they should still behave like editorial objects with clear links back to the mixes that prompted them.
+COPY: Published mixes: Canonical local JSON with stable fields for sequencing, provenance, and presentation.
+COPY: Notebook fragments: Short editorial notes that stay tied to real mixes, neighboring notes, or a restrained series.
+EYEBROW: How it is kept
+H2: Static, local-first, and plain about provenance.
+COPY: Every route is rendered from files in this repo. Validation, index refreshes, and the site build all run locally, so the durable version of the project is always the data on disk.
+COPY: Where imported Tumblr material survives, the site names what was kept, what was cleaned up, and what stays visible only as source residue.
+META: How it is kept
+H3: Browse the archive
+TEXT: Published mixes with tracklists, note coverage, and the small archive signals already present in the data.
+META: How it is kept
+H3: Read the notebook
+TEXT: Short notes about sequencing, rebuild decisions, and the parts of the archive that still feel alive.
+EYEBROW: What counts as progress
+H2: Better structure, not more noise.
+COPY: Progress here usually means more durable metadata, clearer editorial framing, or one more old mix brought into shape without overexplaining it.
+COPY: The archive can remain small and still improve if each addition makes future listening easier.
+COPY: Restraint: No runtime dashboards, engagement loops, or synthetic recommendation systems.
+COPY: Local control: If a workflow matters, it should be reproducible with the scripts already in the repo.
+EYEBROW: Current state
+H2: Still small on purpose.
+COPY: The project is early enough that gaps are visible, but the shape is intentional: a grounded archive for mixes, slow notes, and the bits of context worth preserving.

@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/notes-index.schema.json",
   "schemaVersion": "1.0",
-  "generatedAt": "2026-04-05T22:49:04Z",
+  "generatedAt": "2026-04-06T03:17:45Z",
   "totalNotes": 2,
   "items": [
     {
@@ -19,7 +19,16 @@
       "relatedMixSlugs": [
         "mix-035-thirtyfifth",
         "mix-036-thirtysixth"
-      ]
+      ],
+      "relatedNoteSlugs": [
+        "rebuilding-the-archive"
+      ],
+      "series": {
+        "slug": "archive-notebook",
+        "title": "Archive notebook",
+        "description": "Short editorial notes about what the rebuild is preserving and how the mixes are being read.",
+        "order": 2
+      }
     },
     {
       "id": "note-rebuilding-the-archive",
@@ -37,7 +46,16 @@
         "mix-034-thirtyfourth",
         "mix-035-thirtyfifth",
         "mix-036-thirtysixth"
-      ]
+      ],
+      "relatedNoteSlugs": [
+        "how-the-mixes-are-read"
+      ],
+      "series": {
+        "slug": "archive-notebook",
+        "title": "Archive notebook",
+        "description": "Short editorial notes about what the rebuild is preserving and how the mixes are being read.",
+        "order": 1
+      }
     }
   ]
 }

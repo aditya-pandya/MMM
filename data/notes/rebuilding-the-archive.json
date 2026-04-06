@@ -12,6 +12,13 @@
     "This archive model keeps the human parts of the posts intact while separating tracklists, cover art credits, source links, and summaries into explicit fields.",
     "The immediate goal is to make the mixes searchable, validate them with JSON Schema, and give future site-generation scripts stable input data."
   ],
+  "relatedNoteSlugs": ["how-the-mixes-are-read"],
+  "series": {
+    "slug": "archive-notebook",
+    "title": "Archive notebook",
+    "description": "Short editorial notes about what the rebuild is preserving and how the mixes are being read.",
+    "order": 1
+  },
   "relatedMixSlugs": ["mix-034-thirtyfourth", "mix-035-thirtyfifth", "mix-036-thirtysixth"],
   "tags": ["meta", "archive", "migration"]
 }
