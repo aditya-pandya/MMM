@@ -1,0 +1,71 @@
+{
+  "slug": "mmm-for-2026-04-13",
+  "title": "MMM for 2026-04-13",
+  "date": "2026-04-13",
+  "status": "draft",
+  "summary": "A warm and curious draft shaped by cover-heavy curation, late-night catch-up energy, and cover-version pivots, with a cover pivot and a late remix release.",
+  "notes": "Generated entirely from local Monday Music Mix data: 3 archived mixes and 2 notes informed this pass. It leans into late-night catch-up energy while keeping note cues around cover-version pivots, dreamy pop, recurring artists like Dum Dum Girls, Ha Ha Tonka, Bear Mountain, 1 cover turn, 1 remix release, 5 bolded-favorite style peaks visible in the sequence.",
+  "tags": [
+    "weekly-draft",
+    "local-generated",
+    "cover-heavy-curation",
+    "cover-thread",
+    "remix-thread"
+  ],
+  "generation_mode": "local",
+  "source_context": {
+    "site_title": "Monday Music Mix",
+    "archive_count": 3,
+    "published_mix_count": 3,
+    "note_count": 2,
+    "primary_descriptor": "cover-heavy curation",
+    "summary_tone": [
+      "late-night catch-up energy",
+      "some-new-some-old reimagining"
+    ],
+    "note_signals": [
+      "cover-version pivots",
+      "dreamy pop",
+      "blog-era indie"
+    ],
+    "top_artists": [
+      "Dum Dum Girls",
+      "Ha Ha Tonka",
+      "Bear Mountain",
+      "Join the Riot",
+      "Haim"
+    ]
+  },
+  "tracks": [
+    {
+      "artist": "Join the Riot",
+      "title": "Queen Marmalade",
+      "why_it_fits": "Opens with the archive's late-night catch-up energy instead of starting from a blank template. It fits the note-aware cover-version pivots lane already present in local data.",
+      "favorite": true
+    },
+    {
+      "artist": "Haim",
+      "title": "The Wire",
+      "why_it_fits": "Keeps the early run moving the way the archive usually stacks discovery tracks. It fits the note-aware cover-version pivots lane already present in local data.",
+      "favorite": true
+    },
+    {
+      "artist": "Angel Haze",
+      "title": "Summer Time Sadness (Lana Del Rey cover)",
+      "why_it_fits": "Keeps the cover-heavy thread active because that recurrence shows up clearly in the local archive. It fits the note-aware cover-version pivots lane already present in local data.",
+      "favorite": true
+    },
+    {
+      "artist": "Pure Bathing Culture",
+      "title": "Dream the Dare",
+      "why_it_fits": "Reads like one of the bolded favorite moments the archive notes keep calling out. It fits the note-aware cover-version pivots lane already present in local data.",
+      "favorite": true
+    },
+    {
+      "artist": "Oh Land",
+      "title": "Love You Better (John Dillinger remix)",
+      "why_it_fits": "Lets the sequence exhale with the same late remix turn that already appears in local MMM history. It fits the note-aware cover-version pivots lane already present in local data.",
+      "favorite": true
+    }
+  ]
+}
