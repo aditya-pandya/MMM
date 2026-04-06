@@ -11,6 +11,7 @@ The operator UI is a private, local-first control surface for MMM editorial work
 - approves a reviewed draft
 - releases an approved draft through the guarded publish flow
 - reviews YouTube candidate state, auto-selects strong matches above `0.8` when safe, and stores explicit per-track selections in `data/youtube/<slug>.json`
+- when a mix queue is fully resolved, loads a private minimized YouTube player with audio-style controls that still uses official YouTube playback under the hood
 - shows local preview routes plus an in-session workflow log
 
 ## Run it locally
@@ -79,6 +80,7 @@ Notes:
 5. approve when reviewed
 6. release when ready
 7. pick a published mix, refresh YouTube candidates, and explicitly choose or clear each track match until the audio-first queue resolves
+8. once every track is resolved, use the private playback card for quick operator listening or jump out through the existing `Open queue on YouTube` link
 
 ## Safety notes
 
@@ -86,3 +88,5 @@ Notes:
 - Approval and release still go through the existing MMM approval and release logic.
 - YouTube manual review preserves the existing saved candidate set and only updates explicit human selections plus the derived embed summary.
 - The operator UI now reflects MMM's honest YouTube posture: MMM can bias matching toward official audio/topic sources, but it does not pretend YouTube exposes a true audio-only iframe when it does not.
+- The private playback card uses the official YouTube IFrame Player API with the reviewed `generatedEmbed.videoIds` queue. The iframe is only visually minimized; playback is still YouTube playback.
+- Seek, next/previous, and timing depend on normal YouTube player behavior, so autoplay restrictions or API quirks can still force the operator to press play again or fall back to opening the queue on YouTube.
