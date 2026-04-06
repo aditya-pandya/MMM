@@ -1767,7 +1767,7 @@ function renderListeningSection(mix) {
     ? generatedEmbed.videoIds.map((value) => String(value || '').trim()).filter(Boolean)
     : [];
   const generatedTrackLabels = Array.isArray(youtubeMatch?.tracks)
-    ? youtubeMatch.tracks.map((track, index) => String(track?.displayText || `Track ${index + 1}`).trim()).filter(Boolean)
+    ? youtubeMatch.tracks.map((track, index) => String(track?.displayText || `Track ${index + 1}`).trim())
     : [];
   const actionableTrustedLinks = trustedProviders.filter((provider) => {
     const kind = String(provider.kind || '').trim().toLowerCase();
@@ -1820,6 +1820,7 @@ function renderListeningSection(mix) {
                 data-track-labels="${escapeHtml(JSON.stringify(generatedTrackLabels))}"
                 data-watch-url="${escapeHtml(generatedQueue.url || generatedEmbed?.watchUrl || '')}"
                 data-queue-title="${escapeHtml(generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}"
+                data-queue-key="${escapeHtml(mix.slug)}"
               >
                 <div class="youtube-audio-player__header">
                   <div>
@@ -1853,7 +1854,7 @@ function renderListeningSection(mix) {
                   </label>
                 </div>
                 <div class="button-row button-row--compact">
-                  <a class="button button--secondary" href="${escapeHtml(generatedQueue.url)}">Open queue on YouTube</a>
+                  <a class="button button--secondary" href="${escapeHtml(generatedQueue.url)}">Open ${escapeHtml(mix.title)} on YouTube</a>
                 </div>
                 <div class="youtube-player-host" data-youtube-player-host aria-hidden="true"></div>
               </article>
@@ -2130,6 +2131,18 @@ function renderArchivePage({ mixes }) {
 }
 
 function renderMixPage({ mix }) {
+  const queueTracks = mix.youtubeMatch?.summary?.embedReady && Array.isArray(mix.youtubeMatch?.tracks)
+    ? mix.youtubeMatch.tracks.map((track, index) => ({
+        index,
+        videoId: String(track?.resolution?.selectedVideoId || '').trim(),
+        label: String(track?.displayText || `Track ${index + 1}`).trim(),
+      }))
+    : [];
+  const queueTrackMap = new Map(
+    queueTracks
+      .filter((track) => track.videoId)
+      .map((track) => [track.index, track])
+  );
   const trackSection = mix.tracklist.length
     ? `<section class="section-block section-block--primary">
         <div class="section-heading">
@@ -2139,19 +2152,27 @@ function renderMixPage({ mix }) {
             <p class="supporting-copy">${escapeHtml(String(mix.tracklist.length))} tracks${mix.highlightedTracks.length ? ` · ${escapeHtml(String(mix.highlightedTracks.length))} favorites marked in source` : ''}</p>
           </div>
         </div>
-        <ol class="tracklist">
+        <ol class="tracklist"${queueTrackMap.size ? ` data-youtube-queue-tracklist="${escapeHtml(mix.slug)}"` : ''}>
           ${mix.tracklist
             .map((track, index) => {
               const normalized = typeof track === 'string' ? { title: track } : track || {};
               const artist = normalized.artist ? ` — ${escapeHtml(normalized.artist)}` : '';
               const title = normalized.title || normalized.displayText || `Track ${index + 1}`;
               const annotation = normalized.note ? `<p>${escapeHtml(normalized.note)}</p>` : '';
-              return `<li>
-                <div>
+              const queueTrack = queueTrackMap.get(index);
+              const itemAttributes = queueTrack
+                ? ` class="tracklist__item tracklist__item--queue" data-youtube-queue-index="${escapeHtml(String(queueTrack.index))}" data-youtube-video-id="${escapeHtml(queueTrack.videoId)}"`
+                : ' class="tracklist__item"';
+              const rowTag = queueTrack ? 'button' : 'div';
+              const rowAttributes = queueTrack
+                ? ` type="button" class="tracklist__button" data-youtube-track-trigger aria-label="${escapeHtml(`Play ${title}`)}"`
+                : ' class="tracklist__row"';
+              return `<li${itemAttributes}>
+                <${rowTag}${rowAttributes}>
                   <strong>${String(normalized.position || index + 1).padStart(2, '0')}</strong>
                   <span>${escapeHtml(title)}${artist}</span>
                   ${normalized.isFavorite ? '<em class="track-favorite">Favorite</em>' : ''}
-                </div>
+                </${rowTag}>
                 ${annotation}
               </li>`;
             })
@@ -2240,8 +2261,8 @@ function renderMixPage({ mix }) {
         </div>
         ${renderCover(mix, false, 2)}
       </section>
-      ${trackSection}
       ${renderListeningSection(mix)}
+      ${trackSection}
       ${notesSection}
       ${relatedNotesSection}
       ${navigationSection}

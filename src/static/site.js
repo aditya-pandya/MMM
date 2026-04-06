@@ -23,6 +23,7 @@ function formatClock(totalSeconds) {
 }
 
 let youtubeIframeApiPromise = null;
+const YOUTUBE_MINIMUM_EMBED_SIZE = 220;
 
 function loadYoutubeIframeApi() {
   if (window.YT && window.YT.Player) {
@@ -94,11 +95,27 @@ function setYoutubeAudioPlayerDisabled(instance, disabled) {
   instance.progress.disabled = disabled;
 }
 
+function getYoutubeAudioPlayerIndex(instance) {
+  return Math.min(Math.max(Number(instance.currentIndex) || 0, 0), Math.max(instance.videoIds.length - 1, 0));
+}
+
+function syncYoutubeTracklistUi(instance) {
+  if (!instance.trackItems.length) return;
+
+  const activeIndex = getYoutubeAudioPlayerIndex(instance);
+  instance.trackItems.forEach((item) => {
+    const itemIndex = Number(item.dataset.youtubeQueueIndex || -1);
+    const isActive = itemIndex === activeIndex;
+    item.classList.toggle('is-active', isActive);
+    item.element?.setAttribute('aria-current', isActive ? 'true' : 'false');
+  });
+}
+
 function syncYoutubeAudioPlayerUi(instance) {
   const player = instance.player;
-  if (!player || !instance.isReady || typeof player.getPlaylistIndex !== 'function') return;
+  if (!player || !instance.isReady) return;
 
-  const index = Math.max(0, Number(player.getPlaylistIndex?.() || 0));
+  const index = getYoutubeAudioPlayerIndex(instance);
   const currentTime = Number(player.getCurrentTime?.() || 0);
   const duration = Number(player.getDuration?.() || 0);
   const playerState = typeof player.getPlayerState === 'function' ? player.getPlayerState() : -1;
@@ -129,6 +146,8 @@ function syncYoutubeAudioPlayerUi(instance) {
   if (typeof player.getVolume === 'function') {
     instance.volume.value = String(player.getVolume());
   }
+
+  syncYoutubeTracklistUi(instance);
 }
 
 function startYoutubeAudioPlayerPolling(instance) {
@@ -149,15 +168,11 @@ function bindYoutubeAudioPlayerEvents(instance) {
   });
 
   instance.previous.addEventListener('click', () => {
-    if (!instance.player || !instance.isReady) return;
-    instance.player.previousVideo();
-    syncYoutubeAudioPlayerUi(instance);
+    playYoutubeQueueIndex(instance, getYoutubeAudioPlayerIndex(instance) - 1);
   });
 
   instance.next.addEventListener('click', () => {
-    if (!instance.player || !instance.isReady) return;
-    instance.player.nextVideo();
-    syncYoutubeAudioPlayerUi(instance);
+    playYoutubeQueueIndex(instance, getYoutubeAudioPlayerIndex(instance) + 1);
   });
 
   instance.mute.addEventListener('click', () => {
@@ -195,6 +210,32 @@ function bindYoutubeAudioPlayerEvents(instance) {
     instance.isScrubbing = false;
     syncYoutubeAudioPlayerUi(instance);
   });
+
+  instance.trackItems.forEach((item) => {
+    if (!item.trigger) return;
+    item.trigger.addEventListener('click', () => {
+      const index = Number(item.dataset.youtubeQueueIndex || -1);
+      playYoutubeQueueIndex(instance, index);
+    });
+  });
+}
+
+function playYoutubeQueueIndex(instance, nextIndex, options = {}) {
+  const { autoplay = true } = options;
+  if (!instance.player || !instance.isReady) return;
+  if (!Number.isInteger(nextIndex) || nextIndex < 0 || nextIndex >= instance.videoIds.length) return;
+
+  instance.currentIndex = nextIndex;
+  const videoId = instance.videoIds[nextIndex];
+  if (!videoId) return;
+
+  if (autoplay) {
+    instance.player.loadVideoById(videoId);
+  } else {
+    instance.player.cueVideoById(videoId);
+  }
+
+  syncYoutubeAudioPlayerUi(instance);
 }
 
 async function initYoutubeAudioPlayer(root, index) {
@@ -208,10 +249,12 @@ async function initYoutubeAudioPlayer(root, index) {
     root,
     videoIds,
     trackLabels: readJsonDataset(root, 'trackLabels', []).map((value) => String(value || '').trim()),
+    currentIndex: 0,
     isReady: false,
     isScrubbing: false,
     pollTimer: null,
     player: null,
+    queueKey: String(root.dataset.queueKey || '').trim(),
     state: root.querySelector('[data-youtube-player-state]'),
     track: root.querySelector('[data-youtube-player-track]'),
     meta: root.querySelector('[data-youtube-player-meta]'),
@@ -224,10 +267,24 @@ async function initYoutubeAudioPlayer(root, index) {
     mute: root.querySelector('[data-youtube-player-mute]'),
     volume: root.querySelector('[data-youtube-player-volume]'),
     host: root.querySelector('[data-youtube-player-host]'),
+    trackItems: [],
   };
+
+  if (instance.queueKey) {
+    const tracklist = document.querySelector(`[data-youtube-queue-tracklist="${instance.queueKey}"]`);
+    if (tracklist) {
+      instance.trackItems = Array.from(tracklist.querySelectorAll('[data-youtube-queue-index]')).map((item) => ({
+        element: item,
+        dataset: item.dataset,
+        classList: item.classList,
+        trigger: item.querySelector('[data-youtube-track-trigger]'),
+      }));
+    }
+  }
 
   bindYoutubeAudioPlayerEvents(instance);
   setYoutubeAudioPlayerDisabled(instance, true);
+  syncYoutubeTracklistUi(instance);
 
   try {
     await loadYoutubeIframeApi();
@@ -249,8 +306,8 @@ async function initYoutubeAudioPlayer(root, index) {
   }
 
   instance.player = new window.YT.Player(mountId, {
-    width: '1',
-    height: '1',
+    width: String(YOUTUBE_MINIMUM_EMBED_SIZE),
+    height: String(YOUTUBE_MINIMUM_EMBED_SIZE),
     videoId: instance.videoIds[0],
     playerVars: {
       autoplay: 0,
@@ -262,14 +319,22 @@ async function initYoutubeAudioPlayer(root, index) {
     events: {
       onReady: (event) => {
         instance.isReady = true;
-        event.target.cuePlaylist(instance.videoIds, 0, 0);
+        instance.currentIndex = 0;
+        event.target.cueVideoById(instance.videoIds[0]);
         try {
           event.target.setVolume(Number(instance.volume.value || 100));
         } catch {}
         setYoutubeAudioPlayerDisabled(instance, false);
         startYoutubeAudioPlayerPolling(instance);
       },
-      onStateChange: () => {
+      onStateChange: (event) => {
+        if (window.YT && event.data === window.YT.PlayerState.ENDED) {
+          const activeIndex = getYoutubeAudioPlayerIndex(instance);
+          if (activeIndex < instance.videoIds.length - 1) {
+            playYoutubeQueueIndex(instance, activeIndex + 1);
+            return;
+          }
+        }
         syncYoutubeAudioPlayerUi(instance);
       },
       onError: () => {

@@ -3,6 +3,13 @@ EYEBROW: Mix detail
 H1: Thirtysixth
 COPY: Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.
 BUTTON: Back to archive
+EYEBROW: Listening
+H2: Listening surfaces
+TEXT: YouTube review queue
+EYEBROW: Needs review
+H3: YouTube full-mix embed is blocked
+TEXT: YouTube matching is still waiting on review for 13 tracks before a full-mix queue can render.
+TEXT: Open data/youtube/mix-036-thirtysixth.json to review: The Kite String Tangle - Tennis Court (Lorde cover); Empress Of - Realize You; Dum Dum Girls - Lost Boys and Girls Club; Bastille - (I Just) Died In Your Arms Tonight (Cutting Crew cover)…
 EYEBROW: Tracklist
 H2: Full sequence
 COPY: 14 tracks · 3 favorites marked in source
@@ -20,13 +27,6 @@ TRACK: 11 A Real Hero (College & Electric Youth cover) — High Highs
 TRACK: 12 Summer Time Sadness (Lana Del Rey cover) — Angel Haze Favorite
 TRACK: 13 Mirror — Ellie Goulding
 TRACK: 14 Love You Better (John Dillinger remix) — Oh Land Favorite
-EYEBROW: Listening
-H2: Listening surfaces
-TEXT: YouTube review queue
-EYEBROW: Needs review
-H3: YouTube full-mix embed is blocked
-TEXT: YouTube matching is still waiting on review for 13 tracks before a full-mix queue can render.
-TEXT: Open data/youtube/mix-036-thirtysixth.json to review: The Kite String Tangle - Tennis Court (Lorde cover); Empress Of - Realize You; Dum Dum Girls - Lost Boys and Girls Club; Bastille - (I Just) Died In Your Arms Tonight (Cutting Crew cover)…
 EYEBROW: Context
 H2: Archive notes
 COPY: Contains some of the best music I have heard in a quite a192 while.

@@ -10,6 +10,7 @@ const state = {
     player: null,
     pollTimer: null,
     loadToken: 0,
+    currentIndex: 0,
     queueVideoIds: [],
     trackLabels: [],
     watchUrl: null,
@@ -20,6 +21,8 @@ const state = {
     lastPlayerState: -1,
   },
 };
+
+const YOUTUBE_MINIMUM_EMBED_SIZE = 220;
 
 const elements = {
   app: document.querySelector("#app"),
@@ -173,6 +176,7 @@ function resetYoutubePlaybackUi(message = "Resolve every track before loading pr
   state.youtubePlayback.isMuted = false;
   state.youtubePlayback.isScrubbing = false;
   state.youtubePlayback.lastPlayerState = -1;
+  state.youtubePlayback.currentIndex = 0;
   state.youtubePlayback.queueVideoIds = [];
   state.youtubePlayback.trackLabels = [];
   state.youtubePlayback.watchUrl = null;
@@ -206,11 +210,14 @@ function destroyYoutubePlayer() {
 
 function syncYoutubePlaybackUi() {
   const { player, trackLabels, queueVideoIds } = state.youtubePlayback;
-  if (!player || !state.youtubePlayback.isReady || typeof player.getPlaylistIndex !== "function") {
+  if (!player || !state.youtubePlayback.isReady) {
     return;
   }
 
-  const index = Math.max(0, Number(player.getPlaylistIndex?.() || 0));
+  const index = Math.min(
+    Math.max(Number(state.youtubePlayback.currentIndex) || 0, 0),
+    Math.max(queueVideoIds.length - 1, 0),
+  );
   const currentTime = Number(player.getCurrentTime?.() || 0);
   const duration = Number(player.getDuration?.() || 0);
   const playerState = typeof player.getPlayerState === "function" ? player.getPlayerState() : -1;
@@ -241,6 +248,23 @@ function syncYoutubePlaybackUi() {
   if (typeof player.getVolume === "function") {
     elements.youtubePlayerVolume.value = String(player.getVolume());
   }
+}
+
+function playYoutubeQueueIndex(nextIndex, { autoplay = true } = {}) {
+  const { player, queueVideoIds } = state.youtubePlayback;
+  if (!player || !state.youtubePlayback.isReady) return;
+  if (!Number.isInteger(nextIndex) || nextIndex < 0 || nextIndex >= queueVideoIds.length) return;
+
+  const videoId = queueVideoIds[nextIndex];
+  if (!videoId) return;
+
+  state.youtubePlayback.currentIndex = nextIndex;
+  if (autoplay) {
+    player.loadVideoById(videoId);
+  } else {
+    player.cueVideoById(videoId);
+  }
+  syncYoutubePlaybackUi();
 }
 
 function startYoutubePlaybackPolling() {
@@ -291,8 +315,8 @@ async function ensureYoutubePlayer(queue) {
 
   if (!state.youtubePlayback.player) {
     state.youtubePlayback.player = new window.YT.Player(hostId, {
-      width: "1",
-      height: "1",
+      width: String(YOUTUBE_MINIMUM_EMBED_SIZE),
+      height: String(YOUTUBE_MINIMUM_EMBED_SIZE),
       videoId: queue.videoIds[0],
       playerVars: {
         autoplay: 0,
@@ -304,7 +328,8 @@ async function ensureYoutubePlayer(queue) {
       events: {
         onReady: (event) => {
           state.youtubePlayback.isReady = true;
-          event.target.cuePlaylist(queue.videoIds, 0, 0);
+          state.youtubePlayback.currentIndex = 0;
+          event.target.cueVideoById(queue.videoIds[0]);
           try {
             event.target.setVolume(Number(elements.youtubePlayerVolume.value || 100));
           } catch {}
@@ -313,6 +338,12 @@ async function ensureYoutubePlayer(queue) {
         },
         onStateChange: (event) => {
           state.youtubePlayback.lastPlayerState = event.data;
+          if (window.YT && event.data === window.YT.PlayerState.ENDED) {
+            if (state.youtubePlayback.currentIndex < state.youtubePlayback.queueVideoIds.length - 1) {
+              playYoutubeQueueIndex(state.youtubePlayback.currentIndex + 1);
+              return;
+            }
+          }
           syncYoutubePlaybackUi();
         },
         onError: () => {
@@ -324,7 +355,8 @@ async function ensureYoutubePlayer(queue) {
   }
 
   state.youtubePlayback.isReady = true;
-  state.youtubePlayback.player.cuePlaylist(queue.videoIds, 0, 0);
+  state.youtubePlayback.currentIndex = 0;
+  state.youtubePlayback.player.cueVideoById(queue.videoIds[0]);
   try {
     state.youtubePlayback.player.setVolume(Number(elements.youtubePlayerVolume.value || 100));
   } catch {}
@@ -674,17 +706,11 @@ elements.youtubePlayerToggle.addEventListener("click", () => {
 });
 
 elements.youtubePlayerPrevious.addEventListener("click", () => {
-  const player = state.youtubePlayback.player;
-  if (!player || !state.youtubePlayback.isReady) return;
-  player.previousVideo();
-  syncYoutubePlaybackUi();
+  playYoutubeQueueIndex(state.youtubePlayback.currentIndex - 1);
 });
 
 elements.youtubePlayerNext.addEventListener("click", () => {
-  const player = state.youtubePlayback.player;
-  if (!player || !state.youtubePlayback.isReady) return;
-  player.nextVideo();
-  syncYoutubePlaybackUi();
+  playYoutubeQueueIndex(state.youtubePlayback.currentIndex + 1);
 });
 
 elements.youtubePlayerMute.addEventListener("click", () => {

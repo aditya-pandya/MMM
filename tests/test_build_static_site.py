@@ -281,8 +281,14 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Listening surfaces" in mix_with_youtube_html
     assert "Resolved from reviewed track matches." in mix_with_youtube_html
     assert 'data-youtube-audio-player' in mix_with_youtube_html
+    assert 'data-queue-key="mix-035-thirtyfifth"' in mix_with_youtube_html
+    assert 'data-youtube-queue-tracklist="mix-035-thirtyfifth"' in mix_with_youtube_html
+    assert 'data-youtube-queue-index="0"' in mix_with_youtube_html
+    assert 'data-youtube-video-id="ehpYg0NsGqA"' in mix_with_youtube_html
+    assert 'data-youtube-track-trigger' in mix_with_youtube_html
     assert 'href="https://www.youtube.com/watch_videos?video_ids=' in mix_with_youtube_html
     assert "youtube.com/embed/ehpYg0NsGqA" not in mix_with_youtube_html
+    assert mix_with_youtube_html.index("Audio-first queue") < mix_with_youtube_html.index("Full sequence")
     assert "Bandcamp starting point" not in mix_with_youtube_html
     assert "Local editorial state" in studio_html
     assert "Validation posture" in studio_html
@@ -292,6 +298,8 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Local commands worth keeping close" in studio_html
     assert "updateDiscovery" in site_js
     assert "youtube.com/iframe_api" in site_js
+    assert "loadVideoById" in site_js
+    assert "cuePlaylist" not in site_js
 
 
 def test_static_build_matches_golden_route_digests(tmp_path):

@@ -848,14 +848,21 @@ h3 {
 
 .youtube-player-host {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  top: 0;
+  left: -9999px;
+  width: 220px;
+  height: 220px;
   padding: 0;
   overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
+  border: 0;
+  opacity: 0.01;
+  pointer-events: none;
+}
+
+.youtube-player-host > div,
+.youtube-player-host iframe {
+  width: 220px;
+  height: 220px;
   border: 0;
 }
 
@@ -914,11 +921,61 @@ h3 {
 }
 
 .tracklist li {
-  padding: 1.15rem 1.25rem;
   background: var(--panel);
 }
 
-.tracklist li > div {
+.tracklist__row,
+.tracklist__button {
+  width: 100%;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tracklist__row {
+  box-sizing: border-box;
+}
+
+.tracklist__button {
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.tracklist__item--queue .tracklist__button:hover,
+.tracklist__item--queue .tracklist__button:focus-visible {
+  background: rgba(217, 164, 65, 0.08);
+  outline: none;
+}
+
+.tracklist__item--queue.is-active .tracklist__button {
+  background:
+    linear-gradient(90deg, rgba(217, 164, 65, 0.16), rgba(217, 164, 65, 0.04) 62%, transparent),
+    rgba(255, 255, 255, 0.02);
+}
+
+.tracklist__item--queue.is-active strong,
+.tracklist__item--queue.is-active span,
+.tracklist__item--queue.is-active .track-favorite {
+  color: var(--accent);
+}
+
+.tracklist__item--queue p {
+  transition: color 160ms ease;
+}
+
+.tracklist__item--queue.is-active p {
+  color: var(--text);
+}
+
+.tracklist li > div,
+.tracklist__button {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
