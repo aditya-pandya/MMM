@@ -75,6 +75,8 @@ def test_sync_youtube_matches_generates_embed_when_all_tracks_are_clear(tmp_path
 
     assert payload["summary"]["requiresReview"] is False
     assert payload["summary"]["generatedEmbed"]["embedUrl"] == "https://www.youtube.com/embed/video-a?playlist=video-c"
+    assert payload["summary"]["generatedEmbed"]["kind"] == "audio-first-queue"
+    assert payload["summary"]["generatedEmbed"]["embedSupported"] is False
     written = json.loads((youtube_dir / "mix-001-test.json").read_text(encoding="utf-8"))
     assert written["tracks"][0]["resolution"]["status"] == "auto-resolved"
 
@@ -105,7 +107,38 @@ def test_sync_youtube_matches_holds_back_ambiguous_or_duplicate_results(tmp_path
 
     assert payload["summary"]["requiresReview"] is True
     assert payload["summary"]["generatedEmbed"] is None
-    assert payload["tracks"][0]["resolution"]["holdbackReason"] in {"ambiguous-top-candidates", "possible-duplicate-video"}
+    assert payload["tracks"][0]["resolution"]["holdbackReason"] in {"low-confidence-top-candidate", "possible-duplicate-video"}
+
+
+def test_sync_youtube_matches_prefers_audio_focused_result_over_music_video():
+    track = {
+        "artist": "Artist",
+        "title": "Song",
+        "displayText": "Artist - Song",
+    }
+    audio_candidate = sync_youtube_matches.score_candidate(
+        track,
+        {
+            "id": "audio-1",
+            "title": "Artist - Song [Official Audio]",
+            "url": "https://www.youtube.com/watch?v=audio-1",
+            "channel": "Artist Topic",
+            "duration": 210,
+        },
+    )
+    video_candidate = sync_youtube_matches.score_candidate(
+        track,
+        {
+            "id": "video-1",
+            "title": "Artist - Song (Official Video)",
+            "url": "https://www.youtube.com/watch?v=video-1",
+            "channel": "Artist",
+            "duration": 210,
+        },
+    )
+
+    assert audio_candidate.score > video_candidate.score
+    assert "official-audio-preferred" in audio_candidate.signals
 
 
 def test_resolve_mix_paths_prefers_published_when_slug_exists_in_both_sources(tmp_path, monkeypatch):

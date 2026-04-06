@@ -7,144 +7,216 @@
     <link rel="stylesheet" href="/operator.css" />
   </head>
   <body>
-    <div class="shell">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">Private operator surface</p>
+    <div class="operator-shell">
+      <header class="hero">
+        <div class="hero__copy">
+          <p class="eyebrow">Private, local-first control surface</p>
           <h1>MMM Operator</h1>
+          <p class="hero__lede">
+            Draft generation, release gates, and YouTube queue review for MMM without changing the static public runtime.
+          </p>
         </div>
-        <div class="topbar__meta">
-          <span id="auth-badge" class="pill pill--muted">Checking access</span>
-          <button id="logout-button" class="button button--ghost" hidden>Log Out</button>
+        <div class="hero__meta">
+          <section class="hero-card">
+            <div class="hero-card__row">
+              <span id="auth-badge" class="badge badge--muted">Checking access</span>
+              <button id="logout-button" class="button button--ghost" hidden>Log out</button>
+            </div>
+            <p class="hero-card__label">Preview origin</p>
+            <code id="preview-origin">http://127.0.0.1:3000</code>
+          </section>
         </div>
       </header>
 
-      <section id="auth-panel" class="auth-panel" hidden>
-        <div class="panel panel--warm">
-          <h2>Enter operator token</h2>
-          <p>If this UI is sitting behind a tunnel or other private exposure, the shared token unlocks the working data and write actions.</p>
+      <section id="status-banner" class="status-banner" hidden></section>
+
+      <section id="auth-panel" class="auth-wrap" hidden>
+        <article class="panel auth-card">
+          <div class="panel__header">
+            <div>
+              <p class="section-label">Access gate</p>
+              <h2>Unlock the operator surface</h2>
+            </div>
+          </div>
+          <p class="panel__copy">
+            Use the shared token when this local tool is exposed through a tunnel or other private network path.
+          </p>
           <form id="auth-form" class="auth-form">
-            <input id="token-input" type="password" autocomplete="current-password" placeholder="MMM operator token" />
-            <button class="button" type="submit">Unlock</button>
+            <label>
+              <span>Operator token</span>
+              <input id="token-input" type="password" autocomplete="current-password" placeholder="MMM operator token" />
+            </label>
+            <button class="button" type="submit">Unlock workspace</button>
           </form>
           <p id="auth-error" class="notice notice--error" hidden></p>
-        </div>
+        </article>
       </section>
 
-      <main id="app" class="layout" hidden>
-        <aside class="sidebar">
-          <section class="panel">
-            <div class="panel__header">
-              <h2>Generate</h2>
-              <button id="validate-button" class="button button--ghost">Validate repo</button>
-            </div>
-            <form id="generate-form" class="stack">
-              <label>
-                <span>Mix date</span>
-                <input id="generate-date" type="date" />
-              </label>
-              <div class="segmented">
-                <label><input type="radio" name="generate-mode" value="local" checked /> Deterministic</label>
-                <label><input type="radio" name="generate-mode" value="ai" /> AI</label>
-              </div>
-              <label class="checkbox">
-                <input id="generate-ai-artwork" type="checkbox" />
-                <span>Also generate AI artwork when relevant</span>
-              </label>
-              <button class="button" type="submit">Start draft generation</button>
-            </form>
-          </section>
+      <main id="app" class="app-shell" hidden>
+        <section class="stats-grid" aria-label="Repository overview">
+          <article class="stat-card">
+            <p class="section-label">Drafts</p>
+            <strong id="stat-drafts" class="stat-card__value">0</strong>
+            <p class="stat-card__meta">Editable weekly mix drafts on disk</p>
+          </article>
+          <article class="stat-card">
+            <p class="section-label">Published</p>
+            <strong id="stat-published" class="stat-card__value">0</strong>
+            <p class="stat-card__meta">Canonical published mixes in the archive</p>
+          </article>
+          <article class="stat-card">
+            <p class="section-label">Notes</p>
+            <strong id="stat-notes" class="stat-card__value">0</strong>
+            <p class="stat-card__meta">Editorial notebook entries available to preview</p>
+          </article>
+          <article class="stat-card">
+            <p class="section-label">YouTube review</p>
+            <strong id="stat-youtube-review" class="stat-card__value">0</strong>
+            <p class="stat-card__meta">Published mixes still waiting on queue review</p>
+          </article>
+        </section>
 
-          <section class="panel">
-            <div class="panel__header">
-              <h2>Drafts</h2>
-              <span id="draft-count" class="pill pill--muted">0</span>
-            </div>
-            <div id="draft-list" class="list"></div>
-          </section>
-
-          <section class="panel">
-            <div class="panel__header">
-              <h2>Published</h2>
-              <span id="mix-count" class="pill pill--muted">0</span>
-            </div>
-            <div id="mix-list" class="list"></div>
-          </section>
-        </aside>
-
-        <section class="workspace">
-          <section class="panel">
-            <div class="panel__header">
-              <h2>Draft editor</h2>
-              <span id="draft-status" class="pill pill--muted">No draft selected</span>
-            </div>
-            <form id="draft-form" class="stack" hidden>
-              <div class="two-up">
-                <label>
-                  <span>Title</span>
-                  <input id="draft-title" type="text" />
-                </label>
-                <label>
-                  <span>Tags</span>
-                  <input id="draft-tags" type="text" placeholder="comma, separated, tags" />
-                </label>
-              </div>
-              <label>
-                <span>Summary</span>
-                <textarea id="draft-summary" rows="3"></textarea>
-              </label>
-              <label>
-                <span>Notes</span>
-                <textarea id="draft-notes" rows="5"></textarea>
-              </label>
-              <label class="checkbox">
-                <input id="draft-featured" type="checkbox" />
-                <span>Feature this mix on publish</span>
-              </label>
-              <div class="panel panel--subtle">
-                <div class="panel__header">
-                  <h3>Tracks</h3>
-                  <button id="add-track-button" class="button button--ghost" type="button">Add track</button>
+        <section class="content-grid">
+          <aside class="rail">
+            <article class="panel">
+              <div class="panel__header">
+                <div>
+                  <p class="section-label">Generation</p>
+                  <h2>Make the next draft</h2>
                 </div>
-                <div id="track-list" class="track-list"></div>
+                <button id="validate-button" class="button button--ghost">Validate repo</button>
               </div>
-              <div class="actions">
-                <button class="button" type="submit">Save draft JSON</button>
-                <button id="approve-button" class="button button--ghost" type="button">Approve draft</button>
-                <button id="release-button" class="button button--danger" type="button">Release approved draft</button>
-              </div>
-            </form>
-            <div id="draft-empty" class="empty-state">
-              Pick a draft from the left rail, or generate the next one here.
-            </div>
-          </section>
+              <p class="panel__copy">Keep the release flow local-first: validate first, generate carefully, and only publish through the guarded path.</p>
+              <form id="generate-form" class="stack">
+                <label>
+                  <span>Mix date</span>
+                  <input id="generate-date" type="date" />
+                </label>
+                <fieldset class="segmented" aria-label="Draft generation mode">
+                  <label class="segmented__item"><input type="radio" name="generate-mode" value="local" checked /> Deterministic</label>
+                  <label class="segmented__item"><input type="radio" name="generate-mode" value="ai" /> AI assisted</label>
+                </fieldset>
+                <label class="checkbox">
+                  <input id="generate-ai-artwork" type="checkbox" />
+                  <span>Also generate AI artwork when relevant</span>
+                </label>
+                <button class="button" type="submit">Start draft generation</button>
+              </form>
+            </article>
 
-          <section class="panel">
-            <div class="panel__header">
-              <h2>YouTube review</h2>
-              <span id="youtube-status" class="pill pill--muted">No mix selected</span>
-            </div>
-            <div class="actions">
-              <button id="youtube-sync-button" class="button button--ghost" type="button" disabled>Refresh candidates</button>
-              <button id="youtube-save-button" class="button" type="button" disabled>Save selections</button>
-            </div>
-            <div id="youtube-summary" class="notice notice--muted">Choose a published mix to inspect candidate state.</div>
-            <div id="youtube-embed" class="embed-card" hidden></div>
-            <div id="youtube-track-list" class="youtube-track-list"></div>
-          </section>
+            <article class="panel">
+              <div class="panel__header">
+                <div>
+                  <p class="section-label">Drafts</p>
+                  <h2>Editorial queue</h2>
+                </div>
+                <span id="draft-count" class="badge badge--muted">0</span>
+              </div>
+              <div id="draft-list" class="collection-list"></div>
+            </article>
 
-          <section class="grid">
-            <section class="panel">
+            <article class="panel">
               <div class="panel__header">
-                <h2>Preview routes</h2>
+                <div>
+                  <p class="section-label">Published mixes</p>
+                  <h2>YouTube review queue</h2>
+                </div>
+                <span id="mix-count" class="badge badge--muted">0</span>
               </div>
-              <div id="preview-list" class="stack"></div>
-            </section>
-            <section class="panel">
+              <div id="mix-list" class="collection-list"></div>
+            </article>
+          </aside>
+
+          <section class="workspace">
+            <article class="panel panel--workspace">
               <div class="panel__header">
-                <h2>Workflow log</h2>
+                <div>
+                  <p class="section-label">Draft editor</p>
+                  <h2>Refine the working mix JSON</h2>
+                </div>
+                <span id="draft-status" class="badge badge--muted">No draft selected</span>
               </div>
-              <div id="log-list" class="log-list"></div>
+              <form id="draft-form" class="stack" hidden>
+                <div class="two-up">
+                  <label>
+                    <span>Title</span>
+                    <input id="draft-title" type="text" />
+                  </label>
+                  <label>
+                    <span>Tags</span>
+                    <input id="draft-tags" type="text" placeholder="comma, separated, tags" />
+                  </label>
+                </div>
+                <label>
+                  <span>Summary</span>
+                  <textarea id="draft-summary" rows="3"></textarea>
+                </label>
+                <label>
+                  <span>Notes</span>
+                  <textarea id="draft-notes" rows="5"></textarea>
+                </label>
+                <label class="checkbox">
+                  <input id="draft-featured" type="checkbox" />
+                  <span>Feature this mix on publish</span>
+                </label>
+                <section class="subpanel">
+                  <div class="panel__header">
+                    <div>
+                      <p class="section-label">Tracklist</p>
+                      <h3>Sequence notes</h3>
+                    </div>
+                    <button id="add-track-button" class="button button--ghost" type="button">Add track</button>
+                  </div>
+                  <div id="track-list" class="track-list"></div>
+                </section>
+                <div class="toolbar">
+                  <button class="button" type="submit">Save draft JSON</button>
+                  <button id="approve-button" class="button button--ghost" type="button">Approve draft</button>
+                  <button id="release-button" class="button button--danger" type="button">Release approved draft</button>
+                </div>
+              </form>
+              <div id="draft-empty" class="empty-state">
+                <p class="empty-state__title">No draft selected yet</p>
+                <p>Pick a draft from the rail or generate the next issue from the local archive context.</p>
+              </div>
+            </article>
+
+            <article class="panel panel--workspace">
+              <div class="panel__header">
+                <div>
+                  <p class="section-label">YouTube review</p>
+                  <h2>Audio-first queue matching</h2>
+                </div>
+                <span id="youtube-status" class="badge badge--muted">No mix selected</span>
+              </div>
+              <div class="toolbar">
+                <button id="youtube-sync-button" class="button button--ghost" type="button" disabled>Refresh candidates</button>
+                <button id="youtube-save-button" class="button" type="button" disabled>Save selections</button>
+              </div>
+              <div id="youtube-summary" class="notice notice--muted">Choose a published mix to inspect candidate state.</div>
+              <div id="youtube-embed" class="queue-card" hidden></div>
+              <div id="youtube-track-list" class="youtube-track-list"></div>
+            </article>
+
+            <section class="workspace-grid">
+              <article class="panel">
+                <div class="panel__header">
+                  <div>
+                    <p class="section-label">Local preview</p>
+                    <h2>Routes worth checking</h2>
+                  </div>
+                </div>
+                <div id="preview-list" class="stack"></div>
+              </article>
+              <article class="panel">
+                <div class="panel__header">
+                  <div>
+                    <p class="section-label">Session log</p>
+                    <h2>Workflow activity</h2>
+                  </div>
+                </div>
+                <div id="log-list" class="log-list"></div>
+              </article>
             </section>
           </section>
         </section>
@@ -165,4 +237,4 @@
 
     <script src="/operator.js" defer></script>
   </body>
-  </html>
+</html>

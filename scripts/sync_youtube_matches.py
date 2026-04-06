@@ -27,9 +27,25 @@ from mmm_common import (
 
 SCHEMA_VERSION = "1.0"
 SEARCH_LIMIT = 5
-AUTO_ACCEPT_SCORE = 0.90
-AUTO_ACCEPT_MARGIN = 0.12
-STRONG_CONTENDER_SCORE = 0.82
+AUTO_ACCEPT_SCORE = 0.80
+NEGATIVE_VERSION_TERMS = {
+    "live": ("live-version-penalty", 0.22),
+    "remix": ("unexpected-remix-penalty", 0.12),
+    "edit": ("unexpected-edit-penalty", 0.07),
+    "acoustic": ("unexpected-acoustic-penalty", 0.08),
+    "session": ("unexpected-session-penalty", 0.08),
+    "karaoke": ("karaoke-penalty", 0.18),
+    "instrumental": ("unexpected-instrumental-penalty", 0.08),
+    "cover": ("unexpected-cover-penalty", 0.14),
+    "lyrics": ("lyric-video-penalty", 0.08),
+    "video": ("music-video-penalty", 0.10),
+    "visualizer": ("visualizer-penalty", 0.05),
+}
+POSITIVE_AUDIO_TERMS = {
+    "official audio": ("official-audio-preferred", 0.16),
+    "audio only": ("audio-only-preferred", 0.12),
+    "audio": ("audio-tag-preferred", 0.06),
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -56,6 +72,13 @@ def overlaps_needed(track_text: str, candidate_text: str) -> float:
 
 def similarity(a: str, b: str) -> float:
     return SequenceMatcher(a=normalize_text(a), b=normalize_text(b)).ratio()
+
+
+def contains_phrase(text: str, phrase: str) -> bool:
+    normalized_phrase = normalize_text(phrase)
+    if not normalized_phrase:
+        return False
+    return normalized_phrase in normalize_text(text)
 
 
 @dataclass
@@ -111,23 +134,28 @@ def score_candidate(track: dict[str, Any], entry: dict[str, Any]) -> ScoredCandi
         score += 0.08
         signals.append("artist-name-in-channel")
     if normalized_channel.endswith(" topic"):
-        score += 0.06
+        score += 0.12
         signals.append("topic-channel")
+    if contains_phrase(channel, "official artist channel"):
+        score += 0.06
+        signals.append("official-artist-channel")
     if "official" in normalized_candidate:
         score += 0.04
         signals.append("official-upload")
-    if "[live" in candidate_title.lower() or " live " in normalized_candidate:
-        score -= 0.18
-        signals.append("live-version-penalty")
-    if "cover" in normalized_candidate and "cover" not in normalized_title:
-        score -= 0.12
-        signals.append("unexpected-cover-penalty")
-    if "remix" in normalized_candidate and "remix" not in normalized_title:
-        score -= 0.08
-        signals.append("unexpected-remix-penalty")
-    if "lyrics" in normalized_candidate and "lyrics" not in normalized_title:
-        score -= 0.06
-        signals.append("lyric-video-penalty")
+    for phrase, (signal, weight) in POSITIVE_AUDIO_TERMS.items():
+        if contains_phrase(candidate_title, phrase):
+            score += weight
+            signals.append(signal)
+
+    expected_title = f" {normalized_title} "
+    candidate_terms = f" {normalized_candidate} "
+    for term, (signal, penalty) in NEGATIVE_VERSION_TERMS.items():
+        if f" {term} " not in candidate_terms:
+            continue
+        if f" {term} " in expected_title:
+            continue
+        score -= penalty
+        signals.append(signal)
 
     return ScoredCandidate(
         video_id=str(entry.get("id") or "").strip(),
@@ -165,23 +193,21 @@ def derive_resolution(scored: list[ScoredCandidate]) -> dict[str, Any]:
         }
 
     top = scored[0]
-    runner_up = scored[1] if len(scored) > 1 else None
-    if top.score >= AUTO_ACCEPT_SCORE and (runner_up is None or top.score - runner_up.score >= AUTO_ACCEPT_MARGIN or runner_up.score < STRONG_CONTENDER_SCORE):
+    if top.score > AUTO_ACCEPT_SCORE:
         return {
             "status": "auto-resolved",
             "selectedVideoId": top.video_id,
             "confidenceScore": round(top.score, 3),
-            "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+            "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
             "holdbackReason": None,
         }
 
-    holdback_reason = "ambiguous-top-candidates" if runner_up and runner_up.score >= STRONG_CONTENDER_SCORE else "low-confidence-top-candidate"
     return {
         "status": "pending-review",
         "selectedVideoId": None,
         "confidenceScore": round(top.score, 3),
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": holdback_reason,
+        "reason": "The best YouTube hit stayed at or below MMM's auto-select threshold, so a human review is still required.",
+        "holdbackReason": "low-confidence-top-candidate",
     }
 
 
@@ -221,11 +247,14 @@ def build_generated_embed(mix: dict[str, Any], track_states: list[dict[str, Any]
 
     return {
         "provider": "YouTube",
-        "kind": "video-queue",
+        "kind": "audio-first-queue",
         "title": f"Full mix queue for {mix.get('displayTitle') or mix.get('title') or mix.get('slug')}",
         "embedUrl": embed_url,
         "watchUrl": f"https://www.youtube.com/watch_videos?video_ids={quote(','.join(video_ids), safe=',')}",
         "videoIds": video_ids,
+        "presentation": "audio-first",
+        "embedSupported": False,
+        "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
         "generatedAt": now_iso(),
     }
 

@@ -10,7 +10,7 @@ The operator UI is a private, local-first control surface for MMM editorial work
 - edits draft JSON safely from the browser
 - approves a reviewed draft
 - releases an approved draft through the guarded publish flow
-- reviews YouTube candidate state and stores explicit per-track selections in `data/youtube/<slug>.json`
+- reviews YouTube candidate state, auto-selects strong matches above `0.8` when safe, and stores explicit per-track selections in `data/youtube/<slug>.json`
 - shows local preview routes plus an in-session workflow log
 
 ## Run it locally
@@ -78,10 +78,11 @@ Notes:
 4. save draft JSON
 5. approve when reviewed
 6. release when ready
-7. pick a published mix, refresh YouTube candidates, and explicitly choose or clear each track match until the embed queue resolves
+7. pick a published mix, refresh YouTube candidates, and explicitly choose or clear each track match until the audio-first queue resolves
 
 ## Safety notes
 
 - Draft edits are written with an atomic replace so partial JSON writes do not land on disk.
 - Approval and release still go through the existing MMM approval and release logic.
 - YouTube manual review preserves the existing saved candidate set and only updates explicit human selections plus the derived embed summary.
+- The operator UI now reflects MMM's honest YouTube posture: MMM can bias matching toward official audio/topic sources, but it does not pretend YouTube exposes a true audio-only iframe when it does not.

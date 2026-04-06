@@ -468,24 +468,12 @@ function normalizeYouTubeMatchState(payload, mix) {
     generatedProvider: embedReady
       ? {
           provider: 'YouTube',
-          label: 'Resolved YouTube queue',
+          label: 'Audio-first YouTube queue',
           url: generatedEmbed.watchUrl,
           kind: 'playlist',
-          note: 'Built locally from explicit per-track video selections.',
+          note: generatedEmbed.embedLimitation || 'Built locally from explicit per-track video selections and presented as an audio-first queue.',
           providerSource: 'generated',
           confidenceLevel: 'trusted-link-only',
-          confidenceReason: 'Built locally from resolved per-track YouTube matches.',
-        }
-      : null,
-    generatedEmbedEntry: embedReady
-      ? {
-          provider: 'YouTube',
-          title: generatedEmbed.title || `Full mix queue for ${mix.title}`,
-          url: generatedEmbed.embedUrl,
-          note: 'Built locally from explicit per-track video IDs instead of a claimed playlist ID.',
-          providerSource: 'generated',
-          kind: 'embed',
-          confidenceLevel: 'trusted-embed-ready',
           confidenceReason: 'Built locally from resolved per-track YouTube matches.',
         }
       : null,
@@ -747,16 +735,10 @@ function normalizeListening(mix) {
   const dedupedWarnings = Array.from(new Set(warnings));
   const youtubeMatch = mix.youtubeMatch && typeof mix.youtubeMatch === 'object' ? mix.youtubeMatch : null;
 
-  if (youtubeMatch?.generatedProvider) {
-    normalizedProviders.unshift(youtubeMatch.generatedProvider);
-    trustedProviders.unshift(youtubeMatch.generatedProvider);
-  }
-  if (youtubeMatch?.generatedEmbedEntry) {
-    normalizedEmbeds.unshift(youtubeMatch.generatedEmbedEntry);
-    trustedEmbeds.unshift(youtubeMatch.generatedEmbedEntry);
-  }
+  const generatedQueue = youtubeMatch?.generatedProvider || null;
   return {
     intro: String(listening.intro || listening.summary || mix.listeningIntro || '').trim(),
+    generatedQueue,
     providers: normalizedProviders,
     embeds: normalizedEmbeds,
     trustedProviders,
@@ -765,10 +747,10 @@ function normalizeListening(mix) {
     uncertainEmbeds,
     warnings: dedupedWarnings,
     summary: {
-      trustedLinkCount: trustedProviders.length,
+      trustedLinkCount: trustedProviders.length + (generatedQueue ? 1 : 0),
       trustedEmbedCount: trustedEmbeds.length,
       uncertainCount: uncertainProviders.length + uncertainEmbeds.length,
-      surfaceCount: normalizedProviders.length + normalizedEmbeds.length,
+      surfaceCount: normalizedProviders.length + normalizedEmbeds.length + (generatedQueue ? 1 : 0),
     },
   };
 }
@@ -1776,6 +1758,7 @@ function renderListeningSection(mix) {
   const trustedProviders = Array.isArray(listening.trustedProviders) ? listening.trustedProviders : [];
   const uncertainProviders = Array.isArray(listening.uncertainProviders) ? listening.uncertainProviders : [];
   const uncertainEmbeds = Array.isArray(listening.uncertainEmbeds) ? listening.uncertainEmbeds : [];
+  const generatedQueue = listening.generatedQueue && typeof listening.generatedQueue === 'object' ? listening.generatedQueue : null;
   const youtubeMatch = mix.youtubeMatch && typeof mix.youtubeMatch === 'object' ? mix.youtubeMatch : null;
   const actionableTrustedLinks = trustedProviders.filter((provider) => {
     const kind = String(provider.kind || '').trim().toLowerCase();
@@ -1783,10 +1766,11 @@ function renderListeningSection(mix) {
   });
   const uncertainSurfaces = [...uncertainEmbeds, ...uncertainProviders];
 
-  if (!trustedEmbeds.length && !actionableTrustedLinks.length && !uncertainSurfaces.length && !youtubeMatch?.summary?.requiresReview) return '';
+  if (!generatedQueue && !trustedEmbeds.length && !actionableTrustedLinks.length && !uncertainSurfaces.length && !youtubeMatch?.summary?.requiresReview) return '';
 
   const intro = listening.intro ? `<p class="listening-section__intro">${escapeHtml(listening.intro)}</p>` : '';
   const summaryBits = [];
+  if (generatedQueue) summaryBits.push('1 audio-first YouTube queue');
   if (trustedEmbeds.length) summaryBits.push(`${trustedEmbeds.length} verified preview${trustedEmbeds.length === 1 ? '' : 's'}`);
   if (actionableTrustedLinks.length) summaryBits.push(`${actionableTrustedLinks.length} verified external link${actionableTrustedLinks.length === 1 ? '' : 's'}`);
   if (uncertainSurfaces.length) summaryBits.push(`${uncertainSurfaces.length} uncertain lead${uncertainSurfaces.length === 1 ? '' : 's'}`);
@@ -1812,6 +1796,22 @@ function renderListeningSection(mix) {
                 ${youtubeMatch.unresolvedTitles.length
                   ? `<p>${escapeHtml(`Open data/youtube/${mix.slug}.json to review: ${youtubeMatch.unresolvedTitles.slice(0, 4).join('; ')}${youtubeMatch.unresolvedTitles.length > 4 ? '…' : ''}`)}</p>`
                   : ''}
+              </article>
+            </div>
+          </div>`
+        : ''}
+      ${generatedQueue
+        ? `<div class="listening-subsection">
+            <p class="listening-subsection__title">Audio-first queue</p>
+            <div class="provider-grid">
+              <article class="provider-card">
+                <p class="provider-card__eyebrow">Audio-first, honest fallback</p>
+                <h3>${escapeHtml(generatedQueue.label || 'Audio-first YouTube queue')}</h3>
+                <p>${escapeHtml(generatedQueue.confidenceReason || 'Built locally from resolved per-track YouTube matches.')}</p>
+                <p>${escapeHtml(generatedQueue.note || 'MMM does not pretend YouTube offers a true audio-only embed when it does not.')}</p>
+                <div class="button-row button-row--compact">
+                  <a class="button button--secondary" href="${escapeHtml(generatedQueue.url)}">${escapeHtml(generatedQueue.label || 'Open queue on YouTube')}</a>
+                </div>
               </article>
             </div>
           </div>`

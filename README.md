@@ -119,7 +119,7 @@ Listening-specific operator notes:
 - Treat `data/listening-provider-catalog.json` as the trust source for listening surfaces.
 - Add explicit embed URLs only when the curated data genuinely supports inline playback.
 - If validation warns that a listening surface is uncertain, the build will demote it instead of presenting it as a verified mirror.
-- YouTube full-mix embeds now come only from `data/youtube/*.json` files with a fully resolved per-track queue. Ambiguous or low-confidence track matches stay blocked for review.
+- YouTube full-mix queues now come only from `data/youtube/*.json` files with a fully resolved per-track queue. MMM keeps those queues audio-first and link-based when needed instead of pretending YouTube offers a true audio-only iframe.
 - The YouTube matcher now works against the canonical archive view: published plus imported mixes, deduped by slug and preferring published JSON when both exist.
 
 Create a new draft mix template instead of starting from blank JSON:
@@ -236,11 +236,11 @@ npm run youtube:match -- mix-035-thirtyfifth
 Notes:
 - Match state lives in `data/youtube/<mix-slug>.json`.
 - The matcher scans the canonical archive, not only `data/published/`, and prefers published JSON when the same slug exists in both published and imported sources.
-- The matcher stores the scored candidate set for each track and only auto-resolves clearly dominant hits.
+- The matcher stores the scored candidate set for each track, prefers audio-first sources over obvious videos/live/remix variants, and auto-resolves matches that score above `0.8` unless a safety rule like duplicate-video detection still blocks them.
 - `pending-review`, `no-candidate`, and duplicate holdbacks are intentional human-review checkpoints.
-- Do not manually bless a full-mix YouTube embed until every track has a reviewed `selectedVideoId`. The build will keep the embed blocked while any track is unresolved.
+- Do not manually bless a full-mix YouTube queue until every track has a reviewed `selectedVideoId`. The build will keep the queue blocked while any track is unresolved.
 - If two good-looking candidates are close, or two tracks land on the same selected video, leave the state unresolved and review it explicitly instead of choosing silently.
-- Once every track is explicitly resolved, the build renders an honest YouTube queue embed from explicit video IDs instead of a claimed playlist ID.
+- Once every track is explicitly resolved, the build renders an honest audio-first YouTube queue from explicit video IDs instead of a claimed playlist ID or fake audio-only embed.
 
 Run the weekly workflow end to end:
 

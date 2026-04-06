@@ -227,7 +227,7 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert 'data-discovery-search="' in archive_html
     assert "Rebuilding the archive" in archive_html
     assert "The Kite String Tangle - Tennis Court" in archive_html
-    assert "Resolved YouTube queue" in archive_html
+    assert "Listening surfaces" in archive_html
 
     assert "Built like an archive, not a content machine." in about_html
     assert "Browse the archive" in about_html
@@ -276,11 +276,12 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
 
     assert "related note" in archive_html
     assert "highlighted track" in archive_html
-    assert "Resolved YouTube queue" in mix_with_youtube_html
+    assert "Audio-first queue" in mix_with_youtube_html
+    assert "Audio-first YouTube queue" in mix_with_youtube_html
     assert "Listening surfaces" in mix_with_youtube_html
-    assert "Embedded preview" in mix_with_youtube_html
-    assert "External links" in mix_with_youtube_html
-    assert "youtube.com/embed/ehpYg0NsGqA" in mix_with_youtube_html
+    assert "Built locally from explicit per-track video selections and presented as an audio-first queue." in mix_with_youtube_html
+    assert 'href="https://www.youtube.com/watch_videos?video_ids=' in mix_with_youtube_html
+    assert "youtube.com/embed/ehpYg0NsGqA" not in mix_with_youtube_html
     assert "Bandcamp starting point" not in mix_with_youtube_html
     assert "Local editorial state" in studio_html
     assert "Validation posture" in studio_html
@@ -464,7 +465,7 @@ def test_static_build_requires_explicit_trusted_embed_data_before_rendering_prev
     spotify_mix_html = read_text(repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html")
 
     assert "youtube.com/embed/videoseries" not in youtube_mix_html
-    assert "External links" in youtube_mix_html
+    assert "Audio-first queue" in youtube_mix_html
     assert "Trusted link only" in spotify_mix_html
     assert "open.spotify.com/embed/playlist" not in spotify_mix_html
 
