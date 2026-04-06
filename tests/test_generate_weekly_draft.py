@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -64,10 +65,12 @@ def temp_repo(tmp_path, monkeypatch):
     drafts = data_dir / "drafts"
     archive_dir = data_dir / "archive"
     published_dir = data_dir / "published"
+    imported_dir = data_dir / "imported" / "mixes"
     notes_dir = data_dir / "notes"
     drafts.mkdir(parents=True)
     archive_dir.mkdir(parents=True)
     published_dir.mkdir(parents=True)
+    imported_dir.mkdir(parents=True)
     notes_dir.mkdir(parents=True)
 
     site_path = data_dir / "site.json"
@@ -200,6 +203,7 @@ def temp_repo(tmp_path, monkeypatch):
     monkeypatch.setattr(mmm_common, "TASTE_PROFILE_PATH", taste_path)
     monkeypatch.setattr(mmm_common, "ARCHIVE_INDEX_PATH", archive_path)
     monkeypatch.setattr(mmm_common, "PUBLISHED_DIR", published_dir)
+    monkeypatch.setattr(mmm_common, "IMPORTED_MIXES_DIR", imported_dir)
     monkeypatch.setattr(mmm_common, "NOTES_DIR", notes_dir)
 
     monkeypatch.setattr(generate_weekly_draft, "DRAFTS_DIR", drafts)
@@ -207,6 +211,7 @@ def temp_repo(tmp_path, monkeypatch):
     monkeypatch.setattr(generate_weekly_draft, "TASTE_PROFILE_PATH", taste_path)
     monkeypatch.setattr(generate_weekly_draft, "ARCHIVE_INDEX_PATH", archive_path)
     monkeypatch.setattr(generate_weekly_draft, "PUBLISHED_DIR", published_dir)
+    monkeypatch.setattr(generate_weekly_draft, "IMPORTED_MIXES_DIR", imported_dir)
     monkeypatch.setattr(generate_weekly_draft, "NOTES_DIR", notes_dir)
 
     return tmp_path
@@ -299,3 +304,142 @@ def test_plugin_command_can_refine_local_draft(temp_repo, tmp_path):
     assert mix["source_context"]["published_mix_count"] == 3
     assert mix["source_context"]["note_count"] == 1
     assert "local-generated" in mix["tags"]
+
+
+def test_ai_mode_uses_canonical_archive_context_and_writes_editorial_draft(temp_repo, monkeypatch):
+    imported_dir = temp_repo / "data" / "imported" / "mixes"
+    mmm_common.dump_json(
+        imported_dir / "mix-001-first.json",
+        {
+            "slug": "mix-001-first",
+            "title": "Monday Music Mix #1",
+            "date": "2013-01-07",
+            "status": "imported",
+            "summary": "An older imported-only mix.",
+            "notes": "Imported note context.",
+            "tracks": [
+                {"artist": "Class Actress", "title": "Keep You", "why_it_fits": "Imported."},
+                {"artist": "Chromatics", "title": "Cherry", "why_it_fits": "Imported."},
+                {"artist": "Washed Out", "title": "Feel It All Around", "why_it_fits": "Imported."},
+            ],
+        },
+    )
+
+    captured: dict[str, object] = {}
+
+    def fake_post(endpoint: str, payload: dict[str, object], *, timeout_seconds: int = 180) -> dict[str, object]:
+        assert endpoint == "/chat/completions"
+        messages = payload["messages"]
+        user_prompt = messages[1]["content"]
+        context_json = user_prompt.split("\n\n", 1)[1]
+        context = json.loads(context_json)
+        captured["archive_slugs"] = [item["slug"] for item in context["archive_mixes"]]
+        captured["archive_sources"] = {item["slug"]: item["sourceName"] for item in context["archive_mixes"]}
+        return {
+            "choices": [
+                {
+                    "message": {
+                        "content": json.dumps(
+                            {
+                                "summary": "A machine-shaped draft that still stays tied to the archive.",
+                                "notes": "Generated from the canonical archive window, taste profile, and note context.",
+                                "tags": ["ai-weekly", "cover-thread"],
+                                "tracks": [
+                                    {
+                                        "artist": "Goldroom",
+                                        "title": "Embrace",
+                                        "why_it_fits": "Keeps the archive's soft-motion energy close to the surface.",
+                                        "favorite": True,
+                                        "sourceMixSlug": "mix-035-thirtyfifth",
+                                    },
+                                    {
+                                        "artist": "Chromeo",
+                                        "title": "Over Your Shoulder",
+                                        "why_it_fits": "Lets the sequence stay playful without breaking the archive lane.",
+                                        "favorite": False,
+                                        "sourceMixSlug": "mix-035-thirtyfifth",
+                                    },
+                                    {
+                                        "artist": "The Kite String Tangle",
+                                        "title": "Tennis Court (Lorde cover)",
+                                        "why_it_fits": "Preserves the archive's cover pivot habit.",
+                                        "favorite": False,
+                                        "sourceMixSlug": "mix-036-thirtysixth",
+                                    },
+                                    {
+                                        "artist": "Dum Dum Girls",
+                                        "title": "Mine Tonight",
+                                        "why_it_fits": "Pulls a recurring archive artist back into the center.",
+                                        "favorite": True,
+                                        "sourceMixSlug": "mix-034-thirtyfourth",
+                                    },
+                                    {
+                                        "artist": "Class Actress",
+                                        "title": "Keep You",
+                                        "why_it_fits": "Lets the imported-only side of the archive still shape the draft.",
+                                        "favorite": False,
+                                        "sourceMixSlug": "mix-001-first",
+                                    },
+                                ],
+                            }
+                        )
+                    }
+                }
+            ]
+        }
+
+    monkeypatch.setattr(generate_weekly_draft, "post_openai_json", fake_post)
+
+    output = generate_weekly_draft.generate_weekly_draft(
+        generate_weekly_draft.resolve_mix_date("2026-05-04"),
+        mode="ai",
+        force=True,
+    )
+
+    mix = mmm_common.load_json(output)
+    assert mix["generation_mode"] == "ai"
+    assert mix["ai_source"]["provider"] == "openai"
+    assert mix["source_context"]["archive_window"] == "canonical-archive-deduped"
+    assert "mix-001-first" in captured["archive_slugs"]
+    assert captured["archive_sources"]["mix-035-thirtyfifth"] == "published"
+    assert captured["archive_sources"]["mix-001-first"] == "imported"
+    assert mix["tracks"][-1]["sourceMixSlug"] == "mix-001-first"
+    assert "ai-generated" in mix["tags"]
+
+
+def test_ai_mode_fails_clearly_on_invalid_output(temp_repo, monkeypatch):
+    def fake_post(endpoint: str, payload: dict[str, object], *, timeout_seconds: int = 180) -> dict[str, object]:
+        return {
+            "choices": [
+                {
+                    "message": {
+                        "content": json.dumps(
+                            {
+                                "summary": "Broken response",
+                                "notes": "Broken response",
+                                "tags": ["ai"],
+                                "tracks": [
+                                    {
+                                        "artist": "Not In Archive",
+                                        "title": "Imagined Song",
+                                        "why_it_fits": "This should fail.",
+                                        "favorite": False,
+                                        "sourceMixSlug": "mix-999-missing",
+                                    }
+                                ]
+                                * 5,
+                            }
+                        )
+                    }
+                }
+            ]
+        }
+
+    monkeypatch.setattr(generate_weekly_draft, "post_openai_json", fake_post)
+
+    with pytest.raises(mmm_common.ValidationError, match="unknown sourceMixSlug"):
+        generate_weekly_draft.generate_weekly_draft(
+            generate_weekly_draft.resolve_mix_date("2026-05-11"),
+            mode="ai",
+            force=True,
+        )

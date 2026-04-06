@@ -325,6 +325,108 @@ def test_validate_content_surfaces_unresolved_youtube_review_work(tmp_path):
     assert any("still has 1 unresolved YouTube track match" in message for message in messages)
 
 
+def test_validate_content_accepts_youtube_state_for_imported_archive_mix(tmp_path):
+    seed_repo(tmp_path)
+    data_dir = tmp_path / "data"
+    imported_dir = data_dir / "imported" / "mixes"
+    imported_dir.mkdir(parents=True)
+    (data_dir / "youtube").mkdir(parents=True)
+
+    mmm_common.dump_json(
+        imported_dir / "mix-002-imported.json",
+        {
+            "slug": "mix-002-imported",
+            "title": "Imported Mix",
+            "date": "2013-01-14",
+            "status": "imported",
+            "summary": "Imported archive mix.",
+            "notes": "Imported notes.",
+            "source": {
+                "platform": "tumblr",
+                "feedType": "rss",
+                "importedAt": "2026-04-03T12:00:00Z",
+                "sourceUrl": "https://example.com/mix-002-imported",
+                "guid": "mix-002-imported",
+            },
+            "tracks": [
+                {"artist": "Artist A", "title": "Song A", "why_it_fits": "Archive only."},
+                {"artist": "Artist B", "title": "Song B", "why_it_fits": "Archive only."},
+                {"artist": "Artist C", "title": "Song C", "why_it_fits": "Archive only."},
+            ],
+        },
+    )
+    mmm_common.dump_json(
+        data_dir / "youtube" / "mix-002-imported.json",
+        {
+            "$schema": "../../schemas/youtube-match.schema.json",
+            "schemaVersion": "1.0",
+            "mixSlug": "mix-002-imported",
+            "updatedAt": "2026-04-06T00:00:00Z",
+            "sourceMixPath": "data/imported/mixes/mix-002-imported.json",
+            "tracks": [
+                {
+                    "position": 1,
+                    "displayText": "Artist A - Song A",
+                    "query": "Artist A Song A",
+                    "resolution": {
+                        "status": "manual-selected",
+                        "selectedVideoId": "vid-1",
+                        "confidenceScore": 0.91,
+                        "reason": "Reviewed by hand.",
+                        "holdbackReason": None,
+                    },
+                    "candidates": [],
+                },
+                {
+                    "position": 2,
+                    "displayText": "Artist B - Song B",
+                    "query": "Artist B Song B",
+                    "resolution": {
+                        "status": "manual-selected",
+                        "selectedVideoId": "vid-2",
+                        "confidenceScore": 0.91,
+                        "reason": "Reviewed by hand.",
+                        "holdbackReason": None,
+                    },
+                    "candidates": [],
+                },
+                {
+                    "position": 3,
+                    "displayText": "Artist C - Song C",
+                    "query": "Artist C Song C",
+                    "resolution": {
+                        "status": "manual-selected",
+                        "selectedVideoId": "vid-3",
+                        "confidenceScore": 0.91,
+                        "reason": "Reviewed by hand.",
+                        "holdbackReason": None,
+                    },
+                    "candidates": [],
+                },
+            ],
+            "summary": {
+                "totalTracks": 3,
+                "resolvedTracks": 3,
+                "unresolvedTracks": 0,
+                "requiresReview": False,
+                "generatedEmbed": {
+                    "provider": "YouTube",
+                    "kind": "video-queue",
+                    "title": "Imported queue",
+                    "embedUrl": "https://www.youtube.com/embed/vid-1?playlist=vid-2,vid-3",
+                    "watchUrl": "https://www.youtube.com/watch_videos?video_ids=vid-1,vid-2,vid-3",
+                    "videoIds": ["vid-1", "vid-2", "vid-3"],
+                },
+            },
+        },
+    )
+
+    report = validate_content.build_report(tmp_path)
+
+    assert report["errors"] == 0
+    assert report["counts"]["youtube"] == 1
+
+
 def test_validate_content_rejects_note_without_datetime_timezone(tmp_path):
     seed_repo(tmp_path)
     note_path = tmp_path / "data" / "notes" / "seeded-note.json"

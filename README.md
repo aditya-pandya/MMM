@@ -16,6 +16,8 @@ Monday Music Mix rebuilt as a data-first static site with local-first import, au
 - Taste-profile builder from imported history
 - Local editorial tooling for:
   - weekly draft generation
+  - AI weekly draft generation from the full 36-mix archive
+  - AI draft artwork generation with local provenance capture
   - draft mix templates
   - note templates with notes-index updates
   - note scaffolds from published mixes
@@ -90,6 +92,7 @@ Listening-specific operator notes:
 - Add explicit embed URLs only when the curated data genuinely supports inline playback.
 - If validation warns that a listening surface is uncertain, the build will demote it instead of presenting it as a verified mirror.
 - YouTube full-mix embeds now come only from `data/youtube/*.json` files with a fully resolved per-track queue. Ambiguous or low-confidence track matches stay blocked for review.
+- The YouTube matcher now works against the canonical archive view: published plus imported mixes, deduped by slug and preferring published JSON when both exist.
 
 Create a new draft mix template instead of starting from blank JSON:
 
@@ -149,11 +152,13 @@ npm run draft:generate
 
 Notes:
 - `--mode auto` is local-safe and currently resolves to deterministic local heuristics.
+- `--mode ai` uses the canonical 36-mix archive window, taste profile, and notes, then asks OpenAI for strict JSON that still has to validate as an MMM editorial draft.
 - Draft generation now pulls from local published mixes, archive summaries, taste-profile cues, and editorial notes before choosing tracks or writing copy.
 - Covers, remixes, recurring artists, and bolded-favorite style signals can now show up in generated summary, notes, tags, and track rationale when that pattern already exists in local data.
 - Optional local plugin hook: pass `--plugin-command` or set `MMM_DRAFT_PLUGIN_COMMAND` to a machine-local command. The command receives JSON context on stdin and can also use `{context_path}`, `{output_path}`, and `{repo_root}` placeholders.
 - Plugin output still has to be a valid MMM editorial draft JSON object.
-- No OpenAI or hosted AI dependency is required for the site or the weekly workflow.
+- Deterministic local generation remains the default. AI generation is opt-in and uses `MMM_OPENAI_API_KEY` or `OPENAI_API_KEY`.
+- AI mode fails clearly if the model output does not validate; it does not silently fake a successful draft.
 - `create_content.py note` writes the note file and refreshes the notes index entry in one step.
 - `create_content.py note-from-mix` seeds a note slug, title, summary, related mix, and starter body from the published mix JSON.
 - `create_content.py suggest-notes` still prints a clear zero-state when every published mix already has note coverage.
@@ -180,6 +185,15 @@ python3 scripts/manage_artwork.py register mix-036-thirtysixth \
 Notes:
 - `data/media/artwork-registry.json` is the canonical local artwork/provenance index.
 - Keep registered asset paths inside `data/media/` so the registry stays local-safe and portable with the repo.
+- AI artwork generation:
+
+```bash
+python3 scripts/generate_ai_artwork.py mmm-for-2026-04-13
+npm run artwork:generate:ai -- mmm-for-2026-04-13
+```
+
+- AI artwork exports land in `data/media/workspaces/<slug>/exports/ai-cover.png`.
+- Prompt, provider, and model provenance are saved under `data/media/workspaces/<slug>/notes/ai-artwork-generation.json` and summarized in the artwork registry.
 - Use `python3 scripts/sync_tumblr_artwork.py mix-034-thirtyfourth mix-035-thirtyfifth` or `npm run artwork:sync:tumblr -- mix-034-thirtyfourth` to promote canonical Tumblr artwork into `data/media/tumblr/<mix-slug>/`.
 - When a local Tumblr export is available at `/tmp/mmm-tumblr-archive`, the sync prefers those exact exported bytes and only falls back to downloading remote Tumblr-hosted bytes when no archive asset can be found.
 - Tumblr artwork sync records SHA-256, byte size, media type, original source provenance, and the field that discovered the image.
@@ -193,10 +207,26 @@ npm run youtube:match -- mix-035-thirtyfifth
 
 Notes:
 - Match state lives in `data/youtube/<mix-slug>.json`.
+- The matcher scans the canonical archive, not only `data/published/`, and prefers published JSON when the same slug exists in both published and imported sources.
 - The matcher stores the scored candidate set for each track and only auto-resolves clearly dominant hits.
 - `pending-review`, `no-candidate`, and duplicate holdbacks are intentional human-review checkpoints.
 - Do not manually bless a full-mix YouTube embed until every track has a reviewed `selectedVideoId`. The build will keep the embed blocked while any track is unresolved.
+- If two good-looking candidates are close, or two tracks land on the same selected video, leave the state unresolved and review it explicitly instead of choosing silently.
 - Once every track is explicitly resolved, the build renders an honest YouTube queue embed from explicit video IDs instead of a claimed playlist ID.
+
+Run the weekly workflow end to end:
+
+```bash
+./scripts/run_local_workflow.sh
+./scripts/run_local_workflow.sh --ai
+./scripts/run_local_workflow.sh --ai --with-ai-artwork
+npm run workflow:weekly:ai-art
+```
+
+Notes:
+- Default workflow behavior stays deterministic and local-first.
+- `--ai` switches draft generation to OpenAI-backed structured output.
+- `--with-ai-artwork` adds AI cover generation for the draft that was just created.
 
 ## Local editorial workflow
 

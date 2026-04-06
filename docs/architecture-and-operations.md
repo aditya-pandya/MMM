@@ -52,12 +52,18 @@ All tooling lives under `scripts/`.
 
 `generate_weekly_draft.py`
 - generates a local deterministic weekly draft
+- can also run an opt-in AI mode against the canonical 36-mix archive window
 - can optionally hand JSON context to a machine-local plugin command
 - writes into `data/drafts/`
 
 `manage_artwork.py`
 - scaffolds local artwork workspaces per mix
 - registers local asset paths plus provenance into canonical JSON
+
+`generate_ai_artwork.py`
+- generates AI artwork for a draft mix through OpenAI image generation
+- saves the export under the mix workspace
+- records prompt/model provenance alongside the registered asset
 
 `create_content.py`
 - creates new draft mix templates
@@ -85,6 +91,8 @@ All tooling lives under `scripts/`.
 - manual runs execute pytest before generation
 - scheduled runs skip pytest unless `--run-tests` is passed
 - refreshes note/archive aggregates before generation unless `--skip-refresh` is passed
+- can opt into AI draft generation with `--ai`
+- can opt into end-to-end AI draft plus AI artwork with `--with-ai-artwork`
 
 ## 3. Static rendering and deploy
 
@@ -223,7 +231,9 @@ These matter because future agents may get too clever.
 - derive listening confidence from the curated provider catalog instead of URL wishfulness
 - require explicit embed URLs before rendering inline playback
 - show track-first search helpers when provider confidence is low
+- keep YouTube matches unresolved when the best candidate is ambiguous, duplicate-prone, or low-confidence
 - preserve Tumblr source links as provenance
+- preserve AI artwork provenance honestly, including prompt/model context
 - separate original source, cleanup choices, and preserved residue instead of flattening them into one metadata block
 - suppress dead Mega links from primary listening UI
 

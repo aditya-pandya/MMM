@@ -8,10 +8,12 @@ from typing import Any
 from listening_confidence import load_provider_catalog, normalize_published_listening
 from mmm_common import (
     ARTWORK_REGISTRY_PATH,
+    IMPORTED_MIXES_DIR,
     ValidationError,
     YOUTUBE_DIR,
     ensure_iso8601_datetime,
     ensure_kebab_case_slug,
+    load_canonical_archive_mix_records,
     load_json,
     validate_mix,
     validate_note_payload,
@@ -430,13 +432,13 @@ def validate_artwork_registry(root: Path, issues: list[dict[str, str]]) -> int:
     return len(items)
 
 
-def validate_youtube_match_data(root: Path, published_by_slug: dict[str, dict[str, Any]], issues: list[dict[str, str]]) -> int:
+def validate_youtube_match_data(root: Path, archive_by_slug: dict[str, dict[str, Any]], issues: list[dict[str, str]]) -> int:
     youtube_dir = root / YOUTUBE_DIR.relative_to(ROOT)
     if not youtube_dir.exists():
-        for slug, record in published_by_slug.items():
+        for slug, record in archive_by_slug.items():
             source_platform = str(record["mix"].get("source", {}).get("platform") or "").strip().lower()
             if source_platform == "tumblr":
-                add_issue(issues, "warning", "youtube", root / "data" / "published" / f"{slug}.json", "missing YouTube match state under data/youtube/")
+                add_issue(issues, "warning", "youtube", Path(record["path"]), "missing YouTube match state under data/youtube/")
         return 0
 
     count = 0
@@ -453,8 +455,8 @@ def validate_youtube_match_data(root: Path, published_by_slug: dict[str, dict[st
             if mix_slug in seen_slugs:
                 raise ValidationError(f"duplicate YouTube match state for '{mix_slug}'")
             seen_slugs.add(mix_slug)
-            if mix_slug not in published_by_slug:
-                raise ValidationError(f"YouTube match state points to missing published mix '{mix_slug}'")
+            if mix_slug not in archive_by_slug:
+                raise ValidationError(f"YouTube match state points to missing canonical archive mix '{mix_slug}'")
             tracks = payload.get("tracks")
             if not isinstance(tracks, list):
                 raise ValidationError("tracks must be an array")
@@ -513,7 +515,7 @@ def validate_youtube_match_data(root: Path, published_by_slug: dict[str, dict[st
         if unresolved_tracks:
             add_issue(issues, "warning", "youtube", path, f"{payload['mixSlug']} still has {unresolved_tracks} unresolved YouTube track match(es)")
 
-    for slug, record in published_by_slug.items():
+    for slug, record in archive_by_slug.items():
         source_platform = str(record["mix"].get("source", {}).get("platform") or "").strip().lower()
         if source_platform == "tumblr" and slug not in seen_slugs:
             add_issue(issues, "warning", "youtube", Path(record["path"]), "missing YouTube match state under data/youtube/")
@@ -544,6 +546,14 @@ def build_report(root: Path) -> dict[str, Any]:
 
     drafts_by_slug = validate_mix_collection(root, data_dir / "drafts", "editorial", issues, "drafts", listening_catalog)
     published_by_slug = validate_mix_collection(root, data_dir / "published", "published", issues, "published", listening_catalog)
+    canonical_archive_records = load_canonical_archive_mix_records(
+        published_dir=data_dir / "published",
+        imported_dir=data_dir / "imported" / "mixes",
+    )
+    archive_by_slug = {
+        record["slug"]: {"mix": record["mix"], "path": record["path"]}
+        for record in canonical_archive_records
+    }
     known_mix_slugs = set(drafts_by_slug) | set(published_by_slug)
 
     if isinstance(site, dict):
@@ -556,7 +566,7 @@ def build_report(root: Path) -> dict[str, Any]:
     notes_by_slug = validate_notes(data_dir / "notes", notes_index if isinstance(notes_index, dict) else None, known_mix_slugs, issues)
     validate_archive_indexes(root, published_by_slug, issues)
     artwork_count = validate_artwork_registry(root, issues)
-    youtube_count = validate_youtube_match_data(root, published_by_slug, issues)
+    youtube_count = validate_youtube_match_data(root, archive_by_slug, issues)
 
     return {
         "root": str(root),

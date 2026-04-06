@@ -46,14 +46,16 @@ def seed_mix(path: Path) -> None:
 
 def test_sync_youtube_matches_generates_embed_when_all_tracks_are_clear(tmp_path, monkeypatch):
     published_dir = tmp_path / "data" / "published"
+    imported_dir = tmp_path / "data" / "imported" / "mixes"
     youtube_dir = tmp_path / "data" / "youtube"
     published_dir.mkdir(parents=True)
+    imported_dir.mkdir(parents=True)
     youtube_dir.mkdir(parents=True)
     mix_path = published_dir / "mix-001-test.json"
     seed_mix(mix_path)
 
     monkeypatch.setattr(sync_youtube_matches, "ROOT", tmp_path)
-    monkeypatch.setattr(sync_youtube_matches, "PUBLISHED_DIR", published_dir)
+    monkeypatch.setattr(sync_youtube_matches, "IMPORTED_MIXES_DIR", imported_dir)
     monkeypatch.setattr(sync_youtube_matches, "YOUTUBE_DIR", youtube_dir)
 
     def fake_search(query: str) -> list[dict[str, object]]:
@@ -79,14 +81,16 @@ def test_sync_youtube_matches_generates_embed_when_all_tracks_are_clear(tmp_path
 
 def test_sync_youtube_matches_holds_back_ambiguous_or_duplicate_results(tmp_path, monkeypatch):
     published_dir = tmp_path / "data" / "published"
+    imported_dir = tmp_path / "data" / "imported" / "mixes"
     youtube_dir = tmp_path / "data" / "youtube"
     published_dir.mkdir(parents=True)
+    imported_dir.mkdir(parents=True)
     youtube_dir.mkdir(parents=True)
     mix_path = published_dir / "mix-002-test.json"
     seed_mix(mix_path)
 
     monkeypatch.setattr(sync_youtube_matches, "ROOT", tmp_path)
-    monkeypatch.setattr(sync_youtube_matches, "PUBLISHED_DIR", published_dir)
+    monkeypatch.setattr(sync_youtube_matches, "IMPORTED_MIXES_DIR", imported_dir)
     monkeypatch.setattr(sync_youtube_matches, "YOUTUBE_DIR", youtube_dir)
 
     def fake_search(query: str) -> list[dict[str, object]]:
@@ -102,3 +106,37 @@ def test_sync_youtube_matches_holds_back_ambiguous_or_duplicate_results(tmp_path
     assert payload["summary"]["requiresReview"] is True
     assert payload["summary"]["generatedEmbed"] is None
     assert payload["tracks"][0]["resolution"]["holdbackReason"] in {"ambiguous-top-candidates", "possible-duplicate-video"}
+
+
+def test_resolve_mix_paths_prefers_published_when_slug_exists_in_both_sources(tmp_path, monkeypatch):
+    published_dir = tmp_path / "data" / "published"
+    imported_dir = tmp_path / "data" / "imported" / "mixes"
+    youtube_dir = tmp_path / "data" / "youtube"
+    published_dir.mkdir(parents=True)
+    imported_dir.mkdir(parents=True)
+    youtube_dir.mkdir(parents=True)
+
+    published_mix_path = published_dir / "mix-003-test.json"
+    imported_mix_path = imported_dir / "mix-003-test.json"
+    seed_mix(published_mix_path)
+    imported_payload = mmm_common.load_json(published_mix_path)
+    imported_payload.pop("$schema", None)
+    imported_payload.pop("schemaVersion", None)
+    imported_payload.pop("siteSection", None)
+    imported_payload.pop("publishedAt", None)
+    imported_payload["date"] = "2026-04-06"
+    imported_payload["status"] = "imported"
+    imported_payload["notes"] = "Imported version"
+    for track in imported_payload["tracks"]:
+        track.pop("position", None)
+        track.pop("displayText", None)
+        track.pop("isFavorite", None)
+        track["why_it_fits"] = "Imported context"
+    mmm_common.dump_json(imported_mix_path, imported_payload)
+
+    monkeypatch.setattr(sync_youtube_matches, "IMPORTED_MIXES_DIR", imported_dir)
+    monkeypatch.setattr(mmm_common, "PUBLISHED_DIR", published_dir)
+
+    resolved = sync_youtube_matches.resolve_mix_paths(["mix-003-test"])
+
+    assert resolved == [published_mix_path]

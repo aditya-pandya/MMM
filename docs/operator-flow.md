@@ -24,13 +24,14 @@
    - The validator checks site metadata, notes, drafts, published mixes, `data/archive/index.json`, `data/archive-index.json`, `data/mixes.json`, and `data/media/artwork-registry.json` when present.
    - Expected output before publish is `errors: 0`.
    - Warnings are non-blocking, but published mixes can now emit listening/provider warnings when a surface falls outside the curated trust rules in `data/listening-provider-catalog.json`.
-   - Tumblr-derived published mixes can also emit YouTube review warnings when `data/youtube/<mix-slug>.json` is missing or still has unresolved tracks.
+   - Tumblr-derived archive mixes can also emit YouTube review warnings when `data/youtube/<mix-slug>.json` is missing or still has unresolved tracks.
    - Explicit embeds are required for inline playback. Trusted provider links alone stay link-only.
    - Use `/studio/` after a build for a quick local summary of note coverage gaps, orphan notes, listening/provider warning counts, and blocked YouTube review queues.
    - To ingest the full Tumblr export, run `python3 scripts/import_tumblr_archive.py`. It reads `/tmp/mmm-tumblr-archive/posts/html`, skips non-mix asks, keeps the existing RSS-derived 33-36 JSON unless `--rewrite-existing` is passed, and syncs canonical local artwork from the archive bytes.
    - If a Tumblr-imported mix still has messy intro/cover/favorite legacy fields, run `python3 scripts/repair_legacy_imports.py [file-or-dir]` to refresh those fields from the saved `legacy.descriptionHtml` snapshot without touching the network.
    - If a Tumblr-derived mix still points at remote cover art only, run `python3 scripts/sync_tumblr_artwork.py <mix-slug>` to promote canonical local artwork. With the archive present, it prefers the exact exported media bytes and only downloads from Tumblr when no archive image exists.
-   - If a published mix needs a YouTube queue, run `python3 scripts/sync_youtube_matches.py <mix-slug>` and review `data/youtube/<mix-slug>.json` before trusting the embed. Ambiguous or duplicate candidates are expected to stay pending until a human selects the right video.
+   - If an archive mix needs a YouTube queue, run `python3 scripts/sync_youtube_matches.py <mix-slug>` and review `data/youtube/<mix-slug>.json` before trusting the embed. The matcher uses the canonical archive view, dedupes by slug, and prefers published JSON when a slug exists in both imported and published data.
+   - Ambiguous, duplicate, or low-confidence candidates are expected to stay pending until a human selects the right video. Do not silently choose one.
    - If you edited canonical note or published mix JSON directly, run `python3 scripts/refresh_indexes.py` to rebuild `data/notes-index.json`, `data/archive/index.json`, `data/archive-index.json`, and `data/mixes.json`.
 
 5. Approve a mix.
@@ -61,16 +62,21 @@
   - With `/tmp/mmm-tumblr-archive` available, this copies the exact exported media bytes into `data/media/tumblr/<mix-slug>/cover.<ext>`, updates the mix JSON with `cover.canonicalAssetPath`, and records SHA-256 plus source provenance in the registry.
   - Without a matching archive image, it falls back to downloading the exact Tumblr-hosted bytes.
 - Published pages prefer `cover.canonicalAssetPath` when present and only fall back to the remote Tumblr URL when no canonical local asset exists yet.
+- AI artwork option:
+  - `python3 scripts/generate_ai_artwork.py mmm-for-2026-04-13`
+  - This writes `data/media/workspaces/<slug>/exports/ai-cover.png`, saves prompt/model provenance to `notes/ai-artwork-generation.json`, and registers the asset in `data/media/artwork-registry.json`.
 
 ## YouTube queue workflow
 
 - Generate candidate state:
   - `python3 scripts/sync_youtube_matches.py mix-035-thirtyfifth`
+  - `python3 scripts/sync_youtube_matches.py` to refresh the full canonical archive set
 - Review the saved JSON in `data/youtube/<mix-slug>.json`.
   - `auto-resolved` means the matcher found a clearly dominant hit.
   - `pending-review` means the stored candidates were too ambiguous, duplicate-prone, or low-confidence to pick safely.
   - `manual-selected` is the human-reviewed escape hatch once you have checked the candidate set.
 - Do not force a mix-level embed while any track remains unresolved.
+- If the same selected video lands on multiple tracks, keep the duplicate holdback in place until a person resolves it.
 - Validation and `/studio/` keep surfacing unresolved YouTube review work until that last track is explicitly selected.
 - When every track has a selected video ID, the build generates:
   - a queue-style YouTube embed from explicit video IDs
@@ -80,7 +86,10 @@
 ## Weekly generation automation
 
 - Local/manual generation: `python3 scripts/generate_weekly_draft.py --mode auto`
+- AI/manual generation: `python3 scripts/generate_weekly_draft.py --mode ai`
 - Local/manual end-to-end: `./scripts/run_local_workflow.sh`
+- AI end-to-end: `./scripts/run_local_workflow.sh --ai`
+- AI end-to-end with artwork: `./scripts/run_local_workflow.sh --ai --with-ai-artwork`
 - Local scheduled: use `./scripts/run_local_workflow.sh --scheduled`
 - Install the matching LaunchAgent with `python3 ops/install_launch_agent.py --install`
 - Bootstrap immediately when wanted: `python3 ops/install_launch_agent.py --install --bootstrap --verify`
@@ -90,6 +99,7 @@
   - `data/taste-profile.json`
   - `data/site.json`
   - `data/archive/index.json`
+- AI mode also reads the canonical archive window from `data/published/` plus `data/imported/mixes/`, deduped by slug and sorted newest first.
 - Optional local plugin input:
   - `--plugin-command "<local command>"`
   - `MMM_DRAFT_PLUGIN_COMMAND="<local command>"`
@@ -108,6 +118,8 @@ Scheduled local runs:
 ## Notes
 
 - Deterministic local generation is the default mode.
+- AI draft generation is opt-in, uses the configured OpenAI key on the operator machine, and requires the model output to validate as MMM editorial JSON.
+- AI artwork generation is also opt-in and records prompt/model provenance instead of pretending the cover was handmade.
 - Local plugin refinement is optional and still must emit a valid editorial draft JSON object.
 - The hosted GitHub workflow is for deployment, not editorial generation.
 - `npm run content:validate`, `npm run draft:new`, and `npm run note:new` wrap the new editor-facing commands.

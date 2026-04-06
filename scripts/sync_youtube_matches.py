@@ -13,7 +13,17 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
-from mmm_common import PUBLISHED_DIR, ROOT, ValidationError, YOUTUBE_DIR, dump_json, ensure_kebab_case_slug, load_json, now_iso
+from mmm_common import (
+    IMPORTED_MIXES_DIR,
+    ROOT,
+    ValidationError,
+    YOUTUBE_DIR,
+    dump_json,
+    ensure_kebab_case_slug,
+    load_canonical_archive_mix_records,
+    load_json,
+    now_iso,
+)
 
 SCHEMA_VERSION = "1.0"
 SEARCH_LIMIT = 5
@@ -24,7 +34,7 @@ STRONG_CONTENDER_SCORE = 0.82
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Persist YouTube per-track match candidates for MMM mixes.")
-    parser.add_argument("mixes", nargs="*", help="Published mix slugs to scan. Defaults to all published mixes.")
+    parser.add_argument("mixes", nargs="*", help="Canonical archive mix slugs to scan. Defaults to the full deduped archive.")
     return parser.parse_args()
 
 
@@ -307,13 +317,14 @@ def sync_mix(path: Path) -> dict[str, Any]:
 
 
 def resolve_mix_paths(slugs: list[str]) -> list[Path]:
+    archive_records = load_canonical_archive_mix_records(imported_dir=IMPORTED_MIXES_DIR)
     if not slugs:
-        return sorted(PUBLISHED_DIR.glob("*.json"))
+        return [record["path"] for record in archive_records]
     requested = {ensure_kebab_case_slug(slug, "mix slug") for slug in slugs}
-    matches = [path for path in sorted(PUBLISHED_DIR.glob("*.json")) if path.stem in requested]
+    matches = [record["path"] for record in archive_records if record["slug"] in requested]
     missing = sorted(requested - {path.stem for path in matches})
     if missing:
-        raise FileNotFoundError(f"Could not find published mix JSON for: {', '.join(missing)}")
+        raise FileNotFoundError(f"Could not find canonical archive mix JSON for: {', '.join(missing)}")
     return matches
 
 

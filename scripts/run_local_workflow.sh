@@ -15,6 +15,8 @@ scheduled_run=false
 run_tests=true
 run_tests_override=false
 refresh_indexes=true
+generate_ai_artwork=false
+generation_mode="auto"
 forwarded_args=()
 
 for arg in "$@"; do
@@ -28,6 +30,12 @@ for arg in "$@"; do
     --skip-refresh)
       refresh_indexes=false
       ;;
+    --ai)
+      generation_mode="ai"
+      ;;
+    --with-ai-artwork)
+      generate_ai_artwork=true
+      ;;
     *)
       forwarded_args+=("$arg")
       ;;
@@ -38,7 +46,7 @@ if [ "$scheduled_run" = true ] && [ "$run_tests_override" = false ]; then
   run_tests=false
 fi
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting local MMM workflow (scheduled=$scheduled_run, run_tests=$run_tests, refresh_indexes=$refresh_indexes)"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting local MMM workflow (scheduled=$scheduled_run, run_tests=$run_tests, refresh_indexes=$refresh_indexes, generation_mode=$generation_mode, ai_artwork=$generate_ai_artwork)"
 
 if [ "$run_tests" = true ]; then
   python3 -m pytest -q
@@ -52,7 +60,7 @@ else
   echo "Skipping aggregate refresh."
 fi
 
-generate_args=(scripts/generate_weekly_draft.py --mode auto)
+generate_args=(scripts/generate_weekly_draft.py --mode "$generation_mode")
 if [ "$scheduled_run" = false ]; then
   generate_args+=(--force)
 fi
@@ -70,6 +78,15 @@ if ! generate_output=$(python3 "${generate_args[@]}" 2>&1); then
   fi
 else
   printf '%s\n' "$generate_output"
+fi
+
+draft_output_path="$(printf '%s\n' "$generate_output" | awk 'NF{line=$0} END{print line}')"
+if [ "$generate_ai_artwork" = true ]; then
+  if [ -z "$draft_output_path" ]; then
+    echo "ERROR: Could not determine generated draft path for AI artwork."
+    exit 1
+  fi
+  python3 scripts/generate_ai_artwork.py "$draft_output_path" --force
 fi
 
 if [ "$scheduled_run" = false ]; then

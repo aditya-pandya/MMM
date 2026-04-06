@@ -7,6 +7,7 @@ const DATA_DIR = path.join(ROOT, 'data');
 const STATIC_DIR = path.join(ROOT, 'src', 'static');
 const MEDIA_DIR = path.join(DATA_DIR, 'media');
 const YOUTUBE_DIR = path.join(DATA_DIR, 'youtube');
+const IMPORTED_MIXES_DIR = path.join(DATA_DIR, 'imported', 'mixes');
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
@@ -975,6 +976,40 @@ function loadMixes() {
   const deduped = Array.from(new Map(combined.map((mix) => [mix.slug || mix.id || mix.title, mix])).values());
 
   return normalizeMixes(deduped);
+}
+
+function loadCanonicalArchiveMixInventory() {
+  const publishedMixFiles = walkJsonFiles(path.join(DATA_DIR, 'published'));
+  const importedMixFiles = walkJsonFiles(IMPORTED_MIXES_DIR);
+  const bySlug = new Map();
+
+  for (const filePath of importedMixFiles) {
+    const mix = readJsonIfExists(filePath, null);
+    if (!mix || !String(mix.slug || '').trim()) continue;
+    bySlug.set(String(mix.slug).trim(), {
+      slug: String(mix.slug).trim(),
+      title: String(mix.displayTitle || mix.title || mix.slug).trim(),
+      date: String(mix.publishedAt || mix.date || '').trim(),
+      sourcePath: path.relative(ROOT, filePath),
+    });
+  }
+
+  for (const filePath of publishedMixFiles) {
+    const mix = readJsonIfExists(filePath, null);
+    if (!mix || !String(mix.slug || '').trim()) continue;
+    bySlug.set(String(mix.slug).trim(), {
+      slug: String(mix.slug).trim(),
+      title: String(mix.displayTitle || mix.title || mix.slug).trim(),
+      date: String(mix.publishedAt || mix.date || '').trim(),
+      sourcePath: path.relative(ROOT, filePath),
+    });
+  }
+
+  return Array.from(bySlug.values()).sort((a, b) => {
+    const left = `${b.date}::${b.slug}`;
+    const right = `${a.date}::${a.slug}`;
+    return left.localeCompare(right);
+  });
 }
 
 function loadNotes() {
@@ -2170,7 +2205,7 @@ function renderMixPage({ mix }) {
   });
 }
 
-function renderStudioPage({ site, drafts, mixes, notes }) {
+function renderStudioPage({ site, drafts, mixes, notes, archiveInventory }) {
   const featuredSlug = site.featuredMixSlug || site.featured_mix_slug;
   const featuredMix = featuredSlug ? mixes.find((mix) => mix.slug === featuredSlug) || null : null;
   const latestDraft = drafts[0] || null;
@@ -2185,6 +2220,8 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
   const listeningIssueMixes = mixes.filter((mix) => (mix.listeningHealth?.warningCount || 0) > 0);
   const listeningIssueCount = listeningIssueMixes.reduce((total, mix) => total + (mix.listeningHealth?.warningCount || 0), 0);
   const youtubeReviewMixes = mixes.filter((mix) => mix.youtubeMatch?.summary?.requiresReview);
+  const archiveYoutubeReviewMixes = archiveInventory.filter((mix) => YOUTUBE_MATCH_STATES.get(mix.slug)?.summary?.requiresReview);
+  const archiveYoutubeResolvedMixes = archiveInventory.filter((mix) => YOUTUBE_MATCH_STATES.get(mix.slug)?.summary && !YOUTUBE_MATCH_STATES.get(mix.slug)?.summary?.requiresReview);
   const mixesWithListening = mixes.filter((mix) => mix.listeningHealth?.hasListeningSurface).length;
   const noteCoverageGaps = mixes.length - publishedWithNotes;
   const nextActions = [];
@@ -2215,6 +2252,11 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
   }
   if (youtubeReviewMixes.length) {
     validationSignals.push(`${youtubeReviewMixes.length} mix${youtubeReviewMixes.length === 1 ? '' : 'es'} still need YouTube track-match review before a full embed can render.`);
+  }
+  if (archiveYoutubeReviewMixes.length) {
+    validationSignals.push(
+      `${archiveYoutubeReviewMixes.length} of ${archiveInventory.length} canonical archive mixes still need YouTube review before they can claim a resolved queue.`
+    );
   }
 
   const validationHeadline = !featuredSlug || featuredMix
@@ -2294,8 +2336,8 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
     },
     {
       label: 'YouTube review',
-      value: String(youtubeReviewMixes.length),
-      detail: youtubeReviewMixes.length ? `Latest blocked: ${youtubeReviewMixes[0].title}` : 'No unresolved YouTube match queues',
+      value: String(archiveYoutubeReviewMixes.length),
+      detail: archiveYoutubeReviewMixes.length ? `Latest blocked: ${archiveYoutubeReviewMixes[0].title}` : 'No unresolved YouTube match queues',
     },
   ];
   const healthCards = [
@@ -2337,14 +2379,21 @@ function renderStudioPage({ site, drafts, mixes, notes }) {
     },
     {
       eyebrow: 'YouTube match state',
-      title: youtubeReviewMixes.length
-        ? `${youtubeReviewMixes.length} mix${youtubeReviewMixes.length === 1 ? '' : 'es'} blocked on track review`
-        : `${mixes.filter((mix) => mix.youtubeMatch?.summary?.embedReady).length}/${mixes.length || 0} published mixes have generated YouTube queues`,
-      body: youtubeReviewMixes.length
+      title: archiveYoutubeReviewMixes.length
+        ? `${archiveYoutubeReviewMixes.length} mix${archiveYoutubeReviewMixes.length === 1 ? '' : 'es'} blocked on track review`
+        : `${archiveYoutubeResolvedMixes.length}/${archiveInventory.length || 0} canonical archive mixes have generated YouTube queues`,
+      body: archiveYoutubeReviewMixes.length
         ? 'Ambiguous, duplicate, or low-confidence track matches are being held back explicitly instead of auto-picked into a misleading embed.'
         : 'Resolved YouTube embeds are only generated from explicit per-track video IDs.',
-      detail: youtubeReviewMixes.length
-        ? youtubeReviewMixes.slice(0, 2).map((mix) => mix.youtubeMatch?.unresolvedMessage).filter(Boolean).join(' · ')
+      detail: archiveYoutubeReviewMixes.length
+        ? archiveYoutubeReviewMixes
+            .slice(0, 2)
+            .map((mix) => {
+              const summary = YOUTUBE_MATCH_STATES.get(mix.slug)?.summary;
+              return summary?.unresolvedTracks ? `${mix.title}: ${summary.unresolvedTracks} unresolved track matches` : '';
+            })
+            .filter(Boolean)
+            .join(' · ')
         : 'Generated queues use explicit video IDs, not claimed playlist IDs.',
     },
     {
@@ -2772,6 +2821,7 @@ function build() {
   const mixes = discoveryGraph.mixes;
   const notes = discoveryGraph.notes;
   const drafts = loadDrafts();
+  const archiveInventory = loadCanonicalArchiveMixInventory();
 
   copyDir(STATIC_DIR, path.join(DIST, 'assets'));
   copyDir(MEDIA_DIR, path.join(DIST, 'media'));
@@ -2780,7 +2830,7 @@ function build() {
   writePage(path.join('archive', 'index.html'), renderArchivePage({ mixes }));
   writePage(path.join('about', 'index.html'), renderAboutPage({ site, about }));
   writePage(path.join('notes', 'index.html'), renderNotesPage({ notes }));
-  writePage(path.join('studio', 'index.html'), renderStudioPage({ site, drafts, mixes, notes }));
+  writePage(path.join('studio', 'index.html'), renderStudioPage({ site, drafts, mixes, notes, archiveInventory }));
 
   for (const mix of mixes) {
     writePage(path.join('mixes', mix.slug, 'index.html'), renderMixPage({ mix }));

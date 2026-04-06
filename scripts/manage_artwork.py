@@ -22,7 +22,7 @@ from mmm_common import (
 )
 
 VALID_ROLES = {"cover-art", "cover-source", "social-card", "detail", "alternate"}
-VALID_SOURCE_TYPES = {"handmade", "scan", "screenshot", "collage", "reference", "restoration", "tumblr-original", "unknown"}
+VALID_SOURCE_TYPES = {"ai-generated", "handmade", "scan", "screenshot", "collage", "reference", "restoration", "tumblr-original", "unknown"}
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -48,6 +48,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     register.add_argument("--source-label", required=True, help="Human-readable provenance label.")
     register.add_argument("--notes", default="", help="Optional provenance notes.")
+    register.add_argument("--source-url", default="", help="Optional provenance source URL or opaque reference.")
+    register.add_argument(
+        "--discovered-from",
+        default="manual-register",
+        help="Short field or workflow label describing how this asset was produced or found.",
+    )
     register.add_argument(
         "--workspace-path",
         help="Optional workspace path to associate with the asset. Defaults to data/media/workspaces/<mix-slug>.",
@@ -148,6 +154,8 @@ def build_registry_item(
     role: str,
     source_type: str,
     source_label: str,
+    source_url: str,
+    discovered_from: str,
     notes: str,
     workspace_path: Path,
 ) -> dict[str, Any]:
@@ -187,8 +195,8 @@ def build_registry_item(
         "provenance": {
             "sourceType": source_type,
             "sourceLabel": ensure_non_empty_string(source_label, "source label"),
-            "sourceUrl": "",
-            "discoveredFrom": "manual-register",
+            "sourceUrl": str(source_url).strip(),
+            "discoveredFrom": ensure_non_empty_string(discovered_from, "discovered from"),
             "notes": notes.strip(),
         },
     }
@@ -200,6 +208,8 @@ def register_artwork(
     role: str,
     source_type: str,
     source_label: str,
+    source_url: str = "",
+    discovered_from: str = "manual-register",
     notes: str = "",
     workspace_path_arg: str | None = None,
     registry_path: Path | None = None,
@@ -224,6 +234,8 @@ def register_artwork(
         role,
         source_type,
         source_label,
+        source_url,
+        discovered_from,
         notes,
         workspace_path,
     )
@@ -289,6 +301,8 @@ def main() -> int:
                 args.role,
                 args.source_type,
                 args.source_label,
+                source_url=args.source_url,
+                discovered_from=args.discovered_from,
                 notes=args.notes,
                 workspace_path_arg=args.workspace_path,
             )

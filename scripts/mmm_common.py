@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 DRAFTS_DIR = DATA_DIR / "drafts"
 PUBLISHED_DIR = DATA_DIR / "published"
+IMPORTED_MIXES_DIR = DATA_DIR / "imported" / "mixes"
 NOTES_DIR = DATA_DIR / "notes"
 ARCHIVE_DIR = DATA_DIR / "archive"
 MEDIA_DIR = DATA_DIR / "media"
@@ -329,6 +330,67 @@ def validate_mix(mix: dict[str, Any]) -> ValidationResult:
     if "publishedAt" in mix or "schemaVersion" in mix or "siteSection" in mix:
         return _validate_published_mix(mix)
     return _validate_editorial_mix(mix)
+
+
+def mix_sort_value(mix: dict[str, Any]) -> tuple[str, str]:
+    return str(mix.get("publishedAt") or mix.get("date") or "").strip(), str(mix.get("slug") or mix.get("id") or "").strip()
+
+
+def load_mix_payloads(directory: Path) -> list[dict[str, Any]]:
+    if not directory.exists():
+        return []
+
+    payloads: list[dict[str, Any]] = []
+    for path in sorted(directory.glob("*.json")):
+        payload = load_json(path)
+        if isinstance(payload, dict):
+            payloads.append(payload)
+    return payloads
+
+
+def load_canonical_archive_mix_records(
+    published_dir: Path | None = None,
+    imported_dir: Path | None = None,
+) -> list[dict[str, Any]]:
+    published_dir = published_dir or PUBLISHED_DIR
+    imported_dir = imported_dir or IMPORTED_MIXES_DIR
+
+    records_by_slug: dict[str, dict[str, Any]] = {}
+    for source_name, directory in (("imported", imported_dir), ("published", published_dir)):
+        if not directory.exists():
+            continue
+        for path in sorted(directory.glob("*.json")):
+            result = validate_mix(load_json(path))
+            slug = result.mix["slug"]
+            try:
+                relative_path = path.relative_to(ROOT).as_posix()
+            except ValueError:
+                relative_path = path.as_posix()
+            candidate = {
+                "slug": slug,
+                "mix": result.mix,
+                "path": path,
+                "relativePath": relative_path,
+                "flavor": result.flavor,
+                "sourceName": source_name,
+                "warnings": list(result.warnings),
+            }
+            existing = records_by_slug.get(slug)
+            if existing is None or source_name == "published":
+                records_by_slug[slug] = candidate
+
+    return sorted(
+        records_by_slug.values(),
+        key=lambda item: mix_sort_value(item["mix"]),
+        reverse=True,
+    )
+
+
+def load_canonical_archive_mixes(
+    published_dir: Path | None = None,
+    imported_dir: Path | None = None,
+) -> list[dict[str, Any]]:
+    return [record["mix"] for record in load_canonical_archive_mix_records(published_dir=published_dir, imported_dir=imported_dir)]
 
 
 

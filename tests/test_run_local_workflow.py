@@ -39,6 +39,11 @@ if [ "$1" = "scripts/generate_weekly_draft.py" ]; then
   fi
   mkdir -p data/drafts
   : > data/drafts/generated-from-test.json
+  echo "data/drafts/generated-from-test.json"
+fi
+if [ "$1" = "scripts/generate_ai_artwork.py" ]; then
+  mkdir -p data/media/workspaces/generated-from-test/exports
+  : > data/media/workspaces/generated-from-test/exports/ai-cover.png
 fi
 exit 0
 """,
@@ -168,3 +173,21 @@ def test_workflow_can_skip_refresh(tmp_path):
     log_files = list((repo / "logs").glob("run-local-workflow-*.log"))
     assert len(log_files) == 1
     assert "refresh_indexes=false" in log_files[0].read_text(encoding="utf-8")
+
+
+def test_ai_workflow_can_generate_artwork(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result, invocation_log = run_workflow(repo, "--ai", "--with-ai-artwork")
+
+    assert result.returncode == 0
+    calls = invocation_log.read_text(encoding="utf-8").splitlines()
+    assert "python3:scripts/generate_weekly_draft.py --mode ai --force" in calls
+    assert "python3:scripts/generate_ai_artwork.py data/drafts/generated-from-test.json --force" in calls
+    assert "npm:run build" in calls
+
+    log_files = list((repo / "logs").glob("run-local-workflow-*.log"))
+    assert len(log_files) == 1
+    log_text = log_files[0].read_text(encoding="utf-8")
+    assert "generation_mode=ai" in log_text
+    assert "ai_artwork=true" in log_text

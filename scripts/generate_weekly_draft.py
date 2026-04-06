@@ -13,16 +13,22 @@ from typing import Any, Callable
 from mmm_common import (
     ARCHIVE_INDEX_PATH,
     DRAFTS_DIR,
+    IMPORTED_MIXES_DIR,
     NOTES_DIR,
     PUBLISHED_DIR,
     SITE_PATH,
     TASTE_PROFILE_PATH,
     ValidationError,
     dump_json,
+    load_canonical_archive_mix_records,
     load_json,
+    load_mix_payloads,
+    mix_sort_value,
+    now_iso,
     slugify,
     validate_mix,
 )
+from openai_common import post_openai_json
 
 FALLBACK_TRACKS = [
     ("Broadcast", "Tears in the Typing Pool"),
@@ -55,11 +61,17 @@ GENERIC_DESCRIPTOR_PREFIXES = ("2010s",)
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate a weekly MMM draft")
     parser.add_argument("--date", dest="mix_date", help="ISO date for the mix, defaults to next Monday UTC")
-    parser.add_argument("--mode", choices=["auto", "local", "fallback"], default="auto")
+    parser.add_argument("--mode", choices=["auto", "local", "ai", "fallback"], default="auto")
     parser.add_argument("--force", action="store_true", help="Overwrite existing draft for the same slug")
     parser.add_argument(
         "--plugin-command",
         help="Optional local command that can refine or replace the deterministic draft using JSON context.",
+    )
+    parser.add_argument(
+        "--archive-limit",
+        type=int,
+        default=36,
+        help="How many canonical archive mixes to include in AI context. Defaults to 36.",
     )
     return parser.parse_args()
 
@@ -79,6 +91,8 @@ def resolve_mix_date(explicit: str | None) -> date:
 def choose_mode(requested: str) -> str:
     if requested in {"auto", "local", "fallback"}:
         return "local"
+    if requested == "ai":
+        return "ai"
     raise ValueError(f"Unsupported generation mode: {requested}")
 
 
@@ -132,18 +146,6 @@ def dedupe_preserving_order(values: list[str]) -> list[str]:
         seen.add(normalized)
         ordered.append(normalized)
     return ordered
-
-
-def load_directory_payloads(directory: Path) -> list[dict[str, Any]]:
-    if not directory.exists():
-        return []
-
-    payloads: list[dict[str, Any]] = []
-    for path in sorted(directory.glob("*.json")):
-        payload = load_json(path)
-        if isinstance(payload, dict):
-            payloads.append(payload)
-    return payloads
 
 
 def track_display_text(track: dict[str, Any]) -> str:
@@ -438,6 +440,265 @@ def build_local_notes(
     )
 
 
+AI_DRAFT_RESPONSE_FORMAT = {
+    "type": "json_schema",
+    "json_schema": {
+        "name": "mmm_weekly_draft",
+        "strict": True,
+        "schema": {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["summary", "notes", "tags", "tracks"],
+            "properties": {
+                "summary": {"type": "string"},
+                "notes": {"type": "string"},
+                "tags": {"type": "array", "items": {"type": "string"}},
+                "tracks": {
+                    "type": "array",
+                    "minItems": 5,
+                    "maxItems": 5,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": False,
+                        "required": ["artist", "title", "why_it_fits", "favorite", "sourceMixSlug"],
+                        "properties": {
+                            "artist": {"type": "string"},
+                            "title": {"type": "string"},
+                            "why_it_fits": {"type": "string"},
+                            "favorite": {"type": "boolean"},
+                            "sourceMixSlug": {"type": "string"},
+                        },
+                    },
+                },
+            },
+        },
+    },
+}
+
+
+def build_ai_archive_context(archive_records: list[dict[str, Any]], limit: int) -> list[dict[str, Any]]:
+    selected = archive_records[: max(limit, 0)]
+    context: list[dict[str, Any]] = []
+    for record in selected:
+        mix = record["mix"]
+        context.append(
+            {
+                "slug": mix.get("slug"),
+                "title": mix.get("title"),
+                "date": mix.get("publishedAt") or mix.get("date"),
+                "summary": mix.get("summary"),
+                "sourceName": record["sourceName"],
+                "sourcePath": record["relativePath"],
+                "tracks": [
+                    {
+                        "position": track.get("position"),
+                        "artist": track.get("artist"),
+                        "title": track.get("title"),
+                        "displayText": track_display_text(track),
+                        "isFavorite": bool(track.get("isFavorite") or track.get("favorite") or track.get("is_favorite")),
+                    }
+                    for track in mix.get("tracks", [])
+                    if isinstance(track, dict)
+                ],
+            }
+        )
+    return context
+
+
+def build_ai_generation_context(
+    mix_date: date,
+    site: dict[str, Any],
+    taste: dict[str, Any],
+    archive: dict[str, Any],
+    archive_records: list[dict[str, Any]],
+    notes: list[dict[str, Any]],
+    archive_limit: int,
+) -> dict[str, Any]:
+    archive_context = build_ai_archive_context(archive_records, archive_limit)
+    return {
+        "mix_date": mix_date.isoformat(),
+        "site": {
+            "title": site_title(site),
+        },
+        "taste_profile": taste,
+        "archive_summary": {
+            "archive_index_count": archive_count(archive),
+            "canonical_archive_mix_count": len(archive_records),
+            "included_mix_count": len(archive_context),
+            "mixes_are_sorted": "newest-first",
+        },
+        "notes": notes,
+        "archive_mixes": archive_context,
+        "instructions": {
+            "track_source_rule": "Choose exactly 5 tracks and only use songs that appear in archive_mixes.",
+            "why_it_fits_rule": "Ground each why_it_fits explanation in the provided archive, taste profile, and notes only.",
+            "tone_rule": "Write like an honest MMM draft, not marketing copy.",
+        },
+    }
+
+
+def build_ai_messages(context: dict[str, Any]) -> list[dict[str, str]]:
+    return [
+        {
+            "role": "system",
+            "content": (
+                "You are drafting the next Monday Music Mix using only the provided local archive context. "
+                "Return strict JSON matching the schema. Do not invent songs outside the archive. "
+                "Favor cohesion, recurrence, and honest reasoning over novelty theater."
+            ),
+        },
+        {
+            "role": "user",
+            "content": (
+                "Use the latest available archive mixes, taste profile, and notes to draft one new MMM entry. "
+                "Pick exactly 5 tracks from the provided archive tracklists. "
+                "Keep the draft compatible with the existing editorial JSON shape.\n\n"
+                f"{json.dumps(context, indent=2, ensure_ascii=False)}"
+            ),
+        },
+    ]
+
+
+def extract_chat_completion_text(response_payload: dict[str, Any]) -> str:
+    choices = response_payload.get("choices")
+    if not isinstance(choices, list) or not choices:
+        raise ValidationError("OpenAI draft response did not include choices")
+    message = choices[0].get("message") if isinstance(choices[0], dict) else None
+    if not isinstance(message, dict):
+        raise ValidationError("OpenAI draft response did not include a message")
+    refusal = str(message.get("refusal") or "").strip()
+    if refusal:
+        raise RuntimeError(f"OpenAI draft generation refused the request: {refusal}")
+    content = message.get("content")
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts = []
+        for item in content:
+            if isinstance(item, dict) and item.get("type") in {"output_text", "text"}:
+                text = item.get("text")
+                if isinstance(text, str):
+                    parts.append(text)
+        if parts:
+            return "".join(parts)
+    raise ValidationError("OpenAI draft response did not include JSON text content")
+
+
+def normalize_ai_draft_payload(
+    payload: dict[str, Any],
+    mix_date: date,
+    context: dict[str, Any],
+    model: str,
+) -> dict[str, Any]:
+    title = f"MMM for {mix_date.isoformat()}"
+    slug = slugify(title)
+    archive_lookup = {
+        str(item.get("slug") or "").strip(): item
+        for item in context.get("archive_mixes", [])
+        if str(item.get("slug") or "").strip()
+    }
+
+    tags = dedupe_preserving_order(
+        [
+            "weekly-draft",
+            "ai-generated",
+            *[str(tag).strip() for tag in payload.get("tags", []) if str(tag).strip()],
+        ]
+    )[:6]
+
+    normalized_tracks: list[dict[str, Any]] = []
+    for track in payload.get("tracks", []):
+        source_mix_slug = str(track.get("sourceMixSlug") or "").strip()
+        if source_mix_slug not in archive_lookup:
+            raise ValidationError(f"AI track references unknown sourceMixSlug '{source_mix_slug}'")
+        artist = str(track.get("artist") or "").strip()
+        title_value = str(track.get("title") or "").strip()
+        matches_archive = any(
+            artist == str(source_track.get("artist") or "").strip()
+            and title_value == str(source_track.get("title") or "").strip()
+            for source_track in archive_lookup[source_mix_slug].get("tracks", [])
+        )
+        if not matches_archive:
+            raise ValidationError(
+                f"AI track '{artist} - {title_value}' does not exist in archive mix '{source_mix_slug}'"
+            )
+        normalized_tracks.append(
+            {
+                "artist": artist,
+                "title": title_value,
+                "why_it_fits": str(track.get("why_it_fits") or "").strip(),
+                "favorite": bool(track.get("favorite")),
+                "sourceMixSlug": source_mix_slug,
+            }
+        )
+
+    candidate = {
+        "slug": slug,
+        "title": title,
+        "date": mix_date.isoformat(),
+        "status": "draft",
+        "summary": str(payload.get("summary") or "").strip(),
+        "notes": str(payload.get("notes") or "").strip(),
+        "tags": tags,
+        "generation_mode": "ai",
+        "generatedAt": now_iso(),
+        "ai_source": {
+            "provider": "openai",
+            "model": model,
+            "archiveMixCount": len(context.get("archive_mixes", [])),
+        },
+        "source_context": {
+            "site_title": context.get("site", {}).get("title"),
+            "archive_count": context.get("archive_summary", {}).get("canonical_archive_mix_count"),
+            "note_count": len(context.get("notes", [])),
+            "archive_window": "canonical-archive-deduped",
+            "archive_mix_slugs": [item.get("slug") for item in context.get("archive_mixes", [])[:10]],
+        },
+        "tracks": normalized_tracks,
+    }
+    result = validate_mix(candidate)
+    if result.flavor != "editorial":
+        raise ValidationError("AI draft payload must validate as editorial content")
+    return result.mix
+
+
+def request_ai_draft(
+    mix_date: date,
+    site: dict[str, Any],
+    taste: dict[str, Any],
+    archive: dict[str, Any],
+    archive_records: list[dict[str, Any]],
+    notes: list[dict[str, Any]],
+    archive_limit: int,
+) -> dict[str, Any]:
+    model = os.environ.get("MMM_OPENAI_DRAFT_MODEL", "gpt-5-mini").strip() or "gpt-5-mini"
+    context = build_ai_generation_context(
+        mix_date,
+        site,
+        taste,
+        archive,
+        archive_records,
+        notes,
+        archive_limit,
+    )
+    response_payload = post_openai_json(
+        "/chat/completions",
+        {
+            "model": model,
+            "messages": build_ai_messages(context),
+            "response_format": AI_DRAFT_RESPONSE_FORMAT,
+        },
+    )
+    raw_content = extract_chat_completion_text(response_payload)
+    try:
+        parsed = json.loads(raw_content)
+    except json.JSONDecodeError as exc:
+        raise ValidationError("AI draft response was not valid JSON") from exc
+    if not isinstance(parsed, dict):
+        raise ValidationError("AI draft response must be a JSON object")
+    return normalize_ai_draft_payload(parsed, mix_date, context, model)
+
+
 def generate_archive_informed_mix(
     mix_date: date,
     taste: dict[str, Any],
@@ -705,29 +966,44 @@ def generate_weekly_draft(
     mode: str = "auto",
     force: bool = False,
     plugin_command: str | None = None,
+    archive_limit: int = 36,
 ) -> Path:
     taste = load_json(TASTE_PROFILE_PATH)
     site = load_json(SITE_PATH)
     archive = load_json(ARCHIVE_INDEX_PATH)
-    published_mixes = load_directory_payloads(PUBLISHED_DIR)
-    notes = load_directory_payloads(NOTES_DIR)
+    published_mixes = sorted(load_mix_payloads(PUBLISHED_DIR), key=mix_sort_value, reverse=True)
+    notes = load_mix_payloads(NOTES_DIR)
 
     resolved_mode = choose_mode(mode)
-    if resolved_mode != "local":
+    if resolved_mode == "local":
+        baseline_mix = generate_archive_informed_mix(mix_date, taste, site, archive, published_mixes, notes)
+        mix = apply_plugin_hook(
+            mix_date,
+            resolved_mode,
+            site,
+            taste,
+            archive,
+            published_mixes,
+            notes,
+            baseline_mix,
+            plugin_command,
+        )
+    elif resolved_mode == "ai":
+        archive_records = load_canonical_archive_mix_records(
+            published_dir=PUBLISHED_DIR,
+            imported_dir=IMPORTED_MIXES_DIR,
+        )
+        mix = request_ai_draft(
+            mix_date,
+            site,
+            taste,
+            archive,
+            archive_records,
+            notes,
+            archive_limit,
+        )
+    else:
         raise ValueError(f"Unsupported generation mode: {resolved_mode}")
-
-    baseline_mix = generate_archive_informed_mix(mix_date, taste, site, archive, published_mixes, notes)
-    mix = apply_plugin_hook(
-        mix_date,
-        resolved_mode,
-        site,
-        taste,
-        archive,
-        published_mixes,
-        notes,
-        baseline_mix,
-        plugin_command,
-    )
 
     output_path = DRAFTS_DIR / f"{mix['slug']}.json"
     if output_path.exists() and not force:
@@ -746,6 +1022,7 @@ def main() -> int:
             mode=args.mode,
             force=args.force,
             plugin_command=args.plugin_command,
+            archive_limit=args.archive_limit,
         )
     except Exception as exc:
         print(f"ERROR: {exc}")
