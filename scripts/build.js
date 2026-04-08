@@ -1839,13 +1839,25 @@ function renderListeningSection(mix) {
                 </div>
                 <div class="youtube-audio-player__controls">
                   <div class="youtube-audio-player__transport">
-                    <button type="button" class="youtube-audio-player__button" data-youtube-player-previous disabled>Prev</button>
-                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--primary" data-youtube-player-toggle disabled>Play</button>
-                    <button type="button" class="youtube-audio-player__button" data-youtube-player-next disabled>Next</button>
+                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--icon" data-youtube-player-previous aria-label="Previous track" title="Previous track" disabled>
+                      <span aria-hidden="true">⏮</span>
+                      <span class="sr-only">Previous track</span>
+                    </button>
+                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--primary youtube-audio-player__button--icon" data-youtube-player-toggle aria-label="Play queue" title="Play queue" disabled>
+                      <span data-youtube-player-toggle-icon aria-hidden="true">▶</span>
+                      <span class="sr-only" data-youtube-player-toggle-label>Play queue</span>
+                    </button>
+                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--icon" data-youtube-player-next aria-label="Next track" title="Next track" disabled>
+                      <span aria-hidden="true">⏭</span>
+                      <span class="sr-only">Next track</span>
+                    </button>
                   </div>
                   <label class="youtube-audio-player__volume">
                     <span>Volume</span>
-                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--quiet" data-youtube-player-mute disabled>Mute</button>
+                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--quiet youtube-audio-player__button--icon" data-youtube-player-mute aria-label="Mute audio" title="Mute audio" disabled>
+                      <span data-youtube-player-mute-icon aria-hidden="true">🔊</span>
+                      <span class="sr-only" data-youtube-player-mute-label>Mute audio</span>
+                    </button>
                     <input type="range" min="0" max="100" value="100" aria-label="Volume" data-youtube-player-volume disabled>
                   </label>
                 </div>

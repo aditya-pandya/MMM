@@ -149,8 +149,28 @@ function syncYoutubeAudioPlayerUi(instance) {
   instance.meta.textContent = `Track ${index + 1} of ${queueCount}${hasLinkedTracklist ? ' · tracklist below stays in sync' : ''}${videoData.title ? ` · YouTube: ${videoData.title}` : ''}`;
   instance.elapsed.textContent = formatClock(currentTime);
   instance.duration.textContent = formatClock(duration);
-  instance.toggle.textContent = isPlaying ? 'Pause' : 'Play';
-  instance.mute.textContent = player.isMuted?.() ? 'Unmute' : 'Mute';
+  const isMuted = Boolean(player.isMuted?.());
+  const toggleLabel = isPlaying ? 'Pause queue' : 'Play queue';
+  const muteLabel = isMuted ? 'Unmute audio' : 'Mute audio';
+
+  if (instance.toggleIcon) {
+    instance.toggleIcon.textContent = isPlaying ? '❚❚' : '▶';
+  }
+  if (instance.toggleLabel) {
+    instance.toggleLabel.textContent = toggleLabel;
+  }
+  instance.toggle.setAttribute('aria-label', toggleLabel);
+  instance.toggle.setAttribute('title', toggleLabel);
+
+  if (instance.muteIcon) {
+    instance.muteIcon.textContent = isMuted ? '🔇' : '🔊';
+  }
+  if (instance.muteLabel) {
+    instance.muteLabel.textContent = muteLabel;
+  }
+  instance.mute.setAttribute('aria-label', muteLabel);
+  instance.mute.setAttribute('title', muteLabel);
+
   instance.previous.disabled = index <= 0;
   instance.next.disabled = index >= queueCount - 1;
   instance.mute.disabled = false;
@@ -283,8 +303,12 @@ async function initYoutubeAudioPlayer(root, index) {
     duration: root.querySelector('[data-youtube-player-duration]'),
     previous: root.querySelector('[data-youtube-player-previous]'),
     toggle: root.querySelector('[data-youtube-player-toggle]'),
+    toggleIcon: root.querySelector('[data-youtube-player-toggle-icon]'),
+    toggleLabel: root.querySelector('[data-youtube-player-toggle-label]'),
     next: root.querySelector('[data-youtube-player-next]'),
     mute: root.querySelector('[data-youtube-player-mute]'),
+    muteIcon: root.querySelector('[data-youtube-player-mute-icon]'),
+    muteLabel: root.querySelector('[data-youtube-player-mute-label]'),
     volume: root.querySelector('[data-youtube-player-volume]'),
     host: root.querySelector('[data-youtube-player-host]'),
     trackItems: [],
