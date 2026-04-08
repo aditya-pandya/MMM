@@ -1139,6 +1139,7 @@ function renderLayout({ depth = 0, currentNav = '', title, description, eyebrow 
     <title>${escapeHtml(title)} · Monday Music Mix</title>
     <meta name="description" content="${escapeHtml(description)}">
     <link rel="stylesheet" href="${assetBase}site.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
     <script src="${assetBase}site.js" defer></script>
   </head>
   <body>
@@ -1840,22 +1841,22 @@ function renderListeningSection(mix) {
                 <div class="youtube-audio-player__controls">
                   <div class="youtube-audio-player__transport">
                     <button type="button" class="youtube-audio-player__button youtube-audio-player__button--icon" data-youtube-player-previous aria-label="Previous track" title="Previous track" disabled>
-                      <span aria-hidden="true">‹‹</span>
+                      <i class="ph ph-skip-back" aria-hidden="true"></i>
                       <span class="sr-only">Previous track</span>
                     </button>
                     <button type="button" class="youtube-audio-player__button youtube-audio-player__button--primary youtube-audio-player__button--icon" data-youtube-player-toggle aria-label="Play queue" title="Play queue" disabled>
-                      <span data-youtube-player-toggle-icon aria-hidden="true">▶</span>
+                      <i class="ph ph-play" data-youtube-player-toggle-icon aria-hidden="true"></i>
                       <span class="sr-only" data-youtube-player-toggle-label>Play queue</span>
                     </button>
                     <button type="button" class="youtube-audio-player__button youtube-audio-player__button--icon" data-youtube-player-next aria-label="Next track" title="Next track" disabled>
-                      <span aria-hidden="true">››</span>
+                      <i class="ph ph-skip-forward" aria-hidden="true"></i>
                       <span class="sr-only">Next track</span>
                     </button>
                   </div>
                   <label class="youtube-audio-player__volume">
                     <span>Volume</span>
                     <button type="button" class="youtube-audio-player__button youtube-audio-player__button--quiet youtube-audio-player__button--icon" data-youtube-player-mute aria-label="Mute audio" title="Mute audio" disabled>
-                      <span data-youtube-player-mute-icon aria-hidden="true">VOL</span>
+                      <i class="ph ph-speaker-high" data-youtube-player-mute-icon aria-hidden="true"></i>
                       <span class="sr-only" data-youtube-player-mute-label>Mute audio</span>
                     </button>
                     <input type="range" min="0" max="100" value="100" aria-label="Volume" data-youtube-player-volume disabled>
@@ -2181,7 +2182,7 @@ function renderMixPage({ mix }) {
                   <strong>${String(normalized.position || index + 1).padStart(2, '0')}</strong>
                   <span class="tracklist__title">${escapeHtml(title)}${artist}</span>
                   ${normalized.isFavorite ? '<em class="track-favorite">Favorite</em>' : ''}
-                  ${queueTrack ? '<span class="tracklist__affordance" aria-hidden="true"><span class="tracklist__affordance-icon">Play</span><span class="tracklist__affordance-label">Queue above</span></span>' : ''}
+                  ${queueTrack ? '<span class="tracklist__affordance" aria-hidden="true"><i class="ph ph-play tracklist__affordance-icon"></i><span class="tracklist__affordance-label">Queue above</span></span>' : ''}
                 </${rowTag}>
                 ${annotation}
               </li>`;

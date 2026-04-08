@@ -163,7 +163,8 @@ function syncYoutubeAudioPlayerUi(instance) {
   const muteLabel = isMuted ? 'Unmute audio' : 'Mute audio';
 
   if (instance.toggleIcon) {
-    instance.toggleIcon.textContent = isPlaying ? '❚❚' : '▶';
+    instance.toggleIcon.classList.remove('ph-play', 'ph-pause');
+    instance.toggleIcon.classList.add(isPlaying ? 'ph-pause' : 'ph-play');
   }
   if (instance.toggleLabel) {
     instance.toggleLabel.textContent = toggleLabel;
@@ -172,7 +173,8 @@ function syncYoutubeAudioPlayerUi(instance) {
   instance.toggle.setAttribute('title', toggleLabel);
 
   if (instance.muteIcon) {
-    instance.muteIcon.textContent = isMuted ? 'MUT' : 'VOL';
+    instance.muteIcon.classList.remove('ph-speaker-high', 'ph-speaker-slash');
+    instance.muteIcon.classList.add(isMuted ? 'ph-speaker-slash' : 'ph-speaker-high');
   }
   if (instance.muteLabel) {
     instance.muteLabel.textContent = muteLabel;

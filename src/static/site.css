@@ -890,9 +890,16 @@ h3 {
   letter-spacing: 0;
 }
 
-.youtube-audio-player__button--icon > span[aria-hidden='true'] {
-  font-size: 0.98rem;
+.youtube-audio-player__button--icon > [aria-hidden='true'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.06rem;
   line-height: 1;
+}
+
+.youtube-audio-player__button--icon > .ph {
+  font-weight: 600;
 }
 
 .youtube-audio-player__button--quiet {
@@ -1085,9 +1092,13 @@ h3 {
 }
 
 .tracklist__affordance-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--accent);
-  font-size: 0.64rem;
-  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 .tracklist__item--queue:hover .tracklist__affordance,

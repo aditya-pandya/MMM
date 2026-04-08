@@ -15,20 +15,20 @@ BUTTON: Open Thirtysixth on YouTube
 EYEBROW: Tracklist
 H2: Full sequence
 COPY: 14 tracks · 3 favorites highlighted · Tap any marked row to play it above
-TRACK: 01 Tennis Court (Lorde cover) — The Kite String Tangle PlayQueue above
-TRACK: 02 Beloved — Say Lou Lou PlayQueue above
-TRACK: 03 Realize You — Empress Of PlayQueue above
-TRACK: 04 Lost Boys and Girls Club — Dum Dum Girls PlayQueue above
-TRACK: 05 (I Just) Died In Your Arms Tonight (Cutting Crew cover) — Bastille PlayQueue above
-TRACK: 06 You’re Not Good Enough — Blood Orange Favorite PlayQueue above
-TRACK: 07 Old Love New Love — Twin Shadow PlayQueue above
-TRACK: 08 London Light — STRANGERS PlayQueue above
-TRACK: 09 Will Calls — Grizzly Bear PlayQueue above
-TRACK: 10 Remurdered — Mogwai PlayQueue above
-TRACK: 11 A Real Hero (College & Electric Youth cover) — High Highs PlayQueue above
-TRACK: 12 Summer Time Sadness (Lana Del Rey cover) — Angel Haze Favorite PlayQueue above
-TRACK: 13 Mirror — Ellie Goulding PlayQueue above
-TRACK: 14 Love You Better (John Dillinger remix) — Oh Land Favorite PlayQueue above
+TRACK: 01 Tennis Court (Lorde cover) — The Kite String Tangle Queue above
+TRACK: 02 Beloved — Say Lou Lou Queue above
+TRACK: 03 Realize You — Empress Of Queue above
+TRACK: 04 Lost Boys and Girls Club — Dum Dum Girls Queue above
+TRACK: 05 (I Just) Died In Your Arms Tonight (Cutting Crew cover) — Bastille Queue above
+TRACK: 06 You’re Not Good Enough — Blood Orange Favorite Queue above
+TRACK: 07 Old Love New Love — Twin Shadow Queue above
+TRACK: 08 London Light — STRANGERS Queue above
+TRACK: 09 Will Calls — Grizzly Bear Queue above
+TRACK: 10 Remurdered — Mogwai Queue above
+TRACK: 11 A Real Hero (College & Electric Youth cover) — High Highs Queue above
+TRACK: 12 Summer Time Sadness (Lana Del Rey cover) — Angel Haze Favorite Queue above
+TRACK: 13 Mirror — Ellie Goulding Queue above
+TRACK: 14 Love You Better (John Dillinger remix) — Oh Land Favorite Queue above
 EYEBROW: Context
 H2: Archive notes
 COPY: Contains some of the best music I have heard in a quite a192 while.

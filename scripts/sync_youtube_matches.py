@@ -52,6 +52,7 @@ EDITORIAL_TAIL_MARKERS = (
     "this isn’t",
     "not the album version",
 )
+EMOJI_OR_ICON_PATTERN = re.compile(r"[\U0001F300-\U0001FAFF\u2600-\u27BF\ufe0f]")
 
 
 def parse_args() -> argparse.Namespace:
@@ -90,6 +91,11 @@ def contains_phrase(text: str, phrase: str) -> bool:
     if not normalized_phrase:
         return False
     return normalized_phrase in normalize_text(text)
+
+
+def strip_emoji_or_icon_symbols(value: str) -> str:
+    without_icons = EMOJI_OR_ICON_PATTERN.sub("", str(value or ""))
+    return re.sub(r"\s+", " ", without_icons).strip()
 
 
 def strip_editorial_tail(value: str) -> str:
@@ -145,8 +151,8 @@ def score_candidate(track: dict[str, Any], entry: dict[str, Any]) -> ScoredCandi
     artist = str(track.get("artist") or "").strip()
     title = str(track.get("title") or "").strip()
     display = str(track.get("displayText") or f"{artist} - {title}").strip()
-    candidate_title = str(entry.get("title") or "").strip()
-    channel = str(entry.get("channel") or entry.get("uploader") or "").strip()
+    candidate_title = strip_emoji_or_icon_symbols(entry.get("title") or "")
+    channel = strip_emoji_or_icon_symbols(entry.get("channel") or entry.get("uploader") or "")
     normalized_candidate = normalize_text(candidate_title)
     normalized_display = normalize_text(display)
     normalized_artist = normalize_text(artist)
