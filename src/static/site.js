@@ -24,6 +24,7 @@ function formatClock(totalSeconds) {
 
 let youtubeIframeApiPromise = null;
 const YOUTUBE_MINIMUM_EMBED_SIZE = 220;
+const YOUTUBE_EMBED_BLOCKED_CODES = new Set([100, 101, 150]);
 
 function loadYoutubeIframeApi() {
   if (window.YT && window.YT.Player) {
@@ -97,6 +98,22 @@ function setYoutubeAudioPlayerDisabled(instance, disabled) {
 
 function getYoutubeAudioPlayerIndex(instance) {
   return Math.min(Math.max(Number(instance.currentIndex) || 0, 0), Math.max(instance.videoIds.length - 1, 0));
+}
+
+function findNextYoutubeQueueIndex(instance, activeIndex) {
+  for (let index = activeIndex + 1; index < instance.videoIds.length; index += 1) {
+    if (!instance.failedIndexes.has(index)) {
+      return index;
+    }
+  }
+
+  for (let index = 0; index < activeIndex; index += 1) {
+    if (!instance.failedIndexes.has(index)) {
+      return index;
+    }
+  }
+
+  return -1;
 }
 
 function syncYoutubeTracklistUi(instance) {
@@ -256,6 +273,7 @@ async function initYoutubeAudioPlayer(root, index) {
     isScrubbing: false,
     pollTimer: null,
     player: null,
+    failedIndexes: new Set(),
     queueKey: String(root.dataset.queueKey || '').trim(),
     state: root.querySelector('[data-youtube-player-state]'),
     track: root.querySelector('[data-youtube-player-track]'),
@@ -339,9 +357,30 @@ async function initYoutubeAudioPlayer(root, index) {
         }
         syncYoutubeAudioPlayerUi(instance);
       },
-      onError: () => {
+      onError: (event) => {
+        const errorCode = Number(event?.data);
+        const activeIndex = getYoutubeAudioPlayerIndex(instance);
+        const shouldSkip = YOUTUBE_EMBED_BLOCKED_CODES.has(errorCode);
+
+        instance.failedIndexes.add(activeIndex);
+
+        if (shouldSkip) {
+          const fallbackIndex = findNextYoutubeQueueIndex(instance, activeIndex);
+          if (fallbackIndex >= 0) {
+            instance.currentIndex = fallbackIndex;
+            try {
+              instance.player.cueVideoById(instance.videoIds[fallbackIndex]);
+            } catch {}
+            if (instance.meta) {
+              instance.meta.textContent = `Track ${activeIndex + 1} is blocked for embedded playback. Queued track ${fallbackIndex + 1} instead.`;
+            }
+            syncYoutubeTracklistUi(instance);
+            return;
+          }
+        }
+
         if (instance.meta) {
-          instance.meta.textContent = 'That YouTube item failed here. Open the queue on YouTube instead.';
+          instance.meta.textContent = 'Playback is unavailable for this queue here. Open it on YouTube instead.';
         }
         if (instance.state) {
           instance.state.textContent = 'Error';
