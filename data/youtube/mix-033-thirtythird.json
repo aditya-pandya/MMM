@@ -1,0 +1,1213 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-033-thirtythird",
+  "updatedAt": "2026-04-08T21:21:00Z",
+  "sourceMixPath": "data/imported/mixes/mix-033-thirtythird.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Bell X1 - Starlings Over Brighton Pier",
+      "query": "Bell X1 Starlings Over Brighton Pier",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "-0M9EmnBbxw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "-0M9EmnBbxw",
+          "title": "Bell X1 - Starlings Over Brighton Pier",
+          "url": "https://www.youtube.com/watch?v=-0M9EmnBbxw",
+          "channel": "Bell X1",
+          "durationSeconds": 285.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "nI9uc8XDcTE",
+          "title": "Bell X1 | Starlings Over Brighton PIer (Audio Only)",
+          "url": "https://www.youtube.com/watch?v=nI9uc8XDcTE",
+          "channel": "Bell X1",
+          "durationSeconds": 285.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "audio-only-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "5RjyBFuBJPU",
+          "title": "Bell X1 - Starlings over Brighton Pier",
+          "url": "https://www.youtube.com/watch?v=5RjyBFuBJPU",
+          "channel": "Adam Noone",
+          "durationSeconds": 323.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "tw9--Y809t0",
+          "title": "Bell X1 - Starlings over Brighton pier - Acoustic-Ish with Dowry String - live at Union Chapel 2019",
+          "url": "https://www.youtube.com/watch?v=tw9--Y809t0",
+          "channel": "Zdenek Mares-Page",
+          "durationSeconds": 355.0,
+          "score": 0.551,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "vlPLI-redlE",
+          "title": "Starlings over Brighton Pier (Live at St. Luke's)",
+          "url": "https://www.youtube.com/watch?v=vlPLI-redlE",
+          "channel": "Bell X1 & Dowry Strings - Topic",
+          "durationSeconds": 365.0,
+          "score": 0.401,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Galleries - Midnight Rush",
+      "query": "Galleries Midnight Rush",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "j5882AjQAsw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "j5882AjQAsw",
+          "title": "Galleries - Midnight Rush",
+          "url": "https://www.youtube.com/watch?v=j5882AjQAsw",
+          "channel": "galleriesband",
+          "durationSeconds": 206.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "6QQAI1TuL7k",
+          "title": "Midnight Rush",
+          "url": "https://www.youtube.com/watch?v=6QQAI1TuL7k",
+          "channel": "Galleries - Topic",
+          "durationSeconds": 203.0,
+          "score": 0.677,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "gEgikIOaWps",
+          "title": "Midnight Rush",
+          "url": "https://www.youtube.com/watch?v=gEgikIOaWps",
+          "channel": "Galleries - Topic",
+          "durationSeconds": 203.0,
+          "score": 0.677,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "pzTFgLbm6WQ",
+          "title": "[Obs & Vocasyl-P] Midnight rush - ft. Eleanor Forte [SynthV Original]",
+          "url": "https://www.youtube.com/watch?v=pzTFgLbm6WQ",
+          "channel": "Vocasyl-P",
+          "durationSeconds": 120.0,
+          "score": 0.26,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "uvY8fdgezLQ",
+          "title": "Zara Larsson - Midnight Sun (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=uvY8fdgezLQ",
+          "channel": "Zara Larsson",
+          "durationSeconds": 188.0,
+          "score": 0.146,
+          "signals": [
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Poolside - If We Make It",
+      "query": "Poolside If We Make It",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "2ZT03zeuKHM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2ZT03zeuKHM",
+          "title": "Poolside - \"If We Make It\"",
+          "url": "https://www.youtube.com/watch?v=2ZT03zeuKHM",
+          "channel": "Poolside",
+          "durationSeconds": 226.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "G_PMsdpKKek",
+          "title": "Poolside - If We Make It",
+          "url": "https://www.youtube.com/watch?v=G_PMsdpKKek",
+          "channel": "televizor",
+          "durationSeconds": 226.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "9Xy6EuwqaNo",
+          "title": "Poolside - If We Make It",
+          "url": "https://www.youtube.com/watch?v=9Xy6EuwqaNo",
+          "channel": "Atmosfærisk lyd",
+          "durationSeconds": 226.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "9fgh7onssgg",
+          "title": "Poolside - If We Make It",
+          "url": "https://www.youtube.com/watch?v=9fgh7onssgg",
+          "channel": "Rasberry Jams",
+          "durationSeconds": 226.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "vl62s2_8aEM",
+          "title": "If We Make It- Poolside",
+          "url": "https://www.youtube.com/watch?v=vl62s2_8aEM",
+          "channel": "TVnatural",
+          "durationSeconds": 243.0,
+          "score": 0.911,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Mikky Ekko - Kids",
+      "query": "Mikky Ekko Kids",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "qdX1Tt2TV0w",
+        "confidenceScore": 0.968,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "qdX1Tt2TV0w",
+          "title": "Mikky Ekko - Kids (Audio)",
+          "url": "https://www.youtube.com/watch?v=qdX1Tt2TV0w",
+          "channel": "mikkyekko",
+          "durationSeconds": 205.0,
+          "score": 0.968,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "LnSYFBvrZLs",
+          "title": "Mikky Ekko - Kids (Official Video)",
+          "url": "https://www.youtube.com/watch?v=LnSYFBvrZLs",
+          "channel": "mikkyekko",
+          "durationSeconds": 220.0,
+          "score": 0.782,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "i5FTv3-lPA0",
+          "title": "Mikky Ekko - Kids (Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=i5FTv3-lPA0",
+          "channel": "Anna Babe",
+          "durationSeconds": 221.0,
+          "score": 0.761,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "pnotOhYnJdU",
+          "title": "Mikky Ekko - Kids (Oliver Nelson Remix)",
+          "url": "https://www.youtube.com/watch?v=pnotOhYnJdU",
+          "channel": "La Belle Musique",
+          "durationSeconds": 307.0,
+          "score": 0.697,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "JPwXqUdgfhs",
+          "title": "Kids (Oliver Nelson Remix)",
+          "url": "https://www.youtube.com/watch?v=JPwXqUdgfhs",
+          "channel": "mikkyekko",
+          "durationSeconds": 306.0,
+          "score": 0.073,
+          "signals": [
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Isle - Bayview",
+      "query": "Isle Bayview",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Aiq2iFukH5M",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Aiq2iFukH5M",
+          "title": "Isle - Bayview",
+          "url": "https://www.youtube.com/watch?v=Aiq2iFukH5M",
+          "channel": "Bad Panda Records",
+          "durationSeconds": 234.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "jiGQUn3e-tM",
+          "title": "Isles at BayView,  Parrish Florida, Centex Inland Homes",
+          "url": "https://www.youtube.com/watch?v=jiGQUn3e-tM",
+          "channel": "Sarasota Florida Area Real Estate with Sandra Sexe",
+          "durationSeconds": 585.0,
+          "score": 0.335,
+          "signals": [
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "gVjRTYz-xXE",
+          "title": "Brand New Isles at Bayview Inland Homes | Parrish, Florida",
+          "url": "https://www.youtube.com/watch?v=gVjRTYz-xXE",
+          "channel": "Living in Sarasota and Manatee Counties",
+          "durationSeconds": 1168.0,
+          "score": 0.328,
+          "signals": [
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "WtQou9gymqo",
+          "title": "BRAND NEW Community! The Isles at Bayview | Palmetto, Florida",
+          "url": "https://www.youtube.com/watch?v=WtQou9gymqo",
+          "channel": "Living in Sarasota and Manatee Counties",
+          "durationSeconds": 785.0,
+          "score": 0.324,
+          "signals": [
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "aqvWcQpW0PA",
+          "title": "Tour the Stunning Plan 404 by Inland Homes at Isles of BayView",
+          "url": "https://www.youtube.com/watch?v=aqvWcQpW0PA",
+          "channel": "Living in Parrish, Lakewood Ranch & Beyond",
+          "durationSeconds": 306.0,
+          "score": 0.314,
+          "signals": [
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Chvurches - Gun",
+      "query": "Chvurches Gun",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ktoaj1IpTbw",
+        "confidenceScore": 0.44,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ktoaj1IpTbw",
+          "title": "CHVRCHES - Gun",
+          "url": "https://www.youtube.com/watch?v=ktoaj1IpTbw",
+          "channel": "CHVRCHES",
+          "durationSeconds": 233.0,
+          "score": 0.44,
+          "signals": [
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "0fywSB8Q5UM",
+          "title": "CHVRCHES Gun",
+          "url": "https://www.youtube.com/watch?v=0fywSB8Q5UM",
+          "channel": "CHVRCHES Latinoamérica",
+          "durationSeconds": 235.0,
+          "score": 0.44,
+          "signals": [
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "KrMtIPjHtZI",
+          "title": "Gun (2023 Remastered)",
+          "url": "https://www.youtube.com/watch?v=KrMtIPjHtZI",
+          "channel": "CHVRCHES",
+          "durationSeconds": 234.0,
+          "score": 0.185,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "98CYvQOtxo8",
+          "title": "CHVRCHES - Gun (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=98CYvQOtxo8",
+          "channel": "KEXP",
+          "durationSeconds": 265.0,
+          "score": 0.088,
+          "signals": [
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "K85o3T_g7so",
+          "title": "Studio Brussel: CHVRCHES - Gun (Live)",
+          "url": "https://www.youtube.com/watch?v=K85o3T_g7so",
+          "channel": "Studio Brussel",
+          "durationSeconds": 262.0,
+          "score": 0.051,
+          "signals": [
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Gold Panda - We Work Nights",
+      "query": "Gold Panda We Work Nights",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "aV0Ky0ijGNc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "aV0Ky0ijGNc",
+          "title": "Gold Panda: We Work Nights",
+          "url": "https://www.youtube.com/watch?v=aV0Ky0ijGNc",
+          "channel": "gold panda",
+          "durationSeconds": 361.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "lMzyLQpAPEI",
+          "title": "Gold Panda - We Work Nights",
+          "url": "https://www.youtube.com/watch?v=lMzyLQpAPEI",
+          "channel": "Distapez",
+          "durationSeconds": 358.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "WH2QxrnOXpw",
+          "title": "Gold Panda - We Work Nights",
+          "url": "https://www.youtube.com/watch?v=WH2QxrnOXpw",
+          "channel": "We are What We listen",
+          "durationSeconds": 359.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "LdId-oBlz1A",
+          "title": "Gold Panda - We Work Nights",
+          "url": "https://www.youtube.com/watch?v=LdId-oBlz1A",
+          "channel": "Léonard Wanderlust",
+          "durationSeconds": 361.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "jJ9VCM4RUac",
+          "title": "Gold Panda - Chiba Nights (Official Video)",
+          "url": "https://www.youtube.com/watch?v=jJ9VCM4RUac",
+          "channel": "gold panda",
+          "durationSeconds": 260.0,
+          "score": 0.347,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Little Daylight - Name In Lights",
+      "query": "Little Daylight Name In Lights",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "NVGde2raSA8",
+        "confidenceScore": 0.993,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "NVGde2raSA8",
+          "title": "Little Daylight - Name in Lights HQ",
+          "url": "https://www.youtube.com/watch?v=NVGde2raSA8",
+          "channel": "Joshua Jackson",
+          "durationSeconds": 238.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "nkqvuo3EB-U",
+          "title": "Little Daylights - Name In Lights",
+          "url": "https://www.youtube.com/watch?v=nkqvuo3EB-U",
+          "channel": "IndieMusicPlaylists",
+          "durationSeconds": 241.0,
+          "score": 0.887,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "kmjp8NDBIsQ",
+          "title": "Little Daylight - Name In Lights (Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=kmjp8NDBIsQ",
+          "channel": "LittleDaylightVEVO",
+          "durationSeconds": 237.0,
+          "score": 0.84,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "f0QKJnGorxM",
+          "title": "Little Daylight - Name In Light (Pacific Air Remix)",
+          "url": "https://www.youtube.com/watch?v=f0QKJnGorxM",
+          "channel": "OtherMusiic",
+          "durationSeconds": 222.0,
+          "score": 0.583,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "cRp6u5myQaM",
+          "title": "Name In Lights (Pacific Air Remix)",
+          "url": "https://www.youtube.com/watch?v=cRp6u5myQaM",
+          "channel": "Little Daylight - Topic",
+          "durationSeconds": 221.0,
+          "score": 0.405,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Reviving Cecilia - Two Kinds",
+      "query": "Reviving Cecilia Two Kinds",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "t6_osp5dtdo",
+        "confidenceScore": 0.414,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "t6_osp5dtdo",
+          "title": "Two Kinds",
+          "url": "https://www.youtube.com/watch?v=t6_osp5dtdo",
+          "channel": "RevivingCecilia",
+          "durationSeconds": 195.0,
+          "score": 0.414,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "hSwo39LlANA",
+          "title": "Reviving Cecilia",
+          "url": "https://www.youtube.com/watch?v=hSwo39LlANA",
+          "channel": "Quakerman01",
+          "durationSeconds": 146.0,
+          "score": 0.357,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "TE3s9JOQeZA",
+          "title": "Come Elijah",
+          "url": "https://www.youtube.com/watch?v=TE3s9JOQeZA",
+          "channel": "RevivingCecilia",
+          "durationSeconds": 230.0,
+          "score": 0.151,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "KWm1mnS221c",
+          "title": "Cecilia Marfo - Washawasay (What shall I say) Official Christmas Party Song II Azonto refix",
+          "url": "https://www.youtube.com/watch?v=KWm1mnS221c",
+          "channel": "Captain Ask Studio",
+          "durationSeconds": 137.0,
+          "score": 0.119,
+          "signals": [
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "xGMWUttNDcI",
+          "title": "Do You Hear What I Hear",
+          "url": "https://www.youtube.com/watch?v=xGMWUttNDcI",
+          "channel": "RevivingCecilia",
+          "durationSeconds": 182.0,
+          "score": 0.07,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "jj - Fågelsången",
+      "query": "jj Fågelsången",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "O0_lvIhm5MM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "O0_lvIhm5MM",
+          "title": "JJ  - Fågelsången",
+          "url": "https://www.youtube.com/watch?v=O0_lvIhm5MM",
+          "channel": "ENCIRCLES",
+          "durationSeconds": 214.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "vWfEBHEUTic",
+          "title": "JJ - Fågelsången (Birdsong) (Tone Ra-mix)",
+          "url": "https://www.youtube.com/watch?v=vWfEBHEUTic",
+          "channel": "Tone Ra",
+          "durationSeconds": 171.0,
+          "score": 0.858,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "M4BCfjJZRXA",
+          "title": "Fågelsången",
+          "url": "https://www.youtube.com/watch?v=M4BCfjJZRXA",
+          "channel": "jj - Topic",
+          "durationSeconds": 214.0,
+          "score": 0.724,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "JTlavb2lA6I",
+          "title": "jj - my life, my swag @ münchenbryggeriet [HD]",
+          "url": "https://www.youtube.com/watch?v=JTlavb2lA6I",
+          "channel": "Alex G",
+          "durationSeconds": 170.0,
+          "score": 0.227,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "UdS7AgTKgso",
+          "title": "Fågel Sången \"Kvi-vi-vi-vi-vitt\" -- Swedish duet.wmv",
+          "url": "https://www.youtube.com/watch?v=UdS7AgTKgso",
+          "channel": "pirttikoski1",
+          "durationSeconds": 185.0,
+          "score": 0.176,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "Lolo - Weapon For Saturday",
+      "query": "Lolo Weapon For Saturday",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "7o3jir7J_Kw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "7o3jir7J_Kw",
+          "title": "LOLO - Weapon for Saturday [AUDIO]",
+          "url": "https://www.youtube.com/watch?v=7o3jir7J_Kw",
+          "channel": "Bananas Music Club",
+          "durationSeconds": 253.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "oGmkuhvz440",
+          "title": "Lolo - Weapon For Saturday",
+          "url": "https://www.youtube.com/watch?v=oGmkuhvz440",
+          "channel": "SyLeR",
+          "durationSeconds": 255.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "wti5RjiForo",
+          "title": "New: Lolo - Weapon For Saturday",
+          "url": "https://www.youtube.com/watch?v=wti5RjiForo",
+          "channel": "Ricky Kelly",
+          "durationSeconds": 253.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "iQPYLKmeA_E",
+          "title": "Weapon For Saturday",
+          "url": "https://www.youtube.com/watch?v=iQPYLKmeA_E",
+          "channel": "LOLO",
+          "durationSeconds": 253.0,
+          "score": 0.605,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "t5p1xqBc4C0",
+          "title": "Alex O'Loughlin / Steve McGarrett - Weapon for Saturday",
+          "url": "https://www.youtube.com/watch?v=t5p1xqBc4C0",
+          "channel": "Karo McGarrett",
+          "durationSeconds": 251.0,
+          "score": 0.362,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Solid Gold - Danger Zone (Kenny Loggins cover)",
+      "query": "Solid Gold Danger Zone (Kenny Loggins cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "bJruexhKTRY",
+        "confidenceScore": 0.268,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "bJruexhKTRY",
+          "title": "Danger Zone GOES HEAVY (@KennyLoggins COVER by NO RESOLVE ft. @STATEOFMINE)",
+          "url": "https://www.youtube.com/watch?v=bJruexhKTRY",
+          "channel": "No Resolve",
+          "durationSeconds": 210.0,
+          "score": 0.268,
+          "signals": []
+        },
+        {
+          "rank": 2,
+          "videoId": "rKqtFpVci98",
+          "title": "Tavey Lean and the Solid Gold Dream Machine - Top Gun/Dangerzone",
+          "url": "https://www.youtube.com/watch?v=rKqtFpVci98",
+          "channel": "Fender Strat",
+          "durationSeconds": 177.0,
+          "score": 0.26,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "6wQlhou9CUQ",
+          "title": "[Uma Musume] Mayano Top Gun Sings “Danger Zone”",
+          "url": "https://www.youtube.com/watch?v=6wQlhou9CUQ",
+          "channel": "ウマウマ動画制作局",
+          "durationSeconds": 84.0,
+          "score": 0.166,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "siwpn14IE7E",
+          "title": "Kenny Loggins - Danger Zone (Official Video - Top Gun)",
+          "url": "https://www.youtube.com/watch?v=siwpn14IE7E",
+          "channel": "Kenny Loggins",
+          "durationSeconds": 226.0,
+          "score": 0.12,
+          "signals": [
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Y-AQT72TLhw",
+          "title": "Kenny Loggins - Danger Zone / Footloose (Live 1986)",
+          "url": "https://www.youtube.com/watch?v=Y-AQT72TLhw",
+          "channel": "Too Early For The Sun",
+          "durationSeconds": 489.0,
+          "score": 0.0,
+          "signals": [
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Zaz - Eblouie Par La Nuit",
+      "query": "Zaz Eblouie Par La Nuit",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "KDcgOpUp2nc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "KDcgOpUp2nc",
+          "title": "ZAZ - Eblouie par la nuit (Clip officiel)",
+          "url": "https://www.youtube.com/watch?v=KDcgOpUp2nc",
+          "channel": "Zaz",
+          "durationSeconds": 174.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Vq8_v160gI4",
+          "title": "Dead man down Soundtrack  (Zaz - Éblouie par la nuit)",
+          "url": "https://www.youtube.com/watch?v=Vq8_v160gI4",
+          "channel": "Xamot2014",
+          "durationSeconds": 161.0,
+          "score": 0.692,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "8fJe2Jl8eWA",
+          "title": "Zaz émue aux larmes par la reprise d'Éblouie par la nuit de son ami Ycare",
+          "url": "https://www.youtube.com/watch?v=8fJe2Jl8eWA",
+          "channel": "La boîte à secrets - France Télévisions",
+          "durationSeconds": 158.0,
+          "score": 0.623,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "DpB6WhM2hCE",
+          "title": "ZAZ - Éblouie Par La Nuit (live 2011)",
+          "url": "https://www.youtube.com/watch?v=DpB6WhM2hCE",
+          "channel": "Daniel Thourot",
+          "durationSeconds": 202.0,
+          "score": 0.547,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "N68Ca1GjUEo",
+          "title": "Éblouie par la nuit",
+          "url": "https://www.youtube.com/watch?v=N68Ca1GjUEo",
+          "channel": "Zaz",
+          "durationSeconds": 164.0,
+          "score": 0.519,
+          "signals": [
+            "song-title-near-exact-match",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Klingande - Jubel",
+      "query": "Klingande Jubel",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "vpS8DE1fMSs",
+        "confidenceScore": 0.99,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "vpS8DE1fMSs",
+          "title": "Klingande - Jubel",
+          "url": "https://www.youtube.com/watch?v=vpS8DE1fMSs",
+          "channel": "Chill Masters",
+          "durationSeconds": 284.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "XYmLhn3qJ6Y",
+          "title": "Klingande - Jubel (Original Mix)",
+          "url": "https://www.youtube.com/watch?v=XYmLhn3qJ6Y",
+          "channel": "Klingande",
+          "durationSeconds": 283.0,
+          "score": 0.944,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "b6vSf0cA9qY",
+          "title": "Klingande - Jubel (Official Video HD)",
+          "url": "https://www.youtube.com/watch?v=b6vSf0cA9qY",
+          "channel": "Kontor.TV",
+          "durationSeconds": 209.0,
+          "score": 0.775,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Z3B5aQyt7JQ",
+          "title": "\"JUBEL\" - Klingande | STREET SAX PERFORMANCE",
+          "url": "https://www.youtube.com/watch?v=Z3B5aQyt7JQ",
+          "channel": "Daniele Vitale Sax",
+          "durationSeconds": 202.0,
+          "score": 0.766,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "0JDjtM10j7w",
+          "title": "Klingande - Jubel (Lyrics - Radio Edit)",
+          "url": "https://www.youtube.com/watch?v=0JDjtM10j7w",
+          "channel": "Tiago Silva (Oficial)",
+          "durationSeconds": 198.0,
+          "score": 0.685,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-edit-penalty",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 14,
+    "resolvedTracks": 14,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Thirtythird",
+      "embedUrl": "https://www.youtube.com/embed/-0M9EmnBbxw?playlist=j5882AjQAsw,2ZT03zeuKHM,qdX1Tt2TV0w,Aiq2iFukH5M,ktoaj1IpTbw,aV0Ky0ijGNc,NVGde2raSA8,t6_osp5dtdo,O0_lvIhm5MM,7o3jir7J_Kw,bJruexhKTRY,KDcgOpUp2nc,vpS8DE1fMSs",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=-0M9EmnBbxw,j5882AjQAsw,2ZT03zeuKHM,qdX1Tt2TV0w,Aiq2iFukH5M,ktoaj1IpTbw,aV0Ky0ijGNc,NVGde2raSA8,t6_osp5dtdo,O0_lvIhm5MM,7o3jir7J_Kw,bJruexhKTRY,KDcgOpUp2nc,vpS8DE1fMSs",
+      "videoIds": [
+        "-0M9EmnBbxw",
+        "j5882AjQAsw",
+        "2ZT03zeuKHM",
+        "qdX1Tt2TV0w",
+        "Aiq2iFukH5M",
+        "ktoaj1IpTbw",
+        "aV0Ky0ijGNc",
+        "NVGde2raSA8",
+        "t6_osp5dtdo",
+        "O0_lvIhm5MM",
+        "7o3jir7J_Kw",
+        "bJruexhKTRY",
+        "KDcgOpUp2nc",
+        "vpS8DE1fMSs"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:21:00Z"
+    }
+  }
+}

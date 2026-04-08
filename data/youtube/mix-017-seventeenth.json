@@ -1,0 +1,1184 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-017-seventeenth",
+  "updatedAt": "2026-04-08T21:43:30Z",
+  "sourceMixPath": "data/imported/mixes/mix-017-seventeenth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Luísa Maita - Lero-Lero (DJ Tudo Remix)",
+      "query": "Luísa Maita Lero-Lero (DJ Tudo Remix)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "1e_Bkceye2I",
+        "confidenceScore": 0.578,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "1e_Bkceye2I",
+          "title": "Lero-Lero (DJ Tudo Remix)",
+          "url": "https://www.youtube.com/watch?v=1e_Bkceye2I",
+          "channel": "Luísa Maita",
+          "durationSeconds": 259.0,
+          "score": 0.578,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "033shRQdiLg",
+          "title": "Luísa Maita - Lero-Lero (BiD remix)",
+          "url": "https://www.youtube.com/watch?v=033shRQdiLg",
+          "channel": "Luísa Maita",
+          "durationSeconds": 192.0,
+          "score": 0.557,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "_WWJ3tse0GM",
+          "title": "Luisa Maita: Lero Lero REMIX",
+          "url": "https://www.youtube.com/watch?v=_WWJ3tse0GM",
+          "channel": "Videomusic77",
+          "durationSeconds": 267.0,
+          "score": 0.36,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "8D3255FVHgM",
+          "title": "Lero-Lero",
+          "url": "https://www.youtube.com/watch?v=8D3255FVHgM",
+          "channel": "Luísa Maita",
+          "durationSeconds": 284.0,
+          "score": 0.304,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "n3CkaQKkvFg",
+          "title": "Luisa Maita Featuring DJ Tudo - Lero-Lero Remixed",
+          "url": "https://www.youtube.com/watch?v=n3CkaQKkvFg",
+          "channel": "TheDanielb2011",
+          "durationSeconds": 263.0,
+          "score": 0.267,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Mr. Little Jeans - The Suburbs (Arcade Fire cover)",
+      "query": "Mr. Little Jeans The Suburbs (Arcade Fire cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "eFKYHVfD2Zw",
+        "confidenceScore": 0.99,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "eFKYHVfD2Zw",
+          "title": "Mr. Little Jeans - The Suburbs (Arcade Fire Cover) #MusicF4you",
+          "url": "https://www.youtube.com/watch?v=eFKYHVfD2Zw",
+          "channel": "Music Inside",
+          "durationSeconds": 313.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ljPOSdOx8FM",
+          "title": "Arcade Fire - The Suburbs [Mr. Little Jeans Cover]",
+          "url": "https://www.youtube.com/watch?v=ljPOSdOx8FM",
+          "channel": "Apparentmusic",
+          "durationSeconds": 311.0,
+          "score": 0.767,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "iSGMPXER8ew",
+          "title": "The Suburbs by Mr. Little Jeans (experimental cover)",
+          "url": "https://www.youtube.com/watch?v=iSGMPXER8ew",
+          "channel": "BabyTree",
+          "durationSeconds": 263.0,
+          "score": 0.359,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "pIq4uyWjz68",
+          "title": "The Suburbs",
+          "url": "https://www.youtube.com/watch?v=pIq4uyWjz68",
+          "channel": "Mr Little Jeans",
+          "durationSeconds": 308.0,
+          "score": 0.297,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "6krmom_hjEE",
+          "title": "Arcade Fire - The Suburbs (Father John Misty cover)",
+          "url": "https://www.youtube.com/watch?v=6krmom_hjEE",
+          "channel": "CBC Music",
+          "durationSeconds": 367.0,
+          "score": 0.28,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Nero Ft. Sub Focus - Promises",
+      "query": "Nero Ft. Sub Focus Promises",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "7Cr4hJ6NlQQ",
+        "confidenceScore": 0.881,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "7Cr4hJ6NlQQ",
+          "title": "Promises NERO FT. Sub Focus",
+          "url": "https://www.youtube.com/watch?v=7Cr4hJ6NlQQ",
+          "channel": "Seth Negley",
+          "durationSeconds": 268.0,
+          "score": 0.881,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "S4ctg9OgBoA",
+          "title": "Nero & Sub Focus - Promises (Full HD)",
+          "url": "https://www.youtube.com/watch?v=S4ctg9OgBoA",
+          "channel": "Zenziie",
+          "durationSeconds": 247.0,
+          "score": 0.696,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "_Gphbmn5VuQ",
+          "title": "Nero - Promise ft. Sub Focus",
+          "url": "https://www.youtube.com/watch?v=_Gphbmn5VuQ",
+          "channel": "insomniaDBSTP",
+          "durationSeconds": 247.0,
+          "score": 0.587,
+          "signals": [
+            "candidate-title-covers-most-track-tokens"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "llDikI2hTtk",
+          "title": "Nero - Promises",
+          "url": "https://www.youtube.com/watch?v=llDikI2hTtk",
+          "channel": "NERO",
+          "durationSeconds": 256.0,
+          "score": 0.417,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "VZMfhtKa-wo",
+          "title": "NERO 'PROMISES' (SKRILLEX AND NERO REMIX)",
+          "url": "https://www.youtube.com/watch?v=VZMfhtKa-wo",
+          "channel": "Skrillex",
+          "durationSeconds": 269.0,
+          "score": 0.148,
+          "signals": [
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Pamela Méndez - Bubble Bubble",
+      "query": "Pamela Méndez Bubble Bubble",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "3ohJS1XTjh0",
+        "confidenceScore": 0.806,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "3ohJS1XTjh0",
+          "title": "Pamela Méndez // Teil aus dem Stück «Bubble Bubble» // Royal // One Of A Million Festival",
+          "url": "https://www.youtube.com/watch?v=3ohJS1XTjh0",
+          "channel": "Noelle Bender",
+          "durationSeconds": 40.0,
+          "score": 0.806,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "xsKW_AZse7k",
+          "title": "Pamela Méndez / @m4music / moods / 24.3.2012",
+          "url": "https://www.youtube.com/watch?v=xsKW_AZse7k",
+          "channel": "Noelle Bender",
+          "durationSeconds": 80.0,
+          "score": 0.264,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "u5VbO5mOBmY",
+          "title": "Pamela Méndez @m4music / moods / 24.03.2012",
+          "url": "https://www.youtube.com/watch?v=u5VbO5mOBmY",
+          "channel": "Noelle Bender",
+          "durationSeconds": 108.0,
+          "score": 0.262,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "5_Xey9DiRfA",
+          "title": "Pamela Méndez // Home // Royal // One of a Million Baden // 7. April 2012",
+          "url": "https://www.youtube.com/watch?v=5_Xey9DiRfA",
+          "channel": "Noelle Bender",
+          "durationSeconds": 205.0,
+          "score": 0.249,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Olzluf8V0Ro",
+          "title": "Pamela Méndez // Teil aus dem Stück «More» // Royal // One Of A Million Festival",
+          "url": "https://www.youtube.com/watch?v=Olzluf8V0Ro",
+          "channel": "Noelle Bender",
+          "durationSeconds": 73.0,
+          "score": 0.241,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Battle Beyond The Stars - Desert",
+      "query": "Battle Beyond The Stars Desert",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9H9vYKaoLdw",
+        "confidenceScore": 0.174,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9H9vYKaoLdw",
+          "title": "Crimson Desert Post-Game Guide: Endgame, NG+, and World Changes",
+          "url": "https://www.youtube.com/watch?v=9H9vYKaoLdw",
+          "channel": "IGN",
+          "durationSeconds": 352.0,
+          "score": 0.174,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "rOkJ7oppqiY",
+          "title": "This New Star Wars Game Is Everything I Wished For...",
+          "url": "https://www.youtube.com/watch?v=rOkJ7oppqiY",
+          "channel": "MathChief - The Best of Gaming!",
+          "durationSeconds": 598.0,
+          "score": 0.145,
+          "signals": []
+        },
+        {
+          "rank": 3,
+          "videoId": "Z9LOnlpATOs",
+          "title": "Foundation | Empire Destroys Terminus, The First Foundation | Season 2 Episode 9",
+          "url": "https://www.youtube.com/watch?v=Z9LOnlpATOs",
+          "channel": "RetroDaddy",
+          "durationSeconds": 133.0,
+          "score": 0.135,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "ngO6Mnmzc8A",
+          "title": "Orbital | Official Trailer 2",
+          "url": "https://www.youtube.com/watch?v=ngO6Mnmzc8A",
+          "channel": "Hashem Al-Ghaili",
+          "durationSeconds": 118.0,
+          "score": 0.127,
+          "signals": [
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "H-MU8J2ZcvY",
+          "title": "🔥Lord Era, All His Underlings Are God-Level Units, Dominating All Lord Continents From the Beginning",
+          "url": "https://www.youtube.com/watch?v=H-MU8J2ZcvY",
+          "channel": "Blue Whale Comics Review",
+          "durationSeconds": 95942.0,
+          "score": 0.078,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Cassettes Won’t Listen - Perfect Day",
+      "query": "Cassettes Won’t Listen Perfect Day",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "PcEZsjrV7Hg",
+        "confidenceScore": 0.988,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "PcEZsjrV7Hg",
+          "title": "Cassettes Won't Listen - Perfect Day",
+          "url": "https://www.youtube.com/watch?v=PcEZsjrV7Hg",
+          "channel": "Radial by The Orchard",
+          "durationSeconds": 179.0,
+          "score": 0.988,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "WgaSAG0w4Bk",
+          "title": "Perfect Day",
+          "url": "https://www.youtube.com/watch?v=WgaSAG0w4Bk",
+          "channel": "Cassettes Won't Listen - Topic",
+          "durationSeconds": 257.0,
+          "score": 0.607,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "_sH5fClZEFI",
+          "title": "Cassettes Won't Listen - Paper Float",
+          "url": "https://www.youtube.com/watch?v=_sH5fClZEFI",
+          "channel": "Radial by The Orchard",
+          "durationSeconds": 213.0,
+          "score": 0.387,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "33HFCsVM5Og",
+          "title": "Cassettes Won't Listen   Freeze and Explode",
+          "url": "https://www.youtube.com/watch?v=33HFCsVM5Og",
+          "channel": "imacanda",
+          "durationSeconds": 257.0,
+          "score": 0.335,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Ex0WFcyEFRk",
+          "title": "Freeze and Explode",
+          "url": "https://www.youtube.com/watch?v=Ex0WFcyEFRk",
+          "channel": "Cassettes Won't Listen - Topic",
+          "durationSeconds": 257.0,
+          "score": 0.259,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Foster the People - Call It What You Want",
+      "query": "Foster the People Call It What You Want",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "pj5QMSGtRvY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "pj5QMSGtRvY",
+          "title": "Foster The People - Call It What You Want (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=pj5QMSGtRvY",
+          "channel": "FosterThePeople",
+          "durationSeconds": 240.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "itg5Lk9SQu0",
+          "title": "Foster The People - Call It What You Want (VEVO Presents)",
+          "url": "https://www.youtube.com/watch?v=itg5Lk9SQu0",
+          "channel": "FosterThePeople",
+          "durationSeconds": 335.0,
+          "score": 0.957,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "1prhCWO_518",
+          "title": "Foster The People - Call It What You Want (Official Video)",
+          "url": "https://www.youtube.com/watch?v=1prhCWO_518",
+          "channel": "FosterThePeople",
+          "durationSeconds": 242.0,
+          "score": 0.892,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ReJ5p458DoY",
+          "title": "Call It What You Want - Foster The People",
+          "url": "https://www.youtube.com/watch?v=ReJ5p458DoY",
+          "channel": "Samuel Martz",
+          "durationSeconds": 241.0,
+          "score": 0.888,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "22M6XAhXtXA",
+          "title": "Foster The People - Call It What You Want (Live @ Lollapalooza 2014)",
+          "url": "https://www.youtube.com/watch?v=22M6XAhXtXA",
+          "channel": "KodaKorea",
+          "durationSeconds": 302.0,
+          "score": 0.703,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Moonface - Fast Peter",
+      "query": "Moonface Fast Peter",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "yaOpVea3aKo",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "yaOpVea3aKo",
+          "title": "Moonface - Fast Peter",
+          "url": "https://www.youtube.com/watch?v=yaOpVea3aKo",
+          "channel": "Jason",
+          "durationSeconds": 352.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "VQbpsO5ceIs",
+          "title": "Moonface - Fast Peter",
+          "url": "https://www.youtube.com/watch?v=VQbpsO5ceIs",
+          "channel": "sk3u",
+          "durationSeconds": 479.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "yytQ9XZEbJo",
+          "title": "Moonface - Fast Peter",
+          "url": "https://www.youtube.com/watch?v=yytQ9XZEbJo",
+          "channel": "Jason",
+          "durationSeconds": 362.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "07oJKuXrBGc",
+          "title": "Moonface - Fast Peter",
+          "url": "https://www.youtube.com/watch?v=07oJKuXrBGc",
+          "channel": "Matu",
+          "durationSeconds": 483.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "LwXZJZti8Vg",
+          "title": "Fast Peter",
+          "url": "https://www.youtube.com/watch?v=LwXZJZti8Vg",
+          "channel": "Moonface - Topic",
+          "durationSeconds": 483.0,
+          "score": 0.667,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Dora Alexander - Travelers",
+      "query": "Dora Alexander Travelers",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9CrmVgeMD-U",
+        "confidenceScore": 0.998,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9CrmVgeMD-U",
+          "title": "Dora Alexander - \"Travelers\"",
+          "url": "https://www.youtube.com/watch?v=9CrmVgeMD-U",
+          "channel": "doraalexandermusic",
+          "durationSeconds": 459.0,
+          "score": 0.998,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Lub_nIL6sT0",
+          "title": "DORA ALEXANDER | TRAVELERS EP | OCT 22 2010 @ THE PISTON",
+          "url": "https://www.youtube.com/watch?v=Lub_nIL6sT0",
+          "channel": "doraalexandermusic",
+          "durationSeconds": 94.0,
+          "score": 0.85,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "hSvbuYApHrg",
+          "title": "Dora Alexander - \"Together\"",
+          "url": "https://www.youtube.com/watch?v=hSvbuYApHrg",
+          "channel": "doraalexandermusic",
+          "durationSeconds": 214.0,
+          "score": 0.399,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Zw9_yYhYPTQ",
+          "title": "Dora Alexander - \"Arthur's Seat\"",
+          "url": "https://www.youtube.com/watch?v=Zw9_yYhYPTQ",
+          "channel": "doraalexandermusic",
+          "durationSeconds": 321.0,
+          "score": 0.366,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Qfw50OmWDRQ",
+          "title": "Dora Alexander - \"Beginning to End\"",
+          "url": "https://www.youtube.com/watch?v=Qfw50OmWDRQ",
+          "channel": "doraalexandermusic",
+          "durationSeconds": 206.0,
+          "score": 0.33,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Bon Iver - Calgary",
+      "query": "Bon Iver Calgary",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "BMgyIR2qPEU",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "BMgyIR2qPEU",
+          "title": "Bon Iver - Calgary",
+          "url": "https://www.youtube.com/watch?v=BMgyIR2qPEU",
+          "channel": "Ozan Önder",
+          "durationSeconds": 263.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "bKggxiLaBmI",
+          "title": "Bon Iver - Calgary (Deluxe) - Official Audio",
+          "url": "https://www.youtube.com/watch?v=bKggxiLaBmI",
+          "channel": "Bon Iver",
+          "durationSeconds": 266.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "0KrmxavLIRM",
+          "title": "Bon Iver - Calgary - Official Video",
+          "url": "https://www.youtube.com/watch?v=0KrmxavLIRM",
+          "channel": "Bon Iver",
+          "durationSeconds": 253.0,
+          "score": 0.891,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "01YD6v5TYqs",
+          "title": "Bon Iver - \"Calgary\" | Live at Sydney Opera House",
+          "url": "https://www.youtube.com/watch?v=01YD6v5TYqs",
+          "channel": "Sydney Opera House",
+          "durationSeconds": 355.0,
+          "score": 0.593,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "h7eHGCYaYhg",
+          "title": "Bon Iver   Live From Radio City    FULL SHOW in HD",
+          "url": "https://www.youtube.com/watch?v=h7eHGCYaYhg",
+          "channel": "Damon Siriyos",
+          "durationSeconds": 5858.0,
+          "score": 0.002,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "The National - Exile Vilify",
+      "query": "The National Exile Vilify",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "G-Vg2YS-sFE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "G-Vg2YS-sFE",
+          "title": "The National- Exile Vilify",
+          "url": "https://www.youtube.com/watch?v=G-Vg2YS-sFE",
+          "channel": "Teeler",
+          "durationSeconds": 270.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "NoA4Cii27ok",
+          "title": "The National - Exile Vilify",
+          "url": "https://www.youtube.com/watch?v=NoA4Cii27ok",
+          "channel": "Cj",
+          "durationSeconds": 282.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ghgmi2cm9b4",
+          "title": "The National in Portal 2 Location (Exile Vilify)",
+          "url": "https://www.youtube.com/watch?v=ghgmi2cm9b4",
+          "channel": "Nathan Winger",
+          "durationSeconds": 94.0,
+          "score": 0.886,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "8mX1ioLCAvc",
+          "title": "'The National's' Exile Vilify Portal 2 in-game radio version",
+          "url": "https://www.youtube.com/watch?v=8mX1ioLCAvc",
+          "channel": "Paul Morris",
+          "durationSeconds": 286.0,
+          "score": 0.842,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "XUwkGFw226U",
+          "title": "\"Exile, Vilify\" by The National (Portal 2 Music Video)",
+          "url": "https://www.youtube.com/watch?v=XUwkGFw226U",
+          "channel": "faceofdoomness",
+          "durationSeconds": 290.0,
+          "score": 0.709,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Adele - Set Fire To The Rain (feat. Gilbere Forte) must listen - this isn’t the album version",
+      "query": "Adele Set Fire To The Rain (feat. Gilbere Forte)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "bLSSsZDb6-0",
+        "confidenceScore": 0.304,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "bLSSsZDb6-0",
+          "title": "Adele Ft. Gilbere Forte - Set Fire To The Rain // SPN Memories",
+          "url": "https://www.youtube.com/watch?v=bLSSsZDb6-0",
+          "channel": "Maria Pesli",
+          "durationSeconds": 234.0,
+          "score": 0.304,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "iOwCQYrF-BA",
+          "title": "Adele ft Gilbere Forte set fire to the rain",
+          "url": "https://www.youtube.com/watch?v=iOwCQYrF-BA",
+          "channel": "sami3219",
+          "durationSeconds": 232.0,
+          "score": 0.279,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "7mPs3y8ePu4",
+          "title": "Adele   Set Fire To The Rain   Remix 1",
+          "url": "https://www.youtube.com/watch?v=7mPs3y8ePu4",
+          "channel": "Carlos Perez",
+          "durationSeconds": 329.0,
+          "score": 0.206,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "lmGVuDgFz8k",
+          "title": "Adele ft. Gilbere Forte- Set Fire To The Rain Remix",
+          "url": "https://www.youtube.com/watch?v=lmGVuDgFz8k",
+          "channel": "Giles16",
+          "durationSeconds": 265.0,
+          "score": 0.188,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ad_U61sCSAg",
+          "title": "Adele Ft. Gilbere Forte - Set Fire To The Rain (Remix)",
+          "url": "https://www.youtube.com/watch?v=ad_U61sCSAg",
+          "channel": "Dóš Sąņtòš Zăõűĩ",
+          "durationSeconds": 234.0,
+          "score": 0.188,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Man Man - Life Fantastic",
+      "query": "Man Man Life Fantastic",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "nJgNjW0vyaU",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "nJgNjW0vyaU",
+          "title": "Man Man - \"Life Fantastic\"",
+          "url": "https://www.youtube.com/watch?v=nJgNjW0vyaU",
+          "channel": "ANTI- Records",
+          "durationSeconds": 284.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "bGjqxw6uk-A",
+          "title": "Man Man - Life Fantastic [Full Album]",
+          "url": "https://www.youtube.com/watch?v=bGjqxw6uk-A",
+          "channel": "TurkeyFriction",
+          "durationSeconds": 2547.0,
+          "score": 0.947,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "65kaKO7AOGM",
+          "title": "Man Man \"Life Fantastic\" | OFF THE AVENUE E92",
+          "url": "https://www.youtube.com/watch?v=65kaKO7AOGM",
+          "channel": "offtheavenue",
+          "durationSeconds": 310.0,
+          "score": 0.901,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "lG4LUh58bfc",
+          "title": "Man Man - \"Life Fantastic\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=lG4LUh58bfc",
+          "channel": "thealternateside907",
+          "durationSeconds": 284.0,
+          "score": 0.714,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "aLU7KZyCok4",
+          "title": "Man Man - Life Fantastic (LIVE at the El Rey)",
+          "url": "https://www.youtube.com/watch?v=aLU7KZyCok4",
+          "channel": "larusso83",
+          "durationSeconds": 291.0,
+          "score": 0.681,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Purity Ring - Lofticries",
+      "query": "Purity Ring Lofticries",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "PmRraoL9v7k",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "PmRraoL9v7k",
+          "title": "Purity Ring - Lofticries",
+          "url": "https://www.youtube.com/watch?v=PmRraoL9v7k",
+          "channel": "Purity Ring",
+          "durationSeconds": 262.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "SFTcZ1GXOCQ",
+          "title": "Purity Ring - Lofticries",
+          "url": "https://www.youtube.com/watch?v=SFTcZ1GXOCQ",
+          "channel": "LastGangRadio",
+          "durationSeconds": 240.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "9tuKkeQDSek",
+          "title": "Purity Ring - Lofticries",
+          "url": "https://www.youtube.com/watch?v=9tuKkeQDSek",
+          "channel": "David Dean Burkhart",
+          "durationSeconds": 238.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "0_1obKl8COs",
+          "title": "Purity Ring - Lofticries (HD)",
+          "url": "https://www.youtube.com/watch?v=0_1obKl8COs",
+          "channel": "l3rianaluv",
+          "durationSeconds": 239.0,
+          "score": 0.984,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "PzEL1Ws5cd4",
+          "title": "Purity Ring - Lofticries (Skeler Remix)",
+          "url": "https://www.youtube.com/watch?v=PzEL1Ws5cd4",
+          "channel": "Justvitmyk",
+          "durationSeconds": 178.0,
+          "score": 0.792,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 14,
+    "resolvedTracks": 14,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Seventeenth",
+      "embedUrl": "https://www.youtube.com/embed/1e_Bkceye2I?playlist=eFKYHVfD2Zw,7Cr4hJ6NlQQ,3ohJS1XTjh0,9H9vYKaoLdw,PcEZsjrV7Hg,pj5QMSGtRvY,yaOpVea3aKo,9CrmVgeMD-U,BMgyIR2qPEU,G-Vg2YS-sFE,bLSSsZDb6-0,nJgNjW0vyaU,PmRraoL9v7k",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=1e_Bkceye2I,eFKYHVfD2Zw,7Cr4hJ6NlQQ,3ohJS1XTjh0,9H9vYKaoLdw,PcEZsjrV7Hg,pj5QMSGtRvY,yaOpVea3aKo,9CrmVgeMD-U,BMgyIR2qPEU,G-Vg2YS-sFE,bLSSsZDb6-0,nJgNjW0vyaU,PmRraoL9v7k",
+      "videoIds": [
+        "1e_Bkceye2I",
+        "eFKYHVfD2Zw",
+        "7Cr4hJ6NlQQ",
+        "3ohJS1XTjh0",
+        "9H9vYKaoLdw",
+        "PcEZsjrV7Hg",
+        "pj5QMSGtRvY",
+        "yaOpVea3aKo",
+        "9CrmVgeMD-U",
+        "BMgyIR2qPEU",
+        "G-Vg2YS-sFE",
+        "bLSSsZDb6-0",
+        "nJgNjW0vyaU",
+        "PmRraoL9v7k"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:43:30Z"
+    }
+  }
+}

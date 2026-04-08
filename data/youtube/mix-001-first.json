@@ -1,0 +1,640 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-001-first",
+  "updatedAt": "2026-04-08T21:28:31Z",
+  "sourceMixPath": "data/imported/mixes/mix-001-first.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Diamond Rings - All Yr Songs",
+      "query": "Diamond Rings All Yr Songs",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "o6IUKa25e80",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "o6IUKa25e80",
+          "title": "Diamond Rings - All Yr Songs",
+          "url": "https://www.youtube.com/watch?v=o6IUKa25e80",
+          "channel": "Colin Medley",
+          "durationSeconds": 164.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "_51Il79IKnU",
+          "title": "Apr 19 2009 / Diamond Rings - All Yr Songs",
+          "url": "https://www.youtube.com/watch?v=_51Il79IKnU",
+          "channel": "Colin Medley Archive",
+          "durationSeconds": 204.0,
+          "score": 0.93,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PhrsuomTBoU",
+          "title": "Diamond Rings - All Yr Songs (Last.fm Sessions)",
+          "url": "https://www.youtube.com/watch?v=PhrsuomTBoU",
+          "channel": "Last.fm",
+          "durationSeconds": 183.0,
+          "score": 0.905,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "cbs8Jdq0GAg",
+          "title": "Diamond Rings - All Yr Songs (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=cbs8Jdq0GAg",
+          "channel": "KEXP",
+          "durationSeconds": 200.0,
+          "score": 0.705,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "6Vg3BxS400E",
+          "title": "All Yr Songs",
+          "url": "https://www.youtube.com/watch?v=6Vg3BxS400E",
+          "channel": "Diamond Rings - Topic",
+          "durationSeconds": 167.0,
+          "score": 0.649,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Benjamin Biolay - Dans La Merco Benz",
+      "query": "Benjamin Biolay Dans La Merco Benz",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "kO4wrWoS5QE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "kO4wrWoS5QE",
+          "title": "Benjamin Biolay - Dans la merco Benz",
+          "url": "https://www.youtube.com/watch?v=kO4wrWoS5QE",
+          "channel": "100% Chanson Française",
+          "durationSeconds": 202.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Hjjx6SemS2c",
+          "title": "Benjamin Biolay Dans la merco benz",
+          "url": "https://www.youtube.com/watch?v=Hjjx6SemS2c",
+          "channel": "infrapink2",
+          "durationSeconds": 199.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "gQdKc0kIUfw",
+          "title": "Benjamin Biolay - Dans la Merco Benz (Taratata)",
+          "url": "https://www.youtube.com/watch?v=gQdKc0kIUfw",
+          "channel": "Sylvain Guillaumon",
+          "durationSeconds": 241.0,
+          "score": 0.971,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "gLCVW1gtVf0",
+          "title": "Benjamin Biolay - Dans la merco benz + une femme marieè godard",
+          "url": "https://www.youtube.com/watch?v=gLCVW1gtVf0",
+          "channel": "antonio schiano",
+          "durationSeconds": 199.0,
+          "score": 0.911,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "eqHEXAopEwc",
+          "title": "Benjamin Biolay - Dans la Merco Benz (Live at Le Pin Galant, Mérignac 05/02/2026)",
+          "url": "https://www.youtube.com/watch?v=eqHEXAopEwc",
+          "channel": "Ferris Durandochine",
+          "durationSeconds": 291.0,
+          "score": 0.634,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Marina & The Diamonds - Are You Satisfied",
+      "query": "Marina & The Diamonds Are You Satisfied",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "CF8k-OSNIjk",
+        "confidenceScore": 0.775,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "CF8k-OSNIjk",
+          "title": "MARINA and the Diamonds - Are You Satisfied? // Lyrics",
+          "url": "https://www.youtube.com/watch?v=CF8k-OSNIjk",
+          "channel": "Millennial Pause",
+          "durationSeconds": 200.0,
+          "score": 0.775,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "iFaZ865eNZo",
+          "title": "Vietsub | Are You Satisfied? - Marina & The Diamonds | Lyrics Video",
+          "url": "https://www.youtube.com/watch?v=iFaZ865eNZo",
+          "channel": "Vietsub Mỗi Ngày",
+          "durationSeconds": 199.0,
+          "score": 0.647,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "dFT36MENAL0",
+          "title": "\"Are You Satisfied?\" - Marina and the Diamonds (w/Lyrics)",
+          "url": "https://www.youtube.com/watch?v=dFT36MENAL0",
+          "channel": "katyfied",
+          "durationSeconds": 202.0,
+          "score": 0.629,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "UPQxnmOfOrY",
+          "title": "Are You Satisfied? (Live at the New Pop Festival) - Marina & The Diamonds HD",
+          "url": "https://www.youtube.com/watch?v=UPQxnmOfOrY",
+          "channel": "keb319",
+          "durationSeconds": 252.0,
+          "score": 0.57,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "m4r3adhvPSU",
+          "title": "ARE YOU SATISFIED? - lyrics",
+          "url": "https://www.youtube.com/watch?v=m4r3adhvPSU",
+          "channel": "lavender vibes",
+          "durationSeconds": 224.0,
+          "score": 0.316,
+          "signals": [
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "The Dirty Heads - Lay Me Down",
+      "query": "The Dirty Heads Lay Me Down",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "b6EDLIPDYbI",
+        "confidenceScore": 0.947,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "b6EDLIPDYbI",
+          "title": "The Dirty Heads - Lay Me Down ft. Rome",
+          "url": "https://www.youtube.com/watch?v=b6EDLIPDYbI",
+          "channel": "Dirty Heads",
+          "durationSeconds": 224.0,
+          "score": 0.947,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ow60y4WHePQ",
+          "title": "The Dirty Heads feat. Rome \"Lay Me Down\" Acoustic (High Quality)",
+          "url": "https://www.youtube.com/watch?v=ow60y4WHePQ",
+          "channel": "x1039phoenix",
+          "durationSeconds": 236.0,
+          "score": 0.765,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "VhXEyEYWxEI",
+          "title": "Lay Me Down by The Dirty Heads feat. Rome lyrics",
+          "url": "https://www.youtube.com/watch?v=VhXEyEYWxEI",
+          "channel": "TheElloLove",
+          "durationSeconds": 217.0,
+          "score": 0.759,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "IGYxiIspEBc",
+          "title": "Dirty Heads - Lay Me Down feat. Rome of Sublime w/ Rome",
+          "url": "https://www.youtube.com/watch?v=IGYxiIspEBc",
+          "channel": "Dirty Heads",
+          "durationSeconds": 214.0,
+          "score": 0.621,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "15paRhFOpfQ",
+          "title": "Dirty Heads - Lay Me Down (Official Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=15paRhFOpfQ",
+          "channel": "Better Noise Music",
+          "durationSeconds": 229.0,
+          "score": 0.586,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Yeasayer - Madder Red",
+      "query": "Yeasayer Madder Red",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "0-85bIZv-Do",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "0-85bIZv-Do",
+          "title": "Yeasayer - Madder Red (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=0-85bIZv-Do",
+          "channel": "Mute",
+          "durationSeconds": 244.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "4RUgG2cBIA4",
+          "title": "Yeasayer - Madder Red || Baeble Music",
+          "url": "https://www.youtube.com/watch?v=4RUgG2cBIA4",
+          "channel": "Baeblemusic",
+          "durationSeconds": 279.0,
+          "score": 0.909,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "QO1y1wJduCo",
+          "title": "Yeasayer - Madder Red (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=QO1y1wJduCo",
+          "channel": "YeasayerTV",
+          "durationSeconds": 258.0,
+          "score": 0.885,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "7ZRJb1E_NGg",
+          "title": "Yeasayer - \"Madder Red\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=7ZRJb1E_NGg",
+          "channel": "thealternateside907",
+          "durationSeconds": 229.0,
+          "score": 0.689,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "GadcJ2LIxP0",
+          "title": "Yeasayer - Madder Red | Live in Sydney | Moshcam",
+          "url": "https://www.youtube.com/watch?v=GadcJ2LIxP0",
+          "channel": "Moshcam",
+          "durationSeconds": 289.0,
+          "score": 0.636,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Ben Harper and The Innocent Criminals - Fight Outta You",
+      "query": "Ben Harper and The Innocent Criminals Fight Outta You",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "zOLiguB_ZyY",
+        "confidenceScore": 0.979,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "zOLiguB_ZyY",
+          "title": "Ben Harper and The Innocent Criminals - Fight Outta You",
+          "url": "https://www.youtube.com/watch?v=zOLiguB_ZyY",
+          "channel": "virginrecords",
+          "durationSeconds": 235.0,
+          "score": 0.979,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "l7CtrYVJrp4",
+          "title": "Ben Harper - Fight Outta You",
+          "url": "https://www.youtube.com/watch?v=l7CtrYVJrp4",
+          "channel": "Jason H",
+          "durationSeconds": 251.0,
+          "score": 0.409,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "_7PGKnNyH18",
+          "title": "Ben Harper - Fight Outta You",
+          "url": "https://www.youtube.com/watch?v=_7PGKnNyH18",
+          "channel": "vortexsuperfluid",
+          "durationSeconds": 219.0,
+          "score": 0.409,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Xwyfia46hhI",
+          "title": "Fight Outta You (AOL Interface)",
+          "url": "https://www.youtube.com/watch?v=Xwyfia46hhI",
+          "channel": "Ben Harper",
+          "durationSeconds": 210.0,
+          "score": 0.312,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "qWccN5D48ig",
+          "title": "Fight Outta You - 01 - Ben Harper & The Innoccent Criminals (Live @ Xm Studios)",
+          "url": "https://www.youtube.com/watch?v=qWccN5D48ig",
+          "channel": "diegocavicchini2710",
+          "durationSeconds": 248.0,
+          "score": 0.106,
+          "signals": [
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Animal Collective - My Girls",
+      "query": "Animal Collective My Girls",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "DRFlyfcbcFM",
+        "confidenceScore": 0.985,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "DRFlyfcbcFM",
+          "title": "Animal Collective - My Girls",
+          "url": "https://www.youtube.com/watch?v=DRFlyfcbcFM",
+          "channel": "Robin Marcinkus",
+          "durationSeconds": 342.0,
+          "score": 0.985,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "WJRoHTimZKI",
+          "title": "Animal Collective - My Girls (Coachella 2008)",
+          "url": "https://www.youtube.com/watch?v=WJRoHTimZKI",
+          "channel": "Jangaboo",
+          "durationSeconds": 376.0,
+          "score": 0.892,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "M1B3LhpfY6k",
+          "title": "Animal Collective - My Girls [w/ lyrics]",
+          "url": "https://www.youtube.com/watch?v=M1B3LhpfY6k",
+          "channel": "PigsFly5",
+          "durationSeconds": 341.0,
+          "score": 0.843,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "zol2MJf6XNE",
+          "title": "Animal Collective - My Girls (Official Video)",
+          "url": "https://www.youtube.com/watch?v=zol2MJf6XNE",
+          "channel": "Domino Recording Co.",
+          "durationSeconds": 346.0,
+          "score": 0.832,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "DzPhxYg0P-g",
+          "title": "Animal Collective \" my girls \"  Live at Midi Festival French Riviera 2007",
+          "url": "https://www.youtube.com/watch?v=DzPhxYg0P-g",
+          "channel": "MIDIfilm",
+          "durationSeconds": 374.0,
+          "score": 0.584,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for First",
+      "embedUrl": "https://www.youtube.com/embed/o6IUKa25e80?playlist=kO4wrWoS5QE,CF8k-OSNIjk,b6EDLIPDYbI,0-85bIZv-Do,zOLiguB_ZyY,DRFlyfcbcFM",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=o6IUKa25e80,kO4wrWoS5QE,CF8k-OSNIjk,b6EDLIPDYbI,0-85bIZv-Do,zOLiguB_ZyY,DRFlyfcbcFM",
+      "videoIds": [
+        "o6IUKa25e80",
+        "kO4wrWoS5QE",
+        "CF8k-OSNIjk",
+        "b6EDLIPDYbI",
+        "0-85bIZv-Do",
+        "zOLiguB_ZyY",
+        "DRFlyfcbcFM"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:28:31Z"
+    }
+  }
+}

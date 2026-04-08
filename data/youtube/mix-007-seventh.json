@@ -1,0 +1,655 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-007-seventh",
+  "updatedAt": "2026-04-08T21:26:52Z",
+  "sourceMixPath": "data/imported/mixes/mix-007-seventh.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Keep Shelly in Athens - Hauntin’ Me",
+      "query": "Keep Shelly in Athens Hauntin’ Me",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "M863CtL1XyQ",
+        "confidenceScore": 0.986,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "M863CtL1XyQ",
+          "title": "Keep Shelly In Athens : 'Hauntin' Me'",
+          "url": "https://www.youtube.com/watch?v=M863CtL1XyQ",
+          "channel": "Jamie Harley",
+          "durationSeconds": 247.0,
+          "score": 0.986,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "PQJ43e7X9Ic",
+          "title": "Keep Shelly in Athens - Hauntin' Me",
+          "url": "https://www.youtube.com/watch?v=PQJ43e7X9Ic",
+          "channel": "evitluvv",
+          "durationSeconds": 253.0,
+          "score": 0.986,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "QeeINyPJALU",
+          "title": "Keep Shelly In Athens - Hauntin' Me (Bonus Track)",
+          "url": "https://www.youtube.com/watch?v=QeeINyPJALU",
+          "channel": "Stoyan Kasarov",
+          "durationSeconds": 255.0,
+          "score": 0.919,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "kFJ9PTtqOiM",
+          "title": "Keep Shelly in Athens Hauntin' Me Music Video",
+          "url": "https://www.youtube.com/watch?v=kFJ9PTtqOiM",
+          "channel": "ezgreen1987",
+          "durationSeconds": 260.0,
+          "score": 0.819,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "uzozyxI6iNE",
+          "title": "Keep Shelly In Athens - Hauntin' me (The New Devision Remix)",
+          "url": "https://www.youtube.com/watch?v=uzozyxI6iNE",
+          "channel": "edenbridge89",
+          "durationSeconds": 353.0,
+          "score": 0.756,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Work Drugs - Third Wave",
+      "query": "Work Drugs Third Wave",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "uSrkiHgqkl8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "uSrkiHgqkl8",
+          "title": "Work Drugs - Third Wave",
+          "url": "https://www.youtube.com/watch?v=uSrkiHgqkl8",
+          "channel": "Work Drugs",
+          "durationSeconds": 221.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "zQlhI0no8G0",
+          "title": "Work Drugs - Third Wave (Cayman Islands Session)",
+          "url": "https://www.youtube.com/watch?v=zQlhI0no8G0",
+          "channel": "Work Drugs",
+          "durationSeconds": 201.0,
+          "score": 0.861,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "AEXvMOsRNS4",
+          "title": "Work Drugs, Third Wave, Live @ Kung Fu Necktie Philadelphia 042812",
+          "url": "https://www.youtube.com/watch?v=AEXvMOsRNS4",
+          "channel": "live philly concerts",
+          "durationSeconds": 241.0,
+          "score": 0.582,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "-Fk6PdyAuD4",
+          "title": "Third Wave",
+          "url": "https://www.youtube.com/watch?v=-Fk6PdyAuD4",
+          "channel": "Work Drugs",
+          "durationSeconds": 220.0,
+          "score": 0.534,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "8MJnqqTaW4E",
+          "title": "Third Wave (Summer Heart's Cover)",
+          "url": "https://www.youtube.com/watch?v=8MJnqqTaW4E",
+          "channel": "Work Drugs",
+          "durationSeconds": 269.0,
+          "score": 0.223,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-cover-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "John Vanderslice - Sea Salt",
+      "query": "John Vanderslice Sea Salt",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "geHsZjYGs3g",
+        "confidenceScore": 0.987,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "geHsZjYGs3g",
+          "title": "John Vanderslice - Sea Salt",
+          "url": "https://www.youtube.com/watch?v=geHsZjYGs3g",
+          "channel": "3434aaaa",
+          "durationSeconds": 261.0,
+          "score": 0.987,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "uSCj4i3tePw",
+          "title": "John Vanderslice \" Sea salt \" ( 2011)",
+          "url": "https://www.youtube.com/watch?v=uSCj4i3tePw",
+          "channel": "Je m'évade en musique",
+          "durationSeconds": 260.0,
+          "score": 0.949,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "fUiw9MUHMBI",
+          "title": "Sea Salt",
+          "url": "https://www.youtube.com/watch?v=fUiw9MUHMBI",
+          "channel": "John Vanderslice - Topic",
+          "durationSeconds": 260.0,
+          "score": 0.605,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "0vaWNvfr6uM",
+          "title": "John Vanderslice Sea Salt Live at Velour Music Provo Utah 4-26-2011",
+          "url": "https://www.youtube.com/watch?v=0vaWNvfr6uM",
+          "channel": "alectherins",
+          "durationSeconds": 252.0,
+          "score": 0.581,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "SjYS1RwqNwM",
+          "title": "Overcoat",
+          "url": "https://www.youtube.com/watch?v=SjYS1RwqNwM",
+          "channel": "John Vanderslice - Topic",
+          "durationSeconds": 199.0,
+          "score": 0.395,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Young Galaxy - We Have Everything",
+      "query": "Young Galaxy We Have Everything",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "4bD8lwY8gRs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "4bD8lwY8gRs",
+          "title": "YOUNG GALAXY - We Have Everything",
+          "url": "https://www.youtube.com/watch?v=4bD8lwY8gRs",
+          "channel": "Paper Bag Records",
+          "durationSeconds": 279.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "mxFhyiD-8_s",
+          "title": "Unknown Mortal Orchestra - Young Galaxy - We Have Everything",
+          "url": "https://www.youtube.com/watch?v=mxFhyiD-8_s",
+          "channel": "Vanilla Blue",
+          "durationSeconds": 262.0,
+          "score": 0.901,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "dvgWyQ0Xwd4",
+          "title": "YOUNG GALAXY 'We Have Everything' [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=dvgWyQ0Xwd4",
+          "channel": "Paper Bag Records",
+          "durationSeconds": 238.0,
+          "score": 0.883,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "NVe6TgCDbdQ",
+          "title": "YOUNG GALAXY - We have everything - live Full HD 1080p",
+          "url": "https://www.youtube.com/watch?v=NVe6TgCDbdQ",
+          "channel": "Michael Roy",
+          "durationSeconds": 271.0,
+          "score": 0.705,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "sfrQIIKqshw",
+          "title": "We Have Everything",
+          "url": "https://www.youtube.com/watch?v=sfrQIIKqshw",
+          "channel": "Young Galaxy - Topic",
+          "durationSeconds": 277.0,
+          "score": 0.68,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "The Luyas - Too Beautiful To Work",
+      "query": "The Luyas Too Beautiful To Work",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Osfv-ZF8iC0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Osfv-ZF8iC0",
+          "title": "The Luyas - Too Beautiful To Work",
+          "url": "https://www.youtube.com/watch?v=Osfv-ZF8iC0",
+          "channel": "Enaged",
+          "durationSeconds": 222.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "EcU7C9vSAwM",
+          "title": "104 - The Luyas - Too Beautiful To Work",
+          "url": "https://www.youtube.com/watch?v=EcU7C9vSAwM",
+          "channel": "birpdecember2010",
+          "durationSeconds": 222.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3PfxoCyH59g",
+          "title": "The Luyas - \"Too Beautiful to Work\" (Official Video)",
+          "url": "https://www.youtube.com/watch?v=3PfxoCyH59g",
+          "channel": "Dead Oceans",
+          "durationSeconds": 222.0,
+          "score": 0.894,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "XjzMASOEHaY",
+          "title": "The Luyas - Too Beautiful to Work - Live in the Lobby",
+          "url": "https://www.youtube.com/watch?v=XjzMASOEHaY",
+          "channel": "Michelberger Hotel",
+          "durationSeconds": 234.0,
+          "score": 0.72,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "p_6bkyxH274",
+          "title": "The Luyas - \"Too Beautiful To Work\" (Live at WFUV/The Alternate Side)",
+          "url": "https://www.youtube.com/watch?v=p_6bkyxH274",
+          "channel": "thealternateside907",
+          "durationSeconds": 220.0,
+          "score": 0.668,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Fleet Foxes - Helplessness Blues",
+      "query": "Fleet Foxes Helplessness Blues",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "7HHgedNNQco",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "7HHgedNNQco",
+          "title": "Fleet Foxes -  Helplessness Blues",
+          "url": "https://www.youtube.com/watch?v=7HHgedNNQco",
+          "channel": "Sub Pop",
+          "durationSeconds": 304.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "TYODuV8GcJA",
+          "title": "Fleet Foxes - \"Helplessness Blues\" (Solstice Version)",
+          "url": "https://www.youtube.com/watch?v=TYODuV8GcJA",
+          "channel": "Fleet Foxes",
+          "durationSeconds": 304.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "NwfQDYKd4gE",
+          "title": "Fleet Foxes -Helplessness Blues ( Full Album)",
+          "url": "https://www.youtube.com/watch?v=NwfQDYKd4gE",
+          "channel": "Mr. Foxx Frequency",
+          "durationSeconds": 2999.0,
+          "score": 0.963,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Nhn1NNPXRBM",
+          "title": "Fleet Foxes - Helplessness Blues [Live on Boston Harbor]",
+          "url": "https://www.youtube.com/watch?v=Nhn1NNPXRBM",
+          "channel": "Jerrold Lamar",
+          "durationSeconds": 394.0,
+          "score": 0.692,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "npZeVT4Puy4",
+          "title": "Fleet Foxes - Helplessness Blues live in Austin City Limits |HD|",
+          "url": "https://www.youtube.com/watch?v=npZeVT4Puy4",
+          "channel": "Pietro Porretto",
+          "durationSeconds": 312.0,
+          "score": 0.663,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Holy Fuck - Latin America",
+      "query": "Holy Fuck Latin America",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "0I0VqslEDCQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "0I0VqslEDCQ",
+          "title": "Holy Fuck - Latin America",
+          "url": "https://www.youtube.com/watch?v=0I0VqslEDCQ",
+          "channel": "iggy majstorinho",
+          "durationSeconds": 290.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "vCifrdkgQRA",
+          "title": "Holy Fuck - Latin America",
+          "url": "https://www.youtube.com/watch?v=vCifrdkgQRA",
+          "channel": "Ermahgerd",
+          "durationSeconds": 360.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "AuXZkf1ZvSU",
+          "title": "Holy Fuck - \"Latin America\" | Music 2010 | SXSW",
+          "url": "https://www.youtube.com/watch?v=AuXZkf1ZvSU",
+          "channel": "SXSW",
+          "durationSeconds": 311.0,
+          "score": 0.913,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "fd5gVwbRlvk",
+          "title": "Holy Fuck - \"Latin America\" (Official Video)",
+          "url": "https://www.youtube.com/watch?v=fd5gVwbRlvk",
+          "channel": "Young",
+          "durationSeconds": 290.0,
+          "score": 0.858,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "6Mt5FcUK-bI",
+          "title": "Holy Fuck - Latin America (Live @ KEXP Music Lounge)",
+          "url": "https://www.youtube.com/watch?v=6Mt5FcUK-bI",
+          "channel": "KEXP",
+          "durationSeconds": 360.0,
+          "score": 0.659,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Seventh",
+      "embedUrl": "https://www.youtube.com/embed/M863CtL1XyQ?playlist=uSrkiHgqkl8,geHsZjYGs3g,4bD8lwY8gRs,Osfv-ZF8iC0,7HHgedNNQco,0I0VqslEDCQ",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=M863CtL1XyQ,uSrkiHgqkl8,geHsZjYGs3g,4bD8lwY8gRs,Osfv-ZF8iC0,7HHgedNNQco,0I0VqslEDCQ",
+      "videoIds": [
+        "M863CtL1XyQ",
+        "uSrkiHgqkl8",
+        "geHsZjYGs3g",
+        "4bD8lwY8gRs",
+        "Osfv-ZF8iC0",
+        "7HHgedNNQco",
+        "0I0VqslEDCQ"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:26:52Z"
+    }
+  }
+}

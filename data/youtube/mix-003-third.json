@@ -1,0 +1,599 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-003-third",
+  "updatedAt": "2026-04-08T21:27:58Z",
+  "sourceMixPath": "data/imported/mixes/mix-003-third.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Mickey Mickey Rourke - Gloomy Guts (Feat. Craft Spells)",
+      "query": "Mickey Mickey Rourke Gloomy Guts (Feat. Craft Spells)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "om6H1OfS6Go",
+        "confidenceScore": 0.68,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "om6H1OfS6Go",
+          "title": "Gloomy Guts (feat. Craft Spells)",
+          "url": "https://www.youtube.com/watch?v=om6H1OfS6Go",
+          "channel": "Mickey Mickey Rourke - Topic",
+          "durationSeconds": 259.0,
+          "score": 0.68,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Qn0OGUPCJbI",
+          "title": "Stay With Me (feat. Universe)",
+          "url": "https://www.youtube.com/watch?v=Qn0OGUPCJbI",
+          "channel": "Mickey Mickey Rourke - Topic",
+          "durationSeconds": 260.0,
+          "score": 0.381,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "yafdaIoJqKc",
+          "title": "Doozie",
+          "url": "https://www.youtube.com/watch?v=yafdaIoJqKc",
+          "channel": "Mickey Mickey Rourke - Topic",
+          "durationSeconds": 197.0,
+          "score": 0.263,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "The Thrills - Midnight Choir",
+      "query": "The Thrills Midnight Choir",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "rzF0NgUAnjY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "rzF0NgUAnjY",
+          "title": "The Thrills - Midnight Choir",
+          "url": "https://www.youtube.com/watch?v=rzF0NgUAnjY",
+          "channel": "miademant",
+          "durationSeconds": 265.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "4Tyk6O_9hRM",
+          "title": "The Thrills - The Midnight Choir",
+          "url": "https://www.youtube.com/watch?v=4Tyk6O_9hRM",
+          "channel": "TheThrillsVEVO",
+          "durationSeconds": 226.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "OGIz5R_df_s",
+          "title": "The Thrills - The Midnight Choir",
+          "url": "https://www.youtube.com/watch?v=OGIz5R_df_s",
+          "channel": "Jon Hunt Playlists",
+          "durationSeconds": 219.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "YWbcSsJQ47A",
+          "title": "The Midnight Choir - The Thrills",
+          "url": "https://www.youtube.com/watch?v=YWbcSsJQ47A",
+          "channel": "Mattie",
+          "durationSeconds": 215.0,
+          "score": 0.907,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "LccMS23y4Po",
+          "title": "The Thrills - Midnight Choir live at the Scala",
+          "url": "https://www.youtube.com/watch?v=LccMS23y4Po",
+          "channel": "thethrills1",
+          "durationSeconds": 242.0,
+          "score": 0.69,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Tapes ‘n Tapes - Omaha",
+      "query": "Tapes ‘n Tapes Omaha",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "7MU1JamNh4I",
+        "confidenceScore": 0.975,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "7MU1JamNh4I",
+          "title": "Tapes 'n Tapes - Omaha",
+          "url": "https://www.youtube.com/watch?v=7MU1JamNh4I",
+          "channel": "David Dean Burkhart",
+          "durationSeconds": 212.0,
+          "score": 0.975,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "LH2Eom7KwXg",
+          "title": "Tapes n Tapes - Omaha",
+          "url": "https://www.youtube.com/watch?v=LH2Eom7KwXg",
+          "channel": "liana233",
+          "durationSeconds": 213.0,
+          "score": 0.975,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "t1rDP2tymiQ",
+          "title": "Omaha - Tapes 'n Tapes",
+          "url": "https://www.youtube.com/watch?v=t1rDP2tymiQ",
+          "channel": "dontdodivas",
+          "durationSeconds": 215.0,
+          "score": 0.88,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "21IGnzQCjWY",
+          "title": "Tapes 'n Tapes - Omaha @ The Waiting Room 2/24/11",
+          "url": "https://www.youtube.com/watch?v=21IGnzQCjWY",
+          "channel": "imhomaha",
+          "durationSeconds": 211.0,
+          "score": 0.818,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "9vzrYmWTo20",
+          "title": "Omaha",
+          "url": "https://www.youtube.com/watch?v=9vzrYmWTo20",
+          "channel": "TAPESNTAPES",
+          "durationSeconds": 214.0,
+          "score": 0.385,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "The Ordinary Boys - Lonely at the Top",
+      "query": "The Ordinary Boys Lonely at the Top",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "up_xiOO30lo",
+        "confidenceScore": 0.966,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "up_xiOO30lo",
+          "title": "The Ordinary Boys Popworld Lonely At The Top",
+          "url": "https://www.youtube.com/watch?v=up_xiOO30lo",
+          "channel": "TheOrdinaryArmy",
+          "durationSeconds": 188.0,
+          "score": 0.966,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "kwJh5lMkKuY",
+          "title": "The Ordinary Boys -Freshly Squeezed- Lonely At The Top",
+          "url": "https://www.youtube.com/watch?v=kwJh5lMkKuY",
+          "channel": "TheOrdinaryArmy",
+          "durationSeconds": 196.0,
+          "score": 0.93,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3TJRGVHwzPY",
+          "title": "Ordinary Boys 'Lonely at The Top'",
+          "url": "https://www.youtube.com/watch?v=3TJRGVHwzPY",
+          "channel": "Andy Hylton",
+          "durationSeconds": 194.0,
+          "score": 0.909,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "MkoRHHa5Fuw",
+          "title": "[Lyrics] Lonely At The Top - The Ordinary Boys",
+          "url": "https://www.youtube.com/watch?v=MkoRHHa5Fuw",
+          "channel": "WolfieKidofDOOOOOM",
+          "durationSeconds": 197.0,
+          "score": 0.787,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "9wyCZcVndFc",
+          "title": "Lonely at the Top",
+          "url": "https://www.youtube.com/watch?v=9wyCZcVndFc",
+          "channel": "The Ordinary Boys - Topic",
+          "durationSeconds": 191.0,
+          "score": 0.656,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Noah And The Whale - 5 Years Time",
+      "query": "Noah And The Whale 5 Years Time",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "HfUQl42OUnw",
+        "confidenceScore": 0.876,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "HfUQl42OUnw",
+          "title": "Noah And The Whale - 5 Years Time (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=HfUQl42OUnw",
+          "channel": "Summer Melody",
+          "durationSeconds": 216.0,
+          "score": 0.876,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Uc3ENzHv1aY",
+          "title": "Noah And The Whale 5 Years Time (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=Uc3ENzHv1aY",
+          "channel": "BabybabyTL",
+          "durationSeconds": 220.0,
+          "score": 0.832,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "S8CXn5UNWI0",
+          "title": "Mr. Terrific Full Fight Scene | Superman 2025 (5 Years Time - Noah and The Whale)",
+          "url": "https://www.youtube.com/watch?v=S8CXn5UNWI0",
+          "channel": "DapeFury",
+          "durationSeconds": 128.0,
+          "score": 0.753,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "DkaIQSMnV-4",
+          "title": "5 Years Time",
+          "url": "https://www.youtube.com/watch?v=DkaIQSMnV-4",
+          "channel": "Noah And The Whale - Topic",
+          "durationSeconds": 215.0,
+          "score": 0.627,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "qxrk1XWqfu4",
+          "title": "5 Years Time",
+          "url": "https://www.youtube.com/watch?v=qxrk1XWqfu4",
+          "channel": "Noah And The Whale - Topic",
+          "durationSeconds": 215.0,
+          "score": 0.627,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Kleerup - Until We Bleed (Feat. Lykke Li)",
+      "query": "Kleerup Until We Bleed (Feat. Lykke Li)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "7vDv20fxhck",
+        "confidenceScore": 0.896,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "7vDv20fxhck",
+          "title": "Kleerup - Until We Bleed (with Lykke Li)",
+          "url": "https://www.youtube.com/watch?v=7vDv20fxhck",
+          "channel": "Kleerup",
+          "durationSeconds": 264.0,
+          "score": 0.896,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "u9Me-2jsq5A",
+          "title": "Kleerup ft. Lykke Li-Until We Bleed",
+          "url": "https://www.youtube.com/watch?v=u9Me-2jsq5A",
+          "channel": "atmosfearic1",
+          "durationSeconds": 265.0,
+          "score": 0.67,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "kYZjsVO1YFk",
+          "title": "Kleerup with Lykke Li - Until we bleed (HQ)",
+          "url": "https://www.youtube.com/watch?v=kYZjsVO1YFk",
+          "channel": "maciasmusic",
+          "durationSeconds": 265.0,
+          "score": 0.665,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "0LETadzDGOs",
+          "title": "Lykke Li - Until We Bleed",
+          "url": "https://www.youtube.com/watch?v=0LETadzDGOs",
+          "channel": "Tetyana Feshak",
+          "durationSeconds": 265.0,
+          "score": 0.272,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "3T8fEUyqmy8",
+          "title": "Lykke Li - Until We Bleed (Original version) Lyrics (HD)",
+          "url": "https://www.youtube.com/watch?v=3T8fEUyqmy8",
+          "channel": "Emilie",
+          "durationSeconds": 266.0,
+          "score": 0.173,
+          "signals": [
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Labyrinth Ear - White Gold",
+      "query": "Labyrinth Ear White Gold",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "JccviQamCNc",
+        "confidenceScore": 0.937,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "JccviQamCNc",
+          "title": "Labyrinth Ear - White Gold [video]",
+          "url": "https://www.youtube.com/watch?v=JccviQamCNc",
+          "channel": "Labyrinth Ear",
+          "durationSeconds": 233.0,
+          "score": 0.937,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Qt6chtwvdgU",
+          "title": "White Gold // Labyrinth Ear",
+          "url": "https://www.youtube.com/watch?v=Qt6chtwvdgU",
+          "channel": "Le Pouffon",
+          "durationSeconds": 233.0,
+          "score": 0.868,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "wpq3XEU8dss",
+          "title": "Labyrinth Ear - White Gold (Live @ The Waiting Room, London, 27.09.12)",
+          "url": "https://www.youtube.com/watch?v=wpq3XEU8dss",
+          "channel": "Andunemir",
+          "durationSeconds": 229.0,
+          "score": 0.597,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "pBwrdHOu6vQ",
+          "title": "Labyrinth Ear - Snow White",
+          "url": "https://www.youtube.com/watch?v=pBwrdHOu6vQ",
+          "channel": "Labyrinth Ear",
+          "durationSeconds": 205.0,
+          "score": 0.47,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "6FpAHhKCeWg",
+          "title": "Navy Light",
+          "url": "https://www.youtube.com/watch?v=6FpAHhKCeWg",
+          "channel": "Labyrinth Ear",
+          "durationSeconds": 188.0,
+          "score": 0.169,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Third",
+      "embedUrl": "https://www.youtube.com/embed/om6H1OfS6Go?playlist=rzF0NgUAnjY,7MU1JamNh4I,up_xiOO30lo,HfUQl42OUnw,7vDv20fxhck,JccviQamCNc",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=om6H1OfS6Go,rzF0NgUAnjY,7MU1JamNh4I,up_xiOO30lo,HfUQl42OUnw,7vDv20fxhck,JccviQamCNc",
+      "videoIds": [
+        "om6H1OfS6Go",
+        "rzF0NgUAnjY",
+        "7MU1JamNh4I",
+        "up_xiOO30lo",
+        "HfUQl42OUnw",
+        "7vDv20fxhck",
+        "JccviQamCNc"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:27:58Z"
+    }
+  }
+}

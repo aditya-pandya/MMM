@@ -1,0 +1,644 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-026-twentysixth",
+  "updatedAt": "2026-04-08T21:23:05Z",
+  "sourceMixPath": "data/imported/mixes/mix-026-twentysixth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Owl Eyes - Raiders",
+      "query": "Owl Eyes Raiders",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "u8H7sZdiAy8",
+        "confidenceScore": 0.86,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "u8H7sZdiAy8",
+          "title": "Raiders - Owl Eyes",
+          "url": "https://www.youtube.com/watch?v=u8H7sZdiAy8",
+          "channel": "SWshooter",
+          "durationSeconds": 208.0,
+          "score": 0.86,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ZPAnyCCKy4Y",
+          "title": "RAIDERS - Owl Eyes [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=ZPAnyCCKy4Y",
+          "channel": "Owl Eyes",
+          "durationSeconds": 217.0,
+          "score": 0.852,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "tceedhaE8F4",
+          "title": "Owl Eyes Raiders with Lyrics",
+          "url": "https://www.youtube.com/watch?v=tceedhaE8F4",
+          "channel": "LiLSn0RlaX",
+          "durationSeconds": 203.0,
+          "score": 0.81,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "qXWm4ucHCu4",
+          "title": "Owl Eyes - Raiders LIVE AT TRIPLE J",
+          "url": "https://www.youtube.com/watch?v=qXWm4ucHCu4",
+          "channel": "heidibettyt",
+          "durationSeconds": 263.0,
+          "score": 0.639,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "qM0zTUaGJe8",
+          "title": "ivri - owls eye",
+          "url": "https://www.youtube.com/watch?v=qM0zTUaGJe8",
+          "channel": "ivri",
+          "durationSeconds": 151.0,
+          "score": 0.199,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Wu Lyf - Dirt",
+      "query": "Wu Lyf Dirt",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "jnmaNUMan9E",
+        "confidenceScore": 0.996,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "jnmaNUMan9E",
+          "title": "WU LYF - \"Dirt\"",
+          "url": "https://www.youtube.com/watch?v=jnmaNUMan9E",
+          "channel": "musicchannelcom",
+          "durationSeconds": 203.0,
+          "score": 0.996,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "uEcuL9JwA_g",
+          "title": "WU LYF - \"Dirt\" (Official Video)  (HD)",
+          "url": "https://www.youtube.com/watch?v=uEcuL9JwA_g",
+          "channel": "DiverLP",
+          "durationSeconds": 203.0,
+          "score": 0.749,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ZOujP6ujHMY",
+          "title": "Wu Lyf, \"Dirt\" Live at the Knitting Factory",
+          "url": "https://www.youtube.com/watch?v=ZOujP6ujHMY",
+          "channel": "The FADER",
+          "durationSeconds": 183.0,
+          "score": 0.542,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "L5R5yIm0D0I",
+          "title": "WU LYF - Dirt (Live at the Horseshoe Tavern 12.11.11)",
+          "url": "https://www.youtube.com/watch?v=L5R5yIm0D0I",
+          "channel": "chriseclectic",
+          "durationSeconds": 189.0,
+          "score": 0.517,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "PQJ5td5qphU",
+          "title": "WU LYF - Concrete Gold",
+          "url": "https://www.youtube.com/watch?v=PQJ5td5qphU",
+          "channel": "CapitanRomance",
+          "durationSeconds": 336.0,
+          "score": 0.27,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Gorillaz - Do Ya Thing (feat. Andre 3000 and James Murphy)",
+      "query": "Gorillaz Do Ya Thing (feat. Andre 3000 and James Murphy)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9l9gHOUofJE",
+        "confidenceScore": 0.738,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9l9gHOUofJE",
+          "title": "Gorillaz feat. Andre 3000 & James Murphy - Do Ya Thing",
+          "url": "https://www.youtube.com/watch?v=9l9gHOUofJE",
+          "channel": "Alsacowa",
+          "durationSeconds": 266.0,
+          "score": 0.738,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Nf_PmmlCiso",
+          "title": "DO YA THING (OFFICIAL VIDEO) GORILLAZ - FT. ANDRE 3000, JAMES MURPHY",
+          "url": "https://www.youtube.com/watch?v=Nf_PmmlCiso",
+          "channel": "Renato Moinhos",
+          "durationSeconds": 310.0,
+          "score": 0.685,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "36DCuT1KxM4",
+          "title": "Gorillaz - Do Ya Thing (Full 13 Minutes Explicit Version) Feat. James Murphy & Andre 3000",
+          "url": "https://www.youtube.com/watch?v=36DCuT1KxM4",
+          "channel": "bcdaeiou",
+          "durationSeconds": 787.0,
+          "score": 0.652,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "IzTWZhScSxE",
+          "title": "Gorillaz - DoYaThing (Full-Length)",
+          "url": "https://www.youtube.com/watch?v=IzTWZhScSxE",
+          "channel": "Gorillaz Archive",
+          "durationSeconds": 786.0,
+          "score": 0.414,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "w6-ZKr9WhU0",
+          "title": "Gorillaz - Do Ya Thing [SHORT EXPLICIT VERSION]",
+          "url": "https://www.youtube.com/watch?v=w6-ZKr9WhU0",
+          "channel": "ButtonFactories",
+          "durationSeconds": 266.0,
+          "score": 0.312,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Loon Lake - Bad To Me",
+      "query": "Loon Lake Bad To Me",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "jL0jJQPOUmc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "jL0jJQPOUmc",
+          "title": "Loon Lake - Bad To Me",
+          "url": "https://www.youtube.com/watch?v=jL0jJQPOUmc",
+          "channel": "emsdaze",
+          "durationSeconds": 207.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "sVOWp4rYOqo",
+          "title": "Loon Lake - Bad To Me. (Official Clip)",
+          "url": "https://www.youtube.com/watch?v=sVOWp4rYOqo",
+          "channel": "weareloonlake",
+          "durationSeconds": 207.0,
+          "score": 0.936,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "TJbHa53OXlM",
+          "title": "Bad To Me",
+          "url": "https://www.youtube.com/watch?v=TJbHa53OXlM",
+          "channel": "Loon Lake - Topic",
+          "durationSeconds": 204.0,
+          "score": 0.653,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "MPUmfCfIvGQ",
+          "title": "Bad To Me",
+          "url": "https://www.youtube.com/watch?v=MPUmfCfIvGQ",
+          "channel": "Loon Lake - Topic",
+          "durationSeconds": 204.0,
+          "score": 0.653,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Foz1Q98Ep-4",
+          "title": "Loon Lake - 'Cherry Lips' (live for Like A Version)",
+          "url": "https://www.youtube.com/watch?v=Foz1Q98Ep-4",
+          "channel": "triple j",
+          "durationSeconds": 269.0,
+          "score": 0.035,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "The Antlers - Putting The Dog To Sleep",
+      "query": "The Antlers Putting The Dog To Sleep",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "vEwNiX0KWhc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "vEwNiX0KWhc",
+          "title": "The Antlers - Putting The Dog To Sleep",
+          "url": "https://www.youtube.com/watch?v=vEwNiX0KWhc",
+          "channel": "Transgressive",
+          "durationSeconds": 350.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "AOnkcgCr0tc",
+          "title": "The Antlers - Putting The Dog To Sleep (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=AOnkcgCr0tc",
+          "channel": "FKR.TV",
+          "durationSeconds": 349.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Xg8Ckamh8Gw",
+          "title": "The Antlers - Putting the Dog to Sleep (w/ lyrics)",
+          "url": "https://www.youtube.com/watch?v=Xg8Ckamh8Gw",
+          "channel": "ctspectator",
+          "durationSeconds": 348.0,
+          "score": 0.912,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "RdcuvsEsCxo",
+          "title": "The Antlers - Putting the Dog To Sleep (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=RdcuvsEsCxo",
+          "channel": "KEXP",
+          "durationSeconds": 506.0,
+          "score": 0.752,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "IlP4_zXjlZk",
+          "title": "The Antlers \"Putting The Dog To Sleep\" Live on Soundcheck",
+          "url": "https://www.youtube.com/watch?v=IlP4_zXjlZk",
+          "channel": "WNYC",
+          "durationSeconds": 400.0,
+          "score": 0.727,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "The Mountain Goats - High Hawk Season",
+      "query": "The Mountain Goats High Hawk Season",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "AMj6tCQ1MNc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "AMj6tCQ1MNc",
+          "title": "The Mountain Goats - High Hawk Season",
+          "url": "https://www.youtube.com/watch?v=AMj6tCQ1MNc",
+          "channel": "mikeford",
+          "durationSeconds": 177.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "dQVLc9Qybj0",
+          "title": "The Mountain Goats - High Hawk Season",
+          "url": "https://www.youtube.com/watch?v=dQVLc9Qybj0",
+          "channel": "maxwellsrevenge",
+          "durationSeconds": 218.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "1SMM04BFmYA",
+          "title": "High Hawk Season - The Mountain Goats",
+          "url": "https://www.youtube.com/watch?v=1SMM04BFmYA",
+          "channel": "Watching Wyverns",
+          "durationSeconds": 178.0,
+          "score": 0.867,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "lZWm86XguGM",
+          "title": "The Mountain Goats - High Hawk Season (Live)",
+          "url": "https://www.youtube.com/watch?v=lZWm86XguGM",
+          "channel": "willneu97",
+          "durationSeconds": 189.0,
+          "score": 0.763,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "5ZaBCHNp2dA",
+          "title": "High Hawk Season",
+          "url": "https://www.youtube.com/watch?v=5ZaBCHNp2dA",
+          "channel": "the Mountain Goats",
+          "durationSeconds": 177.0,
+          "score": 0.528,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Beach House - Myth",
+      "query": "Beach House Myth",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "NyQ9p5S9jBk",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "NyQ9p5S9jBk",
+          "title": "Myth - Beach House (OFFICIAL AUDIO)",
+          "url": "https://www.youtube.com/watch?v=NyQ9p5S9jBk",
+          "channel": "BeachHouseVideoZone",
+          "durationSeconds": 259.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Bv7IcjmxjGo",
+          "title": "Beach House - Myth",
+          "url": "https://www.youtube.com/watch?v=Bv7IcjmxjGo",
+          "channel": "Sub Pop",
+          "durationSeconds": 260.0,
+          "score": 0.972,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "cfBmizHxJec",
+          "title": "Beach House - Myth",
+          "url": "https://www.youtube.com/watch?v=cfBmizHxJec",
+          "channel": "Cosmic Radiation",
+          "durationSeconds": 260.0,
+          "score": 0.972,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "FuvWc3ToDHg",
+          "title": "BEACH HOUSE  - \"MYTH\" (OFFICIAL TRACK)",
+          "url": "https://www.youtube.com/watch?v=FuvWc3ToDHg",
+          "channel": "BeachHouseVideoZone",
+          "durationSeconds": 254.0,
+          "score": 0.885,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "43UhokH9bYg",
+          "title": "Beach House - Myth (Live on Letterman 2012)",
+          "url": "https://www.youtube.com/watch?v=43UhokH9bYg",
+          "channel": "Rootle66",
+          "durationSeconds": 285.0,
+          "score": 0.588,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twentysixth",
+      "embedUrl": "https://www.youtube.com/embed/u8H7sZdiAy8?playlist=jnmaNUMan9E,9l9gHOUofJE,jL0jJQPOUmc,vEwNiX0KWhc,AMj6tCQ1MNc,NyQ9p5S9jBk",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=u8H7sZdiAy8,jnmaNUMan9E,9l9gHOUofJE,jL0jJQPOUmc,vEwNiX0KWhc,AMj6tCQ1MNc,NyQ9p5S9jBk",
+      "videoIds": [
+        "u8H7sZdiAy8",
+        "jnmaNUMan9E",
+        "9l9gHOUofJE",
+        "jL0jJQPOUmc",
+        "vEwNiX0KWhc",
+        "AMj6tCQ1MNc",
+        "NyQ9p5S9jBk"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:23:05Z"
+    }
+  }
+}

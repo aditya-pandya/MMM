@@ -2,7 +2,7 @@
   "$schema": "../../schemas/youtube-match.schema.json",
   "schemaVersion": "1.0",
   "mixSlug": "mix-034-thirtyfourth",
-  "updatedAt": "2026-04-06T05:28:15Z",
+  "updatedAt": "2026-04-08T21:20:46Z",
   "sourceMixPath": "data/published/mix-034-thirtyfourth.json",
   "tracks": [
     {
@@ -10,11 +10,11 @@
       "displayText": "Ha Ha Tonka - Colorful Kids",
       "query": "Ha Ha Tonka Colorful Kids",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "Uq1-DPL7wpg",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -34,21 +34,6 @@
         },
         {
           "rank": 2,
-          "videoId": "Yw7nOEND310",
-          "title": "Ha Ha Tonka: \"Colorful Kids\"",
-          "url": "https://www.youtube.com/watch?v=Yw7nOEND310",
-          "channel": "Michael Boothillier",
-          "durationSeconds": 253.0,
-          "score": 0.999,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "display-text-near-exact-match",
-            "artist-name-in-title",
-            "song-title-in-title"
-          ]
-        },
-        {
-          "rank": 3,
           "videoId": "4ozqSV8Etp4",
           "title": "a SOUNDSCAPEset with HA HA TONKA - \"Colorful Kids\" (feat. SAMANTHA CRAIN)",
           "url": "https://www.youtube.com/watch?v=4ozqSV8Etp4",
@@ -62,13 +47,27 @@
           ]
         },
         {
+          "rank": 3,
+          "videoId": "fRHSn--Ranw",
+          "title": "COLORFUL KIDS Ha Ha Tonka 10-19-13 YMSB Havest Music Festival, Arkansas USA",
+          "url": "https://www.youtube.com/watch?v=fRHSn--Ranw",
+          "channel": "colbruce",
+          "durationSeconds": 268.0,
+          "score": 0.733,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
           "rank": 4,
           "videoId": "e0BJ9cbJMpw",
           "title": "Ha Ha Tonka \"Colorful Kids\" Live at KDHX 11/29/13",
           "url": "https://www.youtube.com/watch?v=e0BJ9cbJMpw",
           "channel": "KDHX",
           "durationSeconds": 258.0,
-          "score": 0.706,
+          "score": 0.666,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -83,7 +82,7 @@
           "url": "https://www.youtube.com/watch?v=64oDfMUxklo",
           "channel": "Ha Ha Tonka - Topic",
           "durationSeconds": 250.0,
-          "score": 0.605,
+          "score": 0.665,
           "signals": [
             "song-title-near-exact-match",
             "song-title-in-title",
@@ -98,27 +97,29 @@
       "displayText": "Bear Mountain - Congo",
       "query": "Bear Mountain Congo",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
-        "confidenceScore": 0.981,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "status": "auto-resolved",
+        "selectedVideoId": "QTARucjZXHQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
           "rank": 1,
-          "videoId": "nnX5QsnphdI",
-          "title": "Bear Mountain - Congo (Official Video)",
-          "url": "https://www.youtube.com/watch?v=nnX5QsnphdI",
+          "videoId": "QTARucjZXHQ",
+          "title": "Bear Mountain - Congo [Official Audio] - XO",
+          "url": "https://www.youtube.com/watch?v=QTARucjZXHQ",
           "channel": "Bear Mountain",
-          "durationSeconds": 281.0,
-          "score": 0.981,
+          "durationSeconds": 199.0,
+          "score": 0.999,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
             "artist-name-in-channel",
-            "official-upload"
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
           ]
         },
         {
@@ -138,18 +139,19 @@
         },
         {
           "rank": 3,
-          "videoId": "QTARucjZXHQ",
-          "title": "Bear Mountain - Congo [Official Audio] - XO",
-          "url": "https://www.youtube.com/watch?v=QTARucjZXHQ",
+          "videoId": "nnX5QsnphdI",
+          "title": "Bear Mountain - Congo (Official Video)",
+          "url": "https://www.youtube.com/watch?v=nnX5QsnphdI",
           "channel": "Bear Mountain",
-          "durationSeconds": 199.0,
-          "score": 0.966,
+          "durationSeconds": 281.0,
+          "score": 0.881,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
             "artist-name-in-channel",
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
         },
         {
@@ -159,7 +161,7 @@
           "url": "https://www.youtube.com/watch?v=70AJRMpiWe8",
           "channel": "JBTV Music Television",
           "durationSeconds": 241.0,
-          "score": 0.71,
+          "score": 0.67,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -169,16 +171,17 @@
         },
         {
           "rank": 5,
-          "videoId": "XxlMKPm1F8A",
-          "title": "Congo (Extended Mix)",
-          "url": "https://www.youtube.com/watch?v=XxlMKPm1F8A",
-          "channel": "Bear Mountain - Topic",
-          "durationSeconds": 292.0,
-          "score": 0.379,
+          "videoId": "dtaozv3vGvA",
+          "title": "Bear Mountain, \"Congo\" Live at the FADER FORT Presented by Converse",
+          "url": "https://www.youtube.com/watch?v=dtaozv3vGvA",
+          "channel": "The FADER",
+          "durationSeconds": 209.0,
+          "score": 0.543,
           "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
             "song-title-in-title",
-            "artist-name-in-channel",
-            "topic-channel"
+            "live-version-penalty"
           ]
         }
       ]
@@ -188,11 +191,11 @@
       "displayText": "Join the Riot - Queen Marmalade",
       "query": "Join the Riot Queen Marmalade",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "2_rCnlCPk04",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -231,12 +234,13 @@
           "url": "https://www.youtube.com/watch?v=d8w3CkU22LQ",
           "channel": "jointheriotvideo",
           "durationSeconds": 186.0,
-          "score": 0.943,
+          "score": 0.843,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
         },
         {
@@ -246,7 +250,7 @@
           "url": "https://www.youtube.com/watch?v=j_uc-vHiRlo",
           "channel": "Emil Heró",
           "durationSeconds": 232.0,
-          "score": 0.85,
+          "score": 0.81,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -256,15 +260,16 @@
         },
         {
           "rank": 5,
-          "videoId": "ROxtBukRI58",
-          "title": "Join The Riot - Reunion [Official Music Video]",
-          "url": "https://www.youtube.com/watch?v=ROxtBukRI58",
+          "videoId": "XnOX_H2262Y",
+          "title": "Join The Riot - Ménage à trois [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=XnOX_H2262Y",
           "channel": "jointheriotvideo",
-          "durationSeconds": 255.0,
-          "score": 0.362,
+          "durationSeconds": 243.0,
+          "score": 0.242,
           "signals": [
             "artist-name-in-title",
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
         }
       ]
@@ -274,11 +279,11 @@
       "displayText": "Haim - The Wire",
       "query": "Haim The Wire",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "1TffpkE2GU4",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -299,33 +304,36 @@
         },
         {
           "rank": 2,
-          "videoId": "7_B2tK0IEHY",
-          "title": "HAIM - The Wire (acoustic)",
-          "url": "https://www.youtube.com/watch?v=7_B2tK0IEHY",
-          "channel": "HAIM videos",
-          "durationSeconds": 220.0,
-          "score": 0.999,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
-            "song-title-in-title",
-            "artist-name-in-channel"
-          ]
-        },
-        {
-          "rank": 3,
           "videoId": "1Vh0iP5BziQ",
           "title": "HAIM - The Wire (Official Audio)",
           "url": "https://www.youtube.com/watch?v=1Vh0iP5BziQ",
           "channel": "HAIM",
           "durationSeconds": 246.0,
-          "score": 0.99,
+          "score": 0.999,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
             "artist-name-in-channel",
-            "official-upload"
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "7_B2tK0IEHY",
+          "title": "HAIM - The Wire (acoustic)",
+          "url": "https://www.youtube.com/watch?v=7_B2tK0IEHY",
+          "channel": "HAIM videos",
+          "durationSeconds": 220.0,
+          "score": 0.919,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-acoustic-penalty"
           ]
         },
         {
@@ -349,7 +357,7 @@
           "url": "https://www.youtube.com/watch?v=AtADweFd5AE",
           "channel": "HAIM",
           "durationSeconds": 258.0,
-          "score": 0.682,
+          "score": 0.642,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -365,11 +373,11 @@
       "displayText": "Dum Dum Girls - Mine Tonight",
       "query": "Dum Dum Girls Mine Tonight",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "xBUCnRk_dWM",
         "confidenceScore": 0.9,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -402,17 +410,17 @@
         },
         {
           "rank": 3,
-          "videoId": "K6NBG2j6qsY",
-          "title": "Dum Dum Girls \"Mine Tonight\" Live Acoustic Performance",
-          "url": "https://www.youtube.com/watch?v=K6NBG2j6qsY",
-          "channel": "Napster (Music Legacy Account)",
-          "durationSeconds": 267.0,
-          "score": 0.688,
+          "videoId": "CaWB7lbiBUk",
+          "title": "Mine Tonight",
+          "url": "https://www.youtube.com/watch?v=CaWB7lbiBUk",
+          "channel": "Dum Dum Girls - Topic",
+          "durationSeconds": 209.0,
+          "score": 0.649,
           "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
+            "song-title-near-exact-match",
             "song-title-in-title",
-            "live-version-penalty"
+            "artist-name-in-channel",
+            "topic-channel"
           ]
         },
         {
@@ -422,7 +430,7 @@
           "url": "https://www.youtube.com/watch?v=dfcwC8cfs-0",
           "channel": "Avi Paul Weinstein",
           "durationSeconds": 231.0,
-          "score": 0.648,
+          "score": 0.608,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -432,17 +440,18 @@
         },
         {
           "rank": 5,
-          "videoId": "CaWB7lbiBUk",
-          "title": "Mine Tonight",
-          "url": "https://www.youtube.com/watch?v=CaWB7lbiBUk",
-          "channel": "Dum Dum Girls - Topic",
-          "durationSeconds": 209.0,
-          "score": 0.589,
+          "videoId": "K6NBG2j6qsY",
+          "title": "Dum Dum Girls \"Mine Tonight\" Live Acoustic Performance",
+          "url": "https://www.youtube.com/watch?v=K6NBG2j6qsY",
+          "channel": "Napster (Music Legacy Account)",
+          "durationSeconds": 267.0,
+          "score": 0.568,
           "signals": [
-            "song-title-near-exact-match",
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
             "song-title-in-title",
-            "artist-name-in-channel",
-            "topic-channel"
+            "live-version-penalty",
+            "unexpected-acoustic-penalty"
           ]
         }
       ]
@@ -452,31 +461,15 @@
       "displayText": "Pure Bathing Culture - Dream the Dare",
       "query": "Pure Bathing Culture Dream the Dare",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "koOx5j_ezyU",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
           "rank": 1,
-          "videoId": "PxCeCWecDOE",
-          "title": "Pure Bathing Culture - Dream The Dare (Official Music Video)",
-          "url": "https://www.youtube.com/watch?v=PxCeCWecDOE",
-          "channel": "Pure Bathing Culture",
-          "durationSeconds": 253.0,
-          "score": 0.999,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
-            "song-title-in-title",
-            "artist-name-in-channel",
-            "official-upload"
-          ]
-        },
-        {
-          "rank": 2,
           "videoId": "koOx5j_ezyU",
           "title": "Pure Bathing Culture: Dream the Dare",
           "url": "https://www.youtube.com/watch?v=koOx5j_ezyU",
@@ -492,18 +485,34 @@
           ]
         },
         {
-          "rank": 3,
-          "videoId": "CdEs5Y0u4uc",
-          "title": "Pure Bathing Culture - Dream the Dare",
-          "url": "https://www.youtube.com/watch?v=CdEs5Y0u4uc",
-          "channel": "songsfewpeoplelike",
-          "durationSeconds": 254.0,
-          "score": 0.999,
+          "rank": 2,
+          "videoId": "-WiqiWJTdHI",
+          "title": "Pure Bathing Culture - Dream The Dare | NBA 2K21 OST",
+          "url": "https://www.youtube.com/watch?v=-WiqiWJTdHI",
+          "channel": "Original Soundtrack",
+          "durationSeconds": 289.0,
+          "score": 0.934,
           "signals": [
             "candidate-title-covers-track-tokens",
-            "display-text-near-exact-match",
             "artist-name-in-title",
             "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PxCeCWecDOE",
+          "title": "Pure Bathing Culture - Dream The Dare (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=PxCeCWecDOE",
+          "channel": "Pure Bathing Culture",
+          "durationSeconds": 253.0,
+          "score": 0.923,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
           ]
         },
         {
@@ -527,7 +536,7 @@
           "url": "https://www.youtube.com/watch?v=10RrQjJRi5A",
           "channel": "WFUV Public Radio",
           "durationSeconds": 249.0,
-          "score": 0.532,
+          "score": 0.492,
           "signals": [
             "candidate-title-covers-most-track-tokens",
             "artist-name-in-title",
@@ -541,11 +550,11 @@
       "displayText": "Avec Sans - Hold On",
       "query": "Avec Sans Hold On",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "SXVLMtXDNNw",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -566,12 +575,12 @@
         },
         {
           "rank": 2,
-          "videoId": "c4BC9GK_07Q",
-          "title": "Avec Sans - Hold On (Live)",
-          "url": "https://www.youtube.com/watch?v=c4BC9GK_07Q",
-          "channel": "SB 9000",
-          "durationSeconds": 96.0,
-          "score": 0.948,
+          "videoId": "eSoVeVUH0sI",
+          "title": "Avec Sans - Hold On (HD) - Heaven - 28.11.13",
+          "url": "https://www.youtube.com/watch?v=eSoVeVUH0sI",
+          "channel": "Planet Music Reviews HD: Upcoming",
+          "durationSeconds": 227.0,
+          "score": 0.851,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -594,12 +603,12 @@
         },
         {
           "rank": 4,
-          "videoId": "X7CNgzLojHo",
-          "title": "Avec Sans - Hold On - Live - The Lexington - London 24/07/14",
-          "url": "https://www.youtube.com/watch?v=X7CNgzLojHo",
-          "channel": "Concert Archives",
-          "durationSeconds": 254.0,
-          "score": 0.611,
+          "videoId": "5S9kP37S7e0",
+          "title": "Avec Sans - Hold On (Live)",
+          "url": "https://www.youtube.com/watch?v=5S9kP37S7e0",
+          "channel": "SB 9000",
+          "durationSeconds": 96.0,
+          "score": 0.728,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -609,15 +618,17 @@
         },
         {
           "rank": 5,
-          "videoId": "ebPDMUsXQnY",
-          "title": "Avec Sans - Perth",
-          "url": "https://www.youtube.com/watch?v=ebPDMUsXQnY",
-          "channel": "Avec Sans",
-          "durationSeconds": 226.0,
-          "score": 0.403,
+          "videoId": "X7CNgzLojHo",
+          "title": "Avec Sans - Hold On - Live - The Lexington - London 24/07/14",
+          "url": "https://www.youtube.com/watch?v=X7CNgzLojHo",
+          "channel": "Concert Archives",
+          "durationSeconds": 254.0,
+          "score": 0.571,
           "signals": [
+            "candidate-title-covers-track-tokens",
             "artist-name-in-title",
-            "artist-name-in-channel"
+            "song-title-in-title",
+            "live-version-penalty"
           ]
         }
       ]
@@ -627,11 +638,11 @@
       "displayText": "Cat Power - Cherokee",
       "query": "Cat Power Cherokee",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "PDbPrOuXq2s",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -667,25 +678,27 @@
         },
         {
           "rank": 3,
-          "videoId": "ybjpIt9oPuo",
-          "title": "Cat Power - Manhattan",
-          "url": "https://www.youtube.com/watch?v=ybjpIt9oPuo",
-          "channel": "Cat Power",
-          "durationSeconds": 191.0,
-          "score": 0.398,
+          "videoId": "0eXMQuAKc_0",
+          "title": "Cat Power - Cherokee Live at The Park stage, Glastonbury. 30th June 2013",
+          "url": "https://www.youtube.com/watch?v=0eXMQuAKc_0",
+          "channel": "Tony Montana",
+          "durationSeconds": 289.0,
+          "score": 0.543,
           "signals": [
+            "candidate-title-covers-track-tokens",
             "artist-name-in-title",
-            "artist-name-in-channel"
+            "song-title-in-title",
+            "live-version-penalty"
           ]
         },
         {
           "rank": 4,
-          "videoId": "BX2bCSoMOOc",
-          "title": "Cat Power: NPR Music Tiny Desk Concert",
-          "url": "https://www.youtube.com/watch?v=BX2bCSoMOOc",
-          "channel": "NPR Music",
-          "durationSeconds": 567.0,
-          "score": 0.282,
+          "videoId": "x4OTnortXpc",
+          "title": "Cat Power - Nothin But Time (Feat. Iggy Pop)",
+          "url": "https://www.youtube.com/watch?v=x4OTnortXpc",
+          "channel": "Bárbara Scarambone",
+          "durationSeconds": 656.0,
+          "score": 0.283,
           "signals": [
             "artist-name-in-title"
           ]
@@ -697,7 +710,7 @@
           "url": "https://www.youtube.com/watch?v=4uybaVUym1A",
           "channel": "Cat Power",
           "durationSeconds": 254.0,
-          "score": 0.269,
+          "score": 0.229,
           "signals": [
             "song-title-in-title",
             "artist-name-in-channel",
@@ -711,11 +724,11 @@
       "displayText": "Keep Shelly in Athens - Oostende",
       "query": "Keep Shelly in Athens Oostende",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "IcMFXuRJjIc",
         "confidenceScore": 0.976,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -765,12 +778,12 @@
         },
         {
           "rank": 4,
-          "videoId": "sfvDQEPm3kQ",
-          "title": "Keep Shelly in Athens - Flyway",
-          "url": "https://www.youtube.com/watch?v=sfvDQEPm3kQ",
+          "videoId": "i7K0mmvWBlI",
+          "title": "Keep Shelly in Athens - Recollection",
+          "url": "https://www.youtube.com/watch?v=i7K0mmvWBlI",
           "channel": "CascineLabel",
-          "durationSeconds": 264.0,
-          "score": 0.668,
+          "durationSeconds": 258.0,
+          "score": 0.677,
           "signals": [
             "candidate-title-covers-most-track-tokens",
             "artist-name-in-title"
@@ -783,7 +796,7 @@
           "url": "https://www.youtube.com/watch?v=0lIQH6AlPTQ",
           "channel": "Keep Shelly in Athens",
           "durationSeconds": 218.0,
-          "score": 0.25,
+          "score": 0.21,
           "signals": [
             "song-title-in-title",
             "artist-name-in-channel",
@@ -797,11 +810,11 @@
       "displayText": "Tree - Demons (feat. Beat Culture and Lena Kuhn)",
       "query": "Tree Demons (feat. Beat Culture and Lena Kuhn)",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "qsVHDGxhPJ8",
         "confidenceScore": 0.611,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "low-confidence-top-candidate"
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
       },
       "candidates": [
         {
@@ -820,19 +833,6 @@
         },
         {
           "rank": 2,
-          "videoId": "IKgwKHbaK4I",
-          "title": "Tree - Demons ft. Beat Culture & Lena Kuhn - Music Video",
-          "url": "https://www.youtube.com/watch?v=IKgwKHbaK4I",
-          "channel": "Tree Collaborations",
-          "durationSeconds": 250.0,
-          "score": 0.554,
-          "signals": [
-            "artist-name-in-title",
-            "artist-name-in-channel"
-          ]
-        },
-        {
-          "rank": 3,
           "videoId": "4kCta14BBi8",
           "title": "Tree - Demons (ft. Beat Culture & Lena Kuhn)",
           "url": "https://www.youtube.com/watch?v=4kCta14BBi8",
@@ -845,7 +845,7 @@
           ]
         },
         {
-          "rank": 4,
+          "rank": 3,
           "videoId": "KTn3ZSi8-AE",
           "title": "Tree - Demons (ft. Beat Culture & Lena Kuhn)",
           "url": "https://www.youtube.com/watch?v=KTn3ZSi8-AE",
@@ -858,7 +858,7 @@
           ]
         },
         {
-          "rank": 5,
+          "rank": 4,
           "videoId": "5p8r36r_maE",
           "title": "Tree - Stuck Down the Wrong Rabbit Hole (ft. Beat Culture & Lena Kuhn)",
           "url": "https://www.youtube.com/watch?v=5p8r36r_maE",
@@ -869,6 +869,20 @@
             "artist-name-in-title",
             "artist-name-in-channel"
           ]
+        },
+        {
+          "rank": 5,
+          "videoId": "IKgwKHbaK4I",
+          "title": "Tree - Demons ft. Beat Culture & Lena Kuhn - Music Video",
+          "url": "https://www.youtube.com/watch?v=IKgwKHbaK4I",
+          "channel": "Tree Collaborations",
+          "durationSeconds": 250.0,
+          "score": 0.454,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "music-video-penalty"
+          ]
         }
       ]
     },
@@ -877,11 +891,11 @@
       "displayText": "The Weeknd - Love in the Sky",
       "query": "The Weeknd Love in the Sky",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "weweLG6Or-g",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -921,7 +935,7 @@
           "url": "https://www.youtube.com/watch?v=B1HyjitZqtY",
           "channel": "Santiago99",
           "durationSeconds": 271.0,
-          "score": 0.917,
+          "score": 0.897,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -966,15 +980,32 @@
       "displayText": "Porcelain Raft - The Way Out",
       "query": "Porcelain Raft The Way Out",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "US4mwyujjFE",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
           "rank": 1,
+          "videoId": "US4mwyujjFE",
+          "title": "Porcelain Raft - \"The Way Out\" (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=US4mwyujjFE",
+          "channel": "Secretly Canadian",
+          "durationSeconds": 231.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
           "videoId": "2_JnlKn6AMo",
           "title": "Porcelain Raft - The Way Out",
           "url": "https://www.youtube.com/watch?v=2_JnlKn6AMo",
@@ -989,33 +1020,19 @@
           ]
         },
         {
-          "rank": 2,
+          "rank": 3,
           "videoId": "ZLNeAEMU7AI",
           "title": "Porcelain Raft - The Way Out (Official Video)",
           "url": "https://www.youtube.com/watch?v=ZLNeAEMU7AI",
           "channel": "PorcelainRaftVEVO",
           "durationSeconds": 233.0,
-          "score": 0.949,
+          "score": 0.849,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
-            "official-upload"
-          ]
-        },
-        {
-          "rank": 3,
-          "videoId": "US4mwyujjFE",
-          "title": "Porcelain Raft - \"The Way Out\" (Official Audio)",
-          "url": "https://www.youtube.com/watch?v=US4mwyujjFE",
-          "channel": "Secretly Canadian",
-          "durationSeconds": 231.0,
-          "score": 0.949,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
-            "song-title-in-title",
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
         },
         {
@@ -1025,7 +1042,7 @@
           "url": "https://www.youtube.com/watch?v=24KWVTj-jt0",
           "channel": "Porcelain Raft - Topic",
           "durationSeconds": 208.0,
-          "score": 0.41,
+          "score": 0.47,
           "signals": [
             "artist-name-in-channel",
             "topic-channel"
@@ -1038,10 +1055,11 @@
           "url": "https://www.youtube.com/watch?v=nMQ7f-zW73k",
           "channel": "Secretly Canadian",
           "durationSeconds": 209.0,
-          "score": 0.358,
+          "score": 0.258,
           "signals": [
             "artist-name-in-title",
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
         }
       ]
@@ -1051,31 +1069,15 @@
       "displayText": "Lolo - Heard it from a Friend",
       "query": "Lolo Heard it from a Friend",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "9JPX65nE80w",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
           "rank": 1,
-          "videoId": "9cVownGhTyA",
-          "title": "LOLO - Heard It From A Friend [OFFICIAL VIDEO]",
-          "url": "https://www.youtube.com/watch?v=9cVownGhTyA",
-          "channel": "LOLO",
-          "durationSeconds": 245.0,
-          "score": 0.999,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
-            "song-title-in-title",
-            "artist-name-in-channel",
-            "official-upload"
-          ]
-        },
-        {
-          "rank": 2,
           "videoId": "9JPX65nE80w",
           "title": "Heard It From A Friend - LOLO",
           "url": "https://www.youtube.com/watch?v=9JPX65nE80w",
@@ -1089,13 +1091,30 @@
           ]
         },
         {
+          "rank": 2,
+          "videoId": "9cVownGhTyA",
+          "title": "LOLO - Heard It From A Friend [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=9cVownGhTyA",
+          "channel": "LOLO",
+          "durationSeconds": 245.0,
+          "score": 0.979,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
           "rank": 3,
           "videoId": "OZceJCmacHs",
           "title": "Heard it from a Friend - LOLO (lyrics)",
           "url": "https://www.youtube.com/watch?v=OZceJCmacHs",
           "channel": "LuliiLIE",
           "durationSeconds": 232.0,
-          "score": 0.898,
+          "score": 0.878,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -1110,11 +1129,12 @@
           "url": "https://www.youtube.com/watch?v=rkGKKw9pM7c",
           "channel": "Paste Magazine",
           "durationSeconds": 253.0,
-          "score": 0.897,
+          "score": 0.817,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
-            "song-title-in-title"
+            "song-title-in-title",
+            "unexpected-session-penalty"
           ]
         },
         {
@@ -1124,7 +1144,7 @@
           "url": "https://www.youtube.com/watch?v=1T55AKGTg20",
           "channel": "Paste Magazine",
           "durationSeconds": 235.0,
-          "score": 0.717,
+          "score": 0.677,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -1139,11 +1159,11 @@
       "displayText": "RJD2 - Her Majesty’s Socialist Request",
       "query": "RJD2 Her Majesty’s Socialist Request",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "_li_oIKDcgU",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -1202,7 +1222,7 @@
           "url": "https://www.youtube.com/watch?v=wgNtt4A18bU",
           "channel": "MA Music",
           "durationSeconds": 209.0,
-          "score": 0.914,
+          "score": 0.874,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -1217,7 +1237,7 @@
           "url": "https://www.youtube.com/watch?v=ckj1J0N97mg",
           "channel": "jamutka777",
           "durationSeconds": 241.0,
-          "score": 0.66,
+          "score": 0.58,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -1233,11 +1253,11 @@
       "displayText": "Happy Hollows - Endless",
       "query": "Happy Hollows Endless",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "oL6jOEbzQxs",
         "confidenceScore": 0.99,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -1291,11 +1311,12 @@
           "url": "https://www.youtube.com/watch?v=TuqQU0HsRK8",
           "channel": "CrownCityStudio",
           "durationSeconds": 263.0,
-          "score": 0.836,
+          "score": 0.616,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
-            "song-title-in-title"
+            "song-title-in-title",
+            "live-version-penalty"
           ]
         },
         {
@@ -1305,7 +1326,7 @@
           "url": "https://www.youtube.com/watch?v=E_rlQ2APs6Q",
           "channel": "The Happy Hollows - Topic",
           "durationSeconds": 213.0,
-          "score": 0.55,
+          "score": 0.61,
           "signals": [
             "song-title-near-exact-match",
             "song-title-in-title",
@@ -1318,9 +1339,36 @@
   ],
   "summary": {
     "totalTracks": 15,
-    "resolvedTracks": 0,
-    "unresolvedTracks": 15,
-    "requiresReview": true,
-    "generatedEmbed": null
+    "resolvedTracks": 15,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Thirtyfourth",
+      "embedUrl": "https://www.youtube.com/embed/Uq1-DPL7wpg?playlist=QTARucjZXHQ,2_rCnlCPk04,1TffpkE2GU4,xBUCnRk_dWM,koOx5j_ezyU,SXVLMtXDNNw,PDbPrOuXq2s,IcMFXuRJjIc,qsVHDGxhPJ8,weweLG6Or-g,US4mwyujjFE,9JPX65nE80w,_li_oIKDcgU,oL6jOEbzQxs",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=Uq1-DPL7wpg,QTARucjZXHQ,2_rCnlCPk04,1TffpkE2GU4,xBUCnRk_dWM,koOx5j_ezyU,SXVLMtXDNNw,PDbPrOuXq2s,IcMFXuRJjIc,qsVHDGxhPJ8,weweLG6Or-g,US4mwyujjFE,9JPX65nE80w,_li_oIKDcgU,oL6jOEbzQxs",
+      "videoIds": [
+        "Uq1-DPL7wpg",
+        "QTARucjZXHQ",
+        "2_rCnlCPk04",
+        "1TffpkE2GU4",
+        "xBUCnRk_dWM",
+        "koOx5j_ezyU",
+        "SXVLMtXDNNw",
+        "PDbPrOuXq2s",
+        "IcMFXuRJjIc",
+        "qsVHDGxhPJ8",
+        "weweLG6Or-g",
+        "US4mwyujjFE",
+        "9JPX65nE80w",
+        "_li_oIKDcgU",
+        "oL6jOEbzQxs"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:20:46Z"
+    }
   }
 }

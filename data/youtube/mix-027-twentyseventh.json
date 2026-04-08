@@ -1,0 +1,1281 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-027-twentyseventh",
+  "updatedAt": "2026-04-08T21:22:58Z",
+  "sourceMixPath": "data/imported/mixes/mix-027-twentyseventh.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Longwave - Tidal Wave",
+      "query": "Longwave Tidal Wave",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "4vkI2mLrqzw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "4vkI2mLrqzw",
+          "title": "Longwave - Tidal Wave (2024)",
+          "url": "https://www.youtube.com/watch?v=4vkI2mLrqzw",
+          "channel": "Longwave",
+          "durationSeconds": 208.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Zv7CX-mLJHc",
+          "title": "Longwave - Tidal Wave (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zv7CX-mLJHc",
+          "channel": "Longwave",
+          "durationSeconds": 205.0,
+          "score": 0.917,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Y6s-HjwrTVQ",
+          "title": "Longwave - Tidalwave (audio Only)",
+          "url": "https://www.youtube.com/watch?v=Y6s-HjwrTVQ",
+          "channel": "grenasfrijolito",
+          "durationSeconds": 208.0,
+          "score": 0.588,
+          "signals": [
+            "artist-name-in-title",
+            "audio-only-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "szWaGUyaEE8",
+          "title": "Tidal Wave",
+          "url": "https://www.youtube.com/watch?v=szWaGUyaEE8",
+          "channel": "Longwave",
+          "durationSeconds": 231.0,
+          "score": 0.547,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "MnXaX3u6C7w",
+          "title": "Longwave - Live At The Bowery Ballroom (FULL SHOW)",
+          "url": "https://www.youtube.com/watch?v=MnXaX3u6C7w",
+          "channel": "Longwave",
+          "durationSeconds": 4564.0,
+          "score": 0.121,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "JJ - Beautiful Life",
+      "query": "JJ Beautiful Life",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "IYa5GvLudZs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "IYa5GvLudZs",
+          "title": "jj - Beautiful Life | HD",
+          "url": "https://www.youtube.com/watch?v=IYa5GvLudZs",
+          "channel": "goodailymusic",
+          "durationSeconds": 200.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "yVsXg4xamoI",
+          "title": "JJ - BEAUTIFUL LIFE",
+          "url": "https://www.youtube.com/watch?v=yVsXg4xamoI",
+          "channel": "JJTRIESYOUTUBE",
+          "durationSeconds": 211.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "q8K5P6chopM",
+          "title": "JJ - Beautiful Life (official video)",
+          "url": "https://www.youtube.com/watch?v=q8K5P6chopM",
+          "channel": "iPars",
+          "durationSeconds": 200.0,
+          "score": 0.858,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "JlrF3RPyk28",
+          "title": "jj - Beautiful Life (Air Tycoon Remix)",
+          "url": "https://www.youtube.com/watch?v=JlrF3RPyk28",
+          "channel": "Rugiagialia",
+          "durationSeconds": 260.0,
+          "score": 0.785,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "KOip-LVjhAo",
+          "title": "Beautiful Life",
+          "url": "https://www.youtube.com/watch?v=KOip-LVjhAo",
+          "channel": "jj - Topic",
+          "durationSeconds": 202.0,
+          "score": 0.731,
+          "signals": [
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Arcade Fire - Abraham’s Daughter",
+      "query": "Arcade Fire Abraham’s Daughter",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "X4XB4fSj_UI",
+        "confidenceScore": 0.933,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "X4XB4fSj_UI",
+          "title": "Arcade Fire - Abraham's Daughter / The Hunger Games",
+          "url": "https://www.youtube.com/watch?v=X4XB4fSj_UI",
+          "channel": "spookyprod",
+          "durationSeconds": 203.0,
+          "score": 0.933,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "5WCoJv192VY",
+          "title": "Arcade Fire- Abraham's Daughter (With Lyrics From The Hunger Games)",
+          "url": "https://www.youtube.com/watch?v=5WCoJv192VY",
+          "channel": "RollerCoasterFreak25",
+          "durationSeconds": 197.0,
+          "score": 0.791,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "7TYpy-24NdY",
+          "title": "1. Abraham's Daughter By Arcade Fire With Lyrics",
+          "url": "https://www.youtube.com/watch?v=7TYpy-24NdY",
+          "channel": "cutiebututy",
+          "durationSeconds": 201.0,
+          "score": 0.768,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Vcm4WCPU2L8",
+          "title": "Abraham's Daughter",
+          "url": "https://www.youtube.com/watch?v=Vcm4WCPU2L8",
+          "channel": "Arcade Fire",
+          "durationSeconds": 203.0,
+          "score": 0.565,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "UqaPBDKQjgk",
+          "title": "Abraham's Daughter",
+          "url": "https://www.youtube.com/watch?v=UqaPBDKQjgk",
+          "channel": "Arcade Fire",
+          "durationSeconds": 203.0,
+          "score": 0.565,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Chairlift - Guilty As Charged",
+      "query": "Chairlift Guilty As Charged",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "KoB3_HmBFjU",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "KoB3_HmBFjU",
+          "title": "Chairlift \"Guilty As Charged\"",
+          "url": "https://www.youtube.com/watch?v=KoB3_HmBFjU",
+          "channel": "chairliftband",
+          "durationSeconds": 215.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "_AIWLMZFDkw",
+          "title": "Chairlift - Guilty As Charged | HD",
+          "url": "https://www.youtube.com/watch?v=_AIWLMZFDkw",
+          "channel": "goodailymusic",
+          "durationSeconds": 214.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "T2eNuDoou4A",
+          "title": "Chairlift - Guilty As Charged",
+          "url": "https://www.youtube.com/watch?v=T2eNuDoou4A",
+          "channel": "Jahung",
+          "durationSeconds": 215.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "0zvLy0sPBmg",
+          "title": "Chairlift - Guilty As Charged",
+          "url": "https://www.youtube.com/watch?v=0zvLy0sPBmg",
+          "channel": "Mohamed Elghamrawy",
+          "durationSeconds": 212.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "YG_vo-XWM70",
+          "title": "Chairlift - Guilty As Charged",
+          "url": "https://www.youtube.com/watch?v=YG_vo-XWM70",
+          "channel": "vacantmoon",
+          "durationSeconds": 277.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Dntel - Bright Night",
+      "query": "Dntel Bright Night",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "I9J2cFG0tsQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "I9J2cFG0tsQ",
+          "title": "Dntel - Bright Night",
+          "url": "https://www.youtube.com/watch?v=I9J2cFG0tsQ",
+          "channel": "All Tomorrow's Music",
+          "durationSeconds": 258.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "XAYYunQmD0w",
+          "title": "DNTEL - Bright Night",
+          "url": "https://www.youtube.com/watch?v=XAYYunQmD0w",
+          "channel": "ExopoliticalIdealist",
+          "durationSeconds": 260.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "2FtXX2IPkLQ",
+          "title": "Dntel - Bright Night",
+          "url": "https://www.youtube.com/watch?v=2FtXX2IPkLQ",
+          "channel": "ElectronicMusicProm",
+          "durationSeconds": 257.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "jVHXTAYwqGc",
+          "title": "Dntel - Bright Night",
+          "url": "https://www.youtube.com/watch?v=jVHXTAYwqGc",
+          "channel": "Andi Tafel",
+          "durationSeconds": 256.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "qUAvD0ySlT4",
+          "title": "Bright Night",
+          "url": "https://www.youtube.com/watch?v=qUAvD0ySlT4",
+          "channel": "DNTEL - Topic",
+          "durationSeconds": 258.0,
+          "score": 0.7,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Little Scream - The Heron and the Fox",
+      "query": "Little Scream The Heron and the Fox",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "TkOUaqmuUkI",
+        "confidenceScore": 0.925,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "TkOUaqmuUkI",
+          "title": "Little Scream - The Heron and the Fox (Work Drugs Smooth Mix)",
+          "url": "https://www.youtube.com/watch?v=TkOUaqmuUkI",
+          "channel": "Work Drugs",
+          "durationSeconds": 222.0,
+          "score": 0.925,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "215Ri5AmUt0",
+          "title": "LITTLE SCREAM - Canons / Heron and the Fox",
+          "url": "https://www.youtube.com/watch?v=215Ri5AmUt0",
+          "channel": "SouthernSouls",
+          "durationSeconds": 510.0,
+          "score": 0.905,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "fWl-3KiW_mY",
+          "title": "Song of the Day 6-7-12: The Heron and the Fox by Little Scream",
+          "url": "https://www.youtube.com/watch?v=fWl-3KiW_mY",
+          "channel": "chickennugget882",
+          "durationSeconds": 304.0,
+          "score": 0.855,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "qsCkOn_uXo4",
+          "title": "Little Scream - \"The Heron and The Fox\" (live)",
+          "url": "https://www.youtube.com/watch?v=qsCkOn_uXo4",
+          "channel": "Secretly Canadian",
+          "durationSeconds": 326.0,
+          "score": 0.784,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "zSW3InwwbvM",
+          "title": "The Heron and the Fox",
+          "url": "https://www.youtube.com/watch?v=zSW3InwwbvM",
+          "channel": "Little Scream - Topic",
+          "durationSeconds": 303.0,
+          "score": 0.685,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Múm - Don’t Be Afraid, You Have Just Got Your Eyes Closed",
+      "query": "Múm Don’t Be Afraid, You Have Just Got Your Eyes Closed",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ePgcgOipJPQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ePgcgOipJPQ",
+          "title": "Múm - Don't Be Afraid, You Have Just Got Your Eyes Closed [HD]",
+          "url": "https://www.youtube.com/watch?v=ePgcgOipJPQ",
+          "channel": "ken ai",
+          "durationSeconds": 344.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "artrAq9cdz0",
+          "title": "múm - don't be afraid, you have just got your eyes closed",
+          "url": "https://www.youtube.com/watch?v=artrAq9cdz0",
+          "channel": "Crimson Kelpie",
+          "durationSeconds": 344.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "jTpkJ9gZjQs",
+          "title": "Don't Be Afraid, You Have Just Got Your Eyes Closed",
+          "url": "https://www.youtube.com/watch?v=jTpkJ9gZjQs",
+          "channel": "múmTV",
+          "durationSeconds": 344.0,
+          "score": 0.928,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "MA0_V4bmmt8",
+          "title": "Don't Be Afraid You Have Just Got Your Eyes Closed",
+          "url": "https://www.youtube.com/watch?v=MA0_V4bmmt8",
+          "channel": "Whit Scott",
+          "durationSeconds": 280.0,
+          "score": 0.848,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Dq3RlP2IqKY",
+          "title": "Mum - Don't Be Afraid, You Have Just Got Your Eyes Closed",
+          "url": "https://www.youtube.com/watch?v=Dq3RlP2IqKY",
+          "channel": "Guy Courtney",
+          "durationSeconds": 346.0,
+          "score": 0.848,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Van She - Idea Of Happiness",
+      "query": "Van She Idea Of Happiness",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "5OaanwN1vFQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "5OaanwN1vFQ",
+          "title": "Van She - Idea of Happiness",
+          "url": "https://www.youtube.com/watch?v=5OaanwN1vFQ",
+          "channel": "Modular YouTube",
+          "durationSeconds": 234.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "yS4ku6RkWcA",
+          "title": "Van She - Idea of Happiness (SebastiAn Remix)",
+          "url": "https://www.youtube.com/watch?v=yS4ku6RkWcA",
+          "channel": "Modular YouTube",
+          "durationSeconds": 185.0,
+          "score": 0.813,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "z86b3peaOa4",
+          "title": "Idea Of Happiness (Original)",
+          "url": "https://www.youtube.com/watch?v=z86b3peaOa4",
+          "channel": "Van She - Topic",
+          "durationSeconds": 211.0,
+          "score": 0.622,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "mJLe7_fGTPU",
+          "title": "Idea Of Happiness (Sebastian Remix)",
+          "url": "https://www.youtube.com/watch?v=mJLe7_fGTPU",
+          "channel": "Van She - Topic",
+          "durationSeconds": 186.0,
+          "score": 0.458,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "yMwa8NB8YoQ",
+          "title": "Idea Of Happiness (What So Not Remix)",
+          "url": "https://www.youtube.com/watch?v=yMwa8NB8YoQ",
+          "channel": "Van She - Topic",
+          "durationSeconds": 368.0,
+          "score": 0.448,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Thievery Corporation - The Time We Lost Our Way (featuring Loulou)",
+      "query": "Thievery Corporation The Time We Lost Our Way (featuring Loulou)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "2fGZrflrUaA",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2fGZrflrUaA",
+          "title": "Thievery Corporation - The Time We Lost Our Way [Official Audio]",
+          "url": "https://www.youtube.com/watch?v=2fGZrflrUaA",
+          "channel": "Thievery Corporation",
+          "durationSeconds": 252.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "KTHFXeKLv6w",
+          "title": "Thievery Corporation - The Time We Lost Our Way [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=KTHFXeKLv6w",
+          "channel": "Thievery Corporation",
+          "durationSeconds": 265.0,
+          "score": 0.744,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "cZO01n5gXRg",
+          "title": "Thievery Corporation - The Time We Lost Our Way (Live with LouLou)",
+          "url": "https://www.youtube.com/watch?v=cZO01n5gXRg",
+          "channel": "Thievery Corporation",
+          "durationSeconds": 324.0,
+          "score": 0.645,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "hbW2Dnaksds",
+          "title": "Thievery Corporation - The Time We Lost Our Way (Loulou vocals) - Live in Pomona 2021)",
+          "url": "https://www.youtube.com/watch?v=hbW2Dnaksds",
+          "channel": "LiveIsBeautiful",
+          "durationSeconds": 301.0,
+          "score": 0.494,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "_kPSdJqsOPs",
+          "title": "LouLou -  The Time We Lost Our Way",
+          "url": "https://www.youtube.com/watch?v=_kPSdJqsOPs",
+          "channel": "Urban Reggae FM",
+          "durationSeconds": 252.0,
+          "score": 0.294,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Ramona Falls - Spore",
+      "query": "Ramona Falls Spore",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "mCyj2Y0Zdtw",
+        "confidenceScore": 0.978,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "mCyj2Y0Zdtw",
+          "title": "Ramona Falls - Spore",
+          "url": "https://www.youtube.com/watch?v=mCyj2Y0Zdtw",
+          "channel": "sgrey",
+          "durationSeconds": 260.0,
+          "score": 0.978,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "LaJdDd7Y0AU",
+          "title": "Ramona Falls - Spore || Baeble Music",
+          "url": "https://www.youtube.com/watch?v=LaJdDd7Y0AU",
+          "channel": "Baeblemusic",
+          "durationSeconds": 287.0,
+          "score": 0.87,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Su4klZd1uM0",
+          "title": "Ramona Falls - Spore (Last.fm Sessions)",
+          "url": "https://www.youtube.com/watch?v=Su4klZd1uM0",
+          "channel": "Last.fm",
+          "durationSeconds": 263.0,
+          "score": 0.849,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "_uLZxdCt8RU",
+          "title": "Ramona Falls - Spore (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=_uLZxdCt8RU",
+          "channel": "KEXP",
+          "durationSeconds": 289.0,
+          "score": 0.65,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "1eqZxSSb6DY",
+          "title": "Spore",
+          "url": "https://www.youtube.com/watch?v=1eqZxSSb6DY",
+          "channel": "Ramona Falls - Topic",
+          "durationSeconds": 260.0,
+          "score": 0.59,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "Hot Chip - Flutes",
+      "query": "Hot Chip Flutes",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "99z1_IMJNl8",
+        "confidenceScore": 0.8,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "99z1_IMJNl8",
+          "title": "Hot Chip - Flutes (Official Video)",
+          "url": "https://www.youtube.com/watch?v=99z1_IMJNl8",
+          "channel": "Domino Recording Co.",
+          "durationSeconds": 471.0,
+          "score": 0.8,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "bZtgsUHdwP4",
+          "title": "Hot Chip - Flutes (Sasha remix) - (Official Video)",
+          "url": "https://www.youtube.com/watch?v=bZtgsUHdwP4",
+          "channel": "lastnightonearthtv",
+          "durationSeconds": 502.0,
+          "score": 0.623,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "unexpected-remix-penalty",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "E4V66UP4aDs",
+          "title": "Hot Chip - Flutes | Live in Sydney | Moshcam",
+          "url": "https://www.youtube.com/watch?v=E4V66UP4aDs",
+          "channel": "Moshcam",
+          "durationSeconds": 418.0,
+          "score": 0.599,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "lMf5eFV_3Uo",
+          "title": "Hot Chip - Flutes (Live at Glastonbury 2015) 4/14",
+          "url": "https://www.youtube.com/watch?v=lMf5eFV_3Uo",
+          "channel": "Simon Barnett",
+          "durationSeconds": 428.0,
+          "score": 0.572,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "4NsUuTJ-5kQ",
+          "title": "Flutes",
+          "url": "https://www.youtube.com/watch?v=4NsUuTJ-5kQ",
+          "channel": "Hot Chip",
+          "durationSeconds": 426.0,
+          "score": 0.511,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Cats On Fire - A Few Empty Waves",
+      "query": "Cats On Fire A Few Empty Waves",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "enWa_UWf_V4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "enWa_UWf_V4",
+          "title": "Cats On Fire - A Few Empty Waves",
+          "url": "https://www.youtube.com/watch?v=enWa_UWf_V4",
+          "channel": "MrPzhamz",
+          "durationSeconds": 311.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ZYXo6XLNiRE",
+          "title": "Cats On Fire / A Few Empty Waves",
+          "url": "https://www.youtube.com/watch?v=ZYXo6XLNiRE",
+          "channel": "poplibrary",
+          "durationSeconds": 311.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "REzLF_RNikg",
+          "title": "Cats On Fire : A Few Empty Waves",
+          "url": "https://www.youtube.com/watch?v=REzLF_RNikg",
+          "channel": "Antonio Antonio",
+          "durationSeconds": 307.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "XBXmiXxHHT4",
+          "title": "001 - Cats On Fire - A Few Empty Waves",
+          "url": "https://www.youtube.com/watch?v=XBXmiXxHHT4",
+          "channel": "BIRPMay2012",
+          "durationSeconds": 311.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "dNoU5qwvt_o",
+          "title": "A Few Empty Waves",
+          "url": "https://www.youtube.com/watch?v=dNoU5qwvt_o",
+          "channel": "Cats on fire - Topic",
+          "durationSeconds": 311.0,
+          "score": 0.677,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Lower Dens - Brains",
+      "query": "Lower Dens Brains",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "i_1fUlrx_Pc",
+        "confidenceScore": 0.994,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "i_1fUlrx_Pc",
+          "title": "Lower Dens - Brains",
+          "url": "https://www.youtube.com/watch?v=i_1fUlrx_Pc",
+          "channel": "Le Drone",
+          "durationSeconds": 435.0,
+          "score": 0.994,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "rI2o-BuQ8eE",
+          "title": "Lower Dens - Brains",
+          "url": "https://www.youtube.com/watch?v=rI2o-BuQ8eE",
+          "channel": "F_B",
+          "durationSeconds": 303.0,
+          "score": 0.994,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "OyxzjF8IjE8",
+          "title": "Lower Dens - Brains (Official Video)",
+          "url": "https://www.youtube.com/watch?v=OyxzjF8IjE8",
+          "channel": "Ribbon Music",
+          "durationSeconds": 304.0,
+          "score": 0.805,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "DPiauNWtrb0",
+          "title": "LOWER DENS: \"Brains\" / \"Stem\" / \"Five Years\", Live @ The Ottobar, 1/16/2016",
+          "url": "https://www.youtube.com/watch?v=DPiauNWtrb0",
+          "channel": "Thomas Kessler",
+          "durationSeconds": 858.0,
+          "score": 0.545,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "-XFMgH4n4F8",
+          "title": "Brains",
+          "url": "https://www.youtube.com/watch?v=-XFMgH4n4F8",
+          "channel": "Lower Dens",
+          "durationSeconds": 302.0,
+          "score": 0.497,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Radical Face - Welcome Home",
+      "query": "Radical Face Welcome Home",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "jbPLUrBzNFs",
+        "confidenceScore": 0.994,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "jbPLUrBzNFs",
+          "title": "Radical Face - Welcome Home, Son (Orchestral)",
+          "url": "https://www.youtube.com/watch?v=jbPLUrBzNFs",
+          "channel": "Radical Face",
+          "durationSeconds": 247.0,
+          "score": 0.994,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "P8a4iiOnzsc",
+          "title": "Radical Face 'Welcome Home, Son'",
+          "url": "https://www.youtube.com/watch?v=P8a4iiOnzsc",
+          "channel": "JustinMitchell",
+          "durationSeconds": 278.0,
+          "score": 0.983,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "lKHd5dCLgbc",
+          "title": "Radical Face - Welcome Home, Son (lyrics)",
+          "url": "https://www.youtube.com/watch?v=lKHd5dCLgbc",
+          "channel": "Anna Bart",
+          "durationSeconds": 293.0,
+          "score": 0.856,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ta_sCpxNVJk",
+          "title": "Welcome Home",
+          "url": "https://www.youtube.com/watch?v=ta_sCpxNVJk",
+          "channel": "Radical Face",
+          "durationSeconds": 288.0,
+          "score": 0.535,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "S_uftmjatZ0",
+          "title": "Welcome Home, Son (Remastered)",
+          "url": "https://www.youtube.com/watch?v=S_uftmjatZ0",
+          "channel": "Radical Face",
+          "durationSeconds": 287.0,
+          "score": 0.409,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 14,
+    "resolvedTracks": 14,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twentyseventh",
+      "embedUrl": "https://www.youtube.com/embed/4vkI2mLrqzw?playlist=IYa5GvLudZs,X4XB4fSj_UI,KoB3_HmBFjU,I9J2cFG0tsQ,TkOUaqmuUkI,ePgcgOipJPQ,5OaanwN1vFQ,2fGZrflrUaA,mCyj2Y0Zdtw,99z1_IMJNl8,enWa_UWf_V4,i_1fUlrx_Pc,jbPLUrBzNFs",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=4vkI2mLrqzw,IYa5GvLudZs,X4XB4fSj_UI,KoB3_HmBFjU,I9J2cFG0tsQ,TkOUaqmuUkI,ePgcgOipJPQ,5OaanwN1vFQ,2fGZrflrUaA,mCyj2Y0Zdtw,99z1_IMJNl8,enWa_UWf_V4,i_1fUlrx_Pc,jbPLUrBzNFs",
+      "videoIds": [
+        "4vkI2mLrqzw",
+        "IYa5GvLudZs",
+        "X4XB4fSj_UI",
+        "KoB3_HmBFjU",
+        "I9J2cFG0tsQ",
+        "TkOUaqmuUkI",
+        "ePgcgOipJPQ",
+        "5OaanwN1vFQ",
+        "2fGZrflrUaA",
+        "mCyj2Y0Zdtw",
+        "99z1_IMJNl8",
+        "enWa_UWf_V4",
+        "i_1fUlrx_Pc",
+        "jbPLUrBzNFs"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:22:58Z"
+    }
+  }
+}

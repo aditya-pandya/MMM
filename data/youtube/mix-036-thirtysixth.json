@@ -2,7 +2,7 @@
   "$schema": "../../schemas/youtube-match.schema.json",
   "schemaVersion": "1.0",
   "mixSlug": "mix-036-thirtysixth",
-  "updatedAt": "2026-04-06T05:09:52Z",
+  "updatedAt": "2026-04-08T21:20:26Z",
   "sourceMixPath": "data/published/mix-036-thirtysixth.json",
   "tracks": [
     {
@@ -10,11 +10,11 @@
       "displayText": "The Kite String Tangle - Tennis Court (Lorde cover)",
       "query": "The Kite String Tangle Tennis Court (Lorde cover)",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "cwMXIM01Wzc",
         "confidenceScore": 0.805,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "low-confidence-top-candidate"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -71,13 +71,16 @@
         },
         {
           "rank": 5,
-          "videoId": "J5rxeg7PDdU",
-          "title": "\"Tennis Court\" by Lorde - Samantha Lyons",
-          "url": "https://www.youtube.com/watch?v=J5rxeg7PDdU",
-          "channel": "Samantha Lyons",
-          "durationSeconds": 185.0,
-          "score": 0.265,
-          "signals": []
+          "videoId": "1mV7lDIANX0",
+          "title": "Lorde - Tennis Court (The Kite String Tangle Cover)",
+          "url": "https://www.youtube.com/watch?v=1mV7lDIANX0",
+          "channel": "dustwud",
+          "durationSeconds": 227.0,
+          "score": 0.805,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title"
+          ]
         }
       ]
     },
@@ -89,7 +92,7 @@
         "status": "auto-resolved",
         "selectedVideoId": "qsZir4UBf74",
         "confidenceScore": 0.997,
-        "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
         "holdbackReason": null
       },
       "candidates": [
@@ -129,7 +132,7 @@
           "url": "https://www.youtube.com/watch?v=IeDS2k5mrwQ",
           "channel": "Angel Miike",
           "durationSeconds": 295.0,
-          "score": 0.808,
+          "score": 0.768,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -172,11 +175,11 @@
       "displayText": "Empress Of - Realize You",
       "query": "Empress Of Realize You",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "XF-oJhzUW-4",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -217,7 +220,7 @@
           "url": "https://www.youtube.com/watch?v=KBxkwZQVoJE",
           "channel": "aurelius prime",
           "durationSeconds": 302.0,
-          "score": 0.676,
+          "score": 0.636,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -232,7 +235,7 @@
           "url": "https://www.youtube.com/watch?v=vU6JhUuHOhY",
           "channel": "JYeahJasonJude",
           "durationSeconds": 283.0,
-          "score": 0.672,
+          "score": 0.632,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -247,7 +250,7 @@
           "url": "https://www.youtube.com/watch?v=eZlBjUV_CfM",
           "channel": "The FADER",
           "durationSeconds": 236.0,
-          "score": 0.619,
+          "score": 0.579,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -262,30 +265,15 @@
       "displayText": "Dum Dum Girls - Lost Boys and Girls Club",
       "query": "Dum Dum Girls Lost Boys and Girls Club",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "2XvoO9UgbTU",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
           "rank": 1,
-          "videoId": "pOF_oo3EgnQ",
-          "title": "Dum Dum Girls - Lost Boys And Girls Club [OFFICIAL VIDEO]",
-          "url": "https://www.youtube.com/watch?v=pOF_oo3EgnQ",
-          "channel": "Sub Pop",
-          "durationSeconds": 234.0,
-          "score": 0.999,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
-            "song-title-in-title",
-            "official-upload"
-          ]
-        },
-        {
-          "rank": 2,
           "videoId": "2XvoO9UgbTU",
           "title": "Dum Dum Girls - Lost Boys and Girls Club",
           "url": "https://www.youtube.com/watch?v=2XvoO9UgbTU",
@@ -300,13 +288,13 @@
           ]
         },
         {
-          "rank": 3,
+          "rank": 2,
           "videoId": "1Bgyg7cYI0o",
           "title": "Lost Boys and Girls Club",
           "url": "https://www.youtube.com/watch?v=1Bgyg7cYI0o",
           "channel": "Dum Dum Girls - Topic",
           "durationSeconds": 205.0,
-          "score": 0.932,
+          "score": 0.992,
           "signals": [
             "candidate-title-covers-most-track-tokens",
             "song-title-near-exact-match",
@@ -316,13 +304,29 @@
           ]
         },
         {
+          "rank": 3,
+          "videoId": "pOF_oo3EgnQ",
+          "title": "Dum Dum Girls - Lost Boys And Girls Club [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=pOF_oo3EgnQ",
+          "channel": "Sub Pop",
+          "durationSeconds": 234.0,
+          "score": 0.903,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
           "rank": 4,
           "videoId": "TOkbByKigW4",
           "title": "Dum Dum Girls - Lost Boys and Girls Club - Live at Pitchfork 2014",
           "url": "https://www.youtube.com/watch?v=TOkbByKigW4",
           "channel": "imstld",
           "durationSeconds": 218.0,
-          "score": 0.752,
+          "score": 0.712,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -337,7 +341,7 @@
           "url": "https://www.youtube.com/watch?v=Vdc0WaaGZtk",
           "channel": "Sixteen Roses",
           "durationSeconds": 225.0,
-          "score": 0.52,
+          "score": 0.48,
           "signals": [
             "candidate-title-covers-most-track-tokens",
             "artist-name-in-title",
@@ -351,11 +355,11 @@
       "displayText": "Bastille - (I Just) Died In Your Arms Tonight (Cutting Crew cover)",
       "query": "Bastille (I Just) Died In Your Arms Tonight (Cutting Crew cover)",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "-fs2ClGpWnc",
         "confidenceScore": 0.829,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "low-confidence-top-candidate"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -374,31 +378,6 @@
         },
         {
           "rank": 2,
-          "videoId": "QWpGsIDepU0",
-          "title": "The Lost Fingers - (I Just) Died In Your Arms Tonight (Cutting Crew Cover)",
-          "url": "https://www.youtube.com/watch?v=QWpGsIDepU0",
-          "channel": "Nik V",
-          "durationSeconds": 287.0,
-          "score": 0.797,
-          "signals": [
-            "candidate-title-covers-most-track-tokens",
-            "song-title-in-title"
-          ]
-        },
-        {
-          "rank": 3,
-          "videoId": "-qigG5u1cG8",
-          "title": "Dream Troll - (I Just) Died In Your Arms - Metal Cover - Cutting Crew",
-          "url": "https://www.youtube.com/watch?v=-qigG5u1cG8",
-          "channel": "Dream Troll",
-          "durationSeconds": 293.0,
-          "score": 0.652,
-          "signals": [
-            "candidate-title-covers-most-track-tokens"
-          ]
-        },
-        {
-          "rank": 4,
           "videoId": "Y5FdS85nlag",
           "title": "BASTILLE // Died In Your Arms",
           "url": "https://www.youtube.com/watch?v=Y5FdS85nlag",
@@ -411,7 +390,19 @@
           ]
         },
         {
-          "rank": 5,
+          "rank": 3,
+          "videoId": "50iopMQjULo",
+          "title": "(I Just) Died In Your Arms - Bastille Cover",
+          "url": "https://www.youtube.com/watch?v=50iopMQjULo",
+          "channel": "Siân Harries",
+          "durationSeconds": 206.0,
+          "score": 0.442,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
           "videoId": "_osc6a-DaAQ",
           "title": "(I Just) Died In Your Arms - Cover by Bastille",
           "url": "https://www.youtube.com/watch?v=_osc6a-DaAQ",
@@ -421,6 +412,18 @@
           "signals": [
             "artist-name-in-title"
           ]
+        },
+        {
+          "rank": 5,
+          "videoId": "E7VgstsVS44",
+          "title": "Cutting Crew - (I Just) Died In Your Arms [Live at Rockpalast 2007]",
+          "url": "https://www.youtube.com/watch?v=E7VgstsVS44",
+          "channel": "Cutting Crew Music",
+          "durationSeconds": 758.0,
+          "score": 0.053,
+          "signals": [
+            "live-version-penalty"
+          ]
         }
       ]
     },
@@ -429,11 +432,11 @@
       "displayText": "Blood Orange - You’re Not Good Enough",
       "query": "Blood Orange You’re Not Good Enough",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "LA0u23BaAtI",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -453,45 +456,50 @@
         },
         {
           "rank": 2,
+          "videoId": "A9SnK7HPqtY",
+          "title": "Blood Orange - You're Not Good Enough (Official Video) Remastered Audio UHD 4K",
+          "url": "https://www.youtube.com/watch?v=A9SnK7HPqtY",
+          "channel": "Happy Charlie",
+          "durationSeconds": 262.0,
+          "score": 0.875,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "audio-tag-preferred",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
           "videoId": "7gtdpnKbT10",
           "title": "Blood Orange — \"You're Not Good Enough\" (Official Music Video)",
           "url": "https://www.youtube.com/watch?v=7gtdpnKbT10",
           "channel": "Urban Outfitters",
           "durationSeconds": 262.0,
-          "score": 0.972,
+          "score": 0.872,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
         },
         {
-          "rank": 3,
+          "rank": 4,
           "videoId": "_vsgXw_l68M",
           "title": "Blood Orange  - You're Not Good Enough (music video)",
           "url": "https://www.youtube.com/watch?v=_vsgXw_l68M",
           "channel": "JohnFrankLyke",
           "durationSeconds": 210.0,
-          "score": 0.971,
+          "score": 0.871,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
-            "song-title-in-title"
-          ]
-        },
-        {
-          "rank": 4,
-          "videoId": "C4ep2_P2A4M",
-          "title": "Blood Orange \"You're Not Good Enough\" : Converse Gigs @ 100 Club",
-          "url": "https://www.youtube.com/watch?v=C4ep2_P2A4M",
-          "channel": "Converse CONS",
-          "durationSeconds": 225.0,
-          "score": 0.925,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
-            "song-title-in-title"
+            "song-title-in-title",
+            "music-video-penalty"
           ]
         },
         {
@@ -514,11 +522,11 @@
       "displayText": "Twin Shadow - Old Love New Love",
       "query": "Twin Shadow Old Love New Love",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "JFiDnErxU_A",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -534,7 +542,8 @@
             "artist-name-in-title",
             "song-title-in-title",
             "artist-name-in-channel",
-            "official-upload"
+            "official-upload",
+            "audio-tag-preferred"
           ]
         },
         {
@@ -544,13 +553,14 @@
           "url": "https://www.youtube.com/watch?v=4w9xYUAo85M",
           "channel": "Twin Shadow",
           "durationSeconds": 230.0,
-          "score": 0.983,
+          "score": 0.999,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
             "artist-name-in-channel",
-            "official-upload"
+            "official-upload",
+            "audio-tag-preferred"
           ]
         },
         {
@@ -574,7 +584,7 @@
           "url": "https://www.youtube.com/watch?v=fYeX5Vz5uFE",
           "channel": "Twin Shadow",
           "durationSeconds": 226.0,
-          "score": 0.812,
+          "score": 0.772,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -603,11 +613,11 @@
       "displayText": "STRANGERS - London Light",
       "query": "STRANGERS London Light",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
-        "confidenceScore": 0.323,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "low-confidence-top-candidate"
+        "status": "auto-resolved",
+        "selectedVideoId": "cm_lALrcIfE",
+        "confidenceScore": 0.223,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
       },
       "candidates": [
         {
@@ -617,14 +627,27 @@
           "url": "https://www.youtube.com/watch?v=cm_lALrcIfE",
           "channel": "Hopeless Records",
           "durationSeconds": 200.0,
-          "score": 0.323,
+          "score": 0.223,
           "signals": [
             "song-title-in-title",
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
         },
         {
           "rank": 2,
+          "videoId": "yDcZ0dh-Suo",
+          "title": "Electric Light Orchestra - Stranger (Audio)",
+          "url": "https://www.youtube.com/watch?v=yDcZ0dh-Suo",
+          "channel": "ELO",
+          "durationSeconds": 269.0,
+          "score": 0.208,
+          "signals": [
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
           "videoId": "AnZeL3Beyjc",
           "title": "ELO   Stranger",
           "url": "https://www.youtube.com/watch?v=AnZeL3Beyjc",
@@ -634,36 +657,27 @@
           "signals": []
         },
         {
-          "rank": 3,
+          "rank": 4,
+          "videoId": "CslsZxdvnYQ",
+          "title": "Electric Light Orchestra - Stranger (new 2021)",
+          "url": "https://www.youtube.com/watch?v=CslsZxdvnYQ",
+          "channel": "Andrey StetS",
+          "durationSeconds": 271.0,
+          "score": 0.15,
+          "signals": []
+        },
+        {
+          "rank": 5,
           "videoId": "Up4WjdabA2c",
           "title": "Electric Light Orchestra - Last Train to London (Official Video)",
           "url": "https://www.youtube.com/watch?v=Up4WjdabA2c",
           "channel": "ELO",
           "durationSeconds": 278.0,
-          "score": 0.195,
+          "score": 0.095,
           "signals": [
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
-        },
-        {
-          "rank": 4,
-          "videoId": "yDcZ0dh-Suo",
-          "title": "Electric Light Orchestra - Stranger (Audio)",
-          "url": "https://www.youtube.com/watch?v=yDcZ0dh-Suo",
-          "channel": "ELO",
-          "durationSeconds": 269.0,
-          "score": 0.148,
-          "signals": []
-        },
-        {
-          "rank": 5,
-          "videoId": "zddpuqWrJbw",
-          "title": "Stranger Things Intro & Running Up That Hill by Kate Bush - 2025",
-          "url": "https://www.youtube.com/watch?v=zddpuqWrJbw",
-          "channel": "Loblolly Lights",
-          "durationSeconds": 270.0,
-          "score": 0.11,
-          "signals": []
         }
       ]
     },
@@ -672,36 +686,37 @@
       "displayText": "Grizzly Bear - Will Calls",
       "query": "Grizzly Bear Will Calls",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
-        "confidenceScore": 0.838,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "status": "auto-resolved",
+        "selectedVideoId": "YjDL3dcnCOw",
+        "confidenceScore": 0.878,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
           "rank": 1,
-          "videoId": "E8pNta0mtw0",
+          "videoId": "YjDL3dcnCOw",
           "title": "Grizzly Bear - Will Calls (Diplo Remix)",
-          "url": "https://www.youtube.com/watch?v=E8pNta0mtw0",
-          "channel": "Trap City",
-          "durationSeconds": 247.0,
-          "score": 0.838,
+          "url": "https://www.youtube.com/watch?v=YjDL3dcnCOw",
+          "channel": "Grizzly Bear",
+          "durationSeconds": 248.0,
+          "score": 0.878,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
+            "artist-name-in-channel",
             "unexpected-remix-penalty"
           ]
         },
         {
           "rank": 2,
-          "videoId": "p2YaodGLmJE",
+          "videoId": "E8pNta0mtw0",
           "title": "Grizzly Bear - Will Calls (Diplo Remix)",
-          "url": "https://www.youtube.com/watch?v=p2YaodGLmJE",
-          "channel": "CloudKid",
-          "durationSeconds": 248.0,
-          "score": 0.838,
+          "url": "https://www.youtube.com/watch?v=E8pNta0mtw0",
+          "channel": "Trap City",
+          "durationSeconds": 247.0,
+          "score": 0.798,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -711,12 +726,27 @@
         },
         {
           "rank": 3,
+          "videoId": "p2YaodGLmJE",
+          "title": "Grizzly Bear - Will Calls (Diplo Remix)",
+          "url": "https://www.youtube.com/watch?v=p2YaodGLmJE",
+          "channel": "CloudKid",
+          "durationSeconds": 248.0,
+          "score": 0.798,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
           "videoId": "9YtYwt7RJv8",
           "title": "Grizzly Bear: Will Calls (with Victoria Legrand) (Live @ The Shrine, November 12, 2025)",
           "url": "https://www.youtube.com/watch?v=9YtYwt7RJv8",
           "channel": "thetaintster",
           "durationSeconds": 332.0,
-          "score": 0.598,
+          "score": 0.558,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -725,25 +755,12 @@
           ]
         },
         {
-          "rank": 4,
+          "rank": 5,
           "videoId": "B-ifqEZVQxQ",
           "title": "Will Calls (Marfa Demo)",
           "url": "https://www.youtube.com/watch?v=B-ifqEZVQxQ",
           "channel": "Grizzly Bear",
           "durationSeconds": 412.0,
-          "score": 0.412,
-          "signals": [
-            "song-title-in-title",
-            "artist-name-in-channel"
-          ]
-        },
-        {
-          "rank": 5,
-          "videoId": "9zD5xTWBX4U",
-          "title": "Will Calls (Marfa Demo)",
-          "url": "https://www.youtube.com/watch?v=9zD5xTWBX4U",
-          "channel": "Grizzly Bear",
-          "durationSeconds": 411.0,
           "score": 0.412,
           "signals": [
             "song-title-in-title",
@@ -757,11 +774,11 @@
       "displayText": "Mogwai - Remurdered",
       "query": "Mogwai Remurdered",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "sZ5nEuG-CRc",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -796,20 +813,6 @@
         },
         {
           "rank": 3,
-          "videoId": "NybDGWzG0fE",
-          "title": "Mogwai - Remurdered  (not the video)",
-          "url": "https://www.youtube.com/watch?v=NybDGWzG0fE",
-          "channel": "Sub Pop",
-          "durationSeconds": 386.0,
-          "score": 0.9,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
-            "song-title-in-title"
-          ]
-        },
-        {
-          "rank": 4,
           "videoId": "UbfoFRRUu2w",
           "title": "Mogwai - Remurdered (The Quay Sessions)",
           "url": "https://www.youtube.com/watch?v=UbfoFRRUu2w",
@@ -823,7 +826,7 @@
           ]
         },
         {
-          "rank": 5,
+          "rank": 4,
           "videoId": "et_dCnXYSBA",
           "title": "Mogwai - Remurdered at Glastonbury 2014",
           "url": "https://www.youtube.com/watch?v=et_dCnXYSBA",
@@ -835,6 +838,21 @@
             "artist-name-in-title",
             "song-title-in-title"
           ]
+        },
+        {
+          "rank": 5,
+          "videoId": "NybDGWzG0fE",
+          "title": "Mogwai - Remurdered  (not the video)",
+          "url": "https://www.youtube.com/watch?v=NybDGWzG0fE",
+          "channel": "Sub Pop",
+          "durationSeconds": 386.0,
+          "score": 0.8,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
         }
       ]
     },
@@ -843,11 +861,11 @@
       "displayText": "High Highs - A Real Hero (College & Electric Youth cover)",
       "query": "High Highs A Real Hero (College & Electric Youth cover)",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "fLHDJ_6ma40",
         "confidenceScore": 0.467,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "low-confidence-top-candidate"
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
       },
       "candidates": [
         {
@@ -864,16 +882,6 @@
         },
         {
           "rank": 2,
-          "videoId": "909BKmiArQs",
-          "title": "The Vestals - A Real Hero (College cover) Live",
-          "url": "https://www.youtube.com/watch?v=909BKmiArQs",
-          "channel": "Soundtrack Sessions",
-          "durationSeconds": 248.0,
-          "score": 0.297,
-          "signals": []
-        },
-        {
-          "rank": 3,
           "videoId": "tjM55vjKc7M",
           "title": "A Real Hero",
           "url": "https://www.youtube.com/watch?v=tjM55vjKc7M",
@@ -885,7 +893,7 @@
           ]
         },
         {
-          "rank": 4,
+          "rank": 3,
           "videoId": "CagkFxbM21g",
           "title": "College & Electric Youth - A Real Hero (Under your spell) - COVER",
           "url": "https://www.youtube.com/watch?v=CagkFxbM21g",
@@ -895,14 +903,28 @@
           "signals": []
         },
         {
-          "rank": 5,
+          "rank": 4,
           "videoId": "iAgk7-vBpvo",
           "title": "College Ft. Electric Youth - A Real Hero [Drive Original Soundtrack] Music Video (Cover by Kaleia)",
           "url": "https://www.youtube.com/watch?v=iAgk7-vBpvo",
           "channel": "Kaya Deus",
           "durationSeconds": 247.0,
-          "score": 0.195,
-          "signals": []
+          "score": 0.095,
+          "signals": [
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "909BKmiArQs",
+          "title": "The Vestals - A Real Hero (College cover) Live",
+          "url": "https://www.youtube.com/watch?v=909BKmiArQs",
+          "channel": "Soundtrack Sessions",
+          "durationSeconds": 248.0,
+          "score": 0.077,
+          "signals": [
+            "live-version-penalty"
+          ]
         }
       ]
     },
@@ -911,11 +933,11 @@
       "displayText": "Angel Haze - Summer Time Sadness (Lana Del Rey cover)",
       "query": "Angel Haze Summer Time Sadness (Lana Del Rey cover)",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "UVv4k0vghkw",
         "confidenceScore": 0.436,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "low-confidence-top-candidate"
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
       },
       "candidates": [
         {
@@ -962,15 +984,13 @@
         },
         {
           "rank": 5,
-          "videoId": "jHmTRDVQ83Y",
-          "title": "Lana Del Rey - Summertime Sadness (Cover) Lyrics",
-          "url": "https://www.youtube.com/watch?v=jHmTRDVQ83Y",
-          "channel": "dickson blog",
-          "durationSeconds": 218.0,
-          "score": 0.245,
-          "signals": [
-            "lyric-video-penalty"
-          ]
+          "videoId": "vU7KjBQ-n08",
+          "title": "Pricefield | Summertime Sadness",
+          "url": "https://www.youtube.com/watch?v=vU7KjBQ-n08",
+          "channel": "hellotimekitty",
+          "durationSeconds": 231.0,
+          "score": 0.258,
+          "signals": []
         }
       ]
     },
@@ -979,11 +999,11 @@
       "displayText": "Ellie Goulding - Mirror",
       "query": "Ellie Goulding Mirror",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
-        "confidenceScore": 0.965,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "status": "auto-resolved",
+        "selectedVideoId": "Hi1I4srakR8",
+        "confidenceScore": 0.865,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -993,45 +1013,18 @@
           "url": "https://www.youtube.com/watch?v=Hi1I4srakR8",
           "channel": "Ellie Goulding",
           "durationSeconds": 262.0,
-          "score": 0.965,
+          "score": 0.865,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
             "artist-name-in-channel",
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
         },
         {
           "rank": 2,
-          "videoId": "jpNLXHFs9dc",
-          "title": "Ellie Goulding - Mirror (Music/Lyric Video)",
-          "url": "https://www.youtube.com/watch?v=jpNLXHFs9dc",
-          "channel": "Rami",
-          "durationSeconds": 261.0,
-          "score": 0.858,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
-            "song-title-in-title"
-          ]
-        },
-        {
-          "rank": 3,
-          "videoId": "iJSD6JGsMMc",
-          "title": "Ellie Goulding | Mirror | Catching Fire | Music Video",
-          "url": "https://www.youtube.com/watch?v=iJSD6JGsMMc",
-          "channel": "a jedi editor",
-          "durationSeconds": 272.0,
-          "score": 0.826,
-          "signals": [
-            "candidate-title-covers-track-tokens",
-            "artist-name-in-title",
-            "song-title-in-title"
-          ]
-        },
-        {
-          "rank": 4,
           "videoId": "q0pwoFxha58",
           "title": "Ellie Goulding - Mirror - The Hunger Games: Catching Fire Soundtrack 10",
           "url": "https://www.youtube.com/watch?v=q0pwoFxha58",
@@ -1045,17 +1038,47 @@
           ]
         },
         {
-          "rank": 5,
+          "rank": 3,
+          "videoId": "iJSD6JGsMMc",
+          "title": "Ellie Goulding | Mirror | Catching Fire | Music Video",
+          "url": "https://www.youtube.com/watch?v=iJSD6JGsMMc",
+          "channel": "a jedi editor",
+          "durationSeconds": 272.0,
+          "score": 0.726,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
           "videoId": "5uEbVeqAftM",
           "title": "Ellie Goulding - Mirrors in the Live Lounge",
           "url": "https://www.youtube.com/watch?v=5uEbVeqAftM",
           "channel": "BBC Radio 1",
           "durationSeconds": 305.0,
-          "score": 0.249,
+          "score": 0.209,
           "signals": [
             "artist-name-in-title",
             "song-title-in-title",
             "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ETO08_aRaz8",
+          "title": "Ellie Goulding - Mirrors (Justin Timberlake cover) live at BBC Radio 1 Live Lounge Sessions",
+          "url": "https://www.youtube.com/watch?v=ETO08_aRaz8",
+          "channel": "Adrian Czech",
+          "durationSeconds": 272.0,
+          "score": 0.0,
+          "signals": [
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty",
+            "unexpected-cover-penalty"
           ]
         }
       ]
@@ -1065,11 +1088,11 @@
       "displayText": "Oh Land - Love You Better (John Dillinger remix)",
       "query": "Oh Land Love You Better (John Dillinger remix)",
       "resolution": {
-        "status": "pending-review",
-        "selectedVideoId": null,
+        "status": "auto-resolved",
+        "selectedVideoId": "eMGvfjRMz-8",
         "confidenceScore": 0.999,
-        "reason": "The best YouTube hit is close enough to keep, but not clear enough to auto-select safely.",
-        "holdbackReason": "ambiguous-top-candidates"
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
       },
       "candidates": [
         {
@@ -1094,11 +1117,12 @@
           "url": "https://www.youtube.com/watch?v=7gorMVxtKjM",
           "channel": "Annemarie Smith",
           "durationSeconds": 115.0,
-          "score": 0.964,
+          "score": 0.864,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
-            "song-title-in-title"
+            "song-title-in-title",
+            "music-video-penalty"
           ]
         },
         {
@@ -1138,9 +1162,35 @@
   ],
   "summary": {
     "totalTracks": 14,
-    "resolvedTracks": 1,
-    "unresolvedTracks": 13,
-    "requiresReview": true,
-    "generatedEmbed": null
+    "resolvedTracks": 14,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Thirtysixth",
+      "embedUrl": "https://www.youtube.com/embed/cwMXIM01Wzc?playlist=qsZir4UBf74,XF-oJhzUW-4,2XvoO9UgbTU,-fs2ClGpWnc,LA0u23BaAtI,JFiDnErxU_A,cm_lALrcIfE,YjDL3dcnCOw,sZ5nEuG-CRc,fLHDJ_6ma40,UVv4k0vghkw,Hi1I4srakR8,eMGvfjRMz-8",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=cwMXIM01Wzc,qsZir4UBf74,XF-oJhzUW-4,2XvoO9UgbTU,-fs2ClGpWnc,LA0u23BaAtI,JFiDnErxU_A,cm_lALrcIfE,YjDL3dcnCOw,sZ5nEuG-CRc,fLHDJ_6ma40,UVv4k0vghkw,Hi1I4srakR8,eMGvfjRMz-8",
+      "videoIds": [
+        "cwMXIM01Wzc",
+        "qsZir4UBf74",
+        "XF-oJhzUW-4",
+        "2XvoO9UgbTU",
+        "-fs2ClGpWnc",
+        "LA0u23BaAtI",
+        "JFiDnErxU_A",
+        "cm_lALrcIfE",
+        "YjDL3dcnCOw",
+        "sZ5nEuG-CRc",
+        "fLHDJ_6ma40",
+        "UVv4k0vghkw",
+        "Hi1I4srakR8",
+        "eMGvfjRMz-8"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:20:26Z"
+    }
   }
 }

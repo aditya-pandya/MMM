@@ -1,0 +1,1897 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-029-twentyninth",
+  "updatedAt": "2026-04-08T21:22:25Z",
+  "sourceMixPath": "data/imported/mixes/mix-029-twentyninth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Reptile Youth - Shooting Up Sunshine",
+      "query": "Reptile Youth Shooting Up Sunshine",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9KDxVJsQBqc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9KDxVJsQBqc",
+          "title": "Reptile Youth: Shooting Up Sunshine",
+          "url": "https://www.youtube.com/watch?v=9KDxVJsQBqc",
+          "channel": "hfn music",
+          "durationSeconds": 230.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "eCB4lqxmOZU",
+          "title": "Reptile Youth - Shooting Up Sunshine",
+          "url": "https://www.youtube.com/watch?v=eCB4lqxmOZU",
+          "channel": "isarina C.B",
+          "durationSeconds": 221.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Mnuf_X65hmc",
+          "title": "Reptile Youth - Shooting Up Sunshine Tour 2012 !",
+          "url": "https://www.youtube.com/watch?v=Mnuf_X65hmc",
+          "channel": "senmusic",
+          "durationSeconds": 343.0,
+          "score": 0.974,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "43D3CN9CS6g",
+          "title": "Reptile Youth-Shooting Up Sunshine LYRICS",
+          "url": "https://www.youtube.com/watch?v=43D3CN9CS6g",
+          "channel": "RobstenPattintwart",
+          "durationSeconds": 230.0,
+          "score": 0.91,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "UhGYxR2zTSo",
+          "title": "Reptile Youth - Shooting Up Sunshine Tour 2012 - Shout out to Hamburg",
+          "url": "https://www.youtube.com/watch?v=UhGYxR2zTSo",
+          "channel": "hfn music",
+          "durationSeconds": 43.0,
+          "score": 0.891,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Jesca Hoop - Hospital (Win Your Love)",
+      "query": "Jesca Hoop Hospital (Win Your Love)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "uo9KkkmhOqI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "uo9KkkmhOqI",
+          "title": "Jesca Hoop - Hospital (Win Your Love)",
+          "url": "https://www.youtube.com/watch?v=uo9KkkmhOqI",
+          "channel": "JescaHoop",
+          "durationSeconds": 230.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "nqXSfHO-7f0",
+          "title": "Jesca Hoop - 'Hospital (Win Your Love)' (OFFICIAL VIDEO)",
+          "url": "https://www.youtube.com/watch?v=nqXSfHO-7f0",
+          "channel": "JescaHoop",
+          "durationSeconds": 230.0,
+          "score": 0.898,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "YeSntxHXRtc",
+          "title": "Jesca Hoop - \"Hospital (Win Your Love)\" - Session acoustique",
+          "url": "https://www.youtube.com/watch?v=YeSntxHXRtc",
+          "channel": "Stars Are Underground",
+          "durationSeconds": 261.0,
+          "score": 0.86,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "jcmjojID_1M",
+          "title": "Jesca Hoop - \"Hospital (Win Your Love)\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=jcmjojID_1M",
+          "channel": "WFUV Public Radio",
+          "durationSeconds": 240.0,
+          "score": 0.747,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "0E6BhSr6KBk",
+          "title": "Hospital (Win Your Love) (DOJH)",
+          "url": "https://www.youtube.com/watch?v=0E6BhSr6KBk",
+          "channel": "JescaHoop",
+          "durationSeconds": 243.0,
+          "score": 0.462,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Best Coast - The Only Place",
+      "query": "Best Coast The Only Place",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "yoPoRuNTo9U",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "yoPoRuNTo9U",
+          "title": "Best Coast - The Only Place (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=yoPoRuNTo9U",
+          "channel": "Mexican Summer and Best Coast",
+          "durationSeconds": 164.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Y18C089tt9Y",
+          "title": "Best Coast - The Only Place (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Y18C089tt9Y",
+          "channel": "Mexican Summer and Best Coast",
+          "durationSeconds": 184.0,
+          "score": 0.944,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "RQ-JP3rdKIA",
+          "title": "Best Coast - The Only Place (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=RQ-JP3rdKIA",
+          "channel": "KEXP",
+          "durationSeconds": 207.0,
+          "score": 0.715,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "DdYW9M-p6mY",
+          "title": "Best Coast - The Only Place (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=DdYW9M-p6mY",
+          "channel": "KEXP",
+          "durationSeconds": 210.0,
+          "score": 0.715,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "0CS83g_c-9w",
+          "title": "TV Live: Best Coast - \"The Only Place\" (Letterman 2012)",
+          "url": "https://www.youtube.com/watch?v=0CS83g_c-9w",
+          "channel": "Music City Mike",
+          "durationSeconds": 230.0,
+          "score": 0.667,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "The Noisettes - That Girl",
+      "query": "The Noisettes That Girl",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "5y1V2xQhWII",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "5y1V2xQhWII",
+          "title": "The Noisettes  That Girl",
+          "url": "https://www.youtube.com/watch?v=5y1V2xQhWII",
+          "channel": "midnightcaller",
+          "durationSeconds": 237.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "vrOpGba4Tvo",
+          "title": "Noisettes  - That Girl",
+          "url": "https://www.youtube.com/watch?v=vrOpGba4Tvo",
+          "channel": "MagicRecordsPoland",
+          "durationSeconds": 194.0,
+          "score": 0.467,
+          "signals": [
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ayKhD_MVzDM",
+          "title": "Noisettes - That Girl",
+          "url": "https://www.youtube.com/watch?v=ayKhD_MVzDM",
+          "channel": "Alexandre Elmais",
+          "durationSeconds": 195.0,
+          "score": 0.467,
+          "signals": [
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "PyEo8M42Qn4",
+          "title": "Noisettes - That Girl - Contact",
+          "url": "https://www.youtube.com/watch?v=PyEo8M42Qn4",
+          "channel": "NoisettesOfficial",
+          "durationSeconds": 197.0,
+          "score": 0.398,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "wlx0zuMFJck",
+          "title": "Noisettes - That Girl (Last.fm Sessions)",
+          "url": "https://www.youtube.com/watch?v=wlx0zuMFJck",
+          "channel": "Last.fm",
+          "durationSeconds": 236.0,
+          "score": 0.345,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Michael Kiwanuka - Bones",
+      "query": "Michael Kiwanuka Bones",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "P6EiH1pzY1U",
+        "confidenceScore": 0.887,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "P6EiH1pzY1U",
+          "title": "Michael Kiwanuka - Bones (Official Video)",
+          "url": "https://www.youtube.com/watch?v=P6EiH1pzY1U",
+          "channel": "Michael Kiwanuka",
+          "durationSeconds": 214.0,
+          "score": 0.887,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "A0Tcx3LV3t8",
+          "title": "Michael Kiwanuka - Bones (Bing Lounge)",
+          "url": "https://www.youtube.com/watch?v=A0Tcx3LV3t8",
+          "channel": "101.9 KINK.FM",
+          "durationSeconds": 238.0,
+          "score": 0.882,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "y5OW6Ywc8V8",
+          "title": "Michael Kiwanuka - 'Bones' [HD] | North Sea Jazz 2012",
+          "url": "https://www.youtube.com/watch?v=y5OW6Ywc8V8",
+          "channel": "North Sea Jazz Archive",
+          "durationSeconds": 231.0,
+          "score": 0.833,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "62P2fpIbCPI",
+          "title": "OFF Session - Michael Kiwanuka : « Bones »",
+          "url": "https://www.youtube.com/watch?v=62P2fpIbCPI",
+          "channel": "OFF Productions",
+          "durationSeconds": 232.0,
+          "score": 0.802,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "bv_JBd0ldVU",
+          "title": "Bones",
+          "url": "https://www.youtube.com/watch?v=bv_JBd0ldVU",
+          "channel": "Michael Kiwanuka",
+          "durationSeconds": 229.0,
+          "score": 0.451,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Azure Ray - Scattered Like Leaves",
+      "query": "Azure Ray Scattered Like Leaves",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "-2y3icYSbn4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "-2y3icYSbn4",
+          "title": "Azure Ray - Scattered Like Leaves",
+          "url": "https://www.youtube.com/watch?v=-2y3icYSbn4",
+          "channel": "Saddle Creek",
+          "durationSeconds": 231.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "QpVPwDUFKhY",
+          "title": "Azure Ray - Scattered Like Leaves + Lyrics",
+          "url": "https://www.youtube.com/watch?v=QpVPwDUFKhY",
+          "channel": "Aléa's Channel",
+          "durationSeconds": 231.0,
+          "score": 0.918,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "vtbBDdQTv98",
+          "title": "Scattered Like Leaves",
+          "url": "https://www.youtube.com/watch?v=vtbBDdQTv98",
+          "channel": "Azure Ray - Topic",
+          "durationSeconds": 225.0,
+          "score": 0.702,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "0G6V2Wo3t5U",
+          "title": "Azure Ray - New Resolution",
+          "url": "https://www.youtube.com/watch?v=0G6V2Wo3t5U",
+          "channel": "Saddle Creek",
+          "durationSeconds": 210.0,
+          "score": 0.328,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "oSaG6Odj02g",
+          "title": "Azure Ray \"Palindrome\" music video",
+          "url": "https://www.youtube.com/watch?v=oSaG6Odj02g",
+          "channel": "Ryan Dwyer",
+          "durationSeconds": 198.0,
+          "score": 0.214,
+          "signals": [
+            "artist-name-in-title",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Eternal Summers - You Kill",
+      "query": "Eternal Summers You Kill",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "f1DNkGBebhc",
+        "confidenceScore": 0.99,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "f1DNkGBebhc",
+          "title": "Eternal Summers \"You Kill\"",
+          "url": "https://www.youtube.com/watch?v=f1DNkGBebhc",
+          "channel": "kanine records",
+          "durationSeconds": 241.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Yi0IwMLEnYI",
+          "title": "Eternal Summers - You Kill",
+          "url": "https://www.youtube.com/watch?v=Yi0IwMLEnYI",
+          "channel": "Summer Fossils",
+          "durationSeconds": 233.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "xHj0CKRX9Cc",
+          "title": "Eternal Summers - You Kill",
+          "url": "https://www.youtube.com/watch?v=xHj0CKRX9Cc",
+          "channel": "IRPJuly2012",
+          "durationSeconds": 231.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "YIe6R2-Tq_4",
+          "title": "Eternal Summers \"You Kill\"  (9:30 Club)",
+          "url": "https://www.youtube.com/watch?v=YIe6R2-Tq_4",
+          "channel": "TheTroyLovebag",
+          "durationSeconds": 233.0,
+          "score": 0.917,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Ni3mafPn7EU",
+          "title": "Eternal Summers - You Kill + Good As You | Newtown Radio | Swan 7 Studio",
+          "url": "https://www.youtube.com/watch?v=Ni3mafPn7EU",
+          "channel": "Newtown Radio",
+          "durationSeconds": 651.0,
+          "score": 0.804,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Deap Vally - Gonna Make My Own Money",
+      "query": "Deap Vally Gonna Make My Own Money",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "PWXsTaBoD7A",
+        "confidenceScore": 0.981,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "PWXsTaBoD7A",
+          "title": "Deap Vally - Gonna Make My Own Money - Official Video",
+          "url": "https://www.youtube.com/watch?v=PWXsTaBoD7A",
+          "channel": "Deap Vally",
+          "durationSeconds": 157.0,
+          "score": 0.981,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "bfpskcg5XWU",
+          "title": "Gonna Make My Own Money (Deap Vally's Version)",
+          "url": "https://www.youtube.com/watch?v=bfpskcg5XWU",
+          "channel": "Deap Vally",
+          "durationSeconds": 146.0,
+          "score": 0.981,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "xAaRr0jhYNU",
+          "title": "Deap Vally - \"Gonna Make My Own Money\" (Live at Hotel Cafe)",
+          "url": "https://www.youtube.com/watch?v=xAaRr0jhYNU",
+          "channel": "Deap Vally",
+          "durationSeconds": 138.0,
+          "score": 0.803,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ytgd7cBcQ7I",
+          "title": "Deap Vally \"Gonna Make My Own Money\" - A Red Trolley Show (live performance)",
+          "url": "https://www.youtube.com/watch?v=ytgd7cBcQ7I",
+          "channel": "A Red Trolley Show",
+          "durationSeconds": 208.0,
+          "score": 0.665,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "J7cp4-45Phk",
+          "title": "DEAP VALLY - \"Gonna Make My Own Money\" (Live at Moon Block Party 2014) #JAMINTHEVAN",
+          "url": "https://www.youtube.com/watch?v=J7cp4-45Phk",
+          "channel": "Jam In The Van",
+          "durationSeconds": 183.0,
+          "score": 0.649,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Passion Pit - Constant Conversations",
+      "query": "Passion Pit Constant Conversations",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "8Ja5rhsCJ6U",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "8Ja5rhsCJ6U",
+          "title": "Passion Pit - Constant Conversations",
+          "url": "https://www.youtube.com/watch?v=8Ja5rhsCJ6U",
+          "channel": "satellite flight",
+          "durationSeconds": 236.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "HBtQhErlMx4",
+          "title": "Passion Pit - Constant Conversations",
+          "url": "https://www.youtube.com/watch?v=HBtQhErlMx4",
+          "channel": "Majestic Casual",
+          "durationSeconds": 235.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "m2aznWXsnng",
+          "title": "Passion Pit - Constant Conversations (Alternate Version Pseudo Video)",
+          "url": "https://www.youtube.com/watch?v=m2aznWXsnng",
+          "channel": "Passion Pit",
+          "durationSeconds": 219.0,
+          "score": 0.877,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "EBLuWKnKIn0",
+          "title": "Passion Pit - \"Constant Conversations\" (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=EBLuWKnKIn0",
+          "channel": "Pitchfork",
+          "durationSeconds": 270.0,
+          "score": 0.872,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "DM7LroHl51w",
+          "title": "Passion Pit - Constant Conversations (Live on Letterman)",
+          "url": "https://www.youtube.com/watch?v=DM7LroHl51w",
+          "channel": "Passion Pit",
+          "durationSeconds": 237.0,
+          "score": 0.804,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Kid Cudi - Dennis, Hook Me Up With Some More Of This Whiskey!",
+      "query": "Kid Cudi Dennis, Hook Me Up With Some More Of This Whiskey!",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "OdURL-foAmI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "OdURL-foAmI",
+          "title": "Kid Cudi - Dennis, Hook Me Up With Some More Of This Whiskey!",
+          "url": "https://www.youtube.com/watch?v=OdURL-foAmI",
+          "channel": "Sam Kitling",
+          "durationSeconds": 171.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "zFeZQkgltKE",
+          "title": "Kid Cudi - Ghost Reverse (  Dennis Hook Me Up With Some More Of This Whiskey )",
+          "url": "https://www.youtube.com/watch?v=zFeZQkgltKE",
+          "channel": "Marcus Vickers",
+          "durationSeconds": 290.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "S5VmGok0d5o",
+          "title": "Dennis, Hook Me Up With Some More of That Whiskey Cudi",
+          "url": "https://www.youtube.com/watch?v=S5VmGok0d5o",
+          "channel": "Skate Boy - Topic",
+          "durationSeconds": 185.0,
+          "score": 0.835,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "1sE6O-d8ZUM",
+          "title": "Kid Cudi - MOST AIN’T DENNIS (Visualizer)",
+          "url": "https://www.youtube.com/watch?v=1sE6O-d8ZUM",
+          "channel": "Kid Cudi",
+          "durationSeconds": 158.0,
+          "score": 0.304,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "visualizer-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "qDXBpUtiX1E",
+          "title": "Kid Cudi - Cudderisback (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=qDXBpUtiX1E",
+          "channel": "Mass Appeal",
+          "durationSeconds": 175.0,
+          "score": 0.225,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "Bat For Lashes - Laura",
+      "query": "Bat For Lashes Laura",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "j1WciL-uDL0",
+        "confidenceScore": 0.972,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "j1WciL-uDL0",
+          "title": "Bat For Lashes - Laura",
+          "url": "https://www.youtube.com/watch?v=j1WciL-uDL0",
+          "channel": "Federico Berti",
+          "durationSeconds": 271.0,
+          "score": 0.972,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "DGWoB4JjV9Y",
+          "title": "Bat for lashes - 'Laura' - Jools Holland",
+          "url": "https://www.youtube.com/watch?v=DGWoB4JjV9Y",
+          "channel": "Elliot Holtz - Sound and Vision",
+          "durationSeconds": 259.0,
+          "score": 0.868,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "UznHTBZIa8E",
+          "title": "Bat For Lashes - Laura (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=UznHTBZIa8E",
+          "channel": "Bat For Lashes",
+          "durationSeconds": 271.0,
+          "score": 0.856,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Jic3pSKMtfA",
+          "title": "Bat for Lashes - \"Laura\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=Jic3pSKMtfA",
+          "channel": "WFUV Public Radio",
+          "durationSeconds": 280.0,
+          "score": 0.654,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "JDKvPSa243Y",
+          "title": "Bats For Lashes Laura Lyrics",
+          "url": "https://www.youtube.com/watch?v=JDKvPSa243Y",
+          "channel": "Jazzyfae",
+          "durationSeconds": 260.0,
+          "score": 0.305,
+          "signals": [
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Purity Ring - Fineshrine",
+      "query": "Purity Ring Fineshrine",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Xqw4wo8vdY8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Xqw4wo8vdY8",
+          "title": "Purity Ring - Fineshrine",
+          "url": "https://www.youtube.com/watch?v=Xqw4wo8vdY8",
+          "channel": "Purity Ring",
+          "durationSeconds": 217.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "YxJ_5ln1x40",
+          "title": "Purity Ring - Fineshrine (4AD)",
+          "url": "https://www.youtube.com/watch?v=YxJ_5ln1x40",
+          "channel": "4AD",
+          "durationSeconds": 210.0,
+          "score": 0.975,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "CqjyVOWz_4w",
+          "title": "Purity Ring - Fireshrine",
+          "url": "https://www.youtube.com/watch?v=CqjyVOWz_4w",
+          "channel": "LastGangRadio",
+          "durationSeconds": 210.0,
+          "score": 0.488,
+          "signals": [
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "5SZ0gF7Fu0M",
+          "title": "Purity Ring - Grammy",
+          "url": "https://www.youtube.com/watch?v=5SZ0gF7Fu0M",
+          "channel": "Purity Ring",
+          "durationSeconds": 180.0,
+          "score": 0.426,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "PPh51zP0UhA",
+          "title": "Purity Ring - heartsigh (Official Video)",
+          "url": "https://www.youtube.com/watch?v=PPh51zP0UhA",
+          "channel": "Purity Ring",
+          "durationSeconds": 223.0,
+          "score": 0.314,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Ellie Goulding - Anything Could Happen",
+      "query": "Ellie Goulding Anything Could Happen",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "VbdHf_zxsRw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "VbdHf_zxsRw",
+          "title": "Ellie Goulding - Anything Could Happen (Audio)",
+          "url": "https://www.youtube.com/watch?v=VbdHf_zxsRw",
+          "channel": "stuff",
+          "durationSeconds": 287.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "q-kuEBZ7l8g",
+          "title": "Ellie Goulding - Anything Could Happen",
+          "url": "https://www.youtube.com/watch?v=q-kuEBZ7l8g",
+          "channel": "TheHardestxOfHearts",
+          "durationSeconds": 287.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "5hzgS9s-tE8",
+          "title": "Ellie Goulding - Anything Could Happen (Official Video)",
+          "url": "https://www.youtube.com/watch?v=5hzgS9s-tE8",
+          "channel": "Ellie Goulding",
+          "durationSeconds": 257.0,
+          "score": 0.973,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "dmONb7JfsUc",
+          "title": "Ellie Goulding - Anything Could Happen (Acoustic) | Performance | On Air With Ryan Seacrest",
+          "url": "https://www.youtube.com/watch?v=dmONb7JfsUc",
+          "channel": "On Air With Ryan Seacrest",
+          "durationSeconds": 301.0,
+          "score": 0.774,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "N7kAD391z1M",
+          "title": "Ellie Goulding - Anything Could Happen (Vevo Presents: Live in London)",
+          "url": "https://www.youtube.com/watch?v=N7kAD391z1M",
+          "channel": "Ellie Goulding",
+          "durationSeconds": 311.0,
+          "score": 0.762,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Stars - Hold On When You Get Love and Let Go When You Give It",
+      "query": "Stars Hold On When You Get Love and Let Go When You Give It",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "2SYO6a6PaTs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2SYO6a6PaTs",
+          "title": "Stars - Hold On When You Get Love And Let Go When You Give It",
+          "url": "https://www.youtube.com/watch?v=2SYO6a6PaTs",
+          "channel": "Stars",
+          "durationSeconds": 278.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "EaRQV9vcIRs",
+          "title": "Stars - Hold On When You Get Love And Let Go When You Give It (Official Video)",
+          "url": "https://www.youtube.com/watch?v=EaRQV9vcIRs",
+          "channel": "Stars",
+          "durationSeconds": 230.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "I6sjlZdGCpw",
+          "title": "Stars - Hold On When You Get Love And Let Go When You Give It (Official Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=I6sjlZdGCpw",
+          "channel": "Stars",
+          "durationSeconds": 279.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "nOkbvJmR0h8",
+          "title": "Stars - Hold On When You Get Love And Let Go When You Give It | Live @ JBTV",
+          "url": "https://www.youtube.com/watch?v=nOkbvJmR0h8",
+          "channel": "JBTV Music Television",
+          "durationSeconds": 284.0,
+          "score": 0.813,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "0BtaApuxi7U",
+          "title": "Stars performing \"Hold On When You Get Love And Let Go When You Give It\" live on KCRW",
+          "url": "https://www.youtube.com/watch?v=0BtaApuxi7U",
+          "channel": "KCRW",
+          "durationSeconds": 276.0,
+          "score": 0.77,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 15,
+      "displayText": "Two Door Cinema Club - Sleep Alone",
+      "query": "Two Door Cinema Club Sleep Alone",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "YNXybY2DtwM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "YNXybY2DtwM",
+          "title": "TWO DOOR CINEMA CLUB | SLEEP ALONE",
+          "url": "https://www.youtube.com/watch?v=YNXybY2DtwM",
+          "channel": "Two Door Cinema Club",
+          "durationSeconds": 230.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "DDkQBg_flAc",
+          "title": "WLT - Two Door Cinema Club - Sleep Alone",
+          "url": "https://www.youtube.com/watch?v=DDkQBg_flAc",
+          "channel": "watchlistentell",
+          "durationSeconds": 236.0,
+          "score": 0.967,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "8UxeF05HP68",
+          "title": "Two Door Cinema Club - Sleep Alone Lyrics",
+          "url": "https://www.youtube.com/watch?v=8UxeF05HP68",
+          "channel": "Liz",
+          "durationSeconds": 220.0,
+          "score": 0.87,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "xQydrOOePUk",
+          "title": "Two Door Cinema Club - Sleep Alone (Live on Letterman)",
+          "url": "https://www.youtube.com/watch?v=xQydrOOePUk",
+          "channel": "canales",
+          "durationSeconds": 243.0,
+          "score": 0.679,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "x8eGJz4t-V4",
+          "title": "Sleep Alone - Lyric Video",
+          "url": "https://www.youtube.com/watch?v=x8eGJz4t-V4",
+          "channel": "Two Door Cinema Club",
+          "durationSeconds": 223.0,
+          "score": 0.296,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 16,
+      "displayText": "d’Eon - Now You Do",
+      "query": "d’Eon Now You Do",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "DMFcabYg0Ko",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "DMFcabYg0Ko",
+          "title": "d'Eon - Now You Do",
+          "url": "https://www.youtube.com/watch?v=DMFcabYg0Ko",
+          "channel": "Pelukini",
+          "durationSeconds": 463.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "koAYLj_gd4k",
+          "title": "d'Eon - Now You Do",
+          "url": "https://www.youtube.com/watch?v=koAYLj_gd4k",
+          "channel": "suudabraalis",
+          "durationSeconds": 463.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "WErTAwcYCM8",
+          "title": "Now Your Do",
+          "url": "https://www.youtube.com/watch?v=WErTAwcYCM8",
+          "channel": "Deon - Topic",
+          "durationSeconds": 463.0,
+          "score": 0.514,
+          "signals": [
+            "song-title-near-exact-match",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "DJsk_CnY53I",
+          "title": "d'Eon - Transparency (How to Dress Well Rework)",
+          "url": "https://www.youtube.com/watch?v=DJsk_CnY53I",
+          "channel": "deathscassette",
+          "durationSeconds": 462.0,
+          "score": 0.297,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "LT8bWsEcZBs",
+          "title": "You Don't Suck At Improv: How I solo over anything",
+          "url": "https://www.youtube.com/watch?v=LT8bWsEcZBs",
+          "channel": "Brandon D'Eon Music",
+          "durationSeconds": 1021.0,
+          "score": 0.172,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 17,
+      "displayText": "Dum Dum Girls - Lord Knows",
+      "query": "Dum Dum Girls Lord Knows",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "VQyT6o8QYdw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "VQyT6o8QYdw",
+          "title": "Dum Dum Girls - Lord Knows",
+          "url": "https://www.youtube.com/watch?v=VQyT6o8QYdw",
+          "channel": "Sub Pop",
+          "durationSeconds": 260.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "q3f9ZiH6Euw",
+          "title": "Dum Dum Girls - Lord Knows [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=q3f9ZiH6Euw",
+          "channel": "Sub Pop",
+          "durationSeconds": 259.0,
+          "score": 0.842,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "NO602YxZrRM",
+          "title": "Dum Dum Girls - Lord Knows (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=NO602YxZrRM",
+          "channel": "KEXP",
+          "durationSeconds": 266.0,
+          "score": 0.693,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "c3nb9MVlVEA",
+          "title": "Dum Dum Girls - \"Lord Knows\" (Live Boston Rock Talk)",
+          "url": "https://www.youtube.com/watch?v=c3nb9MVlVEA",
+          "channel": "Boston RockTalk",
+          "durationSeconds": 256.0,
+          "score": 0.65,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "RQVC2LI3_2U",
+          "title": "DUM DUM GIRLS \"Lord Knows\" Live at Brighton Music Hall, Allston, MA",
+          "url": "https://www.youtube.com/watch?v=RQVC2LI3_2U",
+          "channel": "Avi Paul Weinstein",
+          "durationSeconds": 248.0,
+          "score": 0.595,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 18,
+      "displayText": "Jens Lekman - I Know What Love Isn’t",
+      "query": "Jens Lekman I Know What Love Isn’t",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "0IVFpBX9-HA",
+        "confidenceScore": 0.976,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "0IVFpBX9-HA",
+          "title": "Jens Lekman - I Know What Love Isn't/How We Met",
+          "url": "https://www.youtube.com/watch?v=0IVFpBX9-HA",
+          "channel": "KUTX Austin",
+          "durationSeconds": 470.0,
+          "score": 0.976,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "UTVylMh-iy4",
+          "title": "Jens Lekman - I Know What Love Isn't /// Berlin Sessions #68",
+          "url": "https://www.youtube.com/watch?v=UTVylMh-iy4",
+          "channel": "Berlin Sessions",
+          "durationSeconds": 248.0,
+          "score": 0.94,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "jQErekXV9Qc",
+          "title": "Jens Lekman - \"I Know What Love Isn't\" (Official Video)",
+          "url": "https://www.youtube.com/watch?v=jQErekXV9Qc",
+          "channel": "Secretly Canadian",
+          "durationSeconds": 214.0,
+          "score": 0.897,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "QqJwIatc6c4",
+          "title": "Jens Lekman | I Know What Love Isn't + How We Met, The Long Version | Teragram Ballroom 2017",
+          "url": "https://www.youtube.com/watch?v=QqJwIatc6c4",
+          "channel": "LiveShowEd Video Archive",
+          "durationSeconds": 469.0,
+          "score": 0.845,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "yLsrqDQ0NOI",
+          "title": "Jens Lekman - I Know What Love Isn't (Live)",
+          "url": "https://www.youtube.com/watch?v=yLsrqDQ0NOI",
+          "channel": "FaceCulture",
+          "durationSeconds": 246.0,
+          "score": 0.789,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 19,
+      "displayText": "LP - Halo (Beyoncé cover)",
+      "query": "LP Halo (Beyoncé cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "86vozqlnmn8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "86vozqlnmn8",
+          "title": "LP - Halo (Beyoncé Cover)",
+          "url": "https://www.youtube.com/watch?v=86vozqlnmn8",
+          "channel": "RadioUtopia Video Creations",
+          "durationSeconds": 433.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "wrRQIa3gK2s",
+          "title": "LP - Halo (Beyoncé Cover) [Live]",
+          "url": "https://www.youtube.com/watch?v=wrRQIa3gK2s",
+          "channel": "HughLivedVEVO",
+          "durationSeconds": 439.0,
+          "score": 0.792,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "L6X0PqIWfzQ",
+          "title": "LP - Halo (Beyonce Cover)",
+          "url": "https://www.youtube.com/watch?v=L6X0PqIWfzQ",
+          "channel": "LP",
+          "durationSeconds": 439.0,
+          "score": 0.634,
+          "signals": [
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "61NTzhoBeYU",
+          "title": "Halo - LP cover (acoustic)",
+          "url": "https://www.youtube.com/watch?v=61NTzhoBeYU",
+          "channel": "Radio Kiss Kiss",
+          "durationSeconds": 165.0,
+          "score": 0.279,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "1LYl3yw-RBc",
+          "title": "Halo - LP subtitulada",
+          "url": "https://www.youtube.com/watch?v=1LYl3yw-RBc",
+          "channel": "Christa Navarro",
+          "durationSeconds": 439.0,
+          "score": 0.252,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 20,
+      "displayText": "jj - High Summer",
+      "query": "jj High Summer",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "dxQAWUmR4tc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "dxQAWUmR4tc",
+          "title": "jj - High Summer",
+          "url": "https://www.youtube.com/watch?v=dxQAWUmR4tc",
+          "channel": "Skipper Radio",
+          "durationSeconds": 256.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "m6O-uZk0Tfo",
+          "title": "jj - high summer",
+          "url": "https://www.youtube.com/watch?v=m6O-uZk0Tfo",
+          "channel": "hermano",
+          "durationSeconds": 256.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "K-GqB5p2Zjc",
+          "title": "jj  -  high summer",
+          "url": "https://www.youtube.com/watch?v=K-GqB5p2Zjc",
+          "channel": "valerie hector",
+          "durationSeconds": 256.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "KMXoME6x24U",
+          "title": "High Summer - JJ + Lyrics",
+          "url": "https://www.youtube.com/watch?v=KMXoME6x24U",
+          "channel": "littlepixel1",
+          "durationSeconds": 256.0,
+          "score": 0.832,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "XZ_J-X4asck",
+          "title": "High Five Song! JJ's Summer Waterpark Splash! 🌊 | CoComelon Nursery Rhymes & Kids Songs",
+          "url": "https://www.youtube.com/watch?v=XZ_J-X4asck",
+          "channel": "Cocomelon - Nursery Rhymes",
+          "durationSeconds": 183.0,
+          "score": 0.635,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 21,
+      "displayText": "Jinja Safari - Peter Pan",
+      "query": "Jinja Safari Peter Pan",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "r1de_sABLpE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "r1de_sABLpE",
+          "title": "Jinja Safari - 'Peter Pan'",
+          "url": "https://www.youtube.com/watch?v=r1de_sABLpE",
+          "channel": "Jinja Safari",
+          "durationSeconds": 203.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "HXsxpf1_IM8",
+          "title": "Jinja Safari - Peter Pan",
+          "url": "https://www.youtube.com/watch?v=HXsxpf1_IM8",
+          "channel": "leftoversounds",
+          "durationSeconds": 203.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Daabsxb_bcc",
+          "title": "Jinja Safari - Peter Pan",
+          "url": "https://www.youtube.com/watch?v=Daabsxb_bcc",
+          "channel": "Liv Spohr",
+          "durationSeconds": 191.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "pfOemkn-4Jg",
+          "title": "Jinja Safari - 'Peter Pan' (live)",
+          "url": "https://www.youtube.com/watch?v=pfOemkn-4Jg",
+          "channel": "Jinja Safari",
+          "durationSeconds": 207.0,
+          "score": 0.819,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "-58t9l93RgE",
+          "title": "Peter Pan - Jinja Safari Music Video [MADE by kaya deus]",
+          "url": "https://www.youtube.com/watch?v=-58t9l93RgE",
+          "channel": "Kaya Deus",
+          "durationSeconds": 203.0,
+          "score": 0.691,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 21,
+    "resolvedTracks": 21,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twentyninth",
+      "embedUrl": "https://www.youtube.com/embed/9KDxVJsQBqc?playlist=uo9KkkmhOqI,yoPoRuNTo9U,5y1V2xQhWII,P6EiH1pzY1U,-2y3icYSbn4,f1DNkGBebhc,PWXsTaBoD7A,8Ja5rhsCJ6U,OdURL-foAmI,j1WciL-uDL0,Xqw4wo8vdY8,VbdHf_zxsRw,2SYO6a6PaTs,YNXybY2DtwM,DMFcabYg0Ko,VQyT6o8QYdw,0IVFpBX9-HA,86vozqlnmn8,dxQAWUmR4tc,r1de_sABLpE",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=9KDxVJsQBqc,uo9KkkmhOqI,yoPoRuNTo9U,5y1V2xQhWII,P6EiH1pzY1U,-2y3icYSbn4,f1DNkGBebhc,PWXsTaBoD7A,8Ja5rhsCJ6U,OdURL-foAmI,j1WciL-uDL0,Xqw4wo8vdY8,VbdHf_zxsRw,2SYO6a6PaTs,YNXybY2DtwM,DMFcabYg0Ko,VQyT6o8QYdw,0IVFpBX9-HA,86vozqlnmn8,dxQAWUmR4tc,r1de_sABLpE",
+      "videoIds": [
+        "9KDxVJsQBqc",
+        "uo9KkkmhOqI",
+        "yoPoRuNTo9U",
+        "5y1V2xQhWII",
+        "P6EiH1pzY1U",
+        "-2y3icYSbn4",
+        "f1DNkGBebhc",
+        "PWXsTaBoD7A",
+        "8Ja5rhsCJ6U",
+        "OdURL-foAmI",
+        "j1WciL-uDL0",
+        "Xqw4wo8vdY8",
+        "VbdHf_zxsRw",
+        "2SYO6a6PaTs",
+        "YNXybY2DtwM",
+        "DMFcabYg0Ko",
+        "VQyT6o8QYdw",
+        "0IVFpBX9-HA",
+        "86vozqlnmn8",
+        "dxQAWUmR4tc",
+        "r1de_sABLpE"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:22:25Z"
+    }
+  }
+}

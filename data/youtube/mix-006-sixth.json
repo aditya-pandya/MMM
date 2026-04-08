@@ -1,0 +1,655 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-006-sixth",
+  "updatedAt": "2026-04-08T21:27:18Z",
+  "sourceMixPath": "data/imported/mixes/mix-006-sixth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Aloe Blacc - I Need A Dollar",
+      "query": "Aloe Blacc I Need A Dollar",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "nFZP8zQ5kzk",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "nFZP8zQ5kzk",
+          "title": "Aloe Blacc - I Need A Dollar",
+          "url": "https://www.youtube.com/watch?v=nFZP8zQ5kzk",
+          "channel": "LRG Clothing",
+          "durationSeconds": 243.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Pqj119D9kDg",
+          "title": "01 I Need A Dollar - Good Things - Aloe Blacc - Audio",
+          "url": "https://www.youtube.com/watch?v=Pqj119D9kDg",
+          "channel": "Aloe Blacc",
+          "durationSeconds": 245.0,
+          "score": 0.959,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "poGabvtvPSw",
+          "title": "Aloe Blacc - I Need A Dollar (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=poGabvtvPSw",
+          "channel": "Cassiopeia",
+          "durationSeconds": 246.0,
+          "score": 0.897,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "iR6oYX1D-0w",
+          "title": "Aloe Blacc - I Need A Dollar (Official Video)",
+          "url": "https://www.youtube.com/watch?v=iR6oYX1D-0w",
+          "channel": "Stones Throw",
+          "durationSeconds": 258.0,
+          "score": 0.869,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "gz_oef-uz9Q",
+          "title": "Aloe Blacc - I Need a Dollar (Live at MADE Part 5/6)",
+          "url": "https://www.youtube.com/watch?v=gz_oef-uz9Q",
+          "channel": "Aloe Blacc",
+          "durationSeconds": 380.0,
+          "score": 0.757,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Hey Rosetta! - Yer Spring",
+      "query": "Hey Rosetta! Yer Spring",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "8JYzp7wKhGQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "8JYzp7wKhGQ",
+          "title": "Hey Rosetta!  - Yer Spring",
+          "url": "https://www.youtube.com/watch?v=8JYzp7wKhGQ",
+          "channel": "Hey Rosetta!",
+          "durationSeconds": 293.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "hy7ohxRdLvA",
+          "title": "Hey Rosetta! - Yer Spring",
+          "url": "https://www.youtube.com/watch?v=hy7ohxRdLvA",
+          "channel": "Hey Rosetta!",
+          "durationSeconds": 294.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "qH8qJFPsL6o",
+          "title": "Hey Rosetta! -\"Yer Spring\" - HearYa Live Session 8/4/12",
+          "url": "https://www.youtube.com/watch?v=qH8qJFPsL6o",
+          "channel": "Hear Ya",
+          "durationSeconds": 435.0,
+          "score": 0.547,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ja_Hkk9j2nM",
+          "title": "Hey Rosetta! - Bandages",
+          "url": "https://www.youtube.com/watch?v=ja_Hkk9j2nM",
+          "channel": "Hey Rosetta!",
+          "durationSeconds": 373.0,
+          "score": 0.428,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "PYJiT_F2B4c",
+          "title": "Hey Rosetta! - There's An Arc",
+          "url": "https://www.youtube.com/watch?v=PYJiT_F2B4c",
+          "channel": "Jordan Canning",
+          "durationSeconds": 317.0,
+          "score": 0.372,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Against Me! - I Was A Teenage Anarchist",
+      "query": "Against Me! I Was A Teenage Anarchist",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "c7RUeMCZL3Q",
+        "confidenceScore": 0.974,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "c7RUeMCZL3Q",
+          "title": "Against Me! - \"I Was A Teenage Anarchist\" HD [Official Video]",
+          "url": "https://www.youtube.com/watch?v=c7RUeMCZL3Q",
+          "channel": "Against Me!",
+          "durationSeconds": 197.0,
+          "score": 0.974,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "vzgQ4SXT_Zg",
+          "title": "Against me! - I was A Teenage Anarchist HD [Official Song - Lyrics]",
+          "url": "https://www.youtube.com/watch?v=vzgQ4SXT_Zg",
+          "channel": "Tristan Smit",
+          "durationSeconds": 225.0,
+          "score": 0.891,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "VI6gqYy9h10",
+          "title": "Against Me! \"I Was a Teenage Anarchist\" Acoustic (High Quality)",
+          "url": "https://www.youtube.com/watch?v=VI6gqYy9h10",
+          "channel": "x1039phoenix",
+          "durationSeconds": 241.0,
+          "score": 0.858,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "AJFikxcCsj0",
+          "title": "Against Me! - \"I Was A Teenage Anarchist\" (Live on The Tonight Show)",
+          "url": "https://www.youtube.com/watch?v=AJFikxcCsj0",
+          "channel": "georgemartin",
+          "durationSeconds": 221.0,
+          "score": 0.707,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "k-1jhOtyNVM",
+          "title": "Baby, I'm an Anarchist!",
+          "url": "https://www.youtube.com/watch?v=k-1jhOtyNVM",
+          "channel": "Against Me!",
+          "durationSeconds": 161.0,
+          "score": 0.376,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "The xx - Islands",
+      "query": "The xx Islands",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9FOQGWceYg8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9FOQGWceYg8",
+          "title": "The xx - Islands",
+          "url": "https://www.youtube.com/watch?v=9FOQGWceYg8",
+          "channel": "thexxthexxthexx",
+          "durationSeconds": 161.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "JAzg4Fa-EBc",
+          "title": "The xx - Islands [HQ]",
+          "url": "https://www.youtube.com/watch?v=JAzg4Fa-EBc",
+          "channel": "AwesomeSymphonies",
+          "durationSeconds": 160.0,
+          "score": 0.976,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PElhV8z7I60",
+          "title": "The xx - Islands (Official Video)",
+          "url": "https://www.youtube.com/watch?v=PElhV8z7I60",
+          "channel": "The xx and 4 more",
+          "durationSeconds": 163.0,
+          "score": 0.885,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "izLgDn-2yJY",
+          "title": "The xx - Islands (Live at Glastonbury 2017)",
+          "url": "https://www.youtube.com/watch?v=izLgDn-2yJY",
+          "channel": "Splitting The Atom",
+          "durationSeconds": 169.0,
+          "score": 0.593,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "qqflFMhkqHM",
+          "title": "The xx - I Dare You (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=qqflFMhkqHM",
+          "channel": "The xx and 4 more",
+          "durationSeconds": 414.0,
+          "score": 0.259,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "HUNX and his PUNX - Lovers Lane",
+      "query": "HUNX and his PUNX Lovers Lane",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "XDnFG0T5KrI",
+        "confidenceScore": 0.85,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "XDnFG0T5KrI",
+          "title": "Hunx and His Punx - Lovers Lane [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=XDnFG0T5KrI",
+          "channel": "Hardly Art Records",
+          "durationSeconds": 223.0,
+          "score": 0.85,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "SJ25tcLxWJY",
+          "title": "Lovers Lane Hunx and his Punx sept 27 2025",
+          "url": "https://www.youtube.com/watch?v=SJ25tcLxWJY",
+          "channel": "raybo98",
+          "durationSeconds": 210.0,
+          "score": 0.844,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "6qyYzdSSGi0",
+          "title": "Hunx and His Punx - Lovers Lane - not the video",
+          "url": "https://www.youtube.com/watch?v=6qyYzdSSGi0",
+          "channel": "Hardly Art Records",
+          "durationSeconds": 216.0,
+          "score": 0.815,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "8Ko7h1Y2e4M",
+          "title": "Hunx & His Punx   - Lovers Lane - Live in Houston",
+          "url": "https://www.youtube.com/watch?v=8Ko7h1Y2e4M",
+          "channel": "antislug",
+          "durationSeconds": 204.0,
+          "score": 0.45,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "GiLZ5FB2LYU",
+          "title": "Hunx and His Punx - Full Performance (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=GiLZ5FB2LYU",
+          "channel": "KEXP",
+          "durationSeconds": 1238.0,
+          "score": 0.121,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "The Mountain Goats - Damn These Vampires",
+      "query": "The Mountain Goats Damn These Vampires",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Pd_uiPOnSbI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Pd_uiPOnSbI",
+          "title": "the Mountain Goats - Damn These Vampires (Jordan Lake Sessions)",
+          "url": "https://www.youtube.com/watch?v=Pd_uiPOnSbI",
+          "channel": "the Mountain Goats",
+          "durationSeconds": 200.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "dRTqDG9Mo18",
+          "title": "The Mountain Goats-Damn These Vampires",
+          "url": "https://www.youtube.com/watch?v=dRTqDG9Mo18",
+          "channel": "jorgieporgie18",
+          "durationSeconds": 210.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "yjiJM_Daoa0",
+          "title": "SPIN Session: Mountain Goats, \"Damn These Vampires\"",
+          "url": "https://www.youtube.com/watch?v=yjiJM_Daoa0",
+          "channel": "SPIN",
+          "durationSeconds": 202.0,
+          "score": 0.658,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ScbifRLRNqI",
+          "title": "Damn These Vampires",
+          "url": "https://www.youtube.com/watch?v=ScbifRLRNqI",
+          "channel": "the Mountain Goats",
+          "durationSeconds": 205.0,
+          "score": 0.54,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "nWopy4tdY1g",
+          "title": "Damn These Vampires (The Jordan Lake Sessions Volume 5)",
+          "url": "https://www.youtube.com/watch?v=nWopy4tdY1g",
+          "channel": "the Mountain Goats",
+          "durationSeconds": 209.0,
+          "score": 0.38,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Lykke Li - I Follow Rivers",
+      "query": "Lykke Li I Follow Rivers",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "vZYbEL06lEU",
+        "confidenceScore": 0.979,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "vZYbEL06lEU",
+          "title": "Lykke Li - I Follow Rivers (Director: Tarik Saleh)",
+          "url": "https://www.youtube.com/watch?v=vZYbEL06lEU",
+          "channel": "Lykke Li",
+          "durationSeconds": 248.0,
+          "score": 0.979,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "9dzub7uXWl4",
+          "title": "Lykke Li - I Follow Rivers (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=9dzub7uXWl4",
+          "channel": "Lyrics",
+          "durationSeconds": 237.0,
+          "score": 0.899,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "oS6wfWu0JvA",
+          "title": "Lykke Li - I Follow Rivers (The Magician Remix)",
+          "url": "https://www.youtube.com/watch?v=oS6wfWu0JvA",
+          "channel": "Lykke Li",
+          "durationSeconds": 284.0,
+          "score": 0.868,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "K3JGxj2rvAs",
+          "title": "I Follow Rivers - Lykke Li (La Vie d'Adèle/La Vida de Adele)",
+          "url": "https://www.youtube.com/watch?v=K3JGxj2rvAs",
+          "channel": "Aldo Zuga",
+          "durationSeconds": 284.0,
+          "score": 0.789,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "94Hz2TEWW18",
+          "title": "Lykke Li - I Follow Rivers (Live on the Moon)",
+          "url": "https://www.youtube.com/watch?v=94Hz2TEWW18",
+          "channel": "Lykke Li",
+          "durationSeconds": 188.0,
+          "score": 0.778,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Sixth",
+      "embedUrl": "https://www.youtube.com/embed/nFZP8zQ5kzk?playlist=8JYzp7wKhGQ,c7RUeMCZL3Q,9FOQGWceYg8,XDnFG0T5KrI,Pd_uiPOnSbI,vZYbEL06lEU",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=nFZP8zQ5kzk,8JYzp7wKhGQ,c7RUeMCZL3Q,9FOQGWceYg8,XDnFG0T5KrI,Pd_uiPOnSbI,vZYbEL06lEU",
+      "videoIds": [
+        "nFZP8zQ5kzk",
+        "8JYzp7wKhGQ",
+        "c7RUeMCZL3Q",
+        "9FOQGWceYg8",
+        "XDnFG0T5KrI",
+        "Pd_uiPOnSbI",
+        "vZYbEL06lEU"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:27:18Z"
+    }
+  }
+}

@@ -1,0 +1,573 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-016-sixteenth-the-covers-edition",
+  "updatedAt": "2026-04-08T21:25:14Z",
+  "sourceMixPath": "data/imported/mixes/mix-016-sixteenth-the-covers-edition.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Cansei de Ser Sexy - Knife (Grizzly Bear cover)",
+      "query": "Cansei de Ser Sexy Knife (Grizzly Bear cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "mnknOA0rj0w",
+        "confidenceScore": 0.483,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "mnknOA0rj0w",
+          "title": "CSS - Knife ( Grizzly Bear Cover)",
+          "url": "https://www.youtube.com/watch?v=mnknOA0rj0w",
+          "channel": "Catzburguer",
+          "durationSeconds": 195.0,
+          "score": 0.483,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "XnHiU5Gu3v8",
+          "title": "Knife (Grizzly Bear) CSS cover",
+          "url": "https://www.youtube.com/watch?v=XnHiU5Gu3v8",
+          "channel": "xxBobxThexKingxx",
+          "durationSeconds": 195.0,
+          "score": 0.369,
+          "signals": [
+            "song-title-near-exact-match"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "YQ6huTGoz3M",
+          "title": "Knife (Cover Version - Original by Grizzly Bear)",
+          "url": "https://www.youtube.com/watch?v=YQ6huTGoz3M",
+          "channel": "CSS - Topic",
+          "durationSeconds": 197.0,
+          "score": 0.339,
+          "signals": [
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "kGXfG02NVJ4",
+          "title": "2010 - 1 - grizzly bear \"Knife\"  -  sergicaba",
+          "url": "https://www.youtube.com/watch?v=kGXfG02NVJ4",
+          "channel": "GrupoLupin",
+          "durationSeconds": 194.0,
+          "score": 0.228,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "CMFC8twPTnc",
+          "title": "CSS-Knife.wmv",
+          "url": "https://www.youtube.com/watch?v=CMFC8twPTnc",
+          "channel": "No1Indie",
+          "durationSeconds": 196.0,
+          "score": 0.186,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Adele - Promise This (Cheryl Cole cover)",
+      "query": "Adele Promise This (Cheryl Cole cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "g5wFpXhOgHI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "g5wFpXhOgHI",
+          "title": "Adele - Promise This (Cheryl Cole cover)",
+          "url": "https://www.youtube.com/watch?v=g5wFpXhOgHI",
+          "channel": "Adele Live Performance",
+          "durationSeconds": 246.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "C4SYIofww30",
+          "title": "Gavin Beach - Promise This (Cheryl Cole/Adele Cover)",
+          "url": "https://www.youtube.com/watch?v=C4SYIofww30",
+          "channel": "Gavin Beach",
+          "durationSeconds": 236.0,
+          "score": 0.894,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3Zk5p3FeZso",
+          "title": "Adele, Radio 1 Live Lounge Special Part 4 - Promise This (Cheryl Cole cover)",
+          "url": "https://www.youtube.com/watch?v=3Zk5p3FeZso",
+          "channel": "preedy08",
+          "durationSeconds": 303.0,
+          "score": 0.689,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "YWbhWivNg1g",
+          "title": "Adele Cheryl Cole Cover Promise This Live Lounge",
+          "url": "https://www.youtube.com/watch?v=YWbhWivNg1g",
+          "channel": "TheRadio1LiveLounge",
+          "durationSeconds": 282.0,
+          "score": 0.552,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "HsCRPpGMLvA",
+          "title": "Adele- Promise This",
+          "url": "https://www.youtube.com/watch?v=HsCRPpGMLvA",
+          "channel": "keilamoon",
+          "durationSeconds": 229.0,
+          "score": 0.39,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "The New Standards - Such Great Heights (The Postal Service cover)",
+      "query": "The New Standards Such Great Heights (The Postal Service cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "udanmqs1sko",
+        "confidenceScore": 0.443,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "udanmqs1sko",
+          "title": "Such Great Heights",
+          "url": "https://www.youtube.com/watch?v=udanmqs1sko",
+          "channel": "The New Standards - Topic",
+          "durationSeconds": 219.0,
+          "score": 0.443,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "bA7mNMT8JdU",
+          "title": "The New Standards - 'Such Great Heights' [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=bA7mNMT8JdU",
+          "channel": "CyNar Pictures",
+          "durationSeconds": 224.0,
+          "score": 0.375,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "nMch4PJil7I",
+          "title": "Such great heights - The Postal Service/Iron and Wine (Cover)",
+          "url": "https://www.youtube.com/watch?v=nMch4PJil7I",
+          "channel": "Billy Ngo",
+          "durationSeconds": 273.0,
+          "score": 0.373,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "OIyyYjUg0bc",
+          "title": "Mree Cover : Such Great Heights by The Postal Service",
+          "url": "https://www.youtube.com/watch?v=OIyyYjUg0bc",
+          "channel": "MreeMusic",
+          "durationSeconds": 235.0,
+          "score": 0.367,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "zdbKpgWgTMs",
+          "title": "How to play SUCH GREAT HEIGHTS by Iron & Wine - Tutorial (originally by The Postal Service)",
+          "url": "https://www.youtube.com/watch?v=zdbKpgWgTMs",
+          "channel": "JButler Guitar",
+          "durationSeconds": 444.0,
+          "score": 0.281,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Sarah Winters - Dynamite (Taio Cruz cover)",
+      "query": "Sarah Winters Dynamite (Taio Cruz cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "lfOG4_wnSFw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "lfOG4_wnSFw",
+          "title": "Sarah Winters - Dynamite (Taio Cruz cover)",
+          "url": "https://www.youtube.com/watch?v=lfOG4_wnSFw",
+          "channel": "JuanLand63",
+          "durationSeconds": 260.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "PwaW5bpcf-c",
+          "title": "Taio Cruz - Dynamite (Cover by Sarah)",
+          "url": "https://www.youtube.com/watch?v=PwaW5bpcf-c",
+          "channel": "sarahp_1997",
+          "durationSeconds": 204.0,
+          "score": 0.538,
+          "signals": [
+            "candidate-title-covers-most-track-tokens"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "xPh0ZxtsAnk",
+          "title": "The Scenario - Dynamite (Taio Cruz Cover)",
+          "url": "https://www.youtube.com/watch?v=xPh0ZxtsAnk",
+          "channel": "Sarah Bradley",
+          "durationSeconds": 220.0,
+          "score": 0.454,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "_rGynI3_fic",
+          "title": "Dynamite Cover- Taio Cruz",
+          "url": "https://www.youtube.com/watch?v=_rGynI3_fic",
+          "channel": "Sarah Lehman",
+          "durationSeconds": 242.0,
+          "score": 0.309,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "kzQHrRYBysk",
+          "title": "Dynamite Taio Cruz ( Sarah Sweeney & Cynthina Couette )",
+          "url": "https://www.youtube.com/watch?v=kzQHrRYBysk",
+          "channel": "sarahsweeneylyf",
+          "durationSeconds": 202.0,
+          "score": 0.26,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Bat for Lashes - Strangelove (Depeche Mode cover)",
+      "query": "Bat for Lashes Strangelove (Depeche Mode cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "HPosP22GO_8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "HPosP22GO_8",
+          "title": "Bat For Lashes - Strangelove (Depeche Mode cover)",
+          "url": "https://www.youtube.com/watch?v=HPosP22GO_8",
+          "channel": "BATF0RLASHES",
+          "durationSeconds": 196.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "lHZow9oA3BM",
+          "title": "Bat for Lashes - Strangelove (Depeche Mode cover)",
+          "url": "https://www.youtube.com/watch?v=lHZow9oA3BM",
+          "channel": "songsfewpeoplelike",
+          "durationSeconds": 196.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "c2MciC81HlA",
+          "title": "BAT FOR LASHES-Strangelove (Depeche Mode cover)",
+          "url": "https://www.youtube.com/watch?v=c2MciC81HlA",
+          "channel": "Maria Passarelli",
+          "durationSeconds": 205.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Jwh_r7vieiU",
+          "title": "Bat for Lashes - Strangelove (Depeche Mode Cover)",
+          "url": "https://www.youtube.com/watch?v=Jwh_r7vieiU",
+          "channel": "fgdfgd gdfgdgdfd",
+          "durationSeconds": 195.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "yKqGGkQmL3Q",
+          "title": "Strangelove (U.S. Mix)",
+          "url": "https://www.youtube.com/watch?v=yKqGGkQmL3Q",
+          "channel": "Bat For Lashes",
+          "durationSeconds": 194.0,
+          "score": 0.314,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Shakira - Islands (The xx cover)",
+      "query": "Shakira Islands (The xx cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "HfxmpkjGOgg",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "HfxmpkjGOgg",
+          "title": "Shakira - Islands (The XX cover)",
+          "url": "https://www.youtube.com/watch?v=HfxmpkjGOgg",
+          "channel": "BlogWhatsthatsound",
+          "durationSeconds": 187.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "AI-lroM6i6g",
+          "title": "Shakira - Islands (cover the xx) cd quality",
+          "url": "https://www.youtube.com/watch?v=AI-lroM6i6g",
+          "channel": "Tessita M",
+          "durationSeconds": 164.0,
+          "score": 0.833,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "XAxSmzrcwsI",
+          "title": "Shakira   Islands The xx Cover Live at Glastonbury",
+          "url": "https://www.youtube.com/watch?v=XAxSmzrcwsI",
+          "channel": "Abhi Arora",
+          "durationSeconds": 187.0,
+          "score": 0.707,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "5pRkbV-tCj4",
+          "title": "Shakira - Islands [The XX cover] (Live Glanstonbury 2010)",
+          "url": "https://www.youtube.com/watch?v=5pRkbV-tCj4",
+          "channel": "Marlos Sousa",
+          "durationSeconds": 185.0,
+          "score": 0.694,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "gIMWuI6oum8",
+          "title": "Shakira - Islands (Live at Glastonbury 2010) | 1080p 50fps",
+          "url": "https://www.youtube.com/watch?v=gIMWuI6oum8",
+          "channel": "A. L. Media",
+          "durationSeconds": 186.0,
+          "score": 0.103,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Cee Lo Green - No One’s Gonna Love You (Band of Horses cover)",
+      "query": "Cee Lo Green No One’s Gonna Love You (Band of Horses cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "SzAof7HjaxU",
+        "confidenceScore": 0.436,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "SzAof7HjaxU",
+          "title": "Cee Lo Green - No One's Gonna Love You",
+          "url": "https://www.youtube.com/watch?v=SzAof7HjaxU",
+          "channel": "kpsychodad",
+          "durationSeconds": 212.0,
+          "score": 0.436,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "hVA7YApOqik",
+          "title": "No One's Gonna Love You - Band of Horses (David Pfeffer Cover)'",
+          "url": "https://www.youtube.com/watch?v=hVA7YApOqik",
+          "channel": "David Pfeffer",
+          "durationSeconds": 293.0,
+          "score": 0.385,
+          "signals": []
+        },
+        {
+          "rank": 3,
+          "videoId": "MiCCcOP3ay4",
+          "title": "No One's Gonna Love You (Paul Epworth Mix)",
+          "url": "https://www.youtube.com/watch?v=MiCCcOP3ay4",
+          "channel": "CeeLo Green",
+          "durationSeconds": 208.0,
+          "score": 0.304,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "wXiTwalPvuQ",
+          "title": "No One's Gonna Love You (Paul Epworth Mix) - Clean",
+          "url": "https://www.youtube.com/watch?v=wXiTwalPvuQ",
+          "channel": "CeeLo Green",
+          "durationSeconds": 212.0,
+          "score": 0.255,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "KoQy_p3vNb8",
+          "title": "Band Of Horses - No One's Gonna Love You (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=KoQy_p3vNb8",
+          "channel": "KEXP",
+          "durationSeconds": 226.0,
+          "score": 0.053,
+          "signals": [
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Sixteenth - The Covers Edition",
+      "embedUrl": "https://www.youtube.com/embed/mnknOA0rj0w?playlist=g5wFpXhOgHI,udanmqs1sko,lfOG4_wnSFw,HPosP22GO_8,HfxmpkjGOgg,SzAof7HjaxU",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=mnknOA0rj0w,g5wFpXhOgHI,udanmqs1sko,lfOG4_wnSFw,HPosP22GO_8,HfxmpkjGOgg,SzAof7HjaxU",
+      "videoIds": [
+        "mnknOA0rj0w",
+        "g5wFpXhOgHI",
+        "udanmqs1sko",
+        "lfOG4_wnSFw",
+        "HPosP22GO_8",
+        "HfxmpkjGOgg",
+        "SzAof7HjaxU"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:25:14Z"
+    }
+  }
+}

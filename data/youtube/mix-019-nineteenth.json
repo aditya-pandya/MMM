@@ -1,0 +1,1247 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-019-nineteenth",
+  "updatedAt": "2026-04-08T21:24:41Z",
+  "sourceMixPath": "data/imported/mixes/mix-019-nineteenth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Laura Veirs - Saltbreakers",
+      "query": "Laura Veirs Saltbreakers",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "XJaFAcyEbFw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "XJaFAcyEbFw",
+          "title": "Laura Veirs - Saltbreakers",
+          "url": "https://www.youtube.com/watch?v=XJaFAcyEbFw",
+          "channel": "bingophobic",
+          "durationSeconds": 201.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "XcIz2iZXJFs",
+          "title": "Laura Veirs - Saltbreakers",
+          "url": "https://www.youtube.com/watch?v=XcIz2iZXJFs",
+          "channel": "RustyJamesMusic",
+          "durationSeconds": 199.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "pO7IDa5vuiY",
+          "title": "Laura Veirs and Saltbreakers",
+          "url": "https://www.youtube.com/watch?v=pO7IDa5vuiY",
+          "channel": "Seattle Channel",
+          "durationSeconds": 482.0,
+          "score": 0.985,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "FWL9OtgU35g",
+          "title": "Laura Veirs and The Saltbreakers - Don't Lose Yourself",
+          "url": "https://www.youtube.com/watch?v=FWL9OtgU35g",
+          "channel": "Jocelyn Allen",
+          "durationSeconds": 242.0,
+          "score": 0.857,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "YlvxKzpIjBE",
+          "title": "Saltbreakers",
+          "url": "https://www.youtube.com/watch?v=YlvxKzpIjBE",
+          "channel": "Laura Veirs",
+          "durationSeconds": 201.0,
+          "score": 0.54,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "My Morning Jacket - Circuital",
+      "query": "My Morning Jacket Circuital",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "HsD8-Sx2QKw",
+        "confidenceScore": 0.99,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "HsD8-Sx2QKw",
+          "title": "My Morning Jacket- Circuital",
+          "url": "https://www.youtube.com/watch?v=HsD8-Sx2QKw",
+          "channel": "golfgod130",
+          "durationSeconds": 437.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "S2aa-zCtay8",
+          "title": "My Morning Jacket - \"Circuital\" (Red Rocks 2019)",
+          "url": "https://www.youtube.com/watch?v=S2aa-zCtay8",
+          "channel": "My Morning Jacket",
+          "durationSeconds": 432.0,
+          "score": 0.978,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "o3lzQ32BcSI",
+          "title": "My Morning Jacket - Circuital (Live from VH1 Storytellers)",
+          "url": "https://www.youtube.com/watch?v=o3lzQ32BcSI",
+          "channel": "My Morning Jacket",
+          "durationSeconds": 437.0,
+          "score": 0.711,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "rqCJJCZfmCY",
+          "title": "My Morning Jacket - Circuital live at Primavera Sound Barcelona 2023",
+          "url": "https://www.youtube.com/watch?v=rqCJJCZfmCY",
+          "channel": "Primavera Sound",
+          "durationSeconds": 434.0,
+          "score": 0.597,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "a1YE6bZlYF0",
+          "title": "Circuital",
+          "url": "https://www.youtube.com/watch?v=a1YE6bZlYF0",
+          "channel": "My Morning Jacket",
+          "durationSeconds": 440.0,
+          "score": 0.49,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Badly Drawn Boy - This Electric",
+      "query": "Badly Drawn Boy This Electric",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ILI1mXz_d38",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ILI1mXz_d38",
+          "title": "Badly Drawn Boy - This Electric",
+          "url": "https://www.youtube.com/watch?v=ILI1mXz_d38",
+          "channel": "Badly Drawn Boy",
+          "durationSeconds": 260.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ElCZiC-ZEkQ",
+          "title": "Less tv | Badly Drawn Boy \"This Electric\"",
+          "url": "https://www.youtube.com/watch?v=ElCZiC-ZEkQ",
+          "channel": "Less Tv",
+          "durationSeconds": 238.0,
+          "score": 0.957,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "WYnDkdgmL1E",
+          "title": "Badly Drawn Boy : This Electric (live, audio only)",
+          "url": "https://www.youtube.com/watch?v=WYnDkdgmL1E",
+          "channel": "pard0e",
+          "durationSeconds": 375.0,
+          "score": 0.876,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-only-preferred",
+            "audio-tag-preferred",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "iW6VcxmiVEw",
+          "title": "Badly Drawn Boy - This Electric (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=iW6VcxmiVEw",
+          "channel": "KEXP",
+          "durationSeconds": 294.0,
+          "score": 0.71,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "7qDFpD1oJDg",
+          "title": "Badly Drawn Boy \"This Electric\" Live on Soundcheck",
+          "url": "https://www.youtube.com/watch?v=7qDFpD1oJDg",
+          "channel": "WNYC",
+          "durationSeconds": 241.0,
+          "score": 0.683,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Clap Your Hands Say Yeah - Same Mistake",
+      "query": "Clap Your Hands Say Yeah Same Mistake",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "6GTjVqgogFQ",
+        "confidenceScore": 0.988,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "6GTjVqgogFQ",
+          "title": "Clap Your Hands Say Yeah - \"Same Mistake\"",
+          "url": "https://www.youtube.com/watch?v=6GTjVqgogFQ",
+          "channel": "Bronson Island",
+          "durationSeconds": 188.0,
+          "score": 0.988,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "K_iavKNK63M",
+          "title": "Clap Your Hands Say Yeah - Same Mistake",
+          "url": "https://www.youtube.com/watch?v=K_iavKNK63M",
+          "channel": "Cheapskate505",
+          "durationSeconds": 188.0,
+          "score": 0.988,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "iVf8_jMxGpU",
+          "title": "Clap Your Hands Say Yeah - Same Mistake (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=iVf8_jMxGpU",
+          "channel": "KEXP",
+          "durationSeconds": 183.0,
+          "score": 0.705,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Ns9pLGrq-3I",
+          "title": "Clap Your Hands Say Yeah - \"Same Mistake\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=Ns9pLGrq-3I",
+          "channel": "thealternateside907",
+          "durationSeconds": 178.0,
+          "score": 0.705,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "SJkqe4yVoOk",
+          "title": "Same Mistake",
+          "url": "https://www.youtube.com/watch?v=SJkqe4yVoOk",
+          "channel": "Clap Your Hands Say Yeah",
+          "durationSeconds": 185.0,
+          "score": 0.487,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Cansei de Ser Sexy (CSS) - Hits Me Like A Rock",
+      "query": "Cansei de Ser Sexy (CSS) Hits Me Like A Rock",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "oqH0QARXB4I",
+        "confidenceScore": 0.785,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "oqH0QARXB4I",
+          "title": "Cansei de ser sexy - Hits me like a rock",
+          "url": "https://www.youtube.com/watch?v=oqH0QARXB4I",
+          "channel": "Joana M. Teixeira",
+          "durationSeconds": 216.0,
+          "score": 0.785,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "dI5vSJ1dkbw",
+          "title": "CSS [Cansei de Ser Sexy] - Hits Me Like a Rock (clip) (live)",
+          "url": "https://www.youtube.com/watch?v=dI5vSJ1dkbw",
+          "channel": "Aperture Science",
+          "durationSeconds": 76.0,
+          "score": 0.619,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "QPoFkgCheN8",
+          "title": "Hits Me Like a Rock",
+          "url": "https://www.youtube.com/watch?v=QPoFkgCheN8",
+          "channel": "CSS - Topic",
+          "durationSeconds": 216.0,
+          "score": 0.567,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "nl9X1_rJDJI",
+          "title": "(FIFA 12 Soundtrack) CSS - Hits Me Like A Rock",
+          "url": "https://www.youtube.com/watch?v=nl9X1_rJDJI",
+          "channel": "Just Random Things",
+          "durationSeconds": 216.0,
+          "score": 0.399,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "atbY03rKrdA",
+          "title": "Hits Me Like A Rock (official music video)",
+          "url": "https://www.youtube.com/watch?v=atbY03rKrdA",
+          "channel": "csstv",
+          "durationSeconds": 214.0,
+          "score": 0.275,
+          "signals": [
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Beirut - East Harlem",
+      "query": "Beirut East Harlem",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "fj1szD7KiJU",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "fj1szD7KiJU",
+          "title": "Beirut - East Harlem",
+          "url": "https://www.youtube.com/watch?v=fj1szD7KiJU",
+          "channel": "Matu",
+          "durationSeconds": 239.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "9p1l5HRd36o",
+          "title": "Beirut - East Harlem",
+          "url": "https://www.youtube.com/watch?v=9p1l5HRd36o",
+          "channel": "luckyfiasco",
+          "durationSeconds": 239.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "91k7arTMkjo",
+          "title": "Beirut - \"East Harlem\" - The Rip Tide",
+          "url": "https://www.youtube.com/watch?v=91k7arTMkjo",
+          "channel": "Beirut",
+          "durationSeconds": 236.0,
+          "score": 0.995,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "nGxAUphrpi8",
+          "title": "Beirut - East Harlem (Live)",
+          "url": "https://www.youtube.com/watch?v=nGxAUphrpi8",
+          "channel": "Radial by The Orchard",
+          "durationSeconds": 262.0,
+          "score": 0.76,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "MvM8eDeHOrg",
+          "title": "Beirut - \"East Harlem\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=MvM8eDeHOrg",
+          "channel": "thealternateside907",
+          "durationSeconds": 202.0,
+          "score": 0.695,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Iron & Wine - Biting Your Tail",
+      "query": "Iron & Wine Biting Your Tail",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "DzNiNvg0pIo",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "DzNiNvg0pIo",
+          "title": "Iron & Wine - Biting Your Tail",
+          "url": "https://www.youtube.com/watch?v=DzNiNvg0pIo",
+          "channel": "graciousfew2",
+          "durationSeconds": 216.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "J2UWqBlEGtY",
+          "title": "Iron & Wine - Biting your tail (acoustic)",
+          "url": "https://www.youtube.com/watch?v=J2UWqBlEGtY",
+          "channel": "André Pitta",
+          "durationSeconds": 214.0,
+          "score": 0.889,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PvORjnfDTn0",
+          "title": "Iron & Wine - Biting Your Tail (The Greene Space 05.01.2011)",
+          "url": "https://www.youtube.com/watch?v=PvORjnfDTn0",
+          "channel": "levani vanishvili",
+          "durationSeconds": 236.0,
+          "score": 0.877,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "fIeWAfGytsI",
+          "title": "Iron & Wine - Biting Your Tail solo acoustic",
+          "url": "https://www.youtube.com/watch?v=fIeWAfGytsI",
+          "channel": "dodo41",
+          "durationSeconds": 267.0,
+          "score": 0.859,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "bo3ychUaPpQ",
+          "title": "Biting Your Tail",
+          "url": "https://www.youtube.com/watch?v=bo3ychUaPpQ",
+          "channel": "IronandWine",
+          "durationSeconds": 222.0,
+          "score": 0.489,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Ghost Estates - Paris",
+      "query": "Ghost Estates Paris",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ycXafxnZkMo",
+        "confidenceScore": 0.975,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ycXafxnZkMo",
+          "title": "Ghost Estates PARIS",
+          "url": "https://www.youtube.com/watch?v=ycXafxnZkMo",
+          "channel": "GHOSTESTATESMUSIC",
+          "durationSeconds": 335.0,
+          "score": 0.975,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "JuCzcVbCLUY",
+          "title": "Paris",
+          "url": "https://www.youtube.com/watch?v=JuCzcVbCLUY",
+          "channel": "Ghost Estates - Topic",
+          "durationSeconds": 320.0,
+          "score": 0.585,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "zF4wo0_F_U0",
+          "title": "Ghost Estates ''October''",
+          "url": "https://www.youtube.com/watch?v=zF4wo0_F_U0",
+          "channel": "GHOSTESTATESMUSIC",
+          "durationSeconds": 257.0,
+          "score": 0.353,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "0P7hEyzn0mk",
+          "title": "Ghost Estates ''WINTERS DAY''",
+          "url": "https://www.youtube.com/watch?v=0P7hEyzn0mk",
+          "channel": "GHOSTESTATESMUSIC",
+          "durationSeconds": 231.0,
+          "score": 0.341,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "yrPEgC-l02I",
+          "title": "GHOST ESTATES 'IN YOUR DREAMS'",
+          "url": "https://www.youtube.com/watch?v=yrPEgC-l02I",
+          "channel": "GHOSTESTATESMUSIC",
+          "durationSeconds": 189.0,
+          "score": 0.337,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Owl Eyes - Pumped Up Kicks (Foster the People cover)",
+      "query": "Owl Eyes Pumped Up Kicks (Foster the People cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "tfXet2j8Ycs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "tfXet2j8Ycs",
+          "title": "Owl Eyes (Brooke Addamo) - Pumped Up Kicks (Foster the People cover)",
+          "url": "https://www.youtube.com/watch?v=tfXet2j8Ycs",
+          "channel": "An Opinionated Man",
+          "durationSeconds": 165.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "SsMf6sp0zJc",
+          "title": "Owl Eyes covers Foster the People 'Pumped Up Kicks' for Like A Version",
+          "url": "https://www.youtube.com/watch?v=SsMf6sp0zJc",
+          "channel": "triple j",
+          "durationSeconds": 174.0,
+          "score": 0.675,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ztJbc3NAhxg",
+          "title": "Owl Eyes- Pumped Up Kicks",
+          "url": "https://www.youtube.com/watch?v=ztJbc3NAhxg",
+          "channel": "vonjur",
+          "durationSeconds": 159.0,
+          "score": 0.386,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "4_AA6NCt4ew",
+          "title": "Owl Eyes - Pumped up kicks",
+          "url": "https://www.youtube.com/watch?v=4_AA6NCt4ew",
+          "channel": "Alex",
+          "durationSeconds": 160.0,
+          "score": 0.386,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "gsGMkeB8mJw",
+          "title": "Owl Eyes - Pumped Up Kicks - Like a Version - LIVE AT TRIPLE J",
+          "url": "https://www.youtube.com/watch?v=gsGMkeB8mJw",
+          "channel": "heidibettyt",
+          "durationSeconds": 235.0,
+          "score": 0.161,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Starfucker - Born",
+      "query": "Starfucker Born",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "42oDKa--qS4",
+        "confidenceScore": 0.976,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "42oDKa--qS4",
+          "title": "Starfucker - Born",
+          "url": "https://www.youtube.com/watch?v=42oDKa--qS4",
+          "channel": "Jahung",
+          "durationSeconds": 205.0,
+          "score": 0.976,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Hhha1mfGXlo",
+          "title": "Starfucker - Born",
+          "url": "https://www.youtube.com/watch?v=Hhha1mfGXlo",
+          "channel": "ctspectator",
+          "durationSeconds": 204.0,
+          "score": 0.976,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "DAW3j4c1o3g",
+          "title": "Born",
+          "url": "https://www.youtube.com/watch?v=DAW3j4c1o3g",
+          "channel": "STRFKR Music",
+          "durationSeconds": 204.0,
+          "score": 0.386,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "a8Y4p7FJMeU",
+          "title": "Born (Original Recording)",
+          "url": "https://www.youtube.com/watch?v=a8Y4p7FJMeU",
+          "channel": "STRFKR Music",
+          "durationSeconds": 244.0,
+          "score": 0.196,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "mkeOoWquAqk",
+          "title": "STRFKR - Open Your Eyes [OFFICIAL MUSIC VIDEO]",
+          "url": "https://www.youtube.com/watch?v=mkeOoWquAqk",
+          "channel": "Polyvinyl Records",
+          "durationSeconds": 234.0,
+          "score": 0.05,
+          "signals": [
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "Cults - You Know What I Mean",
+      "query": "Cults You Know What I Mean",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "_E2tS_7j8y4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "_E2tS_7j8y4",
+          "title": "Cults - You Know What I Mean (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=_E2tS_7j8y4",
+          "channel": "Cults",
+          "durationSeconds": 151.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "UXeLGCxJwhw",
+          "title": "Cults - You Know What I Mean",
+          "url": "https://www.youtube.com/watch?v=UXeLGCxJwhw",
+          "channel": "rkl2195",
+          "durationSeconds": 154.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "bwSYmpORCXU",
+          "title": "Cults - You Know What I Mean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=bwSYmpORCXU",
+          "channel": "Cults",
+          "durationSeconds": 179.0,
+          "score": 0.971,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "AKtx5gfepj0",
+          "title": "Cults - You Know What I Mean - 10/4/2017 - Paste Studios, New York, NY",
+          "url": "https://www.youtube.com/watch?v=AKtx5gfepj0",
+          "channel": "Paste Magazine",
+          "durationSeconds": 176.0,
+          "score": 0.865,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "f8hBrLAmVkg",
+          "title": "SPINhouse Live: Cults, \"You Know What I Mean\"",
+          "url": "https://www.youtube.com/watch?v=f8hBrLAmVkg",
+          "channel": "SPIN",
+          "durationSeconds": 174.0,
+          "score": 0.731,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Art Brut - Unprofessional Wrestling",
+      "query": "Art Brut Unprofessional Wrestling",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "0MKO2hk3BE8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "0MKO2hk3BE8",
+          "title": "Art Brut - Unprofessional Wrestling",
+          "url": "https://www.youtube.com/watch?v=0MKO2hk3BE8",
+          "channel": "Camilo Alma",
+          "durationSeconds": 211.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "rfnn_0q1Uoo",
+          "title": "Art Brut Unprofessional Wrestling Brighton Music Hall Boston 20 June 2011",
+          "url": "https://www.youtube.com/watch?v=rfnn_0q1Uoo",
+          "channel": "janeinma",
+          "durationSeconds": 245.0,
+          "score": 0.876,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Zh9XGywIDqI",
+          "title": "Unprofessional Wrestling",
+          "url": "https://www.youtube.com/watch?v=Zh9XGywIDqI",
+          "channel": "Art Brut - Topic",
+          "durationSeconds": 213.0,
+          "score": 0.713,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "5hCTPFpfmUU",
+          "title": "Art Brut - \"Unprofessional Wrestling\" (Live at WFUV/The Alternate Side)",
+          "url": "https://www.youtube.com/watch?v=5hCTPFpfmUU",
+          "channel": "thealternateside907",
+          "durationSeconds": 229.0,
+          "score": 0.679,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "9N6p8nV6NQM",
+          "title": "Worst Unprofessional Wrestlers United",
+          "url": "https://www.youtube.com/watch?v=9N6p8nV6NQM",
+          "channel": "Nevel Yashgi",
+          "durationSeconds": 449.0,
+          "score": 0.344,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Gang Gang Dance - Mindkilla",
+      "query": "Gang Gang Dance Mindkilla",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "2R7k1_kOqvk",
+        "confidenceScore": 0.837,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2R7k1_kOqvk",
+          "title": "Gang Gang Dance - MindKilla (Official Video)",
+          "url": "https://www.youtube.com/watch?v=2R7k1_kOqvk",
+          "channel": "4AD",
+          "durationSeconds": 329.0,
+          "score": 0.837,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "tr1gsllz1bU",
+          "title": "Gang Gang Dance - Mindkilla (4AD Session)",
+          "url": "https://www.youtube.com/watch?v=tr1gsllz1bU",
+          "channel": "Javier de Miguel",
+          "durationSeconds": 854.0,
+          "score": 0.832,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "A3EpTGZkc74",
+          "title": "Gang Gang Dance Mindkilla live @ Paris Flèche d'Or 2011",
+          "url": "https://www.youtube.com/watch?v=A3EpTGZkc74",
+          "channel": "lamiresonique",
+          "durationSeconds": 432.0,
+          "score": 0.625,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "AjLI_gKfsTo",
+          "title": "Gang Gang Dance - Retina Riddim",
+          "url": "https://www.youtube.com/watch?v=AjLI_gKfsTo",
+          "channel": "raintheory",
+          "durationSeconds": 1994.0,
+          "score": 0.36,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "A_A6A4hrKIc",
+          "title": "Gang Gang Dance - 4AD Session",
+          "url": "https://www.youtube.com/watch?v=A_A6A4hrKIc",
+          "channel": "4AD",
+          "durationSeconds": 2717.0,
+          "score": 0.248,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-session-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Future Islands - Before the Bridge",
+      "query": "Future Islands Before the Bridge",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "OJMgPhCVcWI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "OJMgPhCVcWI",
+          "title": "Future Islands - Before The Bridge",
+          "url": "https://www.youtube.com/watch?v=OJMgPhCVcWI",
+          "channel": "kuno pjK",
+          "durationSeconds": 240.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "aiBXJv6cEh4",
+          "title": "Future Islands - Before The Bridge",
+          "url": "https://www.youtube.com/watch?v=aiBXJv6cEh4",
+          "channel": "iTriumph",
+          "durationSeconds": 252.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "lxZ_qSx-Xzs",
+          "title": "Future Islands \" Before the Bridge\" LYRICS on Screen",
+          "url": "https://www.youtube.com/watch?v=lxZ_qSx-Xzs",
+          "channel": "FUTURE ISLANDS FANS",
+          "durationSeconds": 260.0,
+          "score": 0.93,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "N5XY_LTgSnA",
+          "title": "Future Islands - Before the Bridge (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=N5XY_LTgSnA",
+          "channel": "Thrill Jockey Records",
+          "durationSeconds": 253.0,
+          "score": 0.853,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "pQjfbfBTxZs",
+          "title": "Future Islands - Before The Bridge (live)",
+          "url": "https://www.youtube.com/watch?v=pQjfbfBTxZs",
+          "channel": "zyon",
+          "durationSeconds": 258.0,
+          "score": 0.772,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 14,
+    "resolvedTracks": 14,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Nineteenth",
+      "embedUrl": "https://www.youtube.com/embed/XJaFAcyEbFw?playlist=HsD8-Sx2QKw,ILI1mXz_d38,6GTjVqgogFQ,oqH0QARXB4I,fj1szD7KiJU,DzNiNvg0pIo,ycXafxnZkMo,tfXet2j8Ycs,42oDKa--qS4,_E2tS_7j8y4,0MKO2hk3BE8,2R7k1_kOqvk,OJMgPhCVcWI",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=XJaFAcyEbFw,HsD8-Sx2QKw,ILI1mXz_d38,6GTjVqgogFQ,oqH0QARXB4I,fj1szD7KiJU,DzNiNvg0pIo,ycXafxnZkMo,tfXet2j8Ycs,42oDKa--qS4,_E2tS_7j8y4,0MKO2hk3BE8,2R7k1_kOqvk,OJMgPhCVcWI",
+      "videoIds": [
+        "XJaFAcyEbFw",
+        "HsD8-Sx2QKw",
+        "ILI1mXz_d38",
+        "6GTjVqgogFQ",
+        "oqH0QARXB4I",
+        "fj1szD7KiJU",
+        "DzNiNvg0pIo",
+        "ycXafxnZkMo",
+        "tfXet2j8Ycs",
+        "42oDKa--qS4",
+        "_E2tS_7j8y4",
+        "0MKO2hk3BE8",
+        "2R7k1_kOqvk",
+        "OJMgPhCVcWI"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:24:41Z"
+    }
+  }
+}

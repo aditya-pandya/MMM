@@ -1,0 +1,604 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-013-thirteenth",
+  "updatedAt": "2026-04-08T21:25:34Z",
+  "sourceMixPath": "data/imported/mixes/mix-013-thirteenth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Seekae - Gnor",
+      "query": "Seekae Gnor",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "GSi3ihXbH84",
+        "confidenceScore": 0.996,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "GSi3ihXbH84",
+          "title": "Seekae - Gnor",
+          "url": "https://www.youtube.com/watch?v=GSi3ihXbH84",
+          "channel": "UnTiepidoNiente",
+          "durationSeconds": 295.0,
+          "score": 0.996,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "MEcv3YeK68c",
+          "title": "Seekae +Dome Gnor",
+          "url": "https://www.youtube.com/watch?v=MEcv3YeK68c",
+          "channel": "oweyniners",
+          "durationSeconds": 300.0,
+          "score": 0.916,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "kqmPg3O_KNw",
+          "title": "Gnor",
+          "url": "https://www.youtube.com/watch?v=kqmPg3O_KNw",
+          "channel": "Seekae",
+          "durationSeconds": 295.0,
+          "score": 0.5,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Pr7Kq6VMp5I",
+          "title": "Gnor",
+          "url": "https://www.youtube.com/watch?v=Pr7Kq6VMp5I",
+          "channel": "Seekae",
+          "durationSeconds": 295.0,
+          "score": 0.5,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "aP8y9a5wVHY",
+          "title": "Seekae - Sir",
+          "url": "https://www.youtube.com/watch?v=aP8y9a5wVHY",
+          "channel": "DGVFIR",
+          "durationSeconds": 203.0,
+          "score": 0.354,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Sandra Kolstad - The Devil",
+      "query": "Sandra Kolstad The Devil",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Yp_LJfb0wys",
+        "confidenceScore": 0.998,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Yp_LJfb0wys",
+          "title": "Sandra Kolstad - The Devil",
+          "url": "https://www.youtube.com/watch?v=Yp_LJfb0wys",
+          "channel": "Guy Fawkes",
+          "durationSeconds": 175.0,
+          "score": 0.998,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "TVI-P3NyrWQ",
+          "title": "Sandra Kolstad – Catch 22  (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=TVI-P3NyrWQ",
+          "channel": "Sandra Kolstad",
+          "durationSeconds": 222.0,
+          "score": 0.33,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "1J4HYtE-fXg",
+          "title": "Denboka #15: Sandra Kolstad",
+          "url": "https://www.youtube.com/watch?v=1J4HYtE-fXg",
+          "channel": "denboka",
+          "durationSeconds": 60.0,
+          "score": 0.303,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Y18oAYFICnw",
+          "title": "Ikke til profitt («SV») – Sandra Kolstad",
+          "url": "https://www.youtube.com/watch?v=Y18oAYFICnw",
+          "channel": "Valgets Karaokebar",
+          "durationSeconds": 234.0,
+          "score": 0.278,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "xvYPX02Hvbo",
+          "title": "Sandra Kolstad - \"Rooms\" - Live fra TV2 Sommertid",
+          "url": "https://www.youtube.com/watch?v=xvYPX02Hvbo",
+          "channel": "Sandra Kolstad",
+          "durationSeconds": 229.0,
+          "score": 0.149,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Ikea Satan - The Wait",
+      "query": "Ikea Satan The Wait",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "1Ug4vOAUXT8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "1Ug4vOAUXT8",
+          "title": "IKEA SATAN - The wait",
+          "url": "https://www.youtube.com/watch?v=1Ug4vOAUXT8",
+          "channel": "ccbbrecords",
+          "durationSeconds": 232.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "pfLo_9WXBqE",
+          "title": "IKEA SATAN - Sound of the planet",
+          "url": "https://www.youtube.com/watch?v=pfLo_9WXBqE",
+          "channel": "ccbbrecords",
+          "durationSeconds": 172.0,
+          "score": 0.365,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "cLBdXVQ_D3c",
+          "title": "IKEA SATAN - Leaning on the leader",
+          "url": "https://www.youtube.com/watch?v=cLBdXVQ_D3c",
+          "channel": "ccbbrecords",
+          "durationSeconds": 96.0,
+          "score": 0.333,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "TyPdqYAIa9Y",
+          "title": "IKEA SATAN - The ghost of halfway house",
+          "url": "https://www.youtube.com/watch?v=TyPdqYAIa9Y",
+          "channel": "ccbbrecords",
+          "durationSeconds": 259.0,
+          "score": 0.33,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ZRi3IEhQcdA",
+          "title": "IKEA SATAN - Babaramas",
+          "url": "https://www.youtube.com/watch?v=ZRi3IEhQcdA",
+          "channel": "ccbbrecords",
+          "durationSeconds": 201.0,
+          "score": 0.323,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Zebra Tracks - Isabelle Creeps",
+      "query": "Zebra Tracks Isabelle Creeps",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "1nVuA-sxikc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "1nVuA-sxikc",
+          "title": "Zebra Tracks - Isabelle Creeps",
+          "url": "https://www.youtube.com/watch?v=1nVuA-sxikc",
+          "channel": "stratosps",
+          "durationSeconds": 264.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "laRGCtPX7l4",
+          "title": "Zebra Tracks \"Isabelle Creeps\" LiVe 6 DOGS 29/01/2011",
+          "url": "https://www.youtube.com/watch?v=laRGCtPX7l4",
+          "channel": "stratosps",
+          "durationSeconds": 285.0,
+          "score": 0.674,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "eJc3EoNTUEA",
+          "title": "Isabelle Creeps",
+          "url": "https://www.youtube.com/watch?v=eJc3EoNTUEA",
+          "channel": "Zebra Tracks - Topic",
+          "durationSeconds": 263.0,
+          "score": 0.669,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "_AhcYBZBwXI",
+          "title": "Zebra Tracks - Silicone Valley (Official Video).mp4",
+          "url": "https://www.youtube.com/watch?v=_AhcYBZBwXI",
+          "channel": "Zebratrackstheband",
+          "durationSeconds": 180.0,
+          "score": 0.268,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "-nVMhHDgOZ0",
+          "title": "Zebra Tracks - Grains Of Sand [Official Video]",
+          "url": "https://www.youtube.com/watch?v=-nVMhHDgOZ0",
+          "channel": "six d.o.g.s",
+          "durationSeconds": 289.0,
+          "score": 0.211,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Young Michelin - Les Copains",
+      "query": "Young Michelin Les Copains",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9RQxiV44gGE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9RQxiV44gGE",
+          "title": "YOUNG MICHELIN les copains",
+          "url": "https://www.youtube.com/watch?v=9RQxiV44gGE",
+          "channel": "OLAFFLUFFINSKY",
+          "durationSeconds": 332.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "2hLQsQ_1tE4",
+          "title": "Les copains , Aline (ex Young Michelin) Eden festival 2011/3",
+          "url": "https://www.youtube.com/watch?v=2hLQsQ_1tE4",
+          "channel": "MagiccoyoteX",
+          "durationSeconds": 370.0,
+          "score": 0.791,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "mfFrDgcz5aU",
+          "title": "Aline - Les Copains",
+          "url": "https://www.youtube.com/watch?v=mfFrDgcz5aU",
+          "channel": "Sébastien Gonzalez",
+          "durationSeconds": 301.0,
+          "score": 0.431,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "m5twgoTIX18",
+          "title": "Young Michelin - Hélas",
+          "url": "https://www.youtube.com/watch?v=m5twgoTIX18",
+          "channel": "Julius le Robert",
+          "durationSeconds": 221.0,
+          "score": 0.368,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "9dw8C4-2-bs",
+          "title": "Young Michelin en enregistrement à NYC (Part 1)",
+          "url": "https://www.youtube.com/watch?v=9dw8C4-2-bs",
+          "channel": "Les Inrockuptibles",
+          "durationSeconds": 244.0,
+          "score": 0.329,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Aluna George - Disobey",
+      "query": "Aluna George Disobey",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "jpNGDr0OQAs",
+        "confidenceScore": 0.993,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "jpNGDr0OQAs",
+          "title": "Aluna George - Disobey",
+          "url": "https://www.youtube.com/watch?v=jpNGDr0OQAs",
+          "channel": "EP",
+          "durationSeconds": 261.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Pbd4E5_tX8E",
+          "title": "AlunaGeorge - Disobey (TSC - Ogg)",
+          "url": "https://www.youtube.com/watch?v=Pbd4E5_tX8E",
+          "channel": "takeSomeCrime",
+          "durationSeconds": 115.0,
+          "score": 0.397,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "VfCSx5641U4",
+          "title": "AlunaGeorge - Your Drums, Your Love",
+          "url": "https://www.youtube.com/watch?v=VfCSx5641U4",
+          "channel": "AlunaGeorge",
+          "durationSeconds": 225.0,
+          "score": 0.222,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "NSdcG1e9APE",
+          "title": "AlunaGeorge - I'm In Control ft. Popcaan",
+          "url": "https://www.youtube.com/watch?v=NSdcG1e9APE",
+          "channel": "AlunaGeorge",
+          "durationSeconds": 286.0,
+          "score": 0.164,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "u8Or0p4oTKw",
+          "title": "AlunaGeorge - Put Your Hands Up (N55 Hi Emotions Remix).mp4",
+          "url": "https://www.youtube.com/watch?v=u8Or0p4oTKw",
+          "channel": "Ali bak",
+          "durationSeconds": 264.0,
+          "score": 0.031,
+          "signals": [
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Robin Pecknold - I’m Losing Myself (Feat. Ed Droste)",
+      "query": "Robin Pecknold I’m Losing Myself (Feat. Ed Droste)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "7kZ0REBJ4ms",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "7kZ0REBJ4ms",
+          "title": "Robin Pecknold - I'm Losing Myself (feat. Ed Droste)",
+          "url": "https://www.youtube.com/watch?v=7kZ0REBJ4ms",
+          "channel": "IndependentPresident",
+          "durationSeconds": 207.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "BXyCuTmgmpc",
+          "title": "Robin Pecknold - I'm Losing Myself (feat. Ed Droste) (1/3)",
+          "url": "https://www.youtube.com/watch?v=BXyCuTmgmpc",
+          "channel": "Music Reserves",
+          "durationSeconds": 208.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "hpkYEW6gWHU",
+          "title": "Robin Pecknold -- I'm Losing Myself (Feat. Ed Droste)",
+          "url": "https://www.youtube.com/watch?v=hpkYEW6gWHU",
+          "channel": "K Bolas",
+          "durationSeconds": 207.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "SC0GyRgn40o",
+          "title": "I'm Losing Myself (Feat. Ed Droste) by Robin Pecknold",
+          "url": "https://www.youtube.com/watch?v=SC0GyRgn40o",
+          "channel": "tavukciyan",
+          "durationSeconds": 207.0,
+          "score": 0.938,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "YEXeUCWLALo",
+          "title": "Robin Pecknold - I'm Losing Myself (feat. Ed Droste) [with lyrics]",
+          "url": "https://www.youtube.com/watch?v=YEXeUCWLALo",
+          "channel": "Louie Baltazar",
+          "durationSeconds": 207.0,
+          "score": 0.913,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Thirteenth",
+      "embedUrl": "https://www.youtube.com/embed/GSi3ihXbH84?playlist=Yp_LJfb0wys,1Ug4vOAUXT8,1nVuA-sxikc,9RQxiV44gGE,jpNGDr0OQAs,7kZ0REBJ4ms",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=GSi3ihXbH84,Yp_LJfb0wys,1Ug4vOAUXT8,1nVuA-sxikc,9RQxiV44gGE,jpNGDr0OQAs,7kZ0REBJ4ms",
+      "videoIds": [
+        "GSi3ihXbH84",
+        "Yp_LJfb0wys",
+        "1Ug4vOAUXT8",
+        "1nVuA-sxikc",
+        "9RQxiV44gGE",
+        "jpNGDr0OQAs",
+        "7kZ0REBJ4ms"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:25:34Z"
+    }
+  }
+}

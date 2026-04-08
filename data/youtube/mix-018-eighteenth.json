@@ -1,0 +1,1251 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-018-eighteenth",
+  "updatedAt": "2026-04-08T21:24:54Z",
+  "sourceMixPath": "data/imported/mixes/mix-018-eighteenth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Pinback - Boo",
+      "query": "Pinback Boo",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "pnyFcLSzs2o",
+        "confidenceScore": 0.977,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "pnyFcLSzs2o",
+          "title": "Pinback - Boo",
+          "url": "https://www.youtube.com/watch?v=pnyFcLSzs2o",
+          "channel": "T",
+          "durationSeconds": 241.0,
+          "score": 0.977,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "97YouhFjumw",
+          "title": "PINBACK - Boo",
+          "url": "https://www.youtube.com/watch?v=97YouhFjumw",
+          "channel": "Chelsea Baker",
+          "durationSeconds": 239.0,
+          "score": 0.977,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "5pKTEKx-w-Q",
+          "title": "Pinback - Boo",
+          "url": "https://www.youtube.com/watch?v=5pKTEKx-w-Q",
+          "channel": "EtHlCaLmInD",
+          "durationSeconds": 238.0,
+          "score": 0.977,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "aGTm9wSuzN0",
+          "title": "Boo",
+          "url": "https://www.youtube.com/watch?v=aGTm9wSuzN0",
+          "channel": "Pinback - Topic",
+          "durationSeconds": 239.0,
+          "score": 0.589,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "LJlxJ0qBMAk",
+          "title": "Pinback ~ Boo ~ Live 2023 ~ Webster Hall NYC (4K)",
+          "url": "https://www.youtube.com/watch?v=LJlxJ0qBMAk",
+          "channel": "The Video Pup",
+          "durationSeconds": 209.0,
+          "score": 0.531,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Sparrow House - When I Am Gone",
+      "query": "Sparrow House When I Am Gone",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "KUsvv-cbgSI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "KUsvv-cbgSI",
+          "title": "sparrow house - \"when i am gone\"",
+          "url": "https://www.youtube.com/watch?v=KUsvv-cbgSI",
+          "channel": "ponyisland",
+          "durationSeconds": 99.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "1PuP1nW9sew",
+          "title": "Sparrow House-When I Am Gone lyrics",
+          "url": "https://www.youtube.com/watch?v=1PuP1nW9sew",
+          "channel": "Natalie Rose",
+          "durationSeconds": 177.0,
+          "score": 0.89,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PAQDq9cH71c",
+          "title": "Ellen Becker - \"When I Am Gone\" by Sparrow House",
+          "url": "https://www.youtube.com/watch?v=PAQDq9cH71c",
+          "channel": "OldDrumOpenMicNight",
+          "durationSeconds": 194.0,
+          "score": 0.82,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "KoISGLmkf8Q",
+          "title": "When I Am Gone - Sparrow House (acoustic cover)",
+          "url": "https://www.youtube.com/watch?v=KoISGLmkf8Q",
+          "channel": "Ellen Blaize",
+          "durationSeconds": 183.0,
+          "score": 0.595,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty",
+            "unexpected-cover-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "anYgCRFSUXQ",
+          "title": "Sparrow House on Almost Late Show",
+          "url": "https://www.youtube.com/watch?v=anYgCRFSUXQ",
+          "channel": "Dg78704",
+          "durationSeconds": 194.0,
+          "score": 0.366,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Noah And The Whale - Second Lover",
+      "query": "Noah And The Whale Second Lover",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "MTuoTf2ms40",
+        "confidenceScore": 0.98,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "MTuoTf2ms40",
+          "title": "06 - Noah And The Whale - Second Lover",
+          "url": "https://www.youtube.com/watch?v=MTuoTf2ms40",
+          "channel": "albumsondemand",
+          "durationSeconds": 244.0,
+          "score": 0.98,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "HBbKFXXQwOY",
+          "title": "Noah And The Whale - Second Lover (With Lyrics and a cute font)",
+          "url": "https://www.youtube.com/watch?v=HBbKFXXQwOY",
+          "channel": "alexadacool",
+          "durationSeconds": 249.0,
+          "score": 0.788,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Pwk-eJeVcFQ",
+          "title": "Second Lover",
+          "url": "https://www.youtube.com/watch?v=Pwk-eJeVcFQ",
+          "channel": "Noah And The Whale - Topic",
+          "durationSeconds": 244.0,
+          "score": 0.627,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "_MRvJiwbqYo",
+          "title": "Second Lover",
+          "url": "https://www.youtube.com/watch?v=_MRvJiwbqYo",
+          "channel": "Noah And The Whale - Topic",
+          "durationSeconds": 244.0,
+          "score": 0.627,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "BF-F_lrMUJ8",
+          "title": "2 Atoms In A Molecule",
+          "url": "https://www.youtube.com/watch?v=BF-F_lrMUJ8",
+          "channel": "Noah And The Whale - Topic",
+          "durationSeconds": 125.0,
+          "score": 0.347,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "The Get Up Kids - No Love",
+      "query": "The Get Up Kids No Love",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "JUsrYcpK9yw",
+        "confidenceScore": 0.984,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "JUsrYcpK9yw",
+          "title": "The Get Up Kids - No Love",
+          "url": "https://www.youtube.com/watch?v=JUsrYcpK9yw",
+          "channel": "Feet First Productions",
+          "durationSeconds": 240.0,
+          "score": 0.984,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "i2peMocNrMA",
+          "title": "The Get Up Kids \"No Love\" LIVE",
+          "url": "https://www.youtube.com/watch?v=i2peMocNrMA",
+          "channel": "Concerts Hub",
+          "durationSeconds": 207.0,
+          "score": 0.723,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "bPUJz5XKAmw",
+          "title": "The Get Up Kids - No Love (Live in Sydney) | Moshcam",
+          "url": "https://www.youtube.com/watch?v=bPUJz5XKAmw",
+          "channel": "Moshcam",
+          "durationSeconds": 228.0,
+          "score": 0.628,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vKT_iGRh_kE",
+          "title": "No Love",
+          "url": "https://www.youtube.com/watch?v=vKT_iGRh_kE",
+          "channel": "The Get Up Kids",
+          "durationSeconds": 185.0,
+          "score": 0.48,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "MOenu3xGkUk",
+          "title": "No Love (Live)",
+          "url": "https://www.youtube.com/watch?v=MOenu3xGkUk",
+          "channel": "The Get Up Kids",
+          "durationSeconds": 219.0,
+          "score": 0.193,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Blur - No Distance Left To Run",
+      "query": "Blur No Distance Left To Run",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "5KFIr4SlRGg",
+        "confidenceScore": 0.978,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "5KFIr4SlRGg",
+          "title": "Blur (The Best Of) - No Distance Left To Run",
+          "url": "https://www.youtube.com/watch?v=5KFIr4SlRGg",
+          "channel": "Airunirrac",
+          "durationSeconds": 207.0,
+          "score": 0.978,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "dgA_DlR8WsM",
+          "title": "Blur - No Distance Left To Run (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=dgA_DlR8WsM",
+          "channel": "Blur",
+          "durationSeconds": 331.0,
+          "score": 0.953,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "QWFcM_1ye8o",
+          "title": "Blur - No Distance Left To Run (Jools Holland 1999)",
+          "url": "https://www.youtube.com/watch?v=QWFcM_1ye8o",
+          "channel": "staybeautiful33",
+          "durationSeconds": 211.0,
+          "score": 0.942,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "SffJQt5n0zw",
+          "title": "Blur - No Distance Left To Run live at Wembley Arena 1999",
+          "url": "https://www.youtube.com/watch?v=SffJQt5n0zw",
+          "channel": "Wendy Nievas",
+          "durationSeconds": 288.0,
+          "score": 0.689,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Y-ziROaKtps",
+          "title": "Damon Albarn - No Distance Left to Run (Live on Later)",
+          "url": "https://www.youtube.com/watch?v=Y-ziROaKtps",
+          "channel": "BBC Music",
+          "durationSeconds": 165.0,
+          "score": 0.473,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Bright Eyes - It’s Cool, We Can Still Be Friends",
+      "query": "Bright Eyes It’s Cool, We Can Still Be Friends",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "y97wXBSoTec",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "y97wXBSoTec",
+          "title": "Bright Eyes - It's Cool, We Can Still Be Friends",
+          "url": "https://www.youtube.com/watch?v=y97wXBSoTec",
+          "channel": "Rubén Santibáñez",
+          "durationSeconds": 335.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "i_yr7WS_PYU",
+          "title": "Bright Eyes - It's Cool We Can Still Be Friends (Sub. Español)",
+          "url": "https://www.youtube.com/watch?v=i_yr7WS_PYU",
+          "channel": "INDIESONGS",
+          "durationSeconds": 336.0,
+          "score": 0.997,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "HjRwpc_97UE",
+          "title": "Bright eyes - Its cool we can still be friends",
+          "url": "https://www.youtube.com/watch?v=HjRwpc_97UE",
+          "channel": "RHCPchilis",
+          "durationSeconds": 335.0,
+          "score": 0.846,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "AmMxWsDHhUE",
+          "title": "Bright Eyes - Its Cool We Can Still Be Friends (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=AmMxWsDHhUE",
+          "channel": "Alexandra Aesthetic",
+          "durationSeconds": 338.0,
+          "score": 0.732,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "8FvWKWT1AW0",
+          "title": "bright eyes - its cool we can still be friends (lyrics)",
+          "url": "https://www.youtube.com/watch?v=8FvWKWT1AW0",
+          "channel": "veda6eve",
+          "durationSeconds": 335.0,
+          "score": 0.732,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Coldplay - Warning Sign",
+      "query": "Coldplay Warning Sign",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "AK-U7AkZOyY",
+        "confidenceScore": 0.885,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "AK-U7AkZOyY",
+          "title": "coldplay - warning sign (lyrics)",
+          "url": "https://www.youtube.com/watch?v=AK-U7AkZOyY",
+          "channel": "deep blue sounds",
+          "durationSeconds": 332.0,
+          "score": 0.885,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "YI6RHqSvsLU",
+          "title": "Coldplay - Warning Sign (from the album A Rush Of Blood To The Head)",
+          "url": "https://www.youtube.com/watch?v=YI6RHqSvsLU",
+          "channel": "M.B. QuackBarc",
+          "durationSeconds": 332.0,
+          "score": 0.805,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "TEDkZ02pmWo",
+          "title": "Warning Sign by Coldplay music video",
+          "url": "https://www.youtube.com/watch?v=TEDkZ02pmWo",
+          "channel": "Andrew Morris",
+          "durationSeconds": 298.0,
+          "score": 0.716,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "MNtkOSuck2M",
+          "title": "Warning Sign - Coldplay Live Sessions @ AOL",
+          "url": "https://www.youtube.com/watch?v=MNtkOSuck2M",
+          "channel": "ColdplayVideos",
+          "durationSeconds": 324.0,
+          "score": 0.665,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "xtQirM784oM",
+          "title": "Warning Sign",
+          "url": "https://www.youtube.com/watch?v=xtQirM784oM",
+          "channel": "Coldplay",
+          "durationSeconds": 332.0,
+          "score": 0.558,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Elliott Smith - I Didn’t Understand",
+      "query": "Elliott Smith I Didn’t Understand",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ANrRoKTFtls",
+        "confidenceScore": 0.971,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ANrRoKTFtls",
+          "title": "Elliott Smith - I Didn't Understand - Alternate",
+          "url": "https://www.youtube.com/watch?v=ANrRoKTFtls",
+          "channel": "mymayapapaya",
+          "durationSeconds": 155.0,
+          "score": 0.971,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "CjLZF_zwn5A",
+          "title": "Elliott Smith   I Didn't Understand live on Dutch TV",
+          "url": "https://www.youtube.com/watch?v=CjLZF_zwn5A",
+          "channel": "jo lim",
+          "durationSeconds": 149.0,
+          "score": 0.718,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "lFIkik2I_Pc",
+          "title": "I Didn't Understand",
+          "url": "https://www.youtube.com/watch?v=lFIkik2I_Pc",
+          "channel": "Elliott Smith - Topic",
+          "durationSeconds": 138.0,
+          "score": 0.679,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "CJJkMAethSc",
+          "title": "I Didn't Understand",
+          "url": "https://www.youtube.com/watch?v=CJJkMAethSc",
+          "channel": "Elliott Smith - Topic",
+          "durationSeconds": 141.0,
+          "score": 0.679,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "M3JybfnsB2M",
+          "title": "ELLIOTT SMITH  - I Didn't Understand (live on 2 METER SESSIONS) 1998",
+          "url": "https://www.youtube.com/watch?v=M3JybfnsB2M",
+          "channel": "2 Meter Sessions",
+          "durationSeconds": 168.0,
+          "score": 0.67,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Johnny Cash - Hurt",
+      "query": "Johnny Cash Hurt",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "8AHCfZTRGiI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "8AHCfZTRGiI",
+          "title": "Johnny Cash - Hurt",
+          "url": "https://www.youtube.com/watch?v=8AHCfZTRGiI",
+          "channel": "Johnny Cash",
+          "durationSeconds": 229.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "CG-1JDi4240",
+          "title": "Johnny Cash- Hurt (HQ)",
+          "url": "https://www.youtube.com/watch?v=CG-1JDi4240",
+          "channel": "The Match Me Podcast",
+          "durationSeconds": 217.0,
+          "score": 0.937,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "SnEVnvWUJgM",
+          "title": "Johnny Cash - Hurt (Official Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=SnEVnvWUJgM",
+          "channel": "Johnny Cash",
+          "durationSeconds": 229.0,
+          "score": 0.836,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "4ahHWROn8M0",
+          "title": "johnny cash - hurt (lyrics)",
+          "url": "https://www.youtube.com/watch?v=4ahHWROn8M0",
+          "channel": "v94j",
+          "durationSeconds": 221.0,
+          "score": 0.819,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Ur8j4xWe_44",
+          "title": "Johnny Cash Hurt - Official Music Video",
+          "url": "https://www.youtube.com/watch?v=Ur8j4xWe_44",
+          "channel": "lordheffa",
+          "durationSeconds": 242.0,
+          "score": 0.756,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "The Mountain Goats - No Children",
+      "query": "The Mountain Goats No Children",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "QS27S3mspjU",
+        "confidenceScore": 0.997,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "QS27S3mspjU",
+          "title": "the mountain goats - no children",
+          "url": "https://www.youtube.com/watch?v=QS27S3mspjU",
+          "channel": "deer vs headlights",
+          "durationSeconds": 173.0,
+          "score": 0.997,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "3nVEJoibyso",
+          "title": "The Mountain Goats- No Children",
+          "url": "https://www.youtube.com/watch?v=3nVEJoibyso",
+          "channel": "Jon Fisher",
+          "durationSeconds": 223.0,
+          "score": 0.997,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "s2DCdI-XXQ4",
+          "title": "the Mountain Goats - No Children (Jordan Lake Sessions)",
+          "url": "https://www.youtube.com/watch?v=s2DCdI-XXQ4",
+          "channel": "the Mountain Goats",
+          "durationSeconds": 180.0,
+          "score": 0.966,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "oyBTUpyheJA",
+          "title": "The Mountain Goats - \"No Children\" (Live at Sony Hall)",
+          "url": "https://www.youtube.com/watch?v=oyBTUpyheJA",
+          "channel": "WFUV Public Radio",
+          "durationSeconds": 176.0,
+          "score": 0.678,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "fqGKZ3fzN1M",
+          "title": "No Children",
+          "url": "https://www.youtube.com/watch?v=fqGKZ3fzN1M",
+          "channel": "the Mountain Goats",
+          "durationSeconds": 169.0,
+          "score": 0.501,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "dios Malos - Asshole",
+      "query": "dios Malos Asshole",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "xaXqMILqhEs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "xaXqMILqhEs",
+          "title": "Dios (malos) - Asshole",
+          "url": "https://www.youtube.com/watch?v=xaXqMILqhEs",
+          "channel": "Paulina",
+          "durationSeconds": 214.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "6bebbnNiUbI",
+          "title": "Dios Malos - Starting Five",
+          "url": "https://www.youtube.com/watch?v=6bebbnNiUbI",
+          "channel": "NevermindinMan",
+          "durationSeconds": 198.0,
+          "score": 0.332,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "mjcCjJKbLEo",
+          "title": "Dios (Malos) - I Want It All",
+          "url": "https://www.youtube.com/watch?v=mjcCjJKbLEo",
+          "channel": "Full Time Hobby",
+          "durationSeconds": 185.0,
+          "score": 0.321,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "r-vTK9V1KyA",
+          "title": "Fifty Cents",
+          "url": "https://www.youtube.com/watch?v=r-vTK9V1KyA",
+          "channel": "Dios (Malos) - Topic",
+          "durationSeconds": 255.0,
+          "score": 0.261,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "aiCPYokJWh8",
+          "title": "Dios (Malos) - 50 Cents Live @ The Metro Chicago 2.24.07 By WPPTV",
+          "url": "https://www.youtube.com/watch?v=aiCPYokJWh8",
+          "channel": "WPPTV",
+          "durationSeconds": 276.0,
+          "score": 0.009,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Kid Cudi - Erase Me",
+      "query": "Kid Cudi Erase Me",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ICaTsTkBPV8",
+        "confidenceScore": 0.966,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ICaTsTkBPV8",
+          "title": "Kid Cudi - Erase Me ft. Kanye West",
+          "url": "https://www.youtube.com/watch?v=ICaTsTkBPV8",
+          "channel": "Kid Cudi",
+          "durationSeconds": 235.0,
+          "score": 0.966,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "2JHohGMYT5Y",
+          "title": "Kid Cudi - Erase Me ft. Kanye West",
+          "url": "https://www.youtube.com/watch?v=2JHohGMYT5Y",
+          "channel": "MusicUniversalCrew",
+          "durationSeconds": 194.0,
+          "score": 0.886,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "qltOjb8RATQ",
+          "title": "KiD CuDi Ft. Kanye West  - Erase Me (Dirty)",
+          "url": "https://www.youtube.com/watch?v=qltOjb8RATQ",
+          "channel": "guccibanks777",
+          "durationSeconds": 199.0,
+          "score": 0.853,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "LAMLRb8hGCk",
+          "title": "Kid Cudi - Erase Me (Lyrics)(Download Included)",
+          "url": "https://www.youtube.com/watch?v=LAMLRb8hGCk",
+          "channel": "jowellyrandy101",
+          "durationSeconds": 197.0,
+          "score": 0.75,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "nnvqfucTs0o",
+          "title": "Erase Me",
+          "url": "https://www.youtube.com/watch?v=nnvqfucTs0o",
+          "channel": "Kid Cudi",
+          "durationSeconds": 193.0,
+          "score": 0.532,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Glee Cast - Songbird (originally by Fleetwood Mac)",
+      "query": "Glee Cast Songbird (originally by Fleetwood Mac)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "wuMPbSmYCeA",
+        "confidenceScore": 0.721,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "wuMPbSmYCeA",
+          "title": "Glee Cast - Songbird (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=wuMPbSmYCeA",
+          "channel": "Glee Cast",
+          "durationSeconds": 200.0,
+          "score": 0.721,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "1cKgj1ABcC0",
+          "title": "Songbird - Glee Cast Version [Fleetwood Mac]",
+          "url": "https://www.youtube.com/watch?v=1cKgj1ABcC0",
+          "channel": "otakukawaii27",
+          "durationSeconds": 199.0,
+          "score": 0.407,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "btemWKqs-J8",
+          "title": "Glee - Songbird (Full Performance) 2x19",
+          "url": "https://www.youtube.com/watch?v=btemWKqs-J8",
+          "channel": "Glee Scenes",
+          "durationSeconds": 149.0,
+          "score": 0.212,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "jgfxmlAZUWU",
+          "title": "Songbird | Glee [HD FULL STUDIO]",
+          "url": "https://www.youtube.com/watch?v=jgfxmlAZUWU",
+          "channel": "TheAllGleeMusic",
+          "durationSeconds": 200.0,
+          "score": 0.206,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "n0dWx1SZwYk",
+          "title": "Glee - Songbird (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=n0dWx1SZwYk",
+          "channel": "MissBear98",
+          "durationSeconds": 199.0,
+          "score": 0.152,
+          "signals": [
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Guillemots - Blue Would Still Be Blue",
+      "query": "Guillemots Blue Would Still Be Blue",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "2kw0F7cIaqo",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2kw0F7cIaqo",
+          "title": "Guillemots - Blue Would Still Be Blue",
+          "url": "https://www.youtube.com/watch?v=2kw0F7cIaqo",
+          "channel": "red wing",
+          "durationSeconds": 320.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "9PYtpNEKSg4",
+          "title": "Guillemots - Blue Would Still Be Blue (Studio)",
+          "url": "https://www.youtube.com/watch?v=9PYtpNEKSg4",
+          "channel": "ceebss",
+          "durationSeconds": 278.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "tpqfWJ9TERQ",
+          "title": "Blue Would Still Be Blue   ( The Guillemots )",
+          "url": "https://www.youtube.com/watch?v=tpqfWJ9TERQ",
+          "channel": "Yaniv Kalamitzky",
+          "durationSeconds": 290.0,
+          "score": 0.932,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "JecyRvt0fLM",
+          "title": "Blue Would Still Be Blue",
+          "url": "https://www.youtube.com/watch?v=JecyRvt0fLM",
+          "channel": "Guillemots",
+          "durationSeconds": 315.0,
+          "score": 0.884,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "mAk6IIAjMAs",
+          "title": "Guillemots - Blue Would Still Be Blue (Live in New York)",
+          "url": "https://www.youtube.com/watch?v=mAk6IIAjMAs",
+          "channel": "Danieljamesny",
+          "durationSeconds": 182.0,
+          "score": 0.735,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 14,
+    "resolvedTracks": 14,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Eighteenth",
+      "embedUrl": "https://www.youtube.com/embed/pnyFcLSzs2o?playlist=KUsvv-cbgSI,MTuoTf2ms40,JUsrYcpK9yw,5KFIr4SlRGg,y97wXBSoTec,AK-U7AkZOyY,ANrRoKTFtls,8AHCfZTRGiI,QS27S3mspjU,xaXqMILqhEs,ICaTsTkBPV8,wuMPbSmYCeA,2kw0F7cIaqo",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=pnyFcLSzs2o,KUsvv-cbgSI,MTuoTf2ms40,JUsrYcpK9yw,5KFIr4SlRGg,y97wXBSoTec,AK-U7AkZOyY,ANrRoKTFtls,8AHCfZTRGiI,QS27S3mspjU,xaXqMILqhEs,ICaTsTkBPV8,wuMPbSmYCeA,2kw0F7cIaqo",
+      "videoIds": [
+        "pnyFcLSzs2o",
+        "KUsvv-cbgSI",
+        "MTuoTf2ms40",
+        "JUsrYcpK9yw",
+        "5KFIr4SlRGg",
+        "y97wXBSoTec",
+        "AK-U7AkZOyY",
+        "ANrRoKTFtls",
+        "8AHCfZTRGiI",
+        "QS27S3mspjU",
+        "xaXqMILqhEs",
+        "ICaTsTkBPV8",
+        "wuMPbSmYCeA",
+        "2kw0F7cIaqo"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:24:54Z"
+    }
+  }
+}

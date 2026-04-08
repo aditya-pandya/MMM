@@ -1,0 +1,629 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-014-fourteenth",
+  "updatedAt": "2026-04-08T21:25:27Z",
+  "sourceMixPath": "data/imported/mixes/mix-014-fourteenth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "White Rabbits - Percussion Gun",
+      "query": "White Rabbits Percussion Gun",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "58frobtKQV8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "58frobtKQV8",
+          "title": "White Rabbits   Percussion Gun",
+          "url": "https://www.youtube.com/watch?v=58frobtKQV8",
+          "channel": "RTBrandy",
+          "durationSeconds": 189.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "fHHGqIcncKs",
+          "title": "White Rabbits - Percussion Gun (Friday Night Lights version)",
+          "url": "https://www.youtube.com/watch?v=fHHGqIcncKs",
+          "channel": "WhiteRabbitsVEVO",
+          "durationSeconds": 189.0,
+          "score": 0.872,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "IClBpch9vmM",
+          "title": "White Rabbits \"Percussion Gun\" Official Video",
+          "url": "https://www.youtube.com/watch?v=IClBpch9vmM",
+          "channel": "thewhiterabbits",
+          "durationSeconds": 189.0,
+          "score": 0.865,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "tIZtjKW3v4M",
+          "title": "White Rabbits - Percussion Gun (Live @ KEXP)",
+          "url": "https://www.youtube.com/watch?v=tIZtjKW3v4M",
+          "channel": "KEXP",
+          "durationSeconds": 198.0,
+          "score": 0.731,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "3px85ixf6lE",
+          "title": "White Rabbits - Percussion Gun (Live in HD)",
+          "url": "https://www.youtube.com/watch?v=3px85ixf6lE",
+          "channel": "TenthRowConcerts",
+          "durationSeconds": 205.0,
+          "score": 0.726,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Hot Club de Paris - Hello. I Wrote A Song For You Called Welcome To The Jungle",
+      "query": "Hot Club de Paris Hello. I Wrote A Song For You Called Welcome To The Jungle",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "SuKxSPWkQwU",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "SuKxSPWkQwU",
+          "title": "Hot Club De Paris - Hello, I Wrote A Song For You Called Welcome To The Jungle",
+          "url": "https://www.youtube.com/watch?v=SuKxSPWkQwU",
+          "channel": "Manuel De León",
+          "durationSeconds": 233.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "iK1QcsrSyTI",
+          "title": "Hot Club de Paris - Hello I Wrote A Song For You Called 'Welcome To The Jungle",
+          "url": "https://www.youtube.com/watch?v=iK1QcsrSyTI",
+          "channel": "Coldbloodedclarity",
+          "durationSeconds": 287.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "oj-2b-YMVlg",
+          "title": "Hello, I Wrote A Song For You Called 'Welcome To The Jungle'",
+          "url": "https://www.youtube.com/watch?v=oj-2b-YMVlg",
+          "channel": "Hot Club de Paris - Topic",
+          "durationSeconds": 233.0,
+          "score": 0.719,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "F4_be93H_o4",
+          "title": "Hot Club de Paris - Hello Comrade! (I Quit My Job)",
+          "url": "https://www.youtube.com/watch?v=F4_be93H_o4",
+          "channel": "coheedark",
+          "durationSeconds": 148.0,
+          "score": 0.318,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "FrZ__NoBY1g",
+          "title": "HOT CLUB DE PARIS - EVERYTHINGEVERYTHINGEVERYTHING",
+          "url": "https://www.youtube.com/watch?v=FrZ__NoBY1g",
+          "channel": "v2italy",
+          "durationSeconds": 154.0,
+          "score": 0.296,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Brand New vs. Dashboard Confessional - The Quiet Screaming",
+      "query": "Brand New vs. Dashboard Confessional The Quiet Screaming",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "dMyLnX5i-CA",
+        "confidenceScore": 0.822,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "dMyLnX5i-CA",
+          "title": "Dashboard Confessional vs Brand New - The Quiet Screaming",
+          "url": "https://www.youtube.com/watch?v=dMyLnX5i-CA",
+          "channel": "buster0505",
+          "durationSeconds": 213.0,
+          "score": 0.822,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "7_zL6BUvDzw",
+          "title": "The Legion of Doom - The Quiet Screaming (Dashboard Confessional vs. Brand New)",
+          "url": "https://www.youtube.com/watch?v=7_zL6BUvDzw",
+          "channel": "Vote4cake",
+          "durationSeconds": 214.0,
+          "score": 0.704,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "5vyLbW9adRg",
+          "title": "The Legion Of Doom - The Quiet Screaming",
+          "url": "https://www.youtube.com/watch?v=5vyLbW9adRg",
+          "channel": "UkNegative",
+          "durationSeconds": 224.0,
+          "score": 0.361,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vFT4WWdWHM8",
+          "title": "The Legion of Doom - \"The Quiet Screaming\"",
+          "url": "https://www.youtube.com/watch?v=vFT4WWdWHM8",
+          "channel": "LegionVids",
+          "durationSeconds": 223.0,
+          "score": 0.361,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "hdjki2o1gxY",
+          "title": "Dashboard Confessional Vs Brand New",
+          "url": "https://www.youtube.com/watch?v=hdjki2o1gxY",
+          "channel": "xxxLizzie8xxx",
+          "durationSeconds": 217.0,
+          "score": 0.187,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Ben Harper & The Innocent Criminals - In The Colors",
+      "query": "Ben Harper & The Innocent Criminals In The Colors",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "BmwpzyLI74U",
+        "confidenceScore": 0.861,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "BmwpzyLI74U",
+          "title": "Ben Harper and The Innocent Criminals - In The Colors",
+          "url": "https://www.youtube.com/watch?v=BmwpzyLI74U",
+          "channel": "Ben Harper",
+          "durationSeconds": 185.0,
+          "score": 0.861,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "MuE-jG8a1_0",
+          "title": "Ben Harper + The Innocent Criminals ~ In The Colors ~ live Leno",
+          "url": "https://www.youtube.com/watch?v=MuE-jG8a1_0",
+          "channel": "Art Varkington",
+          "durationSeconds": 194.0,
+          "score": 0.718,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "o63nhG4mtJw",
+          "title": "Ben Harper - In The Colors",
+          "url": "https://www.youtube.com/watch?v=o63nhG4mtJw",
+          "channel": "Bojocatkite",
+          "durationSeconds": 179.0,
+          "score": 0.409,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "s7cF30F_vXI",
+          "title": "Ben Harper  & The Innocent Criminals - 6/1/25 - Full Show - Roadrunner, Boston, MA - 4K",
+          "url": "https://www.youtube.com/watch?v=s7cF30F_vXI",
+          "channel": "digidigit",
+          "durationSeconds": 7438.0,
+          "score": 0.329,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "sK4tly6HEec",
+          "title": "In The Colors (AOL Interface)",
+          "url": "https://www.youtube.com/watch?v=sK4tly6HEec",
+          "channel": "Ben Harper",
+          "durationSeconds": 180.0,
+          "score": 0.302,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Thurston Moore - Benediction",
+      "query": "Thurston Moore Benediction",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "aEe9H6fa7uM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "aEe9H6fa7uM",
+          "title": "Thurston Moore - Benediction",
+          "url": "https://www.youtube.com/watch?v=aEe9H6fa7uM",
+          "channel": "Sonic Youth",
+          "durationSeconds": 319.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "DEe5D3yHaZA",
+          "title": "THURSTON MOORE - BENEDICTION",
+          "url": "https://www.youtube.com/watch?v=DEe5D3yHaZA",
+          "channel": "Ruben Brodia",
+          "durationSeconds": 317.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3nq7TZEG7rI",
+          "title": "Thurston Moore - Benediction",
+          "url": "https://www.youtube.com/watch?v=3nq7TZEG7rI",
+          "channel": "Cheese Cadet",
+          "durationSeconds": 372.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "XP3DxOxrR5U",
+          "title": "Thurston Moore - Benediction - Pitchfork Music Festival 2011",
+          "url": "https://www.youtube.com/watch?v=XP3DxOxrR5U",
+          "channel": "Pitchfork",
+          "durationSeconds": 372.0,
+          "score": 0.849,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "QzHWTbdj-FI",
+          "title": "Thurston Moore - Benediction & Blood never lies | A Take Away Show",
+          "url": "https://www.youtube.com/watch?v=QzHWTbdj-FI",
+          "channel": "Blogothèque",
+          "durationSeconds": 865.0,
+          "score": 0.837,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "TV on the Radio - Caffeinated Consciousness",
+      "query": "TV on the Radio Caffeinated Consciousness",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "YFkLmLipCV4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "YFkLmLipCV4",
+          "title": "TV On The Radio - Caffeinated Consciousness",
+          "url": "https://www.youtube.com/watch?v=YFkLmLipCV4",
+          "channel": "tvontheradio",
+          "durationSeconds": 204.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "9aBvA-kt1Ok",
+          "title": "TV on the Radio performing \"Caffeinated Consciousness\" on KCRW",
+          "url": "https://www.youtube.com/watch?v=9aBvA-kt1Ok",
+          "channel": "KCRW",
+          "durationSeconds": 194.0,
+          "score": 0.949,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "x0YBf88ykS8",
+          "title": "TV On The Radio - Caffeinated Consciousness (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=x0YBf88ykS8",
+          "channel": "Venom4811",
+          "durationSeconds": 201.0,
+          "score": 0.92,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "qp5y3GioGTU",
+          "title": "Caffeinated Consciousness (audio) by TV On The Radio | Interscope",
+          "url": "https://www.youtube.com/watch?v=qp5y3GioGTU",
+          "channel": "Interscope Records",
+          "durationSeconds": 201.0,
+          "score": 0.912,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "oMhMWcQwews",
+          "title": "TV On The Radio - Caffeinated Consciousness (Live on Letterman)",
+          "url": "https://www.youtube.com/watch?v=oMhMWcQwews",
+          "channel": "tvontheradio",
+          "durationSeconds": 198.0,
+          "score": 0.733,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Death Cab For Cutie - You Are A Tourist",
+      "query": "Death Cab For Cutie You Are A Tourist",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "p8lwAJJpyt4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "p8lwAJJpyt4",
+          "title": "Death Cab for Cutie - You Are A Tourist",
+          "url": "https://www.youtube.com/watch?v=p8lwAJJpyt4",
+          "channel": "Death Cab for Cutie",
+          "durationSeconds": 299.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "qkk5wViJo-I",
+          "title": "Death Cab for Cutie - You Are A Tourist [Official Video]",
+          "url": "https://www.youtube.com/watch?v=qkk5wViJo-I",
+          "channel": "Death Cab for Cutie",
+          "durationSeconds": 311.0,
+          "score": 0.958,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "WE5WL80sU5E",
+          "title": "You Are A Tourist Death Cab For Cutie Lyrics",
+          "url": "https://www.youtube.com/watch?v=WE5WL80sU5E",
+          "channel": "This Is Unfair",
+          "durationSeconds": 291.0,
+          "score": 0.798,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "294T2Gt0cHg",
+          "title": "TV Live: Death Cab for Cutie - \"You are a Tourist\" (Conan 2011)",
+          "url": "https://www.youtube.com/watch?v=294T2Gt0cHg",
+          "channel": "Music City Mike",
+          "durationSeconds": 291.0,
+          "score": 0.703,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "8ox1EP4RRkE",
+          "title": "Death Cab for Cutie performing \"You Are A Tourist\" Live at KCRW's Apogee Sessions",
+          "url": "https://www.youtube.com/watch?v=8ox1EP4RRkE",
+          "channel": "KCRW",
+          "durationSeconds": 270.0,
+          "score": 0.635,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Fourteenth",
+      "embedUrl": "https://www.youtube.com/embed/58frobtKQV8?playlist=SuKxSPWkQwU,dMyLnX5i-CA,BmwpzyLI74U,aEe9H6fa7uM,YFkLmLipCV4,p8lwAJJpyt4",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=58frobtKQV8,SuKxSPWkQwU,dMyLnX5i-CA,BmwpzyLI74U,aEe9H6fa7uM,YFkLmLipCV4,p8lwAJJpyt4",
+      "videoIds": [
+        "58frobtKQV8",
+        "SuKxSPWkQwU",
+        "dMyLnX5i-CA",
+        "BmwpzyLI74U",
+        "aEe9H6fa7uM",
+        "YFkLmLipCV4",
+        "p8lwAJJpyt4"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:25:27Z"
+    }
+  }
+}

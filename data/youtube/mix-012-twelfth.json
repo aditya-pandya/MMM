@@ -1,0 +1,647 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-012-twelfth",
+  "updatedAt": "2026-04-08T21:25:40Z",
+  "sourceMixPath": "data/imported/mixes/mix-012-twelfth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "The Books - Tokyo",
+      "query": "The Books Tokyo",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "S24ygyjYQG4",
+        "confidenceScore": 0.99,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "S24ygyjYQG4",
+          "title": "The Books  - Tokyo",
+          "url": "https://www.youtube.com/watch?v=S24ygyjYQG4",
+          "channel": "Merritt Symes",
+          "durationSeconds": 238.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "3wVhWcpZpac",
+          "title": "The Books - Tokyo - The Lemon of Pink",
+          "url": "https://www.youtube.com/watch?v=3wVhWcpZpac",
+          "channel": "GipsyPinstrument",
+          "durationSeconds": 335.0,
+          "score": 0.835,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "8pX9F5vyILU",
+          "title": "The Books - Tokyo [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=8pX9F5vyILU",
+          "channel": "goshdarnchef",
+          "durationSeconds": 240.0,
+          "score": 0.76,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vPEZDQ4fFMk",
+          "title": "The Books - \"Tokyo\" (Live)",
+          "url": "https://www.youtube.com/watch?v=vPEZDQ4fFMk",
+          "channel": "andromed69",
+          "durationSeconds": 223.0,
+          "score": 0.709,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "_cVFmpbcKIY",
+          "title": "Tokyo",
+          "url": "https://www.youtube.com/watch?v=_cVFmpbcKIY",
+          "channel": "The Books - Topic",
+          "durationSeconds": 224.0,
+          "score": 0.61,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Guster - Satellite",
+      "query": "Guster Satellite",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "bAkvb2Rhces",
+        "confidenceScore": 0.979,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "bAkvb2Rhces",
+          "title": "Guster - \"Satellite\" [Best Quality]",
+          "url": "https://www.youtube.com/watch?v=bAkvb2Rhces",
+          "channel": "Guster",
+          "durationSeconds": 275.0,
+          "score": 0.979,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "I9ahYUtIdis",
+          "title": "Daryl Hall & Guster - Satellite",
+          "url": "https://www.youtube.com/watch?v=I9ahYUtIdis",
+          "channel": "Daryl Hall",
+          "durationSeconds": 436.0,
+          "score": 0.913,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "UtcV3QErolo",
+          "title": "Guster - Satellite (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=UtcV3QErolo",
+          "channel": "Band Lyrics",
+          "durationSeconds": 278.0,
+          "score": 0.867,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ekt6PELAcEg",
+          "title": "Guster - Satellite (Video)",
+          "url": "https://www.youtube.com/watch?v=ekt6PELAcEg",
+          "channel": "Warner Records Vault",
+          "durationSeconds": 252.0,
+          "score": 0.857,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "6fJn2MDhqpY",
+          "title": "Guster - \"Satellite\" [Live Acoustic w/ the Guster String Players]",
+          "url": "https://www.youtube.com/watch?v=6fJn2MDhqpY",
+          "channel": "Guster",
+          "durationSeconds": 269.0,
+          "score": 0.558,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty",
+            "unexpected-acoustic-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Chairlift - Bruises",
+      "query": "Chairlift Bruises",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "w8HRCacAQ-4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "w8HRCacAQ-4",
+          "title": "Chairlift - Bruises",
+          "url": "https://www.youtube.com/watch?v=w8HRCacAQ-4",
+          "channel": "Melonhead",
+          "durationSeconds": 246.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ZQ9hLOHj8ag",
+          "title": "Chairlift - Bruises (Video)",
+          "url": "https://www.youtube.com/watch?v=ZQ9hLOHj8ag",
+          "channel": "chairliftband",
+          "durationSeconds": 241.0,
+          "score": 0.919,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "SjONd8Brn_U",
+          "title": "Chairlift- Bruises @ Interface",
+          "url": "https://www.youtube.com/watch?v=SjONd8Brn_U",
+          "channel": "Michael",
+          "durationSeconds": 240.0,
+          "score": 0.906,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "GkRBKujSBCo",
+          "title": "Bruises - Chairlift",
+          "url": "https://www.youtube.com/watch?v=GkRBKujSBCo",
+          "channel": "Pain199367",
+          "durationSeconds": 246.0,
+          "score": 0.864,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "LMET_M023I0",
+          "title": "Chairlift - Bruises (with Lyrics)",
+          "url": "https://www.youtube.com/watch?v=LMET_M023I0",
+          "channel": "Ramunas Bruzas",
+          "durationSeconds": 242.0,
+          "score": 0.812,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Paolo Nutini - New Shoes",
+      "query": "Paolo Nutini New Shoes",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "zuzTHxOR4C0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "zuzTHxOR4C0",
+          "title": "Paolo Nutini - New Shoes",
+          "url": "https://www.youtube.com/watch?v=zuzTHxOR4C0",
+          "channel": "lookslikeReturn",
+          "durationSeconds": 201.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "_CCQ7IiWZBg",
+          "title": "Paolo Nutini - New Shoes (US Version)",
+          "url": "https://www.youtube.com/watch?v=_CCQ7IiWZBg",
+          "channel": "Paolo Nutini",
+          "durationSeconds": 209.0,
+          "score": 0.997,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "LaecIn0iLfU",
+          "title": "Paolo Nutini - New Shoes (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=LaecIn0iLfU",
+          "channel": "Song des Tages",
+          "durationSeconds": 217.0,
+          "score": 0.805,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "DMQizJL-PzE",
+          "title": "New Shoes- Paolo Nutini- Lyrics",
+          "url": "https://www.youtube.com/watch?v=DMQizJL-PzE",
+          "channel": "Nedulins",
+          "durationSeconds": 206.0,
+          "score": 0.77,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "hwTHUw3gsgA",
+          "title": "Paolo Nutini Live - New Shoes @ Sziget 2012",
+          "url": "https://www.youtube.com/watch?v=hwTHUw3gsgA",
+          "channel": "Sziget Festival",
+          "durationSeconds": 293.0,
+          "score": 0.664,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Luke Doucet And The White Falcon - Monkeys",
+      "query": "Luke Doucet And The White Falcon Monkeys",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "mOb75WRrVe0",
+        "confidenceScore": 0.549,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "mOb75WRrVe0",
+          "title": "Monkeys",
+          "url": "https://www.youtube.com/watch?v=mOb75WRrVe0",
+          "channel": "Luke Doucet and the White Falcon - Topic",
+          "durationSeconds": 175.0,
+          "score": 0.549,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ds3SfgNAa7U",
+          "title": "Dusted",
+          "url": "https://www.youtube.com/watch?v=ds3SfgNAa7U",
+          "channel": "Luke Doucet and the White Falcon - Topic",
+          "durationSeconds": 184.0,
+          "score": 0.267,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "dwFXqaAZwvE",
+          "title": "Luke Doucet & The White Falcon - Dusted",
+          "url": "https://www.youtube.com/watch?v=dwFXqaAZwvE",
+          "channel": "Six Shooter Records",
+          "durationSeconds": 184.0,
+          "score": 0.266,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "meRDlwxzcmo",
+          "title": "Monkeys - Luke Doucet & Melissa McClelland",
+          "url": "https://www.youtube.com/watch?v=meRDlwxzcmo",
+          "channel": "©kdc&cc",
+          "durationSeconds": 171.0,
+          "score": 0.251,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "nAx7zey5_Qg",
+          "title": "Luke Doucet - \"Monkeys\" Live at Six Shooter Records",
+          "url": "https://www.youtube.com/watch?v=nAx7zey5_Qg",
+          "channel": "Six Shooter Records",
+          "durationSeconds": 182.0,
+          "score": 0.038,
+          "signals": [
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Wax Tailor - Que Sera",
+      "query": "Wax Tailor Que Sera",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "zSsgjm55eKE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "zSsgjm55eKE",
+          "title": "Wax Tailor - Que Sera",
+          "url": "https://www.youtube.com/watch?v=zSsgjm55eKE",
+          "channel": "WAX TAILOR",
+          "durationSeconds": 165.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "7I18_VNjX3g",
+          "title": "Wax Tailor - Que Sera (HQ)",
+          "url": "https://www.youtube.com/watch?v=7I18_VNjX3g",
+          "channel": "manofonetitle",
+          "durationSeconds": 167.0,
+          "score": 0.974,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ZnpsvoQ8p0o",
+          "title": "Wax Tailor - Que Sera - (Phonovisions Symphonic Version)",
+          "url": "https://www.youtube.com/watch?v=ZnpsvoQ8p0o",
+          "channel": "WAX TAILOR",
+          "durationSeconds": 197.0,
+          "score": 0.895,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "WEi9ZQrEjr8",
+          "title": "Que Sera - Wax Tailor",
+          "url": "https://www.youtube.com/watch?v=WEi9ZQrEjr8",
+          "channel": "ApacheFR84",
+          "durationSeconds": 121.0,
+          "score": 0.865,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "3Wysn_hJ7IQ",
+          "title": "Wax Tailor - Phonovisions Symphonic Orchestra (Full Live)",
+          "url": "https://www.youtube.com/watch?v=3Wysn_hJ7IQ",
+          "channel": "WAX TAILOR",
+          "durationSeconds": 6745.0,
+          "score": 0.123,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Belleruche - Clockwatching",
+      "query": "Belleruche Clockwatching",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "oEDhY9H0f08",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "oEDhY9H0f08",
+          "title": "Belleruche - Clockwatching",
+          "url": "https://www.youtube.com/watch?v=oEDhY9H0f08",
+          "channel": "Tru Thoughts Records",
+          "durationSeconds": 280.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "vmvkHke3mPg",
+          "title": "Belleruche - Clockwatching",
+          "url": "https://www.youtube.com/watch?v=vmvkHke3mPg",
+          "channel": "TruThoughtsJukeBox",
+          "durationSeconds": 272.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "N3Vh8lDV9Jc",
+          "title": "Belleruche - \"Clockwatching\"",
+          "url": "https://www.youtube.com/watch?v=N3Vh8lDV9Jc",
+          "channel": "Arnaud Free Trip Downl Hop Music Blog",
+          "durationSeconds": 270.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Cvm5sHXcC-8",
+          "title": "Belleruche - Clockwatching (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=Cvm5sHXcC-8",
+          "channel": "KEXP",
+          "durationSeconds": 265.0,
+          "score": 0.71,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "d5AfYI5qA6M",
+          "title": "Belleruche - Clockwatching - Acoustic [ Live in Paris ]",
+          "url": "https://www.youtube.com/watch?v=d5AfYI5qA6M",
+          "channel": "3ème Gauche",
+          "durationSeconds": 215.0,
+          "score": 0.581,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty",
+            "unexpected-acoustic-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twelfth",
+      "embedUrl": "https://www.youtube.com/embed/S24ygyjYQG4?playlist=bAkvb2Rhces,w8HRCacAQ-4,zuzTHxOR4C0,mOb75WRrVe0,zSsgjm55eKE,oEDhY9H0f08",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=S24ygyjYQG4,bAkvb2Rhces,w8HRCacAQ-4,zuzTHxOR4C0,mOb75WRrVe0,zSsgjm55eKE,oEDhY9H0f08",
+      "videoIds": [
+        "S24ygyjYQG4",
+        "bAkvb2Rhces",
+        "w8HRCacAQ-4",
+        "zuzTHxOR4C0",
+        "mOb75WRrVe0",
+        "zSsgjm55eKE",
+        "oEDhY9H0f08"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:25:40Z"
+    }
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-002-second",
+  "updatedAt": "2026-04-08T21:28:12Z",
+  "sourceMixPath": "data/imported/mixes/mix-002-second.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Vampire Weekend - Ottoman",
+      "query": "Vampire Weekend Ottoman",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "gg-fF2bX6sE",
+        "confidenceScore": 0.984,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "gg-fF2bX6sE",
+          "title": "Vampire Weekend | Ottoman",
+          "url": "https://www.youtube.com/watch?v=gg-fF2bX6sE",
+          "channel": "Slatkification",
+          "durationSeconds": 245.0,
+          "score": 0.984,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "kR6N_vDbKIg",
+          "title": "Vampire Weekend - Ottoman (cudderisback)",
+          "url": "https://www.youtube.com/watch?v=kR6N_vDbKIg",
+          "channel": "FLYOUS",
+          "durationSeconds": 236.0,
+          "score": 0.893,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "8sevqzmyUVQ",
+          "title": "Cudderisback Ottoman Remix   Kid Cudi ft  Vampire Weekend‏",
+          "url": "https://www.youtube.com/watch?v=8sevqzmyUVQ",
+          "channel": "TheWesseltje34",
+          "durationSeconds": 147.0,
+          "score": 0.638,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "fNIlYHXZQcI",
+          "title": "Ottoman",
+          "url": "https://www.youtube.com/watch?v=fNIlYHXZQcI",
+          "channel": "Vampire Weekend",
+          "durationSeconds": 243.0,
+          "score": 0.48,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Ip6sfOjynX4",
+          "title": "Vampire Weekend - Full Performance - Live on KCRW, 2010",
+          "url": "https://www.youtube.com/watch?v=Ip6sfOjynX4",
+          "channel": "KCRW",
+          "durationSeconds": 1572.0,
+          "score": 0.07,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Kate Nash - I’m Not Gonna Teach Your Boyfriend How to Dance (originally by The Black Kids)",
+      "query": "Kate Nash I’m Not Gonna Teach Your Boyfriend How to Dance (originally by The Black Kids)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "t5Ny6tZJzL4",
+        "confidenceScore": 0.476,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "t5Ny6tZJzL4",
+          "title": "I'm Not Going To Teach Your Boyfriend How To Dance - Kate Nash/Black Kids",
+          "url": "https://www.youtube.com/watch?v=t5Ny6tZJzL4",
+          "channel": "torymorgan",
+          "durationSeconds": 163.0,
+          "score": 0.476,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "uK4ysfwpC4U",
+          "title": "Kate Nash \"I'm Not Gonna Teach Your Boyfriend How To Dance\"",
+          "url": "https://www.youtube.com/watch?v=uK4ysfwpC4U",
+          "channel": "Paul Chris Jones",
+          "durationSeconds": 191.0,
+          "score": 0.466,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "D1ITZEV5-cg",
+          "title": "I'm Not Gonna Teach Your Boyfriend How to Dance with You (Black Kids)",
+          "url": "https://www.youtube.com/watch?v=D1ITZEV5-cg",
+          "channel": "Kaylie King",
+          "durationSeconds": 185.0,
+          "score": 0.399,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "vaa4eGOtrTg",
+          "title": "Black Kids - I'm Not Gonna Teach Your Boyfriend How to Dance with You",
+          "url": "https://www.youtube.com/watch?v=vaa4eGOtrTg",
+          "channel": "black kids",
+          "durationSeconds": 220.0,
+          "score": 0.351,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "6b5IS9wlYTE",
+          "title": "Black Kids - I'm Not Gonna Teach Your Boyfriend How To Dance With You - Live on Fearless Music",
+          "url": "https://www.youtube.com/watch?v=6b5IS9wlYTE",
+          "channel": "fearlessmusicshow",
+          "durationSeconds": 223.0,
+          "score": 0.1,
+          "signals": [
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Great Northern - Houses",
+      "query": "Great Northern Houses",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Sjrx_feTL80",
+        "confidenceScore": 0.98,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Sjrx_feTL80",
+          "title": "Great Northern - Houses",
+          "url": "https://www.youtube.com/watch?v=Sjrx_feTL80",
+          "channel": "Eenie Meenie",
+          "durationSeconds": 258.0,
+          "score": 0.98,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "7EWQOeQf32U",
+          "title": "Great Northern - Houses",
+          "url": "https://www.youtube.com/watch?v=7EWQOeQf32U",
+          "channel": "Andrea T",
+          "durationSeconds": 259.0,
+          "score": 0.98,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3xfA_Vi3Dqo",
+          "title": "Great Northern - Houses (lyrcis)",
+          "url": "https://www.youtube.com/watch?v=3xfA_Vi3Dqo",
+          "channel": "Sara sarori",
+          "durationSeconds": 258.0,
+          "score": 0.921,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "iC98i18Khp0",
+          "title": "Great Northern- Houses- The Roommate Soundtrack",
+          "url": "https://www.youtube.com/watch?v=iC98i18Khp0",
+          "channel": "ParisSmaris",
+          "durationSeconds": 256.0,
+          "score": 0.833,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "OeVTvM5iOIU",
+          "title": "Great Northern: \"Houses\" Live At Bismeaux Studios, Austin 2009",
+          "url": "https://www.youtube.com/watch?v=OeVTvM5iOIU",
+          "channel": "DennisTheMenace",
+          "durationSeconds": 272.0,
+          "score": 0.573,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Iglu & Hartly - Violent And Young",
+      "query": "Iglu & Hartly Violent And Young",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "XCiOblkhNRk",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "XCiOblkhNRk",
+          "title": "Iglu & Hartly ► Violent And Young",
+          "url": "https://www.youtube.com/watch?v=XCiOblkhNRk",
+          "channel": "Kruemelmonster1293",
+          "durationSeconds": 264.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "c5WihXOxKeM",
+          "title": "Iglu & Hartly - Violent and Young.",
+          "url": "https://www.youtube.com/watch?v=c5WihXOxKeM",
+          "channel": "connorthegod",
+          "durationSeconds": 264.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "VIKexf_BD4U",
+          "title": "Iglu & Hartly 'Violent and Young' (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=VIKexf_BD4U",
+          "channel": "Iglu & Hartly",
+          "durationSeconds": 219.0,
+          "score": 0.932,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "NVpEk1jaRj4",
+          "title": "Iglu & Hartly   Violent & Young Official Video",
+          "url": "https://www.youtube.com/watch?v=NVpEk1jaRj4",
+          "channel": "Ayan Ahulbek",
+          "durationSeconds": 442.0,
+          "score": 0.639,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "vtezbc4j4E4",
+          "title": "Colin McRae: DiRT 2 - Soundtrack - Iglue & Hartly - Violent & Young",
+          "url": "https://www.youtube.com/watch?v=vtezbc4j4E4",
+          "channel": "VORONsoundELITE",
+          "durationSeconds": 262.0,
+          "score": 0.241,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "The Very Best - Warm Heart Of Africa (feat. Ezra Koenig of Vampire Weekend)",
+      "query": "The Very Best Warm Heart Of Africa (feat. Ezra Koenig of Vampire Weekend)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "KkIcYz-HXj4",
+        "confidenceScore": 0.969,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "KkIcYz-HXj4",
+          "title": "The Very Best - Warm Heart Of Africa feat. Ezra Koenig (Vampire Weekend)",
+          "url": "https://www.youtube.com/watch?v=KkIcYz-HXj4",
+          "channel": "T. Dijkstra",
+          "durationSeconds": 229.0,
+          "score": 0.969,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "UuR4Xh6Kb18",
+          "title": "Warm Heart of Africa",
+          "url": "https://www.youtube.com/watch?v=UuR4Xh6Kb18",
+          "channel": "The Very Best - Topic",
+          "durationSeconds": 228.0,
+          "score": 0.428,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "t4HnYLeypZ4",
+          "title": "Warm Heart of Africa - The Very Best",
+          "url": "https://www.youtube.com/watch?v=t4HnYLeypZ4",
+          "channel": "tobytomahawk",
+          "durationSeconds": 230.0,
+          "score": 0.354,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "3MDYTkdVT8M",
+          "title": "The Very Best - Warm Heart of Africa [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=3MDYTkdVT8M",
+          "channel": "ADA",
+          "durationSeconds": 225.0,
+          "score": 0.324,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "q8OtEbWe-vI",
+          "title": "EA 2010 Fifa World Cup - Warm Heart of Africa (So Shifty Remix) - The Very Best ft Ezra Koenig",
+          "url": "https://www.youtube.com/watch?v=q8OtEbWe-vI",
+          "channel": "GSGFlash",
+          "durationSeconds": 273.0,
+          "score": 0.226,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Florence & The Machine - Rabbit Heart (Lift Me Up)",
+      "query": "Florence & The Machine Rabbit Heart (Lift Me Up)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "CMCQHcYee50",
+        "confidenceScore": 0.399,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "CMCQHcYee50",
+          "title": "Florence + The Machine - Rabbit Heart - Coachella 2012 Weekend 2",
+          "url": "https://www.youtube.com/watch?v=CMCQHcYee50",
+          "channel": "Ravie13",
+          "durationSeconds": 40.0,
+          "score": 0.399,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "zMBTvuUlm98",
+          "title": "Florence + The Machine - Never Let Me Go",
+          "url": "https://www.youtube.com/watch?v=zMBTvuUlm98",
+          "channel": "florencemachine",
+          "durationSeconds": 278.0,
+          "score": 0.397,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "2EIeUlvHAiM",
+          "title": "Florence + The Machine - Cosmic Love",
+          "url": "https://www.youtube.com/watch?v=2EIeUlvHAiM",
+          "channel": "florencemachine",
+          "durationSeconds": 241.0,
+          "score": 0.35,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Hm4kYO1hG4c",
+          "title": "Florence And The Machine - elevator session",
+          "url": "https://www.youtube.com/watch?v=Hm4kYO1hG4c",
+          "channel": "cvdvanspeyck",
+          "durationSeconds": 405.0,
+          "score": 0.133,
+          "signals": [
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "F7zNK2E9AK8",
+          "title": "Sugababes - Rabbit Heart Raise It Up   (Live Lounge)",
+          "url": "https://www.youtube.com/watch?v=F7zNK2E9AK8",
+          "channel": "Tracie",
+          "durationSeconds": 235.0,
+          "score": 0.007,
+          "signals": [
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Islands - Rough Gem",
+      "query": "Islands Rough Gem",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "RpQwZ_gdE1w",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "RpQwZ_gdE1w",
+          "title": "Islands - Rough Gem",
+          "url": "https://www.youtube.com/watch?v=RpQwZ_gdE1w",
+          "channel": "tgies",
+          "durationSeconds": 223.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "vk2qo4th3-I",
+          "title": "Rough Gem- Islands",
+          "url": "https://www.youtube.com/watch?v=vk2qo4th3-I",
+          "channel": "Forrest D",
+          "durationSeconds": 215.0,
+          "score": 0.883,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "biVrb8UecLc",
+          "title": "Islands - Live at Rhino's - \"Rough Gem\"",
+          "url": "https://www.youtube.com/watch?v=biVrb8UecLc",
+          "channel": "BrownJulius",
+          "durationSeconds": 254.0,
+          "score": 0.661,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "dmmuEmqdz7U",
+          "title": "Islands - Rough Gem (live) @ The Lodge Room 9/09/21",
+          "url": "https://www.youtube.com/watch?v=dmmuEmqdz7U",
+          "channel": "Chad Hernandez",
+          "durationSeconds": 255.0,
+          "score": 0.605,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "1akonxk0yB4",
+          "title": "Rough Gem",
+          "url": "https://www.youtube.com/watch?v=1akonxk0yB4",
+          "channel": "IslandsAreForever",
+          "durationSeconds": 217.0,
+          "score": 0.548,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Second",
+      "embedUrl": "https://www.youtube.com/embed/gg-fF2bX6sE?playlist=t5Ny6tZJzL4,Sjrx_feTL80,XCiOblkhNRk,KkIcYz-HXj4,CMCQHcYee50,RpQwZ_gdE1w",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=gg-fF2bX6sE,t5Ny6tZJzL4,Sjrx_feTL80,XCiOblkhNRk,KkIcYz-HXj4,CMCQHcYee50,RpQwZ_gdE1w",
+      "videoIds": [
+        "gg-fF2bX6sE",
+        "t5Ny6tZJzL4",
+        "Sjrx_feTL80",
+        "XCiOblkhNRk",
+        "KkIcYz-HXj4",
+        "CMCQHcYee50",
+        "RpQwZ_gdE1w"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:28:12Z"
+    }
+  }
+}

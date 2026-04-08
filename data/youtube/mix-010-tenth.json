@@ -1,0 +1,659 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-010-tenth",
+  "updatedAt": "2026-04-08T21:25:57Z",
+  "sourceMixPath": "data/imported/mixes/mix-010-tenth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Mother Mother - The Stand",
+      "query": "Mother Mother The Stand",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "wgy8dKRrI9o",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "wgy8dKRrI9o",
+          "title": "Mother Mother - The Stand",
+          "url": "https://www.youtube.com/watch?v=wgy8dKRrI9o",
+          "channel": "LastGangRadio",
+          "durationSeconds": 177.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "lSCks1NAFTM",
+          "title": "Mother Mother - The Stand (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=lSCks1NAFTM",
+          "channel": "Mother Mother",
+          "durationSeconds": 177.0,
+          "score": 0.887,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "UwTefpbWgoU",
+          "title": "Mother Mother // The Stand (LYRICS)",
+          "url": "https://www.youtube.com/watch?v=UwTefpbWgoU",
+          "channel": "Hayden",
+          "durationSeconds": 179.0,
+          "score": 0.863,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Mah52us-V78",
+          "title": "Mother Mother - \"The Stand\" Acoustic High Quality",
+          "url": "https://www.youtube.com/watch?v=Mah52us-V78",
+          "channel": "x1039phoenix",
+          "durationSeconds": 227.0,
+          "score": 0.783,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "26fN18DvcsQ",
+          "title": "Mother Mother - The Stand (Official English Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=26fN18DvcsQ",
+          "channel": "LastGangRadio",
+          "durationSeconds": 177.0,
+          "score": 0.777,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "tUnE-yArDs - Bizness",
+      "query": "tUnE-yArDs Bizness",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "HCRlLEoG9rI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "HCRlLEoG9rI",
+          "title": "tUnE-yArDs - Bizness",
+          "url": "https://www.youtube.com/watch?v=HCRlLEoG9rI",
+          "channel": "Ritalin",
+          "durationSeconds": 263.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "kzLwWT-DI7M",
+          "title": "tUnE-yArDs - Bizness",
+          "url": "https://www.youtube.com/watch?v=kzLwWT-DI7M",
+          "channel": "Sound Opinions",
+          "durationSeconds": 391.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "QcmJnNYAkFI",
+          "title": "tUnE-yArDs - Bizness",
+          "url": "https://www.youtube.com/watch?v=QcmJnNYAkFI",
+          "channel": "soundscapesmusic",
+          "durationSeconds": 438.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "YQ1LI-NTa2s",
+          "title": "tUnE-yArDs - Bizness (Official Video)",
+          "url": "https://www.youtube.com/watch?v=YQ1LI-NTa2s",
+          "channel": "4AD",
+          "durationSeconds": 265.0,
+          "score": 0.815,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "mTQl1QGKToI",
+          "title": "tUnE-yArDs - Bizness (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=mTQl1QGKToI",
+          "channel": "KEXP",
+          "durationSeconds": 377.0,
+          "score": 0.667,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Caribou - Jamelia",
+      "query": "Caribou Jamelia",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "4-DBQCuBpOk",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "4-DBQCuBpOk",
+          "title": "Caribou : Jamelia",
+          "url": "https://www.youtube.com/watch?v=4-DBQCuBpOk",
+          "channel": "psikos49",
+          "durationSeconds": 328.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "BhnsIH6nqJA",
+          "title": "Caribou - Jamelia",
+          "url": "https://www.youtube.com/watch?v=BhnsIH6nqJA",
+          "channel": "Merge Records on YouTube",
+          "durationSeconds": 235.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "eOoMBz47kDc",
+          "title": "CARIBOU - Jamelia",
+          "url": "https://www.youtube.com/watch?v=eOoMBz47kDc",
+          "channel": "Caribou",
+          "durationSeconds": 235.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "b98A3MqNVEw",
+          "title": "CARIBOU - Jamelia",
+          "url": "https://www.youtube.com/watch?v=b98A3MqNVEw",
+          "channel": "Caribou",
+          "durationSeconds": 239.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "nTdjhjA5V74",
+          "title": "Caribou - Jamelia",
+          "url": "https://www.youtube.com/watch?v=nTdjhjA5V74",
+          "channel": "berter",
+          "durationSeconds": 258.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Rökkurró - Sólin mun skína",
+      "query": "Rökkurró Sólin mun skína",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "29myVShkIHA",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "29myVShkIHA",
+          "title": "Rökkurró - Sólin Mun Skína",
+          "url": "https://www.youtube.com/watch?v=29myVShkIHA",
+          "channel": "RokkurroVEVO",
+          "durationSeconds": 250.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "qfmd4ZCViM8",
+          "title": "Rökkurró - Sólin mun skína",
+          "url": "https://www.youtube.com/watch?v=qfmd4ZCViM8",
+          "channel": "KEXP",
+          "durationSeconds": 261.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "s7Ma0XCig6c",
+          "title": "Rökkurró - Sólin Mun Skína (Off Venue performance at Iceland Airwaves 2010)",
+          "url": "https://www.youtube.com/watch?v=s7Ma0XCig6c",
+          "channel": "HI Iceland",
+          "durationSeconds": 244.0,
+          "score": 0.812,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "WuZomKJ1nqk",
+          "title": "Rökkurró - Sólin mun skína (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=WuZomKJ1nqk",
+          "channel": "KEXP",
+          "durationSeconds": 243.0,
+          "score": 0.72,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ImJCYvsTj9Q",
+          "title": "Sólin Mun Skína",
+          "url": "https://www.youtube.com/watch?v=ImJCYvsTj9Q",
+          "channel": "Rökkurró - Topic",
+          "durationSeconds": 250.0,
+          "score": 0.697,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Wavves - Horse Shoes",
+      "query": "Wavves Horse Shoes",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "pjtJ4-TMyU0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "pjtJ4-TMyU0",
+          "title": "Wavves: Horse Shoes",
+          "url": "https://www.youtube.com/watch?v=pjtJ4-TMyU0",
+          "channel": "Kasey",
+          "durationSeconds": 263.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "eXs7Yap1fjQ",
+          "title": "Wavves - Horse Shoes",
+          "url": "https://www.youtube.com/watch?v=eXs7Yap1fjQ",
+          "channel": "coffeegrinder",
+          "durationSeconds": 262.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "mT6W_bfaBkQ",
+          "title": "Wavves & Zach Hill  - 06 -  Horse Shoes (2009)",
+          "url": "https://www.youtube.com/watch?v=mT6W_bfaBkQ",
+          "channel": "Ја Сам Упуцао Ђинђића",
+          "durationSeconds": 261.0,
+          "score": 0.884,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "MwvvXrNwXzo",
+          "title": "Wavves - Glued",
+          "url": "https://www.youtube.com/watch?v=MwvvXrNwXzo",
+          "channel": "James Prudhomme",
+          "durationSeconds": 158.0,
+          "score": 0.291,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "g0sSP7LvGRg",
+          "title": "WaVVes - Horse Shoe  LIVE @ The First Unitarian Church  9/29/09",
+          "url": "https://www.youtube.com/watch?v=g0sSP7LvGRg",
+          "channel": "trawiszer",
+          "durationSeconds": 282.0,
+          "score": 0.082,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Architecture in Helsinki - Contact High",
+      "query": "Architecture in Helsinki Contact High",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "IxjcszKEcHE",
+        "confidenceScore": 0.988,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "IxjcszKEcHE",
+          "title": "Architecture In Helsinki - Contact High",
+          "url": "https://www.youtube.com/watch?v=IxjcszKEcHE",
+          "channel": "Modular YouTube",
+          "durationSeconds": 218.0,
+          "score": 0.988,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "z62R6Wsi6ek",
+          "title": "Architecture in Helsinki - Contact High",
+          "url": "https://www.youtube.com/watch?v=z62R6Wsi6ek",
+          "channel": "yartamis",
+          "durationSeconds": 219.0,
+          "score": 0.988,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "1baCnIQYfGU",
+          "title": "Architecture in Helsinki - Contact high",
+          "url": "https://www.youtube.com/watch?v=1baCnIQYfGU",
+          "channel": "SONGS THEY PLAYED",
+          "durationSeconds": 233.0,
+          "score": 0.988,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "XTFD7jbbFQ0",
+          "title": "Architecture in Helsinki - Contact High (Official Video)",
+          "url": "https://www.youtube.com/watch?v=XTFD7jbbFQ0",
+          "channel": "aihband",
+          "durationSeconds": 218.0,
+          "score": 0.857,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "87nyXnflAGY",
+          "title": "Architecture In Helsinki - Contact High (Live)",
+          "url": "https://www.youtube.com/watch?v=87nyXnflAGY",
+          "channel": "FaceCulture",
+          "durationSeconds": 236.0,
+          "score": 0.741,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "The Streets - OMG",
+      "query": "The Streets OMG",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "q8eI_Hx-xuc",
+        "confidenceScore": 0.96,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "q8eI_Hx-xuc",
+          "title": "The Streets - OMG",
+          "url": "https://www.youtube.com/watch?v=q8eI_Hx-xuc",
+          "channel": "thebeats",
+          "durationSeconds": 208.0,
+          "score": 0.96,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "5YhIcjYrVFY",
+          "title": "The Streets - OMG (Official Video)",
+          "url": "https://www.youtube.com/watch?v=5YhIcjYrVFY",
+          "channel": "The Streets",
+          "durationSeconds": 212.0,
+          "score": 0.853,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3vRwogH9M2Y",
+          "title": "The Streets - 05 - OMG (MELT! 2011)",
+          "url": "https://www.youtube.com/watch?v=3vRwogH9M2Y",
+          "channel": "MELTmartn",
+          "durationSeconds": 230.0,
+          "score": 0.844,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "8-eYZWzHrG4",
+          "title": "The Streets -- OMG (Computers and Blues)",
+          "url": "https://www.youtube.com/watch?v=8-eYZWzHrG4",
+          "channel": "hjiEss5C",
+          "durationSeconds": 207.0,
+          "score": 0.808,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "O9gIXKiB6l4",
+          "title": "The Streets - OMG [lyrics]",
+          "url": "https://www.youtube.com/watch?v=O9gIXKiB6l4",
+          "channel": "Karlo Schallibaum",
+          "durationSeconds": 211.0,
+          "score": 0.806,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Tenth",
+      "embedUrl": "https://www.youtube.com/embed/wgy8dKRrI9o?playlist=HCRlLEoG9rI,4-DBQCuBpOk,29myVShkIHA,pjtJ4-TMyU0,IxjcszKEcHE,q8eI_Hx-xuc",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=wgy8dKRrI9o,HCRlLEoG9rI,4-DBQCuBpOk,29myVShkIHA,pjtJ4-TMyU0,IxjcszKEcHE,q8eI_Hx-xuc",
+      "videoIds": [
+        "wgy8dKRrI9o",
+        "HCRlLEoG9rI",
+        "4-DBQCuBpOk",
+        "29myVShkIHA",
+        "pjtJ4-TMyU0",
+        "IxjcszKEcHE",
+        "q8eI_Hx-xuc"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:25:57Z"
+    }
+  }
+}

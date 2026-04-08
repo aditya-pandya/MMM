@@ -1,0 +1,1856 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-028-twentyeighth",
+  "updatedAt": "2026-04-08T21:22:45Z",
+  "sourceMixPath": "data/imported/mixes/mix-028-twentyeighth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Javelin - Soda Popinski",
+      "query": "Javelin Soda Popinski",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "kjAR7jE0AU0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "kjAR7jE0AU0",
+          "title": "Javelin - Soda Popinski",
+          "url": "https://www.youtube.com/watch?v=kjAR7jE0AU0",
+          "channel": "Fuchikoma",
+          "durationSeconds": 138.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "52yVChKEJfE",
+          "title": "Javelin - Soda Popinski x Sea Urchins",
+          "url": "https://www.youtube.com/watch?v=52yVChKEJfE",
+          "channel": "anatomatic",
+          "durationSeconds": 86.0,
+          "score": 0.922,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "obRdjobcljQ",
+          "title": "Javelin @ MoMA w/anarchy in motion \"Soda Popinski\"",
+          "url": "https://www.youtube.com/watch?v=obRdjobcljQ",
+          "channel": "Tom Van Buskirk",
+          "durationSeconds": 108.0,
+          "score": 0.867,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "M5n48zi3dwc",
+          "title": "Soda Popinski by Javelin except without the kid at the beginning",
+          "url": "https://www.youtube.com/watch?v=M5n48zi3dwc",
+          "channel": "bleikur",
+          "durationSeconds": 115.0,
+          "score": 0.753,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "7cDKQkveR8s",
+          "title": "Soda Popinski",
+          "url": "https://www.youtube.com/watch?v=7cDKQkveR8s",
+          "channel": "Javelin - Topic",
+          "durationSeconds": 130.0,
+          "score": 0.689,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Beat Culture - Useless",
+      "query": "Beat Culture Useless",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "x2LTpsXMQC8",
+        "confidenceScore": 0.993,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "x2LTpsXMQC8",
+          "title": "Beat Culture - Useless",
+          "url": "https://www.youtube.com/watch?v=x2LTpsXMQC8",
+          "channel": "soundsol",
+          "durationSeconds": 295.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "UESutFlhFxY",
+          "title": "Beat Culture - Useless",
+          "url": "https://www.youtube.com/watch?v=UESutFlhFxY",
+          "channel": "NeverFearFate",
+          "durationSeconds": 300.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ppzZ1O45LsQ",
+          "title": "Beat Culture - Useless",
+          "url": "https://www.youtube.com/watch?v=ppzZ1O45LsQ",
+          "channel": "birpjune2012",
+          "durationSeconds": 292.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "dg8t95aU-Rw",
+          "title": "Beat Culture - Useless",
+          "url": "https://www.youtube.com/watch?v=dg8t95aU-Rw",
+          "channel": "OOBCHILL",
+          "durationSeconds": 293.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "OhvH1pyVLzw",
+          "title": "Beat Culture // Before You Go (Official Video)",
+          "url": "https://www.youtube.com/watch?v=OhvH1pyVLzw",
+          "channel": "Feel Good Lost",
+          "durationSeconds": 183.0,
+          "score": 0.218,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Ben Folds Five - Do It Anyway",
+      "query": "Ben Folds Five Do It Anyway",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "j-c0bgLpI3Y",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "j-c0bgLpI3Y",
+          "title": "Ben Folds Five - Do It Anyway",
+          "url": "https://www.youtube.com/watch?v=j-c0bgLpI3Y",
+          "channel": "xJakDax2112x",
+          "durationSeconds": 260.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "jFsRX7rj2jY",
+          "title": "Ben Folds Five - Do It Anyway (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=jFsRX7rj2jY",
+          "channel": "samharriswenttoparis",
+          "durationSeconds": 266.0,
+          "score": 0.879,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "G8cRr9tX-Sc",
+          "title": "Ben Folds Five - Do It Anyway (Radio Edit)",
+          "url": "https://www.youtube.com/watch?v=G8cRr9tX-Sc",
+          "channel": "BenFoldsFiveVEVO",
+          "durationSeconds": 235.0,
+          "score": 0.866,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-edit-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Z5YnGg24HT0",
+          "title": "Ben Folds Five \"Do it Anyway\" Guitar Center Sessions on DIRECTV",
+          "url": "https://www.youtube.com/watch?v=Z5YnGg24HT0",
+          "channel": "Guitar Center",
+          "durationSeconds": 273.0,
+          "score": 0.843,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "mEyrfFwf3rI",
+          "title": "Ben Folds Five \"DO IT ANYWAY\" f. Fraggle Rock [Official Video]",
+          "url": "https://www.youtube.com/watch?v=mEyrfFwf3rI",
+          "channel": "Nerdist",
+          "durationSeconds": 342.0,
+          "score": 0.795,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Haim - Go Slow",
+      "query": "Haim Go Slow",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "w3Le2cDwCRM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "w3Le2cDwCRM",
+          "title": "HAIM - Go Slow (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=w3Le2cDwCRM",
+          "channel": "HAIM",
+          "durationSeconds": 258.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "a8IMFYaTKrQ",
+          "title": "HAIM - Go slow",
+          "url": "https://www.youtube.com/watch?v=a8IMFYaTKrQ",
+          "channel": "xxx xxx",
+          "durationSeconds": 258.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "orN6OvaY9eY",
+          "title": "HAIM - Go Slow (Acoustic w/ Warby Parker)",
+          "url": "https://www.youtube.com/watch?v=orN6OvaY9eY",
+          "channel": "HAIM",
+          "durationSeconds": 201.0,
+          "score": 0.809,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "R3Sq5n-ZSXA",
+          "title": "Haim   Go Slow Live iTunes Festival 2013",
+          "url": "https://www.youtube.com/watch?v=R3Sq5n-ZSXA",
+          "channel": "Claudio Trevino",
+          "durationSeconds": 288.0,
+          "score": 0.58,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "tULb8a7FsXc",
+          "title": "Haim - Go Slow - Live at iTunes Festival 2012",
+          "url": "https://www.youtube.com/watch?v=tULb8a7FsXc",
+          "channel": "lecknertal",
+          "durationSeconds": 268.0,
+          "score": 0.568,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Charlotte Gainsbourg - Anna",
+      "query": "Charlotte Gainsbourg Anna",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "xK5Hq5FsxKc",
+        "confidenceScore": 0.95,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "xK5Hq5FsxKc",
+          "title": "Charlotte Gainsbourg. ANNA",
+          "url": "https://www.youtube.com/watch?v=xK5Hq5FsxKc",
+          "channel": "kalogeropoulou7",
+          "durationSeconds": 163.0,
+          "score": 0.95,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "HhhhkfJ7sWs",
+          "title": "Charlotte Gainsbourg - Anna (VIDEO, HD)",
+          "url": "https://www.youtube.com/watch?v=HhhhkfJ7sWs",
+          "channel": "XR",
+          "durationSeconds": 165.0,
+          "score": 0.792,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Vio2c0tXiJo",
+          "title": "Charlotte Gainsbourg - Anna (Moonlight Matters Remix)",
+          "url": "https://www.youtube.com/watch?v=Vio2c0tXiJo",
+          "channel": "Charlotte Gainsbourg",
+          "durationSeconds": 318.0,
+          "score": 0.79,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "DHwqt7uPV3A",
+          "title": "Charlotte Gainsbourg & Connan Mockasin = Anna @ The Black Cab Sessions",
+          "url": "https://www.youtube.com/watch?v=DHwqt7uPV3A",
+          "channel": "cgainsbourgforever",
+          "durationSeconds": 174.0,
+          "score": 0.79,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "wDMPNHFMyj4",
+          "title": "Charlotte Gainsbourg - Anna (Live)",
+          "url": "https://www.youtube.com/watch?v=wDMPNHFMyj4",
+          "channel": "Charlotte Gainsbourg",
+          "durationSeconds": 159.0,
+          "score": 0.775,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Charli xcx - I’ll Never Know",
+      "query": "Charli xcx I’ll Never Know",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "CeGqxVsvObo",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "CeGqxVsvObo",
+          "title": "Charli xcx - I'll Never Know",
+          "url": "https://www.youtube.com/watch?v=CeGqxVsvObo",
+          "channel": "W4YNES",
+          "durationSeconds": 230.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "6-v1b9waHWY",
+          "title": "Charli XCX & Troye Sivan - 1999 [Official Video]",
+          "url": "https://www.youtube.com/watch?v=6-v1b9waHWY",
+          "channel": "Charli xcx",
+          "durationSeconds": 209.0,
+          "score": 0.308,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "YQ7pt4br0LA",
+          "title": "Here I Go (ft. Charli xcx) - SNL Digital Short",
+          "url": "https://www.youtube.com/watch?v=YQ7pt4br0LA",
+          "channel": "Saturday Night Live",
+          "durationSeconds": 182.0,
+          "score": 0.264,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "AOPMlIIg_38",
+          "title": "Charli XCX - Boom Clap (The Fault In Our Stars Soundtrack) [Official Video]",
+          "url": "https://www.youtube.com/watch?v=AOPMlIIg_38",
+          "channel": "Charli xcx",
+          "durationSeconds": 178.0,
+          "score": 0.257,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "7G1eLTV89dM",
+          "title": "Wolf Parade - I'll Believe In Anything (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=7G1eLTV89dM",
+          "channel": "Sub Pop and Wolf Parade",
+          "durationSeconds": 284.0,
+          "score": 0.096,
+          "signals": [
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Air - Seven Stars",
+      "query": "Air Seven Stars",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "osDyvfNQLrs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "osDyvfNQLrs",
+          "title": "AIR - Seven Stars (feat. Victoria Legrand) (from Le Voyage dans la lune - Official Audio)",
+          "url": "https://www.youtube.com/watch?v=osDyvfNQLrs",
+          "channel": "AIRfrenchbandofficial",
+          "durationSeconds": 264.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "gA_MqOVKYr0",
+          "title": "Air - Seven Stars (ft. Victoria Legrand)",
+          "url": "https://www.youtube.com/watch?v=gA_MqOVKYr0",
+          "channel": "All Tomorrow's Music",
+          "durationSeconds": 264.0,
+          "score": 0.866,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "HkxiEaJ_M_I",
+          "title": "Air - Seven Stars (ft. Victoria Legrand)",
+          "url": "https://www.youtube.com/watch?v=HkxiEaJ_M_I",
+          "channel": "TheMasterOfSounds",
+          "durationSeconds": 264.0,
+          "score": 0.866,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "-W9T2s5HEhM",
+          "title": "AIR ft. Victoria Legrand - Seven Stars",
+          "url": "https://www.youtube.com/watch?v=-W9T2s5HEhM",
+          "channel": "Angus Denver",
+          "durationSeconds": 264.0,
+          "score": 0.866,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "cS1GRN_nm3E",
+          "title": "Air - Seven Stars (feat. Victoria Legrand)  [HQ]",
+          "url": "https://www.youtube.com/watch?v=cS1GRN_nm3E",
+          "channel": "MrCandeeMan",
+          "durationSeconds": 249.0,
+          "score": 0.841,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Elika - No One Gets Lost",
+      "query": "Elika No One Gets Lost",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "M7mWnr0VHG4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "M7mWnr0VHG4",
+          "title": "No One Gets Lost",
+          "url": "https://www.youtube.com/watch?v=M7mWnr0VHG4",
+          "channel": "elika - Topic",
+          "durationSeconds": 304.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "i9zT8ObatJk",
+          "title": "ELIKA - No One Gets Lost",
+          "url": "https://www.youtube.com/watch?v=i9zT8ObatJk",
+          "channel": "elikamusic",
+          "durationSeconds": 327.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "v6SB8l3VSrw",
+          "title": "No One Gets Lost",
+          "url": "https://www.youtube.com/watch?v=v6SB8l3VSrw",
+          "channel": "elika - Topic",
+          "durationSeconds": 306.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "HfvhjhOugCc",
+          "title": "Elika - No One Gets Lost",
+          "url": "https://www.youtube.com/watch?v=HfvhjhOugCc",
+          "channel": "Franco Milesi",
+          "durationSeconds": 304.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "NGaO6gRxDos",
+          "title": "8th Day - Elika D'Meir (Official Music Video) יום השמיני - אלקא דמאיר",
+          "url": "https://www.youtube.com/watch?v=NGaO6gRxDos",
+          "channel": "8thDayBand",
+          "durationSeconds": 223.0,
+          "score": 0.161,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Tiny Victories - Lost Weekend",
+      "query": "Tiny Victories Lost Weekend",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "UULWhcu0ZCg",
+        "confidenceScore": 0.876,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "UULWhcu0ZCg",
+          "title": "Tiny Victories - Lost Weekend. Stony Brooklyn presents",
+          "url": "https://www.youtube.com/watch?v=UULWhcu0ZCg",
+          "channel": "miumermaid",
+          "durationSeconds": 13.0,
+          "score": 0.876,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "3eNcCDZcdxI",
+          "title": "Tiny Victories - Lost Weekend - Daytrotter Session",
+          "url": "https://www.youtube.com/watch?v=3eNcCDZcdxI",
+          "channel": "daytrotter",
+          "durationSeconds": 280.0,
+          "score": 0.816,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "B6er3lWi8oc",
+          "title": "Lost Weekend",
+          "url": "https://www.youtube.com/watch?v=B6er3lWi8oc",
+          "channel": "Tiny Victories - Topic",
+          "durationSeconds": 212.0,
+          "score": 0.645,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ziGovdv0fa4",
+          "title": "Get Lost",
+          "url": "https://www.youtube.com/watch?v=ziGovdv0fa4",
+          "channel": "Tiny Victories - Topic",
+          "durationSeconds": 257.0,
+          "score": 0.375,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "tUV_pcJakTA",
+          "title": "Mr Bones",
+          "url": "https://www.youtube.com/watch?v=tUV_pcJakTA",
+          "channel": "Tiny Victories - Topic",
+          "durationSeconds": 238.0,
+          "score": 0.287,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Dirty Three - Rising Below",
+      "query": "Dirty Three Rising Below",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "dJ660xg1g4s",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "dJ660xg1g4s",
+          "title": "Dirty Three \"Rising Below\"",
+          "url": "https://www.youtube.com/watch?v=dJ660xg1g4s",
+          "channel": "Drag City",
+          "durationSeconds": 363.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ThyHWn7Fv9A",
+          "title": "Dirty Three - Rising Below",
+          "url": "https://www.youtube.com/watch?v=ThyHWn7Fv9A",
+          "channel": "Cristiano Marinelli",
+          "durationSeconds": 346.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "6Vsvl6M4KQc",
+          "title": "Dirty Three The Pier and Rising Below Primavera Sound Festival 2012",
+          "url": "https://www.youtube.com/watch?v=6Vsvl6M4KQc",
+          "channel": "agadsa",
+          "durationSeconds": 789.0,
+          "score": 0.813,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "KFu2za-oK6k",
+          "title": "Dirty Three - Rising Below Live at Splendour 2012",
+          "url": "https://www.youtube.com/watch?v=KFu2za-oK6k",
+          "channel": "thegreatdean",
+          "durationSeconds": 188.0,
+          "score": 0.656,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "QUW4DoCPFEw",
+          "title": "Dirty Three - The Pier / Rising Below (live @ Kino Šiška, Ljubljana)",
+          "url": "https://www.youtube.com/watch?v=QUW4DoCPFEw",
+          "channel": "siskaberry1008",
+          "durationSeconds": 795.0,
+          "score": 0.617,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "Led Er Est - Kaiyo Maru",
+      "query": "Led Er Est Kaiyo Maru",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "a4ZJpZsfIwM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "a4ZJpZsfIwM",
+          "title": "Led Er Est - Kaiyo Maru",
+          "url": "https://www.youtube.com/watch?v=a4ZJpZsfIwM",
+          "channel": "HousePlantzzz",
+          "durationSeconds": 223.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "TtnNbiKfTg8",
+          "title": "LED ER EST - Kaiyo Maru",
+          "url": "https://www.youtube.com/watch?v=TtnNbiKfTg8",
+          "channel": "Not For Braindeads",
+          "durationSeconds": 223.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "YRni4tl2HQM",
+          "title": "Led Er Est  -  Kaiyo Maru",
+          "url": "https://www.youtube.com/watch?v=YRni4tl2HQM",
+          "channel": "bill tol",
+          "durationSeconds": 223.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "aXWvpJYqEG0",
+          "title": "Kaiyo Maru",
+          "url": "https://www.youtube.com/watch?v=aXWvpJYqEG0",
+          "channel": "Led Er Est - Topic",
+          "durationSeconds": 223.0,
+          "score": 0.654,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "HcCDOoqp_II",
+          "title": "Led Er Est - Kaiyo Maru LIVE AT AKHNATON,AMSTERDAM",
+          "url": "https://www.youtube.com/watch?v=HcCDOoqp_II",
+          "channel": "JONDELDUTCH",
+          "durationSeconds": 211.0,
+          "score": 0.625,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Gitar - Hippie Dream",
+      "query": "Gitar Hippie Dream",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "URfHZqE9csE",
+        "confidenceScore": 0.353,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "URfHZqE9csE",
+          "title": "Neil Young & Crazy Horse - Hippie Dream",
+          "url": "https://www.youtube.com/watch?v=URfHZqE9csE",
+          "channel": "Ghosts On The Road",
+          "durationSeconds": 250.0,
+          "score": 0.353,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "kjrpxu6RfRY",
+          "title": "Neil Young & Crazy Horse - Hippie Dream",
+          "url": "https://www.youtube.com/watch?v=kjrpxu6RfRY",
+          "channel": "Ghosts On The Road",
+          "durationSeconds": 335.0,
+          "score": 0.353,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "_lvXcrrHmUY",
+          "title": "Hippie Dream (Long Edit)",
+          "url": "https://www.youtube.com/watch?v=_lvXcrrHmUY",
+          "channel": "neilyoungchannel",
+          "durationSeconds": 265.0,
+          "score": 0.317,
+          "signals": [
+            "song-title-in-title",
+            "unexpected-edit-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Fg1vx5Ypdw4",
+          "title": "Band of Changes - Hippie Dream - Brooklyn, NY - 12/01/2012",
+          "url": "https://www.youtube.com/watch?v=Fg1vx5Ypdw4",
+          "channel": "noochnooch",
+          "durationSeconds": 520.0,
+          "score": 0.27,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "KcwOAB16KEo",
+          "title": "Neil Young \"Hippie Dream\" cover by Dead Reverend",
+          "url": "https://www.youtube.com/watch?v=KcwOAB16KEo",
+          "channel": "DeadReverend",
+          "durationSeconds": 242.0,
+          "score": 0.146,
+          "signals": [
+            "song-title-in-title",
+            "unexpected-cover-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Polica - Lay Your Cards Out",
+      "query": "Polica Lay Your Cards Out",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "3NcrCY-ztLk",
+        "confidenceScore": 0.973,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "3NcrCY-ztLk",
+          "title": "POLIÇA - \"Lay Your Cards Out\" (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=3NcrCY-ztLk",
+          "channel": "POLIÇA",
+          "durationSeconds": 245.0,
+          "score": 0.973,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Rl03afAqeFQ",
+          "title": "POLIÇA - \"Lay Your Cards Out\" (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=Rl03afAqeFQ",
+          "channel": "POLIÇA",
+          "durationSeconds": 245.0,
+          "score": 0.624,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ZG4c-ymbhv8",
+          "title": "Poliça - Lay Your Cards Out in session for Radio 1",
+          "url": "https://www.youtube.com/watch?v=ZG4c-ymbhv8",
+          "channel": "BBC Radio 1",
+          "durationSeconds": 258.0,
+          "score": 0.595,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "gr2u_G9VVtk",
+          "title": "Studio Brussel: Poliça - Lay your cards out (Live)",
+          "url": "https://www.youtube.com/watch?v=gr2u_G9VVtk",
+          "channel": "Studio Brussel",
+          "durationSeconds": 238.0,
+          "score": 0.469,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "rvmb8oussWs",
+          "title": "POLIÇA - \"Amongster\" (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=rvmb8oussWs",
+          "channel": "POLIÇA",
+          "durationSeconds": 245.0,
+          "score": 0.141,
+          "signals": [
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Grizzly Bear - Sleeping Ute",
+      "query": "Grizzly Bear Sleeping Ute",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Hk3tURx8a2Q",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Hk3tURx8a2Q",
+          "title": "Grizzly Bear - Sleeping Ute",
+          "url": "https://www.youtube.com/watch?v=Hk3tURx8a2Q",
+          "channel": "Grizzly Bear",
+          "durationSeconds": 278.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "tN6JBRzpICU",
+          "title": "Grizzly Bear: Sleeping Ute, Live in The Greene Space",
+          "url": "https://www.youtube.com/watch?v=tN6JBRzpICU",
+          "channel": "The Greene Space at WNYC & WQXR",
+          "durationSeconds": 291.0,
+          "score": 0.65,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "6DlDFNITJpo",
+          "title": "Grizzly Bear - \"Sleeping Ute\" (Live @ Radio City Music Hall)",
+          "url": "https://www.youtube.com/watch?v=6DlDFNITJpo",
+          "channel": "Fuse",
+          "durationSeconds": 276.0,
+          "score": 0.642,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "mHxaf7fIKxM",
+          "title": "Sleeping Ute (Grizzly Bear) - Chris Thile | Live from Here",
+          "url": "https://www.youtube.com/watch?v=mHxaf7fIKxM",
+          "channel": "Radio Heartland",
+          "durationSeconds": 321.0,
+          "score": 0.596,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "AL26SCR6YVA",
+          "title": "Sleeping Ute",
+          "url": "https://www.youtube.com/watch?v=AL26SCR6YVA",
+          "channel": "Grizzly Bear",
+          "durationSeconds": 276.0,
+          "score": 0.535,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 15,
+      "displayText": "The Lost Lovers Brigade - Lonely Neighbour",
+      "query": "The Lost Lovers Brigade Lonely Neighbour",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "O7Qta1l4skA",
+        "confidenceScore": 0.775,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "O7Qta1l4skA",
+          "title": "Lost Lovers Brigade - Lonely Neighbour",
+          "url": "https://www.youtube.com/watch?v=O7Qta1l4skA",
+          "channel": "corastarr",
+          "durationSeconds": 239.0,
+          "score": 0.775,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "JmsUTsHxT1k",
+          "title": "Rockinitis TV: Vancouver group the Lost Lovers Brigade",
+          "url": "https://www.youtube.com/watch?v=JmsUTsHxT1k",
+          "channel": "Michael Willmore",
+          "durationSeconds": 1776.0,
+          "score": 0.28,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Ytr9TmgSnWo",
+          "title": "lost lovers brigade",
+          "url": "https://www.youtube.com/watch?v=Ytr9TmgSnWo",
+          "channel": "amealofsquid",
+          "durationSeconds": 167.0,
+          "score": 0.255,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "-HtZr7N84cQ",
+          "title": "Long Lost Lovers || Tomadachi",
+          "url": "https://www.youtube.com/watch?v=-HtZr7N84cQ",
+          "channel": "DizzyPianist",
+          "durationSeconds": 98.0,
+          "score": 0.197,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "plQIMMgf3-Q",
+          "title": "Lost lovers",
+          "url": "https://www.youtube.com/watch?v=plQIMMgf3-Q",
+          "channel": "richard stevens",
+          "durationSeconds": 89.0,
+          "score": 0.183,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 16,
+      "displayText": "Emika - Drop The Other",
+      "query": "Emika Drop The Other",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "FJ7iQzxKtNk",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "FJ7iQzxKtNk",
+          "title": "Emika - Drop The Other",
+          "url": "https://www.youtube.com/watch?v=FJ7iQzxKtNk",
+          "channel": "Amazons Irentaou",
+          "durationSeconds": 211.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "YymBqhvld20",
+          "title": "Emika - Drop The Other",
+          "url": "https://www.youtube.com/watch?v=YymBqhvld20",
+          "channel": "1onium",
+          "durationSeconds": 209.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "7bJyaCRXhjM",
+          "title": "Emika - Drop The Other (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=7bJyaCRXhjM",
+          "channel": "Emika Records",
+          "durationSeconds": 213.0,
+          "score": 0.908,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "quGOF0yW_8I",
+          "title": "Drop the Other",
+          "url": "https://www.youtube.com/watch?v=quGOF0yW_8I",
+          "channel": "Emika Records",
+          "durationSeconds": 207.0,
+          "score": 0.587,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "EoKAYz1QyKU",
+          "title": "Sleepings Dogs - Drop´The Other (Soundtrack)",
+          "url": "https://www.youtube.com/watch?v=EoKAYz1QyKU",
+          "channel": "sleepingdogsost",
+          "durationSeconds": 205.0,
+          "score": 0.343,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 17,
+      "displayText": "Daughter - Love",
+      "query": "Daughter Love",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "S5MpD6b-bkE",
+        "confidenceScore": 0.985,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "S5MpD6b-bkE",
+          "title": "Daughter - \"Love\"",
+          "url": "https://www.youtube.com/watch?v=S5MpD6b-bkE",
+          "channel": "MrNickSwift",
+          "durationSeconds": 351.0,
+          "score": 0.985,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "3o3fvFFMF1U",
+          "title": "Daughter - \"Love\" (taken from 'The Wild Youth' EP)",
+          "url": "https://www.youtube.com/watch?v=3o3fvFFMF1U",
+          "channel": "Daughter",
+          "durationSeconds": 362.0,
+          "score": 0.853,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "By-7tKQOrfg",
+          "title": "Daughter - Love | The Wild Honey Pie Buzzsession",
+          "url": "https://www.youtube.com/watch?v=By-7tKQOrfg",
+          "channel": "The Wild Honey Pie",
+          "durationSeconds": 359.0,
+          "score": 0.767,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "a17li5Yj8lI",
+          "title": "Daughter - Love (BAILE Remix)",
+          "url": "https://www.youtube.com/watch?v=a17li5Yj8lI",
+          "channel": "dynmk",
+          "durationSeconds": 356.0,
+          "score": 0.735,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "6oByRtvIquw",
+          "title": "Daughter - Love (Synkro Remix)",
+          "url": "https://www.youtube.com/watch?v=6oByRtvIquw",
+          "channel": "MrSuicideSheep",
+          "durationSeconds": 252.0,
+          "score": 0.728,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 18,
+      "displayText": "Catcall - Paralysed",
+      "query": "Catcall Paralysed",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "jSvmcY0rpJI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "jSvmcY0rpJI",
+          "title": "Catcall - Paralysed",
+          "url": "https://www.youtube.com/watch?v=jSvmcY0rpJI",
+          "channel": "David Dean Burkhart",
+          "durationSeconds": 177.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "iCB75yOXomI",
+          "title": "Paralysed",
+          "url": "https://www.youtube.com/watch?v=iCB75yOXomI",
+          "channel": "Catcall - Topic",
+          "durationSeconds": 177.0,
+          "score": 0.668,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "rdilk4BnlY4",
+          "title": "Catcall - Paralysed (live at The Toff in Town, 12 May 2012) - Reupload",
+          "url": "https://www.youtube.com/watch?v=rdilk4BnlY4",
+          "channel": "ThiagaoDaMontanha",
+          "durationSeconds": 180.0,
+          "score": 0.552,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "K1FlyYmY-lc",
+          "title": "Catcall 'August' (Official)",
+          "url": "https://www.youtube.com/watch?v=K1FlyYmY-lc",
+          "channel": "moopjaw",
+          "durationSeconds": 263.0,
+          "score": 0.35,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "v2ks2mAuGnE",
+          "title": "Catcall - That Girl",
+          "url": "https://www.youtube.com/watch?v=v2ks2mAuGnE",
+          "channel": "Alexandre Alencar",
+          "durationSeconds": 213.0,
+          "score": 0.336,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 19,
+      "displayText": "Harry Rag - Tiny Painting",
+      "query": "Harry Rag Tiny Painting",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "UHrdl745MsY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "UHrdl745MsY",
+          "title": "harry rag - tiny painting",
+          "url": "https://www.youtube.com/watch?v=UHrdl745MsY",
+          "channel": "Harry Rag",
+          "durationSeconds": 163.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "D1xAGOC-ifU",
+          "title": "Harry Rag - So Long Tiny Giant",
+          "url": "https://www.youtube.com/watch?v=D1xAGOC-ifU",
+          "channel": "Harry Rag",
+          "durationSeconds": 88.0,
+          "score": 0.462,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "r6bZvoLzmH4",
+          "title": "harry rag - tiny box & red tape",
+          "url": "https://www.youtube.com/watch?v=r6bZvoLzmH4",
+          "channel": "Harry Rag",
+          "durationSeconds": 178.0,
+          "score": 0.426,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "BL2ApUE3ffk",
+          "title": "harry rag - the canary in the cave",
+          "url": "https://www.youtube.com/watch?v=BL2ApUE3ffk",
+          "channel": "Harry Rag",
+          "durationSeconds": 71.0,
+          "score": 0.384,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "94lGfP48Gv8",
+          "title": "harry rag - sharp little teeth",
+          "url": "https://www.youtube.com/watch?v=94lGfP48Gv8",
+          "channel": "Harry Rag",
+          "durationSeconds": 165.0,
+          "score": 0.377,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 20,
+      "displayText": "Feist - Black Tongue",
+      "query": "Feist Black Tongue",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "UX8PQfJCh-4",
+        "confidenceScore": 0.672,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "UX8PQfJCh-4",
+          "title": "Feist Black Tongue Mastodon Live Montreal 2012 HD 1080P",
+          "url": "https://www.youtube.com/watch?v=UX8PQfJCh-4",
+          "channel": "feistvideos",
+          "durationSeconds": 248.0,
+          "score": 0.672,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "00CC7gpWKrQ",
+          "title": "Feistodon   Black Tongue",
+          "url": "https://www.youtube.com/watch?v=00CC7gpWKrQ",
+          "channel": "OmgItsTheBaron",
+          "durationSeconds": 240.0,
+          "score": 0.577,
+          "signals": [
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "0zA6BSuSMWk",
+          "title": "Feistodon - A Commotion",
+          "url": "https://www.youtube.com/watch?v=0zA6BSuSMWk",
+          "channel": "FeistMusic",
+          "durationSeconds": 255.0,
+          "score": 0.32,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "hwgqenxNUfs",
+          "title": "Mastodon - Black Tongue [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=hwgqenxNUfs",
+          "channel": "Mastodon",
+          "durationSeconds": 210.0,
+          "score": 0.25,
+          "signals": [
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "-vokj6x0kb4",
+          "title": "Feist - Black Tounge (Mastodon Cover)",
+          "url": "https://www.youtube.com/watch?v=-vokj6x0kb4",
+          "channel": "IRPApril2012",
+          "durationSeconds": 222.0,
+          "score": 0.248,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-cover-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 21,
+      "displayText": "Major Lazer - Get Free (feat. Amber of Dirty Projectors)",
+      "query": "Major Lazer Get Free (feat. Amber of Dirty Projectors)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "heVJ65Zqj6Y",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "heVJ65Zqj6Y",
+          "title": "Major Lazer - Get Free (feat. Amber Coffman of Dirty Projectors) [Official Audio]",
+          "url": "https://www.youtube.com/watch?v=heVJ65Zqj6Y",
+          "channel": "Major Lazer Official",
+          "durationSeconds": 291.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "OgfuI3n8C1Y",
+          "title": "Major Lazer - Get Free (feat. Amber of Dirty Projectors)",
+          "url": "https://www.youtube.com/watch?v=OgfuI3n8C1Y",
+          "channel": "Cromex",
+          "durationSeconds": 292.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "OI3shBXlqsw",
+          "title": "Major Lazer - 'Get Free' feat. Amber (of Dirty Projectors) OFFICIAL LYRIC VIDEO + HQ AUDIO",
+          "url": "https://www.youtube.com/watch?v=OI3shBXlqsw",
+          "channel": "Mad Decent",
+          "durationSeconds": 300.0,
+          "score": 0.949,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "audio-tag-preferred",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ytIfSuy_mOA",
+          "title": "Major Lazer - Get Free ft. Amber of the Dirty Projectors",
+          "url": "https://www.youtube.com/watch?v=ytIfSuy_mOA",
+          "channel": "Major Lazer Official",
+          "durationSeconds": 242.0,
+          "score": 0.907,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "rCSn6PQhams",
+          "title": "Major Lazer - Get Free (Track 12 of 26) | Moshcam",
+          "url": "https://www.youtube.com/watch?v=rCSn6PQhams",
+          "channel": "Moshcam",
+          "durationSeconds": 290.0,
+          "score": 0.371,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 21,
+    "resolvedTracks": 21,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twentyeighth",
+      "embedUrl": "https://www.youtube.com/embed/kjAR7jE0AU0?playlist=x2LTpsXMQC8,j-c0bgLpI3Y,w3Le2cDwCRM,xK5Hq5FsxKc,CeGqxVsvObo,osDyvfNQLrs,M7mWnr0VHG4,UULWhcu0ZCg,dJ660xg1g4s,a4ZJpZsfIwM,URfHZqE9csE,3NcrCY-ztLk,Hk3tURx8a2Q,O7Qta1l4skA,FJ7iQzxKtNk,S5MpD6b-bkE,jSvmcY0rpJI,UHrdl745MsY,UX8PQfJCh-4,heVJ65Zqj6Y",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=kjAR7jE0AU0,x2LTpsXMQC8,j-c0bgLpI3Y,w3Le2cDwCRM,xK5Hq5FsxKc,CeGqxVsvObo,osDyvfNQLrs,M7mWnr0VHG4,UULWhcu0ZCg,dJ660xg1g4s,a4ZJpZsfIwM,URfHZqE9csE,3NcrCY-ztLk,Hk3tURx8a2Q,O7Qta1l4skA,FJ7iQzxKtNk,S5MpD6b-bkE,jSvmcY0rpJI,UHrdl745MsY,UX8PQfJCh-4,heVJ65Zqj6Y",
+      "videoIds": [
+        "kjAR7jE0AU0",
+        "x2LTpsXMQC8",
+        "j-c0bgLpI3Y",
+        "w3Le2cDwCRM",
+        "xK5Hq5FsxKc",
+        "CeGqxVsvObo",
+        "osDyvfNQLrs",
+        "M7mWnr0VHG4",
+        "UULWhcu0ZCg",
+        "dJ660xg1g4s",
+        "a4ZJpZsfIwM",
+        "URfHZqE9csE",
+        "3NcrCY-ztLk",
+        "Hk3tURx8a2Q",
+        "O7Qta1l4skA",
+        "FJ7iQzxKtNk",
+        "S5MpD6b-bkE",
+        "jSvmcY0rpJI",
+        "UHrdl745MsY",
+        "UX8PQfJCh-4",
+        "heVJ65Zqj6Y"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:22:45Z"
+    }
+  }
+}

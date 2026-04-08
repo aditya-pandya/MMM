@@ -1,0 +1,646 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-004-fourth",
+  "updatedAt": "2026-04-08T21:27:45Z",
+  "sourceMixPath": "data/imported/mixes/mix-004-fourth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Mumford & Sons - Hold On To What You Believe",
+      "query": "Mumford & Sons Hold On To What You Believe",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9VI8-6aXsFA",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9VI8-6aXsFA",
+          "title": "Mumford & Sons - Hold On To What You Believe",
+          "url": "https://www.youtube.com/watch?v=9VI8-6aXsFA",
+          "channel": "DevilsT0wer",
+          "durationSeconds": 234.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "r-PRVu0DYFE",
+          "title": "Mumford & Sons - Hold on to What You Believe",
+          "url": "https://www.youtube.com/watch?v=r-PRVu0DYFE",
+          "channel": "IQ-tie",
+          "durationSeconds": 245.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "0O6MLTSKITw",
+          "title": "Mumford & Sons - Hold On To What You Believe - With Lyrics",
+          "url": "https://www.youtube.com/watch?v=0O6MLTSKITw",
+          "channel": "Nicole Taylor",
+          "durationSeconds": 235.0,
+          "score": 0.904,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "dW6SkvErFEE",
+          "title": "Mumford & Sons - Believe (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=dW6SkvErFEE",
+          "channel": "Mumford & Sons",
+          "durationSeconds": 228.0,
+          "score": 0.337,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "u1xoxWQG0SE",
+          "title": "Hold on to What You Believe (Live from Shepherd's Bush Empire, 2010)",
+          "url": "https://www.youtube.com/watch?v=u1xoxWQG0SE",
+          "channel": "Mumford & Sons",
+          "durationSeconds": 245.0,
+          "score": 0.2,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Passion Pit - The Reeling",
+      "query": "Passion Pit The Reeling",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9U-Ul5qnLeQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9U-Ul5qnLeQ",
+          "title": "Passion Pit - The Reeling",
+          "url": "https://www.youtube.com/watch?v=9U-Ul5qnLeQ",
+          "channel": "Passion Pit",
+          "durationSeconds": 287.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "wgSxt357Zs4",
+          "title": "The Reeling - Passion Pit",
+          "url": "https://www.youtube.com/watch?v=wgSxt357Zs4",
+          "channel": "maccrash21",
+          "durationSeconds": 289.0,
+          "score": 0.86,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "FSOS_rb6sUY",
+          "title": "Passion Pit - The Reeling (Live on Letterman)",
+          "url": "https://www.youtube.com/watch?v=FSOS_rb6sUY",
+          "channel": "Passion Pit",
+          "durationSeconds": 226.0,
+          "score": 0.752,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "QY8-qILzELY",
+          "title": "Passion Pit - The Reeling (Live at Coachella 2013) HD",
+          "url": "https://www.youtube.com/watch?v=QY8-qILzELY",
+          "channel": "rodopodlive",
+          "durationSeconds": 231.0,
+          "score": 0.638,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "kK8Db39o49o",
+          "title": "Passion Pit \"The Reeling\" Live in Session",
+          "url": "https://www.youtube.com/watch?v=kK8Db39o49o",
+          "channel": "getgoldfilms",
+          "durationSeconds": 250.0,
+          "score": 0.602,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty",
+            "unexpected-session-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "White Lies - Death",
+      "query": "White Lies Death",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "lfQUCsLJ6ec",
+        "confidenceScore": 0.986,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "lfQUCsLJ6ec",
+          "title": "White Lies - Death",
+          "url": "https://www.youtube.com/watch?v=lfQUCsLJ6ec",
+          "channel": "Federico Berti",
+          "durationSeconds": 302.0,
+          "score": 0.986,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Al1tsGoEzzo",
+          "title": "White Lies - Death (FLAC) (HD)",
+          "url": "https://www.youtube.com/watch?v=Al1tsGoEzzo",
+          "channel": "Joe Faulkner",
+          "durationSeconds": 302.0,
+          "score": 0.902,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "IWROL973r7U",
+          "title": "White Lies - Death  +  lyrics",
+          "url": "https://www.youtube.com/watch?v=IWROL973r7U",
+          "channel": "krofodil",
+          "durationSeconds": 302.0,
+          "score": 0.83,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "LTh9IuSTOY0",
+          "title": "White Lies - Death (Official Video)",
+          "url": "https://www.youtube.com/watch?v=LTh9IuSTOY0",
+          "channel": "Polydor",
+          "durationSeconds": 258.0,
+          "score": 0.794,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "srflvoeAuRI",
+          "title": "White Lies - Death (Live from Hollywood Forever cemetery)",
+          "url": "https://www.youtube.com/watch?v=srflvoeAuRI",
+          "channel": "White Lies",
+          "durationSeconds": 325.0,
+          "score": 0.63,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Maximo Park - In Another World (You’d Have Found Yourself By Now)",
+      "query": "Maximo Park In Another World (You’d Have Found Yourself By Now)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "FscLjpyr6HI",
+        "confidenceScore": 0.784,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "FscLjpyr6HI",
+          "title": "Maxïmo Park -   In Another World (You'd Have Found Yourself By Now) - (Ibiza 13-07-10)",
+          "url": "https://www.youtube.com/watch?v=FscLjpyr6HI",
+          "channel": "Mezken M",
+          "durationSeconds": 172.0,
+          "score": 0.784,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "6grun61t8vg",
+          "title": "Maxïmo Park @ Sziget 2009 - In another world (you would've found yourself by now)",
+          "url": "https://www.youtube.com/watch?v=6grun61t8vg",
+          "channel": "apis38",
+          "durationSeconds": 171.0,
+          "score": 0.392,
+          "signals": []
+        },
+        {
+          "rank": 3,
+          "videoId": "0aB56FSRKB8",
+          "title": "Maximo Park - In Another World (live in Cologne 03-03-2009)",
+          "url": "https://www.youtube.com/watch?v=0aB56FSRKB8",
+          "channel": "Dana Cellar-Door",
+          "durationSeconds": 77.0,
+          "score": 0.158,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "jdEsWXTld7Y",
+          "title": "In Another World - Maximo Park - Live at the O2 academy in Bristol, May 2009",
+          "url": "https://www.youtube.com/watch?v=jdEsWXTld7Y",
+          "channel": "Dan Mewse",
+          "durationSeconds": 165.0,
+          "score": 0.099,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ZgEVUiAgyoo",
+          "title": "Maxïmo Park \"Versions Of You\" Live Paris 2022",
+          "url": "https://www.youtube.com/watch?v=ZgEVUiAgyoo",
+          "channel": "Stéphane Rocknlive2",
+          "durationSeconds": 263.0,
+          "score": 0.0,
+          "signals": [
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Noisettes - Never Forget You",
+      "query": "Noisettes Never Forget You",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "KRFHiBW9RE8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "KRFHiBW9RE8",
+          "title": "Noisettes - Never Forget You",
+          "url": "https://www.youtube.com/watch?v=KRFHiBW9RE8",
+          "channel": "NoisettesVEVO",
+          "durationSeconds": 191.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "WpFL7GtnulM",
+          "title": "Noisettes - Never Forget You",
+          "url": "https://www.youtube.com/watch?v=WpFL7GtnulM",
+          "channel": "Galactocerebrósido",
+          "durationSeconds": 195.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "H2isFeNaQi8",
+          "title": "Noisettes - Never Forget You (Lyrics) | I’ll never forget you || Tiktok Song",
+          "url": "https://www.youtube.com/watch?v=H2isFeNaQi8",
+          "channel": "The Vibe Guide",
+          "durationSeconds": 191.0,
+          "score": 0.757,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "cgNzjMUA6io",
+          "title": "Never Forget You",
+          "url": "https://www.youtube.com/watch?v=cgNzjMUA6io",
+          "channel": "Noisettes - Topic",
+          "durationSeconds": 192.0,
+          "score": 0.689,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "fKS6CCElozE",
+          "title": "[HD] Noisettes - Never Forget You (Live - New Pop Festival 2009)",
+          "url": "https://www.youtube.com/watch?v=fKS6CCElozE",
+          "channel": "tokodomo",
+          "durationSeconds": 249.0,
+          "score": 0.65,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Gossip - Love Long Distance",
+      "query": "Gossip Love Long Distance",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "C1h02fukq4w",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "C1h02fukq4w",
+          "title": "Gossip - Love Long Distance (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=C1h02fukq4w",
+          "channel": "Gossip Music Official",
+          "durationSeconds": 267.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "W8ah8nKe6FU",
+          "title": "Gossip - Love Long Distance (Official Video)",
+          "url": "https://www.youtube.com/watch?v=W8ah8nKe6FU",
+          "channel": "Gossip Music Official",
+          "durationSeconds": 228.0,
+          "score": 0.962,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Gpuj9a736c4",
+          "title": "The Gossip - Love Long Distance (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=Gpuj9a736c4",
+          "channel": "TheJaanaaa",
+          "durationSeconds": 266.0,
+          "score": 0.886,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "GrJKOesRozQ",
+          "title": "Gossip Love Long Distance live Genoa 2009",
+          "url": "https://www.youtube.com/watch?v=GrJKOesRozQ",
+          "channel": "joetimbal",
+          "durationSeconds": 234.0,
+          "score": 0.717,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "wlQKQCFFyn4",
+          "title": "The Gossip - Love long distance (live@ Reading Festival 2009) HQ",
+          "url": "https://www.youtube.com/watch?v=wlQKQCFFyn4",
+          "channel": "oltre1985",
+          "durationSeconds": 296.0,
+          "score": 0.643,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Caribou - Odessa (DJ Koze’s Campfire)",
+      "query": "Caribou Odessa (DJ Koze’s Campfire)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "escWEvSDM04",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "escWEvSDM04",
+          "title": "CARIBOU - Odessa (DJ Koze's Campfire)",
+          "url": "https://www.youtube.com/watch?v=escWEvSDM04",
+          "channel": "Caribou",
+          "durationSeconds": 358.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "-zMspBz7wYo",
+          "title": "Caribou - Odessa (DJ Koze's Campfire Remix)",
+          "url": "https://www.youtube.com/watch?v=-zMspBz7wYo",
+          "channel": "djdume",
+          "durationSeconds": 359.0,
+          "score": 0.896,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "WdVlHY3RKM4",
+          "title": "Caribou - Odessa @ Ceremonia 18",
+          "url": "https://www.youtube.com/watch?v=WdVlHY3RKM4",
+          "channel": "Enrique N",
+          "durationSeconds": 58.0,
+          "score": 0.349,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "2uW4pA6Bfkw",
+          "title": "Caribou - Odessa",
+          "url": "https://www.youtube.com/watch?v=2uW4pA6Bfkw",
+          "channel": "takeSomeCrime",
+          "durationSeconds": 195.0,
+          "score": 0.334,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "iCs3E4aoOwY",
+          "title": "Caribou – Odessa (live, Zenith Paris 2025)",
+          "url": "https://www.youtube.com/watch?v=iCs3E4aoOwY",
+          "channel": "el reno",
+          "durationSeconds": 192.0,
+          "score": 0.135,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Fourth",
+      "embedUrl": "https://www.youtube.com/embed/9VI8-6aXsFA?playlist=9U-Ul5qnLeQ,lfQUCsLJ6ec,FscLjpyr6HI,KRFHiBW9RE8,C1h02fukq4w,escWEvSDM04",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=9VI8-6aXsFA,9U-Ul5qnLeQ,lfQUCsLJ6ec,FscLjpyr6HI,KRFHiBW9RE8,C1h02fukq4w,escWEvSDM04",
+      "videoIds": [
+        "9VI8-6aXsFA",
+        "9U-Ul5qnLeQ",
+        "lfQUCsLJ6ec",
+        "FscLjpyr6HI",
+        "KRFHiBW9RE8",
+        "C1h02fukq4w",
+        "escWEvSDM04"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:27:45Z"
+    }
+  }
+}

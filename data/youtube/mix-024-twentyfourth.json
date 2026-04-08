@@ -1,0 +1,637 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-024-twentyfourth",
+  "updatedAt": "2026-04-08T21:23:18Z",
+  "sourceMixPath": "data/imported/mixes/mix-024-twentyfourth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Korallreven - Sa Sa Samoa (For Real For Sure For You Version)",
+      "query": "Korallreven Sa Sa Samoa (For Real For Sure For You Version)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "VRhuJmHfvdY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "VRhuJmHfvdY",
+          "title": "Korallreven - Sa Sa Samoa (For Real For Sure For You Version)",
+          "url": "https://www.youtube.com/watch?v=VRhuJmHfvdY",
+          "channel": "All Tomorrow's Music",
+          "durationSeconds": 515.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "SK5koBOz2bE",
+          "title": "Korallreven - Sa Sa Samoa",
+          "url": "https://www.youtube.com/watch?v=SK5koBOz2bE",
+          "channel": "KORALLREVEN",
+          "durationSeconds": 249.0,
+          "score": 0.411,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "hOqcyetmt30",
+          "title": "Sa Sa Samoa",
+          "url": "https://www.youtube.com/watch?v=hOqcyetmt30",
+          "channel": "Korallreven - Topic",
+          "durationSeconds": 246.0,
+          "score": 0.368,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "1NbYqC05MF4",
+          "title": "Korallreven - Sa Sa Samoa",
+          "url": "https://www.youtube.com/watch?v=1NbYqC05MF4",
+          "channel": "Hybris Recordings",
+          "durationSeconds": 246.0,
+          "score": 0.331,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "zEenwROEkhU",
+          "title": "Korallreven - Sa Sa Samoa (Elite Gymnastics Remix) | Free",
+          "url": "https://www.youtube.com/watch?v=zEenwROEkhU",
+          "channel": "IncredibleDelicious",
+          "durationSeconds": 262.0,
+          "score": 0.233,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Wild Flag - Romance",
+      "query": "Wild Flag Romance",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "8J8n9R8rnB8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "8J8n9R8rnB8",
+          "title": "Wild Flag - Romance",
+          "url": "https://www.youtube.com/watch?v=8J8n9R8rnB8",
+          "channel": "Merge Records on YouTube",
+          "durationSeconds": 280.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "xKplBq-9eSo",
+          "title": "Wild Flag - Romance",
+          "url": "https://www.youtube.com/watch?v=xKplBq-9eSo",
+          "channel": "VLMVP",
+          "durationSeconds": 236.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "4RHg5_cHrQc",
+          "title": "Wild Flag - Romance",
+          "url": "https://www.youtube.com/watch?v=4RHg5_cHrQc",
+          "channel": "Sound Opinions",
+          "durationSeconds": 265.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "q25zB3lJqgY",
+          "title": "Wild Flag - Romance (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=q25zB3lJqgY",
+          "channel": "KEXP",
+          "durationSeconds": 291.0,
+          "score": 0.665,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "-Te9KUdOrwY",
+          "title": "Wild Flag - Romance (Live on Letterman)",
+          "url": "https://www.youtube.com/watch?v=-Te9KUdOrwY",
+          "channel": "Nick Felezzola",
+          "durationSeconds": 258.0,
+          "score": 0.636,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Roxy Music - Avalon",
+      "query": "Roxy Music Avalon",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "bpA_5a0miWk",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "bpA_5a0miWk",
+          "title": "Roxy Music - Avalon",
+          "url": "https://www.youtube.com/watch?v=bpA_5a0miWk",
+          "channel": "Roxy Music",
+          "durationSeconds": 253.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "yFXX-7UaX_g",
+          "title": "Roxy Music ~  Avalon   (HQ Audio)",
+          "url": "https://www.youtube.com/watch?v=yFXX-7UaX_g",
+          "channel": "steelyman08",
+          "durationSeconds": 257.0,
+          "score": 0.965,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "sPt8EvpZWF8",
+          "title": "[HD] Roxy Music - Avalon (Live 1982)",
+          "url": "https://www.youtube.com/watch?v=sPt8EvpZWF8",
+          "channel": "higmadon",
+          "durationSeconds": 251.0,
+          "score": 0.657,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "rZc9_2FjZo0",
+          "title": "Avalon",
+          "url": "https://www.youtube.com/watch?v=rZc9_2FjZo0",
+          "channel": "Roxy Music",
+          "durationSeconds": 257.0,
+          "score": 0.497,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "HUsA-W1e8MI",
+          "title": "R̲oxy̲ M̲usic - A̲valon (Full Album) 1982",
+          "url": "https://www.youtube.com/watch?v=HUsA-W1e8MI",
+          "channel": "Classic Rock",
+          "durationSeconds": 2244.0,
+          "score": 0.244,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Black Marble - Pretender",
+      "query": "Black Marble Pretender",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "AhyS1e8eGJ0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "AhyS1e8eGJ0",
+          "title": "Black Marble - Pretender",
+          "url": "https://www.youtube.com/watch?v=AhyS1e8eGJ0",
+          "channel": "Black Marble",
+          "durationSeconds": 227.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "5TE3SVwAiew",
+          "title": "Black Marble - Pretender + Balancing | Newtown Radio | Swan7 Studio",
+          "url": "https://www.youtube.com/watch?v=5TE3SVwAiew",
+          "channel": "Newtown Radio",
+          "durationSeconds": 557.0,
+          "score": 0.811,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3t-2_q6D12w",
+          "title": "Black Marble - Pretender - not the video",
+          "url": "https://www.youtube.com/watch?v=3t-2_q6D12w",
+          "channel": "Hardly Art Records",
+          "durationSeconds": 206.0,
+          "score": 0.8,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "gNhRm5eEtNk",
+          "title": "Pretender",
+          "url": "https://www.youtube.com/watch?v=gNhRm5eEtNk",
+          "channel": "Black Marble",
+          "durationSeconds": 203.0,
+          "score": 0.514,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "3bw5jfJLN-U",
+          "title": "Black Marble - It's Immaterial (full album vinyl rip)",
+          "url": "https://www.youtube.com/watch?v=3bw5jfJLN-U",
+          "channel": "SOBER GONER",
+          "durationSeconds": 2166.0,
+          "score": 0.281,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Bowerbirds - In the Yard",
+      "query": "Bowerbirds In the Yard",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "LGAuYQ_vtFM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "LGAuYQ_vtFM",
+          "title": "Bowerbirds - In The Yard",
+          "url": "https://www.youtube.com/watch?v=LGAuYQ_vtFM",
+          "channel": "Dan Schram",
+          "durationSeconds": 252.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "cMEsra19umQ",
+          "title": "Bowerbirds- In the Yard",
+          "url": "https://www.youtube.com/watch?v=cMEsra19umQ",
+          "channel": "TescoValue",
+          "durationSeconds": 246.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Mc0miTzNLRw",
+          "title": "Bowerbirds - In the Yard - Pickathon Beardy Session",
+          "url": "https://www.youtube.com/watch?v=Mc0miTzNLRw",
+          "channel": "NaturalBeardy",
+          "durationSeconds": 189.0,
+          "score": 0.78,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "3ZEKUecnmqM",
+          "title": "In the Yard",
+          "url": "https://www.youtube.com/watch?v=3ZEKUecnmqM",
+          "channel": "Bowerbirds",
+          "durationSeconds": 248.0,
+          "score": 0.54,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "MjIFCMdWAYc",
+          "title": "Bowerbirds - Tuck The Darkness In Sessie op Motel Mozaique 2012",
+          "url": "https://www.youtube.com/watch?v=MjIFCMdWAYc",
+          "channel": "3voor12",
+          "durationSeconds": 291.0,
+          "score": 0.27,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "AU - Solid Gold",
+      "query": "AU Solid Gold",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "aZmwI5f3R3k",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "aZmwI5f3R3k",
+          "title": "AU - Solid Gold",
+          "url": "https://www.youtube.com/watch?v=aZmwI5f3R3k",
+          "channel": "The Leaf Label",
+          "durationSeconds": 198.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "EO0YTl8zCI0",
+          "title": "AU - \"Solid Gold\" - Feels Like Home #44",
+          "url": "https://www.youtube.com/watch?v=EO0YTl8zCI0",
+          "channel": "ITWTV",
+          "durationSeconds": 378.0,
+          "score": 0.859,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "YHSQdRWxry8",
+          "title": "AU Solid Gold - Feels Like Home Ep 44",
+          "url": "https://www.youtube.com/watch?v=YHSQdRWxry8",
+          "channel": "steffoulefou",
+          "durationSeconds": 379.0,
+          "score": 0.842,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "9WzHwyDn-5s",
+          "title": "Solid Gold",
+          "url": "https://www.youtube.com/watch?v=9WzHwyDn-5s",
+          "channel": "AU - Topic",
+          "durationSeconds": 276.0,
+          "score": 0.721,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "sIfTD2i50s8",
+          "title": "PNAU - Solid Gold feat. Kira Divine & Marques Toliver (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=sIfTD2i50s8",
+          "channel": "PNAU",
+          "durationSeconds": 206.0,
+          "score": 0.341,
+          "signals": [
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Grouplove - Tongue Tied",
+      "query": "Grouplove Tongue Tied",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Fot9VQGVxAk",
+        "confidenceScore": 0.993,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Fot9VQGVxAk",
+          "title": "Grouplove - Tongue Tied (HQ)",
+          "url": "https://www.youtube.com/watch?v=Fot9VQGVxAk",
+          "channel": "N B",
+          "durationSeconds": 219.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "AMIHi-xtCps",
+          "title": "Grouplove - Tongue Tied at YouTube Space NYC",
+          "url": "https://www.youtube.com/watch?v=AMIHi-xtCps",
+          "channel": "GROUPLOVE",
+          "durationSeconds": 344.0,
+          "score": 0.955,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "1x1wjGKHjBI",
+          "title": "Grouplove - Tongue Tied [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=1x1wjGKHjBI",
+          "channel": "GROUPLOVE",
+          "durationSeconds": 255.0,
+          "score": 0.925,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "1NAWghuxGtw",
+          "title": "GROUPLOVE - Tongue Tied \"Take Me To Your Best Friend's House\" | Lyrics",
+          "url": "https://www.youtube.com/watch?v=1NAWghuxGtw",
+          "channel": "Sunset Sounds",
+          "durationSeconds": 219.0,
+          "score": 0.721,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "uGqum1FECHA",
+          "title": "Grouplove - Tongue Tied (Lyrics) \"Take me to your best friend's house roll around this roundabout\"",
+          "url": "https://www.youtube.com/watch?v=uGqum1FECHA",
+          "channel": "Track Republic",
+          "durationSeconds": 249.0,
+          "score": 0.67,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twentyfourth",
+      "embedUrl": "https://www.youtube.com/embed/VRhuJmHfvdY?playlist=8J8n9R8rnB8,bpA_5a0miWk,AhyS1e8eGJ0,LGAuYQ_vtFM,aZmwI5f3R3k,Fot9VQGVxAk",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=VRhuJmHfvdY,8J8n9R8rnB8,bpA_5a0miWk,AhyS1e8eGJ0,LGAuYQ_vtFM,aZmwI5f3R3k,Fot9VQGVxAk",
+      "videoIds": [
+        "VRhuJmHfvdY",
+        "8J8n9R8rnB8",
+        "bpA_5a0miWk",
+        "AhyS1e8eGJ0",
+        "LGAuYQ_vtFM",
+        "aZmwI5f3R3k",
+        "Fot9VQGVxAk"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:23:18Z"
+    }
+  }
+}

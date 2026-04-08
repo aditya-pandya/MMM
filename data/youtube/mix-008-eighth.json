@@ -1,0 +1,641 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-008-eighth",
+  "updatedAt": "2026-04-08T21:26:27Z",
+  "sourceMixPath": "data/imported/mixes/mix-008-eighth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Sleigh Bells - Tell ‘em",
+      "query": "Sleigh Bells Tell ‘em",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "1iI606ERE6Y",
+        "confidenceScore": 0.993,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "1iI606ERE6Y",
+          "title": "Sleigh Bells - Tell Em'",
+          "url": "https://www.youtube.com/watch?v=1iI606ERE6Y",
+          "channel": "Stephen Klepner",
+          "durationSeconds": 177.0,
+          "score": 0.993,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "c3bSCZXKvUA",
+          "title": "Sleigh Bells - Tell 'Em (Audio) LYRICS IN DESCRIPTION",
+          "url": "https://www.youtube.com/watch?v=c3bSCZXKvUA",
+          "channel": "liquidcxnt",
+          "durationSeconds": 179.0,
+          "score": 0.802,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "fZZqXhPekSM",
+          "title": "Sleigh Bells - Tell 'Em (Diplo Remix)",
+          "url": "https://www.youtube.com/watch?v=fZZqXhPekSM",
+          "channel": "iggy majstorinho",
+          "durationSeconds": 260.0,
+          "score": 0.775,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "nTWZtFgnUcc",
+          "title": "Sleigh Bells Tell'Em Live at Rough Trade Brooklyn 2018",
+          "url": "https://www.youtube.com/watch?v=nTWZtFgnUcc",
+          "channel": "Mokusatsu1123",
+          "durationSeconds": 180.0,
+          "score": 0.583,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "0ZWhaqVzecE",
+          "title": "Tell 'Em",
+          "url": "https://www.youtube.com/watch?v=0ZWhaqVzecE",
+          "channel": "Sleigh Bells",
+          "durationSeconds": 177.0,
+          "score": 0.496,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "J Mascis - Is It Done",
+      "query": "J Mascis Is It Done",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "yyVRFgn5R_M",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "yyVRFgn5R_M",
+          "title": "J Mascis - Is It Done",
+          "url": "https://www.youtube.com/watch?v=yyVRFgn5R_M",
+          "channel": "Sub Pop",
+          "durationSeconds": 291.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "wcs8yYIZjf4",
+          "title": "J Mascis - Is it Done @ Whelans Dublin 2011",
+          "url": "https://www.youtube.com/watch?v=wcs8yYIZjf4",
+          "channel": "Conor",
+          "durationSeconds": 271.0,
+          "score": 0.87,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3N9yhRlNaUw",
+          "title": "J Mascis - Is It Done [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=3N9yhRlNaUw",
+          "channel": "Sub Pop",
+          "durationSeconds": 292.0,
+          "score": 0.837,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "qpjdn2yPBfU",
+          "title": "4) J. Mascis - Is it Done Live",
+          "url": "https://www.youtube.com/watch?v=qpjdn2yPBfU",
+          "channel": "JayLouMurph",
+          "durationSeconds": 271.0,
+          "score": 0.733,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "T5f8g0ijDlg",
+          "title": "Whenever Henry Rollins sees J Mascis",
+          "url": "https://www.youtube.com/watch?v=T5f8g0ijDlg",
+          "channel": "hello never mind",
+          "durationSeconds": 35.0,
+          "score": 0.203,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "White Hinterland - Icarus",
+      "query": "White Hinterland Icarus",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "vs8e5dCgCN0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "vs8e5dCgCN0",
+          "title": "White Hinterland - Icarus",
+          "url": "https://www.youtube.com/watch?v=vs8e5dCgCN0",
+          "channel": "White Hinterland",
+          "durationSeconds": 227.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "RyBuAKXe1L8",
+          "title": "White Hinterland - Icarus",
+          "url": "https://www.youtube.com/watch?v=RyBuAKXe1L8",
+          "channel": "funkymonkeyp00",
+          "durationSeconds": 227.0,
+          "score": 0.974,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "FZm9nAKdgK0",
+          "title": "White Hinterland - Icarus (HD)",
+          "url": "https://www.youtube.com/watch?v=FZm9nAKdgK0",
+          "channel": "Jon Sands",
+          "durationSeconds": 231.0,
+          "score": 0.949,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "rleb3Syj_nA",
+          "title": "Icarus",
+          "url": "https://www.youtube.com/watch?v=rleb3Syj_nA",
+          "channel": "White Hinterland - Topic",
+          "durationSeconds": 228.0,
+          "score": 0.584,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "yBZXk08Nt3A",
+          "title": "Icarus (Project Runway Remix)",
+          "url": "https://www.youtube.com/watch?v=yBZXk08Nt3A",
+          "channel": "White Hinterland - Topic",
+          "durationSeconds": 229.0,
+          "score": 0.297,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "This Is Ivy League - Crown Of Love (originally by The Arcade Fire)",
+      "query": "This Is Ivy League Crown Of Love (originally by The Arcade Fire)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "fE3hktrZPrI",
+        "confidenceScore": 0.441,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "fE3hktrZPrI",
+          "title": "Crown of love (Arcade Fire cover by Noodles, inspired by This is Ivy League's own cover)",
+          "url": "https://www.youtube.com/watch?v=fE3hktrZPrI",
+          "channel": "Noodles",
+          "durationSeconds": 158.0,
+          "score": 0.441,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "unexpected-cover-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "2KCWHdmC3rA",
+          "title": "This is Ivy League - Crown of Love (acoustic version)",
+          "url": "https://www.youtube.com/watch?v=2KCWHdmC3rA",
+          "channel": "Balance",
+          "durationSeconds": 170.0,
+          "score": 0.29,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "tNIm_aM1HZ0",
+          "title": "Jo Cimatti \"Crown of Love\" (Arcade Fire cover)",
+          "url": "https://www.youtube.com/watch?v=tNIm_aM1HZ0",
+          "channel": "Studio Amper",
+          "durationSeconds": 272.0,
+          "score": 0.127,
+          "signals": [
+            "unexpected-cover-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "uhHRbBVomAc",
+          "title": "Crown Of Love (Arcade Fire Cover) - 2019 Seattle Rock Orchestra Summer Intensive",
+          "url": "https://www.youtube.com/watch?v=uhHRbBVomAc",
+          "channel": "SeattleRockOrchestra",
+          "durationSeconds": 324.0,
+          "score": 0.044,
+          "signals": [
+            "unexpected-cover-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "HBJiZV1EHE8",
+          "title": "Seattle Rock Orchestra - Crown Of Love (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=HBJiZV1EHE8",
+          "channel": "KEXP",
+          "durationSeconds": 370.0,
+          "score": 0.0,
+          "signals": [
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "The Strokes - Under The Cover Of Darkness",
+      "query": "The Strokes Under The Cover Of Darkness",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "OwxcQvB_vcQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "OwxcQvB_vcQ",
+          "title": "The Strokes - Under Cover Of Darkness",
+          "url": "https://www.youtube.com/watch?v=OwxcQvB_vcQ",
+          "channel": "The Strokes",
+          "durationSeconds": 236.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "qyNKu0HTfqs",
+          "title": "The Strokes - Under Cover Of Darkness",
+          "url": "https://www.youtube.com/watch?v=qyNKu0HTfqs",
+          "channel": "Jahung",
+          "durationSeconds": 238.0,
+          "score": 0.937,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "_l09H-3zzgA",
+          "title": "The Strokes - Under Cover of Darkness (Official Video)",
+          "url": "https://www.youtube.com/watch?v=_l09H-3zzgA",
+          "channel": "The Strokes",
+          "durationSeconds": 266.0,
+          "score": 0.883,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "hUAqqN2M_78",
+          "title": "[가사]The Strokes - Under Cover Of Darkness(Live)",
+          "url": "https://www.youtube.com/watch?v=hUAqqN2M_78",
+          "channel": "김",
+          "durationSeconds": 246.0,
+          "score": 0.689,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "PU3O4Nxuu5E",
+          "title": "The Strokes Under Cover of Darkness Live at T in the Park 2011",
+          "url": "https://www.youtube.com/watch?v=PU3O4Nxuu5E",
+          "channel": "Mojito Jane",
+          "durationSeconds": 237.0,
+          "score": 0.601,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Foster The People - Pumped Up Kicks",
+      "query": "Foster The People Pumped Up Kicks",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "k_aQYP8rsgE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "k_aQYP8rsgE",
+          "title": "Foster The People - Pumped Up Kicks (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=k_aQYP8rsgE",
+          "channel": "FosterThePeople",
+          "durationSeconds": 241.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "0DOv0-2yyfE",
+          "title": "Foster The People - Pumped Up Kicks (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=0DOv0-2yyfE",
+          "channel": "7clouds",
+          "durationSeconds": 237.0,
+          "score": 0.889,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "siIep9LHtNM",
+          "title": "Foster the People - Pumped Up Kicks on Craig Ferguson 2011.07.15",
+          "url": "https://www.youtube.com/watch?v=siIep9LHtNM",
+          "channel": "Arnorrian",
+          "durationSeconds": 250.0,
+          "score": 0.879,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "SDTZ7iX4vTQ",
+          "title": "Foster The People - Pumped Up Kicks (Official Video)",
+          "url": "https://www.youtube.com/watch?v=SDTZ7iX4vTQ",
+          "channel": "FosterThePeople",
+          "durationSeconds": 256.0,
+          "score": 0.87,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Lm8cDP6ddCg",
+          "title": "Foster The People - Pumped Up Kicks (Live on Letterman)",
+          "url": "https://www.youtube.com/watch?v=Lm8cDP6ddCg",
+          "channel": "FosterThePeople",
+          "durationSeconds": 504.0,
+          "score": 0.698,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Girl Talk - Here’s The Thing",
+      "query": "Girl Talk Here’s The Thing",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "MsgingjRdJs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "MsgingjRdJs",
+          "title": "Girl Talk - Here's the Thing",
+          "url": "https://www.youtube.com/watch?v=MsgingjRdJs",
+          "channel": "spongebobfan879",
+          "durationSeconds": 286.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "9P3Gu-ksON0",
+          "title": "Girl Talk, \"Here's the Thing\"",
+          "url": "https://www.youtube.com/watch?v=9P3Gu-ksON0",
+          "channel": "dystopika",
+          "durationSeconds": 288.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "M9uycaN86nc",
+          "title": "Girl Talk Here's The Thing The Norva Norfolk, VA April 3, 2009",
+          "url": "https://www.youtube.com/watch?v=M9uycaN86nc",
+          "channel": "godieinhell2",
+          "durationSeconds": 68.0,
+          "score": 0.857,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "HprWyS25um4",
+          "title": "Here's the Thing",
+          "url": "https://www.youtube.com/watch?v=HprWyS25um4",
+          "channel": "Girl Talk",
+          "durationSeconds": 286.0,
+          "score": 0.569,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "HpX3IteA2T0",
+          "title": "Here's The Thing",
+          "url": "https://www.youtube.com/watch?v=HpX3IteA2T0",
+          "channel": "Ireland61290",
+          "durationSeconds": 93.0,
+          "score": 0.489,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Eighth",
+      "embedUrl": "https://www.youtube.com/embed/1iI606ERE6Y?playlist=yyVRFgn5R_M,vs8e5dCgCN0,fE3hktrZPrI,OwxcQvB_vcQ,k_aQYP8rsgE,MsgingjRdJs",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=1iI606ERE6Y,yyVRFgn5R_M,vs8e5dCgCN0,fE3hktrZPrI,OwxcQvB_vcQ,k_aQYP8rsgE,MsgingjRdJs",
+      "videoIds": [
+        "1iI606ERE6Y",
+        "yyVRFgn5R_M",
+        "vs8e5dCgCN0",
+        "fE3hktrZPrI",
+        "OwxcQvB_vcQ",
+        "k_aQYP8rsgE",
+        "MsgingjRdJs"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:26:27Z"
+    }
+  }
+}

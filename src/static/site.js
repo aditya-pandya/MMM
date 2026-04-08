@@ -172,7 +172,7 @@ function syncYoutubeAudioPlayerUi(instance) {
   instance.toggle.setAttribute('title', toggleLabel);
 
   if (instance.muteIcon) {
-    instance.muteIcon.textContent = isMuted ? '🔇' : '🔊';
+    instance.muteIcon.textContent = isMuted ? 'MUT' : 'VOL';
   }
   if (instance.muteLabel) {
     instance.muteLabel.textContent = muteLabel;

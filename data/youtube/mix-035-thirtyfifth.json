@@ -2,7 +2,7 @@
   "$schema": "../../schemas/youtube-match.schema.json",
   "schemaVersion": "1.0",
   "mixSlug": "mix-035-thirtyfifth",
-  "updatedAt": "2026-04-06T16:30:00Z",
+  "updatedAt": "2026-04-08T21:20:31Z",
   "sourceMixPath": "data/published/mix-035-thirtyfifth.json",
   "tracks": [
     {
@@ -66,7 +66,7 @@
         {
           "rank": 4,
           "videoId": "OVD8x2NWt0A",
-          "title": "Watch\u00a0@chromeo\u00a0perform \"Over Your Shoulder\" on CBC Music Live",
+          "title": "Watch @chromeo perform \"Over Your Shoulder\" on CBC Music Live",
           "url": "https://www.youtube.com/watch?v=OVD8x2NWt0A",
           "channel": "CBC Music",
           "durationSeconds": 291.0,
@@ -80,7 +80,7 @@
         {
           "rank": 5,
           "videoId": "4Bj10eHq4YA",
-          "title": "Chromeo - Over Your Shoulder [live in San Francisco]\u2063 (Official Lyric Video)",
+          "title": "Chromeo - Over Your Shoulder [live in San Francisco]⁣ (Official Lyric Video)",
           "url": "https://www.youtube.com/watch?v=4Bj10eHq4YA",
           "channel": "Chromeo",
           "durationSeconds": 313.0,
@@ -191,7 +191,7 @@
         "status": "auto-resolved",
         "selectedVideoId": "SOB7gYnKioc",
         "confidenceScore": 0.999,
-        "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
         "holdbackReason": null
       },
       "candidates": [
@@ -217,7 +217,7 @@
           "url": "https://www.youtube.com/watch?v=o5HMq7yKtaw",
           "channel": "RushSoundz",
           "durationSeconds": 188.0,
-          "score": 0.782,
+          "score": 0.742,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -232,7 +232,7 @@
           "url": "https://www.youtube.com/watch?v=UHbiEVo4cVw",
           "channel": "Young Galaxy - Topic",
           "durationSeconds": 183.0,
-          "score": 0.566,
+          "score": 0.626,
           "signals": [
             "song-title-near-exact-match",
             "song-title-in-title",
@@ -242,24 +242,24 @@
         },
         {
           "rank": 4,
-          "videoId": "oIxz7whD9pU",
-          "title": "YOUNG GALAXY - Dreams",
-          "url": "https://www.youtube.com/watch?v=oIxz7whD9pU",
-          "channel": "Paper Bag Records",
-          "durationSeconds": 271.0,
-          "score": 0.378,
-          "signals": [
-            "artist-name-in-title"
-          ]
-        },
-        {
-          "rank": 5,
           "videoId": "VZ78v5KZfJA",
           "title": "YOUNG GALAXY - Youth Is Wasted On The Young",
           "url": "https://www.youtube.com/watch?v=VZ78v5KZfJA",
           "channel": "Paper Bag Records",
           "durationSeconds": 192.0,
           "score": 0.311,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "4FAOR9sgFoo",
+          "title": "YOUNG GALAXY - Peripheral Visionaries",
+          "url": "https://www.youtube.com/watch?v=4FAOR9sgFoo",
+          "channel": "Paper Bag Records",
+          "durationSeconds": 218.0,
+          "score": 0.277,
           "signals": [
             "artist-name-in-title"
           ]
@@ -400,7 +400,7 @@
         {
           "rank": 3,
           "videoId": "AKOZ0BO1nJg",
-          "title": "Meg Myers - Desire (Hucci Remix) { \ud835\udc94\ud835\udc8d\ud835\udc90\ud835\udc98\ud835\udc86\ud835\udc85 & \ud835\udc93\ud835\udc86\ud835\udc97\ud835\udc86\ud835\udc93\ud835\udc83 }",
+          "title": "Meg Myers - Desire (Hucci Remix) { 𝒔𝒍𝒐𝒘𝒆𝒅 & 𝒓𝒆𝒗𝒆𝒓𝒃 }",
           "url": "https://www.youtube.com/watch?v=AKOZ0BO1nJg",
           "channel": "lucylev",
           "durationSeconds": 282.0,
@@ -543,7 +543,7 @@
         "status": "auto-resolved",
         "selectedVideoId": "J4pbI8sH2mE",
         "confidenceScore": 0.999,
-        "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
         "holdbackReason": null
       },
       "candidates": [
@@ -584,7 +584,7 @@
           "url": "https://www.youtube.com/watch?v=W_NRXuGQmGY",
           "channel": "Society - Topic",
           "durationSeconds": 256.0,
-          "score": 0.6,
+          "score": 0.66,
           "signals": [
             "song-title-near-exact-match",
             "song-title-in-title",
@@ -607,15 +607,13 @@
         },
         {
           "rank": 5,
-          "videoId": "ixkKwzwdkw8",
-          "title": "Philosophy and Society | Complete Album 04 | Alan Watts | Essential Lectures",
-          "url": "https://www.youtube.com/watch?v=ixkKwzwdkw8",
-          "channel": "Zen Bones",
-          "durationSeconds": 19999.0,
-          "score": 0.214,
-          "signals": [
-            "artist-name-in-title"
-          ]
+          "videoId": "S5tFwseTNMk",
+          "title": "33 Hours is a Critical Lie - Tyler Robinson Timeline was Engineered to Fit FedSlop Narrative - #93",
+          "url": "https://www.youtube.com/watch?v=S5tFwseTNMk",
+          "channel": "Baron Coleman",
+          "durationSeconds": 13468.0,
+          "score": 0.054,
+          "signals": []
         }
       ]
     },
@@ -627,7 +625,7 @@
         "status": "auto-resolved",
         "selectedVideoId": "8Ffe8rkza5o",
         "confidenceScore": 0.999,
-        "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
         "holdbackReason": null
       },
       "candidates": [
@@ -649,12 +647,12 @@
         },
         {
           "rank": 2,
-          "videoId": "qxK7yNp75Nk",
-          "title": "Traxxion Install Video 4",
-          "url": "https://www.youtube.com/watch?v=qxK7yNp75Nk",
-          "channel": "matt caradonna",
-          "durationSeconds": 157.0,
-          "score": 0.117,
+          "videoId": "vtTDIsNovw0",
+          "title": "Brakes and engineering compromise",
+          "url": "https://www.youtube.com/watch?v=vtTDIsNovw0",
+          "channel": "The workshop",
+          "durationSeconds": 458.0,
+          "score": 0.11,
           "signals": []
         },
         {
@@ -669,6 +667,16 @@
         },
         {
           "rank": 4,
+          "videoId": "cKxwCPB4kSk",
+          "title": "Close-up Look at Steering System of 2018+ Honda Goldwing with Max from Traxxion Dynamics",
+          "url": "https://www.youtube.com/watch?v=cKxwCPB4kSk",
+          "channel": "Max McAllister & Traxxion Dynamics",
+          "durationSeconds": 200.0,
+          "score": 0.054,
+          "signals": []
+        },
+        {
+          "rank": 5,
           "videoId": "AggEtStSMcE",
           "title": "Suspension For Mortals, Chapter 1,  Reality Check  by Max McAllister of Traxxion Dynamics",
           "url": "https://www.youtube.com/watch?v=AggEtStSMcE",
@@ -676,18 +684,6 @@
           "durationSeconds": 404.0,
           "score": 0.049,
           "signals": []
-        },
-        {
-          "rank": 5,
-          "videoId": "qBGpPTS7Wug",
-          "title": "Well (Live @ Artlife)",
-          "url": "https://www.youtube.com/watch?v=qBGpPTS7Wug",
-          "channel": "Morgan Greenwood",
-          "durationSeconds": 165.0,
-          "score": 0.0,
-          "signals": [
-            "live-version-penalty"
-          ]
         }
       ]
     },
@@ -788,8 +784,8 @@
       "resolution": {
         "status": "auto-resolved",
         "selectedVideoId": "Y4UckOGdZtI",
-        "confidenceScore": 0.996,
-        "reason": "Top YouTube candidate clearly outran the rest on artist/title matching signals.",
+        "confidenceScore": 0.896,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
         "holdbackReason": null
       },
       "candidates": [
@@ -800,13 +796,14 @@
           "url": "https://www.youtube.com/watch?v=Y4UckOGdZtI",
           "channel": "Jungle4eva",
           "durationSeconds": 196.0,
-          "score": 0.996,
+          "score": 0.896,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
             "song-title-in-title",
             "artist-name-in-channel",
-            "official-upload"
+            "official-upload",
+            "music-video-penalty"
           ]
         },
         {
@@ -816,7 +813,7 @@
           "url": "https://www.youtube.com/watch?v=rx3bDQhq3R8",
           "channel": "KEXP",
           "durationSeconds": 193.0,
-          "score": 0.709,
+          "score": 0.669,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -831,7 +828,7 @@
           "url": "https://www.youtube.com/watch?v=YccJ8NFrU_4",
           "channel": "KEXP",
           "durationSeconds": 214.0,
-          "score": 0.709,
+          "score": 0.669,
           "signals": [
             "candidate-title-covers-track-tokens",
             "artist-name-in-title",
@@ -1001,7 +998,7 @@
           "videoId": "SrveBH34GQQ",
           "title": "Shy Girls - Still Not Falling | stamPAlinski",
           "url": "https://www.youtube.com/watch?v=SrveBH34GQQ",
-          "channel": "ALEK PALI\u0143SKI",
+          "channel": "ALEK PALIŃSKI",
           "durationSeconds": 193.0,
           "score": 0.949,
           "signals": [
@@ -1304,7 +1301,7 @@
     "requiresReview": false,
     "generatedEmbed": {
       "provider": "YouTube",
-      "kind": "video-queue",
+      "kind": "audio-first-queue",
       "title": "Full mix queue for Thirtyfifth",
       "embedUrl": "https://www.youtube.com/embed/XYDg27tqXkI?playlist=vMCoiehkH8U,SOB7gYnKioc,O_QBC_pDkeU,bR5u9jb0PJE,a0ul-BghOAs,J4pbI8sH2mE,8Ffe8rkza5o,9VtUrv2UBQs,Y4UckOGdZtI,pIo3swynly0,wXX7YIC5vJU,Ulbt3tASoxw,l35GTSbKMpY,kUTLoClmsBk",
       "watchUrl": "https://www.youtube.com/watch_videos?video_ids=XYDg27tqXkI,vMCoiehkH8U,SOB7gYnKioc,O_QBC_pDkeU,bR5u9jb0PJE,a0ul-BghOAs,J4pbI8sH2mE,8Ffe8rkza5o,9VtUrv2UBQs,Y4UckOGdZtI,pIo3swynly0,wXX7YIC5vJU,Ulbt3tASoxw,l35GTSbKMpY,kUTLoClmsBk",
@@ -1325,7 +1322,10 @@
         "l35GTSbKMpY",
         "kUTLoClmsBk"
       ],
-      "generatedAt": "2026-04-06T16:30:00Z"
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:20:31Z"
     }
   }
 }

@@ -46,11 +46,22 @@ POSITIVE_AUDIO_TERMS = {
     "audio only": ("audio-only-preferred", 0.12),
     "audio": ("audio-tag-preferred", 0.06),
 }
+EDITORIAL_TAIL_MARKERS = (
+    "must listen",
+    "this isn't",
+    "this isn’t",
+    "not the album version",
+)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Persist YouTube per-track match candidates for MMM mixes.")
     parser.add_argument("mixes", nargs="*", help="Canonical archive mix slugs to scan. Defaults to the full deduped archive.")
+    parser.add_argument(
+        "--accept-low-confidence",
+        action="store_true",
+        help="Auto-select each track's top candidate even below the normal score threshold, and skip duplicate holdbacks so every mix gets a complete starter queue for operator review.",
+    )
     return parser.parse_args()
 
 
@@ -79,6 +90,44 @@ def contains_phrase(text: str, phrase: str) -> bool:
     if not normalized_phrase:
         return False
     return normalized_phrase in normalize_text(text)
+
+
+def strip_editorial_tail(value: str) -> str:
+    raw = re.sub(r"\s+", " ", str(value or "")).strip()
+    if not raw:
+        return ""
+    lowered = raw.lower()
+    cut = len(raw)
+    for marker in EDITORIAL_TAIL_MARKERS:
+        index = lowered.find(marker)
+        if index >= 0:
+            cut = min(cut, index)
+    cleaned = raw[:cut].strip(" -–—")
+    return cleaned or raw
+
+
+def build_track_queries(track: dict[str, Any]) -> list[str]:
+    artist = str(track.get("artist") or "").strip()
+    title = str(track.get("title") or "").strip()
+    display = str(track.get("displayText") or "").strip()
+
+    queries: list[str] = []
+
+    def add(query: str) -> None:
+        compact = re.sub(r"\s+", " ", str(query or "")).strip()
+        if not compact:
+            return
+        if any(normalize_text(compact) == normalize_text(existing) for existing in queries):
+            return
+        queries.append(compact)
+
+    add(" ".join(part for part in [artist, title] if part))
+    add(display)
+    cleaned_title = strip_editorial_tail(title)
+    add(" ".join(part for part in [artist, cleaned_title] if part))
+    add(strip_editorial_tail(display))
+
+    return queries
 
 
 @dataclass
@@ -182,7 +231,7 @@ def search_youtube(query: str) -> list[dict[str, Any]]:
     return payload.get("entries") or []
 
 
-def derive_resolution(scored: list[ScoredCandidate]) -> dict[str, Any]:
+def derive_resolution(scored: list[ScoredCandidate], *, accept_low_confidence: bool = False) -> dict[str, Any]:
     if not scored:
         return {
             "status": "no-candidate",
@@ -200,6 +249,15 @@ def derive_resolution(scored: list[ScoredCandidate]) -> dict[str, Any]:
             "confidenceScore": round(top.score, 3),
             "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
             "holdbackReason": None,
+        }
+
+    if accept_low_confidence:
+        return {
+            "status": "auto-resolved",
+            "selectedVideoId": top.video_id,
+            "confidenceScore": round(top.score, 3),
+            "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+            "holdbackReason": "low-confidence-auto-selected",
         }
 
     return {
@@ -259,8 +317,14 @@ def build_generated_embed(mix: dict[str, Any], track_states: list[dict[str, Any]
     }
 
 
-def build_track_state(track: dict[str, Any], existing_track: dict[str, Any] | None = None) -> dict[str, Any]:
-    query = " ".join(part for part in [track.get("artist"), track.get("title")] if str(part or "").strip())
+def build_track_state(
+    track: dict[str, Any],
+    existing_track: dict[str, Any] | None = None,
+    *,
+    accept_low_confidence: bool = False,
+) -> dict[str, Any]:
+    queries = build_track_queries(track)
+    query = queries[0] if queries else str(track.get("displayText") or "").strip()
     existing_resolution = existing_track.get("resolution") if isinstance(existing_track, dict) else {}
     if isinstance(existing_resolution, dict) and existing_resolution.get("status") == "manual-selected":
         candidates = existing_track.get("candidates") if isinstance(existing_track.get("candidates"), list) else []
@@ -272,13 +336,19 @@ def build_track_state(track: dict[str, Any], existing_track: dict[str, Any] | No
             "candidates": candidates,
         }
 
-    candidates = search_youtube(query)
+    candidates: list[dict[str, Any]] = []
+    for candidate_query in queries or [query]:
+        query = candidate_query
+        candidates = search_youtube(query)
+        if candidates:
+            break
+
     scored = sorted((score_candidate(track, candidate) for candidate in candidates if candidate.get("id")), key=lambda item: item.score, reverse=True)
     return {
         "position": track["position"],
         "displayText": track["displayText"],
         "query": query,
-        "resolution": derive_resolution(scored),
+        "resolution": derive_resolution(scored, accept_low_confidence=accept_low_confidence),
         "candidates": [
             {
                 "rank": index,
@@ -307,7 +377,7 @@ def load_existing_state(slug: str) -> dict[str, Any]:
     return payload if isinstance(payload, dict) else {}
 
 
-def sync_mix(path: Path) -> dict[str, Any]:
+def sync_mix(path: Path, *, accept_low_confidence: bool = False) -> dict[str, Any]:
     mix = load_json(path)
     slug = ensure_kebab_case_slug(mix.get("slug"), "mix slug")
     tracks = mix.get("tracks")
@@ -321,8 +391,16 @@ def sync_mix(path: Path) -> dict[str, Any]:
         if isinstance(track, dict) and str(track.get("position") or "").isdigit()
     }
 
-    track_states = [build_track_state(track, existing_by_position.get(int(track["position"]))) for track in tracks]
-    apply_duplicate_holdbacks(track_states)
+    track_states = [
+        build_track_state(
+            track,
+            existing_by_position.get(int(track["position"])),
+            accept_low_confidence=accept_low_confidence,
+        )
+        for track in tracks
+    ]
+    if not accept_low_confidence:
+        apply_duplicate_holdbacks(track_states)
     resolved_tracks = sum(1 for track in track_states if track["resolution"]["status"] in {"auto-resolved", "manual-selected"} and track["resolution"].get("selectedVideoId"))
     unresolved_tracks = len(track_states) - resolved_tracks
     generated_embed = build_generated_embed(mix, track_states) if unresolved_tracks == 0 else None
@@ -360,7 +438,7 @@ def resolve_mix_paths(slugs: list[str]) -> list[Path]:
 def main() -> int:
     args = parse_args()
     YOUTUBE_DIR.mkdir(parents=True, exist_ok=True)
-    results = [sync_mix(path) for path in resolve_mix_paths(args.mixes)]
+    results = [sync_mix(path, accept_low_confidence=args.accept_low_confidence) for path in resolve_mix_paths(args.mixes)]
     for result in results:
         summary = result["summary"]
         print(

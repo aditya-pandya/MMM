@@ -1,0 +1,608 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-009-ninth",
+  "updatedAt": "2026-04-08T21:26:09Z",
+  "sourceMixPath": "data/imported/mixes/mix-009-ninth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Generationals - Greenleaf",
+      "query": "Generationals Greenleaf",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "lrrb8O7uCw0",
+        "confidenceScore": 0.966,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "lrrb8O7uCw0",
+          "title": "050 - Generationals - Greenleaf",
+          "url": "https://www.youtube.com/watch?v=lrrb8O7uCw0",
+          "channel": "birpfmmarch2011",
+          "durationSeconds": 218.0,
+          "score": 0.966,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Ude1MnHHbyk",
+          "title": "Greenleaf - Generationals",
+          "url": "https://www.youtube.com/watch?v=Ude1MnHHbyk",
+          "channel": "GenerallyGoodMusic",
+          "durationSeconds": 218.0,
+          "score": 0.871,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "gx3ZB3jP9DI",
+          "title": "The Generationals - Greenleaf (Mannequine Remix)",
+          "url": "https://www.youtube.com/watch?v=gx3ZB3jP9DI",
+          "channel": "wherethenightis",
+          "durationSeconds": 318.0,
+          "score": 0.747,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "qVLghmfwY4A",
+          "title": "Greenleaf",
+          "url": "https://www.youtube.com/watch?v=qVLghmfwY4A",
+          "channel": "generationals",
+          "durationSeconds": 218.0,
+          "score": 0.509,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "cGl2QJ1ReJY",
+          "title": "Generationals - Spinoza [OFFICIAL MUSIC VIDEO]",
+          "url": "https://www.youtube.com/watch?v=cGl2QJ1ReJY",
+          "channel": "Polyvinyl Records",
+          "durationSeconds": 213.0,
+          "score": 0.214,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "The Annuals - Dry Clothes",
+      "query": "The Annuals Dry Clothes",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "mY-EQEzhipg",
+        "confidenceScore": 0.574,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "mY-EQEzhipg",
+          "title": "Dry Clothes",
+          "url": "https://www.youtube.com/watch?v=mY-EQEzhipg",
+          "channel": "Annuals - Topic",
+          "durationSeconds": 227.0,
+          "score": 0.574,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "TOObymf_abs",
+          "title": "Annuals - Dry Clothes",
+          "url": "https://www.youtube.com/watch?v=TOObymf_abs",
+          "channel": "annualsmusic",
+          "durationSeconds": 201.0,
+          "score": 0.483,
+          "signals": [
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "gA_KJzbdWis",
+          "title": "Annuals - Dry Clothes",
+          "url": "https://www.youtube.com/watch?v=gA_KJzbdWis",
+          "channel": "chaseyday",
+          "durationSeconds": 219.0,
+          "score": 0.483,
+          "signals": [
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ZW41FoMz-cA",
+          "title": "Dry Clothes",
+          "url": "https://www.youtube.com/watch?v=ZW41FoMz-cA",
+          "channel": "Annualstheband",
+          "durationSeconds": 195.0,
+          "score": 0.454,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "FcPLO8ZcOIo",
+          "title": "Annuals - Dry Clothes (Live)",
+          "url": "https://www.youtube.com/watch?v=FcPLO8ZcOIo",
+          "channel": "Radial by The Orchard",
+          "durationSeconds": 223.0,
+          "score": 0.216,
+          "signals": [
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Rawayana - Bahía",
+      "query": "Rawayana Bahía",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "c1gI1cCA-Is",
+        "confidenceScore": 0.995,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "c1gI1cCA-Is",
+          "title": "Rawayana - Bahía",
+          "url": "https://www.youtube.com/watch?v=c1gI1cCA-Is",
+          "channel": "Candijuan69",
+          "durationSeconds": 236.0,
+          "score": 0.995,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "06N8WcRwIGo",
+          "title": "Bahía",
+          "url": "https://www.youtube.com/watch?v=06N8WcRwIGo",
+          "channel": "Rawayana Official",
+          "durationSeconds": 237.0,
+          "score": 0.498,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "HEACzHrt9Yk",
+          "title": "RAWAYANA - BAHIA",
+          "url": "https://www.youtube.com/watch?v=HEACzHrt9Yk",
+          "channel": "NewestAnuk18",
+          "durationSeconds": 239.0,
+          "score": 0.454,
+          "signals": [
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "jX_J6anyUlE",
+          "title": "Rawayana - Véngase (A Brocoli Film)",
+          "url": "https://www.youtube.com/watch?v=jX_J6anyUlE",
+          "channel": "Rawayana Official",
+          "durationSeconds": 483.0,
+          "score": 0.37,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "EgncuSy4juY",
+          "title": "Alvaro Diaz, Rawayana - Chinita Linda (Audio)",
+          "url": "https://www.youtube.com/watch?v=EgncuSy4juY",
+          "channel": "Alvaro Diaz",
+          "durationSeconds": 240.0,
+          "score": 0.325,
+          "signals": [
+            "artist-name-in-title",
+            "audio-tag-preferred"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Toro y Moi - Still Sound",
+      "query": "Toro y Moi Still Sound",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "0Gqh4e1S6j0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "0Gqh4e1S6j0",
+          "title": "Toro Y Moi \"Still Sound\"",
+          "url": "https://www.youtube.com/watch?v=0Gqh4e1S6j0",
+          "channel": "Carpark Records",
+          "durationSeconds": 270.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "oKawDg9pUHg",
+          "title": "Toro Y Moi - Still Sound (Vindata Remix)",
+          "url": "https://www.youtube.com/watch?v=oKawDg9pUHg",
+          "channel": "Cherryicepunch",
+          "durationSeconds": 383.0,
+          "score": 0.792,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "oa4EYxivFuo",
+          "title": "Toro y Moi - Still Sound (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=oa4EYxivFuo",
+          "channel": "KEXP",
+          "durationSeconds": 257.0,
+          "score": 0.698,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "9nJCQNeQnRk",
+          "title": "Toro Y Moi - Still Sound [Half Blunt Prince ~ House Flip Remix] (OFFICIAL VIDEO)",
+          "url": "https://www.youtube.com/watch?v=9nJCQNeQnRk",
+          "channel": "Tom ENGLISH",
+          "durationSeconds": 250.0,
+          "score": 0.608,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "unexpected-remix-penalty",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "YAgZKT32qNk",
+          "title": "Still Sound",
+          "url": "https://www.youtube.com/watch?v=YAgZKT32qNk",
+          "channel": "Toro y Moi",
+          "durationSeconds": 270.0,
+          "score": 0.54,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Early Winters - Spanish Burn",
+      "query": "Early Winters Spanish Burn",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "h26DuP-qW58",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "h26DuP-qW58",
+          "title": "Early Winters - 'Spanish Burn'",
+          "url": "https://www.youtube.com/watch?v=h26DuP-qW58",
+          "channel": "earlywintersmusic",
+          "durationSeconds": 248.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "jirgdgZSk3I",
+          "title": "Early Winters - Spanish Burn",
+          "url": "https://www.youtube.com/watch?v=jirgdgZSk3I",
+          "channel": "xblyn",
+          "durationSeconds": 244.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "cyGR227lQFA",
+          "title": "Being Human (US) Soundtrack: Early Winters - Spanish Burn",
+          "url": "https://www.youtube.com/watch?v=cyGR227lQFA",
+          "channel": "SongsFromBeingHuman",
+          "durationSeconds": 238.0,
+          "score": 0.867,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "-IPftvXmj4o",
+          "title": "Spanish Burn",
+          "url": "https://www.youtube.com/watch?v=-IPftvXmj4o",
+          "channel": "Early Winters",
+          "durationSeconds": 235.0,
+          "score": 0.529,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "OvIIQFwpFNY",
+          "title": "Spanish Burn",
+          "url": "https://www.youtube.com/watch?v=OvIIQFwpFNY",
+          "channel": "Early Winters",
+          "durationSeconds": 235.0,
+          "score": 0.529,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Two Door Cinema Club - What You Know (Young Empires Remix)",
+      "query": "Two Door Cinema Club What You Know (Young Empires Remix)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "CNoY4zZtyng",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "CNoY4zZtyng",
+          "title": "Two Door Cinema Club - What You Know (Young Empires Remix)",
+          "url": "https://www.youtube.com/watch?v=CNoY4zZtyng",
+          "channel": "hollagramzz",
+          "durationSeconds": 211.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "RIIGCeATU44",
+          "title": "Two Door Cinema Club - What you know - The Leadings Remix",
+          "url": "https://www.youtube.com/watch?v=RIIGCeATU44",
+          "channel": "TheLeadingsTV",
+          "durationSeconds": 275.0,
+          "score": 0.743,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "u91SbHlX-RM",
+          "title": "TWO DOOR CINEMA CLUB - WHAT YOU KNOW (THE LEADINGS REMIX) 2012",
+          "url": "https://www.youtube.com/watch?v=u91SbHlX-RM",
+          "channel": "thegroovebcn",
+          "durationSeconds": 270.0,
+          "score": 0.727,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "tkEsEByYKX8",
+          "title": "Two Door Cinema Club - What You Know (Cosmic Sand Remix) | HD",
+          "url": "https://www.youtube.com/watch?v=tkEsEByYKX8",
+          "channel": "Skeeta2011",
+          "durationSeconds": 212.0,
+          "score": 0.727,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "9mO6_q4pcu8",
+          "title": "What You Know - Two Door Cinema Club (FeBa Remix)",
+          "url": "https://www.youtube.com/watch?v=9mO6_q4pcu8",
+          "channel": "FEBA Music",
+          "durationSeconds": 241.0,
+          "score": 0.685,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "The Rescue - Teenage Dream (originally by Katy Perry)",
+      "query": "The Rescue Teenage Dream (originally by Katy Perry)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "THUk6dVwbyE",
+        "confidenceScore": 0.369,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "THUk6dVwbyE",
+          "title": "The Rescues - Teenage Dream",
+          "url": "https://www.youtube.com/watch?v=THUk6dVwbyE",
+          "channel": "RescuesMusicVEVO",
+          "durationSeconds": 247.0,
+          "score": 0.369,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "xnkMdOAbLA8",
+          "title": "The Rescues - Teenage Dream (The Umbrella Academy Season 3 Soundtrack)",
+          "url": "https://www.youtube.com/watch?v=xnkMdOAbLA8",
+          "channel": "The Umbrella Academy",
+          "durationSeconds": 269.0,
+          "score": 0.34,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3MwsM_hIKtU",
+          "title": "me singing \"teenage dreams\" by katy perry",
+          "url": "https://www.youtube.com/watch?v=3MwsM_hIKtU",
+          "channel": "1997sneha",
+          "durationSeconds": 74.0,
+          "score": 0.338,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "71Ii5dLuugg",
+          "title": "[DMS] Teenage Dream Vol. 2",
+          "url": "https://www.youtube.com/watch?v=71Ii5dLuugg",
+          "channel": "DisneyMagicStudios",
+          "durationSeconds": 254.0,
+          "score": 0.259,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "0tRGMhpTeHo",
+          "title": "“TEENAGE DREAM” - Katy Perry | Dance choreography by Federico Milan.",
+          "url": "https://www.youtube.com/watch?v=0tRGMhpTeHo",
+          "channel": "Federico Milan",
+          "durationSeconds": 148.0,
+          "score": 0.218,
+          "signals": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Ninth",
+      "embedUrl": "https://www.youtube.com/embed/lrrb8O7uCw0?playlist=mY-EQEzhipg,c1gI1cCA-Is,0Gqh4e1S6j0,h26DuP-qW58,CNoY4zZtyng,THUk6dVwbyE",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=lrrb8O7uCw0,mY-EQEzhipg,c1gI1cCA-Is,0Gqh4e1S6j0,h26DuP-qW58,CNoY4zZtyng,THUk6dVwbyE",
+      "videoIds": [
+        "lrrb8O7uCw0",
+        "mY-EQEzhipg",
+        "c1gI1cCA-Is",
+        "0Gqh4e1S6j0",
+        "h26DuP-qW58",
+        "CNoY4zZtyng",
+        "THUk6dVwbyE"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:26:09Z"
+    }
+  }
+}

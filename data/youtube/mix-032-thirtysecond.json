@@ -1,0 +1,1275 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-032-thirtysecond",
+  "updatedAt": "2026-04-08T21:21:15Z",
+  "sourceMixPath": "data/imported/mixes/mix-032-thirtysecond.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Phoenix - Entertainment",
+      "query": "Phoenix Entertainment",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "dkHD4N-2Pd4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "dkHD4N-2Pd4",
+          "title": "Phoenix - Entertainment HD",
+          "url": "https://www.youtube.com/watch?v=dkHD4N-2Pd4",
+          "channel": "BasementSongs1",
+          "durationSeconds": 221.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "tBsRvthVhdw",
+          "title": "Phoenix - Entertainment (Official Video)",
+          "url": "https://www.youtube.com/watch?v=tBsRvthVhdw",
+          "channel": "welovephoenix",
+          "durationSeconds": 253.0,
+          "score": 0.937,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "pp1Z1wZcYac",
+          "title": "Phoenix on Austin City Limits \"Entertainment\"",
+          "url": "https://www.youtube.com/watch?v=pp1Z1wZcYac",
+          "channel": "Austin City Limits",
+          "durationSeconds": 233.0,
+          "score": 0.88,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "SHDahbs-gyA",
+          "title": "Phoenix - Entertainment at Reading Festival 2013",
+          "url": "https://www.youtube.com/watch?v=SHDahbs-gyA",
+          "channel": "BBC",
+          "durationSeconds": 226.0,
+          "score": 0.867,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "86_TqlVQscQ",
+          "title": "Phoenix - Entertainment (homemade lyric video)",
+          "url": "https://www.youtube.com/watch?v=86_TqlVQscQ",
+          "channel": "welovephoenix",
+          "durationSeconds": 221.0,
+          "score": 0.865,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Haim - Falling",
+      "query": "Haim Falling",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "_acBVglVBcY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "_acBVglVBcY",
+          "title": "HAIM - Falling (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=_acBVglVBcY",
+          "channel": "HAIM",
+          "durationSeconds": 259.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "AIjVpRAXK18",
+          "title": "HAIM - Falling (Official Video)",
+          "url": "https://www.youtube.com/watch?v=AIjVpRAXK18",
+          "channel": "HAIM",
+          "durationSeconds": 251.0,
+          "score": 0.879,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "sP3LddHx0Zk",
+          "title": "HAIM - Falling (Duke Dumont Remix)",
+          "url": "https://www.youtube.com/watch?v=sP3LddHx0Zk",
+          "channel": "HAIM",
+          "durationSeconds": 335.0,
+          "score": 0.8,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "uzKtUjr9LO8",
+          "title": "Haim   Falling Live iTunes Festival 2013",
+          "url": "https://www.youtube.com/watch?v=uzKtUjr9LO8",
+          "channel": "Claudio Trevino",
+          "durationSeconds": 377.0,
+          "score": 0.58,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "0ovrplcNwXo",
+          "title": "HAIM - Falling - Exclusive and live at Maida Vale",
+          "url": "https://www.youtube.com/watch?v=0ovrplcNwXo",
+          "channel": "BBC Radio 1",
+          "durationSeconds": 324.0,
+          "score": 0.555,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Lemolo - Open Air",
+      "query": "Lemolo Open Air",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "sccDKzcXHjk",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "sccDKzcXHjk",
+          "title": "Lemolo - Open Air",
+          "url": "https://www.youtube.com/watch?v=sccDKzcXHjk",
+          "channel": "dillpickle sancheese",
+          "durationSeconds": 172.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "RSLkN3eFFaM",
+          "title": "Lemolo, Open Air",
+          "url": "https://www.youtube.com/watch?v=RSLkN3eFFaM",
+          "channel": "jamesbaileyfilm",
+          "durationSeconds": 168.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "kHCVBAiP09k",
+          "title": "Lemolo - Open Air (@LemoloMusic)",
+          "url": "https://www.youtube.com/watch?v=kHCVBAiP09k",
+          "channel": "Listologies",
+          "durationSeconds": 165.0,
+          "score": 0.897,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "gYJEK2_-xBQ",
+          "title": "Lemolo - Open Air (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=gYJEK2_-xBQ",
+          "channel": "KEXP",
+          "durationSeconds": 239.0,
+          "score": 0.669,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "s2h4Y_eO-6k",
+          "title": "Open Air",
+          "url": "https://www.youtube.com/watch?v=s2h4Y_eO-6k",
+          "channel": "Lemolo Music",
+          "durationSeconds": 172.0,
+          "score": 0.549,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Now, Now - Dead Oaks",
+      "query": "Now, Now Dead Oaks",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "J3aExKOipoM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "J3aExKOipoM",
+          "title": "Now, Now - Dead Oaks",
+          "url": "https://www.youtube.com/watch?v=J3aExKOipoM",
+          "channel": "Now, Now",
+          "durationSeconds": 103.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "RWjM3wIkPo4",
+          "title": "Now, Now - Dead Oaks",
+          "url": "https://www.youtube.com/watch?v=RWjM3wIkPo4",
+          "channel": "Skiel vdw",
+          "durationSeconds": 101.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "RvH4D6xrTbM",
+          "title": "Now, Now - Dead Oaks (Last.fm Sessions)",
+          "url": "https://www.youtube.com/watch?v=RvH4D6xrTbM",
+          "channel": "Last.fm",
+          "durationSeconds": 127.0,
+          "score": 0.875,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Ng1BhIfff2g",
+          "title": "Now, Now - Dead Oaks - Audiotree Live",
+          "url": "https://www.youtube.com/watch?v=Ng1BhIfff2g",
+          "channel": "Audiotree",
+          "durationSeconds": 119.0,
+          "score": 0.727,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "em7FenQH1Yg",
+          "title": "Dead Oaks",
+          "url": "https://www.youtube.com/watch?v=em7FenQH1Yg",
+          "channel": "Now, Now",
+          "durationSeconds": 102.0,
+          "score": 0.548,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Magic Man - Paris",
+      "query": "Magic Man Paris",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "yteXdnQQSUc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "yteXdnQQSUc",
+          "title": "Magic Man - Paris (Official)",
+          "url": "https://www.youtube.com/watch?v=yteXdnQQSUc",
+          "channel": "Magic Man",
+          "durationSeconds": 246.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "-5s1q7SVs6U",
+          "title": "Magic Man - Paris (Audio)",
+          "url": "https://www.youtube.com/watch?v=-5s1q7SVs6U",
+          "channel": "Magic Man",
+          "durationSeconds": 234.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "NLe8c5GaJ5E",
+          "title": "Magic Man - \"Paris\"",
+          "url": "https://www.youtube.com/watch?v=NLe8c5GaJ5E",
+          "channel": "IndieCurrent",
+          "durationSeconds": 213.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vRd9HFWHxYw",
+          "title": "Magic Man - Paris (SXSW Boat Session)",
+          "url": "https://www.youtube.com/watch?v=vRd9HFWHxYw",
+          "channel": "Magic Man",
+          "durationSeconds": 251.0,
+          "score": 0.835,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "cwrfQ_CgRB4",
+          "title": "Magic Man - Paris | The Wild Honey Pie Buzzsession",
+          "url": "https://www.youtube.com/watch?v=cwrfQ_CgRB4",
+          "channel": "The Wild Honey Pie",
+          "durationSeconds": 255.0,
+          "score": 0.783,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "James Blake - Digital Lion",
+      "query": "James Blake Digital Lion",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "3aNRCoOsWb8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "3aNRCoOsWb8",
+          "title": "James Blake - Digital Lion (OFFICIAL AUDIO)",
+          "url": "https://www.youtube.com/watch?v=3aNRCoOsWb8",
+          "channel": "1D3DUK",
+          "durationSeconds": 274.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "v0d_rnrbnAU",
+          "title": "James Blake - Digital Lion [feat. Brian Eno]",
+          "url": "https://www.youtube.com/watch?v=v0d_rnrbnAU",
+          "channel": "Andrea Polidoro",
+          "durationSeconds": 286.0,
+          "score": 0.913,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "DyWeVWiDnbQ",
+          "title": "Digital Lion - James Blake",
+          "url": "https://www.youtube.com/watch?v=DyWeVWiDnbQ",
+          "channel": "davidwave4",
+          "durationSeconds": 288.0,
+          "score": 0.87,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "tbJOt2QcgQw",
+          "title": "James Blake - Digital Lion (Live at Heaven, London)",
+          "url": "https://www.youtube.com/watch?v=tbJOt2QcgQw",
+          "channel": "jamesblakevideo",
+          "durationSeconds": 334.0,
+          "score": 0.66,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "zZnaLUySEcY",
+          "title": "Digital Lion",
+          "url": "https://www.youtube.com/watch?v=zZnaLUySEcY",
+          "channel": "James Blake",
+          "durationSeconds": 288.0,
+          "score": 0.54,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Earl Sweatshirt - Chum",
+      "query": "Earl Sweatshirt Chum",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "4XgDLfx9R9s",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "4XgDLfx9R9s",
+          "title": "Earl Sweatshirt - Chum (Explicit Official Audio)",
+          "url": "https://www.youtube.com/watch?v=4XgDLfx9R9s",
+          "channel": "Earl Sweatshirt",
+          "durationSeconds": 249.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "FCbWLSZrZfw",
+          "title": "Earl Sweatshirt - Chum (Explicit)",
+          "url": "https://www.youtube.com/watch?v=FCbWLSZrZfw",
+          "channel": "Earl Sweatshirt",
+          "durationSeconds": 191.0,
+          "score": 0.969,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PY7CQgdjUsA",
+          "title": "Earl Sweatshirt - Chum",
+          "url": "https://www.youtube.com/watch?v=PY7CQgdjUsA",
+          "channel": "Brand New Mixtapes",
+          "durationSeconds": 244.0,
+          "score": 0.96,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "2q91R8HA_DQ",
+          "title": "Earl Sweatshirt - Chum (Official Lyric Video - Explicit)",
+          "url": "https://www.youtube.com/watch?v=2q91R8HA_DQ",
+          "channel": "Earl Sweatshirt",
+          "durationSeconds": 175.0,
+          "score": 0.818,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "MDERVvqmu1A",
+          "title": "Chum",
+          "url": "https://www.youtube.com/watch?v=MDERVvqmu1A",
+          "channel": "Earl Sweatshirt",
+          "durationSeconds": 244.0,
+          "score": 0.44,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Dirty Projectors - There’s A Fire",
+      "query": "Dirty Projectors There’s A Fire",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "u-N2tpc5-YY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "u-N2tpc5-YY",
+          "title": "Dirty Projectors - There's a Fire",
+          "url": "https://www.youtube.com/watch?v=u-N2tpc5-YY",
+          "channel": "nonners21",
+          "durationSeconds": 181.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "xLoP1DKWrtY",
+          "title": "There's A Fire",
+          "url": "https://www.youtube.com/watch?v=xLoP1DKWrtY",
+          "channel": "Dirty Projectors",
+          "durationSeconds": 179.0,
+          "score": 0.527,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "wk5aqFUVhHw",
+          "title": "\"Theres a fire\"",
+          "url": "https://www.youtube.com/watch?v=wk5aqFUVhHw",
+          "channel": "Cora Smiskey",
+          "durationSeconds": 66.0,
+          "score": 0.351,
+          "signals": [
+            "song-title-near-exact-match"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "JT4I2PzEt3o",
+          "title": "Guarding The Baby",
+          "url": "https://www.youtube.com/watch?v=JT4I2PzEt3o",
+          "channel": "Dirty Projectors",
+          "durationSeconds": 161.0,
+          "score": 0.238,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "FGY5yKHMjng",
+          "title": "Dirty Projectors- Dark Eyes (Bob Dylan Cover)",
+          "url": "https://www.youtube.com/watch?v=FGY5yKHMjng",
+          "channel": "fakie",
+          "durationSeconds": 270.0,
+          "score": 0.135,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-cover-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Jamaican Queens - Kids Get Away",
+      "query": "Jamaican Queens Kids Get Away",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "jK1b94tZYHQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "jK1b94tZYHQ",
+          "title": "Jamaican Queens Kids Get Away",
+          "url": "https://www.youtube.com/watch?v=jK1b94tZYHQ",
+          "channel": "atimidmule",
+          "durationSeconds": 68.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "uoiOQTi9Qzw",
+          "title": "Jamaican Queens - Kids Get Away - 2013 Indie Rock 45",
+          "url": "https://www.youtube.com/watch?v=uoiOQTi9Qzw",
+          "channel": "Musicdawn 45's",
+          "durationSeconds": 220.0,
+          "score": 0.903,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "u8GZw07XoOQ",
+          "title": "Jamaican Queens - \"Kids Get Away\" (Official Video)",
+          "url": "https://www.youtube.com/watch?v=u8GZw07XoOQ",
+          "channel": "Noisey",
+          "durationSeconds": 260.0,
+          "score": 0.86,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vpdv58OrnVk",
+          "title": "Kids Get Away",
+          "url": "https://www.youtube.com/watch?v=vpdv58OrnVk",
+          "channel": "Jamaican Queens - Topic",
+          "durationSeconds": 232.0,
+          "score": 0.646,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "njRkmj9l4Z0",
+          "title": "Jamaican Queens - Water",
+          "url": "https://www.youtube.com/watch?v=njRkmj9l4Z0",
+          "channel": "jamaicanqueensband",
+          "durationSeconds": 260.0,
+          "score": 0.369,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "The Postal Service - A Tattered Line Of String",
+      "query": "The Postal Service A Tattered Line Of String",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "OIJaQhVoMZg",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "OIJaQhVoMZg",
+          "title": "The Postal Service - A Tattered Line of String",
+          "url": "https://www.youtube.com/watch?v=OIJaQhVoMZg",
+          "channel": "Sub Pop",
+          "durationSeconds": 188.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "K2xNj630NBU",
+          "title": "The Postal Service - A Tattered Line of String [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=K2xNj630NBU",
+          "channel": "Sub Pop",
+          "durationSeconds": 192.0,
+          "score": 0.903,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "njPVwPboTH4",
+          "title": "A Tattered Line of String - The Postal Service",
+          "url": "https://www.youtube.com/watch?v=njPVwPboTH4",
+          "channel": "dubarco essentials",
+          "durationSeconds": 189.0,
+          "score": 0.901,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "F6RaIOGYaQo",
+          "title": "The Postal Service - A Tattered Line Of String - Primavera Sound 2013 Barcelona - 23.05.13",
+          "url": "https://www.youtube.com/watch?v=F6RaIOGYaQo",
+          "channel": "The Front Row",
+          "durationSeconds": 181.0,
+          "score": 0.889,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Jwup3HCungU",
+          "title": "A Tattered Line of String (Live)",
+          "url": "https://www.youtube.com/watch?v=Jwup3HCungU",
+          "channel": "PostalServiceBand",
+          "durationSeconds": 180.0,
+          "score": 0.226,
+          "signals": [
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "Slowdance - Boyfriend",
+      "query": "Slowdance Boyfriend",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "s5_zBS6Av8g",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "s5_zBS6Av8g",
+          "title": "Slowdance - Boyfriend",
+          "url": "https://www.youtube.com/watch?v=s5_zBS6Av8g",
+          "channel": "Majestic Casual",
+          "durationSeconds": 222.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "EdJO4I3_A4E",
+          "title": "Slowdance \"Boyfriend\"",
+          "url": "https://www.youtube.com/watch?v=EdJO4I3_A4E",
+          "channel": "White Iris",
+          "durationSeconds": 222.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "siDpdDMKHsM",
+          "title": "Slowdance   Boyfriend",
+          "url": "https://www.youtube.com/watch?v=siDpdDMKHsM",
+          "channel": "Donpo73",
+          "durationSeconds": 222.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "nNEGkmiSzMg",
+          "title": "Slowdance - Boyfriend (sub esp.)",
+          "url": "https://www.youtube.com/watch?v=nNEGkmiSzMg",
+          "channel": "Magic trip",
+          "durationSeconds": 222.0,
+          "score": 0.938,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "8rRHlKNL2PE",
+          "title": "Slowdance // Boyfriend // Moe's // 10.11.12",
+          "url": "https://www.youtube.com/watch?v=8rRHlKNL2PE",
+          "channel": "PieHole2000",
+          "durationSeconds": 223.0,
+          "score": 0.89,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Weeknight - Devil",
+      "query": "Weeknight Devil",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "96PKF11qUAs",
+        "confidenceScore": 0.61,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "96PKF11qUAs",
+          "title": "Devil",
+          "url": "https://www.youtube.com/watch?v=96PKF11qUAs",
+          "channel": "Weeknight - Topic",
+          "durationSeconds": 241.0,
+          "score": 0.61,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "zcvs0ptB7VQ",
+          "title": "Devil",
+          "url": "https://www.youtube.com/watch?v=zcvs0ptB7VQ",
+          "channel": "Weeknight - Topic",
+          "durationSeconds": 241.0,
+          "score": 0.61,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "hZ_x5HhFLpE",
+          "title": "Weekend Update: The Devil on Penn State - SNL",
+          "url": "https://www.youtube.com/watch?v=hZ_x5HhFLpE",
+          "channel": "Saturday Night Live",
+          "durationSeconds": 260.0,
+          "score": 0.245,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "DnIfCkB5fj4",
+          "title": "Weekend Update: The Devil on His Latest Accomplishments - SNL",
+          "url": "https://www.youtube.com/watch?v=DnIfCkB5fj4",
+          "channel": "Saturday Night Live",
+          "durationSeconds": 279.0,
+          "score": 0.207,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "mFnJOn2eQWk",
+          "title": "Weekend Update: The Devil on the Death of Osama bin Laden - SNL",
+          "url": "https://www.youtube.com/watch?v=mFnJOn2eQWk",
+          "channel": "Saturday Night Live",
+          "durationSeconds": 246.0,
+          "score": 0.204,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "London Grammar - Hey Now",
+      "query": "London Grammar Hey Now",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "nMEHJPuggHQ",
+        "confidenceScore": 0.901,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "nMEHJPuggHQ",
+          "title": "London Grammar - Hey Now [Official Video]",
+          "url": "https://www.youtube.com/watch?v=nMEHJPuggHQ",
+          "channel": "London Grammar",
+          "durationSeconds": 212.0,
+          "score": 0.901,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "hzo1_maqV_w",
+          "title": "London Grammar - Hey Now [Arty remix]",
+          "url": "https://www.youtube.com/watch?v=hzo1_maqV_w",
+          "channel": "London Grammar",
+          "durationSeconds": 356.0,
+          "score": 0.863,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "ZwI-Bm2TTio",
+          "title": "London Grammar - Hey Now (JOBE edit)",
+          "url": "https://www.youtube.com/watch?v=ZwI-Bm2TTio",
+          "channel": "senea lupascu",
+          "durationSeconds": 489.0,
+          "score": 0.839,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-edit-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "on1QEcz1sTI",
+          "title": "London Grammar - Hey Now (Radio 1's Big Weekend 2014)",
+          "url": "https://www.youtube.com/watch?v=on1QEcz1sTI",
+          "channel": "BBC Radio 1",
+          "durationSeconds": 412.0,
+          "score": 0.831,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "QQcj4A_DlbA",
+          "title": "London Grammar - Hey Now (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=QQcj4A_DlbA",
+          "channel": "KEXP",
+          "durationSeconds": 254.0,
+          "score": 0.672,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "AlunaGeorge - Attracting Flies",
+      "query": "AlunaGeorge Attracting Flies",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "7d_HD89ZlJE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "7d_HD89ZlJE",
+          "title": "AlunaGeorge - Attracting Flies [Parental Advisory]",
+          "url": "https://www.youtube.com/watch?v=7d_HD89ZlJE",
+          "channel": "AlunaGeorge",
+          "durationSeconds": 207.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "lClKPCsYbF8",
+          "title": "AlunaGeorge - Attracting Flies (Audio)",
+          "url": "https://www.youtube.com/watch?v=lClKPCsYbF8",
+          "channel": "AlunaGeorge",
+          "durationSeconds": 190.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Gzu9g6ohwhY",
+          "title": "AlunaGeorge - Attracting flies *lyrics*",
+          "url": "https://www.youtube.com/watch?v=Gzu9g6ohwhY",
+          "channel": "Ivo Beijen",
+          "durationSeconds": 194.0,
+          "score": 0.9,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "eZrxJtALjIY",
+          "title": "AlunaGeorge Perform \"Attracting Flies\" In Billboard Studio",
+          "url": "https://www.youtube.com/watch?v=eZrxJtALjIY",
+          "channel": "Billboard",
+          "durationSeconds": 202.0,
+          "score": 0.88,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ixB159-NtmQ",
+          "title": "AlunaGeorge - Attracting Flies (Live at Amoeba)",
+          "url": "https://www.youtube.com/watch?v=ixB159-NtmQ",
+          "channel": "Amoeba",
+          "durationSeconds": 200.0,
+          "score": 0.714,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 14,
+    "resolvedTracks": 14,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Thirtysecond",
+      "embedUrl": "https://www.youtube.com/embed/dkHD4N-2Pd4?playlist=_acBVglVBcY,sccDKzcXHjk,J3aExKOipoM,yteXdnQQSUc,3aNRCoOsWb8,4XgDLfx9R9s,u-N2tpc5-YY,jK1b94tZYHQ,OIJaQhVoMZg,s5_zBS6Av8g,96PKF11qUAs,nMEHJPuggHQ,7d_HD89ZlJE",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=dkHD4N-2Pd4,_acBVglVBcY,sccDKzcXHjk,J3aExKOipoM,yteXdnQQSUc,3aNRCoOsWb8,4XgDLfx9R9s,u-N2tpc5-YY,jK1b94tZYHQ,OIJaQhVoMZg,s5_zBS6Av8g,96PKF11qUAs,nMEHJPuggHQ,7d_HD89ZlJE",
+      "videoIds": [
+        "dkHD4N-2Pd4",
+        "_acBVglVBcY",
+        "sccDKzcXHjk",
+        "J3aExKOipoM",
+        "yteXdnQQSUc",
+        "3aNRCoOsWb8",
+        "4XgDLfx9R9s",
+        "u-N2tpc5-YY",
+        "jK1b94tZYHQ",
+        "OIJaQhVoMZg",
+        "s5_zBS6Av8g",
+        "96PKF11qUAs",
+        "nMEHJPuggHQ",
+        "7d_HD89ZlJE"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:21:15Z"
+    }
+  }
+}

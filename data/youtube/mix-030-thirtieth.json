@@ -1,0 +1,1793 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-030-thirtieth",
+  "updatedAt": "2026-04-08T21:22:04Z",
+  "sourceMixPath": "data/imported/mixes/mix-030-thirtieth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Toro y Moi - So Many Details",
+      "query": "Toro y Moi So Many Details",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "O0_ardwzTrA",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "O0_ardwzTrA",
+          "title": "Toro Y Moi \"So Many Details\"",
+          "url": "https://www.youtube.com/watch?v=O0_ardwzTrA",
+          "channel": "Carpark Records",
+          "durationSeconds": 284.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "L837u3a3v7U",
+          "title": "Toro Y Moi | So Many Details | Moog Sound Lab",
+          "url": "https://www.youtube.com/watch?v=L837u3a3v7U",
+          "channel": "Moog Music",
+          "durationSeconds": 248.0,
+          "score": 0.929,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "QuHiUjosoYE",
+          "title": "So Many Details-Toro y Moi",
+          "url": "https://www.youtube.com/watch?v=QuHiUjosoYE",
+          "channel": "KOLTON",
+          "durationSeconds": 287.0,
+          "score": 0.905,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "hiX5_58ryfE",
+          "title": "Toro Y Moi - So Many Details (Remix) (feat. Hodgy Beats)",
+          "url": "https://www.youtube.com/watch?v=hiX5_58ryfE",
+          "channel": "QCW",
+          "durationSeconds": 253.0,
+          "score": 0.772,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Ku4d4G2lOf8",
+          "title": "So Many Details",
+          "url": "https://www.youtube.com/watch?v=Ku4d4G2lOf8",
+          "channel": "Toro y Moi",
+          "durationSeconds": 286.0,
+          "score": 0.56,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Halina Larsson - Fires and French Horns",
+      "query": "Halina Larsson Fires and French Horns",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "keU3it7hZlc",
+        "confidenceScore": 0.828,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "keU3it7hZlc",
+          "title": "Halina Larsson - Fires And French Horns (Alf Tumble Remix)",
+          "url": "https://www.youtube.com/watch?v=keU3it7hZlc",
+          "channel": "ReddishCat",
+          "durationSeconds": 424.0,
+          "score": 0.828,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "q9oJFawYjnI",
+          "title": "Fires and French Horns - Halina Larsson (Alf - Tumble Remix)",
+          "url": "https://www.youtube.com/watch?v=q9oJFawYjnI",
+          "channel": "La box Design",
+          "durationSeconds": 424.0,
+          "score": 0.729,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PEaobqBOO7s",
+          "title": "Fires and French Horns",
+          "url": "https://www.youtube.com/watch?v=PEaobqBOO7s",
+          "channel": "Halina Larsson - Topic",
+          "durationSeconds": 206.0,
+          "score": 0.684,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "c3yC7YTu08M",
+          "title": "Halina Larsson - Fires & French Horns (Niva Remix) [HD] | Free Download",
+          "url": "https://www.youtube.com/watch?v=c3yC7YTu08M",
+          "channel": "IncredibleDelicious",
+          "durationSeconds": 219.0,
+          "score": 0.56,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "sD3xKxCd19U",
+          "title": "Halina Larsson and Band",
+          "url": "https://www.youtube.com/watch?v=sD3xKxCd19U",
+          "channel": "HalinaLarssonMusic",
+          "durationSeconds": 227.0,
+          "score": 0.372,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Twin Shadow - Five Seconds",
+      "query": "Twin Shadow Five Seconds",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "HiC9XNQSxFQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "HiC9XNQSxFQ",
+          "title": "Twin Shadow - Five Seconds",
+          "url": "https://www.youtube.com/watch?v=HiC9XNQSxFQ",
+          "channel": "Twin Shadow",
+          "durationSeconds": 338.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "5fvqyvJB_5g",
+          "title": "Twin Shadow - Five Seconds",
+          "url": "https://www.youtube.com/watch?v=5fvqyvJB_5g",
+          "channel": "La Oroya Obscure",
+          "durationSeconds": 262.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "5z0iM3PXaRQ",
+          "title": "Twin Shadow - Five Seconds",
+          "url": "https://www.youtube.com/watch?v=5z0iM3PXaRQ",
+          "channel": "birpjune2012",
+          "durationSeconds": 261.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "gSlYF8J4YME",
+          "title": "Twin Shadow - \"Five Seconds\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=gSlYF8J4YME",
+          "channel": "thealternateside907",
+          "durationSeconds": 272.0,
+          "score": 0.704,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "srqDssmJZio",
+          "title": "Five Seconds",
+          "url": "https://www.youtube.com/watch?v=srqDssmJZio",
+          "channel": "Twin Shadow",
+          "durationSeconds": 257.0,
+          "score": 0.54,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Sun Kil Moon - Sunshine in Chicago",
+      "query": "Sun Kil Moon Sunshine in Chicago",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "rqV9ilyiWK4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "rqV9ilyiWK4",
+          "title": "Sun Kil Moon-Sunshine In Chicago",
+          "url": "https://www.youtube.com/watch?v=rqV9ilyiWK4",
+          "channel": "IsThisMusicchannel",
+          "durationSeconds": 154.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "BLpX1yKYatM",
+          "title": "Sun Kil Moon \"Sunshine in Chicago\" (Mark Kozelek)",
+          "url": "https://www.youtube.com/watch?v=BLpX1yKYatM",
+          "channel": "Jim Neill",
+          "durationSeconds": 154.0,
+          "score": 0.956,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "BZ4PVD6dPB4",
+          "title": "\"Sunshine in Chicago\" - Guitar Tutorial (Sun Kil Moon)",
+          "url": "https://www.youtube.com/watch?v=BZ4PVD6dPB4",
+          "channel": "Patient Hands",
+          "durationSeconds": 502.0,
+          "score": 0.845,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Wz1168YzcAY",
+          "title": "Sunshine in Chicago",
+          "url": "https://www.youtube.com/watch?v=Wz1168YzcAY",
+          "channel": "Sun Kil Moon - Topic",
+          "durationSeconds": 155.0,
+          "score": 0.684,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "RassQrU1wvY",
+          "title": "Mark Kozelek - Sunshine in Chicago Live in Paris 2012",
+          "url": "https://www.youtube.com/watch?v=RassQrU1wvY",
+          "channel": "elephantbaci",
+          "durationSeconds": 184.0,
+          "score": 0.124,
+          "signals": [
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Dust Covered Carpet - Fragile Soul Heavy Heart",
+      "query": "Dust Covered Carpet Fragile Soul Heavy Heart",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "juwB1tjKIlQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "juwB1tjKIlQ",
+          "title": "DUST COVERED CARPET - Fragile Soul / Heavy Heart",
+          "url": "https://www.youtube.com/watch?v=juwB1tjKIlQ",
+          "channel": "dustcoveredcarpet",
+          "durationSeconds": 264.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "sPPdocn0Emk",
+          "title": "Fragile Soul / Heavy Heart - by Dust Covered Carpet",
+          "url": "https://www.youtube.com/watch?v=sPPdocn0Emk",
+          "channel": "Dominik Hartl",
+          "durationSeconds": 264.0,
+          "score": 0.88,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Z4BT78ax4d0",
+          "title": "dust covered carpet - fragile soul / heavy heart live",
+          "url": "https://www.youtube.com/watch?v=Z4BT78ax4d0",
+          "channel": "aruvid",
+          "durationSeconds": 237.0,
+          "score": 0.782,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "YhvSY2vPRz0",
+          "title": "Dust Covered Carpet: Fragile Soul / Heavy Heart live @ fluc",
+          "url": "https://www.youtube.com/watch?v=YhvSY2vPRz0",
+          "channel": "everydayisnotsilent",
+          "durationSeconds": 242.0,
+          "score": 0.76,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Eilxha_7GmM",
+          "title": "Fragile Soul / Heavy Heart",
+          "url": "https://www.youtube.com/watch?v=Eilxha_7GmM",
+          "channel": "Dust Covered Carpet - Topic",
+          "durationSeconds": 261.0,
+          "score": 0.672,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Brythoniaid Male Voice Choir - Blue Monday (New World Order cover)",
+      "query": "Brythoniaid Male Voice Choir Blue Monday (New World Order cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "wLr4WM9Io18",
+        "confidenceScore": 0.303,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "wLr4WM9Io18",
+          "title": "Festival No.6 presents the Brythoniaid Male Voice Choir - 'Go West'",
+          "url": "https://www.youtube.com/watch?v=wLr4WM9Io18",
+          "channel": "festivalnumbersix",
+          "durationSeconds": 348.0,
+          "score": 0.303,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "eVxM6cYwL30",
+          "title": "Festival No.6 2013 presents The Brythoniaid Male Voice Choir - 'Chic - Good Times'",
+          "url": "https://www.youtube.com/watch?v=eVxM6cYwL30",
+          "channel": "festivalnumbersix",
+          "durationSeconds": 286.0,
+          "score": 0.302,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "hRDv2mGp80Y",
+          "title": "Swan Lee Blue Monday",
+          "url": "https://www.youtube.com/watch?v=hRDv2mGp80Y",
+          "channel": "Peter Wasper",
+          "durationSeconds": 302.0,
+          "score": 0.199,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "d19RHHYTxe0",
+          "title": "Brythoniaid at Festival No6",
+          "url": "https://www.youtube.com/watch?v=d19RHHYTxe0",
+          "channel": "Dilys Parker",
+          "durationSeconds": 290.0,
+          "score": 0.163,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "QF7K1X_HArY",
+          "title": "Brythoniaid",
+          "url": "https://www.youtube.com/watch?v=QF7K1X_HArY",
+          "channel": "Phillip Jones",
+          "durationSeconds": 240.0,
+          "score": 0.123,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Mike Landry - Heartbeat",
+      "query": "Mike Landry Heartbeat",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "KX_s5w0Lkh4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "KX_s5w0Lkh4",
+          "title": "Mike Landry - Heartbeat",
+          "url": "https://www.youtube.com/watch?v=KX_s5w0Lkh4",
+          "channel": "chillmoretime",
+          "durationSeconds": 200.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "cu6ElVlzxfA",
+          "title": "Mike Landry - Heartbeat",
+          "url": "https://www.youtube.com/watch?v=cu6ElVlzxfA",
+          "channel": "tondemas",
+          "durationSeconds": 199.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "fe4gcSzIi8s",
+          "title": "Mike Landry - Heartbeat",
+          "url": "https://www.youtube.com/watch?v=fe4gcSzIi8s",
+          "channel": "birpjune2012",
+          "durationSeconds": 199.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Rty68MRCxlI",
+          "title": "MIKE LANDRY - HEARTBEAT (Quarks Allein VTE MIX)",
+          "url": "https://www.youtube.com/watch?v=Rty68MRCxlI",
+          "channel": "Vicente Luján",
+          "durationSeconds": 398.0,
+          "score": 0.859,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "4NgZthSSqHc",
+          "title": "Just Five More Minutes: \"Why Did God Give Us Free Will?\"",
+          "url": "https://www.youtube.com/watch?v=4NgZthSSqHc",
+          "channel": "Mike Landry",
+          "durationSeconds": 329.0,
+          "score": 0.145,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Françoise Hardy - Le Temps De L'amour",
+      "query": "Françoise Hardy Le Temps De L'amour",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ITYVXUvMtHI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ITYVXUvMtHI",
+          "title": "Françoise Hardy - Le Temps de l'Amour",
+          "url": "https://www.youtube.com/watch?v=ITYVXUvMtHI",
+          "channel": "MsTifultova",
+          "durationSeconds": 146.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "F9we8i2Lj5w",
+          "title": "Françoise Hardy \"Le temps de l'amour\" | Archive INA",
+          "url": "https://www.youtube.com/watch?v=F9we8i2Lj5w",
+          "channel": "Ina Chansons",
+          "durationSeconds": 152.0,
+          "score": 0.96,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "F8CSSKBQQbI",
+          "title": "Françoise Hardy - Le temps de l'amour (Soirée rose pour jours gris - Diffusion 24/11/1962)",
+          "url": "https://www.youtube.com/watch?v=F8CSSKBQQbI",
+          "channel": "Francoise Hardy",
+          "durationSeconds": 143.0,
+          "score": 0.843,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "adyT-z0MxGs",
+          "title": "Le Temps De L'Amour (Remastered)",
+          "url": "https://www.youtube.com/watch?v=adyT-z0MxGs",
+          "channel": "Francoise Hardy",
+          "durationSeconds": 145.0,
+          "score": 0.395,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "wlFkpgRe74s",
+          "title": "Le temps de l'amour (Original Soundtrack Theme from \"Moonrise Kingdom\")",
+          "url": "https://www.youtube.com/watch?v=wlFkpgRe74s",
+          "channel": "Release - Topic",
+          "durationSeconds": 147.0,
+          "score": 0.391,
+          "signals": [
+            "song-title-in-title",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "Said The Whale - Heavy Ceiling",
+      "query": "Said The Whale Heavy Ceiling",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "zD311Jt7nXg",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "zD311Jt7nXg",
+          "title": "Said The Whale - \"Heavy Ceiling\"",
+          "url": "https://www.youtube.com/watch?v=zD311Jt7nXg",
+          "channel": "Said The Whale",
+          "durationSeconds": 198.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "yilTilw-uhc",
+          "title": "Said The Whale - Heavy Ceiling (HQ Audio)",
+          "url": "https://www.youtube.com/watch?v=yilTilw-uhc",
+          "channel": "Sonicfieldscom4",
+          "durationSeconds": 186.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "B6j3-JOymso",
+          "title": "Said the Whale - Heavy Ceiling",
+          "url": "https://www.youtube.com/watch?v=B6j3-JOymso",
+          "channel": "coralrosebud",
+          "durationSeconds": 177.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "SWavHR_h6Eo",
+          "title": "Said the Whale Heavy Ceiling Lyrics",
+          "url": "https://www.youtube.com/watch?v=SWavHR_h6Eo",
+          "channel": "porcelain",
+          "durationSeconds": 199.0,
+          "score": 0.884,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "jvlFp4-xeBc",
+          "title": "Heavy Ceiling - Said The Whale",
+          "url": "https://www.youtube.com/watch?v=jvlFp4-xeBc",
+          "channel": "MademoiselleHipster",
+          "durationSeconds": 185.0,
+          "score": 0.864,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Friends - Mind Control",
+      "query": "Friends Mind Control",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "I90FkC6BMbw",
+        "confidenceScore": 0.85,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "I90FkC6BMbw",
+          "title": "Friends - \"Mind Control\" (Official Video)",
+          "url": "https://www.youtube.com/watch?v=I90FkC6BMbw",
+          "channel": "Noisey",
+          "durationSeconds": 259.0,
+          "score": 0.85,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "86edQauL7J0",
+          "title": "Heroes when ANY of their allies are under mind control.",
+          "url": "https://www.youtube.com/watch?v=86edQauL7J0",
+          "channel": "CalebCity",
+          "durationSeconds": 130.0,
+          "score": 0.3,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "QawqD8pr8P8",
+          "title": "#ClassicCartoon Super Friends | The Brain Machine Attacks Wonder Woman | @dckids",
+          "url": "https://www.youtube.com/watch?v=QawqD8pr8P8",
+          "channel": "DC Kids",
+          "durationSeconds": 252.0,
+          "score": 0.236,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "FHJNiBFLxzQ",
+          "title": "BEST FRIEND CONTROLS MY DAY!? (24 HOURS CHALLENGE! *LANKYBOX FUNNY MOMENTS*)",
+          "url": "https://www.youtube.com/watch?v=FHJNiBFLxzQ",
+          "channel": "LankyBox",
+          "durationSeconds": 1291.0,
+          "score": 0.143,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "t8yLGmc3NBQ",
+          "title": "I BRAINWASHED my Rival in Minecraft!",
+          "url": "https://www.youtube.com/watch?v=t8yLGmc3NBQ",
+          "channel": "Friend",
+          "durationSeconds": 1011.0,
+          "score": 0.136,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "A.C. Newman - Encyclopedia of Classic Takedowns",
+      "query": "A.C. Newman Encyclopedia of Classic Takedowns",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "JURJoApAOV4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "JURJoApAOV4",
+          "title": "A.C. Newman - \"Encyclopedia of Classic Takedowns\"",
+          "url": "https://www.youtube.com/watch?v=JURJoApAOV4",
+          "channel": "Matador Records",
+          "durationSeconds": 240.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "K9d8tFco45A",
+          "title": "A.C. Newman - Encyclopedia Of Classic Takedowns",
+          "url": "https://www.youtube.com/watch?v=K9d8tFco45A",
+          "channel": "LastGangRadio",
+          "durationSeconds": 240.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "pNtF-uFrUyI",
+          "title": "A.C. Newman - Encyclopedia Of Classic Takedowns",
+          "url": "https://www.youtube.com/watch?v=pNtF-uFrUyI",
+          "channel": "IRPSeptember2012",
+          "durationSeconds": 239.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "5QOzPhi7M8U",
+          "title": "A.C. Newman | Encyclopedia Of Classic Takedowns | live Echoplex, November 13, 2012",
+          "url": "https://www.youtube.com/watch?v=5QOzPhi7M8U",
+          "channel": "LiveShowEd Video Archive",
+          "durationSeconds": 245.0,
+          "score": 0.712,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "dRyngNzT89A",
+          "title": "AC Newman \"Encyclopedia Of Classic Takedowns\"",
+          "url": "https://www.youtube.com/watch?v=dRyngNzT89A",
+          "channel": "Dan Rustad",
+          "durationSeconds": 197.0,
+          "score": 0.533,
+          "signals": [
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Death Grips - @deathgripz",
+      "query": "Death Grips @deathgripz",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "e9FM-FkDeWs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "e9FM-FkDeWs",
+          "title": "Death Grips - @DeathGripz",
+          "url": "https://www.youtube.com/watch?v=e9FM-FkDeWs",
+          "channel": "bravetherainbow",
+          "durationSeconds": 265.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "xrsSVIKOB8I",
+          "title": "Death Grips - @deathgripz (Full EP)",
+          "url": "https://www.youtube.com/watch?v=xrsSVIKOB8I",
+          "channel": "RMusic",
+          "durationSeconds": 402.0,
+          "score": 0.944,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "56SmS_rm1zA",
+          "title": "Death Grips - @DEATHGRIPZ [Adult Swim Singles Series]",
+          "url": "https://www.youtube.com/watch?v=56SmS_rm1zA",
+          "channel": "noname",
+          "durationSeconds": 266.0,
+          "score": 0.851,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "57-ZPo66zYM",
+          "title": "Death Grips - Death Grips (Next Grips)",
+          "url": "https://www.youtube.com/watch?v=57-ZPo66zYM",
+          "channel": "Death Grips",
+          "durationSeconds": 262.0,
+          "score": 0.479,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "pxid-di6PQE",
+          "title": "Scene from Ryan Trecartin's \"I-Be AREA\" (sampled by Death Grips)",
+          "url": "https://www.youtube.com/watch?v=pxid-di6PQE",
+          "channel": "bravetherainbow",
+          "durationSeconds": 24.0,
+          "score": 0.227,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Lace Curtains - Bedroom Honesty",
+      "query": "Lace Curtains Bedroom Honesty",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Uca1_64Txp8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Uca1_64Txp8",
+          "title": "Lace Curtains - Bedroom Honesty",
+          "url": "https://www.youtube.com/watch?v=Uca1_64Txp8",
+          "channel": "Mammoth Ness",
+          "durationSeconds": 260.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "cCTWOttfAVQ",
+          "title": "Bedroom Honesty",
+          "url": "https://www.youtube.com/watch?v=cCTWOttfAVQ",
+          "channel": "Lace Curtains - Topic",
+          "durationSeconds": 260.0,
+          "score": 0.665,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "sQYouGzXzCo",
+          "title": "bedroom honesty",
+          "url": "https://www.youtube.com/watch?v=sQYouGzXzCo",
+          "channel": "rose coomers",
+          "durationSeconds": 262.0,
+          "score": 0.465,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "82IdA2M3Bfk",
+          "title": "Be Good",
+          "url": "https://www.youtube.com/watch?v=82IdA2M3Bfk",
+          "channel": "Lace Curtains - Topic",
+          "durationSeconds": 204.0,
+          "score": 0.332,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "DMobQVVw36s",
+          "title": "High Fantasy",
+          "url": "https://www.youtube.com/watch?v=DMobQVVw36s",
+          "channel": "Lace Curtains - Topic",
+          "durationSeconds": 193.0,
+          "score": 0.327,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Jessie Ware - Night Light (Wild Beasts remix)",
+      "query": "Jessie Ware Night Light (Wild Beasts remix)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "o2G1RvKbmSI",
+        "confidenceScore": 0.468,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "o2G1RvKbmSI",
+          "title": "Jessie Ware - Night Light (Perseus Remix)",
+          "url": "https://www.youtube.com/watch?v=o2G1RvKbmSI",
+          "channel": "gasf1",
+          "durationSeconds": 212.0,
+          "score": 0.468,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "zWA-gDtM-54",
+          "title": "Jessie Ware - Night Light (Perseus Remix)",
+          "url": "https://www.youtube.com/watch?v=zWA-gDtM-54",
+          "channel": "amnesialondon",
+          "durationSeconds": 213.0,
+          "score": 0.468,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "oH2SB6pdlII",
+          "title": "Jessie Ware - Night Light (Perseus Remix)",
+          "url": "https://www.youtube.com/watch?v=oH2SB6pdlII",
+          "channel": "Fhinq Music",
+          "durationSeconds": 213.0,
+          "score": 0.468,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "XRMP9pMix54",
+          "title": "Jessie Ware - Night Light (Perseus Remix)",
+          "url": "https://www.youtube.com/watch?v=XRMP9pMix54",
+          "channel": "Encore Music (Encore.)",
+          "durationSeconds": 214.0,
+          "score": 0.468,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "rtIiAI3zFkI",
+          "title": "Jessie Ware - Night Light (Joe Goddard Remix)",
+          "url": "https://www.youtube.com/watch?v=rtIiAI3zFkI",
+          "channel": "RECtunesroyal",
+          "durationSeconds": 337.0,
+          "score": 0.437,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 15,
+      "displayText": "Empress Of - Don’t Tell Me",
+      "query": "Empress Of Don’t Tell Me",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "WrHq94AnAqw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "WrHq94AnAqw",
+          "title": "Empress of - Don't tell me",
+          "url": "https://www.youtube.com/watch?v=WrHq94AnAqw",
+          "channel": "opiomelanocortin",
+          "durationSeconds": 198.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "hR-Wl4wqzB8",
+          "title": "Empress of - Don't Tell Me",
+          "url": "https://www.youtube.com/watch?v=hR-Wl4wqzB8",
+          "channel": "Yours Truly",
+          "durationSeconds": 184.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "CVk-jFRPoJg",
+          "title": "Empress Of- \"Don't Tell Me\" (Music Video)",
+          "url": "https://www.youtube.com/watch?v=CVk-jFRPoJg",
+          "channel": "Symbol Systems",
+          "durationSeconds": 196.0,
+          "score": 0.836,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "MyeRHO9QiMs",
+          "title": "Don't Tell Me",
+          "url": "https://www.youtube.com/watch?v=MyeRHO9QiMs",
+          "channel": "Empress Of",
+          "durationSeconds": 198.0,
+          "score": 0.551,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "JCsQeKhrLMM",
+          "title": "Snow Patrol - Empress (Band Version)",
+          "url": "https://www.youtube.com/watch?v=JCsQeKhrLMM",
+          "channel": "Snow Patrol",
+          "durationSeconds": 273.0,
+          "score": 0.142,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 16,
+      "displayText": "Nicole Miglis - Stay Small",
+      "query": "Nicole Miglis Stay Small",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "L8ny5Olu9d0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "L8ny5Olu9d0",
+          "title": "Nicole Miglis - Stay Small",
+          "url": "https://www.youtube.com/watch?v=L8ny5Olu9d0",
+          "channel": "cloudcastlelake1",
+          "durationSeconds": 203.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ABnDyrCjNCM",
+          "title": "Nicole Miglis - Stay Small",
+          "url": "https://www.youtube.com/watch?v=ABnDyrCjNCM",
+          "channel": "cool music for cool people",
+          "durationSeconds": 239.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "rXlI7Ic_hNM",
+          "title": "Stay small - Nicole Miglis",
+          "url": "https://www.youtube.com/watch?v=rXlI7Ic_hNM",
+          "channel": "Jelena0607",
+          "durationSeconds": 239.0,
+          "score": 0.868,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "yVl2hwqIK5U",
+          "title": "Nicole Miglis - Lark",
+          "url": "https://www.youtube.com/watch?v=yVl2hwqIK5U",
+          "channel": "cool music for cool people",
+          "durationSeconds": 302.0,
+          "score": 0.34,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "YRmUcf5Hagg",
+          "title": "Nicole Miglis (Hundred Waters) - “Emotional Intelligence + Turning Weaknesses Into Strengths” AD 92",
+          "url": "https://www.youtube.com/watch?v=YRmUcf5Hagg",
+          "channel": "Artist Decoded",
+          "durationSeconds": 3370.0,
+          "score": 0.208,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 17,
+      "displayText": "Dean Blunt - Track 2 (feat. Inga Copeland)",
+      "query": "Dean Blunt Track 2 (feat. Inga Copeland)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "MMrUdWCNSB8",
+        "confidenceScore": 0.837,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "MMrUdWCNSB8",
+          "title": "Dean Blunt - Track 2 Feat Inga Copeland. (Whitesquare Remix)",
+          "url": "https://www.youtube.com/watch?v=MMrUdWCNSB8",
+          "channel": "Whitesquare",
+          "durationSeconds": 465.0,
+          "score": 0.837,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "DSL0fczz6OA",
+          "title": "Dean Blunt & Inga Copeland - 2",
+          "url": "https://www.youtube.com/watch?v=DSL0fczz6OA",
+          "channel": "Bixby Boss",
+          "durationSeconds": 136.0,
+          "score": 0.446,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "9QomorZRrB8",
+          "title": "Dean Blunt & Inga Copeland - Track 02",
+          "url": "https://www.youtube.com/watch?v=9QomorZRrB8",
+          "channel": "Jonny Parker",
+          "durationSeconds": 135.0,
+          "score": 0.409,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "iJ30RG1iOJI",
+          "title": "2",
+          "url": "https://www.youtube.com/watch?v=iJ30RG1iOJI",
+          "channel": "Dean Blunt - Topic",
+          "durationSeconds": 130.0,
+          "score": 0.229,
+          "signals": [
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "3iWBbkpz53s",
+          "title": "2",
+          "url": "https://www.youtube.com/watch?v=3iWBbkpz53s",
+          "channel": "Release - Topic",
+          "durationSeconds": 160.0,
+          "score": 0.149,
+          "signals": [
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 18,
+      "displayText": "The Stills - Don’t Talk Down",
+      "query": "The Stills Don’t Talk Down",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "fvZApriCun4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "fvZApriCun4",
+          "title": "The Stills - Don't Talk Down",
+          "url": "https://www.youtube.com/watch?v=fvZApriCun4",
+          "channel": "Arts & Crafts",
+          "durationSeconds": 249.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "6dkbRs8zQts",
+          "title": "The Stills - Don´t Talk Down",
+          "url": "https://www.youtube.com/watch?v=6dkbRs8zQts",
+          "channel": "AdamTensor",
+          "durationSeconds": 249.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "i8CRfeDslnw",
+          "title": "The Stills - Don't Talk Down",
+          "url": "https://www.youtube.com/watch?v=i8CRfeDslnw",
+          "channel": "starsandspit",
+          "durationSeconds": 248.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Uaxp3f1kAlA",
+          "title": "Don't Talk Down",
+          "url": "https://www.youtube.com/watch?v=Uaxp3f1kAlA",
+          "channel": "The Stills - Topic",
+          "durationSeconds": 253.0,
+          "score": 0.68,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "1aLsH5fdGrw",
+          "title": "The STILLS - Don't Talk Down ( LIVE @ sound of music / burlington )",
+          "url": "https://www.youtube.com/watch?v=1aLsH5fdGrw",
+          "channel": "Sarah Downey",
+          "durationSeconds": 196.0,
+          "score": 0.643,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 19,
+      "displayText": "Crystal Castles - Wrath of God",
+      "query": "Crystal Castles Wrath of God",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "o6ugOBCZAVk",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "o6ugOBCZAVk",
+          "title": "Crystal Castles \"WRATH OF GOD\" Official",
+          "url": "https://www.youtube.com/watch?v=o6ugOBCZAVk",
+          "channel": "Crystal Castles official",
+          "durationSeconds": 188.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "m_GeZSX-M3o",
+          "title": "Crystal Castles - Wrath Of God",
+          "url": "https://www.youtube.com/watch?v=m_GeZSX-M3o",
+          "channel": "LastGangRadio",
+          "durationSeconds": 187.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "p8iogVqrCVI",
+          "title": "Crystal Castles ''WRATH OF GOD''",
+          "url": "https://www.youtube.com/watch?v=p8iogVqrCVI",
+          "channel": "Ivan Grbin (Youtube)",
+          "durationSeconds": 188.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "MXRR9rEIC4U",
+          "title": "Crystal Castles - Wrath Of God (Lollapalooza 2017)",
+          "url": "https://www.youtube.com/watch?v=MXRR9rEIC4U",
+          "channel": "katheter",
+          "durationSeconds": 191.0,
+          "score": 0.902,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "UGWne9d8Wgs",
+          "title": "Wrath of God ★ SLOWED DOWN HALF ★ Crystal Castles",
+          "url": "https://www.youtube.com/watch?v=UGWne9d8Wgs",
+          "channel": "JakeLeeProductions",
+          "durationSeconds": 250.0,
+          "score": 0.799,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 20,
+      "displayText": "Atlas Genius - Islands (The xx cover)",
+      "query": "Atlas Genius Islands (The xx cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "SUy-hTG5oR4",
+        "confidenceScore": 0.98,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "SUy-hTG5oR4",
+          "title": "Atlas Genius - Islands (The XX Cover) [Acoustic]",
+          "url": "https://www.youtube.com/watch?v=SUy-hTG5oR4",
+          "channel": "Atlas Genius",
+          "durationSeconds": 172.0,
+          "score": 0.98,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "sHOCjxTfMck",
+          "title": "Calm Attack - Islands (The XX Cover) (Atlas Genius Version)",
+          "url": "https://www.youtube.com/watch?v=sHOCjxTfMck",
+          "channel": "CALM ATTACK MUSIC",
+          "durationSeconds": 160.0,
+          "score": 0.866,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "HfxmpkjGOgg",
+          "title": "Shakira - Islands (The XX cover)",
+          "url": "https://www.youtube.com/watch?v=HfxmpkjGOgg",
+          "channel": "BlogWhatsthatsound",
+          "durationSeconds": 187.0,
+          "score": 0.456,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "GtRzvFoRb2k",
+          "title": "Islands - (The xx cover) Rabbit on the Moon feat, Mateusz Konieczny",
+          "url": "https://www.youtube.com/watch?v=GtRzvFoRb2k",
+          "channel": "Rabbit on the Moon",
+          "durationSeconds": 286.0,
+          "score": 0.294,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "8DKRjMj7yeg",
+          "title": "The XX Islands Cover w/Elizabeth Postol and Michelle Choi",
+          "url": "https://www.youtube.com/watch?v=8DKRjMj7yeg",
+          "channel": "Jaron Davis",
+          "durationSeconds": 181.0,
+          "score": 0.167,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 21,
+      "displayText": "Black City Lights - Rivers",
+      "query": "Black City Lights Rivers",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "XAexi790Mws",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "XAexi790Mws",
+          "title": "Black City Lights - Rivers (Official)",
+          "url": "https://www.youtube.com/watch?v=XAexi790Mws",
+          "channel": "BLACK CITY LIGHTS",
+          "durationSeconds": 221.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "gnVVLrzqvCA",
+          "title": "Black City Lights - Rivers",
+          "url": "https://www.youtube.com/watch?v=gnVVLrzqvCA",
+          "channel": "Nick Tenman",
+          "durationSeconds": 262.0,
+          "score": 0.972,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "b9f_A0wnoNs",
+          "title": "Black City Lights Rivers",
+          "url": "https://www.youtube.com/watch?v=b9f_A0wnoNs",
+          "channel": "Corndoggg23",
+          "durationSeconds": 262.0,
+          "score": 0.972,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "y-L7f6PpFFU",
+          "title": "Black City Lights - Rivers (Live Feb 2013)",
+          "url": "https://www.youtube.com/watch?v=y-L7f6PpFFU",
+          "channel": "hhhbbb",
+          "durationSeconds": 243.0,
+          "score": 0.661,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Ry83bwjTVIY",
+          "title": "Rivers (Remastered)",
+          "url": "https://www.youtube.com/watch?v=Ry83bwjTVIY",
+          "channel": "BLACK CITY LIGHTS",
+          "durationSeconds": 233.0,
+          "score": 0.342,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 21,
+    "resolvedTracks": 21,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Thirtieth",
+      "embedUrl": "https://www.youtube.com/embed/O0_ardwzTrA?playlist=keU3it7hZlc,HiC9XNQSxFQ,rqV9ilyiWK4,juwB1tjKIlQ,wLr4WM9Io18,KX_s5w0Lkh4,ITYVXUvMtHI,zD311Jt7nXg,I90FkC6BMbw,JURJoApAOV4,e9FM-FkDeWs,Uca1_64Txp8,o2G1RvKbmSI,WrHq94AnAqw,L8ny5Olu9d0,MMrUdWCNSB8,fvZApriCun4,o6ugOBCZAVk,SUy-hTG5oR4,XAexi790Mws",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=O0_ardwzTrA,keU3it7hZlc,HiC9XNQSxFQ,rqV9ilyiWK4,juwB1tjKIlQ,wLr4WM9Io18,KX_s5w0Lkh4,ITYVXUvMtHI,zD311Jt7nXg,I90FkC6BMbw,JURJoApAOV4,e9FM-FkDeWs,Uca1_64Txp8,o2G1RvKbmSI,WrHq94AnAqw,L8ny5Olu9d0,MMrUdWCNSB8,fvZApriCun4,o6ugOBCZAVk,SUy-hTG5oR4,XAexi790Mws",
+      "videoIds": [
+        "O0_ardwzTrA",
+        "keU3it7hZlc",
+        "HiC9XNQSxFQ",
+        "rqV9ilyiWK4",
+        "juwB1tjKIlQ",
+        "wLr4WM9Io18",
+        "KX_s5w0Lkh4",
+        "ITYVXUvMtHI",
+        "zD311Jt7nXg",
+        "I90FkC6BMbw",
+        "JURJoApAOV4",
+        "e9FM-FkDeWs",
+        "Uca1_64Txp8",
+        "o2G1RvKbmSI",
+        "WrHq94AnAqw",
+        "L8ny5Olu9d0",
+        "MMrUdWCNSB8",
+        "fvZApriCun4",
+        "o6ugOBCZAVk",
+        "SUy-hTG5oR4",
+        "XAexi790Mws"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:22:04Z"
+    }
+  }
+}

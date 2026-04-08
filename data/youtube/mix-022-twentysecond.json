@@ -1,0 +1,2977 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-022-twentysecond",
+  "updatedAt": "2026-04-08T21:24:00Z",
+  "sourceMixPath": "data/imported/mixes/mix-022-twentysecond.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Snow Patrol - You Could Be Happy",
+      "query": "Snow Patrol You Could Be Happy",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "76Mbnuwk2d4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "76Mbnuwk2d4",
+          "title": "Snow Patrol - You Could Be Happy [HD]",
+          "url": "https://www.youtube.com/watch?v=76Mbnuwk2d4",
+          "channel": "Christoph Schroeder",
+          "durationSeconds": 185.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "cBivKbeDgCQ",
+          "title": "Snow Patrol - You Could Be Happy (Smallville)",
+          "url": "https://www.youtube.com/watch?v=cBivKbeDgCQ",
+          "channel": "merlinslhbh",
+          "durationSeconds": 183.0,
+          "score": 0.963,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "v-iGnYg4_M8",
+          "title": "Snow Patrol - You Could Be Happy (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=v-iGnYg4_M8",
+          "channel": "ZDarg",
+          "durationSeconds": 185.0,
+          "score": 0.906,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "M8YTimUKRhU",
+          "title": "Snow Patrol Reworked - You Could Be Happy Live at the Royal Albert Hall",
+          "url": "https://www.youtube.com/watch?v=M8YTimUKRhU",
+          "channel": "SnowPatrolVideos",
+          "durationSeconds": 290.0,
+          "score": 0.636,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "OczKEK61wvM",
+          "title": "You Could Be Happy",
+          "url": "https://www.youtube.com/watch?v=OczKEK61wvM",
+          "channel": "Release - Topic",
+          "durationSeconds": 183.0,
+          "score": 0.605,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Girls - Broken Dreams Club",
+      "query": "Girls Broken Dreams Club",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9yigYFvXclo",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9yigYFvXclo",
+          "title": "Girls \" Broken Dreams Club \"",
+          "url": "https://www.youtube.com/watch?v=9yigYFvXclo",
+          "channel": "satokokumamoto",
+          "durationSeconds": 287.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "DU1KcKNuG1I",
+          "title": "Girls - Broken Dreams Club",
+          "url": "https://www.youtube.com/watch?v=DU1KcKNuG1I",
+          "channel": "Cory Heskett",
+          "durationSeconds": 313.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "DMDWtzbqfi8",
+          "title": "Girls - Broken Dreams Club",
+          "url": "https://www.youtube.com/watch?v=DMDWtzbqfi8",
+          "channel": "J",
+          "durationSeconds": 313.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "iBvPmPp4Xbg",
+          "title": "Girls- Broken Dreams Club EP REVIEW",
+          "url": "https://www.youtube.com/watch?v=iBvPmPp4Xbg",
+          "channel": "theneedledrop",
+          "durationSeconds": 329.0,
+          "score": 0.973,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "nAopSeBkI8M",
+          "title": "Broken Dreams Club",
+          "url": "https://www.youtube.com/watch?v=nAopSeBkI8M",
+          "channel": "Girls - Topic",
+          "durationSeconds": 313.0,
+          "score": 0.717,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Rachael Yamagata - Over And Over",
+      "query": "Rachael Yamagata Over And Over",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "GOjnLjsdLn0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "GOjnLjsdLn0",
+          "title": "Rachael Yamagata Over and Over",
+          "url": "https://www.youtube.com/watch?v=GOjnLjsdLn0",
+          "channel": "mavrik12",
+          "durationSeconds": 333.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "VasuZYJ0GJg",
+          "title": "Over and Over by Rachael Yamagata + Lyrics",
+          "url": "https://www.youtube.com/watch?v=VasuZYJ0GJg",
+          "channel": "Jude Morales (one.4you)",
+          "durationSeconds": 332.0,
+          "score": 0.763,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "2u8PmdK7MVY",
+          "title": "Over and Over",
+          "url": "https://www.youtube.com/watch?v=2u8PmdK7MVY",
+          "channel": "Rachael Yamagata",
+          "durationSeconds": 325.0,
+          "score": 0.521,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "YmyWJy2_HAo",
+          "title": "Rachael Yamagata - Over (Official Video)",
+          "url": "https://www.youtube.com/watch?v=YmyWJy2_HAo",
+          "channel": "Rachael Yamagata",
+          "durationSeconds": 252.0,
+          "score": 0.406,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "A89So0Jp55A",
+          "title": "The Best of Rachael Yamagata",
+          "url": "https://www.youtube.com/watch?v=A89So0Jp55A",
+          "channel": "indiebus",
+          "durationSeconds": 1363.0,
+          "score": 0.309,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Bon Iver - Flume",
+      "query": "Bon Iver Flume",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "LuQrLsTUcN0",
+        "confidenceScore": 0.995,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "LuQrLsTUcN0",
+          "title": "Bon Iver - Flume",
+          "url": "https://www.youtube.com/watch?v=LuQrLsTUcN0",
+          "channel": "yurksemesh",
+          "durationSeconds": 219.0,
+          "score": 0.995,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "WvvQQHnpRfA",
+          "title": "Bon Iver - Flume | A Take Away Show",
+          "url": "https://www.youtube.com/watch?v=WvvQQHnpRfA",
+          "channel": "Blogothèque",
+          "durationSeconds": 305.0,
+          "score": 0.837,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "HOUxAfQdNd0",
+          "title": "Bon Iver - Flume (Myspace Transmissions)",
+          "url": "https://www.youtube.com/watch?v=HOUxAfQdNd0",
+          "channel": "quietwiser",
+          "durationSeconds": 272.0,
+          "score": 0.812,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "62i9Sodwp5o",
+          "title": "Bon Iver -- Flume (Live on 89.3 The Current)",
+          "url": "https://www.youtube.com/watch?v=62i9Sodwp5o",
+          "channel": "The Current",
+          "durationSeconds": 207.0,
+          "score": 0.579,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "8NstorpFnjM",
+          "title": "Flume",
+          "url": "https://www.youtube.com/watch?v=8NstorpFnjM",
+          "channel": "Bon Iver",
+          "durationSeconds": 219.0,
+          "score": 0.498,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "The Honorary Title - Everything I Once Had",
+      "query": "The Honorary Title Everything I Once Had",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "z-0jo9ILIxY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "z-0jo9ILIxY",
+          "title": "The Honorary Title - Everything I Once Had",
+          "url": "https://www.youtube.com/watch?v=z-0jo9ILIxY",
+          "channel": "Jarrod Gorbel",
+          "durationSeconds": 229.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "M8hO8hoVla8",
+          "title": "The Honorary Title- Everything I Once Had lyrics",
+          "url": "https://www.youtube.com/watch?v=M8hO8hoVla8",
+          "channel": "Nessa Wells",
+          "durationSeconds": 226.0,
+          "score": 0.907,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "HzdAD9bl9xg",
+          "title": "The Honorary Title - Everything I Once Had LIVE",
+          "url": "https://www.youtube.com/watch?v=HzdAD9bl9xg",
+          "channel": "Brian Lerner",
+          "durationSeconds": 238.0,
+          "score": 0.777,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "xszqR2bNL2Y",
+          "title": "The honorary tilte - Everything I once had (Sub Eng/Esp)",
+          "url": "https://www.youtube.com/watch?v=xszqR2bNL2Y",
+          "channel": "Alkasis",
+          "durationSeconds": 223.0,
+          "score": 0.738,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "CpxjZRU89ls",
+          "title": "The Honorary Title - Everything I Once Had (Live at Crowbar Tampa FL 8/29/09)",
+          "url": "https://www.youtube.com/watch?v=CpxjZRU89ls",
+          "channel": "mikewl1",
+          "durationSeconds": 226.0,
+          "score": 0.673,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Florence and the Machine - Hardest Of Hearts",
+      "query": "Florence and the Machine Hardest Of Hearts",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Rrd3aNXqOLo",
+        "confidenceScore": 0.776,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Rrd3aNXqOLo",
+          "title": "Florence + the Machine - Hardest Of Hearts",
+          "url": "https://www.youtube.com/watch?v=Rrd3aNXqOLo",
+          "channel": "Florence + the Machine",
+          "durationSeconds": 206.0,
+          "score": 0.776,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "URmpzbMi6ng",
+          "title": "Florence + the Machine - Hardest of Hearts (BBC Proms)",
+          "url": "https://www.youtube.com/watch?v=URmpzbMi6ng",
+          "channel": "KvarsMachine",
+          "durationSeconds": 244.0,
+          "score": 0.727,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "HkzORb7JolI",
+          "title": "Florence + the Machine Hardest Of Hearts *LYRICS*",
+          "url": "https://www.youtube.com/watch?v=HkzORb7JolI",
+          "channel": "AshleyNicole999",
+          "durationSeconds": 211.0,
+          "score": 0.661,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "kzXp3PaE-dg",
+          "title": "Hardest Of Hearts",
+          "url": "https://www.youtube.com/watch?v=kzXp3PaE-dg",
+          "channel": "florencemachine",
+          "durationSeconds": 208.0,
+          "score": 0.433,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "r0h_rOUZgVY",
+          "title": "Hardest Of Hearts (BBC Proms at the Royal Albert Hall / Visualiser)",
+          "url": "https://www.youtube.com/watch?v=r0h_rOUZgVY",
+          "channel": "florencemachine",
+          "durationSeconds": 240.0,
+          "score": 0.254,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Wilco - We’re Just Friends",
+      "query": "Wilco We’re Just Friends",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "mM-RfAiZ3m0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "mM-RfAiZ3m0",
+          "title": "WILCO - WE'RE JUST FRIENDS",
+          "url": "https://www.youtube.com/watch?v=mM-RfAiZ3m0",
+          "channel": "wilcoclubvideos",
+          "durationSeconds": 157.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "O486hks4flk",
+          "title": "Wilco - We're Just Friends (Demo)",
+          "url": "https://www.youtube.com/watch?v=O486hks4flk",
+          "channel": "Leonardo Rodriguez Cruz",
+          "durationSeconds": 165.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "NvSu6f4FYto",
+          "title": "We're Just Friends",
+          "url": "https://www.youtube.com/watch?v=NvSu6f4FYto",
+          "channel": "wilco",
+          "durationSeconds": 165.0,
+          "score": 0.897,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "atMKJRoEb5c",
+          "title": "We're Just Friends",
+          "url": "https://www.youtube.com/watch?v=atMKJRoEb5c",
+          "channel": "wilco",
+          "durationSeconds": 166.0,
+          "score": 0.897,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "6T6KHCPaC-E",
+          "title": "Wilco, 3. We're Just Friends, 1999 Glastonbury Festival live",
+          "url": "https://www.youtube.com/watch?v=6T6KHCPaC-E",
+          "channel": "soulbrotherjimmy",
+          "durationSeconds": 191.0,
+          "score": 0.644,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "Modest Mouse - Edit The Sad Parts (has a 1+ minute silence in the end)",
+      "query": "Modest Mouse Edit The Sad Parts (has a 1+ minute silence in the end)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "bvoLazxSV28",
+        "confidenceScore": 0.166,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "bvoLazxSV28",
+          "title": "Australopithecus",
+          "url": "https://www.youtube.com/watch?v=bvoLazxSV28",
+          "channel": "Modest Mouse",
+          "durationSeconds": 30.0,
+          "score": 0.166,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "mZtKo3thUGw",
+          "title": "Myles Smith - Stargazing",
+          "url": "https://www.youtube.com/watch?v=mZtKo3thUGw",
+          "channel": "LatinHype",
+          "durationSeconds": 173.0,
+          "score": 0.157,
+          "signals": []
+        },
+        {
+          "rank": 3,
+          "videoId": "Sw-ko6aINI4",
+          "title": "Mumford and sons - White blank page (with lyrics)",
+          "url": "https://www.youtube.com/watch?v=Sw-ko6aINI4",
+          "channel": "Lilian de V.",
+          "durationSeconds": 255.0,
+          "score": 0.068,
+          "signals": [
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "KfEEm4Zx-EU",
+          "title": "505",
+          "url": "https://www.youtube.com/watch?v=KfEEm4Zx-EU",
+          "channel": "Official Arctic Monkeys",
+          "durationSeconds": 254.0,
+          "score": 0.0,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "Ijk4j-r7qPA",
+          "title": "Franz Ferdinand - Take Me Out (Video)",
+          "url": "https://www.youtube.com/watch?v=Ijk4j-r7qPA",
+          "channel": "Franz Ferdinand",
+          "durationSeconds": 241.0,
+          "score": 0.0,
+          "signals": [
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "The Get Up Kids - Overdue",
+      "query": "The Get Up Kids Overdue",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "-ThONDjIUF4",
+        "confidenceScore": 0.984,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "-ThONDjIUF4",
+          "title": "The Get Up Kids - Overdue",
+          "url": "https://www.youtube.com/watch?v=-ThONDjIUF4",
+          "channel": "fuckingdanne",
+          "durationSeconds": 181.0,
+          "score": 0.984,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Te4Wof1zGVk",
+          "title": "The Get Up Kids \"Overdue\" Music Video",
+          "url": "https://www.youtube.com/watch?v=Te4Wof1zGVk",
+          "channel": "Chris McD",
+          "durationSeconds": 179.0,
+          "score": 0.798,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "j5xWZKZEVrE",
+          "title": "The Get Up Kids \"Overdue\" Live (HD, Official) | Moshcam",
+          "url": "https://www.youtube.com/watch?v=j5xWZKZEVrE",
+          "channel": "Moshcam",
+          "durationSeconds": 222.0,
+          "score": 0.66,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "qda38exrjdc",
+          "title": "Overdue",
+          "url": "https://www.youtube.com/watch?v=qda38exrjdc",
+          "channel": "The Get Up Kids",
+          "durationSeconds": 179.0,
+          "score": 0.48,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "1wdeVUoGiwQ",
+          "title": "Valentine",
+          "url": "https://www.youtube.com/watch?v=1wdeVUoGiwQ",
+          "channel": "The Get Up Kids",
+          "durationSeconds": 260.0,
+          "score": 0.185,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Mumford & Sons - I Gave You All",
+      "query": "Mumford & Sons I Gave You All",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "RmqAfKNrT0c",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "RmqAfKNrT0c",
+          "title": "Mumford & Sons - I Gave You All",
+          "url": "https://www.youtube.com/watch?v=RmqAfKNrT0c",
+          "channel": "zrennsport",
+          "durationSeconds": 254.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "weJ7UOo2glo",
+          "title": "Mumford & Sons : I Gave You All : ICA London : 4 March 2009",
+          "url": "https://www.youtube.com/watch?v=weJ7UOo2glo",
+          "channel": "SeeGigFilmGigPost",
+          "durationSeconds": 278.0,
+          "score": 0.885,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "00dcKqc5H-A",
+          "title": "\"I Gave You All\" - Mumford & Sons (Official Lyrics)",
+          "url": "https://www.youtube.com/watch?v=00dcKqc5H-A",
+          "channel": "MumfordAndSonsLyrics",
+          "durationSeconds": 255.0,
+          "score": 0.768,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ik7Tzt0DsWM",
+          "title": "I Gave You All",
+          "url": "https://www.youtube.com/watch?v=ik7Tzt0DsWM",
+          "channel": "Mumford & Sons",
+          "durationSeconds": 261.0,
+          "score": 0.545,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Des5T75EZlM",
+          "title": "Mumford and Sons   I Gave You All   live at Eden Sessions 2010 Full HD",
+          "url": "https://www.youtube.com/watch?v=Des5T75EZlM",
+          "channel": "Dany",
+          "durationSeconds": 240.0,
+          "score": 0.517,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "Switchfoot - On Fire",
+      "query": "Switchfoot On Fire",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "JtoBu9Er0jY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "JtoBu9Er0jY",
+          "title": "Switchfoot - On Fire [Official Audio]",
+          "url": "https://www.youtube.com/watch?v=JtoBu9Er0jY",
+          "channel": "Switchfoot",
+          "durationSeconds": 280.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "82tSH_5UFiU",
+          "title": "Switchfoot - On Fire (Ingrid Andress Version) [Official Visualizer]",
+          "url": "https://www.youtube.com/watch?v=82tSH_5UFiU",
+          "channel": "Switchfoot",
+          "durationSeconds": 213.0,
+          "score": 0.844,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "visualizer-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "OFlPP7YHGpQ",
+          "title": "On Fire Lyrics - Switchfoot HD",
+          "url": "https://www.youtube.com/watch?v=OFlPP7YHGpQ",
+          "channel": "DaneWella Romano",
+          "durationSeconds": 277.0,
+          "score": 0.735,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "hgTs7AtK6EU",
+          "title": "Switchfoot - On Fire (from Live in San Diego)",
+          "url": "https://www.youtube.com/watch?v=hgTs7AtK6EU",
+          "channel": "Switchfoot",
+          "durationSeconds": 287.0,
+          "score": 0.696,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "J4D3EIm9Sbo",
+          "title": "Switchfoot - On Fire (Live from Los Angeles) [Official Visualizer]",
+          "url": "https://www.youtube.com/watch?v=J4D3EIm9Sbo",
+          "channel": "Switchfoot",
+          "durationSeconds": 333.0,
+          "score": 0.626,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "live-version-penalty",
+            "visualizer-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Billy Bragg & Wilco - At My Window Sad And Lonely",
+      "query": "Billy Bragg & Wilco At My Window Sad And Lonely",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "7x7agLbW_o8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "7x7agLbW_o8",
+          "title": "Billy Bragg & Wilco- At My Window Sad and Lonely",
+          "url": "https://www.youtube.com/watch?v=7x7agLbW_o8",
+          "channel": "MFG On Two Wheels",
+          "durationSeconds": 181.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "LdKumeNhZqA",
+          "title": "At My Window Sad and Lonely - Billy Bragg and Wilco",
+          "url": "https://www.youtube.com/watch?v=LdKumeNhZqA",
+          "channel": "T.A. Sedlak",
+          "durationSeconds": 210.0,
+          "score": 0.8,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "gq4vVLRxGKE",
+          "title": "At My Window Sad And Lonely",
+          "url": "https://www.youtube.com/watch?v=gq4vVLRxGKE",
+          "channel": "Billy Bragg",
+          "durationSeconds": 208.0,
+          "score": 0.485,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "V4hVLBoEP6o",
+          "title": "Jeff Tweedy - At My Window, Sad and Lonely",
+          "url": "https://www.youtube.com/watch?v=V4hVLBoEP6o",
+          "channel": "staticdistort",
+          "durationSeconds": 177.0,
+          "score": 0.434,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "GHqihce-xbo",
+          "title": "At My Window Sad and Lonely (Jeff Tweedy Solo Version)",
+          "url": "https://www.youtube.com/watch?v=GHqihce-xbo",
+          "channel": "wilco",
+          "durationSeconds": 165.0,
+          "score": 0.37,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Blue October - Congratulations (Feat. Imogen Heap)",
+      "query": "Blue October Congratulations (Feat. Imogen Heap)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "KVlMC1Wov7U",
+        "confidenceScore": 0.95,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "KVlMC1Wov7U",
+          "title": "Congratulations (feat. Imogen Heap) by Blue October",
+          "url": "https://www.youtube.com/watch?v=KVlMC1Wov7U",
+          "channel": "IndiePyro",
+          "durationSeconds": 256.0,
+          "score": 0.95,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "VFfE8ErmFtY",
+          "title": "Blue October - Congratulations (Official Music Video) ft. Imogen Heap",
+          "url": "https://www.youtube.com/watch?v=VFfE8ErmFtY",
+          "channel": "Blue October",
+          "durationSeconds": 268.0,
+          "score": 0.778,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "_GZHlb9qQKU",
+          "title": "Congratulations - Blue October (ft. Imogen Heap)",
+          "url": "https://www.youtube.com/watch?v=_GZHlb9qQKU",
+          "channel": "HighQualityMusic",
+          "durationSeconds": 242.0,
+          "score": 0.749,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "70gzsB2Sf4Y",
+          "title": "Congratulations",
+          "url": "https://www.youtube.com/watch?v=70gzsB2Sf4Y",
+          "channel": "Blue October",
+          "durationSeconds": 257.0,
+          "score": 0.345,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "YaKzhiPIS1o",
+          "title": "Blue october - Congratulations (lyrics)",
+          "url": "https://www.youtube.com/watch?v=YaKzhiPIS1o",
+          "channel": "Emilie",
+          "durationSeconds": 242.0,
+          "score": 0.336,
+          "signals": [
+            "artist-name-in-title",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "Great Lake Swimmers - Stealing Tomorrow",
+      "query": "Great Lake Swimmers Stealing Tomorrow",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "s8o7r9hx3Yw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "s8o7r9hx3Yw",
+          "title": "Great Lake Swimmers - Stealing Tomorrow",
+          "url": "https://www.youtube.com/watch?v=s8o7r9hx3Yw",
+          "channel": "NettwerkEurope",
+          "durationSeconds": 257.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "4i3ljM5kip0",
+          "title": "Great Lake Swimmers - Stealing Tomorrow (Legion Sessions)",
+          "url": "https://www.youtube.com/watch?v=4i3ljM5kip0",
+          "channel": "GreatLakeSwimmers",
+          "durationSeconds": 277.0,
+          "score": 0.934,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "9GvdQG46vkc",
+          "title": "Great Lake Swimmers - Stealing Tomorrow [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=9GvdQG46vkc",
+          "channel": "NettwerkMusic",
+          "durationSeconds": 240.0,
+          "score": 0.855,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "eQ6W_cq-zQ0",
+          "title": "Great Lake Swimmers - Your Rocky Spine",
+          "url": "https://www.youtube.com/watch?v=eQ6W_cq-zQ0",
+          "channel": "GreatLakeSwimmers",
+          "durationSeconds": 228.0,
+          "score": 0.323,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "7bXJ-mlUDbg",
+          "title": "Stealing Tomorrow (Live)",
+          "url": "https://www.youtube.com/watch?v=7bXJ-mlUDbg",
+          "channel": "GreatLakeSwimmers",
+          "durationSeconds": 236.0,
+          "score": 0.19,
+          "signals": [
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 15,
+      "displayText": "Nick Cave & The Bad Seeds - O Children",
+      "query": "Nick Cave & The Bad Seeds O Children",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "2bYtFBJajI0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2bYtFBJajI0",
+          "title": "Nick Cave & The Bad Seeds - O Children (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=2bYtFBJajI0",
+          "channel": "Nick Cave & The Bad Seeds",
+          "durationSeconds": 403.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "_0dq6SL8WRc",
+          "title": "Nick Cave & The Bad Seeds - O Children (from Harry Potter & The Deathly Hallows)",
+          "url": "https://www.youtube.com/watch?v=_0dq6SL8WRc",
+          "channel": "Nick Cave & The Bad Seeds",
+          "durationSeconds": 410.0,
+          "score": 0.916,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "igMg5fO7Gqc",
+          "title": "Nick Cave & The Bad Seeds - O Children (Live at The Fonda Theatre)",
+          "url": "https://www.youtube.com/watch?v=igMg5fO7Gqc",
+          "channel": "Vincenzo Garambone",
+          "durationSeconds": 379.0,
+          "score": 0.648,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "c6IrBdGN_C8",
+          "title": "Nick Cave & Bad Seeds - O Children (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=c6IrBdGN_C8",
+          "channel": "Chilly Lyrics 𝄞",
+          "durationSeconds": 410.0,
+          "score": 0.63,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "GM5WI4MTXzc",
+          "title": "Harry Potter and the Deathly Hallows: Part 1 (1/5) Movie CLIP - Dance O Children (2010) HD",
+          "url": "https://www.youtube.com/watch?v=GM5WI4MTXzc",
+          "channel": "Movieclips",
+          "durationSeconds": 149.0,
+          "score": 0.221,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 16,
+      "displayText": "Citizen Cope - Sideways",
+      "query": "Citizen Cope Sideways",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ezz-nazThiM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ezz-nazThiM",
+          "title": "Citizen Cope Sideways",
+          "url": "https://www.youtube.com/watch?v=ezz-nazThiM",
+          "channel": "KVX",
+          "durationSeconds": 327.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "nogej9EGetQ",
+          "title": "Citizen Cope - Sideways - 8/28/2017 - Paste Studios, New York, NY",
+          "url": "https://www.youtube.com/watch?v=nogej9EGetQ",
+          "channel": "Paste Magazine",
+          "durationSeconds": 288.0,
+          "score": 0.806,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "7sQ30busujQ",
+          "title": "Citizen Cope ft. Carlos Santana - Sideways (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=7sQ30busujQ",
+          "channel": "o7p",
+          "durationSeconds": 284.0,
+          "score": 0.761,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "xwwY0Qs79ak",
+          "title": "Sideways",
+          "url": "https://www.youtube.com/watch?v=xwwY0Qs79ak",
+          "channel": "Citizen Cope",
+          "durationSeconds": 323.0,
+          "score": 0.506,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "fGWdn6O2uiU",
+          "title": "Sideways",
+          "url": "https://www.youtube.com/watch?v=fGWdn6O2uiU",
+          "channel": "Santana",
+          "durationSeconds": 281.0,
+          "score": 0.426,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 17,
+      "displayText": "Longwave - Tidal Wave",
+      "query": "Longwave Tidal Wave",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "4vkI2mLrqzw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "4vkI2mLrqzw",
+          "title": "Longwave - Tidal Wave (2024)",
+          "url": "https://www.youtube.com/watch?v=4vkI2mLrqzw",
+          "channel": "Longwave",
+          "durationSeconds": 208.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Zv7CX-mLJHc",
+          "title": "Longwave - Tidal Wave (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zv7CX-mLJHc",
+          "channel": "Longwave",
+          "durationSeconds": 205.0,
+          "score": 0.917,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "OIq2Zfa_HcU",
+          "title": "Longwave, “Tidal Wave,” Bowery Ballroom, NYC, 1/27/2024",
+          "url": "https://www.youtube.com/watch?v=OIq2Zfa_HcU",
+          "channel": "Steven Korn",
+          "durationSeconds": 212.0,
+          "score": 0.829,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Y6s-HjwrTVQ",
+          "title": "Longwave - Tidalwave (audio Only)",
+          "url": "https://www.youtube.com/watch?v=Y6s-HjwrTVQ",
+          "channel": "grenasfrijolito",
+          "durationSeconds": 208.0,
+          "score": 0.588,
+          "signals": [
+            "artist-name-in-title",
+            "audio-only-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "szWaGUyaEE8",
+          "title": "Tidal Wave",
+          "url": "https://www.youtube.com/watch?v=szWaGUyaEE8",
+          "channel": "Longwave",
+          "durationSeconds": 231.0,
+          "score": 0.547,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 18,
+      "displayText": "Bell X1 - Eve, The Apple Of My Eye",
+      "query": "Bell X1 Eve, The Apple Of My Eye",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "LHZy2bdajQM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "LHZy2bdajQM",
+          "title": "Bell X1 - \"Eve, The Apple of My Eye\"",
+          "url": "https://www.youtube.com/watch?v=LHZy2bdajQM",
+          "channel": "Paste Magazine",
+          "durationSeconds": 340.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "pb1qW_g2a50",
+          "title": "Bell X1 - Eve, the Apple of My Eye (Live in Dublin 2006) HD",
+          "url": "https://www.youtube.com/watch?v=pb1qW_g2a50",
+          "channel": "Declan K",
+          "durationSeconds": 337.0,
+          "score": 0.706,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "C076DgfiXvM",
+          "title": "Eve, The Apple Of My Eye",
+          "url": "https://www.youtube.com/watch?v=C076DgfiXvM",
+          "channel": "Bell X1",
+          "durationSeconds": 334.0,
+          "score": 0.596,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "eQCK7cI03B8",
+          "title": "Eve (The Apple Of My Eye)",
+          "url": "https://www.youtube.com/watch?v=eQCK7cI03B8",
+          "channel": "Bell X1",
+          "durationSeconds": 244.0,
+          "score": 0.596,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "8rH4V4dyViw",
+          "title": "Bell X1 - Eve - live on Today FM",
+          "url": "https://www.youtube.com/watch?v=8rH4V4dyViw",
+          "channel": "Today FM",
+          "durationSeconds": 340.0,
+          "score": 0.151,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 19,
+      "displayText": "Joseph Gordon-Levitt - I Don’t Want To Live On The Moon",
+      "query": "Joseph Gordon-Levitt I Don’t Want To Live On The Moon",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ZawVNKJdSD0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ZawVNKJdSD0",
+          "title": "Joseph Gordon-Levitt - I Don't Want To Live On The Moon",
+          "url": "https://www.youtube.com/watch?v=ZawVNKJdSD0",
+          "channel": "Dr Hfuhruhurr",
+          "durationSeconds": 203.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "BTnkQulo7fM",
+          "title": "Joseph Gordon-Levitt singing \"I Don't Want To Live On The Moon\"",
+          "url": "https://www.youtube.com/watch?v=BTnkQulo7fM",
+          "channel": "monsanita",
+          "durationSeconds": 200.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "xTVac8dfsVM",
+          "title": "Joseph Gordon-Levitt- I Don't Wanna Live On The Moon (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=xTVac8dfsVM",
+          "channel": "Aujii11",
+          "durationSeconds": 201.0,
+          "score": 0.697,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "kIq8jLj5TzU",
+          "title": "Sesame Street: I Don't Want to Live on the Moon",
+          "url": "https://www.youtube.com/watch?v=kIq8jLj5TzU",
+          "channel": "Sesame Street",
+          "durationSeconds": 159.0,
+          "score": 0.464,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ZtQ1SjDa8jM",
+          "title": "Joseph Gordon Levitt singing",
+          "url": "https://www.youtube.com/watch?v=ZtQ1SjDa8jM",
+          "channel": "miniminimi88",
+          "durationSeconds": 398.0,
+          "score": 0.338,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 20,
+      "displayText": "The Cure - Pictures Of You",
+      "query": "The Cure Pictures Of You",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "UmFFTkjs-O0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "UmFFTkjs-O0",
+          "title": "The Cure - Pictures Of You",
+          "url": "https://www.youtube.com/watch?v=UmFFTkjs-O0",
+          "channel": "The Cure",
+          "durationSeconds": 504.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "X8UR2TFUp8w",
+          "title": "The Cure - Pictures Of You (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=X8UR2TFUp8w",
+          "channel": "RHINO",
+          "durationSeconds": 335.0,
+          "score": 0.839,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "O2ThOTrcz-Q",
+          "title": "The Cure - Pictures Of You - Live Show (HD Remastered)",
+          "url": "https://www.youtube.com/watch?v=O2ThOTrcz-Q",
+          "channel": "Remastered videos",
+          "durationSeconds": 450.0,
+          "score": 0.666,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vEjRMVPydOQ",
+          "title": "Pictures of You",
+          "url": "https://www.youtube.com/watch?v=vEjRMVPydOQ",
+          "channel": "The Cure",
+          "durationSeconds": 289.0,
+          "score": 0.571,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Rel8ZWkNNlM",
+          "title": "Pictures of You (2010 Remaster)",
+          "url": "https://www.youtube.com/watch?v=Rel8ZWkNNlM",
+          "channel": "The Cure",
+          "durationSeconds": 449.0,
+          "score": 0.453,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 21,
+      "displayText": "Falling Up - Islander",
+      "query": "Falling Up Islander",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "c149KMQ0uI8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "c149KMQ0uI8",
+          "title": "Falling Up - Islander",
+          "url": "https://www.youtube.com/watch?v=c149KMQ0uI8",
+          "channel": "majabsalu",
+          "durationSeconds": 356.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "jvH3g30ulhI",
+          "title": "Falling Up-\"Islander\"",
+          "url": "https://www.youtube.com/watch?v=jvH3g30ulhI",
+          "channel": "reyesp61",
+          "durationSeconds": 340.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "argrtbGv9bQ",
+          "title": "Falling Up Islander Lyrics",
+          "url": "https://www.youtube.com/watch?v=argrtbGv9bQ",
+          "channel": "SuperFreak350",
+          "durationSeconds": 353.0,
+          "score": 0.858,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "i9W6sqdZ3iI",
+          "title": "Islander",
+          "url": "https://www.youtube.com/watch?v=i9W6sqdZ3iI",
+          "channel": "Falling Up - Topic",
+          "durationSeconds": 354.0,
+          "score": 0.638,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "uq9N72pifoI",
+          "title": "Falling Up - Escalates",
+          "url": "https://www.youtube.com/watch?v=uq9N72pifoI",
+          "channel": "FallingUpVEVO",
+          "durationSeconds": 192.0,
+          "score": 0.395,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 22,
+      "displayText": "Jenny Lewis - Godspeed",
+      "query": "Jenny Lewis Godspeed",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "YAVjws8vVN8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "YAVjws8vVN8",
+          "title": "Jenny Lewis - Godspeed",
+          "url": "https://www.youtube.com/watch?v=YAVjws8vVN8",
+          "channel": "Amanda",
+          "durationSeconds": 281.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "T4-ksXp7Oas",
+          "title": "Jenny Lewis - Godspeed",
+          "url": "https://www.youtube.com/watch?v=T4-ksXp7Oas",
+          "channel": "TijuanaLady",
+          "durationSeconds": 276.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "9jNbwJyyh9U",
+          "title": "Jenny Lewis \"Godspeed\" 6/12/09 Cat's Cradle",
+          "url": "https://www.youtube.com/watch?v=9jNbwJyyh9U",
+          "channel": "cotafloata",
+          "durationSeconds": 316.0,
+          "score": 0.855,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "0OmsuYnyHdk",
+          "title": "Godspeed",
+          "url": "https://www.youtube.com/watch?v=0OmsuYnyHdk",
+          "channel": "Jenny Lewis",
+          "durationSeconds": 273.0,
+          "score": 0.511,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "2Qu11pBpRXw",
+          "title": "Acid Tongue",
+          "url": "https://www.youtube.com/watch?v=2Qu11pBpRXw",
+          "channel": "Jenny Lewis",
+          "durationSeconds": 231.0,
+          "score": 0.137,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 23,
+      "displayText": "Carole King - It’s Too Late Baby",
+      "query": "Carole King It’s Too Late Baby",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "VkKxmnrRVHo",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "VkKxmnrRVHo",
+          "title": "Carole King - It's Too Late (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=VkKxmnrRVHo",
+          "channel": "Carole King",
+          "durationSeconds": 236.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "hqwLrJ6QWho",
+          "title": "Carole King - It's Too Late (BBC In Concert, February 10, 1971)",
+          "url": "https://www.youtube.com/watch?v=hqwLrJ6QWho",
+          "channel": "Carole King",
+          "durationSeconds": 305.0,
+          "score": 0.762,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "YkOik48rm-Q",
+          "title": "Carole King - It's Too Late (from Welcome To My Living Room)",
+          "url": "https://www.youtube.com/watch?v=YkOik48rm-Q",
+          "channel": "Carole King",
+          "durationSeconds": 324.0,
+          "score": 0.741,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "aFnbDPXNDmw",
+          "title": "Carole King - It's Too Late (Official Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=aFnbDPXNDmw",
+          "channel": "Carole King",
+          "durationSeconds": 235.0,
+          "score": 0.731,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "k1YTTUf1T-s",
+          "title": "Carole King - It's too late - Live in Hyde Park 2016",
+          "url": "https://www.youtube.com/watch?v=k1YTTUf1T-s",
+          "channel": "8K  Live Music",
+          "durationSeconds": 266.0,
+          "score": 0.47,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 24,
+      "displayText": "My Drunken Haze - Too Afraid To Love You (Black Keys cover)",
+      "query": "My Drunken Haze Too Afraid To Love You (Black Keys cover)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "M-163hZpRJg",
+        "confidenceScore": 0.215,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "M-163hZpRJg",
+          "title": "The Black Keys- Too afraid to love you lyrics",
+          "url": "https://www.youtube.com/watch?v=M-163hZpRJg",
+          "channel": "Lapaggel",
+          "durationSeconds": 201.0,
+          "score": 0.215,
+          "signals": [
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "RkoF_E_qU_4",
+          "title": "Say Goodbye To Your Legs",
+          "url": "https://www.youtube.com/watch?v=RkoF_E_qU_4",
+          "channel": "jaydrawsart",
+          "durationSeconds": 5.0,
+          "score": 0.194,
+          "signals": []
+        },
+        {
+          "rank": 3,
+          "videoId": "DP9x7627HBc",
+          "title": "Kelly Clarkson Names the Song That Shouldn’t Be Covered … but That She Did Anyway",
+          "url": "https://www.youtube.com/watch?v=DP9x7627HBc",
+          "channel": "The Howard Stern Show",
+          "durationSeconds": 171.0,
+          "score": 0.14,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "P1vnDZh3S4k",
+          "title": "Black Keys - Everlasting Light - Austin City Limits 2010",
+          "url": "https://www.youtube.com/watch?v=P1vnDZh3S4k",
+          "channel": "srh1son",
+          "durationSeconds": 188.0,
+          "score": 0.134,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "6yCIDkFI7ew",
+          "title": "The Black Keys - Gold On The Ceiling [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=6yCIDkFI7ew",
+          "channel": "The Black Keys",
+          "durationSeconds": 226.0,
+          "score": 0.102,
+          "signals": [
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 25,
+      "displayText": "Five for Fighting - Dying",
+      "query": "Five for Fighting Dying",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "piYHudfb7BI",
+        "confidenceScore": 0.964,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "piYHudfb7BI",
+          "title": "Five For Fighting - Dying",
+          "url": "https://www.youtube.com/watch?v=piYHudfb7BI",
+          "channel": "AwareFan",
+          "durationSeconds": 198.0,
+          "score": 0.964,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "L5wcnrNN5-A",
+          "title": "Dying- Five For Fighting(LYRICS)",
+          "url": "https://www.youtube.com/watch?v=L5wcnrNN5-A",
+          "channel": "ally_bugg",
+          "durationSeconds": 188.0,
+          "score": 0.798,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "pvV2YbcOMi4",
+          "title": "Five For Fighting - Dying, first live performance, Chicago 11/24/13, Space",
+          "url": "https://www.youtube.com/watch?v=pvV2YbcOMi4",
+          "channel": "David Zoretic",
+          "durationSeconds": 203.0,
+          "score": 0.554,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "b8W_jWkX8UU",
+          "title": "Dying",
+          "url": "https://www.youtube.com/watch?v=b8W_jWkX8UU",
+          "channel": "Five For Fighting",
+          "durationSeconds": 198.0,
+          "score": 0.447,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "tR-qQcNT_fY",
+          "title": "Five for Fighting - 100 Years",
+          "url": "https://www.youtube.com/watch?v=tR-qQcNT_fY",
+          "channel": "Five For Fighting",
+          "durationSeconds": 243.0,
+          "score": 0.442,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 26,
+      "displayText": "Bat for Lashes - I’m On Fire",
+      "query": "Bat for Lashes I’m On Fire",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Rhat3oUbNkw",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Rhat3oUbNkw",
+          "title": "BAT FOR LASHES I'm On Fire",
+          "url": "https://www.youtube.com/watch?v=Rhat3oUbNkw",
+          "channel": "Sky Vibes",
+          "durationSeconds": 205.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Kx6MGHp8S70",
+          "title": "Bat for Lashes - I'm on fire",
+          "url": "https://www.youtube.com/watch?v=Kx6MGHp8S70",
+          "channel": "liafanog",
+          "durationSeconds": 221.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "q--r4i3Q2gI",
+          "title": "I'm on fire - Bat for Lashes",
+          "url": "https://www.youtube.com/watch?v=q--r4i3Q2gI",
+          "channel": "Michou berlin",
+          "durationSeconds": 199.0,
+          "score": 0.869,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "G3R5sNBiVGY",
+          "title": "I'm On Fire",
+          "url": "https://www.youtube.com/watch?v=G3R5sNBiVGY",
+          "channel": "Bat For Lashes",
+          "durationSeconds": 212.0,
+          "score": 0.518,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "U7CbUNnozUA",
+          "title": "Bat for Lashes - Im on fire [ Lyrics ]",
+          "url": "https://www.youtube.com/watch?v=U7CbUNnozUA",
+          "channel": "x0phyxdiinamitahx",
+          "durationSeconds": 203.0,
+          "score": 0.362,
+          "signals": [
+            "artist-name-in-title",
+            "lyric-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 27,
+      "displayText": "Cursive - What Have I Done",
+      "query": "Cursive What Have I Done",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "IyE5j1ns1FE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "IyE5j1ns1FE",
+          "title": "Cursive - What Have I Done?",
+          "url": "https://www.youtube.com/watch?v=IyE5j1ns1FE",
+          "channel": "15 Passenger",
+          "durationSeconds": 371.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "h2FO9iylCTE",
+          "title": "Cursive, \"What Have I Done?\"",
+          "url": "https://www.youtube.com/watch?v=h2FO9iylCTE",
+          "channel": "SPIN",
+          "durationSeconds": 333.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "iMh1X_mC740",
+          "title": "CURSIVE  - WHAT HAVE I DONE?",
+          "url": "https://www.youtube.com/watch?v=iMh1X_mC740",
+          "channel": "newscastr",
+          "durationSeconds": 462.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "BBfEDCbzCnk",
+          "title": "Cursive - What Have I Done?",
+          "url": "https://www.youtube.com/watch?v=BBfEDCbzCnk",
+          "channel": "Marshall Rogers",
+          "durationSeconds": 379.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "eYFk9P0CMIE",
+          "title": "Cursive \"What have I done?\" Tim Kasher vs. Audience",
+          "url": "https://www.youtube.com/watch?v=eYFk9P0CMIE",
+          "channel": "Hainted",
+          "durationSeconds": 457.0,
+          "score": 0.894,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 28,
+      "displayText": "Josh Groban - February Song",
+      "query": "Josh Groban February Song",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "7_I0RBcr8xY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "7_I0RBcr8xY",
+          "title": "Josh Groban - February Song (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=7_I0RBcr8xY",
+          "channel": "Josh Groban",
+          "durationSeconds": 313.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "v26Qf2a8p4E",
+          "title": "Josh Groban - February Song",
+          "url": "https://www.youtube.com/watch?v=v26Qf2a8p4E",
+          "channel": "Rikke Nordgren",
+          "durationSeconds": 315.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "KksJe5dyFtI",
+          "title": "Josh Groban - February Song [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=KksJe5dyFtI",
+          "channel": "Josh Groban",
+          "durationSeconds": 249.0,
+          "score": 0.911,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "qEKrPID-PeI",
+          "title": "Josh Groban - February Song (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=qEKrPID-PeI",
+          "channel": "JaBootyx15",
+          "durationSeconds": 303.0,
+          "score": 0.887,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "6zq_Iws1pcg",
+          "title": "Josh Groban - February Song [Live]",
+          "url": "https://www.youtube.com/watch?v=6zq_Iws1pcg",
+          "channel": "Josh Groban",
+          "durationSeconds": 310.0,
+          "score": 0.842,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 29,
+      "displayText": "Death Cab for Cutie - The Ice Is Getting Thinner",
+      "query": "Death Cab for Cutie The Ice Is Getting Thinner",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "5BLECCgnONA",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "5BLECCgnONA",
+          "title": "Death Cab for Cutie - The Ice Is Getting Thinner",
+          "url": "https://www.youtube.com/watch?v=5BLECCgnONA",
+          "channel": "Alfredo Rivodó",
+          "durationSeconds": 210.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "pYcH10ARpbE",
+          "title": "Death Cab For Cutie-The Ice Is Getting Thinner DEMO *RARE*",
+          "url": "https://www.youtube.com/watch?v=pYcH10ARpbE",
+          "channel": "Boxcarracer190",
+          "durationSeconds": 209.0,
+          "score": 0.985,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "Gxx6K5tIuOc",
+          "title": "The Ice Is Getting Thinner ~ Death Cab For Cutie",
+          "url": "https://www.youtube.com/watch?v=Gxx6K5tIuOc",
+          "channel": "lafs10",
+          "durationSeconds": 210.0,
+          "score": 0.9,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vP0o2V_X1Qo",
+          "title": "Gossip Girl Best Music Moment #45 \"The Ice Is Getting Thinner\" - Death Cab For Cutie",
+          "url": "https://www.youtube.com/watch?v=vP0o2V_X1Qo",
+          "channel": "Gossip Girl",
+          "durationSeconds": 236.0,
+          "score": 0.852,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "v89cykp97jI",
+          "title": "The Ice Is Getting Thinner",
+          "url": "https://www.youtube.com/watch?v=v89cykp97jI",
+          "channel": "Death Cab for Cutie",
+          "durationSeconds": 226.0,
+          "score": 0.557,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 30,
+      "displayText": "Arcade Fire - Crown Of Love",
+      "query": "Arcade Fire Crown Of Love",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "p9XX193hgH8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "p9XX193hgH8",
+          "title": "Arcade Fire - Crown of Love (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=p9XX193hgH8",
+          "channel": "Arcade Fire",
+          "durationSeconds": 280.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "kxkK06HlgqA",
+          "title": "Arcade Fire - Crown of Love - (6 of 10)",
+          "url": "https://www.youtube.com/watch?v=kxkK06HlgqA",
+          "channel": "Dick Rutan",
+          "durationSeconds": 280.0,
+          "score": 0.96,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "P5U5EK1sg2o",
+          "title": "Arcade Fire - Crown of Love | Rock en Seine 2005 | Part 6 of 10",
+          "url": "https://www.youtube.com/watch?v=P5U5EK1sg2o",
+          "channel": "ArcadeFireTube",
+          "durationSeconds": 314.0,
+          "score": 0.85,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "oioG4D9Pfzw",
+          "title": "Arcade Fire - Crown of Love (Live at Lowlands Festival, 2005)",
+          "url": "https://www.youtube.com/watch?v=oioG4D9Pfzw",
+          "channel": "Arcade Fire",
+          "durationSeconds": 297.0,
+          "score": 0.713,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "s0WeG8nSmN4",
+          "title": "Arcade Fire - Crown of Love | Live in Paris, 2007 | Part 12 of 14",
+          "url": "https://www.youtube.com/watch?v=s0WeG8nSmN4",
+          "channel": "ArcadeFireTube",
+          "durationSeconds": 288.0,
+          "score": 0.627,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 31,
+      "displayText": "The Gaslight Anthem - Here’s Looking At You, Kid",
+      "query": "The Gaslight Anthem Here’s Looking At You, Kid",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "NA4oq3fl42w",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "NA4oq3fl42w",
+          "title": "The Gaslight Anthem - Here's Looking At You, Kid  (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=NA4oq3fl42w",
+          "channel": "SideOneDummy",
+          "durationSeconds": 217.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "oJpCuDUIvC0",
+          "title": "The Gaslight Anthem \"Here's Looking at You, Kid\" LIVE",
+          "url": "https://www.youtube.com/watch?v=oJpCuDUIvC0",
+          "channel": "Concerts Hub",
+          "durationSeconds": 219.0,
+          "score": 0.784,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "bCNVf7dPrAs",
+          "title": "Here's Lookin At You, Kid",
+          "url": "https://www.youtube.com/watch?v=bCNVf7dPrAs",
+          "channel": "The Gaslight Anthem",
+          "durationSeconds": 217.0,
+          "score": 0.465,
+          "signals": [
+            "song-title-near-exact-match",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "f_XF54UISMs",
+          "title": "The Gaslight Anthem- Heres Looking at you Kid live reading 2010 pro shot",
+          "url": "https://www.youtube.com/watch?v=f_XF54UISMs",
+          "channel": "grahaml15",
+          "durationSeconds": 229.0,
+          "score": 0.198,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "_rNRpzgasjo",
+          "title": "Brian Fallon of Gaslight Anthem performs \"Here's Lookin' at You Kid\" live on Crash Test Radio",
+          "url": "https://www.youtube.com/watch?v=_rNRpzgasjo",
+          "channel": "Q101WKQX",
+          "durationSeconds": 227.0,
+          "score": 0.037,
+          "signals": [
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 32,
+      "displayText": "Band of Horses - The Funeral",
+      "query": "Band of Horses The Funeral",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "NgjY95BlgR0",
+        "confidenceScore": 0.983,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "NgjY95BlgR0",
+          "title": "Band of Horses- The Funeral (HQ)",
+          "url": "https://www.youtube.com/watch?v=NgjY95BlgR0",
+          "channel": "The Match Me Podcast",
+          "durationSeconds": 323.0,
+          "score": 0.983,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "cMFWFhTFohk",
+          "title": "Band of Horses - The Funeral [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=cMFWFhTFohk",
+          "channel": "Sub Pop",
+          "durationSeconds": 225.0,
+          "score": 0.849,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "RPeu7ZkU414",
+          "title": "The Funeral - Band Of Horses (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=RPeu7ZkU414",
+          "channel": "Clé ment",
+          "durationSeconds": 327.0,
+          "score": 0.773,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "0KL4bBiDCI0",
+          "title": "Band of Horses - The Funeral (Live On Letterman)",
+          "url": "https://www.youtube.com/watch?v=0KL4bBiDCI0",
+          "channel": "Band Of Horses",
+          "durationSeconds": 360.0,
+          "score": 0.755,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "QEBeHRXrUFo",
+          "title": "Band of Horses - The Funeral  [LYRIC VIDEO Spanish/English] Subtitulado Español",
+          "url": "https://www.youtube.com/watch?v=QEBeHRXrUFo",
+          "channel": "Sub Pop",
+          "durationSeconds": 322.0,
+          "score": 0.703,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 33,
+      "displayText": "Jimmy Eat World - 23",
+      "query": "Jimmy Eat World 23",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ZjqLzk6dsXw",
+        "confidenceScore": 0.798,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ZjqLzk6dsXw",
+          "title": "Jimmy Eat World - 23 (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=ZjqLzk6dsXw",
+          "channel": "Cassie",
+          "durationSeconds": 407.0,
+          "score": 0.798,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "tsgtHf9Bewo",
+          "title": "Jimmy Eat World 23 Live",
+          "url": "https://www.youtube.com/watch?v=tsgtHf9Bewo",
+          "channel": "Jay Li",
+          "durationSeconds": 401.0,
+          "score": 0.672,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "sqvix4pbVZ0",
+          "title": "Jimmy Eat World- 23 (Live at iheartradio 1/13/17)",
+          "url": "https://www.youtube.com/watch?v=sqvix4pbVZ0",
+          "channel": "metaluke",
+          "durationSeconds": 505.0,
+          "score": 0.564,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vNQncx4R7U4",
+          "title": "23",
+          "url": "https://www.youtube.com/watch?v=vNQncx4R7U4",
+          "channel": "Jimmy Eat World",
+          "durationSeconds": 444.0,
+          "score": 0.4,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "XnRPYRKC7Ks",
+          "title": "23",
+          "url": "https://www.youtube.com/watch?v=XnRPYRKC7Ks",
+          "channel": "Jimmy Eat World",
+          "durationSeconds": 434.0,
+          "score": 0.4,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 34,
+      "displayText": "Angus & Julia Stone - What You Wanted",
+      "query": "Angus & Julia Stone What You Wanted",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ZAMFZsP1SJ4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ZAMFZsP1SJ4",
+          "title": "Angus & Julia Stone - What You Wanted",
+          "url": "https://www.youtube.com/watch?v=ZAMFZsP1SJ4",
+          "channel": "LoungElite",
+          "durationSeconds": 373.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "d5_zTxTYdTE",
+          "title": "Angus & Julia Stone - What You Wanted lyrics",
+          "url": "https://www.youtube.com/watch?v=d5_zTxTYdTE",
+          "channel": "OliverrGrey",
+          "durationSeconds": 291.0,
+          "score": 0.889,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "4IRukn_YChM",
+          "title": "Angus & Julia Stone - What You Wanted [Official Music Video]",
+          "url": "https://www.youtube.com/watch?v=4IRukn_YChM",
+          "channel": "NettwerkMusic and Angus and Julia Stone",
+          "durationSeconds": 289.0,
+          "score": 0.846,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "9uWh-TlEQ4k",
+          "title": "Angus & Julia Stone - For you",
+          "url": "https://www.youtube.com/watch?v=9uWh-TlEQ4k",
+          "channel": "corpsesflowersgrow",
+          "durationSeconds": 316.0,
+          "score": 0.382,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "7tDkOzfzvE4",
+          "title": "Angus & Julia Stone - Nothing Else (101.9 KINK)",
+          "url": "https://www.youtube.com/watch?v=7tDkOzfzvE4",
+          "channel": "PNC Live Studio",
+          "durationSeconds": 293.0,
+          "score": 0.304,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 34,
+    "resolvedTracks": 34,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twentysecond",
+      "embedUrl": "https://www.youtube.com/embed/76Mbnuwk2d4?playlist=9yigYFvXclo,GOjnLjsdLn0,LuQrLsTUcN0,z-0jo9ILIxY,Rrd3aNXqOLo,mM-RfAiZ3m0,bvoLazxSV28,-ThONDjIUF4,RmqAfKNrT0c,JtoBu9Er0jY,7x7agLbW_o8,KVlMC1Wov7U,s8o7r9hx3Yw,2bYtFBJajI0,ezz-nazThiM,4vkI2mLrqzw,LHZy2bdajQM,ZawVNKJdSD0,UmFFTkjs-O0,c149KMQ0uI8,YAVjws8vVN8,VkKxmnrRVHo,M-163hZpRJg,piYHudfb7BI,Rhat3oUbNkw,IyE5j1ns1FE,7_I0RBcr8xY,5BLECCgnONA,p9XX193hgH8,NA4oq3fl42w,NgjY95BlgR0,ZjqLzk6dsXw,ZAMFZsP1SJ4",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=76Mbnuwk2d4,9yigYFvXclo,GOjnLjsdLn0,LuQrLsTUcN0,z-0jo9ILIxY,Rrd3aNXqOLo,mM-RfAiZ3m0,bvoLazxSV28,-ThONDjIUF4,RmqAfKNrT0c,JtoBu9Er0jY,7x7agLbW_o8,KVlMC1Wov7U,s8o7r9hx3Yw,2bYtFBJajI0,ezz-nazThiM,4vkI2mLrqzw,LHZy2bdajQM,ZawVNKJdSD0,UmFFTkjs-O0,c149KMQ0uI8,YAVjws8vVN8,VkKxmnrRVHo,M-163hZpRJg,piYHudfb7BI,Rhat3oUbNkw,IyE5j1ns1FE,7_I0RBcr8xY,5BLECCgnONA,p9XX193hgH8,NA4oq3fl42w,NgjY95BlgR0,ZjqLzk6dsXw,ZAMFZsP1SJ4",
+      "videoIds": [
+        "76Mbnuwk2d4",
+        "9yigYFvXclo",
+        "GOjnLjsdLn0",
+        "LuQrLsTUcN0",
+        "z-0jo9ILIxY",
+        "Rrd3aNXqOLo",
+        "mM-RfAiZ3m0",
+        "bvoLazxSV28",
+        "-ThONDjIUF4",
+        "RmqAfKNrT0c",
+        "JtoBu9Er0jY",
+        "7x7agLbW_o8",
+        "KVlMC1Wov7U",
+        "s8o7r9hx3Yw",
+        "2bYtFBJajI0",
+        "ezz-nazThiM",
+        "4vkI2mLrqzw",
+        "LHZy2bdajQM",
+        "ZawVNKJdSD0",
+        "UmFFTkjs-O0",
+        "c149KMQ0uI8",
+        "YAVjws8vVN8",
+        "VkKxmnrRVHo",
+        "M-163hZpRJg",
+        "piYHudfb7BI",
+        "Rhat3oUbNkw",
+        "IyE5j1ns1FE",
+        "7_I0RBcr8xY",
+        "5BLECCgnONA",
+        "p9XX193hgH8",
+        "NA4oq3fl42w",
+        "NgjY95BlgR0",
+        "ZjqLzk6dsXw",
+        "ZAMFZsP1SJ4"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:24:00Z"
+    }
+  }
+}

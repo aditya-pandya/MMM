@@ -1,0 +1,646 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-015-fifteenth",
+  "updatedAt": "2026-04-08T21:25:21Z",
+  "sourceMixPath": "data/imported/mixes/mix-015-fifteenth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "The Ting Tings - Be The One",
+      "query": "The Ting Tings Be The One",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "2xEIGEonqM8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2xEIGEonqM8",
+          "title": "The Ting Tings - Be The One",
+          "url": "https://www.youtube.com/watch?v=2xEIGEonqM8",
+          "channel": "The Ting Tings",
+          "durationSeconds": 172.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "J-mW9_KN-8U",
+          "title": "The Ting Tings - Be the One (Single Mix) (Audio)",
+          "url": "https://www.youtube.com/watch?v=J-mW9_KN-8U",
+          "channel": "The Ting Tings",
+          "durationSeconds": 175.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PnXNgTO-Xhs",
+          "title": "Be The One - The Ting Tings",
+          "url": "https://www.youtube.com/watch?v=PnXNgTO-Xhs",
+          "channel": "Katrina981993",
+          "durationSeconds": 179.0,
+          "score": 0.871,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "buuSW38glB0",
+          "title": "The Ting Tings - Be The One (Live At SXSW)",
+          "url": "https://www.youtube.com/watch?v=buuSW38glB0",
+          "channel": "ShoutFactoryMusic",
+          "durationSeconds": 267.0,
+          "score": 0.693,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "R4AjNr5buy0",
+          "title": "The Ting Tings @ Route du Rock (Full set, 16/08/2008)",
+          "url": "https://www.youtube.com/watch?v=R4AjNr5buy0",
+          "channel": "Концерты из ВК",
+          "durationSeconds": 2874.0,
+          "score": 0.293,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Fucked Up - The Other Shoe",
+      "query": "Fucked Up The Other Shoe",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "mW0-jrDeSgQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "mW0-jrDeSgQ",
+          "title": "Fucked Up - \"The Other Shoe\"",
+          "url": "https://www.youtube.com/watch?v=mW0-jrDeSgQ",
+          "channel": "Matador Records",
+          "durationSeconds": 304.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "-7J4yKS9i6c",
+          "title": "The Other Shoe - Fucked Up",
+          "url": "https://www.youtube.com/watch?v=-7J4yKS9i6c",
+          "channel": "tomoftheblazer",
+          "durationSeconds": 301.0,
+          "score": 0.908,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PYPgqkdwgnY",
+          "title": "The Other Shoe - Fucked Up",
+          "url": "https://www.youtube.com/watch?v=PYPgqkdwgnY",
+          "channel": "Sonic More Music",
+          "durationSeconds": 336.0,
+          "score": 0.908,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "_AUp5WUEv3Y",
+          "title": "Fucked Up - The Other Shoe - David Comes to Life",
+          "url": "https://www.youtube.com/watch?v=_AUp5WUEv3Y",
+          "channel": "Pitchfork",
+          "durationSeconds": 254.0,
+          "score": 0.899,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "D9r0L9VQ_l0",
+          "title": "F--ked Up | The Other Shoe | First Play Live",
+          "url": "https://www.youtube.com/watch?v=D9r0L9VQ_l0",
+          "channel": "CBC Music",
+          "durationSeconds": 288.0,
+          "score": 0.465,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Cults - You Know What I Mean",
+      "query": "Cults You Know What I Mean",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "_E2tS_7j8y4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "_E2tS_7j8y4",
+          "title": "Cults - You Know What I Mean (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=_E2tS_7j8y4",
+          "channel": "Cults",
+          "durationSeconds": 151.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "UXeLGCxJwhw",
+          "title": "Cults - You Know What I Mean",
+          "url": "https://www.youtube.com/watch?v=UXeLGCxJwhw",
+          "channel": "rkl2195",
+          "durationSeconds": 154.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "bwSYmpORCXU",
+          "title": "Cults - You Know What I Mean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=bwSYmpORCXU",
+          "channel": "Cults",
+          "durationSeconds": 179.0,
+          "score": 0.971,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "AKtx5gfepj0",
+          "title": "Cults - You Know What I Mean - 10/4/2017 - Paste Studios, New York, NY",
+          "url": "https://www.youtube.com/watch?v=AKtx5gfepj0",
+          "channel": "Paste Magazine",
+          "durationSeconds": 176.0,
+          "score": 0.865,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "f8hBrLAmVkg",
+          "title": "SPINhouse Live: Cults, \"You Know What I Mean\"",
+          "url": "https://www.youtube.com/watch?v=f8hBrLAmVkg",
+          "channel": "SPIN",
+          "durationSeconds": 174.0,
+          "score": 0.731,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Golden Silvers - Please Venus",
+      "query": "Golden Silvers Please Venus",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "nmiSjcxOg1Q",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "nmiSjcxOg1Q",
+          "title": "Golden Silvers - Please Venus",
+          "url": "https://www.youtube.com/watch?v=nmiSjcxOg1Q",
+          "channel": "Caballerialmedia",
+          "durationSeconds": 301.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "_0IyCgXfDLs",
+          "title": "Golden Silvers - 'Please Venus' (Official Video) HD",
+          "url": "https://www.youtube.com/watch?v=_0IyCgXfDLs",
+          "channel": "Beggars Banquet Records",
+          "durationSeconds": 204.0,
+          "score": 0.841,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "WlUJC7hfJ6k",
+          "title": "Golden Silvers - 'Please Venus' (Official Video),good",
+          "url": "https://www.youtube.com/watch?v=WlUJC7hfJ6k",
+          "channel": "veryNiubility",
+          "durationSeconds": 261.0,
+          "score": 0.832,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ns9o1gEhaE8",
+          "title": "Golden Silvers 'True Romance (True No. 9 Blues)' HD",
+          "url": "https://www.youtube.com/watch?v=ns9o1gEhaE8",
+          "channel": "Beggars Banquet Records",
+          "durationSeconds": 219.0,
+          "score": 0.328,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "juTJp0rUkeM",
+          "title": "Golden Silvers (feat. Hypnotic Brass Ensemble) - 'Arrows Of Eros'",
+          "url": "https://www.youtube.com/watch?v=juTJp0rUkeM",
+          "channel": "XL Recordings",
+          "durationSeconds": 319.0,
+          "score": 0.291,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Friendly Fires - Live Those Days Tonight",
+      "query": "Friendly Fires Live Those Days Tonight",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ArfRdgi8BlE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ArfRdgi8BlE",
+          "title": "Friendly Fires - Live Those Days Tonight",
+          "url": "https://www.youtube.com/watch?v=ArfRdgi8BlE",
+          "channel": "XL Recordings",
+          "durationSeconds": 302.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "YtGbNm4pIkY",
+          "title": "Friendly Fires - Live Those Days Tonight (Back to '89 Rave Montage)",
+          "url": "https://www.youtube.com/watch?v=YtGbNm4pIkY",
+          "channel": "XL Recordings",
+          "durationSeconds": 254.0,
+          "score": 0.925,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "2OTv3WE_LOY",
+          "title": "Friendly Fires Live Those Days Tonight Jools Holland Later May 2011",
+          "url": "https://www.youtube.com/watch?v=2OTv3WE_LOY",
+          "channel": "UnfinishedTympani",
+          "durationSeconds": 245.0,
+          "score": 0.909,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "cVC8yODJOTk",
+          "title": "Friendly Fires - Live Those Days Tonight (Lightbox Session)",
+          "url": "https://www.youtube.com/watch?v=cVC8yODJOTk",
+          "channel": "XL Recordings",
+          "durationSeconds": 286.0,
+          "score": 0.871,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "lw63INYBcYA",
+          "title": "Friendly Fires Reading and Leeds",
+          "url": "https://www.youtube.com/watch?v=lw63INYBcYA",
+          "channel": "BBC",
+          "durationSeconds": 225.0,
+          "score": 0.3,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Low - Especially Me",
+      "query": "Low Especially Me",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "kPcUCimnzrQ",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "kPcUCimnzrQ",
+          "title": "Low - Especially Me",
+          "url": "https://www.youtube.com/watch?v=kPcUCimnzrQ",
+          "channel": "MrDejanceek",
+          "durationSeconds": 317.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "_ZBkO1LAlhI",
+          "title": "Low - Especially Me",
+          "url": "https://www.youtube.com/watch?v=_ZBkO1LAlhI",
+          "channel": "Sub Pop",
+          "durationSeconds": 330.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "_z2_rY4NGLE",
+          "title": "Low - Especially Me",
+          "url": "https://www.youtube.com/watch?v=_z2_rY4NGLE",
+          "channel": "PPLDTV",
+          "durationSeconds": 305.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "gBtJpVY7NkE",
+          "title": "Low - Especially Me [OFFICIAL VIDEO]",
+          "url": "https://www.youtube.com/watch?v=gBtJpVY7NkE",
+          "channel": "Sub Pop and Low",
+          "durationSeconds": 223.0,
+          "score": 0.932,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "i9WC-4OK3xQ",
+          "title": "Especially Me",
+          "url": "https://www.youtube.com/watch?v=i9WC-4OK3xQ",
+          "channel": "Low",
+          "durationSeconds": 329.0,
+          "score": 0.6,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Work Drugs - Curious Serge",
+      "query": "Work Drugs Curious Serge",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Z4p-rDyisyg",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Z4p-rDyisyg",
+          "title": "Work Drugs - Curious Serge",
+          "url": "https://www.youtube.com/watch?v=Z4p-rDyisyg",
+          "channel": "Work Drugs",
+          "durationSeconds": 201.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "hJ75NyYxJZo",
+          "title": "Work Drugs - Curious Serge (Cayman Islands Session)",
+          "url": "https://www.youtube.com/watch?v=hJ75NyYxJZo",
+          "channel": "Work Drugs",
+          "durationSeconds": 174.0,
+          "score": 0.881,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "U4A1S_2iGmI",
+          "title": "Work Drugs - Curious Serge (Live - The Key Studio Sessions 08.31.2011)",
+          "url": "https://www.youtube.com/watch?v=U4A1S_2iGmI",
+          "channel": "Malcolm Powder",
+          "durationSeconds": 230.0,
+          "score": 0.604,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "_5SoZGu_mPM",
+          "title": "Work Drugs - Delta",
+          "url": "https://www.youtube.com/watch?v=_5SoZGu_mPM",
+          "channel": "Work Drugs",
+          "durationSeconds": 238.0,
+          "score": 0.41,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "cVG2wUxh_RY",
+          "title": "Work Drugs - The Art of Progress",
+          "url": "https://www.youtube.com/watch?v=cVG2wUxh_RY",
+          "channel": "Work Drugs",
+          "durationSeconds": 295.0,
+          "score": 0.38,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Fifteenth",
+      "embedUrl": "https://www.youtube.com/embed/2xEIGEonqM8?playlist=mW0-jrDeSgQ,_E2tS_7j8y4,nmiSjcxOg1Q,ArfRdgi8BlE,kPcUCimnzrQ,Z4p-rDyisyg",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=2xEIGEonqM8,mW0-jrDeSgQ,_E2tS_7j8y4,nmiSjcxOg1Q,ArfRdgi8BlE,kPcUCimnzrQ,Z4p-rDyisyg",
+      "videoIds": [
+        "2xEIGEonqM8",
+        "mW0-jrDeSgQ",
+        "_E2tS_7j8y4",
+        "nmiSjcxOg1Q",
+        "ArfRdgi8BlE",
+        "kPcUCimnzrQ",
+        "Z4p-rDyisyg"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:25:21Z"
+    }
+  }
+}

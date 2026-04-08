@@ -1,0 +1,644 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-005-fifth",
+  "updatedAt": "2026-04-08T21:27:33Z",
+  "sourceMixPath": "data/imported/mixes/mix-005-fifth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Coeur de Pirate - Ensemble",
+      "query": "Coeur de Pirate Ensemble",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "D1Jf7oAHutE",
+        "confidenceScore": 0.877,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "D1Jf7oAHutE",
+          "title": "Ensemble Coeur de pirate",
+          "url": "https://www.youtube.com/watch?v=D1Jf7oAHutE",
+          "channel": "aurdu52",
+          "durationSeconds": 141.0,
+          "score": 0.877,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "i3u0vq0WyIA",
+          "title": "Coeur de pirate - Ensemble [Vidéoclip officiel]",
+          "url": "https://www.youtube.com/watch?v=i3u0vq0WyIA",
+          "channel": "Cœur de pirate",
+          "durationSeconds": 140.0,
+          "score": 0.871,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "HVvK6hkKjcQ",
+          "title": "Ensemble Coeur de Pirate Lyrics",
+          "url": "https://www.youtube.com/watch?v=HVvK6hkKjcQ",
+          "channel": "FlashGun12",
+          "durationSeconds": 140.0,
+          "score": 0.779,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "UN7BJ_ZdCNU",
+          "title": "Coeur de Pirate - Francis",
+          "url": "https://www.youtube.com/watch?v=UN7BJ_ZdCNU",
+          "channel": "Cœur de pirate",
+          "durationSeconds": 149.0,
+          "score": 0.365,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "EH5oHeH3DFo",
+          "title": "Ensemble - Cœur de Pirate - Live@Home",
+          "url": "https://www.youtube.com/watch?v=EH5oHeH3DFo",
+          "channel": "Béatrice Martin",
+          "durationSeconds": 145.0,
+          "score": 0.099,
+          "signals": [
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Bang Gang - Follow",
+      "query": "Bang Gang Follow",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "5A5TChEGYU8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "5A5TChEGYU8",
+          "title": "Bang Gang - Follow (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=5A5TChEGYU8",
+          "channel": "bangehf",
+          "durationSeconds": 293.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "PG4oOqQwFGU",
+          "title": "The OC Music - Bang Gang - Follow",
+          "url": "https://www.youtube.com/watch?v=PG4oOqQwFGU",
+          "channel": "MT Pepper",
+          "durationSeconds": 296.0,
+          "score": 0.875,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "f7k-ieaL-EI",
+          "title": "Bang Gang - Follow - Fnac Indétendances 2008",
+          "url": "https://www.youtube.com/watch?v=f7k-ieaL-EI",
+          "channel": "Fnac",
+          "durationSeconds": 278.0,
+          "score": 0.818,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Id3qFQ6ASQ4",
+          "title": "017 - Bang Gang - Follow (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=Id3qFQ6ASQ4",
+          "channel": "Shadow201212music",
+          "durationSeconds": 296.0,
+          "score": 0.809,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "2Cry7XSOk9k",
+          "title": "Bang Gang - Follow (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=2Cry7XSOk9k",
+          "channel": "bangehf",
+          "durationSeconds": 290.0,
+          "score": 0.771,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Editors - No Sound But The Wind",
+      "query": "Editors No Sound But The Wind",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "xwQrWgY9U4k",
+        "confidenceScore": 0.968,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "xwQrWgY9U4k",
+          "title": "No Sound But The Wind - Editors",
+          "url": "https://www.youtube.com/watch?v=xwQrWgY9U4k",
+          "channel": "Missfelton10",
+          "durationSeconds": 229.0,
+          "score": 0.968,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "jcY3wGwRFjc",
+          "title": "No Sound But The Wind",
+          "url": "https://www.youtube.com/watch?v=jcY3wGwRFjc",
+          "channel": "Editors",
+          "durationSeconds": 229.0,
+          "score": 0.892,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "yZIOJxanU_I",
+          "title": "No Sound But The Wind by The Editors (with lyrics)",
+          "url": "https://www.youtube.com/watch?v=yZIOJxanU_I",
+          "channel": "theseboredkids",
+          "durationSeconds": 231.0,
+          "score": 0.793,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "XXUCFk8VJFY",
+          "title": "Editors - No Sound But The Wind (Live at Rock Werchter 2010)",
+          "url": "https://www.youtube.com/watch?v=XXUCFk8VJFY",
+          "channel": "Editors",
+          "durationSeconds": 229.0,
+          "score": 0.763,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "cFGymr3H6oc",
+          "title": "Editors - No Sound but the Wind live at Hear Hear Festival 14th August 2022",
+          "url": "https://www.youtube.com/watch?v=cFGymr3H6oc",
+          "channel": "Airborne Lemming",
+          "durationSeconds": 316.0,
+          "score": 0.631,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Dinosaur Pile-Up - Love Is A Boat And We’re Sinking",
+      "query": "Dinosaur Pile-Up Love Is A Boat And We’re Sinking",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "49ROXtE3kFs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "49ROXtE3kFs",
+          "title": "Dinosaur Pile Up - Love Is a Boat and we're sinking",
+          "url": "https://www.youtube.com/watch?v=49ROXtE3kFs",
+          "channel": "kurtianhbk",
+          "durationSeconds": 287.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "M86wbLeMqVI",
+          "title": "Dinosaur Pile Up - Love Is A Boat And We're Sinking (Album Version)",
+          "url": "https://www.youtube.com/watch?v=M86wbLeMqVI",
+          "channel": "Jim Wilkinson",
+          "durationSeconds": 278.0,
+          "score": 0.984,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "CKQLZyDn6tg",
+          "title": "Dinosaur Pile-Up - Love Is a Boat And We're Sinking (Sneaky Pete's)",
+          "url": "https://www.youtube.com/watch?v=CKQLZyDn6tg",
+          "channel": "Susied89",
+          "durationSeconds": 241.0,
+          "score": 0.984,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "MyzBf-FKOrg",
+          "title": "Dinosaur Pile Up - Love is a Boat and We're Sinking (Hinterland @ King Tuts)",
+          "url": "https://www.youtube.com/watch?v=MyzBf-FKOrg",
+          "channel": "zanyzaz",
+          "durationSeconds": 14.0,
+          "score": 0.96,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "7nA66qlFqIM",
+          "title": "Dinosaur Pile-Up - Friend of Mine (Official session video)",
+          "url": "https://www.youtube.com/watch?v=7nA66qlFqIM",
+          "channel": "Dinosaur Pile-Up",
+          "durationSeconds": 149.0,
+          "score": 0.262,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "unexpected-session-penalty",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Rooney - I Can’t Get Enough",
+      "query": "Rooney I Can’t Get Enough",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ZSBS8v92Lk0",
+        "confidenceScore": 0.98,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ZSBS8v92Lk0",
+          "title": "Rooney - I Can't Get Enough (Video)",
+          "url": "https://www.youtube.com/watch?v=ZSBS8v92Lk0",
+          "channel": "Rooney",
+          "durationSeconds": 183.0,
+          "score": 0.98,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "csVWKej8XJ4",
+          "title": "Rooney - I Can't Get Enough || Baeble Music",
+          "url": "https://www.youtube.com/watch?v=csVWKej8XJ4",
+          "channel": "Baeblemusic",
+          "durationSeconds": 205.0,
+          "score": 0.954,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "sbzXcxZTi3E",
+          "title": "Rooney - I Can't Get Enough lyrics",
+          "url": "https://www.youtube.com/watch?v=sbzXcxZTi3E",
+          "channel": "HappyGoten",
+          "durationSeconds": 183.0,
+          "score": 0.913,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "VdB7doLFMuc",
+          "title": "Rooney - I Can't Get Enough (Video)",
+          "url": "https://www.youtube.com/watch?v=VdB7doLFMuc",
+          "channel": "ADA",
+          "durationSeconds": 183.0,
+          "score": 0.9,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "bgW-hW_V0Jw",
+          "title": "Rooney - I Can't Get Enough - 9/20/2018 - Paste Studios - New York, NY",
+          "url": "https://www.youtube.com/watch?v=bgW-hW_V0Jw",
+          "channel": "Paste Magazine",
+          "durationSeconds": 180.0,
+          "score": 0.856,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Mogwai - The Sun Smells Too Loud",
+      "query": "Mogwai The Sun Smells Too Loud",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "yUaCxx5npko",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "yUaCxx5npko",
+          "title": "Mogwai - The sun smells too loud",
+          "url": "https://www.youtube.com/watch?v=yUaCxx5npko",
+          "channel": "Simon Lillqvist",
+          "durationSeconds": 418.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "LFNQiCfMaw0",
+          "title": "Mogwai - The Sun Smells Too Loud",
+          "url": "https://www.youtube.com/watch?v=LFNQiCfMaw0",
+          "channel": "Elliott",
+          "durationSeconds": 432.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "onQVSiDe57o",
+          "title": "Mogwai - The Sun Smells too Loud",
+          "url": "https://www.youtube.com/watch?v=onQVSiDe57o",
+          "channel": "Lucas Birtles",
+          "durationSeconds": 419.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "4G8oGjNGjZY",
+          "title": "Mogwai - The Sun Smells Too Loud",
+          "url": "https://www.youtube.com/watch?v=4G8oGjNGjZY",
+          "channel": "carollunachick",
+          "durationSeconds": 419.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "sSZ--zPKN2U",
+          "title": "The Sun Smells Too Loud",
+          "url": "https://www.youtube.com/watch?v=sSZ--zPKN2U",
+          "channel": "mogwaiTV",
+          "durationSeconds": 419.0,
+          "score": 0.9,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Stars - Celebration Guns",
+      "query": "Stars Celebration Guns",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "pdBA3jqNejk",
+        "confidenceScore": 0.945,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "pdBA3jqNejk",
+          "title": "Stars - Celebration Guns at 9:30 Club",
+          "url": "https://www.youtube.com/watch?v=pdBA3jqNejk",
+          "channel": "Merrijoy Vicente",
+          "durationSeconds": 185.0,
+          "score": 0.945,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "og2XbuArfPI",
+          "title": "Stars | Celebration Guns I CBC Music Festival",
+          "url": "https://www.youtube.com/watch?v=og2XbuArfPI",
+          "channel": "CBC Music",
+          "durationSeconds": 198.0,
+          "score": 0.901,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "4S1WBP91YKA",
+          "title": "Celebration Guns - Stars (lyrics in description)",
+          "url": "https://www.youtube.com/watch?v=4S1WBP91YKA",
+          "channel": "Lizzie J. Sullivan",
+          "durationSeconds": 187.0,
+          "score": 0.761,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "AWPm2ZaaZCM",
+          "title": "Celebration Guns",
+          "url": "https://www.youtube.com/watch?v=AWPm2ZaaZCM",
+          "channel": "Stars",
+          "durationSeconds": 186.0,
+          "score": 0.593,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "HMwxomo7m24",
+          "title": "Celebration Guns (2024 Remastered)",
+          "url": "https://www.youtube.com/watch?v=HMwxomo7m24",
+          "channel": "Stars",
+          "durationSeconds": 185.0,
+          "score": 0.458,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Fifth",
+      "embedUrl": "https://www.youtube.com/embed/D1Jf7oAHutE?playlist=5A5TChEGYU8,xwQrWgY9U4k,49ROXtE3kFs,ZSBS8v92Lk0,yUaCxx5npko,pdBA3jqNejk",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=D1Jf7oAHutE,5A5TChEGYU8,xwQrWgY9U4k,49ROXtE3kFs,ZSBS8v92Lk0,yUaCxx5npko,pdBA3jqNejk",
+      "videoIds": [
+        "D1Jf7oAHutE",
+        "5A5TChEGYU8",
+        "xwQrWgY9U4k",
+        "49ROXtE3kFs",
+        "ZSBS8v92Lk0",
+        "yUaCxx5npko",
+        "pdBA3jqNejk"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:27:33Z"
+    }
+  }
+}

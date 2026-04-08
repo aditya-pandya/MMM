@@ -1,0 +1,1260 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-020-twentieth",
+  "updatedAt": "2026-04-08T21:24:27Z",
+  "sourceMixPath": "data/imported/mixes/mix-020-twentieth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Sebastien Tellier - La Ritournelle (Mr. Dan’s Mix)",
+      "query": "Sebastien Tellier La Ritournelle (Mr. Dan’s Mix)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "QZph_KlN4os",
+        "confidenceScore": 0.9,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "QZph_KlN4os",
+          "title": "Sebastien Tellier - La Ritournelle (Mr.Dan's Mix) (with lyrics)",
+          "url": "https://www.youtube.com/watch?v=QZph_KlN4os",
+          "channel": "cosunaj",
+          "durationSeconds": 206.0,
+          "score": 0.9,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "NRhRFrolWqU",
+          "title": "Sébastien Tellier - La Ritournelle (Mr Dan's Magic Wand Mix) (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=NRhRFrolWqU",
+          "channel": "Record Makers",
+          "durationSeconds": 206.0,
+          "score": 0.887,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "HHaAyccW35Q",
+          "title": "Sébastien Tellier - La Ritournelle (Mr. Dan's Mix)",
+          "url": "https://www.youtube.com/watch?v=HHaAyccW35Q",
+          "channel": "Andrès Lima",
+          "durationSeconds": 201.0,
+          "score": 0.808,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "BPWQTLLMAAc",
+          "title": "Sébastien Tellier - La Ritournelle (Mr Dan's Magic Wand Mix) (Official Video)",
+          "url": "https://www.youtube.com/watch?v=BPWQTLLMAAc",
+          "channel": "Record Makers",
+          "durationSeconds": 199.0,
+          "score": 0.567,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "_SmDNQNiYpk",
+          "title": "La ritournelle (Mr Dan's Magic Wand Mix)",
+          "url": "https://www.youtube.com/watch?v=_SmDNQNiYpk",
+          "channel": "Sébastien Tellier",
+          "durationSeconds": 206.0,
+          "score": 0.345,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Pepper Rabbit - Murder Room",
+      "query": "Pepper Rabbit Murder Room",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Dc9gPlwXDDs",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Dc9gPlwXDDs",
+          "title": "Pepper Rabbit \"Murder Room\"",
+          "url": "https://www.youtube.com/watch?v=Dc9gPlwXDDs",
+          "channel": "kanine records",
+          "durationSeconds": 211.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ECMGzpPsvwQ",
+          "title": "Pepper Rabbit -- Murder Room",
+          "url": "https://www.youtube.com/watch?v=ECMGzpPsvwQ",
+          "channel": "kingofthecastle7",
+          "durationSeconds": 234.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "vqw2OzOEnL8",
+          "title": "Pepper Rabbit - Murder Room (Teen Daze Remix)",
+          "url": "https://www.youtube.com/watch?v=vqw2OzOEnL8",
+          "channel": "cryptesthesia",
+          "durationSeconds": 254.0,
+          "score": 0.783,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "hPZZbrNqLbo",
+          "title": "Pepper Rabbit - Murder Room | The Wild Honey Pie Honey I'm Home Session",
+          "url": "https://www.youtube.com/watch?v=hPZZbrNqLbo",
+          "channel": "The Wild Honey Pie",
+          "durationSeconds": 243.0,
+          "score": 0.734,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "qqj4MB9bHj8",
+          "title": "Pepper Rabbit - Murder Room (Live at Daytrotter Studio Rock Island, IL 2011)",
+          "url": "https://www.youtube.com/watch?v=qqj4MB9bHj8",
+          "channel": "The Mosh Pit - Topic",
+          "durationSeconds": 201.0,
+          "score": 0.705,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "topic-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Mates of State - Maracas",
+      "query": "Mates of State Maracas",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "YnNQ8BTobOo",
+        "confidenceScore": 0.987,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "YnNQ8BTobOo",
+          "title": "Mates Of State - \"Maracas\"",
+          "url": "https://www.youtube.com/watch?v=YnNQ8BTobOo",
+          "channel": "Elmcitymusic",
+          "durationSeconds": 186.0,
+          "score": 0.987,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "_2kQ3k1BTHk",
+          "title": "069 - Mates Of State - Maracas",
+          "url": "https://www.youtube.com/watch?v=_2kQ3k1BTHk",
+          "channel": "birpfmaugust2011",
+          "durationSeconds": 203.0,
+          "score": 0.951,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "CbqrO9oxc7E",
+          "title": "Mates of State - \"Maracas\" (Official Video)",
+          "url": "https://www.youtube.com/watch?v=CbqrO9oxc7E",
+          "channel": "Barsuk Records",
+          "durationSeconds": 211.0,
+          "score": 0.821,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "KJ1x-KcXbOw",
+          "title": "Mates of State - \"Maracas\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=KJ1x-KcXbOw",
+          "channel": "WFUV Public Radio",
+          "durationSeconds": 211.0,
+          "score": 0.672,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "jax5OwlDbFU",
+          "title": "Mates of State - Maracas - HearYa Live Session",
+          "url": "https://www.youtube.com/watch?v=jax5OwlDbFU",
+          "channel": "Hear Ya",
+          "durationSeconds": 224.0,
+          "score": 0.558,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty",
+            "unexpected-session-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "I Break Horses - Winter Beats",
+      "query": "I Break Horses Winter Beats",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "hy6ZRBg3XMI",
+        "confidenceScore": 0.905,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "hy6ZRBg3XMI",
+          "title": "I Break Horses - 'Winter Beats' (Bedroom Sessions)",
+          "url": "https://www.youtube.com/watch?v=hy6ZRBg3XMI",
+          "channel": "bellaunioninc",
+          "durationSeconds": 381.0,
+          "score": 0.905,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "NMN3mNFF52Y",
+          "title": "I Break Horses Winter Beats Primavera Sound festival 2012",
+          "url": "https://www.youtube.com/watch?v=NMN3mNFF52Y",
+          "channel": "agadsa",
+          "durationSeconds": 302.0,
+          "score": 0.855,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "-Sg7YkPnEYw",
+          "title": "I Break Horses - Winter Beats (Official Video)",
+          "url": "https://www.youtube.com/watch?v=-Sg7YkPnEYw",
+          "channel": "bellaunioninc",
+          "durationSeconds": 196.0,
+          "score": 0.855,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "pmY3E8y15U4",
+          "title": "I Break Horses - Winter Beats (Live @ Village Underground, London, 23/01/14)",
+          "url": "https://www.youtube.com/watch?v=pmY3E8y15U4",
+          "channel": "Andunemir",
+          "durationSeconds": 370.0,
+          "score": 0.605,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "tgCDFHuXQSY",
+          "title": "Winter Beats",
+          "url": "https://www.youtube.com/watch?v=tgCDFHuXQSY",
+          "channel": "I Break Horses",
+          "durationSeconds": 286.0,
+          "score": 0.525,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Teen Daze - The Harvest",
+      "query": "Teen Daze The Harvest",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "LvEq3Uo6ie8",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "LvEq3Uo6ie8",
+          "title": "Teen Daze - The Harvest (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=LvEq3Uo6ie8",
+          "channel": "Teen Daze",
+          "durationSeconds": 253.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "ltNI_N_i7lo",
+          "title": "Teen Daze - The Harvest (Mutual Benefit Cover) (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=ltNI_N_i7lo",
+          "channel": "Teen Daze",
+          "durationSeconds": 214.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred",
+            "unexpected-cover-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "1xVDdiJ-yY4",
+          "title": "104 - Teen Daze - The Harvest",
+          "url": "https://www.youtube.com/watch?v=1xVDdiJ-yY4",
+          "channel": "birpfmaugust2011",
+          "durationSeconds": 250.0,
+          "score": 0.984,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "XB2qdShyzRo",
+          "title": "Teen Daze - The Harvest - Daytrotter Session",
+          "url": "https://www.youtube.com/watch?v=XB2qdShyzRo",
+          "channel": "daytrotter",
+          "durationSeconds": 215.0,
+          "score": 0.804,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "CnVZ-bNCT18",
+          "title": "Teen Daze - The Harvest | Chill Electronic - Ambient Music Video",
+          "url": "https://www.youtube.com/watch?v=CnVZ-bNCT18",
+          "channel": "kevartney",
+          "durationSeconds": 176.0,
+          "score": 0.717,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Active Child - Hanging On",
+      "query": "Active Child Hanging On",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "WgJJc0H0enU",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "WgJJc0H0enU",
+          "title": "Active Child - Hanging On",
+          "url": "https://www.youtube.com/watch?v=WgJJc0H0enU",
+          "channel": "dpknowleseaglese25",
+          "durationSeconds": 329.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "pCB6D61LSCs",
+          "title": "Active Child - Hanging On [Audio Stream]",
+          "url": "https://www.youtube.com/watch?v=pCB6D61LSCs",
+          "channel": "Vagrant Records",
+          "durationSeconds": 317.0,
+          "score": 0.972,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "B-OoisekXIA",
+          "title": "Active Child - Hanging On (Official Video)",
+          "url": "https://www.youtube.com/watch?v=B-OoisekXIA",
+          "channel": "Vagrant Records",
+          "durationSeconds": 353.0,
+          "score": 0.841,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "_W_JkgDzTwU",
+          "title": "Active Child - Hanging On (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=_W_JkgDzTwU",
+          "channel": "KEXP",
+          "durationSeconds": 373.0,
+          "score": 0.692,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "o9yZxvvWbvQ",
+          "title": "Hanging On (White Sea Remix)",
+          "url": "https://www.youtube.com/watch?v=o9yZxvvWbvQ",
+          "channel": "Active Child",
+          "durationSeconds": 242.0,
+          "score": 0.262,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-remix-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Girls - Vomit",
+      "query": "Girls Vomit",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ze6rg4ixjOI",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ze6rg4ixjOI",
+          "title": "Girls - 'Vomit'",
+          "url": "https://www.youtube.com/watch?v=ze6rg4ixjOI",
+          "channel": "FantasytrashcanTV",
+          "durationSeconds": 397.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "YqksGzawkUg",
+          "title": "Girls - Vomit",
+          "url": "https://www.youtube.com/watch?v=YqksGzawkUg",
+          "channel": "Tropical Contact High",
+          "durationSeconds": 392.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "u4MI5HyDNP8",
+          "title": "Girls - Vomit - Special Presentation",
+          "url": "https://www.youtube.com/watch?v=u4MI5HyDNP8",
+          "channel": "Pitchfork",
+          "durationSeconds": 414.0,
+          "score": 0.802,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "tVYGR7fzxOI",
+          "title": "Girl Vomiting",
+          "url": "https://www.youtube.com/watch?v=tVYGR7fzxOI",
+          "channel": "Vomit Girl",
+          "durationSeconds": 20.0,
+          "score": 0.43,
+          "signals": [
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "IzZYI5n-tPY",
+          "title": "Total Drama Vomit Compilation!",
+          "url": "https://www.youtube.com/watch?v=IzZYI5n-tPY",
+          "channel": "Total Mansion",
+          "durationSeconds": 241.0,
+          "score": 0.238,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "displayText": "My Brightest Diamond - Reaching Through to the Other Side",
+      "query": "My Brightest Diamond Reaching Through to the Other Side",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "x1ZSfMBgDUo",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "x1ZSfMBgDUo",
+          "title": "My Brightest Diamond - Reaching Through to the Other Side",
+          "url": "https://www.youtube.com/watch?v=x1ZSfMBgDUo",
+          "channel": "4amorningSound",
+          "durationSeconds": 223.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "BjRBGKmOtZA",
+          "title": "My Brightest Diamond-\"Reaching Through To The Other Side\" Vinyl RIP",
+          "url": "https://www.youtube.com/watch?v=BjRBGKmOtZA",
+          "channel": "Kelvin Cammy",
+          "durationSeconds": 211.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "FgCuQ4yUt7g",
+          "title": "My Brightest Diamond: Reaching Through to the Other Side Live in The Greene Space",
+          "url": "https://www.youtube.com/watch?v=FgCuQ4yUt7g",
+          "channel": "The Greene Space at WNYC & WQXR",
+          "durationSeconds": 243.0,
+          "score": 0.732,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "hW45YRSTob4",
+          "title": "Reaching Through to the Other Side",
+          "url": "https://www.youtube.com/watch?v=hW45YRSTob4",
+          "channel": "mybrightestdiamond",
+          "durationSeconds": 222.0,
+          "score": 0.489,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "hE5vRGf9FpI",
+          "title": "Everything is in Line",
+          "url": "https://www.youtube.com/watch?v=hE5vRGf9FpI",
+          "channel": "mybrightestdiamond",
+          "durationSeconds": 272.0,
+          "score": 0.138,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "displayText": "M83 - Midnight City",
+      "query": "M83 Midnight City",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "PuzvORd7wiM",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "PuzvORd7wiM",
+          "title": "M83 - Midnight City",
+          "url": "https://www.youtube.com/watch?v=PuzvORd7wiM",
+          "channel": "MusicIsLife",
+          "durationSeconds": 242.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "p5aG7XCacQI",
+          "title": "M83 - midnight city [1 HOUR]",
+          "url": "https://www.youtube.com/watch?v=p5aG7XCacQI",
+          "channel": "1 HOUR",
+          "durationSeconds": 3892.0,
+          "score": 0.975,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "dX3k_QDnzHE",
+          "title": "M83 'Midnight City' Official video",
+          "url": "https://www.youtube.com/watch?v=dX3k_QDnzHE",
+          "channel": "M83",
+          "durationSeconds": 244.0,
+          "score": 0.932,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "iSC4P1i9zmE",
+          "title": "M83 - Midnight City (Lyrics)",
+          "url": "https://www.youtube.com/watch?v=iSC4P1i9zmE",
+          "channel": "Fresh Vibes",
+          "durationSeconds": 245.0,
+          "score": 0.895,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ErrKRT3VjKk",
+          "title": "M83 - Midnight City Live @ Sziget Festival 2016",
+          "url": "https://www.youtube.com/watch?v=ErrKRT3VjKk",
+          "channel": "Sziget Festival",
+          "durationSeconds": 260.0,
+          "score": 0.634,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "displayText": "Clap Your Hands Say Yeah - Maniac",
+      "query": "Clap Your Hands Say Yeah Maniac",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "w-4nEWfRI8I",
+        "confidenceScore": 0.958,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "w-4nEWfRI8I",
+          "title": "Clap Your Hands Say Yeah - Maniac",
+          "url": "https://www.youtube.com/watch?v=w-4nEWfRI8I",
+          "channel": "djsaxnot",
+          "durationSeconds": 184.0,
+          "score": 0.958,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "jVlTM37dtTQ",
+          "title": "Clap Your Hands Say Yeah - Maniac",
+          "url": "https://www.youtube.com/watch?v=jVlTM37dtTQ",
+          "channel": "Compagniadellindie",
+          "durationSeconds": 184.0,
+          "score": 0.958,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "dz_vKDw1D40",
+          "title": "Clap Your Hands Say Yeah - \"Maniac\" (Music Video)",
+          "url": "https://www.youtube.com/watch?v=dz_vKDw1D40",
+          "channel": "Clap Your Hands Say Yeah",
+          "durationSeconds": 182.0,
+          "score": 0.875,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "31IkHoS-sdA",
+          "title": "Clap Your Hands Say Yeah: Maniac (Live @ Google)",
+          "url": "https://www.youtube.com/watch?v=31IkHoS-sdA",
+          "channel": "magnifier",
+          "durationSeconds": 168.0,
+          "score": 0.675,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "VN9lcy9mwbM",
+          "title": "Clap Your Hands Say Yeah Live FIB 2007 Full Show",
+          "url": "https://www.youtube.com/watch?v=VN9lcy9mwbM",
+          "channel": "tako808",
+          "durationSeconds": 3121.0,
+          "score": 0.397,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "displayText": "Southern Shores - Bonfire",
+      "query": "Southern Shores Bonfire",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "NhRMW6cTGOA",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "NhRMW6cTGOA",
+          "title": "Southern Shores - Bonfire",
+          "url": "https://www.youtube.com/watch?v=NhRMW6cTGOA",
+          "channel": "Southern Shores",
+          "durationSeconds": 227.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "LZ-feYdMeHs",
+          "title": "Southern shores - Bonfire",
+          "url": "https://www.youtube.com/watch?v=LZ-feYdMeHs",
+          "channel": "Assia Che",
+          "durationSeconds": 224.0,
+          "score": 0.984,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "89FWZgS8TvM",
+          "title": "016 - Southern Shores - Bonfire",
+          "url": "https://www.youtube.com/watch?v=89FWZgS8TvM",
+          "channel": "birpfmaugust2011",
+          "durationSeconds": 224.0,
+          "score": 0.95,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "tTspNpsOiw8",
+          "title": "Southern Shores - Take Me Anywhere",
+          "url": "https://www.youtube.com/watch?v=tTspNpsOiw8",
+          "channel": "Southern Shores",
+          "durationSeconds": 180.0,
+          "score": 0.424,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "9Ug5I9BNDHY",
+          "title": "Cozy Beach Bonfire: Campfire at Sunset on The California Coast",
+          "url": "https://www.youtube.com/watch?v=9Ug5I9BNDHY",
+          "channel": "MyTranquilitee",
+          "durationSeconds": 12386.0,
+          "score": 0.188,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "displayText": "Björk- Crystalline",
+      "query": "Unknown Artist Björk- Crystalline",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "2PNzytx9EV0",
+        "confidenceScore": 0.98,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "2PNzytx9EV0",
+          "title": "björk: crystalline",
+          "url": "https://www.youtube.com/watch?v=2PNzytx9EV0",
+          "channel": "björk",
+          "durationSeconds": 247.0,
+          "score": 0.98,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "QNvplhWUJzs",
+          "title": "Björk - Crystalline",
+          "url": "https://www.youtube.com/watch?v=QNvplhWUJzs",
+          "channel": "BjorkDiscography",
+          "durationSeconds": 309.0,
+          "score": 0.98,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "3vEjKrP6tOs",
+          "title": "Björk - Crystalline (Omar Souleyman Remix)",
+          "url": "https://www.youtube.com/watch?v=3vEjKrP6tOs",
+          "channel": "BjorkDiscography",
+          "durationSeconds": 402.0,
+          "score": 0.677,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "song-title-in-title",
+            "unexpected-remix-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "yHyCSVfYdTg",
+          "title": "Björk - Crystalline (Jools Holland Live)",
+          "url": "https://www.youtube.com/watch?v=yHyCSVfYdTg",
+          "channel": "realraylor",
+          "durationSeconds": 222.0,
+          "score": 0.588,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "CUo4BLYQEow",
+          "title": "Crystalline",
+          "url": "https://www.youtube.com/watch?v=CUo4BLYQEow",
+          "channel": "björk",
+          "durationSeconds": 401.0,
+          "score": 0.377,
+          "signals": []
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "displayText": "Beirut - Santa Fe",
+      "query": "Beirut Santa Fe",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "ub_m2iGf0xc",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "ub_m2iGf0xc",
+          "title": "Beirut - Santa Fe",
+          "url": "https://www.youtube.com/watch?v=ub_m2iGf0xc",
+          "channel": "Francisco Erian",
+          "durationSeconds": 261.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "OONMzoEobkI",
+          "title": "Beirut - Santa Fe",
+          "url": "https://www.youtube.com/watch?v=OONMzoEobkI",
+          "channel": "Matu",
+          "durationSeconds": 255.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "JRCTLJQBRC4",
+          "title": "Beirut - Santa Fe (Official Video)",
+          "url": "https://www.youtube.com/watch?v=JRCTLJQBRC4",
+          "channel": "Beirut",
+          "durationSeconds": 255.0,
+          "score": 0.896,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vDkcbEB5dNY",
+          "title": "Beirut: Santa Fe | NPR MUSIC FRONT ROW",
+          "url": "https://www.youtube.com/watch?v=vDkcbEB5dNY",
+          "channel": "NPR Music",
+          "durationSeconds": 333.0,
+          "score": 0.847,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "i6z6IKJ-Tzg",
+          "title": "Beirut - \"Santa Fe\" (Live at WFUV)",
+          "url": "https://www.youtube.com/watch?v=i6z6IKJ-Tzg",
+          "channel": "thealternateside907",
+          "durationSeconds": 260.0,
+          "score": 0.669,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "displayText": "The Morning Benders - Last Night",
+      "query": "The Morning Benders Last Night",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "9pjZ6rbQDgs",
+        "confidenceScore": 0.919,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "9pjZ6rbQDgs",
+          "title": "The Morning Benders - Last Night (The Strokes)",
+          "url": "https://www.youtube.com/watch?v=9pjZ6rbQDgs",
+          "channel": "Indie/Rock Playlist",
+          "durationSeconds": 180.0,
+          "score": 0.919,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "44QmNiEJjvs",
+          "title": "the morning benders - \"Last Night\" (The Strokes Cover)",
+          "url": "https://www.youtube.com/watch?v=44QmNiEJjvs",
+          "channel": "Stereogum",
+          "durationSeconds": 184.0,
+          "score": 0.753,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-cover-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "PS1kTO1y6EY",
+          "title": "The Morning Benders - Last Today",
+          "url": "https://www.youtube.com/watch?v=PS1kTO1y6EY",
+          "channel": "RiseAgainstNC",
+          "durationSeconds": 211.0,
+          "score": 0.714,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "SYldi0XN2B8",
+          "title": "The Morning Benders - Boarded Doors (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=SYldi0XN2B8",
+          "channel": "rightwil",
+          "durationSeconds": 217.0,
+          "score": 0.24,
+          "signals": [
+            "artist-name-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "7jgmgE-QDzA",
+          "title": "The Morning Benders - 'Excuses (Yours Truly Session)'",
+          "url": "https://www.youtube.com/watch?v=7jgmgE-QDzA",
+          "channel": "Rough Trade Records",
+          "durationSeconds": 413.0,
+          "score": 0.237,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-session-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 14,
+    "resolvedTracks": 14,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twentieth",
+      "embedUrl": "https://www.youtube.com/embed/QZph_KlN4os?playlist=Dc9gPlwXDDs,YnNQ8BTobOo,hy6ZRBg3XMI,LvEq3Uo6ie8,WgJJc0H0enU,ze6rg4ixjOI,x1ZSfMBgDUo,PuzvORd7wiM,w-4nEWfRI8I,NhRMW6cTGOA,2PNzytx9EV0,ub_m2iGf0xc,9pjZ6rbQDgs",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=QZph_KlN4os,Dc9gPlwXDDs,YnNQ8BTobOo,hy6ZRBg3XMI,LvEq3Uo6ie8,WgJJc0H0enU,ze6rg4ixjOI,x1ZSfMBgDUo,PuzvORd7wiM,w-4nEWfRI8I,NhRMW6cTGOA,2PNzytx9EV0,ub_m2iGf0xc,9pjZ6rbQDgs",
+      "videoIds": [
+        "QZph_KlN4os",
+        "Dc9gPlwXDDs",
+        "YnNQ8BTobOo",
+        "hy6ZRBg3XMI",
+        "LvEq3Uo6ie8",
+        "WgJJc0H0enU",
+        "ze6rg4ixjOI",
+        "x1ZSfMBgDUo",
+        "PuzvORd7wiM",
+        "w-4nEWfRI8I",
+        "NhRMW6cTGOA",
+        "2PNzytx9EV0",
+        "ub_m2iGf0xc",
+        "9pjZ6rbQDgs"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:24:27Z"
+    }
+  }
+}

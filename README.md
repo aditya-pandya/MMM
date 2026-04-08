@@ -238,7 +238,8 @@ Notes:
 - The matcher scans the canonical archive, not only `data/published/`, and prefers published JSON when the same slug exists in both published and imported sources.
 - The matcher stores the scored candidate set for each track, prefers audio-first sources over obvious videos/live/remix variants, and auto-resolves matches that score above `0.8` unless a safety rule like duplicate-video detection still blocks them.
 - `pending-review`, `no-candidate`, and duplicate holdbacks are intentional human-review checkpoints.
-- Do not manually bless a full-mix YouTube queue until every track has a reviewed `selectedVideoId`. The build will keep the queue blocked while any track is unresolved.
+- Use `--accept-low-confidence` when you want a complete starter queue for every track even if confidence is low. In this mode, low-scoring top candidates are auto-selected and duplicate holdbacks are skipped so operator review can happen directly in UI.
+- Do not manually bless a full-mix YouTube queue until every track has a reviewed `selectedVideoId`. The build will keep the queue blocked while any track is unresolved unless you intentionally run low-confidence mode.
 - If two good-looking candidates are close, or two tracks land on the same selected video, leave the state unresolved and review it explicitly instead of choosing silently.
 - Once every track is explicitly resolved, the build renders an honest audio-first YouTube queue from explicit video IDs instead of a claimed playlist ID or fake audio-only embed.
 
@@ -385,10 +386,12 @@ Generate persisted YouTube candidate/match state for published mixes:
 
 ```bash
 python3 scripts/sync_youtube_matches.py mix-035-thirtyfifth mix-036-thirtysixth
+python3 scripts/sync_youtube_matches.py --accept-low-confidence
 ```
 
 Review rule:
-- ambiguous, duplicate, or low-confidence matches stay pending on purpose
+- default mode keeps ambiguous, duplicate, or low-confidence matches pending on purpose
+- `--accept-low-confidence` force-seeds top candidates so every mix has a starter queue for operator cleanup
 - the site only renders a full-mix YouTube embed when every track is resolved
 - validation and `/studio/` call out blocked YouTube review work explicitly
 

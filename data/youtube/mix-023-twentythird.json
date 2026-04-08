@@ -1,0 +1,640 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-023-twentythird",
+  "updatedAt": "2026-04-08T21:23:25Z",
+  "sourceMixPath": "data/imported/mixes/mix-023-twentythird.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Cults - Go Outside",
+      "query": "Cults Go Outside",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "x0pSo58K5aY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "x0pSo58K5aY",
+          "title": "Cults - Go Outside (Official Audio)",
+          "url": "https://www.youtube.com/watch?v=x0pSo58K5aY",
+          "channel": "Cults",
+          "durationSeconds": 204.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "official-audio-preferred",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "2SXTca22RKM",
+          "title": "Cults - Go Outside",
+          "url": "https://www.youtube.com/watch?v=2SXTca22RKM",
+          "channel": "EdibleWithCare",
+          "durationSeconds": 197.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "eAM9diyVRiM",
+          "title": "Cults - Go Outside (Official Video)",
+          "url": "https://www.youtube.com/watch?v=eAM9diyVRiM",
+          "channel": "Cults",
+          "durationSeconds": 245.0,
+          "score": 0.912,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vWnGQPOQLhw",
+          "title": "Cults - Go outside (Music video)",
+          "url": "https://www.youtube.com/watch?v=vWnGQPOQLhw",
+          "channel": "hellosonglyrics",
+          "durationSeconds": 223.0,
+          "score": 0.813,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ZtDVctTYceg",
+          "title": "SPINhouse Live: Cults, \"Go Outside\"",
+          "url": "https://www.youtube.com/watch?v=ZtDVctTYceg",
+          "channel": "SPIN",
+          "durationSeconds": 203.0,
+          "score": 0.672,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Atlas Sound - Te Amo",
+      "query": "Atlas Sound Te Amo",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "-8YrrkDvZ-8",
+        "confidenceScore": 0.99,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "-8YrrkDvZ-8",
+          "title": "Atlas Sound - Te Amo",
+          "url": "https://www.youtube.com/watch?v=-8YrrkDvZ-8",
+          "channel": "All Tomorrow's Music",
+          "durationSeconds": 254.0,
+          "score": 0.99,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "2kYpzPj9ZFw",
+          "title": "Atlas Sound | \"Te Amo\" | Surveillance | PitchforkTV",
+          "url": "https://www.youtube.com/watch?v=2kYpzPj9ZFw",
+          "channel": "Pitchfork",
+          "durationSeconds": 386.0,
+          "score": 0.821,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "TNIt7gc4Z2Y",
+          "title": "Atlas Sound performs \"Te Amo\" at Pitchfork Music Festival 2012",
+          "url": "https://www.youtube.com/watch?v=TNIt7gc4Z2Y",
+          "channel": "Pitchfork",
+          "durationSeconds": 554.0,
+          "score": 0.771,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "AQrEL5A8D8M",
+          "title": "Atlas Sound - Te Amo (Live on KEXP)",
+          "url": "https://www.youtube.com/watch?v=AQrEL5A8D8M",
+          "channel": "KEXP",
+          "durationSeconds": 347.0,
+          "score": 0.659,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "bLtzyDhxsRk",
+          "title": "Te Amo",
+          "url": "https://www.youtube.com/watch?v=bLtzyDhxsRk",
+          "channel": "Atlas Sound - Topic",
+          "durationSeconds": 254.0,
+          "score": 0.61,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Pearl and the Puppets - Little Diamonds",
+      "query": "Pearl and the Puppets Little Diamonds",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "SmPx9On4uNA",
+        "confidenceScore": 0.245,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "SmPx9On4uNA",
+          "title": "Pearl & The Puppets - Because I Do",
+          "url": "https://www.youtube.com/watch?v=SmPx9On4uNA",
+          "channel": "PearlandPuppetsVEVO",
+          "durationSeconds": 195.0,
+          "score": 0.245,
+          "signals": []
+        },
+        {
+          "rank": 2,
+          "videoId": "2F1AE1481eg",
+          "title": "Because I do - Pearl and the Puppets (cover)",
+          "url": "https://www.youtube.com/watch?v=2F1AE1481eg",
+          "channel": "pudpuff",
+          "durationSeconds": 160.0,
+          "score": 0.185,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-cover-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "iAf78OPXGTU",
+          "title": "KIRK HAMMETT TRYING TO PLAY LIKE YNGWIE MALMSTEEN #METALLICA",
+          "url": "https://www.youtube.com/watch?v=iAf78OPXGTU",
+          "channel": "ATARAXIA",
+          "durationSeconds": 61.0,
+          "score": 0.126,
+          "signals": []
+        },
+        {
+          "rank": 4,
+          "videoId": "y8J7Y0Jbum8",
+          "title": "Roasting Your Favorite Albums 🤬",
+          "url": "https://www.youtube.com/watch?v=y8J7Y0Jbum8",
+          "channel": "Fantano Shorts",
+          "durationSeconds": 61.0,
+          "score": 0.103,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "s-NkVcJiqPo",
+          "title": "Foo Fighters cover Enter Sandman w/ 10 year old (Live) KC 10-12-18",
+          "url": "https://www.youtube.com/watch?v=s-NkVcJiqPo",
+          "channel": "Rockla City",
+          "durationSeconds": 294.0,
+          "score": 0.0,
+          "signals": [
+            "live-version-penalty",
+            "unexpected-cover-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Jim Ward - Broken Songs",
+      "query": "Jim Ward Broken Songs",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "xvpdnBPZEqw",
+        "confidenceScore": 0.95,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "xvpdnBPZEqw",
+          "title": "Jim Ward - 'Broken Songs' (Electric)",
+          "url": "https://www.youtube.com/watch?v=xvpdnBPZEqw",
+          "channel": "Xtra Mile Recordings",
+          "durationSeconds": 211.0,
+          "score": 0.95,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "NoX5s5wxmPw",
+          "title": "Broken Songs",
+          "url": "https://www.youtube.com/watch?v=NoX5s5wxmPw",
+          "channel": "Jim Ward - Topic",
+          "durationSeconds": 196.0,
+          "score": 0.678,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "NiD2V4uBnAg",
+          "title": "\"Broken Songs\" by Jim Ward, featuring Tegan Quin! (With lyrics)",
+          "url": "https://www.youtube.com/watch?v=NiD2V4uBnAg",
+          "channel": "Kate1157",
+          "durationSeconds": 202.0,
+          "score": 0.675,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "1Btw34MBEx8",
+          "title": "Broken Songs (Acoustic)",
+          "url": "https://www.youtube.com/watch?v=1Btw34MBEx8",
+          "channel": "Jim Ward - Topic",
+          "durationSeconds": 197.0,
+          "score": 0.502,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "ba6nLB3Nw8g",
+          "title": "JIIM WARD - BROKEN SONGS - LIVE HALF A WORLD AWAY",
+          "url": "https://www.youtube.com/watch?v=ba6nLB3Nw8g",
+          "channel": "Jim Ward",
+          "durationSeconds": 201.0,
+          "score": 0.207,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Wu Lyf - We Bros",
+      "query": "Wu Lyf We Bros",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Ca9rBWTyuU0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Ca9rBWTyuU0",
+          "title": "WU LYF - We Bros",
+          "url": "https://www.youtube.com/watch?v=Ca9rBWTyuU0",
+          "channel": "Sam Pilling",
+          "durationSeconds": 299.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "lgpsq9q8GvI",
+          "title": "WU LYF - WE BROS",
+          "url": "https://www.youtube.com/watch?v=lgpsq9q8GvI",
+          "channel": "queenofthesconeage",
+          "durationSeconds": 404.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "OVlsa8hd7Sw",
+          "title": "WU LYF  -  We Bros",
+          "url": "https://www.youtube.com/watch?v=OVlsa8hd7Sw",
+          "channel": "MrLadysweetlady",
+          "durationSeconds": 360.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "wGntd5U7MIA",
+          "title": "wu lyf - We bros (Just Music)",
+          "url": "https://www.youtube.com/watch?v=wGntd5U7MIA",
+          "channel": "313JustMusic",
+          "durationSeconds": 387.0,
+          "score": 0.894,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "qK9iyJ_GOfs",
+          "title": "WU LYF - We Bros (Live) | Montreux Jazz Café Sessions 2011",
+          "url": "https://www.youtube.com/watch?v=qK9iyJ_GOfs",
+          "channel": "Montreux Jazz Festival",
+          "durationSeconds": 289.0,
+          "score": 0.553,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Rich Aucoin - It",
+      "query": "Rich Aucoin It",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "xkuWgXhzxg4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "xkuWgXhzxg4",
+          "title": "Rich Aucoin - It",
+          "url": "https://www.youtube.com/watch?v=xkuWgXhzxg4",
+          "channel": "Rich Aucoin",
+          "durationSeconds": 273.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "L_f0dPYa3Fc",
+          "title": "Rich Aucoin - It",
+          "url": "https://www.youtube.com/watch?v=L_f0dPYa3Fc",
+          "channel": "Rich Aucoin",
+          "durationSeconds": 192.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "EJSUdM76ESw",
+          "title": "Rich Aucoin - It",
+          "url": "https://www.youtube.com/watch?v=EJSUdM76ESw",
+          "channel": "thevergeonline",
+          "durationSeconds": 378.0,
+          "score": 0.945,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "o3BtN-tv43s",
+          "title": "Rich Aucoin - It (Edit)",
+          "url": "https://www.youtube.com/watch?v=o3BtN-tv43s",
+          "channel": "Rich Aucoin",
+          "durationSeconds": 241.0,
+          "score": 0.899,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "unexpected-edit-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "h938lCM7uNs",
+          "title": "Rich Aucoin | It | First Play Live",
+          "url": "https://www.youtube.com/watch?v=h938lCM7uNs",
+          "channel": "CBC Music",
+          "durationSeconds": 330.0,
+          "score": 0.593,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "Bombay Bicycle Club - Lights Out, Words Gone",
+      "query": "Bombay Bicycle Club Lights Out, Words Gone",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "vglxk3JbHnQ",
+        "confidenceScore": 0.972,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "vglxk3JbHnQ",
+          "title": "Bombay Bicycle Club - Lights Out, Words Gone (Official Video)",
+          "url": "https://www.youtube.com/watch?v=vglxk3JbHnQ",
+          "channel": "Bombay Bicycle Club",
+          "durationSeconds": 222.0,
+          "score": 0.972,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Cew-nhOSp14",
+          "title": "Bombay Bicycle Club performing \"Lights Out, Words Gone\" on KCRW",
+          "url": "https://www.youtube.com/watch?v=Cew-nhOSp14",
+          "channel": "KCRW",
+          "durationSeconds": 278.0,
+          "score": 0.937,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "fN9I8nWbT5A",
+          "title": "Bombay Bicycle Club \"Lights Out, Words Gone\" | OFF THE AVENUE E118",
+          "url": "https://www.youtube.com/watch?v=fN9I8nWbT5A",
+          "channel": "offtheavenue",
+          "durationSeconds": 295.0,
+          "score": 0.933,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "hLSEH4Bbb8A",
+          "title": "Lights Out, Words Gone - Bombay Bicycle Club",
+          "url": "https://www.youtube.com/watch?v=hLSEH4Bbb8A",
+          "channel": "TheILMChannel",
+          "durationSeconds": 302.0,
+          "score": 0.876,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "duBN7YZyIwU",
+          "title": "Lights Out, Words Gone (Full Length Video)",
+          "url": "https://www.youtube.com/watch?v=duBN7YZyIwU",
+          "channel": "Bombay Bicycle Club",
+          "durationSeconds": 301.0,
+          "score": 0.344,
+          "signals": [
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twentythird",
+      "embedUrl": "https://www.youtube.com/embed/x0pSo58K5aY?playlist=-8YrrkDvZ-8,SmPx9On4uNA,xvpdnBPZEqw,Ca9rBWTyuU0,xkuWgXhzxg4,vglxk3JbHnQ",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=x0pSo58K5aY,-8YrrkDvZ-8,SmPx9On4uNA,xvpdnBPZEqw,Ca9rBWTyuU0,xkuWgXhzxg4,vglxk3JbHnQ",
+      "videoIds": [
+        "x0pSo58K5aY",
+        "-8YrrkDvZ-8",
+        "SmPx9On4uNA",
+        "xvpdnBPZEqw",
+        "Ca9rBWTyuU0",
+        "xkuWgXhzxg4",
+        "vglxk3JbHnQ"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:23:25Z"
+    }
+  }
+}

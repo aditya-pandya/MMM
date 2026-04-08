@@ -1,0 +1,647 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-025-twentyfifth",
+  "updatedAt": "2026-04-08T21:23:12Z",
+  "sourceMixPath": "data/imported/mixes/mix-025-twentyfifth.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "La Rocca - Non-Believer",
+      "query": "La Rocca Non-Believer",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "UK6BkZxrhck",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "UK6BkZxrhck",
+          "title": "La Rocca - Non Believer",
+          "url": "https://www.youtube.com/watch?v=UK6BkZxrhck",
+          "channel": "muhmuh04",
+          "durationSeconds": 310.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "CUkchcWIBhk",
+          "title": "15 la rocca non believer",
+          "url": "https://www.youtube.com/watch?v=CUkchcWIBhk",
+          "channel": "OneTreeHillMusik",
+          "durationSeconds": 305.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "_5YTjJ_UPhk",
+          "title": "La Rocca - Non-Believer Live",
+          "url": "https://www.youtube.com/watch?v=_5YTjJ_UPhk",
+          "channel": "joeythebutcher",
+          "durationSeconds": 36.0,
+          "score": 0.762,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "gS91nSC0BAU",
+          "title": "Non Believer",
+          "url": "https://www.youtube.com/watch?v=gS91nSC0BAU",
+          "channel": "La Rocca - Topic",
+          "durationSeconds": 305.0,
+          "score": 0.678,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "uBnVXvVtc8Y",
+          "title": "One Tree Hill best music moment #4 - Non-Believer",
+          "url": "https://www.youtube.com/watch?v=uBnVXvVtc8Y",
+          "channel": "ShannenDoherty12",
+          "durationSeconds": 214.0,
+          "score": 0.298,
+          "signals": [
+            "song-title-in-title"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Warpaint - Elephants",
+      "query": "Warpaint Elephants",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "UXdrw9LO77I",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "UXdrw9LO77I",
+          "title": "Warpaint - Elephants",
+          "url": "https://www.youtube.com/watch?v=UXdrw9LO77I",
+          "channel": "xalsr",
+          "durationSeconds": 280.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "yOFxb0F2F2A",
+          "title": "Warpaint - Elephants (Official Music Video)",
+          "url": "https://www.youtube.com/watch?v=yOFxb0F2F2A",
+          "channel": "The FADER",
+          "durationSeconds": 279.0,
+          "score": 0.797,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "T_S75dE7PzE",
+          "title": "Warpaint | \"Elephants\" | Pitchfork Music Festival Paris 2014 | PitchforkTV",
+          "url": "https://www.youtube.com/watch?v=T_S75dE7PzE",
+          "channel": "Pitchfork",
+          "durationSeconds": 490.0,
+          "score": 0.772,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "0zjXo9haDf0",
+          "title": "Warpaint - 'Elephants' (Live 2017)",
+          "url": "https://www.youtube.com/watch?v=0zjXo9haDf0",
+          "channel": "at WarpLoT",
+          "durationSeconds": 300.0,
+          "score": 0.702,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "Il5cHpsN1N8",
+          "title": "\"Elephants\" by Warpaint Live Session (Presented by Noisevox)",
+          "url": "https://www.youtube.com/watch?v=Il5cHpsN1N8",
+          "channel": "APinhert",
+          "durationSeconds": 537.0,
+          "score": 0.471,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty",
+            "unexpected-session-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "I’m From Barcelona - The Painter",
+      "query": "I’m From Barcelona The Painter",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "pq-8eYMjEVM",
+        "confidenceScore": 0.861,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "pq-8eYMjEVM",
+          "title": "\"The Painter\" by I'm from Barcelona",
+          "url": "https://www.youtube.com/watch?v=pq-8eYMjEVM",
+          "channel": "Anders Herrmann",
+          "durationSeconds": 211.0,
+          "score": 0.861,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "b2qaq5Jrqk0",
+          "title": "HIMYM - The Painter - I'm from Barcelona",
+          "url": "https://www.youtube.com/watch?v=b2qaq5Jrqk0",
+          "channel": "Xin Huang",
+          "durationSeconds": 90.0,
+          "score": 0.848,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "82wQYJkjH_A",
+          "title": "I'm From Barcelona - The Painter (Live)",
+          "url": "https://www.youtube.com/watch?v=82wQYJkjH_A",
+          "channel": "Radial by The Orchard",
+          "durationSeconds": 186.0,
+          "score": 0.743,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "dE4IM20IEy4",
+          "title": "I'm From Barcelona - The Painter (Live in the Secret Garden)",
+          "url": "https://www.youtube.com/watch?v=dE4IM20IEy4",
+          "channel": "festivalboy22",
+          "durationSeconds": 215.0,
+          "score": 0.648,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "M2FQWNbBJZE",
+          "title": "The Painter",
+          "url": "https://www.youtube.com/watch?v=M2FQWNbBJZE",
+          "channel": "I'm from Barcelona - Topic",
+          "durationSeconds": 211.0,
+          "score": 0.621,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Ben Howard - Old Pine",
+      "query": "Ben Howard Old Pine",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "x8ccDb6n5Wg",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "x8ccDb6n5Wg",
+          "title": "Ben Howard - Old Pine",
+          "url": "https://www.youtube.com/watch?v=x8ccDb6n5Wg",
+          "channel": "Ben Howard",
+          "durationSeconds": 334.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "t75MIHcbH34",
+          "title": "Ben Howard - Old Pine",
+          "url": "https://www.youtube.com/watch?v=t75MIHcbH34",
+          "channel": "Ben Howard",
+          "durationSeconds": 283.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "KiglLBLkzeg",
+          "title": "WLT - Ben Howard - Old Pine",
+          "url": "https://www.youtube.com/watch?v=KiglLBLkzeg",
+          "channel": "watchlistentell",
+          "durationSeconds": 274.0,
+          "score": 0.964,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "R8LpukOp1rI",
+          "title": "Ben Howard - Old Pine (Lyrics) - Every Kingdom (2011)",
+          "url": "https://www.youtube.com/watch?v=R8LpukOp1rI",
+          "channel": "Young Pilgrim Music",
+          "durationSeconds": 329.0,
+          "score": 0.752,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "PHfpaoR7CKQ",
+          "title": "Old Pine",
+          "url": "https://www.youtube.com/watch?v=PHfpaoR7CKQ",
+          "channel": "Ben Howard",
+          "durationSeconds": 258.0,
+          "score": 0.518,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Efterklang - Mirador",
+      "query": "Efterklang Mirador",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "vSKIl-NeZeE",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "vSKIl-NeZeE",
+          "title": "Efterklang Mirador",
+          "url": "https://www.youtube.com/watch?v=vSKIl-NeZeE",
+          "channel": "Efterklang",
+          "durationSeconds": 203.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "Dmty0WWE6g0",
+          "title": "Efterklang - Mirador",
+          "url": "https://www.youtube.com/watch?v=Dmty0WWE6g0",
+          "channel": "craymel",
+          "durationSeconds": 310.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "K9feCMYXBMI",
+          "title": "Efterklang - Mirador (live)",
+          "url": "https://www.youtube.com/watch?v=K9feCMYXBMI",
+          "channel": "The Leaf Label",
+          "durationSeconds": 361.0,
+          "score": 0.727,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "5_s2dxXC5Bo",
+          "title": "#67 Efterklang - Mirador (Acoustic Session)",
+          "url": "https://www.youtube.com/watch?v=5_s2dxXC5Bo",
+          "channel": "Le Cargo !",
+          "durationSeconds": 368.0,
+          "score": 0.689,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "IOJTdQTrfO8",
+          "title": "Efterklang  -  Mirador (Live 2008)",
+          "url": "https://www.youtube.com/watch?v=IOJTdQTrfO8",
+          "channel": "Ana Carolina Bonato",
+          "durationSeconds": 337.0,
+          "score": 0.687,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Vampire Weekend - Cape Cod Kwassa Kwassa (The Teenagers Remix)",
+      "query": "Vampire Weekend Cape Cod Kwassa Kwassa (The Teenagers Remix)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "Q_mNXNgWUN8",
+        "confidenceScore": 0.832,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "Q_mNXNgWUN8",
+          "title": "Vampire Weekend - Cape Cod Kwassa Kwassa (Teenagers Remix)",
+          "url": "https://www.youtube.com/watch?v=Q_mNXNgWUN8",
+          "channel": "Alexis Bacalla",
+          "durationSeconds": 226.0,
+          "score": 0.832,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "QBjWCBwEiKI",
+          "title": "Vampire Weekend - Cape Kwassa Kwassa (The Teenagers Remix)",
+          "url": "https://www.youtube.com/watch?v=QBjWCBwEiKI",
+          "channel": "Christopher Aizen",
+          "durationSeconds": 68.0,
+          "score": 0.832,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "VhB8sxAG60I",
+          "title": "Vampire Weekend - Cape Cod Kwassa Kwassa (Teenagers Remix)_320k",
+          "url": "https://www.youtube.com/watch?v=VhB8sxAG60I",
+          "channel": "A",
+          "durationSeconds": 230.0,
+          "score": 0.812,
+          "signals": [
+            "candidate-title-covers-most-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "K_zcb5E7dJU",
+          "title": "Vampire Wekend - Cape Cod Kwassa Kwassa (Teenagers Remix)",
+          "url": "https://www.youtube.com/watch?v=K_zcb5E7dJU",
+          "channel": "DaNceDaNceDaNce909",
+          "durationSeconds": 223.0,
+          "score": 0.43,
+          "signals": [
+            "display-text-near-exact-match"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "OyUEgsKldyk",
+          "title": "Cape Cod Kwassa Kwassa",
+          "url": "https://www.youtube.com/watch?v=OyUEgsKldyk",
+          "channel": "Vampire Weekend",
+          "durationSeconds": 215.0,
+          "score": 0.369,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "The Boy Least Likely To - Be Gentle With Me",
+      "query": "The Boy Least Likely To Be Gentle With Me",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "4467juWWEL0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "4467juWWEL0",
+          "title": "The Boy Least Likely To - Be Gentle With Me (HQ Audio)",
+          "url": "https://www.youtube.com/watch?v=4467juWWEL0",
+          "channel": "HQ Audio",
+          "durationSeconds": 231.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "STCIGllIrko",
+          "title": "The Boy Least Likely To - Be Gentle With Me [LYRICS]",
+          "url": "https://www.youtube.com/watch?v=STCIGllIrko",
+          "channel": "Catherine L",
+          "durationSeconds": 227.0,
+          "score": 0.891,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "R-mYGGBwlTE",
+          "title": "The Boy Least Likely To - Be Gentle With Me Official Video - starring Rashida Jones",
+          "url": "https://www.youtube.com/watch?v=R-mYGGBwlTE",
+          "channel": "theboyleastlikelyto",
+          "durationSeconds": 221.0,
+          "score": 0.809,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "w54RJYpeHVk",
+          "title": "When Life Gives Me Lemons I Make Lemonade by The Boy Least Likely To",
+          "url": "https://www.youtube.com/watch?v=w54RJYpeHVk",
+          "channel": "theboyleastlikelyto",
+          "durationSeconds": 195.0,
+          "score": 0.256,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "gUr964PWfck",
+          "title": "The First Snowflake video by The Boy Least Likely To",
+          "url": "https://www.youtube.com/watch?v=gUr964PWfck",
+          "channel": "theboyleastlikelyto",
+          "durationSeconds": 211.0,
+          "score": 0.195,
+          "signals": [
+            "artist-name-in-title",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Twentyfifth",
+      "embedUrl": "https://www.youtube.com/embed/UK6BkZxrhck?playlist=UXdrw9LO77I,pq-8eYMjEVM,x8ccDb6n5Wg,vSKIl-NeZeE,Q_mNXNgWUN8,4467juWWEL0",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=UK6BkZxrhck,UXdrw9LO77I,pq-8eYMjEVM,x8ccDb6n5Wg,vSKIl-NeZeE,Q_mNXNgWUN8,4467juWWEL0",
+      "videoIds": [
+        "UK6BkZxrhck",
+        "UXdrw9LO77I",
+        "pq-8eYMjEVM",
+        "x8ccDb6n5Wg",
+        "vSKIl-NeZeE",
+        "Q_mNXNgWUN8",
+        "4467juWWEL0"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:23:12Z"
+    }
+  }
+}

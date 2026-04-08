@@ -1,0 +1,640 @@
+{
+  "$schema": "../../schemas/youtube-match.schema.json",
+  "schemaVersion": "1.0",
+  "mixSlug": "mix-011-eleventh",
+  "updatedAt": "2026-04-08T21:25:47Z",
+  "sourceMixPath": "data/imported/mixes/mix-011-eleventh.json",
+  "tracks": [
+    {
+      "position": 1,
+      "displayText": "Ellie Goulding - Guns and Horses",
+      "query": "Ellie Goulding Guns and Horses",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "DRJCugebjFY",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "DRJCugebjFY",
+          "title": "Ellie Goulding - Guns And Horses (Audio)",
+          "url": "https://www.youtube.com/watch?v=DRJCugebjFY",
+          "channel": "Gouldigger",
+          "durationSeconds": 214.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "audio-tag-preferred"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "EXKtGzGq9So",
+          "title": "Ellie Goulding - Guns And Horses (VEVO Powerstation: Austin, TX)",
+          "url": "https://www.youtube.com/watch?v=EXKtGzGq9So",
+          "channel": "Ellie Goulding",
+          "durationSeconds": 257.0,
+          "score": 0.959,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "IDwbHeR0UYc",
+          "title": "Ellie Goulding - Guns And Horses (Official Video)",
+          "url": "https://www.youtube.com/watch?v=IDwbHeR0UYc",
+          "channel": "Ellie Goulding",
+          "durationSeconds": 216.0,
+          "score": 0.95,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Z5V0NegnNE8",
+          "title": "Ellie Goulding \"Guns and Horses\" Acoustic",
+          "url": "https://www.youtube.com/watch?v=Z5V0NegnNE8",
+          "channel": "104.3 MYfm",
+          "durationSeconds": 273.0,
+          "score": 0.881,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "YB2USuHjUrw",
+          "title": "Ellie Goulding - Guns And Horses (Rolling Stone Live)",
+          "url": "https://www.youtube.com/watch?v=YB2USuHjUrw",
+          "channel": "Ellie Goulding",
+          "durationSeconds": 269.0,
+          "score": 0.772,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "displayText": "Summer Camp - I Want You",
+      "query": "Summer Camp I Want You",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "kJTTNTOtSpM",
+        "confidenceScore": 0.912,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "kJTTNTOtSpM",
+          "title": "Summer Camp - I Want You [High Quality]",
+          "url": "https://www.youtube.com/watch?v=kJTTNTOtSpM",
+          "channel": "matsflaaten",
+          "durationSeconds": 260.0,
+          "score": 0.912,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "lpIyuwG9eZs",
+          "title": "Summer Camp - \"I Want You\" | Music 2011 | SXSW",
+          "url": "https://www.youtube.com/watch?v=lpIyuwG9eZs",
+          "channel": "SXSW",
+          "durationSeconds": 271.0,
+          "score": 0.895,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "GrHHIMiqwjA",
+          "title": "I want you- Summer Camp lyrics",
+          "url": "https://www.youtube.com/watch?v=GrHHIMiqwjA",
+          "channel": "Trick",
+          "durationSeconds": 260.0,
+          "score": 0.765,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "lyric-video-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "vLpEh6QVbSA",
+          "title": "\"I Want You\" - Summer Camp - Drive Music Video",
+          "url": "https://www.youtube.com/watch?v=vLpEh6QVbSA",
+          "channel": "juzzy666",
+          "durationSeconds": 260.0,
+          "score": 0.727,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "XVwPBYX-Jtg",
+          "title": "I Want You",
+          "url": "https://www.youtube.com/watch?v=XVwPBYX-Jtg",
+          "channel": "Summer Camp - Topic",
+          "durationSeconds": 257.0,
+          "score": 0.647,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "displayText": "Adele - Lovesong (originally by The Cure)",
+      "query": "Adele Lovesong (originally by The Cure)",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "0wPhbmeNSOs",
+        "confidenceScore": 0.463,
+        "reason": "Top candidate auto-selected in low-confidence mode to seed a complete queue for operator review.",
+        "holdbackReason": "low-confidence-auto-selected"
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "0wPhbmeNSOs",
+          "title": "Adele - Lovesong (Lyric Video)",
+          "url": "https://www.youtube.com/watch?v=0wPhbmeNSOs",
+          "channel": "Adele - Topic",
+          "durationSeconds": 320.0,
+          "score": 0.463,
+          "signals": [
+            "artist-name-in-title",
+            "artist-name-in-channel",
+            "topic-channel",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "NSec3LfUWxE",
+          "title": "Lovesong",
+          "url": "https://www.youtube.com/watch?v=NSec3LfUWxE",
+          "channel": "Adele",
+          "durationSeconds": 317.0,
+          "score": 0.261,
+          "signals": [
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "i5bpYECjPJ4",
+          "title": "Adele - Lovesong (The Cure cover) Itunes Festival 2011 HD",
+          "url": "https://www.youtube.com/watch?v=i5bpYECjPJ4",
+          "channel": "Monique Corrêa",
+          "durationSeconds": 371.0,
+          "score": 0.186,
+          "signals": [
+            "artist-name-in-title",
+            "unexpected-cover-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "ks_qOI0lzho",
+          "title": "The Cure - Lovesong",
+          "url": "https://www.youtube.com/watch?v=ks_qOI0lzho",
+          "channel": "The Cure",
+          "durationSeconds": 209.0,
+          "score": 0.182,
+          "signals": []
+        },
+        {
+          "rank": 5,
+          "videoId": "rlEa9zeMmek",
+          "title": "Adele - lovesong (Live At The Royal Albert Hall)",
+          "url": "https://www.youtube.com/watch?v=rlEa9zeMmek",
+          "channel": "Giuseppe Lombardo",
+          "durationSeconds": 317.0,
+          "score": 0.144,
+          "signals": [
+            "artist-name-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "displayText": "Panda Bear - Last Night At The Jetty",
+      "query": "Panda Bear Last Night At The Jetty",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "F0SWAXMT2g4",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "F0SWAXMT2g4",
+          "title": "Panda Bear - Last Night At The Jetty",
+          "url": "https://www.youtube.com/watch?v=F0SWAXMT2g4",
+          "channel": "nominaladversary",
+          "durationSeconds": 267.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "uKC1y_GguPc",
+          "title": "Panda Bear-Last Night at the Jetty Music Video",
+          "url": "https://www.youtube.com/watch?v=uKC1y_GguPc",
+          "channel": "SidewaysIsDead",
+          "durationSeconds": 270.0,
+          "score": 0.875,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "music-video-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "gdYbeclQVrA",
+          "title": "Last Night At The Jetty",
+          "url": "https://www.youtube.com/watch?v=gdYbeclQVrA",
+          "channel": "Panda Bear - Topic",
+          "durationSeconds": 278.0,
+          "score": 0.702,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "Ihhre6rJAtQ",
+          "title": "Last Night At The Jetty",
+          "url": "https://www.youtube.com/watch?v=Ihhre6rJAtQ",
+          "channel": "Panda Bear - Topic",
+          "durationSeconds": 288.0,
+          "score": 0.702,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title",
+            "artist-name-in-channel",
+            "topic-channel"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "nqencuclqJU",
+          "title": "Panda Bear - Last Night At The Jetty / Benfica - Live at Pitchfork Music Fest 2010",
+          "url": "https://www.youtube.com/watch?v=nqencuclqJU",
+          "channel": "snivelttam",
+          "durationSeconds": 584.0,
+          "score": 0.649,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "displayText": "Beirut - Elephant Gun",
+      "query": "Beirut Elephant Gun",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "nZSnYoX7vx0",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "nZSnYoX7vx0",
+          "title": "Beirut - Elephant Gun",
+          "url": "https://www.youtube.com/watch?v=nZSnYoX7vx0",
+          "channel": "Diego",
+          "durationSeconds": 273.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "I4z3Gp4dp5I",
+          "title": "Beirut- Elephant Gun",
+          "url": "https://www.youtube.com/watch?v=I4z3Gp4dp5I",
+          "channel": "tikaveis23",
+          "durationSeconds": 346.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "MJbngzBHsWc",
+          "title": "Capitu - Elephant Gun (Beirut)",
+          "url": "https://www.youtube.com/watch?v=MJbngzBHsWc",
+          "channel": "g h o s t",
+          "durationSeconds": 312.0,
+          "score": 0.914,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "zB-yoEHpCgg",
+          "title": "Beirut: Elephant Gun | NPR MUSIC FRONT ROW",
+          "url": "https://www.youtube.com/watch?v=zB-yoEHpCgg",
+          "channel": "NPR Music",
+          "durationSeconds": 292.0,
+          "score": 0.881,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "SWSz_PAfgNc",
+          "title": "Beirut - Elephant Gun (Official Video)",
+          "url": "https://www.youtube.com/watch?v=SWSz_PAfgNc",
+          "channel": "4AD",
+          "durationSeconds": 273.0,
+          "score": 0.849,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "official-upload",
+            "music-video-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "displayText": "Interpol - No I In Threesome",
+      "query": "Interpol No I In Threesome",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "eAaXS_wioYg",
+        "confidenceScore": 0.999,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "eAaXS_wioYg",
+          "title": "Interpol - No I In Threesome",
+          "url": "https://www.youtube.com/watch?v=eAaXS_wioYg",
+          "channel": "Interpol",
+          "durationSeconds": 230.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "artist-name-in-channel"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "DQneSkpEa6U",
+          "title": "Interpol - No I In Threesome",
+          "url": "https://www.youtube.com/watch?v=DQneSkpEa6U",
+          "channel": "Pico Conchetumadre",
+          "durationSeconds": 236.0,
+          "score": 0.999,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "display-text-near-exact-match",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "yefMF7DHgO0",
+          "title": "Interpol - No I In Threesome (Kimmel)",
+          "url": "https://www.youtube.com/watch?v=yefMF7DHgO0",
+          "channel": "killerevolver",
+          "durationSeconds": 236.0,
+          "score": 0.987,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "DKR8IFwOgwc",
+          "title": "Interpol - No I in Threesome (Español)",
+          "url": "https://www.youtube.com/watch?v=DKR8IFwOgwc",
+          "channel": "V.L.M",
+          "durationSeconds": 231.0,
+          "score": 0.98,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "6zX0qoMA7gw",
+          "title": "Interpol - No I In Threesome - Jimmy Kimmel Live - October 25, 2007",
+          "url": "https://www.youtube.com/watch?v=6zX0qoMA7gw",
+          "channel": "Damage Inc. Master Series",
+          "durationSeconds": 296.0,
+          "score": 0.641,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "live-version-penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "displayText": "The Morning Benders - Excuses",
+      "query": "The Morning Benders Excuses",
+      "resolution": {
+        "status": "auto-resolved",
+        "selectedVideoId": "4fPHJFyQCSs",
+        "confidenceScore": 0.869,
+        "reason": "Top YouTube candidate cleared MMM's auto-select threshold and best matched the track with audio-first signals.",
+        "holdbackReason": null
+      },
+      "candidates": [
+        {
+          "rank": 1,
+          "videoId": "4fPHJFyQCSs",
+          "title": "The Morning Benders performing \"Excuses\" on KCRW",
+          "url": "https://www.youtube.com/watch?v=4fPHJFyQCSs",
+          "channel": "KCRW",
+          "durationSeconds": 412.0,
+          "score": 0.869,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 2,
+          "videoId": "9hhCNnPXiac",
+          "title": "POP ETC / the morning benders - Excuses (Acoustic)",
+          "url": "https://www.youtube.com/watch?v=9hhCNnPXiac",
+          "channel": "POP ETC",
+          "durationSeconds": 235.0,
+          "score": 0.798,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-acoustic-penalty"
+          ]
+        },
+        {
+          "rank": 3,
+          "videoId": "7jgmgE-QDzA",
+          "title": "The Morning Benders - 'Excuses (Yours Truly Session)'",
+          "url": "https://www.youtube.com/watch?v=7jgmgE-QDzA",
+          "channel": "Rough Trade Records",
+          "durationSeconds": 413.0,
+          "score": 0.786,
+          "signals": [
+            "candidate-title-covers-track-tokens",
+            "artist-name-in-title",
+            "song-title-in-title",
+            "unexpected-session-penalty"
+          ]
+        },
+        {
+          "rank": 4,
+          "videoId": "b7_ZU9_5DPA",
+          "title": "Excuses",
+          "url": "https://www.youtube.com/watch?v=b7_ZU9_5DPA",
+          "channel": "POP ETC",
+          "durationSeconds": 318.0,
+          "score": 0.384,
+          "signals": [
+            "song-title-near-exact-match",
+            "song-title-in-title"
+          ]
+        },
+        {
+          "rank": 5,
+          "videoId": "kyATv_wHKKM",
+          "title": "The Morning Benders - Virgins | Soirée de Poche",
+          "url": "https://www.youtube.com/watch?v=kyATv_wHKKM",
+          "channel": "Blogothèque",
+          "durationSeconds": 331.0,
+          "score": 0.319,
+          "signals": [
+            "artist-name-in-title"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalTracks": 7,
+    "resolvedTracks": 7,
+    "unresolvedTracks": 0,
+    "requiresReview": false,
+    "generatedEmbed": {
+      "provider": "YouTube",
+      "kind": "audio-first-queue",
+      "title": "Full mix queue for Eleventh",
+      "embedUrl": "https://www.youtube.com/embed/DRJCugebjFY?playlist=kJTTNTOtSpM,0wPhbmeNSOs,F0SWAXMT2g4,nZSnYoX7vx0,eAaXS_wioYg,4fPHJFyQCSs",
+      "watchUrl": "https://www.youtube.com/watch_videos?video_ids=DRJCugebjFY,kJTTNTOtSpM,0wPhbmeNSOs,F0SWAXMT2g4,nZSnYoX7vx0,eAaXS_wioYg,4fPHJFyQCSs",
+      "videoIds": [
+        "DRJCugebjFY",
+        "kJTTNTOtSpM",
+        "0wPhbmeNSOs",
+        "F0SWAXMT2g4",
+        "nZSnYoX7vx0",
+        "eAaXS_wioYg",
+        "4fPHJFyQCSs"
+      ],
+      "presentation": "audio-first",
+      "embedSupported": false,
+      "embedLimitation": "YouTube does not expose a true audio-only iframe, so MMM surfaces this as an audio-first queue link instead of pretending the embed is audio-only.",
+      "generatedAt": "2026-04-08T21:25:47Z"
+    }
+  }
+}
