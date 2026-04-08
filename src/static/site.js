@@ -199,9 +199,11 @@ function bindYoutubeAudioPlayerEvents(instance) {
   instance.toggle.addEventListener('click', () => {
     if (!instance.player || !instance.isReady || !window.YT) return;
     if (instance.player.getPlayerState() === window.YT.PlayerState.PLAYING) {
+      instance.shouldAutoplay = false;
       instance.player.pauseVideo();
     } else {
-      instance.player.playVideo();
+      instance.shouldAutoplay = true;
+      requestYoutubePlayback(instance);
     }
     syncYoutubeAudioPlayerUi(instance);
   });
@@ -265,6 +267,7 @@ function playYoutubeQueueIndex(instance, nextIndex, options = {}) {
   if (!Number.isInteger(nextIndex) || nextIndex < 0 || nextIndex >= instance.videoIds.length) return;
 
   instance.currentIndex = nextIndex;
+  instance.shouldAutoplay = Boolean(autoplay);
   const videoId = instance.videoIds[nextIndex];
   if (!videoId) return;
 
@@ -275,6 +278,34 @@ function playYoutubeQueueIndex(instance, nextIndex, options = {}) {
   }
 
   syncYoutubeAudioPlayerUi(instance);
+}
+
+function requestYoutubePlayback(instance) {
+  if (!instance.player || !instance.isReady || !window.YT) return;
+
+  const currentIndex = getYoutubeAudioPlayerIndex(instance);
+  const currentVideoId = instance.videoIds[currentIndex];
+  if (!currentVideoId) return;
+
+  try {
+    instance.player.unMute?.();
+  } catch {}
+
+  try {
+    instance.player.playVideo();
+  } catch {}
+
+  window.setTimeout(() => {
+    if (!instance.player || !instance.isReady || !instance.shouldAutoplay || !window.YT) return;
+    const playerState = typeof instance.player.getPlayerState === 'function' ? instance.player.getPlayerState() : -1;
+    if (playerState === window.YT.PlayerState.PLAYING || playerState === window.YT.PlayerState.BUFFERING) {
+      return;
+    }
+
+    try {
+      instance.player.loadVideoById(currentVideoId);
+    } catch {}
+  }, 850);
 }
 
 async function initYoutubeAudioPlayer(root, index) {
@@ -291,6 +322,7 @@ async function initYoutubeAudioPlayer(root, index) {
     currentIndex: 0,
     isReady: false,
     isScrubbing: false,
+    shouldAutoplay: false,
     pollTimer: null,
     player: null,
     failedIndexes: new Set(),
@@ -392,17 +424,27 @@ async function initYoutubeAudioPlayer(root, index) {
           const fallbackIndex = findNextYoutubeQueueIndex(instance, activeIndex);
           if (fallbackIndex >= 0) {
             instance.currentIndex = fallbackIndex;
+            const fallbackVideoId = instance.videoIds[fallbackIndex];
+
             try {
-              instance.player.cueVideoById(instance.videoIds[fallbackIndex]);
+              if (instance.shouldAutoplay) {
+                instance.player.loadVideoById(fallbackVideoId);
+              } else {
+                instance.player.cueVideoById(fallbackVideoId);
+              }
             } catch {}
+
             if (instance.meta) {
-              instance.meta.textContent = `Track ${activeIndex + 1} is blocked for embedded playback. Queued track ${fallbackIndex + 1} instead.`;
+              instance.meta.textContent = instance.shouldAutoplay
+                ? `Track ${activeIndex + 1} is blocked for embedded playback. Skipping to track ${fallbackIndex + 1}.`
+                : `Track ${activeIndex + 1} is blocked for embedded playback. Queued track ${fallbackIndex + 1} instead.`;
             }
             syncYoutubeTracklistUi(instance);
             return;
           }
         }
 
+        instance.shouldAutoplay = false;
         if (instance.meta) {
           instance.meta.textContent = 'Playback is unavailable for this queue here. Open it on YouTube instead.';
         }

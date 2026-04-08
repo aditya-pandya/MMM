@@ -916,7 +916,7 @@ h3 {
 .youtube-player-host {
   position: absolute;
   top: 0;
-  left: -9999px;
+  left: 0;
   width: 220px;
   height: 220px;
   padding: 0;
@@ -924,6 +924,8 @@ h3 {
   border: 0;
   opacity: 0.01;
   pointer-events: none;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
 }
 
 .youtube-player-host > div,
