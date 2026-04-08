@@ -212,7 +212,7 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
 
     assert "notes/rebuilding-the-archive/" in home_html
     assert "Notes related to Thirtysixth" in home_html
-    assert "studio/" in home_html
+    assert "Read more about the project" in home_html
 
     assert "Search archive" in archive_html
     assert 'data-discovery-filter="state:has-related"' in archive_html
@@ -268,7 +268,7 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "A sanitized copy of the original post HTML is kept for repair and import cleanup work." in mix_detail_html
     assert "Cover credit: Album art featuring work by Erik Jones." in mix_detail_html
     assert "Listening surfaces" in mix_detail_html
-    assert "YouTube full-mix embed is blocked" in mix_detail_html
+    assert "This queue is still being finalized" in mix_detail_html
     assert "Imported Tumblr snapshot" not in mix_detail_html
     assert "Search YouTube" not in mix_detail_html
     assert "canonical cover slot" in mix_detail_html
@@ -276,10 +276,10 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
 
     assert "related note" in archive_html
     assert "highlighted track" in archive_html
-    assert "Audio-first queue" in mix_with_youtube_html
-    assert "Audio-first YouTube queue" in mix_with_youtube_html
+    assert "YouTube playback" in mix_with_youtube_html
+    assert "YouTube queue" in mix_with_youtube_html
     assert "Listening surfaces" in mix_with_youtube_html
-    assert "Play here or jump from the tracklist below." in mix_with_youtube_html
+    assert "Play here, or tap any track below to jump directly." in mix_with_youtube_html
     assert "Tap any marked row to play it above" in mix_with_youtube_html
     assert 'data-youtube-audio-player' in mix_with_youtube_html
     assert 'data-queue-key="mix-035-thirtyfifth"' in mix_with_youtube_html
@@ -289,7 +289,7 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert 'data-youtube-track-trigger' in mix_with_youtube_html
     assert 'href="https://www.youtube.com/watch_videos?video_ids=' in mix_with_youtube_html
     assert "youtube.com/embed/ehpYg0NsGqA" not in mix_with_youtube_html
-    assert mix_with_youtube_html.index("Audio-first queue") < mix_with_youtube_html.index("Full sequence")
+    assert mix_with_youtube_html.index("YouTube playback") < mix_with_youtube_html.index("Full sequence")
     assert "Bandcamp starting point" not in mix_with_youtube_html
     assert "Local editorial state" in studio_html
     assert "Validation posture" in studio_html
@@ -476,7 +476,7 @@ def test_static_build_requires_explicit_trusted_embed_data_before_rendering_prev
     spotify_mix_html = read_text(repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html")
 
     assert "youtube.com/embed/videoseries" not in youtube_mix_html
-    assert "Audio-first queue" in youtube_mix_html
+    assert "YouTube playback" in youtube_mix_html
     assert "Trusted link only" in spotify_mix_html
     assert "open.spotify.com/embed/playlist" not in spotify_mix_html
 

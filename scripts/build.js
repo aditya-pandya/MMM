@@ -462,19 +462,19 @@ function normalizeYouTubeMatchState(payload, mix) {
       embedReady,
     },
     unresolvedMessage: unresolvedTracks.length
-      ? `YouTube matching is still waiting on review for ${unresolvedTracks.length} track${unresolvedTracks.length === 1 ? '' : 's'} before a full-mix queue can render.`
+      ? `Playback is not ready yet while this mix's YouTube queue is being finalized (${unresolvedTracks.length} track${unresolvedTracks.length === 1 ? '' : 's'} remaining).`
       : '',
     unresolvedTitles: unresolvedTracks.map((track) => track?.displayText).filter(Boolean),
     generatedProvider: embedReady
       ? {
           provider: 'YouTube',
-          label: 'Audio-first YouTube queue',
+          label: 'YouTube queue',
           url: generatedEmbed.watchUrl,
           kind: 'playlist',
-          note: generatedEmbed.embedLimitation || 'Built locally from explicit per-track video selections and presented as an audio-first queue.',
+          note: 'Play the full sequence on YouTube.',
           providerSource: 'generated',
           confidenceLevel: 'trusted-link-only',
-          confidenceReason: 'Built locally from resolved per-track YouTube matches.',
+          confidenceReason: 'Direct queue link for this mix.',
         }
       : null,
   };
@@ -1118,7 +1118,6 @@ function navLinks(depth) {
     { href: `${base}archive/`, label: 'Archive', key: 'archive' },
     { href: `${base}about/`, label: 'About', key: 'about' },
     { href: `${base}notes/`, label: 'Notes', key: 'notes' },
-    { href: `${base}studio/`, label: 'Studio', key: 'studio' },
   ];
 }
 
@@ -1779,7 +1778,7 @@ function renderListeningSection(mix) {
 
   const intro = listening.intro ? `<p class="listening-section__intro">${escapeHtml(listening.intro)}</p>` : '';
   const summaryBits = [];
-  if (generatedQueue) summaryBits.push('1 audio-first YouTube queue');
+  if (generatedQueue) summaryBits.push('1 YouTube queue');
   if (trustedEmbeds.length) summaryBits.push(`${trustedEmbeds.length} verified preview${trustedEmbeds.length === 1 ? '' : 's'}`);
   if (actionableTrustedLinks.length) summaryBits.push(`${actionableTrustedLinks.length} verified external link${actionableTrustedLinks.length === 1 ? '' : 's'}`);
   if (uncertainSurfaces.length) summaryBits.push(`${uncertainSurfaces.length} uncertain lead${uncertainSurfaces.length === 1 ? '' : 's'}`);
@@ -1796,22 +1795,19 @@ function renderListeningSection(mix) {
       ${summary}
       ${youtubeMatch?.summary?.requiresReview
         ? `<div class="listening-subsection">
-            <p class="listening-subsection__title">YouTube review queue</p>
+            <p class="listening-subsection__title">YouTube queue</p>
             <div class="provider-grid">
               <article class="provider-card provider-card--uncertain">
-                <p class="provider-card__eyebrow">Needs review</p>
-                <h3>YouTube full-mix embed is blocked</h3>
-                <p>${escapeHtml(youtubeMatch.unresolvedMessage || 'A human review pass is still needed before the YouTube queue can be claimed as resolved.')}</p>
-                ${youtubeMatch.unresolvedTitles.length
-                  ? `<p>${escapeHtml(`Open data/youtube/${mix.slug}.json to review: ${youtubeMatch.unresolvedTitles.slice(0, 4).join('; ')}${youtubeMatch.unresolvedTitles.length > 4 ? '…' : ''}`)}</p>`
-                  : ''}
+                <p class="provider-card__eyebrow">Unavailable</p>
+                <h3>This queue is still being finalized</h3>
+                <p>${escapeHtml(youtubeMatch.unresolvedMessage || 'Playback for this mix is not ready yet. Check back soon.')}</p>
               </article>
             </div>
           </div>`
         : ''}
       ${generatedQueue
         ? `<div class="listening-subsection">
-            <p class="listening-subsection__title">Audio-first queue</p>
+            <p class="listening-subsection__title">YouTube playback</p>
             <div class="provider-grid">
               <article
                 class="provider-card provider-card--player"
@@ -1825,11 +1821,11 @@ function renderListeningSection(mix) {
                 <div class="youtube-audio-player__header">
                   <div>
                     <p class="provider-card__eyebrow">YouTube queue</p>
-                    <h3>${escapeHtml(generatedQueue.label || 'Audio-first YouTube queue')}</h3>
+                    <h3>${escapeHtml(generatedQueue.label || 'YouTube queue')}</h3>
                   </div>
                   <span class="youtube-audio-player__state" data-youtube-player-state>Ready</span>
                 </div>
-                <p class="youtube-audio-player__copy">Play here or jump from the tracklist below.</p>
+                <p class="youtube-audio-player__copy">Play here, or tap any track below to jump directly.</p>
                 <div class="youtube-audio-player__track">
                   <strong data-youtube-player-track>${escapeHtml(generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}</strong>
                   <p data-youtube-player-meta>Press play or choose a track below.</p>
@@ -1937,8 +1933,9 @@ function renderHomePage({ mixes, notes, site }) {
 
   const featureBlock = featured
     ? `<section class="hero-grid">
-        <div>
+        <div style="position:relative;">
           <p class="eyebrow">Current mix</p>
+          <span class="hero-number" aria-hidden="true">No.${String(featured.mixNumber || featured.number || '').padStart(3, '0')}</span>
           <h1>${escapeHtml(featured.title)}</h1>
           <p class="hero-copy">${escapeHtml(featured.excerpt)}</p>
           <div class="meta-row">
@@ -1965,9 +1962,9 @@ function renderHomePage({ mixes, notes, site }) {
             <a class="button button--secondary" href="about/">About the project</a>
           </div>
         </div>
-        <div class="callout-panel">
+          <div class="callout-panel">
           <p class="callout-panel__eyebrow">No mixes published yet</p>
-          <p>That is intentional. The site is ready for real entries as soon as the data lands under data/.</p>
+          <p>The first published mix will appear here.</p>
         </div>
       </section>`;
 
@@ -2034,7 +2031,7 @@ function renderHomePage({ mixes, notes, site }) {
       <div class="prose">
         <p>${escapeHtml(intro)}</p>
         <p>${escapeHtml(site.homeSecondary || 'The visual language stays dark, editorial, and grounded: late-night listening, track sequencing, and the useful residue that remains after repeat plays.')}</p>
-        <p><a class="text-link" href="studio/">Open the local studio dashboard</a></p>
+        <p><a class="text-link" href="about/">Read more about the project</a></p>
       </div>
     </section>`;
   return renderLayout({
@@ -2112,12 +2109,12 @@ function renderArchivePage({ mixes }) {
     : `<section class="page-intro">
         <p class="eyebrow">Archive</p>
         <h1>Archive in progress</h1>
-        <p class="page-intro__copy">No published mixes yet. The build is wired to read data from data/mixes.json as soon as entries exist.</p>
+        <p class="page-intro__copy">No published mixes yet. The archive will open as soon as the first mix is released.</p>
       </section>
       <section class="empty-state">
         <div class="callout-panel">
-          <p class="callout-panel__eyebrow">Holding page</p>
-          <p>Better a small real archive than an invented back catalog. When the first mix appears in the data, it will land here automatically.</p>
+          <p class="callout-panel__eyebrow">Coming soon</p>
+          <p>Better a small real archive than an invented back catalog.</p>
         </div>
       </section>`;
 
@@ -2149,7 +2146,7 @@ function renderMixPage({ mix }) {
           <div>
             <p class="eyebrow">Tracklist</p>
             <h2>Full sequence</h2>
-            <p class="supporting-copy">${escapeHtml(String(mix.tracklist.length))} tracks${mix.highlightedTracks.length ? ` · ${escapeHtml(String(mix.highlightedTracks.length))} favorites marked in source` : ''}${queueTrackMap.size ? ' · Tap any marked row to play it above' : ''}</p>
+            <p class="supporting-copy">${escapeHtml(String(mix.tracklist.length))} tracks${mix.highlightedTracks.length ? ` · ${escapeHtml(String(mix.highlightedTracks.length))} favorites highlighted` : ''}${queueTrackMap.size ? ' · Tap any marked row to play it above' : ''}</p>
           </div>
         </div>
         <ol class="tracklist"${queueTrackMap.size ? ` data-youtube-queue-tracklist="${escapeHtml(mix.slug)}"` : ''}>
@@ -2726,17 +2723,17 @@ function renderNotesPage({ notes }) {
       </section>`
     : `<section class="page-intro">
         <p class="eyebrow">Notes</p>
-        <h1>Holding page for future notes</h1>
-        <p class="page-intro__copy">This route is live now and ready to turn into an index once note data exists. Until then, it stays honest about being a placeholder.</p>
+        <h1>Notes coming soon</h1>
+        <p class="page-intro__copy">Writing around the mixes will appear here.</p>
       </section>
       <section class="section-block section-block--split">
         <div>
-          <p class="eyebrow">Current state</p>
-          <h2>Useful residue comes later.</h2>
+          <p class="eyebrow">In the meantime</p>
+          <h2>Browse the published mixes.</h2>
         </div>
         <div class="prose">
-          <p>No notes data was found, so this page acts as a clean holding page. Add data/notes-index.json plus note files under data/notes/, or provide a flexible data/notes.json, and the page will render them automatically.</p>
-          <p>Expected fields are flexible: title, date, excerpt, body, tags, and optional related mix slugs.</p>
+          <p>The archive is live and keeps growing over time.</p>
+          <p><a class="text-link" href="../archive/">Open the archive</a></p>
         </div>
       </section>`;
 

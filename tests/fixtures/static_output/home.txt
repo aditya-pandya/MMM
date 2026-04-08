@@ -46,4 +46,4 @@ EYEBROW: Why it exists
 H2: Less brand world, more listening habit.
 COPY: A personal archive for mixes built slowly, sequenced by hand, and kept with just enough context to matter later.
 COPY: The visual language stays dark, editorial, and grounded: late-night listening, track sequencing, and the useful residue that remains after repeat plays.
-LINK: Open the local studio dashboard
+LINK: Read more about the project
