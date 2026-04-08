@@ -9,7 +9,7 @@ TEXT: Showing all 36 mixes.
 FILTER: All mixes
 FILTER: Related notes · 3
 FILTER: Highlighted tracks · 5
-FILTER: Listening surfaces · 1
+FILTER: Listening surfaces · 36
 FILTER: Tumblr source · 36
 FILTER: Covers · 10
 FILTER: Remixes · 7

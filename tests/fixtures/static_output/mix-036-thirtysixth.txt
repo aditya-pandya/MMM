@@ -5,27 +5,30 @@ COPY: Also known as the Tuesday music mix. One week and one day later than origi
 BUTTON: Back to archive
 EYEBROW: Listening
 H2: Listening surfaces
-TEXT: YouTube queue
-EYEBROW: Unavailable
-H3: This queue is still being finalized
-TEXT: Playback is not ready yet while this mix's YouTube queue is being finalized (13 tracks remaining).
+TEXT: 1 YouTube queue
+TEXT: YouTube playback
+EYEBROW: YouTube queue
+H3: YouTube queue
+TEXT: Play here, or tap any track below to jump directly.
+TEXT: Press play or choose a track below.
+BUTTON: Open Thirtysixth on YouTube
 EYEBROW: Tracklist
 H2: Full sequence
-COPY: 14 tracks · 3 favorites highlighted
-TRACK: 01 Tennis Court (Lorde cover) — The Kite String Tangle
-TRACK: 02 Beloved — Say Lou Lou
-TRACK: 03 Realize You — Empress Of
-TRACK: 04 Lost Boys and Girls Club — Dum Dum Girls
-TRACK: 05 (I Just) Died In Your Arms Tonight (Cutting Crew cover) — Bastille
-TRACK: 06 You’re Not Good Enough — Blood Orange Favorite
-TRACK: 07 Old Love New Love — Twin Shadow
-TRACK: 08 London Light — STRANGERS
-TRACK: 09 Will Calls — Grizzly Bear
-TRACK: 10 Remurdered — Mogwai
-TRACK: 11 A Real Hero (College & Electric Youth cover) — High Highs
-TRACK: 12 Summer Time Sadness (Lana Del Rey cover) — Angel Haze Favorite
-TRACK: 13 Mirror — Ellie Goulding
-TRACK: 14 Love You Better (John Dillinger remix) — Oh Land Favorite
+COPY: 14 tracks · 3 favorites highlighted · Tap any marked row to play it above
+TRACK: 01 Tennis Court (Lorde cover) — The Kite String Tangle PlayQueue above
+TRACK: 02 Beloved — Say Lou Lou PlayQueue above
+TRACK: 03 Realize You — Empress Of PlayQueue above
+TRACK: 04 Lost Boys and Girls Club — Dum Dum Girls PlayQueue above
+TRACK: 05 (I Just) Died In Your Arms Tonight (Cutting Crew cover) — Bastille PlayQueue above
+TRACK: 06 You’re Not Good Enough — Blood Orange Favorite PlayQueue above
+TRACK: 07 Old Love New Love — Twin Shadow PlayQueue above
+TRACK: 08 London Light — STRANGERS PlayQueue above
+TRACK: 09 Will Calls — Grizzly Bear PlayQueue above
+TRACK: 10 Remurdered — Mogwai PlayQueue above
+TRACK: 11 A Real Hero (College & Electric Youth cover) — High Highs PlayQueue above
+TRACK: 12 Summer Time Sadness (Lana Del Rey cover) — Angel Haze Favorite PlayQueue above
+TRACK: 13 Mirror — Ellie Goulding PlayQueue above
+TRACK: 14 Love You Better (John Dillinger remix) — Oh Land Favorite PlayQueue above
 EYEBROW: Context
 H2: Archive notes
 COPY: Contains some of the best music I have heard in a quite a192 while.

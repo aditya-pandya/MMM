@@ -268,7 +268,9 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "A sanitized copy of the original post HTML is kept for repair and import cleanup work." in mix_detail_html
     assert "Cover credit: Album art featuring work by Erik Jones." in mix_detail_html
     assert "Listening surfaces" in mix_detail_html
-    assert "This queue is still being finalized" in mix_detail_html
+    assert "YouTube playback" in mix_detail_html
+    assert "This queue is still being finalized" not in mix_detail_html
+    assert 'data-queue-key="mix-036-thirtysixth"' in mix_detail_html
     assert "Imported Tumblr snapshot" not in mix_detail_html
     assert "Search YouTube" not in mix_detail_html
     assert "canonical cover slot" in mix_detail_html

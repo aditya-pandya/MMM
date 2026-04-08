@@ -21,8 +21,8 @@ META: Listening warnings
 H2: 0
 TEXT: No suspicious listening/provider payloads surfaced
 META: YouTube review
-H2: 2
-TEXT: Latest blocked: Thirtysixth
+H2: 0
+TEXT: No unresolved YouTube match queues
 EYEBROW: Draft queue
 H3: MMM for 2026-04-06
 TEXT: 1 draft waiting on review, 0 approved.
@@ -32,17 +32,17 @@ H3: 3/36 published mixes carry note context
 TEXT: 33 published gaps remain. 2 of 2 notes already point back into the archive.
 COPY: Latest gap: Thirtythird
 EYEBROW: Listening health
-H3: 1/36 published mixes carry listening surfaces
-TEXT: 35 published mixes still rely on the archive page alone with no provider mirror attached.
+H3: 36/36 published mixes carry listening surfaces
+TEXT: 0 published mixes still rely on the archive page alone with no provider mirror attached.
 COPY: Current listening surfaces resolve to supported provider and embed patterns.
 EYEBROW: YouTube match state
-H3: 2 mixes blocked on track review
-TEXT: Ambiguous, duplicate, or low-confidence track matches are being held back explicitly instead of auto-picked into a misleading embed.
-COPY: Thirtysixth: 13 unresolved track matches · Thirtyfourth: 15 unresolved track matches
+H3: 36/36 canonical archive mixes have generated YouTube queues
+TEXT: Resolved YouTube embeds are only generated from explicit per-track video IDs.
+COPY: Generated queues use explicit video IDs, not claimed playlist IDs.
 EYEBROW: Validation posture
 H3: Editorial review still pending
 TEXT: The site can render the current state cleanly, but the latest draft still needs review before it feels publishable.
-COPY: Featured mix slug resolves to a published mix. Latest draft is currently marked draft. 3 of 36 published mixes already have note context attached. 2 mixes still need YouTube track-match review before a full embed can render. 2 of 36 canonical archive mixes still need YouTube review before they can claim a resolved queue.
+COPY: Featured mix slug resolves to a published mix. Latest draft is currently marked draft. 3 of 36 published mixes already have note context attached.
 EYEBROW: Recent routes
 H2: What to open next
 META: Latest mix
@@ -70,4 +70,3 @@ EYEBROW: Recommended next actions
 H2: What the current data suggests
 TEXT: Review MMM for 2026-04-06 and promote it from draft to approved once the sequencing feels done.
 TEXT: Add a note or mix-context paragraph for Thirtythird so the archive coverage does not stall at the latest listening work.
-TEXT: Review YouTube match candidates for Thirtysixth so the full-mix queue can unlock without guessing through ambiguous tracks.
