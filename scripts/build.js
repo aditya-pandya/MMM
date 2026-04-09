@@ -1463,7 +1463,7 @@ function renderDiscoveryControls({
     >
       <div class="discovery-panel__header">
         <div>
-          <p class="eyebrow">Discovery</p>
+          <p class="eyebrow">Browse</p>
           <h2>${escapeHtml(title)}</h2>
         </div>
         <p class="supporting-copy">${escapeHtml(description)}</p>
@@ -2134,8 +2134,8 @@ function renderMixPage({ mix }) {
   const notesSection = distinctMixNotes.length
     ? `<section class="section-block section-block--split">
         <div>
-          <p class="eyebrow">Context</p>
-          <h2>Archive notes</h2>
+          <p class="eyebrow">Notes</p>
+          <h2>A few words</h2>
         </div>
         <div class="prose">${paragraphize(distinctMixNotes.join('\n\n'))}</div>
       </section>`
@@ -2175,7 +2175,7 @@ function renderMixPage({ mix }) {
     eyebrow: mix.title,
     content: `<section class="mix-hero">
         <div>
-          <p class="eyebrow">Mix detail</p>
+          <p class="eyebrow">This mix</p>
           <h1>${escapeHtml(mix.title)}</h1>
           <p class="hero-copy">${escapeHtml(mix.excerpt)}</p>
           <div class="meta-row">

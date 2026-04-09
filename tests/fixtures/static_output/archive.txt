@@ -2,7 +2,7 @@ TITLE: Archive · Monday Music Mix
 EYEBROW: Archive
 H1: Published mixes
 COPY: A chronological run of finished mixes, each with the artwork, track sequencing, and context that still feels worth keeping.
-EYEBROW: Discovery
+EYEBROW: Browse
 H2: Search archive
 COPY: Search by mix title, artist, track, or a few simple mix traits.
 TEXT: Showing all 36 mixes.

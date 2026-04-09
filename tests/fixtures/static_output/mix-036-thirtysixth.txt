@@ -1,5 +1,5 @@
 TITLE: Thirtysixth · Monday Music Mix
-EYEBROW: Mix detail
+EYEBROW: This mix
 H1: Thirtysixth
 COPY: Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.
 BUTTON: Back to archive
@@ -26,8 +26,8 @@ TRACK: 11 A Real Hero (College & Electric Youth cover) — High Highs
 TRACK: 12 Summer Time Sadness (Lana Del Rey cover) — Angel Haze Favorite
 TRACK: 13 Mirror — Ellie Goulding
 TRACK: 14 Love You Better (John Dillinger remix) — Oh Land Favorite
-EYEBROW: Context
-H2: Archive notes
+EYEBROW: Notes
+H2: A few words
 COPY: Contains some of the best music I have heard in a quite a192 while.
 EYEBROW: Archive
 H2: More mixes
