@@ -163,8 +163,7 @@ function syncYoutubeAudioPlayerUi(instance) {
   const muteLabel = isMuted ? 'Unmute audio' : 'Mute audio';
 
   if (instance.toggleIcon) {
-    instance.toggleIcon.classList.remove('ph-play', 'ph-pause');
-    instance.toggleIcon.classList.add(isPlaying ? 'ph-pause' : 'ph-play');
+    instance.toggleIcon.className = `ph ${isPlaying ? 'ph-pause' : 'ph-play'}`;
   }
   if (instance.toggleLabel) {
     instance.toggleLabel.textContent = toggleLabel;
@@ -173,8 +172,7 @@ function syncYoutubeAudioPlayerUi(instance) {
   instance.toggle.setAttribute('title', toggleLabel);
 
   if (instance.muteIcon) {
-    instance.muteIcon.classList.remove('ph-speaker-high', 'ph-speaker-slash');
-    instance.muteIcon.classList.add(isMuted ? 'ph-speaker-slash' : 'ph-speaker-high');
+    instance.muteIcon.className = `ph ${isMuted ? 'ph-speaker-slash' : 'ph-speaker-high'}`;
   }
   if (instance.muteLabel) {
     instance.muteLabel.textContent = muteLabel;
@@ -302,21 +300,32 @@ function requestYoutubePlayback(instance) {
     instance.player.unMute?.();
   } catch {}
 
+  const playerState = typeof instance.player.getPlayerState === 'function' ? instance.player.getPlayerState() : -1;
+  const shouldLoadWithinGesture = [
+    window.YT.PlayerState.CUED,
+    window.YT.PlayerState.UNSTARTED,
+    window.YT.PlayerState.ENDED,
+  ].includes(playerState);
+
   try {
-    instance.player.playVideo();
+    if (shouldLoadWithinGesture) {
+      instance.player.loadVideoById(currentVideoId);
+    } else {
+      instance.player.playVideo();
+    }
   } catch {}
 
   window.setTimeout(() => {
     if (!instance.player || !instance.isReady || !instance.shouldAutoplay || !window.YT) return;
-    const playerState = typeof instance.player.getPlayerState === 'function' ? instance.player.getPlayerState() : -1;
-    if (playerState === window.YT.PlayerState.PLAYING || playerState === window.YT.PlayerState.BUFFERING) {
+    const nextState = typeof instance.player.getPlayerState === 'function' ? instance.player.getPlayerState() : -1;
+    if (nextState === window.YT.PlayerState.PLAYING || nextState === window.YT.PlayerState.BUFFERING) {
       return;
     }
 
     try {
-      instance.player.loadVideoById(currentVideoId);
+      instance.player.playVideo();
     } catch {}
-  }, 850);
+  }, 700);
 }
 
 async function initYoutubeAudioPlayer(root, index) {
