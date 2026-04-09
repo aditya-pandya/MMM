@@ -586,3 +586,91 @@ def test_static_build_fails_loudly_on_malformed_canonical_note_json(tmp_path):
 
     assert result.returncode != 0
     assert "Could not parse data/notes/rebuilding-the-archive.json" in (result.stderr or result.stdout)
+
+
+def test_static_build_emits_phosphor_queue_controls_and_no_legacy_glyphs(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    mix_html = read_text(repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html")
+
+    assert "@phosphor-icons/web@2.1.1" in mix_html
+    assert 'class="ph ph-skip-back"' in mix_html
+    assert 'class="ph ph-play" data-youtube-player-toggle-icon' in mix_html
+    assert 'class="ph ph-skip-forward"' in mix_html
+    assert 'class="ph ph-speaker-high" data-youtube-player-mute-icon' in mix_html
+    assert 'class="ph ph-play tracklist__affordance-icon"' in mix_html
+
+    for legacy_marker in ("‹‹", "››", "▶", "❚❚", ">VOL<", ">MUT<"):
+        assert legacy_marker not in mix_html
+
+
+def test_site_js_keeps_mobile_playback_start_fallback_contract(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    site_js = read_text(repo / "dist" / "assets" / "site.js")
+
+    assert "shouldLoadWithinGesture" in site_js
+    assert "window.YT.PlayerState.CUED" in site_js
+    assert "window.YT.PlayerState.UNSTARTED" in site_js
+    assert "window.YT.PlayerState.ENDED" in site_js
+    assert "instance.player.loadVideoById(currentVideoId);" in site_js
+    assert "instance.player.playVideo();" in site_js
+    assert "instance.toggleIcon.className = `ph ${isPlaying ? 'ph-pause' : 'ph-play'}`;" in site_js
+    assert "instance.muteIcon.className = `ph ${isMuted ? 'ph-speaker-slash' : 'ph-speaker-high'}`;" in site_js
+
+
+def test_static_build_renders_embed_ready_player_for_resolved_youtube_queues(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    youtube_payloads = sorted((repo / "data" / "youtube").glob("*.json"))
+    assert youtube_payloads, "Expected seeded YouTube match payloads"
+
+    for payload_path in youtube_payloads:
+        payload = json.loads(read_text(payload_path))
+        summary = payload.get("summary") or {}
+        generated_embed = payload.get("generatedEmbed") or {}
+        unresolved_tracks = int(summary.get("unresolvedTracks") or 0)
+        video_ids = [str(value).strip() for value in generated_embed.get("videoIds") or [] if str(value).strip()]
+        mix_slug = str(payload.get("mixSlug") or payload_path.stem).strip()
+
+        mix_route = repo / "dist" / "mixes" / mix_slug / "index.html"
+        if not mix_route.exists() or not video_ids:
+            continue
+
+        mix_html = read_text(mix_route)
+
+        if unresolved_tracks == 0:
+            assert "This queue is still being finalized" not in mix_html
+            assert "Playback is not ready yet while this mix's YouTube queue is being finalized" not in mix_html
+            assert "data-youtube-audio-player" in mix_html
+            assert f'data-queue-key="{mix_slug}"' in mix_html
