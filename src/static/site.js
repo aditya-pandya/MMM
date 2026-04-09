@@ -89,6 +89,29 @@ function readJsonDataset(element, key, fallback) {
   }
 }
 
+function clearYoutubeAudioPlayerStatusOverride(instance) {
+  instance.statusOverride = null;
+}
+
+function markYoutubeAudioPlayerUnavailable(instance, metaText, options = {}) {
+  const { stateText = 'Unavailable' } = options;
+  instance.shouldAutoplay = false;
+  instance.autoplayRequestedAt = 0;
+  instance.lastRecoveryAttemptAt = 0;
+  instance.statusOverride = {
+    stateText,
+    metaText,
+  };
+
+  if (instance.meta) {
+    instance.meta.textContent = metaText;
+  }
+  if (instance.state) {
+    instance.state.textContent = stateText;
+    instance.state.classList.remove('is-active');
+  }
+}
+
 function setYoutubeAudioPlayerDisabled(instance, disabled) {
   instance.previous.disabled = disabled;
   instance.toggle.disabled = disabled;
@@ -157,18 +180,19 @@ function syncYoutubeAudioPlayerUi(instance) {
   if (window.YT && [window.YT.PlayerState.CUED, window.YT.PlayerState.PLAYING, window.YT.PlayerState.PAUSED, window.YT.PlayerState.BUFFERING].includes(playerState)) {
     instance.pendingIndex = null;
   }
-  if (window.YT && [window.YT.PlayerState.CUED, window.YT.PlayerState.PLAYING, window.YT.PlayerState.PAUSED].includes(playerState)) {
+  if (!instance.shouldAutoplay || (window.YT && playerState === window.YT.PlayerState.PLAYING)) {
     instance.autoplayRequestedAt = 0;
     instance.lastRecoveryAttemptAt = 0;
   }
   const queueCount = instance.videoIds.length;
   const resolvedLabel = instance.trackLabels[index] || videoData.title || `Track ${index + 1}`;
   const hasLinkedTracklist = instance.trackItems.length > 0;
+  const statusOverride = instance.statusOverride || null;
 
-  instance.state.textContent = youtubePlayerStateLabel(playerState);
-  instance.state.classList.toggle('is-active', Boolean(isPlaying));
+  instance.state.textContent = statusOverride?.stateText || youtubePlayerStateLabel(playerState);
+  instance.state.classList.toggle('is-active', !statusOverride && Boolean(isPlaying));
   instance.track.textContent = resolvedLabel;
-  instance.meta.textContent = `Track ${index + 1} of ${queueCount}${hasLinkedTracklist ? ' · tracklist stays in sync' : ''}`;
+  instance.meta.textContent = statusOverride?.metaText || `Track ${index + 1} of ${queueCount}${hasLinkedTracklist ? ' · tracklist stays in sync' : ''}`;
   instance.elapsed.textContent = formatClock(currentTime);
   instance.duration.textContent = formatClock(duration);
   const isMuted = Boolean(player.isMuted?.());
@@ -219,6 +243,7 @@ function recoverStalledYoutubePlayback(instance) {
     -1,
     window.YT.PlayerState.UNSTARTED,
     window.YT.PlayerState.BUFFERING,
+    window.YT.PlayerState.CUED,
   ]);
 
   if (!stallableStates.has(playerState)) {
@@ -242,14 +267,7 @@ function recoverStalledYoutubePlayback(instance) {
       }
       return;
     }
-    instance.shouldAutoplay = false;
-    if (instance.meta) {
-      instance.meta.textContent = 'Playback is unavailable here. Open the queue on YouTube instead.';
-    }
-    if (instance.state) {
-      instance.state.textContent = 'Unavailable';
-      instance.state.classList.remove('is-active');
-    }
+    markYoutubeAudioPlayerUnavailable(instance, 'Playback is unavailable here. Open the queue on YouTube instead.');
     return;
   }
 
@@ -344,6 +362,7 @@ function playYoutubeQueueIndex(instance, nextIndex, options = {}) {
   if (!instance.player || !instance.isReady) return;
   if (!Number.isInteger(nextIndex) || nextIndex < 0 || nextIndex >= instance.videoIds.length) return;
 
+  clearYoutubeAudioPlayerStatusOverride(instance);
   instance.currentIndex = nextIndex;
   instance.pendingIndex = nextIndex;
   instance.shouldAutoplay = Boolean(autoplay);
@@ -364,16 +383,13 @@ function playYoutubeQueueIndex(instance, nextIndex, options = {}) {
 function requestYoutubePlayback(instance) {
   if (!instance.player || !instance.isReady || !window.YT) return;
 
+  clearYoutubeAudioPlayerStatusOverride(instance);
   instance.autoplayRequestedAt = Date.now();
   instance.lastRecoveryAttemptAt = 0;
 
   const currentIndex = getYoutubeAudioPlayerIndex(instance);
   const currentVideoId = instance.videoIds[currentIndex];
   if (!currentVideoId) return;
-
-  try {
-    instance.player.unMute?.();
-  } catch {}
 
   const playerState = typeof instance.player.getPlayerState === 'function' ? instance.player.getPlayerState() : -1;
   const shouldLoadWithinGesture = [
@@ -420,6 +436,7 @@ async function initYoutubeAudioPlayer(root, index) {
     shouldAutoplay: false,
     autoplayRequestedAt: 0,
     lastRecoveryAttemptAt: 0,
+    statusOverride: null,
     pollTimer: null,
     player: null,
     failedIndexes: new Set(),
@@ -463,12 +480,7 @@ async function initYoutubeAudioPlayer(root, index) {
   try {
     await loadYoutubeIframeApi();
   } catch {
-    if (instance.meta) {
-      instance.meta.textContent = 'Playback is unavailable here. Open the queue on YouTube instead.';
-    }
-    if (instance.state) {
-      instance.state.textContent = 'Unavailable';
-    }
+    markYoutubeAudioPlayerUnavailable(instance, 'Playback is unavailable here. Open the queue on YouTube instead.');
     return;
   }
 
@@ -538,14 +550,9 @@ async function initYoutubeAudioPlayer(root, index) {
           }
         }
 
-        instance.shouldAutoplay = false;
-        if (instance.meta) {
-          instance.meta.textContent = 'Playback is unavailable for this queue here. Open it on YouTube instead.';
-        }
-        if (instance.state) {
-          instance.state.textContent = 'Error';
-          instance.state.classList.remove('is-active');
-        }
+        markYoutubeAudioPlayerUnavailable(instance, 'Playback is unavailable for this queue here. Open it on YouTube instead.', {
+          stateText: 'Error',
+        });
       },
     },
   });

@@ -41,6 +41,81 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+def build_static_site(repo: Path) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+
+def evaluate_site_js_asset(repo: Path, scenario: str) -> object:
+    site_js = read_text(repo / "dist" / "assets" / "site.js")
+    script = "\n".join(
+        [
+            "const vm = require('vm');",
+            f"const siteJs = {json.dumps(site_js)};",
+            "const context = {",
+            "  module: { exports: {} },",
+            "  exports: {},",
+            "  console,",
+            "  Date,",
+            "  JSON,",
+            "  Set,",
+            "  Map,",
+            "  Math,",
+            "  Number,",
+            "  String,",
+            "  Boolean,",
+            "  Array,",
+            "  Object,",
+            "  Promise,",
+            "};",
+            "context.window = {",
+            "  setTimeout: () => 1,",
+            "  clearTimeout() {},",
+            "  setInterval: () => 1,",
+            "  clearInterval() {},",
+            "  YT: {",
+            "    PlayerState: {",
+            "      UNSTARTED: -1,",
+            "      ENDED: 0,",
+            "      PLAYING: 1,",
+            "      PAUSED: 2,",
+            "      BUFFERING: 3,",
+            "      CUED: 5,",
+            "    },",
+            "  },",
+            "};",
+            "context.document = {",
+            "  addEventListener() {},",
+            "  querySelector() { return null; },",
+            "  querySelectorAll() { return []; },",
+            "  createElement() { return { async: true, onerror: null }; },",
+            "  head: { append() {} },",
+            "};",
+            "vm.createContext(context);",
+            "vm.runInContext(siteJs + '\\nmodule.exports = { syncYoutubeAudioPlayerUi, recoverStalledYoutubePlayback, requestYoutubePlayback, STALLED_AUTOPLAY_MS, STALLED_RECOVERY_SKIP_MS };', context);",
+            "const exported = context.module.exports;",
+            "const result = (() => {",
+            scenario,
+            "})();",
+            "console.log(JSON.stringify(result));",
+        ]
+    )
+    result = subprocess.run(
+        ["node", "-e", script],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr or result.stdout
+    return json.loads(result.stdout)
+
+
 def write_json(path: Path, payload: object) -> None:
     path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
@@ -622,47 +697,133 @@ def test_static_build_emits_phosphor_queue_controls_and_no_legacy_glyphs(tmp_pat
         assert legacy_marker not in mix_html
 
 
-def test_site_js_keeps_mobile_playback_start_fallback_contract(tmp_path):
+def test_site_js_preserves_cued_autoplay_recovery_timers_until_playback_stabilizes(tmp_path):
     repo = prepare_temp_repo(tmp_path)
 
-    result = subprocess.run(
-        ["node", "scripts/build.js"],
-        cwd=repo,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
+    result = build_static_site(repo)
 
     assert result.returncode == 0, result.stderr or result.stdout
 
-    site_js = read_text(repo / "dist" / "assets" / "site.js")
+    runtime = evaluate_site_js_asset(
+        repo,
+        """
+const stateClassList = {
+  active: false,
+  toggle(_name, value) { this.active = Boolean(value); },
+  remove() { this.active = false; },
+};
+let loadCalls = 0;
+const realNow = Date.now;
+Date.now = () => 5000;
+const instance = {
+  player: {
+    getCurrentTime: () => 0,
+    getDuration: () => 0,
+    getPlayerState: () => context.window.YT.PlayerState.CUED,
+    getVideoData: () => ({ title: 'Track A' }),
+    isMuted: () => false,
+    getVolume: () => 88,
+    loadVideoById: () => { loadCalls += 1; },
+  },
+  isReady: true,
+  isScrubbing: false,
+  videoIds: ['abc123'],
+  trackLabels: ['Track A'],
+  trackItems: [],
+  currentIndex: 0,
+  pendingIndex: 0,
+  shouldAutoplay: true,
+  autoplayRequestedAt: 2000,
+  lastRecoveryAttemptAt: 0,
+  failedIndexes: new Set(),
+  statusOverride: null,
+  state: { textContent: '', classList: stateClassList },
+  track: { textContent: '' },
+  meta: { textContent: '' },
+  elapsed: { textContent: '' },
+  duration: { textContent: '' },
+  previous: { disabled: false },
+  next: { disabled: false },
+  mute: { disabled: false, setAttribute() {} },
+  volume: { disabled: false, value: '100' },
+  toggle: { disabled: false, setAttribute() {} },
+  progress: { disabled: false, value: '0' },
+  toggleIcon: { className: '' },
+  toggleLabel: { textContent: '' },
+  muteIcon: { className: '' },
+  muteLabel: { textContent: '' },
+};
+exported.syncYoutubeAudioPlayerUi(instance);
+exported.recoverStalledYoutubePlayback(instance);
+Date.now = realNow;
+return {
+  autoplayRequestedAt: instance.autoplayRequestedAt,
+  lastRecoveryAttemptAt: instance.lastRecoveryAttemptAt,
+  loadCalls,
+  state: instance.state.textContent,
+};
+""",
+    )
 
-    assert "shouldLoadWithinGesture" in site_js
-    assert "window.YT.PlayerState.CUED" in site_js
-    assert "window.YT.PlayerState.UNSTARTED" in site_js
-    assert "window.YT.PlayerState.ENDED" in site_js
-    assert "instance.player.loadVideoById(currentVideoId);" in site_js
-    assert "instance.player.playVideo();" in site_js
-    assert "instance.toggleIcon.className = `ph ${isPlaying ? 'ph-pause' : 'ph-play'}`;" in site_js
-    assert "instance.muteIcon.className = `ph ${isMuted ? 'ph-speaker-slash' : 'ph-speaker-high'}`;" in site_js
-    assert "if (Number.isInteger(instance.pendingIndex))" in site_js
-    assert "instance.pendingIndex = nextIndex;" in site_js
-    assert "instance.pendingIndex = 0;" in site_js
-    assert "playYoutubeQueueIndex(instance, fallbackIndex, { autoplay: instance.shouldAutoplay });" in site_js
-    assert "STALLED_AUTOPLAY_MS" in site_js
-    assert "recoverStalledYoutubePlayback(instance);" in site_js
+    assert runtime["autoplayRequestedAt"] == 2000
+    assert runtime["lastRecoveryAttemptAt"] == 5000
+    assert runtime["loadCalls"] == 1
+    assert runtime["state"] == "Ready"
+
+
+def test_site_js_request_playback_does_not_force_unmute_before_start(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result = build_static_site(repo)
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    runtime = evaluate_site_js_asset(
+        repo,
+        """
+let loadCalls = 0;
+let playCalls = 0;
+let unmuteCalls = 0;
+context.window.setTimeout = () => 1;
+const instance = {
+  player: {
+    getPlayerState: () => context.window.YT.PlayerState.CUED,
+    loadVideoById: () => { loadCalls += 1; },
+    playVideo: () => { playCalls += 1; },
+    unMute: () => { unmuteCalls += 1; },
+  },
+  isReady: true,
+  shouldAutoplay: true,
+  autoplayRequestedAt: 0,
+  lastRecoveryAttemptAt: 99,
+  currentIndex: 0,
+  videoIds: ['abc123'],
+  statusOverride: { stateText: 'Unavailable', metaText: 'retry me' },
+};
+exported.requestYoutubePlayback(instance);
+return {
+  loadCalls,
+  playCalls,
+  unmuteCalls,
+  autoplayRequestedAt: instance.autoplayRequestedAt > 0,
+  lastRecoveryAttemptAt: instance.lastRecoveryAttemptAt,
+  statusOverride: instance.statusOverride,
+};
+""",
+    )
+
+    assert runtime["loadCalls"] == 1
+    assert runtime["playCalls"] == 0
+    assert runtime["unmuteCalls"] == 0
+    assert runtime["autoplayRequestedAt"] is True
+    assert runtime["lastRecoveryAttemptAt"] == 0
+    assert runtime["statusOverride"] is None
 
 
 def test_site_css_keeps_youtube_iframe_in_card_viewport_for_mobile_playback(tmp_path):
     repo = prepare_temp_repo(tmp_path)
 
-    result = subprocess.run(
-        ["node", "scripts/build.js"],
-        cwd=repo,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
+    result = build_static_site(repo)
 
     assert result.returncode == 0, result.stderr or result.stdout
 
@@ -671,17 +832,103 @@ def test_site_css_keeps_youtube_iframe_in_card_viewport_for_mobile_playback(tmp_
     player_host_block = site_css.split('.youtube-player-host {', 1)[1].split('}', 1)[0]
 
     assert 'position: relative;' in player_card_block
+    assert '> :not(.youtube-player-host)' in site_css
     assert 'top: 0;' in player_host_block
     assert 'right: 0;' in player_host_block
     assert 'left:' not in player_host_block
     assert 'width: 220px;' in player_host_block
     assert 'height: 220px;' in player_host_block
+    assert 'min-width: 220px;' in player_host_block
+    assert 'min-height: 220px;' in player_host_block
     assert 'opacity: 0.01;' in player_host_block
     assert 'pointer-events: none;' in player_host_block
-    assert 'transform: scale(0.01);' in player_host_block
-    assert 'transform-origin: top right;' in player_host_block
+    assert 'transform:' not in player_host_block
+    assert 'z-index: 0;' in player_host_block
     assert 'clip-path:' not in player_host_block
     assert 'clip:' not in player_host_block
+    assert 'translate' not in player_host_block
+    assert 'scale' not in player_host_block
+
+
+def test_site_js_terminal_stall_state_overrides_loading_forever(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result = build_static_site(repo)
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    runtime = evaluate_site_js_asset(
+        repo,
+        """
+const stateClassList = {
+  active: false,
+  toggle(_name, value) { this.active = Boolean(value); },
+  remove() { this.active = false; },
+};
+const realNow = Date.now;
+Date.now = () => 10000;
+const instance = {
+  player: {
+    getCurrentTime: () => 0,
+    getDuration: () => 0,
+    getPlayerState: () => context.window.YT.PlayerState.UNSTARTED,
+    getVideoData: () => ({ title: 'Track A' }),
+    isMuted: () => false,
+    getVolume: () => 75,
+    loadVideoById: () => {},
+  },
+  isReady: true,
+  isScrubbing: false,
+  videoIds: ['abc123'],
+  trackLabels: ['Track A'],
+  trackItems: [],
+  currentIndex: 0,
+  pendingIndex: 0,
+  shouldAutoplay: true,
+  autoplayRequestedAt: 10000 - exported.STALLED_RECOVERY_SKIP_MS - 50,
+  lastRecoveryAttemptAt: 0,
+  failedIndexes: new Set(),
+  statusOverride: null,
+  state: { textContent: '', classList: stateClassList },
+  track: { textContent: '' },
+  meta: { textContent: '' },
+  elapsed: { textContent: '' },
+  duration: { textContent: '' },
+  previous: { disabled: false },
+  next: { disabled: false },
+  mute: { disabled: false, setAttribute() {} },
+  volume: { disabled: false, value: '100' },
+  toggle: { disabled: false, setAttribute() {} },
+  progress: { disabled: false, value: '0' },
+  toggleIcon: { className: '' },
+  toggleLabel: { textContent: '' },
+  muteIcon: { className: '' },
+  muteLabel: { textContent: '' },
+};
+exported.syncYoutubeAudioPlayerUi(instance);
+const beforeRecovery = instance.state.textContent;
+exported.recoverStalledYoutubePlayback(instance);
+exported.syncYoutubeAudioPlayerUi(instance);
+Date.now = realNow;
+return {
+  beforeRecovery,
+  afterRecovery: instance.state.textContent,
+  meta: instance.meta.textContent,
+  shouldAutoplay: instance.shouldAutoplay,
+  autoplayRequestedAt: instance.autoplayRequestedAt,
+  lastRecoveryAttemptAt: instance.lastRecoveryAttemptAt,
+  failedIndexes: Array.from(instance.failedIndexes),
+};
+""",
+    )
+
+    assert runtime["beforeRecovery"] == "Loading"
+    assert runtime["afterRecovery"] == "Unavailable"
+    assert runtime["meta"] == "Playback is unavailable here. Open the queue on YouTube instead."
+    assert runtime["shouldAutoplay"] is False
+    assert runtime["autoplayRequestedAt"] == 0
+    assert runtime["lastRecoveryAttemptAt"] == 0
+    assert runtime["failedIndexes"] == [0]
 
 
 def test_static_build_renders_embed_ready_player_for_resolved_youtube_queues(tmp_path):

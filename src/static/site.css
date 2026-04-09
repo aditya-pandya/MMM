@@ -766,6 +766,11 @@ h3 {
   transform: none;
 }
 
+.provider-card--player > :not(.youtube-player-host) {
+  position: relative;
+  z-index: 1;
+}
+
 .youtube-audio-player__header,
 .youtube-audio-player__timing,
 .youtube-audio-player__controls,
@@ -927,19 +932,20 @@ h3 {
   right: 0;
   width: 220px;
   height: 220px;
+  min-width: 220px;
+  min-height: 220px;
   padding: 0;
   overflow: hidden;
   border: 0;
   opacity: 0.01;
   pointer-events: none;
-  transform: scale(0.01);
-  transform-origin: top right;
+  z-index: 0;
 }
 
 .youtube-player-host > div,
 .youtube-player-host iframe {
-  width: 220px;
-  height: 220px;
+  width: 100%;
+  height: 100%;
   border: 0;
 }
 
