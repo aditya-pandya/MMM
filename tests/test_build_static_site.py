@@ -637,6 +637,35 @@ def test_site_js_keeps_mobile_playback_start_fallback_contract(tmp_path):
     assert "instance.player.playVideo();" in site_js
     assert "instance.toggleIcon.className = `ph ${isPlaying ? 'ph-pause' : 'ph-play'}`;" in site_js
     assert "instance.muteIcon.className = `ph ${isMuted ? 'ph-speaker-slash' : 'ph-speaker-high'}`;" in site_js
+    assert "if (Number.isInteger(instance.pendingIndex))" in site_js
+    assert "instance.pendingIndex = nextIndex;" in site_js
+    assert "instance.pendingIndex = 0;" in site_js
+    assert "playYoutubeQueueIndex(instance, fallbackIndex, { autoplay: instance.shouldAutoplay });" in site_js
+
+
+def test_site_css_keeps_youtube_iframe_offscreen_without_zero_clipping(tmp_path):
+    repo = prepare_temp_repo(tmp_path)
+
+    result = subprocess.run(
+        ["node", "scripts/build.js"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr or result.stdout
+
+    site_css = read_text(repo / "dist" / "assets" / "site.css")
+    player_host_block = site_css.split('.youtube-player-host {', 1)[1].split('}', 1)[0]
+
+    assert 'left: -9999px;' in player_host_block
+    assert 'width: 220px;' in player_host_block
+    assert 'height: 220px;' in player_host_block
+    assert 'opacity: 0.01;' in player_host_block
+    assert 'pointer-events: none;' in player_host_block
+    assert 'clip-path:' not in player_host_block
+    assert 'clip:' not in player_host_block
 
 
 def test_static_build_renders_embed_ready_player_for_resolved_youtube_queues(tmp_path):

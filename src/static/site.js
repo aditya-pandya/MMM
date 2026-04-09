@@ -117,6 +117,10 @@ function findNextYoutubeQueueIndex(instance, activeIndex) {
 }
 
 function resolveErroredYoutubeQueueIndex(instance) {
+  if (Number.isInteger(instance.pendingIndex)) {
+    return Math.min(Math.max(Number(instance.pendingIndex) || 0, 0), Math.max(instance.videoIds.length - 1, 0));
+  }
+
   const fallbackIndex = getYoutubeAudioPlayerIndex(instance);
   const erroredVideoId = String(instance.player?.getVideoData?.()?.video_id || '').trim();
   if (!erroredVideoId) return fallbackIndex;
@@ -148,6 +152,9 @@ function syncYoutubeAudioPlayerUi(instance) {
   const playerState = typeof player.getPlayerState === 'function' ? player.getPlayerState() : -1;
   const isPlaying = window.YT && playerState === window.YT.PlayerState.PLAYING;
   const videoData = typeof player.getVideoData === 'function' ? player.getVideoData() || {} : {};
+  if (window.YT && [window.YT.PlayerState.CUED, window.YT.PlayerState.PLAYING, window.YT.PlayerState.PAUSED, window.YT.PlayerState.BUFFERING].includes(playerState)) {
+    instance.pendingIndex = null;
+  }
   const queueCount = instance.videoIds.length;
   const resolvedLabel = instance.trackLabels[index] || videoData.title || `Track ${index + 1}`;
   const hasLinkedTracklist = instance.trackItems.length > 0;
@@ -276,6 +283,7 @@ function playYoutubeQueueIndex(instance, nextIndex, options = {}) {
   if (!Number.isInteger(nextIndex) || nextIndex < 0 || nextIndex >= instance.videoIds.length) return;
 
   instance.currentIndex = nextIndex;
+  instance.pendingIndex = nextIndex;
   instance.shouldAutoplay = Boolean(autoplay);
   const videoId = instance.videoIds[nextIndex];
   if (!videoId) return;
@@ -346,6 +354,7 @@ async function initYoutubeAudioPlayer(root, index) {
     pollTimer: null,
     player: null,
     failedIndexes: new Set(),
+    pendingIndex: null,
     queueKey: String(root.dataset.queueKey || '').trim(),
     state: root.querySelector('[data-youtube-player-state]'),
     track: root.querySelector('[data-youtube-player-track]'),
@@ -416,6 +425,7 @@ async function initYoutubeAudioPlayer(root, index) {
       onReady: (event) => {
         instance.isReady = true;
         instance.currentIndex = 0;
+        instance.pendingIndex = 0;
         event.target.cueVideoById(instance.videoIds[0]);
         try {
           event.target.setVolume(Number(instance.volume.value || 100));
@@ -436,33 +446,19 @@ async function initYoutubeAudioPlayer(root, index) {
       onError: (event) => {
         const errorCode = Number(event?.data);
         const shouldSkip = YOUTUBE_EMBED_BLOCKED_CODES.has(errorCode);
-        const currentIndex = getYoutubeAudioPlayerIndex(instance);
         const erroredIndex = resolveErroredYoutubeQueueIndex(instance);
-
-        if (erroredIndex !== currentIndex) {
-          return;
-        }
 
         if (instance.failedIndexes.has(erroredIndex)) {
           return;
         }
 
         instance.failedIndexes.add(erroredIndex);
+        instance.pendingIndex = null;
 
         if (shouldSkip) {
           const fallbackIndex = findNextYoutubeQueueIndex(instance, erroredIndex);
           if (fallbackIndex >= 0) {
-            instance.currentIndex = fallbackIndex;
-            const fallbackVideoId = instance.videoIds[fallbackIndex];
-
-            try {
-              if (instance.shouldAutoplay) {
-                instance.player.loadVideoById(fallbackVideoId);
-              } else {
-                instance.player.cueVideoById(fallbackVideoId);
-              }
-            } catch {}
-
+            playYoutubeQueueIndex(instance, fallbackIndex, { autoplay: instance.shouldAutoplay });
             if (instance.meta) {
               instance.meta.textContent = instance.shouldAutoplay
                 ? `Track ${erroredIndex + 1} is blocked for embedded playback. Skipping to track ${fallbackIndex + 1}.`
