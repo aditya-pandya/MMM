@@ -1082,38 +1082,6 @@ h3 {
   flex: 1 1 18rem;
 }
 
-.tracklist__affordance {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: auto;
-  padding: 0.28rem 0.55rem;
-  border: 1px solid rgba(164, 140, 122, 0.12);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.035);
-  color: var(--soft);
-  font-family: Inter, Arial, sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.tracklist__affordance-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-  font-size: 0.9rem;
-  line-height: 1;
-  letter-spacing: 0;
-}
-
-.tracklist__item--queue:hover .tracklist__affordance,
-.tracklist__item--queue:focus-within .tracklist__affordance,
-.tracklist__item--queue.is-active .tracklist__affordance {
-  border-color: rgba(255, 186, 58, 0.22);
-  color: var(--text);
-}
 
 .tracklist p {
   margin: 0.45rem 0 0 2.15rem;
@@ -1301,9 +1269,6 @@ h3 {
     align-items: flex-start;
   }
 
-  .tracklist__affordance {
-    margin-left: 0;
-  }
 }
 
 @media (max-width: 640px) {

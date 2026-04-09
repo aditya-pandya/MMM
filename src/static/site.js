@@ -186,13 +186,12 @@ function syncYoutubeAudioPlayerUi(instance) {
   }
   const queueCount = instance.videoIds.length;
   const resolvedLabel = instance.trackLabels[index] || videoData.title || `Track ${index + 1}`;
-  const hasLinkedTracklist = instance.trackItems.length > 0;
   const statusOverride = instance.statusOverride || null;
 
   instance.state.textContent = statusOverride?.stateText || youtubePlayerStateLabel(playerState);
   instance.state.classList.toggle('is-active', !statusOverride && Boolean(isPlaying));
   instance.track.textContent = resolvedLabel;
-  instance.meta.textContent = statusOverride?.metaText || `Track ${index + 1} of ${queueCount}${hasLinkedTracklist ? ' · tracklist stays in sync' : ''}`;
+  instance.meta.textContent = statusOverride?.metaText || `Track ${index + 1} of ${queueCount}`;
   instance.elapsed.textContent = formatClock(currentTime);
   instance.duration.textContent = formatClock(duration);
   const isMuted = Boolean(player.isMuted?.());

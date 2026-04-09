@@ -3,7 +3,7 @@
   "schemaVersion": "1.0",
   "name": "Monday Music Mix",
   "tagline": "An eclectic music mix, (almost) every Monday.",
-  "description": "A data-first archive for Monday Music Mix, preserving Tumblr-era weekly mixtapes, notes, and listening context in structured JSON.",
+  "description": "A data-first archive for Monday Music Mix, preserving Tumblr-era weekly mixtapes and listening context in structured JSON.",
   "baseUrl": "https://aditya.pandya.co/MMM/",
   "repoUrl": "https://github.com/aditya-pandya/MMM",
   "featuredMixSlug": "mix-036-thirtysixth",
@@ -16,7 +16,6 @@
     { "label": "Home", "path": "/" },
     { "label": "Archive", "path": "/archive/" },
     { "label": "About", "path": "/about/" },
-    { "label": "Notes", "path": "/notes/" },
     { "label": "Studio", "path": "/studio/" }
   ],
   "socialLinks": [

@@ -285,12 +285,14 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     studio_html = read_text(dist_dir / "studio" / "index.html")
     site_js = read_text(dist_dir / "assets" / "site.js")
 
-    assert "notes/rebuilding-the-archive/" in home_html
-    assert "Notes related to Thirtysixth" in home_html
     assert "Read more about the project" in home_html
+    assert "From the notebook" not in home_html
+    assert "Notes related to Thirtysixth" not in home_html
+    assert 'href="./notes/"' not in home_html
+    assert ">Notes<" not in home_html
 
     assert "Search archive" in archive_html
-    assert 'data-discovery-filter="state:has-related"' in archive_html
+    assert 'data-discovery-filter="state:has-related"' not in archive_html
     assert 'data-discovery-filter="state:has-highlights"' in archive_html
     assert 'data-discovery-filter="state:has-listening"' in archive_html
     assert 'data-discovery-filter="source:tumblr"' in archive_html
@@ -304,9 +306,10 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "The Kite String Tangle - Tennis Court" in archive_html
     assert "Listening surfaces" in archive_html
 
-    assert "Built like an archive, not a content machine." in about_html
-    assert "Browse the archive" in about_html
-    assert "Read the notebook" in about_html
+    assert "A personal archive, kept with care." in about_html
+    assert "A weekly habit that kept leaving a trace." in about_html
+    assert "Because music remembers things differently." in about_html
+    assert "Read the notebook" not in about_html
 
     assert "./rebuilding-the-archive/" in notes_index_html
     assert "../mixes/mix-036-thirtysixth/" in notes_index_html
@@ -329,8 +332,8 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Nearby reading from the notebook" in note_detail_html
     assert "Prev and next notes" in note_detail_html
 
-    assert "Writing tied to this mix" in mix_detail_html
-    assert "../../notes/rebuilding-the-archive/" in mix_detail_html
+    assert "Writing tied to this mix" not in mix_detail_html
+    assert "../../notes/rebuilding-the-archive/" not in mix_detail_html
     assert "More mixes" in mix_detail_html
     assert "Full sequence" in mix_detail_html
     assert "Provenance" in mix_detail_html
@@ -353,19 +356,18 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "1 YouTube queue" not in mix_detail_html
     assert '<p class="provider-card__eyebrow">YouTube queue</p>' not in mix_detail_html
     assert ">Queue<" in mix_detail_html
-    assert "Tap play or choose a track below." in mix_detail_html
-    assert "tracklist stays in sync" in mix_detail_html
+    assert "Tap play or choose a track below." not in mix_detail_html
+    assert "tracklist stays in sync" not in mix_detail_html
     assert "tracklist below stays in sync" not in mix_detail_html
     assert "Open Thirtysixth on YouTube" not in mix_detail_html
     assert ">Open on YouTube<" in mix_detail_html
 
-    assert "related note" in archive_html
     assert "highlighted track" in archive_html
     assert "YouTube playback" in mix_with_youtube_html
     assert ">Queue<" in mix_with_youtube_html
     assert "Listening surfaces" in mix_with_youtube_html
-    assert "Tap play or choose a track below." in mix_with_youtube_html
-    assert "Tap any marked row to play it above" in mix_with_youtube_html
+    assert "Tap play or choose a track below." not in mix_with_youtube_html
+    assert "Tap any marked row to play it above" not in mix_with_youtube_html
     assert 'data-youtube-audio-player' in mix_with_youtube_html
     assert 'data-queue-key="mix-035-thirtyfifth"' in mix_with_youtube_html
     assert 'data-youtube-queue-tracklist="mix-035-thirtyfifth"' in mix_with_youtube_html
@@ -691,7 +693,7 @@ def test_static_build_emits_phosphor_queue_controls_and_no_legacy_glyphs(tmp_pat
     assert 'class="ph ph-play" data-youtube-player-toggle-icon' in mix_html
     assert 'class="ph ph-skip-forward"' in mix_html
     assert 'class="ph ph-speaker-high" data-youtube-player-mute-icon' in mix_html
-    assert 'class="ph ph-play tracklist__affordance-icon"' in mix_html
+    assert 'tracklist__affordance-icon' not in mix_html
 
     for legacy_marker in ("‹‹", "››", "▶", "❚❚", ">VOL<", ">MUT<"):
         assert legacy_marker not in mix_html
@@ -729,7 +731,12 @@ const instance = {
   isScrubbing: false,
   videoIds: ['abc123'],
   trackLabels: ['Track A'],
-  trackItems: [],
+  trackItems: [{
+    dataset: { youtubeQueueIndex: '0' },
+    classList: { add() {}, remove() {}, toggle() {} },
+    element: { setAttribute() {} },
+    trigger: { setAttribute() {} },
+  }],
   currentIndex: 0,
   pendingIndex: 0,
   shouldAutoplay: true,

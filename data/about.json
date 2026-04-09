@@ -2,83 +2,58 @@
   "$schema": "../schemas/about.schema.json",
   "schemaVersion": "1.0",
   "title": "About Monday Music Mix",
-  "headline": "A small archive for mixes, notes, and the residue worth keeping after the post itself is gone.",
+  "headline": "Monday Music Mix is a small ritual: a hand-built run of songs, a mood from a given week, and now a place to keep those moments close.",
   "intro": [
-    "Monday Music Mix started as a habit: sequence a run of songs, publish it, and leave just enough writing around it to remember the mood later.",
-    "The rebuild is deliberately local-first. The point is not to scale the project into a platform, but to keep the mixes portable, legible, and easy to tend without depending on a hosted stack."
+    "It began as a simple habit. Every week or so, a sequence of songs would fall into place and become its own little world — sometimes restless, sometimes romantic, sometimes just exactly right for a late night walk home.",
+    "This archive exists because those mixes turned into memory markers. A track order can hold a season, a city, a person, or the texture of a specific Monday better than a summary ever could."
   ],
   "editorialNote": {
-    "label": "Editorial frame",
-    "title": "Built like an archive, not a content machine.",
-    "summary": "The site keeps its center of gravity on the mixes and the listening habit behind them.",
+    "label": "What it is",
+    "title": "A personal archive, kept with care.",
+    "summary": "The point is not to explain everything. The point is to preserve the feeling of the mix and the care that went into making it.",
     "body": [
-      "That means published pages can stay spare. The richer structure lives in JSON so the archive can grow without forcing every route to become an application.",
-      "When new context is added, it should explain sequencing, provenance, or return paths into the archive. If it cannot do that, it probably belongs in the notebook or not at all."
+      "Each entry starts with the sequence itself: what opened the door, what changed the temperature halfway through, what earned its place at the end.",
+      "The writing stays light on purpose. Just enough context to remember why a mix mattered, without talking over the music."
     ]
   },
   "sections": [
     {
-      "label": "What lives here",
-      "title": "Mixes first, notes when they earn their place.",
+      "label": "How it started",
+      "title": "A weekly habit that kept leaving a trace.",
       "body": [
-        "The archive holds published mixes, normalized tracklists, and the bits of source context that still matter: artwork credits, preserved Tumblr residue, and careful listening links when the data supports them.",
-        "Notes are separate on purpose. They can be small, but they should still behave like editorial objects with clear links back to the mixes that prompted them."
-      ],
-      "items": [
-        {
-          "label": "Published mixes",
-          "text": "Canonical local JSON with stable fields for sequencing, provenance, and presentation."
-        },
-        {
-          "label": "Notebook fragments",
-          "text": "Short editorial notes that stay tied to real mixes, neighboring notes, or a restrained series."
-        }
+        "Some weeks wanted a louder mix. Some wanted softness, drift, or a single song that explained the rest. Over time, the mixes became less like posts and more like a running conversation with whatever that week had been.",
+        "What survives here is that same instinct: sequence carefully, keep the page spare, and let the songs carry most of the weight."
       ]
     },
     {
-      "label": "How it is kept",
-      "title": "Static, local-first, and plain about provenance.",
+      "label": "What matters",
+      "title": "Sequencing, atmosphere, and return value.",
       "body": [
-        "Every route is rendered from files in this repo. Validation, index refreshes, and the site build all run locally, so the durable version of the project is always the data on disk.",
-        "Where imported Tumblr material survives, the site names what was kept, what was cleaned up, and what stays visible only as source residue."
+        "A good mix is more than a list of tracks. It has pacing, contrast, and a reason for each turn it takes. Sometimes the best part is the first song; sometimes it is the moment track eight quietly reframes everything that came before it.",
+        "The archive tries to keep that experience intact so coming back years later still feels like opening something made by hand."
+      ]
+    },
+    {
+      "label": "Why keep it",
+      "title": "Because music remembers things differently.",
+      "body": [
+        "There are weeks you forget until a chorus, a drum break, or the exact placement of one song after another brings them back in full color.",
+        "Monday Music Mix is for that kind of memory: private in origin, generous in feeling, and worth keeping because it once meant enough to be made."
       ],
       "links": [
         {
           "label": "Browse the archive",
           "href": "/archive/",
-          "description": "Published mixes with tracklists, note coverage, and the small archive signals already present in the data."
-        },
-        {
-          "label": "Read the notebook",
-          "href": "/notes/",
-          "description": "Short notes about sequencing, rebuild decisions, and the parts of the archive that still feel alive."
-        }
-      ]
-    },
-    {
-      "label": "What counts as progress",
-      "title": "Better structure, not more noise.",
-      "body": [
-        "Progress here usually means more durable metadata, clearer editorial framing, or one more old mix brought into shape without overexplaining it.",
-        "The archive can remain small and still improve if each addition makes future listening easier."
-      ],
-      "items": [
-        {
-          "label": "Restraint",
-          "text": "No runtime dashboards, engagement loops, or synthetic recommendation systems."
-        },
-        {
-          "label": "Local control",
-          "text": "If a workflow matters, it should be reproducible with the scripts already in the repo."
+          "description": "Go straight to the mixes and listen your way through the run."
         }
       ]
     }
   ],
   "closing": {
-    "label": "Current state",
-    "title": "Still small on purpose.",
+    "label": "Still the idea",
+    "title": "Small on purpose.",
     "body": [
-      "The project is early enough that gaps are visible, but the shape is intentional: a grounded archive for mixes, slow notes, and the bits of context worth preserving."
+      "The shape is still simple: songs, sequence, artwork when it exists, and just enough language to keep the memory from slipping away. That is enough."
     ]
   }
 }

@@ -1117,7 +1117,6 @@ function navLinks(depth) {
     { href: `${base}`, label: 'Home', key: 'home' },
     { href: `${base}archive/`, label: 'Archive', key: 'archive' },
     { href: `${base}about/`, label: 'About', key: 'about' },
-    { href: `${base}notes/`, label: 'Notes', key: 'notes' },
   ];
 }
 
@@ -1825,10 +1824,9 @@ function renderListeningSection(mix) {
                   </div>
                   <span class="youtube-audio-player__state" data-youtube-player-state>Ready</span>
                 </div>
-                <p class="youtube-audio-player__copy">Tap play or choose a track below.</p>
                 <div class="youtube-audio-player__track">
                   <strong data-youtube-player-track>${escapeHtml(generatedTrackLabels[0] || generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}</strong>
-                  <p data-youtube-player-meta>Track 1 of ${escapeHtml(String(generatedTrackLabels.length || generatedVideoIds.length || 1))} · tracklist stays in sync</p>
+                  <p data-youtube-player-meta>Track 1 of ${escapeHtml(String(generatedTrackLabels.length || generatedVideoIds.length || 1))}</p>
                 </div>
                 <div class="youtube-audio-player__scrub">
                   <input type="range" min="0" max="1000" value="0" aria-label="Queue progress" data-youtube-player-progress disabled>
@@ -1938,10 +1936,8 @@ function renderHomePage({ mixes, notes, site }) {
     ? mixes.find((mix) => mix.slug === featuredSlug) || mixes[0]
     : mixes[0];
   const recent = featured ? mixes.filter((mix) => mix.slug !== featured.slug).slice(0, 4) : mixes.slice(0, 4);
-  const recentNotes = notes.slice(0, 2);
-  const featuredNotes = featured?.relatedNotes?.slice(0, 2) || [];
   const intro = site.homeIntro || site.homepage_intro || 'A personal archive for mixes built slowly, sequenced by hand, and kept with just enough context to matter later.';
-  const description = featured ? featured.excerpt : 'A darker editorial archive for handmade mixes and notes.';
+  const description = featured ? featured.excerpt : 'A darker editorial archive for handmade mixes.';
 
   const featureBlock = featured
     ? `<section class="hero-grid">
@@ -1954,7 +1950,6 @@ function renderHomePage({ mixes, notes, site }) {
             <span>${escapeHtml(formatDate(featured.date))}</span>
             ${featured.runtime ? `<span>${escapeHtml(featured.runtime)}</span>` : ''}
             ${featured.number !== '' ? `<span>Mix ${escapeHtml(featured.number)}</span>` : ''}
-            ${featured.relatedNotes.length ? `<span>${escapeHtml(String(featured.relatedNotes.length))} related note${featured.relatedNotes.length === 1 ? '' : 's'}</span>` : ''}
           </div>
           ${renderTagList(featured.tags)}
           <div class="button-row">
@@ -1996,41 +1991,12 @@ function renderHomePage({ mixes, notes, site }) {
                 <div>
                   <p class="archive-row__meta">${escapeHtml(formatMonthYear(mix.date))}${mix.number !== '' ? ` · Mix ${escapeHtml(mix.number)}` : ''}</p>
                   <h3>${escapeHtml(mix.title)}</h3>
-                  <p class="archive-row__submeta">${mix.highlightedTracks.length ? `${escapeHtml(String(mix.highlightedTracks.length))} highlighted track${mix.highlightedTracks.length === 1 ? '' : 's'}` : 'No highlighted tracks marked'}${mix.relatedNotes.length ? ` · ${escapeHtml(String(mix.relatedNotes.length))} related note${mix.relatedNotes.length === 1 ? '' : 's'}` : ''}</p>
+                  <p class="archive-row__submeta">${mix.highlightedTracks.length ? `${escapeHtml(String(mix.highlightedTracks.length))} highlighted track${mix.highlightedTracks.length === 1 ? '' : 's'}` : 'No highlighted tracks marked'}</p>
                 </div>
                 <p>${escapeHtml(mix.excerpt)}</p>
               </a>`
             )
             .join('')}
-        </div>
-      </section>`
-    : '';
-
-  const notesBlock = recentNotes.length
-    ? `<section class="section-block section-block--split">
-        <div>
-          <p class="eyebrow">From the notebook</p>
-          <h2>Notes that explain why a mix stayed around.</h2>
-          <p class="supporting-copy">Short editorial fragments now have their own pages and stay wired back into the archive.</p>
-          <div class="button-row">
-            <a class="button button--secondary" href="notes/">Browse notes</a>
-          </div>
-        </div>
-        <div>
-          ${renderNoteMiniList(recentNotes, { basePath: 'notes/' })}
-        </div>
-      </section>`
-    : '';
-
-  const featuredRelationBlock = featured && featuredNotes.length
-    ? `<section class="section-block section-block--split">
-        <div>
-          <p class="eyebrow">Connected reading</p>
-          <h2>Notes related to ${escapeHtml(featured.title)}</h2>
-          <p class="supporting-copy">The homepage now exposes the writing closest to the featured mix instead of leaving it stranded on a separate index.</p>
-        </div>
-        <div>
-          ${renderNoteMiniList(featuredNotes, { basePath: 'notes/' })}
         </div>
       </section>`
     : '';
@@ -2051,13 +2017,12 @@ function renderHomePage({ mixes, notes, site }) {
     currentNav: 'home',
     title: 'Home',
     description,
-    content: `${featureBlock}${recentBlock}${notesBlock}${featuredRelationBlock}${valuesBlock}`,
+    content: `${featureBlock}${recentBlock}${valuesBlock}`,
   });
 }
 
 function renderArchivePage({ mixes }) {
   const topTags = countTopTags(mixes);
-  const relatedCount = mixes.filter((mix) => mix.relatedNotes.length > 0).length;
   const highlightCount = mixes.filter((mix) => mix.highlightedTracks.length > 0).length;
   const listeningCount = mixes.filter((mix) => (mix.listening?.summary?.surfaceCount || 0) > 0).length;
   const tumblrCount = mixes.filter((mix) => normalizeFacetToken(mix.sourcePlatform) === 'tumblr').length;
@@ -2065,7 +2030,6 @@ function renderArchivePage({ mixes }) {
   const remixCount = mixes.filter((mix) => (mix.stats?.remixCount || 0) > 0).length;
   const discoveryFilters = [
     { label: 'All mixes', value: 'all' },
-    makeDiscoveryFilter('state:has-related', 'Related notes', relatedCount),
     makeDiscoveryFilter('state:has-highlights', 'Highlighted tracks', highlightCount),
     ...(listeningCount ? [makeDiscoveryFilter('state:has-listening', 'Listening surfaces', listeningCount)] : []),
     ...(tumblrCount ? [makeDiscoveryFilter('source:tumblr', 'Tumblr source', tumblrCount)] : []),
@@ -2077,13 +2041,13 @@ function renderArchivePage({ mixes }) {
     ? `<section class="page-intro">
         <p class="eyebrow">Archive</p>
         <h1>Published mixes</h1>
-        <p class="page-intro__copy">A chronological run of finished mixes, each with whatever notes, artwork, and track sequencing survived the urge to over-explain.</p>
+        <p class="page-intro__copy">A chronological run of finished mixes, each with the artwork, track sequencing, and context that still feels worth keeping.</p>
       </section>
       ${renderDiscoveryControls({
         title: 'Search archive',
-        description: 'Filter by titles, tracks, notes, and a few grounded archive signals pulled directly from the mix data.',
+        description: 'Filter by titles, tracks, and a few grounded archive signals pulled directly from the mix data.',
         queryLabel: 'Search archive',
-        queryPlaceholder: 'Title, artist, track, note, year...',
+        queryPlaceholder: 'Title, artist, track, year...',
         itemLabelSingular: 'mix',
         itemLabelPlural: 'mixes',
         totalCount: mixes.length,
@@ -2104,7 +2068,7 @@ function renderArchivePage({ mixes }) {
               <div>
                 <p class="archive-row__meta">${escapeHtml(formatDate(mix.date))}${mix.number !== '' ? ` · Mix ${escapeHtml(mix.number)}` : ''}</p>
                 <h2>${escapeHtml(mix.title)}</h2>
-                <p class="archive-row__submeta">${mix.highlightedTracks.length ? `${escapeHtml(String(mix.highlightedTracks.length))} highlighted track${mix.highlightedTracks.length === 1 ? '' : 's'}` : 'No highlighted tracks marked'}${mix.relatedNotes.length ? ` · ${escapeHtml(String(mix.relatedNotes.length))} related note${mix.relatedNotes.length === 1 ? '' : 's'}` : ''}</p>
+                <p class="archive-row__submeta">${mix.highlightedTracks.length ? `${escapeHtml(String(mix.highlightedTracks.length))} highlighted track${mix.highlightedTracks.length === 1 ? '' : 's'}` : 'No highlighted tracks marked'}</p>
                 ${renderTagList(mix.tags)}
               </div>
               <p>${escapeHtml(mix.excerpt)}</p>
@@ -2158,7 +2122,7 @@ function renderMixPage({ mix }) {
           <div>
             <p class="eyebrow">Tracklist</p>
             <h2>Full sequence</h2>
-            <p class="supporting-copy">${escapeHtml(String(mix.tracklist.length))} tracks${mix.highlightedTracks.length ? ` · ${escapeHtml(String(mix.highlightedTracks.length))} favorites highlighted` : ''}${queueTrackMap.size ? ' · Tap any marked row to play it above' : ''}</p>
+            <p class="supporting-copy">${escapeHtml(String(mix.tracklist.length))} tracks${mix.highlightedTracks.length ? ` · ${escapeHtml(String(mix.highlightedTracks.length))} favorites highlighted` : ''}</p>
           </div>
         </div>
         <ol class="tracklist"${queueTrackMap.size ? ` data-youtube-queue-tracklist="${escapeHtml(mix.slug)}"` : ''}>
@@ -2174,14 +2138,13 @@ function renderMixPage({ mix }) {
                 : ' class="tracklist__item"';
               const rowTag = queueTrack ? 'button' : 'div';
               const rowAttributes = queueTrack
-                ? ` type="button" class="tracklist__button" data-youtube-track-trigger aria-label="${escapeHtml(`Play ${title} in the queue above`)}"`
+                ? ` type="button" class="tracklist__button" data-youtube-track-trigger aria-label="${escapeHtml(`Play ${title}`)}"`
                 : ' class="tracklist__row"';
               return `<li${itemAttributes}>
                 <${rowTag}${rowAttributes}>
                   <strong>${String(normalized.position || index + 1).padStart(2, '0')}</strong>
                   <span class="tracklist__title">${escapeHtml(title)}${artist}</span>
                   ${normalized.isFavorite ? '<em class="track-favorite">Favorite</em>' : ''}
-                  ${queueTrack ? '<span class="tracklist__affordance" aria-hidden="true"><i class="ph ph-play tracklist__affordance-icon"></i><span class="tracklist__affordance-label">Queue above</span></span>' : ''}
                 </${rowTag}>
                 ${annotation}
               </li>`;
@@ -2206,19 +2169,6 @@ function renderMixPage({ mix }) {
         <div class="prose">${paragraphize(distinctMixNotes.join('\n\n'))}</div>
       </section>`
     : '';
-
-  const relatedNotesSection = `<section class="section-block section-block--split">
-      <div>
-        <p class="eyebrow">Related notes</p>
-        <h2>Writing tied to this mix</h2>
-      </div>
-      <div>
-        ${renderNoteMiniList(mix.relatedNotes, {
-          basePath: '../../notes/',
-          emptyMessage: 'No notes point back to this mix yet.',
-        })}
-      </div>
-    </section>`;
 
   const adjacentMixes = [mix.olderMix, mix.newerMix].filter(Boolean);
   const navigationSection = adjacentMixes.length
@@ -2262,7 +2212,6 @@ function renderMixPage({ mix }) {
             ${mix.runtime ? `<span>${escapeHtml(mix.runtime)}</span>` : ''}
             ${mix.number !== '' ? `<span>Mix ${escapeHtml(mix.number)}</span>` : ''}
             ${mix.highlightedTracks.length ? `<span>${escapeHtml(String(mix.highlightedTracks.length))} highlighted</span>` : ''}
-            ${mix.relatedNotes.length ? `<span>${escapeHtml(String(mix.relatedNotes.length))} related note${mix.relatedNotes.length === 1 ? '' : 's'}</span>` : ''}
           </div>
           ${renderTagList(mix.tags)}
           <div class="button-row">
@@ -2274,7 +2223,6 @@ function renderMixPage({ mix }) {
       ${renderListeningSection(mix)}
       ${trackSection}
       ${notesSection}
-      ${relatedNotesSection}
       ${navigationSection}
       ${renderResourceSection(mix)}`,
   });

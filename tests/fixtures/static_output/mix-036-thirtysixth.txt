@@ -7,37 +7,28 @@ EYEBROW: Listening
 H2: Listening surfaces
 TEXT: YouTube playback
 H3: Queue
-TEXT: Tap play or choose a track below.
-TEXT: Track 1 of 14 · tracklist stays in sync
+TEXT: Track 1 of 14
 BUTTON: Open on YouTube
 EYEBROW: Tracklist
 H2: Full sequence
-COPY: 14 tracks · 3 favorites highlighted · Tap any marked row to play it above
-TRACK: 01 Tennis Court (Lorde cover) — The Kite String Tangle Queue above
-TRACK: 02 Beloved — Say Lou Lou Queue above
-TRACK: 03 Realize You — Empress Of Queue above
-TRACK: 04 Lost Boys and Girls Club — Dum Dum Girls Queue above
-TRACK: 05 (I Just) Died In Your Arms Tonight (Cutting Crew cover) — Bastille Queue above
-TRACK: 06 You’re Not Good Enough — Blood Orange Favorite Queue above
-TRACK: 07 Old Love New Love — Twin Shadow Queue above
-TRACK: 08 London Light — STRANGERS Queue above
-TRACK: 09 Will Calls — Grizzly Bear Queue above
-TRACK: 10 Remurdered — Mogwai Queue above
-TRACK: 11 A Real Hero (College & Electric Youth cover) — High Highs Queue above
-TRACK: 12 Summer Time Sadness (Lana Del Rey cover) — Angel Haze Favorite Queue above
-TRACK: 13 Mirror — Ellie Goulding Queue above
-TRACK: 14 Love You Better (John Dillinger remix) — Oh Land Favorite Queue above
+COPY: 14 tracks · 3 favorites highlighted
+TRACK: 01 Tennis Court (Lorde cover) — The Kite String Tangle
+TRACK: 02 Beloved — Say Lou Lou
+TRACK: 03 Realize You — Empress Of
+TRACK: 04 Lost Boys and Girls Club — Dum Dum Girls
+TRACK: 05 (I Just) Died In Your Arms Tonight (Cutting Crew cover) — Bastille
+TRACK: 06 You’re Not Good Enough — Blood Orange Favorite
+TRACK: 07 Old Love New Love — Twin Shadow
+TRACK: 08 London Light — STRANGERS
+TRACK: 09 Will Calls — Grizzly Bear
+TRACK: 10 Remurdered — Mogwai
+TRACK: 11 A Real Hero (College & Electric Youth cover) — High Highs
+TRACK: 12 Summer Time Sadness (Lana Del Rey cover) — Angel Haze Favorite
+TRACK: 13 Mirror — Ellie Goulding
+TRACK: 14 Love You Better (John Dillinger remix) — Oh Land Favorite
 EYEBROW: Context
 H2: Archive notes
 COPY: Contains some of the best music I have heard in a quite a192 while.
-EYEBROW: Related notes
-H2: Writing tied to this mix
-META: April 3, 2026
-H3: How the mixes are read
-TEXT: A lightweight editorial note on what stands out in the seeded 2013 mixes.
-META: April 3, 2026
-H3: Rebuilding the archive
-TEXT: Why the Tumblr archive is being normalized into durable JSON files and indexes.
 EYEBROW: Archive
 H2: More mixes
 EYEBROW: Previous mix

@@ -1,13 +1,12 @@
 TITLE: Archive · Monday Music Mix
 EYEBROW: Archive
 H1: Published mixes
-COPY: A chronological run of finished mixes, each with whatever notes, artwork, and track sequencing survived the urge to over-explain.
+COPY: A chronological run of finished mixes, each with the artwork, track sequencing, and context that still feels worth keeping.
 EYEBROW: Discovery
 H2: Search archive
-COPY: Filter by titles, tracks, notes, and a few grounded archive signals pulled directly from the mix data.
+COPY: Filter by titles, tracks, and a few grounded archive signals pulled directly from the mix data.
 TEXT: Showing all 36 mixes.
 FILTER: All mixes
-FILTER: Related notes · 3
 FILTER: Highlighted tracks · 5
 FILTER: Listening surfaces · 36
 FILTER: Tumblr source · 36
@@ -15,15 +14,15 @@ FILTER: Covers · 10
 FILTER: Remixes · 7
 META: November 19, 2013 · Mix 36
 H2: Thirtysixth
-META: 3 highlighted tracks · 2 related notes
+META: 3 highlighted tracks
 TEXT: Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.
 META: September 23, 2013 · Mix 35
 H2: Thirtyfifth
-META: 3 highlighted tracks · 2 related notes
+META: 3 highlighted tracks
 TEXT: A bit late given this is going up in the last hour of Monday but it still counts, right? Right. Left out a lot of really great music off this mix. Maybe someday I should do a Monday Music Mix: Rejects edition. Soon.
 META: August 12, 2013 · Mix 34
 H2: Thirtyfourth
-META: 4 highlighted tracks · 1 related note
+META: 4 highlighted tracks
 TEXT: New week, new mix. A little birdy from the mountains had to prod me to post this today.
 META: July 1, 2013 · Mix 33
 H2: Thirtythird

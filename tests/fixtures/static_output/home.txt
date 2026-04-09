@@ -9,11 +9,11 @@ H2: Small archive, real entries.
 LINK: See all
 META: September 2013 · Mix 35
 H3: Thirtyfifth
-META: 3 highlighted tracks · 2 related notes
+META: 3 highlighted tracks
 TEXT: A bit late given this is going up in the last hour of Monday but it still counts, right? Right. Left out a lot of really great music off this mix. Maybe someday I should do a Monday Music Mix: Rejects edition. Soon.
 META: August 2013 · Mix 34
 H3: Thirtyfourth
-META: 4 highlighted tracks · 1 related note
+META: 4 highlighted tracks
 TEXT: New week, new mix. A little birdy from the mountains had to prod me to post this today.
 META: July 2013 · Mix 33
 H3: Thirtythird
@@ -23,25 +23,6 @@ META: March 2013 · Mix 32
 H3: Thirtysecond
 META: 3 highlighted tracks
 TEXT: Brand new mix at a brand new address. New Postal Service demo, a fantastic AlunaGeorge track and some other surprises.
-EYEBROW: From the notebook
-H2: Notes that explain why a mix stayed around.
-COPY: Short editorial fragments now have their own pages and stay wired back into the archive.
-BUTTON: Browse notes
-META: April 3, 2026
-H3: How the mixes are read
-TEXT: A lightweight editorial note on what stands out in the seeded 2013 mixes.
-META: April 3, 2026
-H3: Rebuilding the archive
-TEXT: Why the Tumblr archive is being normalized into durable JSON files and indexes.
-EYEBROW: Connected reading
-H2: Notes related to Thirtysixth
-COPY: The homepage now exposes the writing closest to the featured mix instead of leaving it stranded on a separate index.
-META: April 3, 2026
-H3: How the mixes are read
-TEXT: A lightweight editorial note on what stands out in the seeded 2013 mixes.
-META: April 3, 2026
-H3: Rebuilding the archive
-TEXT: Why the Tumblr archive is being normalized into durable JSON files and indexes.
 EYEBROW: Why it exists
 H2: Less brand world, more listening habit.
 COPY: A personal archive for mixes built slowly, sequenced by hand, and kept with just enough context to matter later.
