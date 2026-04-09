@@ -275,13 +275,21 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert "Search YouTube" not in mix_detail_html
     assert "canonical cover slot" in mix_detail_html
     assert "https://mega.co.nz/" not in mix_detail_html
+    assert "1 YouTube queue" not in mix_detail_html
+    assert '<p class="provider-card__eyebrow">YouTube queue</p>' not in mix_detail_html
+    assert ">Queue<" in mix_detail_html
+    assert "Tap play or choose a track below." in mix_detail_html
+    assert "tracklist stays in sync" in mix_detail_html
+    assert "tracklist below stays in sync" not in mix_detail_html
+    assert "Open Thirtysixth on YouTube" not in mix_detail_html
+    assert ">Open on YouTube<" in mix_detail_html
 
     assert "related note" in archive_html
     assert "highlighted track" in archive_html
     assert "YouTube playback" in mix_with_youtube_html
-    assert "YouTube queue" in mix_with_youtube_html
+    assert ">Queue<" in mix_with_youtube_html
     assert "Listening surfaces" in mix_with_youtube_html
-    assert "Play here, or tap any track below to jump directly." in mix_with_youtube_html
+    assert "Tap play or choose a track below." in mix_with_youtube_html
     assert "Tap any marked row to play it above" in mix_with_youtube_html
     assert 'data-youtube-audio-player' in mix_with_youtube_html
     assert 'data-queue-key="mix-035-thirtyfifth"' in mix_with_youtube_html
@@ -641,9 +649,11 @@ def test_site_js_keeps_mobile_playback_start_fallback_contract(tmp_path):
     assert "instance.pendingIndex = nextIndex;" in site_js
     assert "instance.pendingIndex = 0;" in site_js
     assert "playYoutubeQueueIndex(instance, fallbackIndex, { autoplay: instance.shouldAutoplay });" in site_js
+    assert "STALLED_AUTOPLAY_MS" in site_js
+    assert "recoverStalledYoutubePlayback(instance);" in site_js
 
 
-def test_site_css_keeps_youtube_iframe_offscreen_without_zero_clipping(tmp_path):
+def test_site_css_keeps_youtube_iframe_in_card_viewport_for_mobile_playback(tmp_path):
     repo = prepare_temp_repo(tmp_path)
 
     result = subprocess.run(
@@ -657,13 +667,19 @@ def test_site_css_keeps_youtube_iframe_offscreen_without_zero_clipping(tmp_path)
     assert result.returncode == 0, result.stderr or result.stdout
 
     site_css = read_text(repo / "dist" / "assets" / "site.css")
+    player_card_block = site_css.split('.provider-card--player,', 1)[1].split('}', 1)[0]
     player_host_block = site_css.split('.youtube-player-host {', 1)[1].split('}', 1)[0]
 
-    assert 'left: -9999px;' in player_host_block
+    assert 'position: relative;' in player_card_block
+    assert 'top: 0;' in player_host_block
+    assert 'right: 0;' in player_host_block
+    assert 'left:' not in player_host_block
     assert 'width: 220px;' in player_host_block
     assert 'height: 220px;' in player_host_block
     assert 'opacity: 0.01;' in player_host_block
     assert 'pointer-events: none;' in player_host_block
+    assert 'transform: scale(0.01);' in player_host_block
+    assert 'transform-origin: top right;' in player_host_block
     assert 'clip-path:' not in player_host_block
     assert 'clip:' not in player_host_block
 

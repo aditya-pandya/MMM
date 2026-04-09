@@ -756,6 +756,7 @@ h3 {
 
 .provider-card--player,
 .provider-card--player:hover {
+  position: relative;
   padding: 1rem 1rem 0.95rem;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015)),
@@ -923,7 +924,7 @@ h3 {
 .youtube-player-host {
   position: absolute;
   top: 0;
-  left: -9999px;
+  right: 0;
   width: 220px;
   height: 220px;
   padding: 0;
@@ -931,6 +932,8 @@ h3 {
   border: 0;
   opacity: 0.01;
   pointer-events: none;
+  transform: scale(0.01);
+  transform-origin: top right;
 }
 
 .youtube-player-host > div,

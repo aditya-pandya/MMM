@@ -1783,7 +1783,7 @@ function renderListeningSection(mix) {
   if (trustedEmbeds.length) summaryBits.push(`${trustedEmbeds.length} verified preview${trustedEmbeds.length === 1 ? '' : 's'}`);
   if (actionableTrustedLinks.length) summaryBits.push(`${actionableTrustedLinks.length} verified external link${actionableTrustedLinks.length === 1 ? '' : 's'}`);
   if (uncertainSurfaces.length) summaryBits.push(`${uncertainSurfaces.length} uncertain lead${uncertainSurfaces.length === 1 ? '' : 's'}`);
-  const summary = summaryBits.length ? `<p class="listening-section__summary">${escapeHtml(summaryBits.join(' · '))}</p>` : '';
+  const summary = summaryBits.length > 1 ? `<p class="listening-section__summary">${escapeHtml(summaryBits.join(' · '))}</p>` : '';
 
   return `<section class="section-block section-block--compact">
       <div class="section-heading">
@@ -1821,15 +1821,14 @@ function renderListeningSection(mix) {
               >
                 <div class="youtube-audio-player__header">
                   <div>
-                    <p class="provider-card__eyebrow">YouTube queue</p>
-                    <h3>${escapeHtml(generatedQueue.label || 'YouTube queue')}</h3>
+                    <h3>Queue</h3>
                   </div>
                   <span class="youtube-audio-player__state" data-youtube-player-state>Ready</span>
                 </div>
-                <p class="youtube-audio-player__copy">Play here, or tap any track below to jump directly.</p>
+                <p class="youtube-audio-player__copy">Tap play or choose a track below.</p>
                 <div class="youtube-audio-player__track">
-                  <strong data-youtube-player-track>${escapeHtml(generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}</strong>
-                  <p data-youtube-player-meta>Press play or choose a track below.</p>
+                  <strong data-youtube-player-track>${escapeHtml(generatedTrackLabels[0] || generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}</strong>
+                  <p data-youtube-player-meta>Track 1 of ${escapeHtml(String(generatedTrackLabels.length || generatedVideoIds.length || 1))} · tracklist stays in sync</p>
                 </div>
                 <div class="youtube-audio-player__scrub">
                   <input type="range" min="0" max="1000" value="0" aria-label="Queue progress" data-youtube-player-progress disabled>
@@ -1863,7 +1862,7 @@ function renderListeningSection(mix) {
                   </label>
                 </div>
                 <div class="button-row button-row--compact">
-                  <a class="button button--secondary" href="${escapeHtml(generatedQueue.url)}">Open ${escapeHtml(mix.title)} on YouTube</a>
+                  <a class="button button--secondary" href="${escapeHtml(generatedQueue.url)}">Open on YouTube</a>
                 </div>
                 <div class="youtube-player-host" data-youtube-player-host aria-hidden="true"></div>
               </article>

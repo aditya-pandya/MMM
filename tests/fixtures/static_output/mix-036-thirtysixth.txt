@@ -5,13 +5,11 @@ COPY: Also known as the Tuesday music mix. One week and one day later than origi
 BUTTON: Back to archive
 EYEBROW: Listening
 H2: Listening surfaces
-TEXT: 1 YouTube queue
 TEXT: YouTube playback
-EYEBROW: YouTube queue
-H3: YouTube queue
-TEXT: Play here, or tap any track below to jump directly.
-TEXT: Press play or choose a track below.
-BUTTON: Open Thirtysixth on YouTube
+H3: Queue
+TEXT: Tap play or choose a track below.
+TEXT: Track 1 of 14 · tracklist stays in sync
+BUTTON: Open on YouTube
 EYEBROW: Tracklist
 H2: Full sequence
 COPY: 14 tracks · 3 favorites highlighted · Tap any marked row to play it above

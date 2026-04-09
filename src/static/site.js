@@ -25,6 +25,8 @@ function formatClock(totalSeconds) {
 let youtubeIframeApiPromise = null;
 const YOUTUBE_MINIMUM_EMBED_SIZE = 220;
 const YOUTUBE_EMBED_BLOCKED_CODES = new Set([5, 100, 101, 150]);
+const STALLED_AUTOPLAY_MS = 1800;
+const STALLED_RECOVERY_SKIP_MS = 4200;
 
 function loadYoutubeIframeApi() {
   if (window.YT && window.YT.Player) {
@@ -155,6 +157,10 @@ function syncYoutubeAudioPlayerUi(instance) {
   if (window.YT && [window.YT.PlayerState.CUED, window.YT.PlayerState.PLAYING, window.YT.PlayerState.PAUSED, window.YT.PlayerState.BUFFERING].includes(playerState)) {
     instance.pendingIndex = null;
   }
+  if (window.YT && [window.YT.PlayerState.CUED, window.YT.PlayerState.PLAYING, window.YT.PlayerState.PAUSED].includes(playerState)) {
+    instance.autoplayRequestedAt = 0;
+    instance.lastRecoveryAttemptAt = 0;
+  }
   const queueCount = instance.videoIds.length;
   const resolvedLabel = instance.trackLabels[index] || videoData.title || `Track ${index + 1}`;
   const hasLinkedTracklist = instance.trackItems.length > 0;
@@ -162,7 +168,7 @@ function syncYoutubeAudioPlayerUi(instance) {
   instance.state.textContent = youtubePlayerStateLabel(playerState);
   instance.state.classList.toggle('is-active', Boolean(isPlaying));
   instance.track.textContent = resolvedLabel;
-  instance.meta.textContent = `Track ${index + 1} of ${queueCount}${hasLinkedTracklist ? ' · tracklist below stays in sync' : ''}${videoData.title ? ` · YouTube: ${videoData.title}` : ''}`;
+  instance.meta.textContent = `Track ${index + 1} of ${queueCount}${hasLinkedTracklist ? ' · tracklist stays in sync' : ''}`;
   instance.elapsed.textContent = formatClock(currentTime);
   instance.duration.textContent = formatClock(duration);
   const isMuted = Boolean(player.isMuted?.());
@@ -205,10 +211,64 @@ function syncYoutubeAudioPlayerUi(instance) {
   syncYoutubeTracklistUi(instance);
 }
 
+function recoverStalledYoutubePlayback(instance) {
+  if (!instance.player || !instance.isReady || !window.YT || !instance.shouldAutoplay) return;
+
+  const playerState = typeof instance.player.getPlayerState === 'function' ? instance.player.getPlayerState() : -1;
+  const stallableStates = new Set([
+    -1,
+    window.YT.PlayerState.UNSTARTED,
+    window.YT.PlayerState.BUFFERING,
+  ]);
+
+  if (!stallableStates.has(playerState)) {
+    return;
+  }
+
+  const activeIndex = getYoutubeAudioPlayerIndex(instance);
+  const now = Date.now();
+  const lastAttemptAt = Number(instance.autoplayRequestedAt || 0);
+  const elapsed = lastAttemptAt > 0 ? now - lastAttemptAt : 0;
+
+  if (elapsed >= STALLED_RECOVERY_SKIP_MS) {
+    if (!instance.failedIndexes.has(activeIndex)) {
+      instance.failedIndexes.add(activeIndex);
+    }
+    const fallbackIndex = findNextYoutubeQueueIndex(instance, activeIndex);
+    if (fallbackIndex >= 0) {
+      playYoutubeQueueIndex(instance, fallbackIndex, { autoplay: true });
+      if (instance.meta) {
+        instance.meta.textContent = `Track ${activeIndex + 1} stalled here. Skipping to track ${fallbackIndex + 1}.`;
+      }
+      return;
+    }
+    instance.shouldAutoplay = false;
+    if (instance.meta) {
+      instance.meta.textContent = 'Playback is unavailable here. Open the queue on YouTube instead.';
+    }
+    if (instance.state) {
+      instance.state.textContent = 'Unavailable';
+      instance.state.classList.remove('is-active');
+    }
+    return;
+  }
+
+  if (elapsed >= STALLED_AUTOPLAY_MS && Number(instance.lastRecoveryAttemptAt || 0) < lastAttemptAt) {
+    instance.lastRecoveryAttemptAt = now;
+    try {
+      instance.player.loadVideoById(instance.videoIds[activeIndex]);
+    } catch {}
+  }
+}
+
 function startYoutubeAudioPlayerPolling(instance) {
   window.clearInterval(instance.pollTimer);
-  instance.pollTimer = window.setInterval(() => syncYoutubeAudioPlayerUi(instance), 500);
+  instance.pollTimer = window.setInterval(() => {
+    syncYoutubeAudioPlayerUi(instance);
+    recoverStalledYoutubePlayback(instance);
+  }, 500);
   syncYoutubeAudioPlayerUi(instance);
+  recoverStalledYoutubePlayback(instance);
 }
 
 function bindYoutubeAudioPlayerEvents(instance) {
@@ -216,6 +276,8 @@ function bindYoutubeAudioPlayerEvents(instance) {
     if (!instance.player || !instance.isReady || !window.YT) return;
     if (instance.player.getPlayerState() === window.YT.PlayerState.PLAYING) {
       instance.shouldAutoplay = false;
+      instance.autoplayRequestedAt = 0;
+      instance.lastRecoveryAttemptAt = 0;
       instance.player.pauseVideo();
     } else {
       instance.shouldAutoplay = true;
@@ -285,6 +347,8 @@ function playYoutubeQueueIndex(instance, nextIndex, options = {}) {
   instance.currentIndex = nextIndex;
   instance.pendingIndex = nextIndex;
   instance.shouldAutoplay = Boolean(autoplay);
+  instance.autoplayRequestedAt = autoplay ? Date.now() : 0;
+  instance.lastRecoveryAttemptAt = 0;
   const videoId = instance.videoIds[nextIndex];
   if (!videoId) return;
 
@@ -299,6 +363,9 @@ function playYoutubeQueueIndex(instance, nextIndex, options = {}) {
 
 function requestYoutubePlayback(instance) {
   if (!instance.player || !instance.isReady || !window.YT) return;
+
+  instance.autoplayRequestedAt = Date.now();
+  instance.lastRecoveryAttemptAt = 0;
 
   const currentIndex = getYoutubeAudioPlayerIndex(instance);
   const currentVideoId = instance.videoIds[currentIndex];
@@ -351,6 +418,8 @@ async function initYoutubeAudioPlayer(root, index) {
     isReady: false,
     isScrubbing: false,
     shouldAutoplay: false,
+    autoplayRequestedAt: 0,
+    lastRecoveryAttemptAt: 0,
     pollTimer: null,
     player: null,
     failedIndexes: new Set(),
