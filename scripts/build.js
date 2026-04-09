@@ -1160,7 +1160,7 @@ function renderLayout({ depth = 0, currentNav = '', title, description, eyebrow 
       <footer class="site-footer">
         <div>
           <p class="site-footer__eyebrow">${escapeHtml(eyebrow)}</p>
-          <p class="site-footer__copy">Handmade, music-first, and archived without pretending to be larger than life.</p>
+          <p class="site-footer__copy">A hand-built run of songs, kept close.</p>
         </div>
         <div class="site-footer__meta">© ${year} Monday Music Mix</div>
       </footer>
@@ -1276,9 +1276,6 @@ function buildMixDiscovery(mix) {
   const facetLabels = [];
   const trackArtists = mix.tracklist.map((track) => track?.artist).filter(Boolean);
   const trackTitles = mix.tracklist.map((track) => track?.title || track?.displayText).filter(Boolean);
-  const relatedNoteTags = mix.relatedNotes.flatMap((note) => buildTagMetadata(note.tags).flatMap((tag) => tag.searchTerms));
-  const relatedNoteTitles = mix.relatedNotes.map((note) => note.title).filter(Boolean);
-  const relatedNoteExcerpts = mix.relatedNotes.map((note) => note.excerpt || note.body).filter(Boolean);
   const topArtists = Array.isArray(mix.stats?.topArtists) ? mix.stats.topArtists : [];
   const favoriteTracks = Array.isArray(mix.stats?.favoriteTracks) ? mix.stats.favoriteTracks : [];
   const coverTracks = Array.isArray(mix.stats?.coverTracks) ? mix.stats.coverTracks : [];
@@ -1290,23 +1287,13 @@ function buildMixDiscovery(mix) {
     filterValues.push(`tag:${tag.value}`);
   }
 
-  if (mix.relatedNotes.length) {
-    filterValues.push('state:has-related');
-    facetLabels.push('related notes');
-  }
   if (mix.highlightedTracks.length) {
     filterValues.push('state:has-highlights');
     facetLabels.push('highlighted tracks');
   }
   if ((mix.listening?.summary?.surfaceCount || 0) > 0) {
     filterValues.push('state:has-listening');
-    facetLabels.push('listening surfaces');
-  }
-
-  const sourceValue = normalizeFacetToken(mix.sourcePlatform);
-  if (sourceValue) {
-    filterValues.push(`source:${sourceValue}`);
-    facetLabels.push(`${mix.sourcePlatform} source`);
+    facetLabels.push('playable');
   }
   if ((mix.stats?.coverCount || 0) > 0) {
     filterValues.push('texture:covers');
@@ -1329,14 +1316,11 @@ function buildMixDiscovery(mix) {
       mix.excerpt,
       mix.notes,
       mix.coverCredit,
-      mix.sourcePlatform,
       formatDate(mix.date),
       formatMonthYear(mix.date),
       mix.number !== '' ? `mix ${mix.number}` : '',
       mix.highlightedTracks.length ? `${mix.highlightedTracks.length} highlighted tracks` : '',
-      mix.relatedNotes.length ? `${mix.relatedNotes.length} related notes` : 'no related notes',
-      mix.listening?.summary?.surfaceCount ? `${mix.listening.summary.surfaceCount} listening surfaces` : '',
-      mix.usesArchivalCoverFallback ? 'archival cover fallback tumblr import' : '',
+      mix.listening?.summary?.surfaceCount ? `${mix.listening.summary.surfaceCount} playable link${mix.listening.summary.surfaceCount === 1 ? '' : 's'}` : '',
       tags.flatMap((tag) => tag.searchTerms),
       facetLabels,
       trackArtists,
@@ -1345,9 +1329,6 @@ function buildMixDiscovery(mix) {
       favoriteTracks,
       coverTracks,
       remixTracks,
-      relatedNoteTitles,
-      relatedNoteExcerpts,
-      relatedNoteTags,
       listeningProviders.flatMap((provider) => [provider.provider, provider.label, provider.note, provider.kind]),
       listeningEmbeds.flatMap((embed) => [embed.provider, embed.title, embed.note]),
     ]),
@@ -1777,37 +1758,32 @@ function renderListeningSection(mix) {
   if (!generatedQueue && !trustedEmbeds.length && !actionableTrustedLinks.length && !uncertainSurfaces.length && !youtubeMatch?.summary?.requiresReview) return '';
 
   const intro = listening.intro ? `<p class="listening-section__intro">${escapeHtml(listening.intro)}</p>` : '';
-  const summaryBits = [];
-  if (generatedQueue) summaryBits.push('1 YouTube queue');
-  if (trustedEmbeds.length) summaryBits.push(`${trustedEmbeds.length} verified preview${trustedEmbeds.length === 1 ? '' : 's'}`);
-  if (actionableTrustedLinks.length) summaryBits.push(`${actionableTrustedLinks.length} verified external link${actionableTrustedLinks.length === 1 ? '' : 's'}`);
-  if (uncertainSurfaces.length) summaryBits.push(`${uncertainSurfaces.length} uncertain lead${uncertainSurfaces.length === 1 ? '' : 's'}`);
-  const summary = summaryBits.length > 1 ? `<p class="listening-section__summary">${escapeHtml(summaryBits.join(' · '))}</p>` : '';
+  const summary = '';
 
   return `<section class="section-block section-block--compact">
       <div class="section-heading">
         <div>
           <p class="eyebrow">Listening</p>
-          <h2>Listening surfaces</h2>
+          <h2>Listen</h2>
         </div>
       </div>
       ${intro}
       ${summary}
       ${youtubeMatch?.summary?.requiresReview
         ? `<div class="listening-subsection">
-            <p class="listening-subsection__title">YouTube queue</p>
+            <p class="listening-subsection__title">Play this mix</p>
             <div class="provider-grid">
               <article class="provider-card provider-card--uncertain">
-                <p class="provider-card__eyebrow">Unavailable</p>
-                <h3>This queue is still being finalized</h3>
-                <p>${escapeHtml(youtubeMatch.unresolvedMessage || 'Playback for this mix is not ready yet. Check back soon.')}</p>
+                <p class="provider-card__eyebrow">Listen later</p>
+                <h3>Playback is not ready here yet</h3>
+                <p>${escapeHtml(youtubeMatch.unresolvedMessage || 'This mix is not playable here yet. Check back soon.')}</p>
               </article>
             </div>
           </div>`
         : ''}
       ${generatedQueue
         ? `<div class="listening-subsection">
-            <p class="listening-subsection__title">YouTube playback</p>
+            <p class="listening-subsection__title">Play this mix</p>
             <div class="provider-grid">
               <article
                 class="provider-card provider-card--player"
@@ -1815,21 +1791,21 @@ function renderListeningSection(mix) {
                 data-video-ids="${escapeHtml(JSON.stringify(generatedVideoIds))}"
                 data-track-labels="${escapeHtml(JSON.stringify(generatedTrackLabels))}"
                 data-watch-url="${escapeHtml(generatedQueue.url || generatedEmbed?.watchUrl || '')}"
-                data-queue-title="${escapeHtml(generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}"
+                data-queue-title="${escapeHtml(generatedEmbed?.title || generatedQueue.label || `Full mix for ${mix.title}`)}"
                 data-queue-key="${escapeHtml(mix.slug)}"
               >
                 <div class="youtube-audio-player__header">
                   <div>
-                    <h3>Queue</h3>
+                    <h3>Full mix</h3>
                   </div>
                   <span class="youtube-audio-player__state" data-youtube-player-state>Ready</span>
                 </div>
                 <div class="youtube-audio-player__track">
-                  <strong data-youtube-player-track>${escapeHtml(generatedTrackLabels[0] || generatedEmbed?.title || generatedQueue.label || `Full mix queue for ${mix.title}`)}</strong>
+                  <strong data-youtube-player-track>${escapeHtml(generatedTrackLabels[0] || generatedEmbed?.title || generatedQueue.label || `Full mix for ${mix.title}`)}</strong>
                   <p data-youtube-player-meta>Track 1 of ${escapeHtml(String(generatedTrackLabels.length || generatedVideoIds.length || 1))}</p>
                 </div>
                 <div class="youtube-audio-player__scrub">
-                  <input type="range" min="0" max="1000" value="0" aria-label="Queue progress" data-youtube-player-progress disabled>
+                  <input type="range" min="0" max="1000" value="0" aria-label="Mix progress" data-youtube-player-progress disabled>
                   <div class="youtube-audio-player__timing">
                     <span data-youtube-player-elapsed>0:00</span>
                     <span data-youtube-player-duration>0:00</span>
@@ -1841,9 +1817,9 @@ function renderListeningSection(mix) {
                       <i class="ph ph-skip-back" aria-hidden="true"></i>
                       <span class="sr-only">Previous track</span>
                     </button>
-                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--primary youtube-audio-player__button--icon" data-youtube-player-toggle aria-label="Play queue" title="Play queue" disabled>
+                    <button type="button" class="youtube-audio-player__button youtube-audio-player__button--primary youtube-audio-player__button--icon" data-youtube-player-toggle aria-label="Play mix" title="Play mix" disabled>
                       <i class="ph ph-play" data-youtube-player-toggle-icon aria-hidden="true"></i>
-                      <span class="sr-only" data-youtube-player-toggle-label>Play queue</span>
+                      <span class="sr-only" data-youtube-player-toggle-label>Play mix</span>
                     </button>
                     <button type="button" class="youtube-audio-player__button youtube-audio-player__button--icon" data-youtube-player-next aria-label="Next track" title="Next track" disabled>
                       <i class="ph ph-skip-forward" aria-hidden="true"></i>
@@ -1869,7 +1845,7 @@ function renderListeningSection(mix) {
         : ''}
       ${trustedEmbeds.length
         ? `<div class="listening-subsection">
-            <p class="listening-subsection__title">Embedded preview</p>
+            <p class="listening-subsection__title">Preview</p>
             <div class="embed-stack">
               ${trustedEmbeds
                 .map((embed) => `<article class="embed-card">
@@ -1883,10 +1859,9 @@ function renderListeningSection(mix) {
                       ></iframe>
                     </div>
                     <div class="embed-card__meta">
-                      <p class="provider-card__eyebrow">${escapeHtml(embed.confidenceLevel === 'trusted-embed-ready' ? 'Trusted embed-ready' : 'Embedded preview')}</p>
+                      <p class="provider-card__eyebrow">Preview</p>
                       <h3>${escapeHtml(embed.title || `${embed.provider} preview`)}</h3>
-                      <p>${escapeHtml(embed.confidenceReason)}</p>
-                      ${embed.note ? `<p>${escapeHtml(embed.note)}</p>` : ''}
+                      <p>${escapeHtml(embed.note || `A quick preview on ${embed.provider}.`)}</p>
                     </div>
                   </article>`)
                 .join('')}
@@ -1895,14 +1870,13 @@ function renderListeningSection(mix) {
         : ''}
       ${actionableTrustedLinks.length
         ? `<div class="listening-subsection">
-            <p class="listening-subsection__title">External links</p>
+            <p class="listening-subsection__title">Listen elsewhere</p>
             <div class="provider-grid">
               ${actionableTrustedLinks
                 .map((provider) => `<article class="provider-card">
-                    <p class="provider-card__eyebrow">Trusted link only</p>
+                    <p class="provider-card__eyebrow">Listen</p>
                     <h3>${escapeHtml(provider.label || `Open on ${provider.provider}`)}</h3>
-                    <p>${escapeHtml(provider.confidenceReason)}</p>
-                    ${provider.note ? `<p>${escapeHtml(provider.note)}</p>` : ''}
+                    <p>${escapeHtml(provider.note || `Open this mix on ${provider.provider}.`)}</p>
                     <div class="button-row button-row--compact">
                       <a class="button button--secondary" href="${escapeHtml(provider.url)}">${escapeHtml(provider.label || `Open on ${provider.provider}`)}</a>
                     </div>
@@ -1913,15 +1887,14 @@ function renderListeningSection(mix) {
         : ''}
       ${uncertainSurfaces.length
         ? `<div class="listening-subsection">
-            <p class="listening-subsection__title">Uncertain leads</p>
+            <p class="listening-subsection__title">Other links</p>
             <div class="provider-grid">
               ${uncertainSurfaces
                 .map((entry) => `<article class="provider-card provider-card--uncertain">
-                    <p class="provider-card__eyebrow">Uncertain</p>
-                    <h3>${escapeHtml(entry.title || entry.label || entry.provider || 'Listening lead')}</h3>
-                    <p>${escapeHtml(entry.confidenceReason || 'This stays visible as a lead, not a verified listening mirror.')}</p>
-                    ${entry.note ? `<p>${escapeHtml(entry.note)}</p>` : ''}
-                    ${entry.url ? `<div class="button-row button-row--compact"><a class="button button--secondary" href="${escapeHtml(entry.url)}">Inspect link</a></div>` : ''}
+                    <p class="provider-card__eyebrow">Link</p>
+                    <h3>${escapeHtml(entry.title || entry.label || entry.provider || 'Listening link')}</h3>
+                    <p>${escapeHtml(entry.note || 'Another place to try this mix.')}</p>
+                    ${entry.url ? `<div class="button-row button-row--compact"><a class="button button--secondary" href="${escapeHtml(entry.url)}">Open link</a></div>` : ''}
                   </article>`)
                 .join('')}
             </div>
@@ -1936,8 +1909,8 @@ function renderHomePage({ mixes, notes, site }) {
     ? mixes.find((mix) => mix.slug === featuredSlug) || mixes[0]
     : mixes[0];
   const recent = featured ? mixes.filter((mix) => mix.slug !== featured.slug).slice(0, 4) : mixes.slice(0, 4);
-  const intro = site.homeIntro || site.homepage_intro || 'A personal archive for mixes built slowly, sequenced by hand, and kept with just enough context to matter later.';
-  const description = featured ? featured.excerpt : 'A darker editorial archive for handmade mixes.';
+  const intro = site.homeIntro || site.homepage_intro || 'A small archive of mixes sequenced by hand and kept for the feeling they hold.';
+  const description = featured ? featured.excerpt : 'A hand-built archive of Monday Music Mix entries.';
 
   const featureBlock = featured
     ? `<section class="hero-grid">
@@ -2004,12 +1977,12 @@ function renderHomePage({ mixes, notes, site }) {
   const valuesBlock = `<section class="section-block section-block--split">
       <div>
         <p class="eyebrow">Why it exists</p>
-        <h2>Less brand world, more listening habit.</h2>
+        <h2>For the songs, the sequence, and the memory of them.</h2>
       </div>
       <div class="prose">
         <p>${escapeHtml(intro)}</p>
-        <p>${escapeHtml(site.homeSecondary || 'The visual language stays dark, editorial, and grounded: late-night listening, track sequencing, and the useful residue that remains after repeat plays.')}</p>
-        <p><a class="text-link" href="about/">Read more about the project</a></p>
+        <p>${escapeHtml(site.homeSecondary || 'Each page keeps the order of the tracks and just enough context to remember why a mix mattered.')}</p>
+        <p><a class="text-link" href="about/">Read more about Monday Music Mix</a></p>
       </div>
     </section>`;
   return renderLayout({
@@ -2025,14 +1998,12 @@ function renderArchivePage({ mixes }) {
   const topTags = countTopTags(mixes);
   const highlightCount = mixes.filter((mix) => mix.highlightedTracks.length > 0).length;
   const listeningCount = mixes.filter((mix) => (mix.listening?.summary?.surfaceCount || 0) > 0).length;
-  const tumblrCount = mixes.filter((mix) => normalizeFacetToken(mix.sourcePlatform) === 'tumblr').length;
   const coverCount = mixes.filter((mix) => (mix.stats?.coverCount || 0) > 0).length;
   const remixCount = mixes.filter((mix) => (mix.stats?.remixCount || 0) > 0).length;
   const discoveryFilters = [
     { label: 'All mixes', value: 'all' },
     makeDiscoveryFilter('state:has-highlights', 'Highlighted tracks', highlightCount),
-    ...(listeningCount ? [makeDiscoveryFilter('state:has-listening', 'Listening surfaces', listeningCount)] : []),
-    ...(tumblrCount ? [makeDiscoveryFilter('source:tumblr', 'Tumblr source', tumblrCount)] : []),
+    ...(listeningCount ? [makeDiscoveryFilter('state:has-listening', 'Playable', listeningCount)] : []),
     ...(coverCount ? [makeDiscoveryFilter('texture:covers', 'Covers', coverCount)] : []),
     ...(remixCount ? [makeDiscoveryFilter('texture:remixes', 'Remixes', remixCount)] : []),
     ...topTags.map((tag) => makeDiscoveryFilter(`tag:${tag.value}`, `Tag: ${tag.label}`, tag.count)),
@@ -2045,7 +2016,7 @@ function renderArchivePage({ mixes }) {
       </section>
       ${renderDiscoveryControls({
         title: 'Search archive',
-        description: 'Filter by titles, tracks, and a few grounded archive signals pulled directly from the mix data.',
+        description: 'Search by mix title, artist, track, or a few simple mix traits.',
         queryLabel: 'Search archive',
         queryPlaceholder: 'Title, artist, track, year...',
         itemLabelSingular: 'mix',
@@ -2223,8 +2194,7 @@ function renderMixPage({ mix }) {
       ${renderListeningSection(mix)}
       ${trackSection}
       ${notesSection}
-      ${navigationSection}
-      ${renderResourceSection(mix)}`,
+      ${navigationSection}`,
   });
 }
 
@@ -2852,20 +2822,14 @@ function build() {
   writePage('index.html', renderHomePage({ mixes, notes, site }));
   writePage(path.join('archive', 'index.html'), renderArchivePage({ mixes }));
   writePage(path.join('about', 'index.html'), renderAboutPage({ site, about }));
-  writePage(path.join('notes', 'index.html'), renderNotesPage({ notes }));
-  writePage(path.join('studio', 'index.html'), renderStudioPage({ site, drafts, mixes, notes, archiveInventory }));
 
   for (const mix of mixes) {
     writePage(path.join('mixes', mix.slug, 'index.html'), renderMixPage({ mix }));
   }
 
-  for (const note of notes) {
-    writePage(path.join('notes', note.slug, 'index.html'), renderNotePage({ note, allNotes: notes }));
-  }
-
   fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 
-  console.log(`Built ${mixes.length} mix page(s) and ${notes.length} note page(s) into ${path.relative(ROOT, DIST)}`);
+  console.log(`Built ${mixes.length} mix page(s) into ${path.relative(ROOT, DIST)}`);
 }
 
 build();

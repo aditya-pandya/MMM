@@ -4,12 +4,11 @@ H1: Published mixes
 COPY: A chronological run of finished mixes, each with the artwork, track sequencing, and context that still feels worth keeping.
 EYEBROW: Discovery
 H2: Search archive
-COPY: Filter by titles, tracks, and a few grounded archive signals pulled directly from the mix data.
+COPY: Search by mix title, artist, track, or a few simple mix traits.
 TEXT: Showing all 36 mixes.
 FILTER: All mixes
 FILTER: Highlighted tracks · 5
-FILTER: Listening surfaces · 36
-FILTER: Tumblr source · 36
+FILTER: Playable · 36
 FILTER: Covers · 10
 FILTER: Remixes · 7
 META: November 19, 2013 · Mix 36

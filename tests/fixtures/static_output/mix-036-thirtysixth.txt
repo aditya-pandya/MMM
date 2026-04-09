@@ -4,9 +4,9 @@ H1: Thirtysixth
 COPY: Also known as the Tuesday music mix. One week and one day later than originally should’ve been out in the wild. Some new, some old and reimagined.
 BUTTON: Back to archive
 EYEBROW: Listening
-H2: Listening surfaces
-TEXT: YouTube playback
-H3: Queue
+H2: Listen
+TEXT: Play this mix
+H3: Full mix
 TEXT: Track 1 of 14
 BUTTON: Open on YouTube
 EYEBROW: Tracklist
@@ -34,19 +34,3 @@ H2: More mixes
 EYEBROW: Previous mix
 H3: Thirtyfifth
 TEXT: September 23, 2013
-EYEBROW: Source
-H2: Provenance
-EYEBROW: Original source
-H3: Original post
-TEXT: Imported from Tumblr RSS on April 4, 2026.
-LINK: Open original post
-EYEBROW: Archive cleanup
-H3: Cleanup choices
-TEXT: A legacy Mega download URL survives in the archived source data, but it is intentionally withheld from the published page.
-TEXT: The exact Tumblr-hosted cover image has been downloaded locally and now fills the canonical cover slot for this mix.
-EYEBROW: Preserved residue
-H3: Legacy snapshot
-TEXT: A sanitized copy of the original post HTML is kept for repair and import cleanup work.
-TEXT: It still preserves the original Tumblr heading, favorite-track cue, and download trace.
-TEXT: Canonical local artwork checksum: 6718e49775e4ae7d475d9120fcf2de78ba373f6949dd4b57becdf7e407bd4e29.
-TEXT: Cover credit: Album art featuring work by Erik Jones.

@@ -195,7 +195,7 @@ function syncYoutubeAudioPlayerUi(instance) {
   instance.elapsed.textContent = formatClock(currentTime);
   instance.duration.textContent = formatClock(duration);
   const isMuted = Boolean(player.isMuted?.());
-  const toggleLabel = isPlaying ? 'Pause queue' : 'Play queue';
+  const toggleLabel = isPlaying ? 'Pause mix' : 'Play mix';
   const muteLabel = isMuted ? 'Unmute audio' : 'Mute audio';
 
   if (instance.toggleIcon) {
@@ -266,7 +266,7 @@ function recoverStalledYoutubePlayback(instance) {
       }
       return;
     }
-    markYoutubeAudioPlayerUnavailable(instance, 'Playback is unavailable here. Open the queue on YouTube instead.');
+    markYoutubeAudioPlayerUnavailable(instance, 'Playback is unavailable here. Open it on YouTube instead.');
     return;
   }
 
@@ -479,7 +479,7 @@ async function initYoutubeAudioPlayer(root, index) {
   try {
     await loadYoutubeIframeApi();
   } catch {
-    markYoutubeAudioPlayerUnavailable(instance, 'Playback is unavailable here. Open the queue on YouTube instead.');
+    markYoutubeAudioPlayerUnavailable(instance, 'Playback is unavailable here. Open it on YouTube instead.');
     return;
   }
 
@@ -549,7 +549,7 @@ async function initYoutubeAudioPlayer(root, index) {
           }
         }
 
-        markYoutubeAudioPlayerUnavailable(instance, 'Playback is unavailable for this queue here. Open it on YouTube instead.', {
+        markYoutubeAudioPlayerUnavailable(instance, 'Playback is unavailable here. Open it on YouTube instead.', {
           stateText: 'Error',
         });
       },

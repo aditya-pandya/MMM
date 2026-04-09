@@ -278,14 +278,11 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     home_html = read_text(dist_dir / "index.html")
     archive_html = read_text(dist_dir / "archive" / "index.html")
     about_html = read_text(dist_dir / "about" / "index.html")
-    notes_index_html = read_text(dist_dir / "notes" / "index.html")
-    note_detail_html = read_text(dist_dir / "notes" / "rebuilding-the-archive" / "index.html")
     mix_detail_html = read_text(dist_dir / "mixes" / "mix-036-thirtysixth" / "index.html")
     mix_with_youtube_html = read_text(dist_dir / "mixes" / "mix-035-thirtyfifth" / "index.html")
-    studio_html = read_text(dist_dir / "studio" / "index.html")
     site_js = read_text(dist_dir / "assets" / "site.js")
 
-    assert "Read more about the project" in home_html
+    assert "Read more about Monday Music Mix" in home_html
     assert "From the notebook" not in home_html
     assert "Notes related to Thirtysixth" not in home_html
     assert 'href="./notes/"' not in home_html
@@ -295,67 +292,51 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert 'data-discovery-filter="state:has-related"' not in archive_html
     assert 'data-discovery-filter="state:has-highlights"' in archive_html
     assert 'data-discovery-filter="state:has-listening"' in archive_html
-    assert 'data-discovery-filter="source:tumblr"' in archive_html
     assert 'data-discovery-filter="texture:covers"' in archive_html
     assert 'data-discovery-filter="texture:remixes"' in archive_html
     assert 'data-discovery-item' in archive_html
     assert 'data-discovery-tags="' in archive_html
     assert 'data-discovery-filters="' in archive_html
     assert 'data-discovery-search="' in archive_html
-    assert "Rebuilding the archive" in archive_html
     assert "The Kite String Tangle - Tennis Court" in archive_html
-    assert "Listening surfaces" in archive_html
+    assert "Playable" in archive_html
 
     assert "A personal archive, kept with care." in about_html
     assert "A weekly habit that kept leaving a trace." in about_html
     assert "Because music remembers things differently." in about_html
     assert "Read the notebook" not in about_html
 
-    assert "./rebuilding-the-archive/" in notes_index_html
-    assert "../mixes/mix-036-thirtysixth/" in notes_index_html
-    assert "Related mixes:" in notes_index_html
-    assert "Search notes" in notes_index_html
-    assert 'data-discovery-filter="state:has-related"' in notes_index_html
-    assert 'data-discovery-filter="state:in-series"' in notes_index_html
-    assert 'data-discovery-filter="state:has-note-links"' in notes_index_html
-    assert 'data-discovery-filter="series:archive-notebook"' in notes_index_html
-    assert 'data-discovery-filter="tag:archive"' in notes_index_html
-    assert 'data-discovery-item' in notes_index_html
-    assert 'data-discovery-filters="' in notes_index_html
-    assert "Dum Dum Girls" in notes_index_html
-    assert "Small runs of related notes" in notes_index_html
-    assert "Nearby notes:" in notes_index_html
-
-    assert "../../mixes/mix-034-thirtyfourth/" in note_detail_html
-    assert "../../mixes/mix-036-thirtysixth/" in note_detail_html
-    assert "Archive notebook" in note_detail_html
-    assert "Nearby reading from the notebook" in note_detail_html
-    assert "Prev and next notes" in note_detail_html
+    assert not (dist_dir / "notes").exists()
+    assert not (dist_dir / "studio").exists()
 
     assert "Writing tied to this mix" not in mix_detail_html
     assert "../../notes/rebuilding-the-archive/" not in mix_detail_html
     assert "More mixes" in mix_detail_html
     assert "Full sequence" in mix_detail_html
-    assert "Provenance" in mix_detail_html
-    assert "Original source" in mix_detail_html
-    assert "Archive cleanup" in mix_detail_html
-    assert "Preserved residue" in mix_detail_html
-    assert "Imported from Tumblr RSS on April 4, 2026." in mix_detail_html
-    assert "Open original post" in mix_detail_html
-    assert "A legacy Mega download URL survives in the archived source data" in mix_detail_html
-    assert "A sanitized copy of the original post HTML is kept for repair and import cleanup work." in mix_detail_html
-    assert "Cover credit: Album art featuring work by Erik Jones." in mix_detail_html
-    assert "Listening surfaces" in mix_detail_html
-    assert "YouTube playback" in mix_detail_html
+    assert '<p class="eyebrow">Source</p>' not in mix_detail_html
+    assert "Provenance" not in mix_detail_html
+    assert "Original source" not in mix_detail_html
+    assert "Original post" not in mix_detail_html
+    assert "Archive cleanup" not in mix_detail_html
+    assert "Cleanup choices" not in mix_detail_html
+    assert "Preserved residue" not in mix_detail_html
+    assert "Legacy snapshot" not in mix_detail_html
+    assert "Imported from Tumblr RSS on April 4, 2026." not in mix_detail_html
+    assert "Open original post" not in mix_detail_html
+    assert "A legacy Mega download URL survives in the archived source data" not in mix_detail_html
+    assert "A sanitized copy of the original post HTML is kept for repair and import cleanup work." not in mix_detail_html
+    assert "canonical cover slot" not in mix_detail_html
+    assert "Cover credit: Album art featuring work by Erik Jones." not in mix_detail_html
+    assert "Listen" in mix_detail_html
+    assert "Play this mix" in mix_detail_html
     assert "This queue is still being finalized" not in mix_detail_html
     assert 'data-queue-key="mix-036-thirtysixth"' in mix_detail_html
     assert "Imported Tumblr snapshot" not in mix_detail_html
     assert "Search YouTube" not in mix_detail_html
-    assert "canonical cover slot" in mix_detail_html
     assert "https://mega.co.nz/" not in mix_detail_html
     assert "1 YouTube queue" not in mix_detail_html
     assert '<p class="provider-card__eyebrow">YouTube queue</p>' not in mix_detail_html
-    assert ">Queue<" in mix_detail_html
+    assert ">Full mix<" in mix_detail_html
     assert "Tap play or choose a track below." not in mix_detail_html
     assert "tracklist stays in sync" not in mix_detail_html
     assert "tracklist below stays in sync" not in mix_detail_html
@@ -363,9 +344,11 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert ">Open on YouTube<" in mix_detail_html
 
     assert "highlighted track" in archive_html
-    assert "YouTube playback" in mix_with_youtube_html
-    assert ">Queue<" in mix_with_youtube_html
-    assert "Listening surfaces" in mix_with_youtube_html
+    assert "Play this mix" in mix_with_youtube_html
+    assert ">Full mix<" in mix_with_youtube_html
+    assert "Listen" in mix_with_youtube_html
+    assert "Provenance" not in mix_with_youtube_html
+    assert "Original source" not in mix_with_youtube_html
     assert "Tap play or choose a track below." not in mix_with_youtube_html
     assert "Tap any marked row to play it above" not in mix_with_youtube_html
     assert 'data-youtube-audio-player' in mix_with_youtube_html
@@ -376,14 +359,8 @@ def test_static_build_emits_note_routes_and_relationships(tmp_path):
     assert 'data-youtube-track-trigger' in mix_with_youtube_html
     assert 'href="https://www.youtube.com/watch_videos?video_ids=' in mix_with_youtube_html
     assert "youtube.com/embed/ehpYg0NsGqA" not in mix_with_youtube_html
-    assert mix_with_youtube_html.index("YouTube playback") < mix_with_youtube_html.index("Full sequence")
+    assert mix_with_youtube_html.index("Play this mix") < mix_with_youtube_html.index("Full sequence")
     assert "Bandcamp starting point" not in mix_with_youtube_html
-    assert "Local editorial state" in studio_html
-    assert "Validation posture" in studio_html
-    assert "Archive coverage" in studio_html
-    assert "Recent routes" in studio_html
-    assert "Recommended next actions" in studio_html
-    assert "Local commands worth keeping close" in studio_html
     assert "updateDiscovery" in site_js
     assert "youtube.com/iframe_api" in site_js
     assert "loadVideoById" in site_js
@@ -409,8 +386,6 @@ def test_static_build_matches_golden_route_digests(tmp_path):
         repo / "dist" / "archive" / "index.html": "archive.txt",
         repo / "dist" / "about" / "index.html": "about.txt",
         repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html": "mix-036-thirtysixth.txt",
-        repo / "dist" / "notes" / "index.html": "notes.txt",
-        repo / "dist" / "studio" / "index.html": "studio.txt",
     }
 
     for route_path, fixture_name in route_fixtures.items():
@@ -420,18 +395,8 @@ def test_static_build_matches_golden_route_digests(tmp_path):
         )
 
 
-def test_static_build_normalizes_discovery_tags_for_notes_facets(tmp_path):
+def test_static_build_does_not_emit_public_note_routes(tmp_path):
     repo = prepare_temp_repo(tmp_path)
-
-    first_note_path = repo / "data" / "notes" / "how-the-mixes-are-read.json"
-    first_note = json.loads(read_text(first_note_path))
-    first_note["tags"] = ["Seed Data", "Late/Night", "Editorial Notes"]
-    write_json(first_note_path, first_note)
-
-    second_note_path = repo / "data" / "notes" / "rebuilding-the-archive.json"
-    second_note = json.loads(read_text(second_note_path))
-    second_note["tags"] = ["Seed Data", "Late/Night", "Editorial Notes"]
-    write_json(second_note_path, second_note)
 
     result = subprocess.run(
         ["node", "scripts/build.js"],
@@ -442,13 +407,7 @@ def test_static_build_normalizes_discovery_tags_for_notes_facets(tmp_path):
     )
 
     assert result.returncode == 0, result.stderr or result.stdout
-
-    notes_index_html = read_text(repo / "dist" / "notes" / "index.html")
-
-    assert 'data-discovery-filter="tag:seed-data"' in notes_index_html
-    assert 'data-discovery-filter="tag:late-night"' in notes_index_html
-    assert 'data-discovery-filter="tag:editorial-notes"' in notes_index_html
-    assert 'data-discovery-tags="seed-data|late-night|editorial-notes"' in notes_index_html
+    assert not (repo / "dist" / "notes").exists()
 
 
 def test_static_build_recursively_flattens_nested_listening_provider_shapes(tmp_path):
@@ -501,9 +460,9 @@ def test_static_build_recursively_flattens_nested_listening_provider_shapes(tmp_
 
     assert "Companion playlist on YouTube" in mix_html
     assert "Bandcamp starting point" not in mix_html
-    assert "Listening surfaces" in mix_html
-    assert "Trusted link only" in mix_html
-    assert "Trusted embed-ready" in mix_html
+    assert "Listen" in mix_html
+    assert "Listen elsewhere" in mix_html
+    assert "Preview" in mix_html
     assert "youtube.com/embed/videoseries" in mix_html
 
 
@@ -563,8 +522,8 @@ def test_static_build_requires_explicit_trusted_embed_data_before_rendering_prev
     spotify_mix_html = read_text(repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html")
 
     assert "youtube.com/embed/videoseries" not in youtube_mix_html
-    assert "YouTube playback" in youtube_mix_html
-    assert "Trusted link only" in spotify_mix_html
+    assert "Play this mix" in youtube_mix_html
+    assert "Listen elsewhere" in spotify_mix_html
     assert "open.spotify.com/embed/playlist" not in spotify_mix_html
 
 
@@ -605,20 +564,20 @@ def test_static_build_demotes_uncertain_listening_data_on_mix_detail_pages(tmp_p
 
     mix_html = read_text(repo / "dist" / "mixes" / "mix-036-thirtysixth" / "index.html")
 
-    assert "Uncertain leads" in mix_html
+    assert "Other links" in mix_html
     assert "Questionable mirror" in mix_html
-    assert "Inspect link" in mix_html
+    assert "Open link" in mix_html
     assert "<iframe" not in mix_html
     assert "Trusted embed-ready" not in mix_html
 
 
-def test_static_build_surfaces_listening_warnings_in_studio_health(tmp_path):
+def test_static_build_does_not_emit_public_studio_route(tmp_path):
     repo = prepare_temp_repo(tmp_path)
 
     mix_path = repo / "data" / "published" / "mix-035-thirtyfifth.json"
     mix = json.loads(read_text(mix_path))
     mix["listening"] = {
-        "intro": "Suspicious listening data should show up in studio health.",
+        "intro": "Suspicious listening data should not create a public studio route.",
         "providers": [
             {
                 "provider": "YouTube",
@@ -646,14 +605,7 @@ def test_static_build_surfaces_listening_warnings_in_studio_health(tmp_path):
     )
 
     assert result.returncode == 0, result.stderr or result.stdout
-
-    studio_html = read_text(repo / "dist" / "studio" / "index.html")
-
-    assert "Listening warnings" in studio_html
-    assert "Latest flagged: Thirtyfifth" in studio_html
-    assert "Listening health" in studio_html
-    assert "Review listening/provider payloads for Thirtyfifth" in studio_html
-    assert "provider &quot;YouTube&quot; uses unsupported kind &quot;mixtape&quot;" in studio_html
+    assert not (repo / "dist" / "studio").exists()
 
 
 def test_static_build_fails_loudly_on_malformed_canonical_note_json(tmp_path):
@@ -931,7 +883,7 @@ return {
 
     assert runtime["beforeRecovery"] == "Loading"
     assert runtime["afterRecovery"] == "Unavailable"
-    assert runtime["meta"] == "Playback is unavailable here. Open the queue on YouTube instead."
+    assert runtime["meta"] == "Playback is unavailable here. Open it on YouTube instead."
     assert runtime["shouldAutoplay"] is False
     assert runtime["autoplayRequestedAt"] == 0
     assert runtime["lastRecoveryAttemptAt"] == 0

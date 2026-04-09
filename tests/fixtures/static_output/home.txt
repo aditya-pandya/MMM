@@ -24,7 +24,7 @@ H3: Thirtysecond
 META: 3 highlighted tracks
 TEXT: Brand new mix at a brand new address. New Postal Service demo, a fantastic AlunaGeorge track and some other surprises.
 EYEBROW: Why it exists
-H2: Less brand world, more listening habit.
-COPY: A personal archive for mixes built slowly, sequenced by hand, and kept with just enough context to matter later.
-COPY: The visual language stays dark, editorial, and grounded: late-night listening, track sequencing, and the useful residue that remains after repeat plays.
-LINK: Read more about the project
+H2: For the songs, the sequence, and the memory of them.
+COPY: A small archive of mixes sequenced by hand and kept for the feeling they hold.
+COPY: Each page keeps the order of the tracks and just enough context to remember why a mix mattered.
+LINK: Read more about Monday Music Mix
