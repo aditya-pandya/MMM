@@ -1,0 +1,5086 @@
+/* ==========================================================================
+   Monday Music Mix: the cover is the theme
+   Every mix page is painted in its own cover's colours. The build pulls
+   swatches from the artwork and sets the ground, text and accent on <html>
+   (contrast-checked); everything here draws from those tokens. Flat colour,
+   square sleeves, plain type. The player is a small card that keeps playing
+   between pages.
+   ========================================================================== */
+
+:root {
+  --mix-accent: #6faefd;
+  --mix-accent-soft: rgba(111, 174, 253, 0.22);
+  --mix-glow: #1c1e23;
+  --mix-ink: #111318;
+  --on-accent: #111318;
+
+  --bg: #141519;
+  --bg-raised: #1c1e23;
+  --surface: rgba(236, 239, 242, 0.05);
+  --surface-strong: rgba(236, 239, 242, 0.09);
+  --line: rgba(236, 239, 242, 0.14);
+  --line-strong: rgba(236, 239, 242, 0.26);
+  --text: #eceff2;
+  --text-dim: #aab0b8;
+  --text-faint: #8d939b;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* The inlay card's lettering falls back to this; hand notes use --font-note. */
+  --font-hand: "Kalam", "Patrick Hand", "Comic Sans MS", cursive;
+  --font-marker: "Permanent Marker", "Kalam", cursive;
+  /* The pencil: Reenie Beanie (preloaded in the page head) in graphite. The
+     same on every page; a cover's colours never tint it. Notes are a shade
+     lighter than the marks so thin letters stay readable. */
+  --font-note: "Reenie Beanie", cursive;
+  --pencil: #cdd3da;
+  --pencil-note: #dde2e8;
+
+  --paper: #eceef1;
+  --paper-ink: #15171b;
+
+  /* Smallest to largest. Most of the site uses sm: flat sleeves, 4px. */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  --shell-max: 1180px;
+  --tv-clearance: 0px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --speed: 320ms;
+
+  color-scheme: dark;
+}
+
+/* Handwriting and marker faces, self-hosted. Browsers only fetch the ones a
+   page actually uses. */
+@font-face { font-family: "Permanent Marker"; src: url("vinyl-fonts/permanent-marker-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Rock Salt"; src: url("vinyl-fonts/rock-salt-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Sedgwick Ave"; src: url("vinyl-fonts/sedgwick-ave-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Gochi Hand"; src: url("vinyl-fonts/gochi-hand-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Architects Daughter"; src: url("vinyl-fonts/architects-daughter-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Indie Flower"; src: url("vinyl-fonts/indie-flower-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Shadows Into Light Two"; src: url("vinyl-fonts/shadows-into-light-two-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Reenie Beanie"; src: url("vinyl-fonts/reenie-beanie-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Patrick Hand"; src: url("vinyl-fonts/patrick-hand-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Kalam"; src: url("vinyl-fonts/kalam-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Just Another Hand"; src: url("vinyl-fonts/just-another-hand-400.woff2") format("woff2"); font-display: swap; }
+
+* {
+  box-sizing: border-box;
+}
+
+/* Hidden means hidden, whatever display a component sets (a .mix-card is
+   flex, so without this a filtered-out card would still show). */
+[hidden] {
+  display: none !important;
+}
+
+/* The first thing a keyboard reaches on every page; out of sight until then. */
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 12px;
+  z-index: 100;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--mix-accent);
+  color: var(--on-accent);
+  font: 600 0.9rem/1 var(--font-ui);
+  text-decoration: none;
+  transform: translateY(-180%);
+  transition: transform 200ms var(--ease-out);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: none;
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.site-main:focus {
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 600ms var(--ease-out), color 600ms var(--ease-out);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Links take their colour from where they sit; the browser's default blue
+   never shows. */
+a {
+  color: inherit;
+}
+
+/* One focus ring for everything a keyboard can reach. Components that need a
+   different offset set their own. */
+:focus-visible {
+  outline: 2px solid var(--mix-accent);
+  outline-offset: 3px;
+}
+
+/* Icons from the inline sprite (icon() in build.js). */
+.icon {
+  display: inline-block;
+  flex: none;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -0.125em;
+}
+
+::selection {
+  background: var(--mix-accent);
+  color: var(--mix-ink);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Shell, header, footer
+   -------------------------------------------------------------------------- */
+
+.page-shell {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px) 36px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: padding-bottom 480ms var(--ease-out);
+}
+
+/* Leave room to scroll the last of the page out from under the set. */
+/* The open player card: 16:9 screen plus one row of controls, under 280px. */
+body.has-tv {
+  --tv-clearance: 310px;
+}
+
+body.has-tv .page-shell {
+  padding-bottom: calc(var(--tv-clearance) + 36px);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  margin: 0 calc(50% - 50vw);
+  padding: 14px calc(50vw - 50%);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  transition: background-color 600ms var(--ease-out);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.site-brand__mark,
+.site-brand__eyebrow {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  color: var(--mix-accent);
+  transition: color 600ms var(--ease-out);
+}
+
+.site-brand__name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--text-dim);
+}
+
+.site-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.site-nav__link {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--text-dim);
+  transition: color var(--speed) var(--ease-out), background var(--speed) var(--ease-out);
+}
+
+.site-nav__link:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.site-nav__link.is-active {
+  color: var(--text);
+  background: var(--surface-strong);
+}
+
+.site-header__end {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* A small lamp that only lights on Mondays. */
+.on-air {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--text-faint);
+  font: 600 0.62rem/1 var(--font-ui);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.on-air__lamp {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.on-air.is-live {
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+
+.on-air.is-live .on-air__lamp {
+  background: var(--mix-accent);
+}
+
+.site-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(56px, 9vh, 104px);
+  padding-top: clamp(40px, 7vh, 84px);
+}
+
+.site-footer {
+  margin-top: clamp(64px, 10vh, 120px);
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+
+.site-footer__wordmark {
+  margin: 8px 0 10px;
+  padding-bottom: 0.18em;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  user-select: none;
+  transition: -webkit-text-stroke-color 600ms var(--ease-out);
+}
+
+.site-footer:hover .site-footer__wordmark {
+  -webkit-text-stroke-color: color-mix(in oklab, var(--mix-accent) 45%, transparent);
+}
+
+/* The same footer on every page: the tagline, then the feed and the year. */
+.site-footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.site-footer__copy {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 340;
+  font-size: 1rem;
+  color: var(--text-dim);
+}
+
+.site-footer__meta {
+  white-space: nowrap;
+}
+
+.site-footer__meta a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.site-footer__meta a:hover {
+  color: var(--mix-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Typography primitives
+   -------------------------------------------------------------------------- */
+
+h1, h2, h3, .display-lg, .hero-title, .page-title, .mix-title, .note-title {
+  font-family: var(--font-display);
+  font-weight: 370;
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.4em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); }
+h3 { font-size: 1.15rem; font-weight: 440; letter-spacing: 0; line-height: 1.3; }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+.eyebrow {
+  margin: 0 0 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  color: var(--mix-accent);
+  transition: color 600ms var(--ease-out);
+}
+
+.hero-copy {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.65;
+  color: var(--text-dim);
+  max-width: 56ch;
+}
+
+.supporting-copy,
+.page-intro__copy {
+  color: var(--text-dim);
+  max-width: 62ch;
+}
+
+.page-intro__copy--large {
+  font-size: 1.15rem;
+}
+
+.hero-number {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(4rem, 11vw, 8rem);
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in oklab, var(--mix-accent) 55%, transparent);
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 18px 0;
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  letter-spacing: 0.03em;
+}
+
+.meta-row span {
+  position: relative;
+}
+
+.meta-row span + span::before {
+  content: "·";
+  position: absolute;
+  left: -13px;
+  color: var(--text-faint);
+}
+
+.prose {
+  color: var(--text-dim);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  max-width: 64ch;
+}
+
+.prose p + p { margin-top: 1em; }
+
+.text-link {
+  color: var(--mix-accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklab, var(--mix-accent) 40%, transparent);
+  transition: border-color var(--speed) var(--ease-out);
+}
+
+.text-link:hover {
+  border-bottom-color: var(--mix-accent);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.tag-list li {
+  padding: 5px 13px;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-dim);
+  background: var(--surface);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons: one solid accent for the main action, outlines for the rest
+   -------------------------------------------------------------------------- */
+
+.btn,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--mix-accent);
+  color: var(--on-accent);
+  font: 600 0.92rem/1 var(--font-ui);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--speed) var(--ease-out), border-color var(--speed) var(--ease-out), color var(--speed) var(--ease-out);
+}
+
+.btn--primary:hover,
+.button:hover {
+  background: color-mix(in oklab, var(--mix-accent) 84%, var(--text));
+}
+
+.btn--secondary,
+.button--secondary {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.btn--secondary:hover,
+.button--secondary:hover {
+  background: var(--surface);
+  border-color: var(--text-faint);
+}
+
+.btn:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--mix-accent);
+  outline-offset: 3px;
+}
+
+.btn__icon {
+  font-size: 1.05em;
+}
+
+.btn__label--pressed,
+.btn[aria-pressed="true"] .btn__label:not(.btn__label--pressed) {
+  display: none;
+}
+
+.btn[aria-pressed="true"] .btn__label--pressed {
+  display: inline;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button-row--compact {
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.button-row--compact .button {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 0.84rem;
+}
+
+/* Links out to the same mix elsewhere. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font: 500 0.82rem/1 var(--font-ui);
+  text-decoration: none;
+  transition: border-color var(--speed) var(--ease-out), background-color var(--speed) var(--ease-out);
+}
+
+.chip .icon {
+  color: var(--text-faint);
+}
+
+.chip:hover {
+  border-color: var(--line-strong);
+  background: var(--surface);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--mix-accent);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+
+.section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.section-block--split {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) 1.6fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.section-heading h2 { margin-bottom: 0.2em; }
+
+.page-intro {
+  max-width: 720px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero (home) & mix hero
+   -------------------------------------------------------------------------- */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+  min-height: 52vh;
+}
+
+.hero-grid__body {
+  position: relative;
+}
+
+.hero-grid__art {
+  display: block;
+  text-decoration: none;
+  transition: transform 600ms var(--ease-out);
+}
+
+.hero-grid__art:hover {
+  transform: none;
+}
+
+/* The mix stage: the record fills the full width of the window and the
+   words sit on top of it. A wash of the page colour behind the words keeps
+   them readable wherever they overlap the record; only the buttons and
+   links take clicks, so the record stays draggable everywhere else. */
+.mix-hero--stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(86vh, 880px);
+  margin: calc(-1 * clamp(40px, 7vh, 84px)) calc(50% - 50vw) 0;
+  padding: 0 calc(50vw - 50%);
+  isolation: isolate;
+}
+
+
+
+.mix-hero--stage .mix-hero__art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* The record fades out under the words and at the stage's foot through a
+     mask on the art, not a scrim of the page colour laid over it. A scrim of
+     the ground over the same ground rounds differently at every alpha step,
+     which showed as vertical bands on dark pages; a mask only ever thins the
+     record and leaves the page itself untouched. */
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.03) 10%, rgba(0, 0, 0, 0.1) 18%, rgba(0, 0, 0, 0.22) 25%, rgba(0, 0, 0, 0.37) 31%, rgba(0, 0, 0, 0.53) 36%, rgba(0, 0, 0, 0.68) 40%, rgba(0, 0, 0, 0.82) 44%, rgba(0, 0, 0, 0.93) 48%, rgba(0, 0, 0, 1) 52%), linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 3%, rgba(0, 0, 0, 0.36) 6%, rgba(0, 0, 0, 0.66) 9%, rgba(0, 0, 0, 0.88) 12%, rgba(0, 0, 0, 1) 15%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.03) 10%, rgba(0, 0, 0, 0.1) 18%, rgba(0, 0, 0, 0.22) 25%, rgba(0, 0, 0, 0.37) 31%, rgba(0, 0, 0, 0.53) 36%, rgba(0, 0, 0, 0.68) 40%, rgba(0, 0, 0, 0.82) 44%, rgba(0, 0, 0, 0.93) 48%, rgba(0, 0, 0, 1) 52%), linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 3%, rgba(0, 0, 0, 0.36) 6%, rgba(0, 0, 0, 0.66) 9%, rgba(0, 0, 0, 0.88) 12%, rgba(0, 0, 0, 1) 15%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.mix-hero--stage .mix-hero__body {
+  position: relative;
+  z-index: 2;
+  max-width: min(540px, 40vw);
+  padding-block: clamp(72px, 12vh, 140px) clamp(48px, 8vh, 96px);
+  pointer-events: none;
+}
+
+.mix-hero--stage .mix-hero__body a,
+.mix-hero--stage .mix-hero__body button {
+  pointer-events: auto;
+}
+
+.mix-hero--stage .mix-hero__title {
+  font-size: clamp(3rem, 6.4vw, 5.6rem);
+  line-height: 1;
+}
+
+/* Until the record is ready (or where WebGL isn't available) the flat cover
+   stands about where the sleeve will rest. Its corners match the 3D sleeve's
+   (2.1% of the side) and it has no shadow, because the WebGL sleeve takes
+   over on exactly this rectangle. */
+.mix-hero--stage .mix-hero__cover {
+  position: absolute;
+  top: 36%;
+  left: 65%;
+  width: min(38vh, 30vw, 420px);
+  border-radius: 2.1%;
+  box-shadow: none;
+  transform: translate(-50%, -50%);
+}
+
+/* The handoff: the renderer draws the sleeve frontal and unlit on this
+   rectangle, holds it for three frames, and only then starts the intro.
+   The <img> just holds for those frames and fades out in about 110ms. No
+   scaling, so there is never a second, offset cover. */
+.mix-hero--stage .mix-hero__art.is-vinyl-mounted .mix-hero__cover {
+  inset: auto;
+  top: 36%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  animation: mix-hero-stage-handoff 160ms linear forwards;
+}
+
+@keyframes mix-hero-stage-handoff {
+  0%,
+  32% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.mix-hero--stage .mix-hero__vinyl {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+/* On the stage the renderer draws keyboard focus as an accent ring on the
+   record's edge; an outline round the whole stage sat mostly under the wash. */
+.mix-hero--stage .mix-hero__vinyl canvas:focus-visible {
+  outline: none;
+}
+
+.mix-hero__cover {
+  margin: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow:
+    0 30px 80px -30px color-mix(in oklab, var(--mix-glow) 80%, black),
+    0 0 0 1px var(--line);
+}
+
+.mix-hero__cover img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.mix-hero__vinyl {
+  display: none;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+/* The flat cover holds the spot until the record is ready, then hands off:
+   it settles back and fades while the 3D sleeve presents in the same place,
+   so the hero is never empty. */
+.mix-hero__art.is-vinyl-mounted .mix-hero__cover {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  animation: cover-handoff 760ms var(--ease-out) forwards;
+}
+
+@keyframes cover-handoff {
+  0% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.mix-hero__art.is-vinyl-mounted .mix-hero__vinyl {
+  display: block;
+}
+
+.mix-hero__vinyl canvas:focus-visible {
+  outline: 2px solid var(--mix-accent);
+  outline-offset: -6px;
+}
+
+.mix-hero__pending {
+  margin-top: 24px;
+  color: var(--text-dim);
+}
+
+.tune-in {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.tune-in__label {
+  margin-right: 4px;
+  font-size: 0.82rem;
+  color: var(--text-faint);
+}
+
+.mix-hero__title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+/* --------------------------------------------------------------------------
+   Mix cards & grid
+   -------------------------------------------------------------------------- */
+
+/* 200px keeps three columns on a tablet (768) and four on a laptop. */
+.mix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: clamp(24px, 3vw, 36px);
+}
+
+.mix-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  transition: transform 480ms var(--ease-out);
+}
+
+.mix-card:hover {
+  transform: none;
+}
+
+.mix-card__frame {
+  display: block;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 48px -24px color-mix(in oklab, var(--mix-glow) 90%, black);
+  transition: box-shadow 480ms var(--ease-out), border-color 480ms var(--ease-out);
+}
+
+.mix-card:hover .mix-card__frame {
+  border-color: color-mix(in oklab, var(--mix-accent) 45%, var(--line));
+  box-shadow: 0 26px 64px -22px color-mix(in oklab, var(--mix-accent) 42%, black);
+}
+
+.mix-card__art {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 800ms var(--ease-out);
+}
+
+.mix-card:hover .mix-card__art {
+  transform: scale(1.045);
+}
+
+.mix-card__art--empty {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 3rem;
+  color: var(--mix-accent-soft);
+  background:
+    radial-gradient(80% 80% at 30% 20%, color-mix(in oklab, var(--mix-glow) 80%, transparent), transparent),
+    var(--surface);
+}
+
+.mix-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 4px;
+}
+
+.mix-card__meta {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-faint);
+}
+
+.mix-card__title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 430;
+  line-height: 1.25;
+}
+
+.mix-card__sub {
+  font-size: 0.87rem;
+  color: var(--text-dim);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Covers
+   -------------------------------------------------------------------------- */
+
+.mix-cover {
+  margin: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 80px -30px color-mix(in oklab, var(--mix-glow) 85%, black);
+}
+
+.mix-cover img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.mix-cover--compact { border-radius: var(--radius-md); }
+
+.mix-cover--placeholder {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background:
+    radial-gradient(90% 90% at 20% 10%, color-mix(in oklab, var(--mix-glow) 85%, transparent), transparent),
+    var(--surface);
+}
+
+.mix-cover__body {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.mix-cover__kicker {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--mix-accent);
+  margin-bottom: 10px;
+}
+
+.mix-cover__body strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.mix-cover__credit {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+/* --------------------------------------------------------------------------
+   Tracklist
+   -------------------------------------------------------------------------- */
+
+.tracklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.tracklist__item {
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+
+/* Over twelve songs, the running order reads down two columns on a wide
+   screen instead of one long list with its right side empty. */
+@media (min-width: 961px) {
+  .tracklist--split {
+    columns: 2;
+    column-gap: 56px;
+  }
+}
+
+/* A song's running time, in figures that line up. */
+.tracklist__time {
+  min-width: 2.8em;
+  font-size: 0.84rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--text-faint);
+}
+
+/* A song with no right video anywhere on YouTube keeps its place in the
+   running order. It says so quietly where its time would be, and the row
+   has nothing to press. */
+.tracklist__missing {
+  font-size: 0.78rem;
+  text-align: right;
+  white-space: nowrap;
+  color: var(--text-faint);
+}
+
+.tracklist__item--unavailable .tracklist__title {
+  color: var(--text-dim);
+}
+
+/* On a phone it folds onto two short lines and leaves the title its room. */
+@media (max-width: 640px) {
+  .tracklist__missing {
+    max-width: 4.8em;
+    line-height: 1.25;
+    white-space: normal;
+  }
+}
+
+/* The record's note for a groove whose song isn't on YouTube: a moment just
+   above where it was picked (site.js sets the spot), then gone. */
+.vinyl-note {
+  position: absolute;
+  left: var(--note-x, 50%);
+  top: var(--note-y, 50%);
+  z-index: 3;
+  margin: 0;
+  padding: 6px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--bg-raised);
+  color: var(--text);
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.45);
+  font-size: 0.84rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, calc(-100% - 14px));
+  transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out);
+}
+
+.vinyl-note.is-shown {
+  opacity: 1;
+  transform: translate(-50%, calc(-100% - 18px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vinyl-note,
+  .vinyl-note.is-shown {
+    transform: translate(-50%, calc(-100% - 16px));
+    transition: opacity 120ms linear;
+  }
+}
+
+.tracklist__row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  transition: background-color var(--speed) var(--ease-out);
+}
+
+button.tracklist__row {
+  cursor: pointer;
+}
+
+button.tracklist__row:hover,
+.tracklist__item.is-groove-hover button.tracklist__row {
+  background: var(--surface);
+}
+
+button.tracklist__row:focus-visible {
+  outline: 2px solid var(--mix-accent);
+  outline-offset: 2px;
+}
+
+.tracklist__index {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+
+.tracklist__num {
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-faint);
+  transition: opacity 160ms ease;
+}
+
+button.tracklist__row:hover .tracklist__num,
+.tracklist__item.is-cued .tracklist__num {
+  color: var(--mix-accent);
+}
+
+.tracklist__bars {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 3px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.tracklist__bars i {
+  width: 3px;
+  height: 100%;
+  border-radius: 1px;
+  background: var(--mix-accent);
+  transform-origin: bottom;
+  transform: scaleY(0.45);
+}
+
+/* Only the song that's playing moves; the hidden bars on every other row
+   stay still. */
+.tracklist__item.is-active:not(.is-paused) .tracklist__bars i {
+  animation: equalize 1s ease-in-out infinite;
+}
+
+.tracklist__bars i:nth-child(2) { animation-delay: 0.22s; }
+.tracklist__bars i:nth-child(3) { animation-delay: 0.44s; }
+
+@keyframes equalize {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+/* Under the pointer, a song's number turns into a small play mark. */
+button.tracklist__row .tracklist__index::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 9px;
+  height: 10px;
+  margin-top: -5px;
+  background: var(--mix-accent);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  opacity: 0;
+  scale: 0.5;
+  transition: opacity 160ms ease, scale 260ms var(--ease-out);
+}
+
+button.tracklist__row:is(:hover, :focus-visible) .tracklist__num {
+  opacity: 0;
+}
+
+button.tracklist__row:is(:hover, :focus-visible) .tracklist__index::after {
+  opacity: 1;
+  scale: 1;
+}
+
+.tracklist__item.is-active .tracklist__index::after { display: none; }
+.tracklist__item.is-active .tracklist__num { opacity: 0; }
+.tracklist__item.is-active .tracklist__bars { opacity: 1; }
+
+.tracklist__title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.tracklist__item.is-active .tracklist__title {
+  color: var(--mix-accent);
+}
+
+.tracklist__artist {
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--text-dim);
+}
+
+.tracklist__note {
+  margin: 0 10px 14px 70px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* Notes from the original post: the first paragraph leads. */
+.mix-notes .prose p:first-child {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.mix-notes h2 .hand-underlined > .hand-mark {
+  bottom: -0.1em;
+}
+
+/* Whose art the cover is: a quiet last line under the notes. */
+.mix-notes__credit {
+  margin-top: 1.4em;
+  font-size: 0.84rem;
+  font-style: italic;
+  color: var(--text-faint);
+}
+
+.mix-notes--credit-only .mix-notes__credit {
+  margin-top: 0;
+}
+
+/* More mixes: the one before and the one after, as sleeves. */
+.mix-more__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px clamp(24px, 4vw, 56px);
+  margin-top: 20px;
+}
+
+.mix-more__item {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Always the right-hand column, even when there's no "before" beside it. */
+.mix-more__item--after {
+  grid-column: 2;
+}
+
+.mix-more__art {
+  display: block;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: transform 500ms var(--ease-out), box-shadow 500ms var(--ease-out);
+}
+
+.mix-more__art img,
+.mix-more__blank {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.mix-more__blank {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--text-faint);
+  background: var(--surface);
+}
+
+.mix-more__item:hover .mix-more__art {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px -26px rgba(0, 0, 0, 0.8);
+}
+
+.mix-more__text {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.mix-more__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--mix-accent);
+}
+
+.mix-more__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+.mix-more__item:hover .mix-more__title {
+  color: var(--mix-accent);
+}
+
+.mix-more__date {
+  font-size: 0.86rem;
+  color: var(--text-dim);
+}
+
+@media (max-width: 640px) {
+  .mix-more__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mix-more__item {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .mix-more__item--after {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mix-more__item:hover .mix-more__art {
+    transform: none;
+  }
+}
+
+/* The end of a row: a star drawn by hand on a favourite. (A song with no
+   artist line also takes its "It's on now." here.) */
+.tracklist__end {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.track-favorite {
+  display: block;
+  color: var(--pencil);
+  font-style: normal;
+}
+
+/* Big enough that the pen's wobble and overshoot read as drawn, not an icon. */
+.hand-mark.track-favorite__star {
+  --pen: 1.4;
+  width: 25px;
+  height: 24px;
+  margin: -3px 0;
+  transform: rotate(-10deg);
+}
+
+/* "It's on now." with a small arrow back at the song. site.js moves it in
+   after the artist of the song that's playing; it steps back while paused. */
+.tracklist__now:not([hidden]) {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 10px;
+  vertical-align: -1px;
+  color: var(--pencil);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 360ms var(--ease-out);
+  /* No taller than the artist line, so a row doesn't jump when its song
+     comes on; the bigger letters hang over the line. */
+  height: 1.25em;
+  overflow: visible;
+}
+
+.tracklist__now .hand-note {
+  --note-size: 1.95rem;
+  text-wrap: nowrap;
+}
+
+/* A hook that curls up from the note, so its tip points at the song above,
+   whether the note sits after the artist or wraps onto its own line. */
+.hand-mark.tracklist__now-arrow {
+  align-self: flex-end;
+  width: 26px;
+  height: 24px;
+  margin-top: -16px;
+  stroke-width: 5.5;
+  transform: rotate(-6deg);
+}
+
+.tracklist__item.is-paused .tracklist__now {
+  opacity: 0.45;
+}
+
+/* --------------------------------------------------------------------------
+   The player
+   A small card in its own mix's colours. YouTube's player sits on top,
+   untouched and never under 200x200 (their embed policy); below it, the
+   song, a bar with one segment per song, and the controls.
+   -------------------------------------------------------------------------- */
+
+.tv {
+  --tv-bg: var(--bg);
+  --tv-raised: var(--bg-raised);
+  --tv-text: var(--text);
+  --tv-dim: var(--text-dim);
+  --tv-accent: var(--mix-accent);
+  --tv-on-accent: var(--on-accent);
+  --tv-line: var(--line);
+  position: fixed;
+  right: clamp(12px, 2vw, 24px);
+  bottom: clamp(12px, 2vw, 24px);
+  z-index: 70;
+  width: 360px;
+}
+
+.tv[hidden] {
+  display: none;
+}
+
+.tv__card {
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--tv-raised);
+  color: var(--tv-text);
+  box-shadow: 0 0 0 1px var(--tv-line), 0 24px 60px -24px rgba(0, 0, 0, 0.6);
+  animation: player-in 360ms var(--ease-out) both;
+}
+
+@keyframes player-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.tv__screen {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
+  background: #000;
+}
+
+.tv__host {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.tv__host iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.tv.is-ready .tv__host {
+  opacity: 1;
+}
+
+/* The cover stands in while YouTube loads, and again once the mix ends.
+   It is never over a playing video. */
+.tv__poster {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--tv-bg);
+  transition: opacity 300ms ease, visibility 0s linear 300ms;
+}
+
+.tv.is-ready:not(.is-ended) .tv__poster {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tv__poster-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tv__caption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  max-width: calc(100% - 24px);
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--tv-bg);
+  color: var(--tv-text);
+  font: 600 0.75rem/1.35 var(--font-ui);
+}
+
+.tv__caption a {
+  text-underline-offset: 0.2em;
+}
+
+/* Whenever a song (or the whole mix) won't play, the cover and its note sit
+   over YouTube's own error screen. */
+.tv.is-erroring .tv__poster,
+.tv.is-ready.is-erroring:not(.is-ended) .tv__poster {
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+}
+
+.tv:not(.is-ready):not(.is-blocked) .tv__caption {
+  animation: loading-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes loading-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* Compact: the song bar along the top, then one row with the keys, the
+   song, and the tools. With the 16:9 screen the card stays under 280px. */
+.tv__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 10px 10px;
+}
+
+.tv__row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.tv__sub {
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+  font: 500 0.74rem/1.3 var(--font-ui);
+  color: var(--tv-dim);
+  white-space: nowrap;
+}
+
+.tv__artist:not(:empty)::after {
+  content: "\00a0·\00a0";
+}
+
+.tv__mix {
+  min-width: 0;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--tv-dim);
+}
+
+.tv__mix:hover {
+  color: var(--tv-text);
+}
+
+.tv__tools {
+  display: flex;
+  flex: none;
+  gap: 0;
+  margin-right: -4px;
+}
+
+.tv__tool {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--tv-dim);
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tv__tool:hover {
+  background: color-mix(in oklab, var(--tv-text) 9%, transparent);
+  color: var(--tv-text);
+}
+
+.tv__now {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.tv__track {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 600 0.86rem/1.25 var(--font-ui);
+  color: var(--tv-text);
+}
+
+.tv__artist {
+  flex: none;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* One segment per song, as wide as the song is long; the one playing fills. */
+.tv__bar {
+  display: flex;
+  gap: 2px;
+}
+
+.tv__seg {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 4px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.tv__seg::before,
+.tv__seg-fill {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.tv__seg::before {
+  right: 0;
+  background: color-mix(in oklab, var(--tv-text) 18%, transparent);
+  transition: background-color 200ms ease;
+}
+
+.tv__seg.is-done::before {
+  background: color-mix(in oklab, var(--tv-accent) 60%, transparent);
+}
+
+.tv__seg.is-current::before {
+  background: color-mix(in oklab, var(--tv-accent) 28%, transparent);
+}
+
+.tv__seg:hover::before {
+  background: color-mix(in oklab, var(--tv-text) 42%, transparent);
+}
+
+.tv__seg-fill {
+  width: calc(var(--progress, 0) * 100%);
+  background: var(--tv-accent);
+}
+
+.tv__seg:not(.is-current) .tv__seg-fill {
+  display: none;
+}
+
+.tv__seg:focus-visible {
+  outline: 2px solid var(--tv-accent);
+  outline-offset: 1px;
+  border-radius: 3px;
+}
+
+.tv__keys {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.tv__key {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--tv-text);
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.tv__key:hover {
+  background: color-mix(in oklab, var(--tv-text) 9%, transparent);
+}
+
+.tv__key--main {
+  width: 36px;
+  height: 36px;
+  background: var(--tv-accent);
+  color: var(--tv-on-accent);
+  font-size: 1.15rem;
+}
+
+.tv__key--main:hover {
+  background: color-mix(in oklab, var(--tv-accent) 84%, var(--tv-text));
+}
+
+.tv__key:focus-visible,
+.tv__tool:focus-visible,
+.tv__puck:focus-visible {
+  outline: 2px solid var(--tv-accent);
+  outline-offset: 2px;
+}
+
+/* Minimised: the player pauses and folds down to a small pill. */
+.tv.is-tucked {
+  width: auto;
+}
+
+.tv.is-tucked .tv__card {
+  display: none;
+}
+
+.tv__puck {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 18px 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--tv-raised);
+  color: var(--tv-text);
+  font: 600 0.84rem/1 var(--font-ui);
+  cursor: pointer;
+  box-shadow: 0 0 0 1px var(--tv-line), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
+}
+
+.tv__puck .icon {
+  color: var(--tv-accent);
+}
+
+.tv__puck[hidden] {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Take it home: the inlay card
+   A cassette J-card, unfolded: inside flap, front, spine, back flap. All
+   sizes hang off --in (one inch), so print can set it to a real inch.
+   -------------------------------------------------------------------------- */
+
+.take-home {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.72fr) 1.28fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+.take-home .button-row {
+  margin-top: 22px;
+}
+
+.take-home__status {
+  min-height: 1.5em;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+/* On screen the card is drawn in the page's own dark colours, like every
+   other surface. Only print turns it into white card stock (see @media print). */
+.inlay {
+  --in: clamp(48px, 8.6vw, 88px);
+  --inlay-ground: var(--bg-raised);
+  --inlay-ink: var(--text);
+  --inlay-soft: var(--text-dim);
+  --inlay-faint: var(--text-faint);
+  --inlay-fold: var(--line-strong);
+  --inlay-label: var(--hand-ink, var(--mix-accent));
+  --inlay-spine: color-mix(in oklab, var(--mix-accent) 26%, var(--bg));
+  --inlay-spine-ink: var(--text);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.inlay__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: calc(var(--in) * 2.5) calc(var(--in) * 2.5) calc(var(--in) * 0.5) calc(var(--in) * 0.62);
+  /* One row, exactly the card's height, so a long list can never stretch
+     the spine and back flap past the cut line. */
+  grid-template-rows: calc(var(--in) * 4);
+  height: calc(var(--in) * 4);
+  color: var(--inlay-ink);
+  background-color: var(--inlay-ground);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+/* Crop marks just outside each corner. */
+.inlay__card::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  pointer-events: none;
+  --mark: var(--line);
+  background:
+    linear-gradient(var(--mark), var(--mark)) left 14px top 0 / 1px 9px no-repeat,
+    linear-gradient(var(--mark), var(--mark)) left 0 top 14px / 9px 1px no-repeat,
+    linear-gradient(var(--mark), var(--mark)) right 14px top 0 / 1px 9px no-repeat,
+    linear-gradient(var(--mark), var(--mark)) right 0 top 14px / 9px 1px no-repeat,
+    linear-gradient(var(--mark), var(--mark)) left 14px bottom 0 / 1px 9px no-repeat,
+    linear-gradient(var(--mark), var(--mark)) left 0 bottom 14px / 9px 1px no-repeat,
+    linear-gradient(var(--mark), var(--mark)) right 14px bottom 0 / 1px 9px no-repeat,
+    linear-gradient(var(--mark), var(--mark)) right 0 bottom 14px / 9px 1px no-repeat;
+}
+
+.inlay__panel {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  padding: calc(var(--in) * 0.14);
+}
+
+/* Fold lines between the panels. */
+.inlay__panel + .inlay__panel {
+  border-left: 1px dashed var(--inlay-fold);
+}
+
+.inlay__panel--inside {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--in) * 0.1);
+}
+
+.inlay__side-label {
+  display: inline-block;
+  margin: 0 0 calc(var(--in) * 0.03);
+  font-family: var(--inlay-marker), var(--font-marker);
+  font-size: calc(var(--in) * 0.15);
+  line-height: 1;
+  color: var(--inlay-label);
+}
+
+.inlay__tracks {
+  margin: 0;
+  padding-left: calc(var(--in) * 0.2);
+  font-family: var(--inlay-hand), var(--font-hand);
+  font-size: calc(var(--in) * 0.1);
+  line-height: 1.16;
+}
+
+.inlay__tracks li {
+  margin-bottom: calc(var(--in) * 0.018);
+  padding-left: calc(var(--in) * 0.02);
+}
+
+.inlay__tracks li::marker {
+  font-size: 0.8em;
+  color: var(--inlay-faint);
+}
+
+.inlay__tracks em {
+  font-style: normal;
+  opacity: 0.62;
+}
+
+.inlay__tracks li.is-favorite span {
+  text-decoration: underline wavy color-mix(in oklab, var(--inlay-label) 75%, transparent);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.1em;
+}
+
+.inlay--dense .inlay__tracks {
+  font-size: calc(var(--in) * 0.088);
+  line-height: 1.1;
+}
+
+/* Long mixes (more than 24 songs, see INLAY_PACKED_AFTER in build.js): the
+   two sides sit side by side on the inside flap, a size smaller, so every
+   song still fits on the card. */
+.inlay--packed .inlay__panel--inside {
+  flex-direction: row;
+  gap: calc(var(--in) * 0.08);
+  padding-inline: calc(var(--in) * 0.1);
+}
+
+.inlay--packed .inlay__side {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.inlay--packed .inlay__tracks {
+  padding-left: calc(var(--in) * 0.13);
+  font-size: calc(var(--in) * 0.07);
+  line-height: 1.07;
+}
+
+.inlay--packed .inlay__tracks li {
+  margin-bottom: calc(var(--in) * 0.012);
+  padding-left: 0;
+}
+
+.inlay__panel--front {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--in) * 0.06);
+}
+
+.inlay__cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--inlay-fold);
+}
+
+.inlay__cover--empty {
+  background: color-mix(in oklab, var(--mix-accent) 50%, var(--inlay-ground));
+}
+
+.inlay__title {
+  margin: calc(var(--in) * 0.06) 0 0;
+  font-family: var(--inlay-marker), var(--font-marker);
+  font-size: calc(var(--in) * 0.24);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.inlay__meta {
+  margin: 0;
+  font: 700 calc(var(--in) * 0.075) / 1.2 var(--font-ui);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--inlay-soft);
+}
+
+.inlay__panel--spine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--in) * 0.1);
+  padding: calc(var(--in) * 0.14) 0;
+  writing-mode: vertical-rl;
+  background: var(--inlay-spine);
+  color: var(--inlay-spine-ink);
+  font: 700 calc(var(--in) * 0.075) / 1 var(--font-ui);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.inlay__panel--spine strong {
+  overflow: hidden;
+  font-family: var(--inlay-marker), var(--font-marker);
+  font-size: calc(var(--in) * 0.17);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inlay__panel--back {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--in) * 0.16) calc(var(--in) * 0.08);
+  writing-mode: vertical-rl;
+  font: 700 calc(var(--in) * 0.07) / 1 var(--font-ui);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--inlay-soft);
+}
+
+.inlay__caption {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+}
+
+.inlay__caption::before {
+  content: "\2702";
+  margin-right: 8px;
+  font-family: var(--font-ui);
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Every Monday: the archive as a wall of Mondays since 2010
+   -------------------------------------------------------------------------- */
+
+.wall {
+  /* The pencil for margin notes (graphite on every page), and the page's
+     own accent for the dots on mixes that weren't on a Monday, fixed here so
+     a note or dot inside a cover's square doesn't pick up that cover. */
+  --wall-pen: var(--pencil);
+  --wall-dot: var(--hand-ink, var(--mix-accent));
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.wall__intro {
+  max-width: 760px;
+}
+
+.wall__intro h1 {
+  margin-bottom: 0.3em;
+}
+
+/* "December 27, 2010" never breaks across lines. */
+.wall__since {
+  white-space: nowrap;
+}
+
+.wall__intro .page-intro__copy {
+  text-wrap: pretty;
+}
+
+.wall__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.wall__row {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.wall__year {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font: 600 0.76rem/1 var(--font-ui);
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+}
+
+.wall__year--range {
+  gap: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+.wall__tally {
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--mix-accent);
+}
+
+.wall__months,
+.wall__weeks {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.wall__months {
+  font: 700 0.6rem/1 var(--font-ui);
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+}
+
+.wall__months span {
+  grid-column: var(--col);
+}
+
+.wall__weeks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wall__cell {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: var(--surface-strong);
+}
+
+/* Mondays before the first mix barely show: nothing was missed yet. */
+.wall__cell.is-before {
+  background: color-mix(in oklab, var(--surface-strong) 34%, transparent);
+}
+
+.wall__cell.is-future {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.wall__cell.is-next {
+  box-shadow: inset 0 0 0 2px var(--mix-accent);
+}
+
+/* A square with a margin note sits over its neighbours, under a hovered cover. */
+.wall__cell.has-note {
+  z-index: 4;
+}
+
+.wall__cell--mix {
+  z-index: 1;
+  background: var(--mix-accent);
+}
+
+.wall__cell--mix a {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+  transition: transform 280ms var(--ease-out), box-shadow 280ms var(--ease-out), border-radius 280ms ease;
+}
+
+.wall__cell--mix img,
+.wall__blank {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font: 700 0.5rem/1 var(--font-ui);
+  color: var(--mix-ink);
+}
+
+.wall__cell--mix:hover,
+.wall__cell--mix:focus-within {
+  z-index: 6;
+}
+
+.wall__cell--mix:hover a,
+.wall__cell--mix:focus-within a {
+  transform: scale(3.4);
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--line-strong), 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.wall__cell--mix a:focus-visible {
+  outline: 1px solid var(--text);
+}
+
+/* Not on a Monday (late or early): a small dot on the corner. */
+.wall__cell.is-late::after,
+.wall__cell.is-early::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  z-index: 2;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  /* One colour for every mix that wasn't on a Monday, the same as the legend. */
+  background: var(--wall-dot);
+  box-shadow: 0 0 0 2px var(--bg);
+  pointer-events: none;
+}
+
+.wall__tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(50% + 46px);
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 136px;
+  padding: 9px 13px 10px;
+  border-radius: var(--radius-md);
+  background: var(--bg-raised);
+  color: var(--text);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, 4px);
+  /* A line of the cover's own accent along the top ties the card to its square. */
+  box-shadow: inset 0 2px 0 var(--mix-accent), 0 0 0 1px var(--line), 0 16px 32px -14px rgba(0, 0, 0, 0.7);
+  transition: opacity 180ms ease, transform 240ms var(--ease-out);
+}
+
+.wall__tip-no {
+  margin-bottom: 2px;
+  font: 600 0.6rem/1.2 var(--font-ui);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: var(--mix-accent);
+}
+
+.wall__tip strong {
+  font-family: var(--font-display);
+  font-weight: 420;
+  font-size: 1.04rem;
+  line-height: 1.2;
+}
+
+.wall__tip em {
+  font: 400 0.76rem/1.35 var(--font-ui);
+  color: var(--text-dim);
+}
+
+.wall__tip .wall__tip-when {
+  color: var(--text);
+}
+
+.wall__cell--mix:hover .wall__tip,
+.wall__cell--mix:focus-within .wall__tip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.wall__cell:nth-child(-n + 5) .wall__tip {
+  left: -6px;
+  transform: translate(0, 4px);
+}
+
+.wall__cell:nth-child(-n + 5):hover .wall__tip,
+.wall__cell:nth-child(-n + 5):focus-within .wall__tip {
+  transform: none;
+}
+
+.wall__cell:nth-child(n + 47) .wall__tip {
+  left: auto;
+  right: -6px;
+  transform: translate(0, 4px);
+}
+
+.wall__cell:nth-child(n + 47):hover .wall__tip,
+.wall__cell:nth-child(n + 47):focus-within .wall__tip {
+  transform: none;
+}
+
+/* The quiet years: one band for the Mondays that never came, with a bracket
+   drawn by hand at each end. */
+.wall__row--quiet .wall__quiet {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 2px 14px;
+  min-height: 50px;
+  margin: 6px 0;
+  /* Clear of the brackets at each end, even when the words wrap on a phone. */
+  padding: 6px 24px;
+  text-align: center;
+}
+
+/* Once a mix has come back, its note sits in the foot of this band: the
+   words move to the end away from it (build.js sets data-aside). */
+.wall__row--quiet .wall__quiet[data-aside="start"] {
+  justify-content: flex-start;
+  padding-left: 40px;
+}
+
+.wall__row--quiet .wall__quiet[data-aside="end"] {
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+.hand-mark.wall__bracket {
+  --pen: 1.5;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 11px;
+  height: calc(100% - 6px);
+  color: var(--text-dim);
+}
+
+.hand-mark.wall__bracket--end {
+  left: auto;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.wall__quiet-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-dim);
+}
+
+.wall__count {
+  font: 500 0.78rem/1 var(--font-ui);
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+}
+
+.wall__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.wall__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wall__key {
+  position: relative;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+/* The keys are real squares from the wall: a cover, a late cover, next Monday. */
+.wall__key img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.wall__key--mix,
+.wall__key--late {
+  background: var(--surface-strong);
+}
+
+.wall__key--late::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--wall-dot);
+  box-shadow: 0 0 0 2px var(--bg);
+}
+
+.wall__key--next {
+  box-shadow: inset 0 0 0 2px var(--mix-accent);
+}
+
+/* Wall notes: a few words in the margin with an arrow to their square,
+   written in after the rows come in, in the order they happened. The note
+   sits beside (the first mix), above (the one that was nearly the last) or
+   below (next Monday) its square; data-side says which way it reads. */
+.wall__note {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--wall-pen);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.wall__note[hidden] {
+  display: none;
+}
+
+/* Two notes that would land on each other: the later one steps aside
+   (fitWallNotes in site.js). */
+.wall__note[data-crowded] {
+  visibility: hidden;
+}
+
+/* A note steps aside while its cover is zoomed under the pointer. */
+.wall__note {
+  transition: opacity 200ms ease;
+}
+
+.wall__cell--mix:is(:hover, :focus-within) .wall__note {
+  opacity: 0;
+}
+
+.wall__note .hand-note {
+  --note-size: 2rem;
+  text-wrap: nowrap;
+}
+
+.hand-mark.wall__arrow {
+  flex: none;
+  width: 40px;
+  height: 18px;
+  stroke-width: 5;
+}
+
+.wall__note--first {
+  top: 50%;
+  margin-top: -9px;
+}
+
+.wall__note--first[data-side="west"] {
+  right: calc(100% + 3px);
+}
+
+.wall__note--first[data-side="east"] {
+  left: calc(100% + 3px);
+  flex-direction: row-reverse;
+}
+
+.wall__note--first[data-side="east"] .wall__arrow {
+  transform: scaleX(-1);
+}
+
+/* Above its square: the mix that was nearly the last, and the one that came
+   back (it sits in the foot of the quiet years band). */
+.wall__note--almost,
+.wall__note--back {
+  bottom: calc(100% + 2px);
+  align-items: flex-end;
+}
+
+.wall__note--almost[data-side="east"],
+.wall__note--back[data-side="east"] {
+  left: 40%;
+  flex-direction: row-reverse;
+}
+
+.wall__note--almost[data-side="east"] .wall__arrow,
+.wall__note--back[data-side="east"] .wall__arrow {
+  transform: scaleX(-1) rotate(30deg);
+}
+
+.wall__note--almost[data-side="west"],
+.wall__note--back[data-side="west"] {
+  right: 40%;
+}
+
+.wall__note--almost[data-side="west"] .wall__arrow,
+.wall__note--back[data-side="west"] .wall__arrow {
+  transform: rotate(30deg);
+}
+
+.wall__note--almost .hand-note,
+.wall__note--back .hand-note {
+  padding-bottom: 7px;
+}
+
+.wall__note--next {
+  top: calc(100% + 3px);
+  align-items: flex-start;
+}
+
+.wall__note--next[data-side="east"] {
+  left: 40%;
+  flex-direction: row-reverse;
+}
+
+.wall__note--next[data-side="east"] .wall__arrow {
+  transform: rotate(180deg);
+}
+
+.wall__note--next[data-side="west"] {
+  right: 40%;
+}
+
+.wall__note--next[data-side="west"] .wall__arrow {
+  transform: scaleY(-1);
+}
+
+.wall__note--next .hand-note {
+  padding-top: 9px;
+}
+
+/* Room under the last row for the note on next Monday. */
+.wall__grid:has(.wall__note--next:not([hidden])) {
+  padding-bottom: 30px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wall__row {
+    animation: wall-row-in 640ms var(--ease-out) backwards;
+    animation-delay: calc(120ms + var(--row, 0) * 80ms);
+  }
+
+  .wall__legend {
+    animation: wall-row-in 640ms var(--ease-out) 820ms backwards;
+  }
+
+}
+
+@keyframes wall-row-in {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Panels, cards, misc shared surfaces
+   -------------------------------------------------------------------------- */
+
+.callout-panel,
+.resource-card,
+.provider-card,
+.embed-card,
+.related-card,
+.adjacent-card,
+.note-card,
+.stat-card,
+.favorite-card {
+  padding: 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.related-card,
+.adjacent-card,
+.note-card__link {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform var(--speed) var(--ease-out), border-color var(--speed) var(--ease-out), background var(--speed) var(--ease-out);
+}
+
+.related-card:hover,
+.adjacent-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--mix-accent) 40%, var(--line));
+  background: var(--surface-strong);
+}
+
+.related-card p,
+.adjacent-card p,
+.note-card p,
+.resource-card p,
+.provider-card p,
+.callout-panel p {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+/* Every eyebrow is set like .eyebrow. The p-qualified selectors outrank the
+   card rules above that size a card's paragraphs at 0.92rem. */
+.callout-panel__eyebrow,
+.resource-card__eyebrow,
+.provider-card__eyebrow,
+.related-card__meta,
+.adjacent-card__eyebrow,
+.note-card__meta,
+.favorite-card__meta,
+.stat-card__label,
+p.callout-panel__eyebrow,
+p.adjacent-card__eyebrow,
+p.related-card__meta {
+  margin: 0 0 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  color: var(--mix-accent);
+}
+
+.related-list,
+.adjacent-grid,
+.resource-grid,
+.provider-grid,
+.notes-grid,
+.stats-grid,
+.favorite-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.provider-card--uncertain {
+  opacity: 0.75;
+}
+
+.embed-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.embed-card__frame {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.embed-card__frame iframe {
+  width: 100%;
+  min-height: 152px;
+  border: 0;
+  display: block;
+}
+
+.legacy-embed iframe {
+  width: 100%;
+  border: 0;
+}
+
+.listening-subsection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.listening-subsection__title {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-faint);
+}
+
+.listening-section__intro,
+.listening-section__summary {
+  color: var(--text-dim);
+  max-width: 60ch;
+}
+
+.empty-state {
+  max-width: 480px;
+}
+
+/* --------------------------------------------------------------------------
+   Archive rows (legacy list style, still used by studio/notes)
+   -------------------------------------------------------------------------- */
+
+.list-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  padding: 24px 16px;
+  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+  transition: background var(--speed) var(--ease-out);
+}
+
+.archive-row:hover {
+  background: var(--surface);
+}
+
+.archive-row h2,
+.archive-row h3 {
+  margin-bottom: 6px;
+}
+
+.archive-row p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.archive-row__meta,
+.archive-row__submeta {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+}
+
+.archive-row__meta { margin-bottom: 6px; }
+
+/* --------------------------------------------------------------------------
+   Discovery (search & filters)
+   -------------------------------------------------------------------------- */
+
+/* Laid out like the split sections on a mix page: the heading on the left,
+   the search on the right, the filters along the bottom. */
+.discovery-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) 1.6fr;
+  column-gap: clamp(28px, 5vw, 72px);
+  row-gap: 22px;
+  align-items: end;
+  padding-top: clamp(36px, 6vh, 56px);
+  border-top: 1px solid var(--line);
+}
+
+.discovery-panel__header h2 {
+  margin-bottom: 0.25em;
+}
+
+.discovery-panel__header .supporting-copy {
+  font-size: 0.92rem;
+}
+
+.discovery-panel__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.discovery-search {
+  display: flex;
+  flex-direction: column;
+}
+
+/* The heading beside it says what the box is for; the label stays for
+   screen readers. */
+.discovery-search__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.discovery-search__input {
+  min-height: 52px;
+  padding: 14px 16px 14px 46px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b93a1' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.6-3.6'/%3E%3C/svg%3E") no-repeat 16px 50% / 18px 18px;
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  transition: border-color var(--speed) var(--ease-out), background-color var(--speed) var(--ease-out), box-shadow var(--speed) var(--ease-out);
+}
+
+.discovery-search__input::placeholder {
+  color: var(--text-faint);
+}
+
+.discovery-search__input:hover {
+  border-color: var(--text-faint);
+}
+
+.discovery-search__input:focus {
+  outline: none;
+  border-color: var(--mix-accent);
+  background-color: var(--surface-strong);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--mix-accent) 22%, transparent);
+}
+
+.discovery-filter-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.discovery-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-dim);
+  font: 500 0.82rem/1 var(--font-ui);
+  cursor: pointer;
+  transition: border-color var(--speed) var(--ease-out), color var(--speed) var(--ease-out), background-color var(--speed) var(--ease-out), translate var(--speed) var(--ease-out);
+}
+
+.discovery-filter:hover {
+  border-color: var(--line-strong);
+  color: var(--text);
+  translate: 0 -1px;
+}
+
+.discovery-filter:focus-visible {
+  outline: 2px solid var(--mix-accent);
+  outline-offset: 2px;
+}
+
+.discovery-filter.is-active {
+  background: var(--mix-accent);
+  border-color: var(--mix-accent);
+  color: var(--on-accent);
+  translate: none;
+}
+
+.discovery-filter__count {
+  font-size: 0.74rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-faint);
+}
+
+.discovery-filter.is-active .discovery-filter__count {
+  color: inherit;
+  opacity: 0.72;
+}
+
+.discovery-panel__summary {
+  min-height: 1.4em;
+  padding-left: 2px;
+  font-size: 0.82rem;
+  color: var(--text-faint);
+}
+
+@media (max-width: 960px) {
+  .discovery-panel {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Studio & utility lists
+   -------------------------------------------------------------------------- */
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.stat-card strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 370;
+}
+
+.action-list,
+.command-list,
+.highlight-list,
+.track-fallback-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.command-list li,
+.action-list li {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+.command-list code {
+  color: var(--mix-accent);
+  font-size: 0.85em;
+}
+
+.highlight-list li {
+  color: var(--text-dim);
+}
+
+.track-fallback-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.track-fallback-list__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.track-fallback-list__meta {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.track-fallback-list__actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   About page — manifesto treatment
+   -------------------------------------------------------------------------- */
+
+.about-hero {
+  position: relative;
+  min-height: min(78vh, 760px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 calc(50% - 50vw);
+  padding: 0 calc(50vw - 50%);
+  overflow: visible;
+}
+
+.about-hero__field {
+  position: absolute;
+  inset: -40px 0;
+  pointer-events: none;
+  mask-image: radial-gradient(135% 135% at 50% 50%, black 68%, transparent 108%);
+  -webkit-mask-image: radial-gradient(135% 135% at 50% 50%, black 68%, transparent 108%);
+}
+
+.about-hero__tile {
+  position: absolute;
+  display: block;
+  transform: translate(calc(var(--px, 0) * var(--depth) * -26px), calc(var(--py, 0) * var(--depth) * -20px));
+  transition: transform 600ms var(--ease-out);
+  will-change: transform;
+}
+
+.about-hero__tile img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px -20px color-mix(in oklab, var(--mix-glow) 90%, black);
+  transform: rotate(var(--rot, 0deg));
+  opacity: calc(0.35 + var(--depth) * 0.35);
+  filter: saturate(0.9) brightness(0.72) blur(calc((1 - var(--depth)) * 1.5px));
+  animation: tile-float calc(7s + var(--depth) * 5s) ease-in-out infinite alternate;
+}
+
+.about-hero__tile:nth-child(even) img { animation-delay: -3.5s; }
+.about-hero__tile:nth-child(3n) img { animation-delay: -6s; }
+
+@keyframes tile-float {
+  from { transform: rotate(var(--rot, 0deg)) translateY(-7px); }
+  to { transform: rotate(var(--rot, 0deg)) translateY(9px); }
+}
+
+.about-hero__inner {
+  position: relative;
+  max-width: 900px;
+  z-index: 1;
+}
+
+.about-hero__headline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 360;
+  font-size: clamp(2.1rem, 5.2vw, 4.1rem);
+  line-height: 1.16;
+  letter-spacing: -0.012em;
+  margin: 0;
+  /* pretty, not balance: no lone last word ("week.") on a phone. */
+  text-wrap: pretty;
+  text-shadow: 0 4px 60px rgba(5, 4, 10, 0.9), 0 1px 12px rgba(5, 4, 10, 0.8);
+}
+
+.about-hero__word {
+  display: inline-block;
+}
+
+.about-hero.reveal .about-hero__word {
+  opacity: 0;
+  transform: translateY(0.55em) rotate(1.5deg);
+}
+
+.about-hero.reveal.is-revealed .about-hero__word {
+  opacity: 1;
+  transform: none;
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+  transition-delay: calc(120ms + var(--wi) * 42ms);
+}
+
+.about-hero__scrollcue {
+  margin-top: 44px;
+  font-size: 1.2rem;
+  color: var(--text-faint);
+  animation: cue-drop 2.2s var(--ease-out) infinite;
+}
+
+@keyframes cue-drop {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 3fr);
+  gap: clamp(24px, 5vw, 64px);
+  max-width: 980px;
+}
+
+.about-intro__rule {
+  height: 1px;
+  margin-top: 0.85em;
+  background: linear-gradient(to right, var(--mix-accent), transparent);
+}
+
+.about-hero__intro {
+  columns: 2 300px;
+  column-gap: 48px;
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-hero__intro p {
+  break-inside: avoid;
+  margin: 0 0 1em;
+}
+
+.about-hero__intro p:first-child::first-letter {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 3.4em;
+  line-height: 0.78;
+  float: left;
+  padding: 6px 12px 0 0;
+  color: var(--mix-accent);
+}
+
+/* Cover marquee — the archive drifting past */
+
+.cover-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0 calc(50% - 50vw);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.cover-marquee__row {
+  display: flex;
+  width: max-content;
+}
+
+.cover-marquee__strip {
+  display: flex;
+  /* Covers come in three sizes; centre them so the small ones aren't
+     stretched into frames taller than their artwork. */
+  align-items: center;
+  gap: 18px;
+  padding-right: 18px;
+  animation: marquee 90s linear infinite;
+}
+
+.cover-marquee__row--reverse .cover-marquee__strip {
+  animation-direction: reverse;
+  animation-duration: 110s;
+}
+
+.cover-marquee__row:hover .cover-marquee__strip {
+  animation-play-state: paused;
+}
+
+/* Off screen, or in a hidden tab, nothing on the about page keeps moving
+   (initStillAway in site.js sets .is-still). */
+.cover-marquee.is-still .cover-marquee__strip,
+.about-hero.is-still .about-hero__tile img,
+.about-hero.is-still .about-hero__scrollcue {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.cover-marquee__row {
+  padding: 14px 0;
+}
+
+.cover-marquee__tile {
+  display: block;
+  width: clamp(120px, 14vw, 170px);
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  filter: saturate(0.85) brightness(0.85);
+  transition: filter var(--speed) var(--ease-out), transform var(--speed) var(--ease-out), box-shadow var(--speed) var(--ease-out);
+}
+
+.cover-marquee__tile:nth-child(3n) {
+  width: clamp(96px, 11vw, 136px);
+  transform: translateY(10px) rotate(1.4deg);
+}
+
+.cover-marquee__tile:nth-child(4n + 1) {
+  transform: translateY(-8px) rotate(-1.2deg);
+}
+
+.cover-marquee__tile:nth-child(5n + 2) {
+  width: clamp(140px, 16vw, 196px);
+  transform: translateY(4px) rotate(0.8deg);
+}
+
+.cover-marquee__tile img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.cover-marquee__tile:hover {
+  filter: none;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 18px 48px -16px color-mix(in oklab, var(--mix-accent) 45%, black);
+}
+
+/* Stats strip */
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 34px 0;
+}
+
+.about-stats__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.about-stats__value {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 320;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1;
+  color: var(--text);
+}
+
+.about-stats__label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--text-faint);
+}
+
+/* The number of mixes, with a loop drawn round it once it has counted up.
+   The number keeps its final width while it counts, so the loop holds still. */
+.about-stats__circled {
+  align-self: center;
+}
+
+.about-stats__circled .about-stats__value {
+  display: inline-block;
+  min-width: calc(var(--digits, 1) * 0.56em);
+}
+
+.about-stats .about-stats__circled > .hand-mark {
+  --pen: 1.6;
+  left: -24%;
+  top: -10%;
+  width: 148%;
+  height: 120%;
+}
+
+/* Chapters */
+
+.about-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(56px, 9vh, 96px);
+  max-width: 820px;
+}
+
+.about-chapter {
+  position: relative;
+  padding: 12px 0 12px clamp(20px, 8vw, 110px);
+  /* Linked straight to (#why-it-stopped), a chapter lands clear of the sticky header. */
+  scroll-margin-top: 104px;
+}
+
+.about-chapter__ghost {
+  position: absolute;
+  left: -18px;
+  top: -48px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(9rem, 22vw, 17rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(242, 239, 247, 0.09);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-chapter__head,
+.about-chapter__body {
+  position: relative;
+  z-index: 1;
+}
+
+.about-chapter__head {
+  margin-bottom: 22px;
+}
+
+.about-chapter__head h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+}
+
+.about-chapter__pull {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  border-left: 2px solid var(--mix-accent);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.about-chapter .prose p {
+  text-wrap: pretty;
+}
+
+/* Each chapter arrives in order: its number, then the heading, then the words. */
+.about-chapter.reveal .about-chapter__ghost,
+.about-chapter.reveal .about-chapter__body {
+  opacity: 0;
+  transition: opacity 900ms var(--ease-out), translate 900ms var(--ease-out);
+}
+
+.about-chapter.reveal .about-chapter__ghost {
+  translate: -14px 0;
+}
+
+.about-chapter.reveal .about-chapter__body {
+  translate: 0 12px;
+  transition-delay: 160ms;
+}
+
+.about-chapter.reveal.is-revealed .about-chapter__ghost,
+.about-chapter.reveal.is-revealed .about-chapter__body {
+  opacity: 1;
+  translate: none;
+}
+
+/* The one line in the story with a pen stroke under it. */
+.about-underlined {
+  color: var(--text);
+}
+
+/* Closing */
+
+.about-closing {
+  text-align: center;
+  padding: clamp(32px, 8vh, 72px) 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.about-closing__line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 340;
+  font-size: clamp(2.4rem, 7vw, 4.8rem);
+  line-height: 1.1;
+  margin: 8px 0 20px;
+  color: var(--text);
+}
+
+/* Once the comeback mix is out, the line links to it. */
+.about-closing__link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in oklab, var(--hand-ink, var(--mix-accent)) 45%, transparent);
+  text-underline-offset: 0.16em;
+  transition: color var(--speed) var(--ease-out), text-decoration-color var(--speed) var(--ease-out);
+}
+
+.about-closing__link:hover {
+  color: var(--hand-ink, var(--mix-accent));
+  text-decoration-color: currentColor;
+}
+
+.about-closing__link:focus-visible {
+  outline: 2px solid var(--mix-accent);
+  outline-offset: 6px;
+  border-radius: var(--radius-sm);
+}
+
+.about-closing__body {
+  max-width: 52ch;
+  margin: 0 auto;
+  color: var(--text-dim);
+}
+
+/* Signed at the end of the story, with just his initial. */
+.about-closing .about-closing__sign {
+  /* The width of the paragraph above (52ch of body text, not of this face). */
+  --note-size: 3.8rem;
+  --note-delay: 500ms;
+  display: block;
+  max-width: 29rem;
+  margin: 18px auto 0;
+  padding-right: 0.4em;
+  text-align: right;
+  transform-origin: 100% 70%;
+  rotate: -3deg;
+}
+
+.about-closing .about-closing__sign + .button-row {
+  margin-top: 18px;
+}
+
+.about-closing .button-row {
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   Hand marks and notes
+   A pencil, for the odd margin note, like a person annotating their own
+   pages: Reenie Beanie in graphite, and pen strokes drawn twice over.
+   handMark() and handNote() in scripts/build.js write the markup;
+   initHandMarks() in site.js redraws each mark in pencil with rough.js at
+   its measured size, sets each note's words a little off, and writes both
+   on as they scroll into view.
+   - The ink is --pencil (marks) and --pencil-note (notes, a shade lighter),
+     the same on every page. Marks carry the full graphite grain; notes a
+     lighter one, so small letters don't break up.
+   - --pen sets the pen width in pixels (default 2); --draw-delay and
+     --draw-duration time a mark; --note-delay times a note.
+   - Annotations, never objects: no paper, no tape, no tilt on controls,
+     no shadows. A few per page at most.
+   -------------------------------------------------------------------------- */
+
+.hand-note {
+  --note-size: 2.3rem;
+  display: inline-block;
+  font-family: var(--font-note);
+  font-weight: 400;
+  font-size: var(--note-size);
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--pencil-note);
+  /* A hairline of the same graphite thickens Reenie Beanie's thin strokes
+     just enough to read on a phone, without changing the letters. */
+  -webkit-text-stroke: 0.35px currentColor;
+  transform: rotate(-2.5deg);
+  transform-origin: 0 70%;
+  text-wrap: balance;
+  filter: url(#pencil-grain-text);
+}
+
+/* One word, set a little off by site.js (prepNote). The padding gives the
+   write-on mask room for the letters' tails. */
+.hand-note .hw {
+  display: inline-block;
+  padding: 0.2em 0.24em;
+  margin: -0.2em -0.24em;
+  transform: translateY(var(--y, 0em)) rotate(var(--r, 0deg)) scale(var(--s, 1));
+  transform-origin: 50% 70%;
+}
+
+/* Waiting to be written (site.js only sets this when it will write it). */
+.hand-note.is-unwritten {
+  visibility: hidden;
+}
+
+/* Being written: a soft edge wipes across the word at a steady speed. */
+.hand-note .hw.is-writing {
+  -webkit-mask-image: linear-gradient(90deg, #000 0 38%, transparent 62% 100%);
+  mask-image: linear-gradient(90deg, #000 0 38%, transparent 62% 100%);
+  -webkit-mask-size: 260% 100%;
+  mask-size: 260% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 0% 0;
+  mask-position: 0% 0;
+}
+
+.hand-mark {
+  --pen: 2;
+  display: block;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: var(--pencil);
+  pointer-events: none;
+}
+
+/* Drawn in pencil: the clean paths step aside for the sketched ones. */
+.hand-mark.is-pencil {
+  filter: url(#pencil-grain);
+}
+
+.hand-mark.is-pencil > path {
+  display: none;
+}
+
+.hand-mark > path {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 0;
+}
+
+/* Without rough.js: the clean paths wait, undrawn, until site.js sees them
+   on screen; a second stroke (an arrowhead) follows the first. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hand-mark:not(.is-drawn) > path {
+    stroke-dashoffset: 1;
+  }
+
+  .hand-mark.is-drawn > path {
+    transition: stroke-dashoffset var(--draw-duration, 850ms) cubic-bezier(0.65, 0.05, 0.36, 1) var(--draw-delay, 0ms);
+  }
+
+  .hand-mark.is-drawn > path + path {
+    transition-duration: 260ms;
+    transition-delay: calc(var(--draw-delay, 0ms) + var(--draw-duration, 850ms) - 40ms);
+  }
+}
+
+/* A word underlined by hand. */
+.hand-underlined {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hand-underlined > .hand-mark {
+  position: absolute;
+  left: -2%;
+  bottom: -0.16em;
+  width: 104%;
+  height: 0.3em;
+}
+
+/* A word or number with a loop drawn round it. */
+.hand-circled {
+  position: relative;
+  display: inline-block;
+}
+
+.hand-circled > .hand-mark {
+  --pen: 1.6;
+  position: absolute;
+  left: -22%;
+  top: -48%;
+  width: 144%;
+  height: 196%;
+}
+
+/* A short note with an arrow off its end. */
+.hand-callout {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.hand-callout > .hand-mark {
+  width: 58px;
+  height: auto;
+}
+
+/* "No.037": the one way a mix number is written as a label (mixNoLabel in
+   build.js). It stays in mixed case inside uppercase eyebrows. */
+.mix-no {
+  text-transform: none;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   Home
+   The whole archive drifts past in tilted columns behind the wordmark, and
+   the current mix sits in front of it, still and lit. Hover a column and it
+   stops; the cover under the pointer lights up and opens its mix. While the
+   featured mix plays, the whole wall comes up a little.
+   Everything is drawn from the page tokens, so the wall is veiled in the
+   featured mix's own ground colour.
+   -------------------------------------------------------------------------- */
+
+body:has(.home-hero) .site-main {
+  padding-top: 0;
+}
+
+.home-hero {
+  /* Tiles are sized so one column of six always outruns the hero, whatever
+     the window's shape, and the loop never shows a gap. */
+  --tile: max(15.5vw, calc(18vh + 2.5vw));
+  --tile: max(15.5vw, calc(18svh + 2.5vw));
+  --wall-gap: clamp(10px, 1.1vw, 18px);
+  --veil: 0.7;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: calc(100vh - 66px);
+  min-height: calc(100svh - 66px);
+  margin: 0 calc(50% - 50vw);
+  padding: 0 calc(50vw - 50%);
+  overflow: hidden;
+}
+
+/* The ground creeps up from the bottom and in from the left, so the words
+   always sit on the page colour, and the wall shows clearest up and right. */
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, var(--bg), transparent 14%),
+    linear-gradient(to top, var(--bg) 3%, color-mix(in oklab, var(--bg) 82%, transparent) 30%, transparent 64%),
+    radial-gradient(110% 80% at 0% 100%, color-mix(in oklab, var(--bg) 78%, transparent) 20%, transparent 70%);
+}
+
+.home-hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: end;
+  /* Sized by height as well as width, so the wordmark, the featured title
+     and Play sit above the fold on short laptop windows too. */
+  padding: clamp(56px, 11vh, 140px) 0 clamp(28px, 5vh, 72px);
+  padding: clamp(56px, 11svh, 140px) 0 clamp(28px, 5svh, 72px);
+  /* Empty space lets the pointer through to the wall. */
+  pointer-events: none;
+}
+
+.home-hero__inner :is(h1, h2, p, a, button) {
+  pointer-events: auto;
+}
+
+.home-hero__wordmark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 330;
+  font-size: min(clamp(3.5rem, 10.4vw, 9.6rem), 15.5vh);
+  font-size: min(clamp(3.5rem, 10.4vw, 9.6rem), 15.5svh);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  text-shadow: 0 2px 48px color-mix(in oklab, var(--bg) 85%, transparent);
+}
+
+.home-hero__line {
+  display: block;
+  overflow: hidden;
+  /* Room for the italic overhang and the descenders inside the mask. */
+  padding: 0.04em 0.16em 0.14em 0.04em;
+  margin: -0.04em -0.16em -0.14em -0.04em;
+}
+
+.home-hero__line > span {
+  display: inline-block;
+  animation: home-rise 1100ms var(--ease-out) both;
+  animation-delay: calc(200ms + var(--li) * 120ms);
+}
+
+/* "is back." stays in the text colour; a pen stroke goes under "back." once
+   the words are up. */
+.home-hero__back > .hand-mark {
+  --pen: 3;
+  bottom: 0.01em;
+  height: 0.16em;
+}
+
+.home-hero__tagline {
+  margin: 26px 0 0;
+  max-width: 42ch;
+  text-wrap: pretty;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--text-dim);
+  animation: home-fade 900ms var(--ease-out) 640ms both;
+}
+
+.home-hero--empty {
+  min-height: 0;
+}
+
+.home-hero--empty .home-hero__inner {
+  grid-template-columns: 1fr;
+  padding-top: clamp(40px, 7vh, 84px);
+}
+
+/* The current mix */
+
+/* One entrance, in order: the wall comes up, the wordmark rises line by
+   line, the cover lifts in, its words follow, and last of all the pen
+   writes its note. */
+.home-now {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+  transition: margin-bottom 480ms var(--ease-out);
+}
+
+/* A soft pool of the page colour behind the current mix, so busy tiles
+   don't crowd it. */
+.home-now::before {
+  content: "";
+  position: absolute;
+  inset: -14% -22% -12% -22%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--bg) 82%, transparent) 55%, transparent);
+}
+
+.home-now > * {
+  animation: home-fade 900ms var(--ease-out) both;
+}
+
+.home-now > .home-now__cover {
+  animation-name: home-lift-in;
+  animation-duration: 1100ms;
+  animation-delay: 420ms;
+}
+
+.home-now > .home-now__head { animation-delay: 600ms; }
+.home-now > .home-now__note { animation-delay: 700ms; }
+.home-now > .home-now__actions { animation-delay: 800ms; }
+
+.home-now__cover {
+  display: block;
+  width: min(100%, 36vh);
+  width: min(100%, 36svh);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--line), 0 34px 80px -28px rgba(0, 0, 0, 0.85);
+  transition: transform 600ms var(--ease-out), box-shadow 600ms var(--ease-out);
+}
+
+.home-now__cover img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.home-now__cover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 0 1px var(--line-strong), 0 44px 90px -30px rgba(0, 0, 0, 0.9);
+}
+
+.home-now__head {
+  margin-top: 6px;
+}
+
+.home-now__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 10px;
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mix-accent);
+}
+
+/* The mix number in italic Fraunces, the way the about page sets its numbers. */
+.home-now__n {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 340;
+  font-size: 1.75em;
+  line-height: 0;
+  letter-spacing: 0;
+  text-transform: none;
+  font-variant-numeric: lining-nums;
+  color: var(--text);
+}
+
+.home-now__dot {
+  color: var(--text-faint);
+}
+
+.home-now__circled {
+  padding-right: 0.1em;
+}
+
+/* Under the buttons, a note in the margin with an arrow up to Play. */
+.home-now__callout {
+  flex-basis: 100%;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 2px;
+  padding-left: 30px;
+  pointer-events: none;
+  /* The note writes once the buttons are up; its arrow follows. */
+  --note-delay: 1250ms;
+}
+
+/* The home note has the most room, so it's the biggest. */
+.home-now__callout > .hand-note {
+  --note-size: 2.6rem;
+  padding-top: 8px;
+}
+
+/* The swoop, turned so its head points up at the button. */
+.home-now__callout > .hand-mark {
+  flex: none;
+  width: 60px;
+  margin-top: 2px;
+  transform: rotate(38deg) scale(-1, -1);
+}
+
+.home-now__title {
+  margin: 0;
+  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+  line-height: 1.05;
+}
+
+/* Home type scale, Inter: 0.72rem (eyebrows), 0.85rem (footer), 0.92rem
+   (notes and buttons), 1rem (body), 1.25rem (the hero line). Fraunces: 340,
+   and 370 for headings; the wordmark keeps its own 330. */
+.home-now__note {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  text-wrap: pretty;
+}
+
+.home-now__actions {
+  margin-top: 4px;
+}
+
+.home-more .text-link:focus-visible,
+.home-story .text-link:focus-visible,
+.comeback a:focus-visible {
+  outline: 2px solid var(--mix-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* The wall */
+
+.home-wall {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  animation: home-wall-in 2600ms var(--ease-out) both;
+}
+
+.home-wall__tilt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--wall-gap);
+  /* Just tall enough that the tilted columns still cover every corner. */
+  height: calc(102% + 13vw);
+  transform: translate(-50%, -50%) rotate(-7deg);
+}
+
+/* Each column fades up in turn, left to right, already drifting. */
+.home-wall__col {
+  flex: none;
+  width: var(--tile);
+  animation:
+    home-drift var(--loop) linear infinite,
+    home-col-in 1400ms var(--ease-out) both;
+  animation-delay: calc(var(--loop) * var(--phase) * -1), calc(var(--ci) * 70ms);
+  will-change: transform;
+}
+
+.home-wall__col--down {
+  animation-direction: reverse, normal;
+}
+
+.home-wall__col:hover,
+.home-wall.is-still .home-wall__col {
+  animation-play-state: paused;
+}
+
+.home-wall__tile {
+  position: relative;
+  display: block;
+  margin-bottom: var(--wall-gap);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.home-wall__tile img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: saturate(0.8);
+  transition: filter 1400ms var(--ease-out);
+}
+
+.home-wall__tile:hover img {
+  filter: none;
+  transition-duration: 260ms;
+}
+
+/* The veil is the page ground laid over each cover. */
+.home-wall__tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  opacity: var(--veil);
+  pointer-events: none;
+  transition: opacity 1400ms var(--ease-out);
+}
+
+.home-wall__tile:hover::after {
+  opacity: 0.02;
+  transition-duration: 260ms;
+}
+
+.home-wall__link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+/* Hovering a tile shows its number and name in the margin hand, over a
+   little shade at the foot of the cover. */
+.home-wall__tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top, color-mix(in oklab, var(--bg) 88%, transparent), transparent 46%);
+  opacity: 0;
+  transition: opacity 260ms var(--ease-out);
+}
+
+.home-wall__caption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  z-index: 2;
+  --note-size: 1.9rem;
+  line-height: 0.95;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  translate: 0 6px;
+  pointer-events: none;
+  transition: opacity 260ms var(--ease-out), translate 260ms var(--ease-out);
+}
+
+.home-wall__tile:hover::before,
+.home-wall__tile:hover .home-wall__caption {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* On a touch screen a tap on the drifting wall shouldn't open a random mix. */
+@media (hover: none) {
+  .home-wall__link,
+  .home-wall__caption {
+    display: none;
+  }
+}
+
+/* While the featured mix plays, the wall comes up a little, still muted. */
+.home-hero:has([data-play-mix][aria-pressed="true"]) {
+  --veil: 0.55;
+}
+
+.home-hero:has([data-play-mix][aria-pressed="true"]) .home-wall__tile img {
+  filter: saturate(0.85);
+}
+
+@keyframes home-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, -50%, 0); }
+}
+
+@keyframes home-wall-in {
+  from { transform: scale(1.06); }
+  to { transform: none; }
+}
+
+@keyframes home-col-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes home-rise {
+  from { transform: translateY(108%); }
+  to { transform: none; }
+}
+
+/* The entrances move with `translate`, so hover lifts (transform) still work. */
+@keyframes home-fade {
+  from { opacity: 0; translate: 0 14px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes home-lift-in {
+  from { opacity: 0; translate: 0 28px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* Below the wall */
+
+/* The link sits on the heading's baseline, not under its margin. */
+.home-more .section-heading {
+  align-items: last baseline;
+}
+
+.home-more .section-heading h2 {
+  margin-bottom: 0;
+}
+
+/* Earlier mixes: four covers, larger, each with the wall's handwritten
+   caption on hover (always showing on a touch screen). */
+.home-more__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 32px);
+}
+
+.home-more__item {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.home-more__art {
+  display: block;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.8);
+}
+
+.home-more__art img,
+.home-more__blank {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.home-more__blank {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--text-faint);
+  background: var(--surface);
+}
+
+.home-more__art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(to top, color-mix(in oklab, var(--bg) 88%, transparent), transparent 46%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms var(--ease-out);
+}
+
+.home-more__caption {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  font-size: 1.18rem;
+  line-height: 1.15;
+  color: var(--text);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  translate: 0 6px;
+  pointer-events: none;
+  transition: opacity 260ms var(--ease-out), translate 260ms var(--ease-out);
+}
+
+.home-more__item:is(:hover, :focus-visible) .home-more__art::after,
+.home-more__item:is(:hover, :focus-visible) .home-more__caption {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (hover: none) {
+  .home-more__art::after,
+  .home-more__caption {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* Covers lift a little under the pointer. */
+.home-more__art,
+.comeback__art {
+  transition: transform 500ms var(--ease-out), box-shadow 500ms var(--ease-out), border-color 500ms var(--ease-out);
+}
+
+.home-more__item:hover .home-more__art,
+.comeback__end:hover .comeback__art {
+  transform: translateY(-5px);
+}
+
+.home-more__item:hover .home-more__art,
+.comeback__end:hover .comeback__art {
+  box-shadow: 0 30px 70px -26px rgba(0, 0, 0, 0.85);
+}
+
+/* The story beside the archive's figures. */
+.home-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+}
+
+.home-story__lede {
+  margin: 0 0 22px;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  font-weight: 340;
+  line-height: 1.3;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.home-story__more {
+  margin-top: 22px;
+}
+
+.home-story .prose {
+  font-size: 1rem;
+}
+
+/* 36 mixes, 423 songs, 16 starred, since 2010: the about page's italic
+   numbers, counted up as they come into view. */
+.home-tally__figures {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 340;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  line-height: 1.2;
+  color: var(--text-dim);
+}
+
+.home-tally__value {
+  font-size: 2.1em;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--text);
+}
+
+.home-tally__dot {
+  display: none;
+}
+
+/* The comeback: the last old mix and the first new one, with the quiet
+   Mondays counted out between them. Used on the home page and, for good,
+   on the comeback mix's own page. */
+
+.comeback {
+  gap: 0;
+}
+
+.comeback__lede {
+  margin: 0;
+  max-width: 28ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
+  font-weight: 340;
+  line-height: 1.2;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.comeback__bridge {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(12px, 3vw, 40px);
+  margin-top: clamp(28px, 5vh, 48px);
+}
+
+.comeback__end {
+  display: grid;
+  gap: 2px;
+  width: clamp(84px, 15vw, 190px);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.comeback__end--now {
+  justify-items: end;
+  text-align: right;
+}
+
+.comeback__art {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.comeback__art img,
+.comeback__blank {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.comeback__blank {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--text-faint);
+  background: var(--surface);
+}
+
+/* The old cover has gone a little grey; it comes back on hover. */
+.comeback__end--then .comeback__art img {
+  filter: grayscale(0.85) brightness(0.7);
+  transition: filter 500ms var(--ease-out);
+}
+
+.comeback__end--then:hover .comeback__art img {
+  filter: none;
+}
+
+.comeback__end--now .comeback__art {
+  border-color: transparent;
+  box-shadow: 0 30px 70px -26px rgba(0, 0, 0, 0.8);
+}
+
+.comeback__mix {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.comeback__end--now .comeback__mix {
+  color: var(--mix-accent);
+}
+
+.comeback__date {
+  font-size: 0.86rem;
+  color: var(--text-dim);
+}
+
+.comeback__gap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  /* Line up with the middle of the covers, not the whole column. */
+  padding-bottom: 52px;
+}
+
+/* A line drawn by hand from the old cover to the new one, ending in an
+   arrowhead. It draws itself on as the bridge scrolls into view. */
+.comeback__reach {
+  --pen: 1.6;
+  position: absolute;
+  color: var(--pencil);
+}
+
+.comeback__reach--across {
+  left: 0;
+  top: calc(50% - 26px - 15px);
+  width: 100%;
+  height: 28px;
+}
+
+.comeback__reach--down {
+  display: none;
+}
+
+.comeback__count {
+  position: relative;
+  margin: 0;
+  padding: 0 clamp(10px, 2vw, 22px);
+  background: var(--bg);
+  text-align: center;
+  transition: background-color 600ms var(--ease-out);
+}
+
+.comeback__figure {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.comeback__value {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 320;
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.comeback__unit {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.comeback__more {
+  margin: clamp(24px, 4vh, 36px) 0 0;
+}
+
+/* In the comeback mix's own hero: its number circled by hand, and a note
+   beside it for people who arrive from a link. */
+.mix-comeback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  margin: 0 0 18px;
+}
+
+.mix-comeback__number {
+  padding: 0 0.15em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mix-accent);
+}
+
+.mix-comeback__note {
+  --note-size: 2.3rem;
+  --note-delay: 1300ms;
+}
+
+@media (max-width: 960px) {
+  .home-hero__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  }
+
+  .home-more__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Short laptop windows: a smaller cover and tighter spacing, so Play stays
+   above the fold. */
+@media (max-height: 820px) and (min-width: 641px) {
+  .home-now {
+    gap: 12px;
+  }
+
+  .home-now__cover {
+    width: min(100%, 31vh);
+    width: min(100%, 31svh);
+  }
+
+  .home-now__head {
+    margin-top: 2px;
+  }
+
+  .home-now__title {
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  }
+
+  .home-now__note {
+    line-height: 1.5;
+  }
+
+  .home-hero__tagline {
+    margin-top: 16px;
+  }
+}
+
+/* While the player card is open it sits over the lower right corner, so the
+   current mix folds down to a small cover and moves up clear of it. */
+@media (min-width: 641px) {
+  body.has-tv .home-now {
+    grid-template-columns: 88px minmax(0, 1fr);
+    align-items: end;
+    column-gap: 18px;
+    margin-bottom: calc(var(--tv-clearance) - 8px);
+  }
+
+  /* Number over date, so the dot never hangs at a line end. */
+  body.has-tv .home-now__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  body.has-tv .home-now__dot {
+    display: none;
+  }
+
+  body.has-tv .home-now__cover {
+    width: 88px;
+  }
+
+  body.has-tv .home-now__note,
+  body.has-tv .home-now__actions {
+    grid-column: 1 / -1;
+  }
+}
+
+/* On a short window there isn't room above the card, so the current mix
+   slides left of it instead: by however far the card reaches into the
+   content column (360px card, 24px from the edge, 16px to spare). */
+@media (max-height: 820px) and (min-width: 1340px) {
+  body.has-tv .home-now {
+    margin-bottom: 0;
+    translate: calc(-1 * max(0px, min(50vw, 590px) - 50vw + 352px)) 0;
+  }
+}
+
+/* Coming back to the home page within the site (a link, Back or Forward),
+   the entrance is skipped: it plays once, on a fresh visit. */
+.pjax-enter .home-wall,
+.pjax-enter .home-hero__line > span,
+.pjax-enter .home-hero__tagline,
+.pjax-enter .home-now > *,
+.pjax-enter .home-now__callout > .hand-note {
+  animation: none;
+}
+
+.pjax-enter .home-now__callout {
+  --note-delay: 0ms;
+}
+
+.pjax-enter .home-wall__col {
+  animation: home-drift var(--loop) linear infinite;
+  animation-delay: calc(var(--loop) * var(--phase) * -1);
+}
+
+.pjax-enter .home-wall__col--down {
+  animation-direction: reverse;
+}
+
+.pjax-enter .home-wall__col:hover,
+.pjax-enter .home-wall.is-still .home-wall__col {
+  animation-play-state: paused;
+}
+
+.pjax-enter .home-hero .hand-mark {
+  --draw-delay: 0ms;
+  --draw-duration: 400ms;
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    --tile: max(33vw, calc(18vh + 2.5vw - 18px));
+    --tile: max(33vw, calc(18svh + 2.5vw - 18px));
+    --wall-gap: 10px;
+    min-height: calc(100svh - 60px);
+  }
+
+  .home-wall__col--outer {
+    display: none;
+  }
+
+  /* On a phone the words fill the lower half, so the ground rises higher. */
+  .home-hero::after {
+    background:
+      linear-gradient(to bottom, var(--bg), transparent 12%),
+      linear-gradient(to top, var(--bg) 8%, color-mix(in oklab, var(--bg) 86%, transparent) 46%, transparent 78%);
+  }
+
+  .home-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: clamp(48px, 11vh, 120px) 0 28px;
+    padding: clamp(48px, 11svh, 120px) 0 28px;
+  }
+
+  .home-wall__col {
+    will-change: auto;
+  }
+
+  .home-hero__wordmark {
+    font-size: clamp(3.2rem, 17.5vw, 5.4rem);
+  }
+
+  .home-hero__tagline {
+    margin-top: 18px;
+  }
+
+  .home-now {
+    grid-template-columns: 96px minmax(0, 1fr);
+    align-items: end;
+    column-gap: 16px;
+    row-gap: 14px;
+  }
+
+  .home-now__head {
+    margin: 0;
+  }
+
+  /* Number over date, rather than a line that wraps at the dot. */
+  .home-now__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .home-now__dot {
+    display: none;
+  }
+
+  .home-now__title {
+    font-size: 1.75rem;
+  }
+
+  .home-story {
+    grid-template-columns: 1fr;
+  }
+
+  /* On a phone the figures run along one line, with dots between. */
+  .home-tally__figures {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 6px;
+  }
+
+  .home-tally__dot {
+    display: inline;
+  }
+
+  .home-tally__value {
+    font-size: 1.6em;
+  }
+
+  .home-now__note,
+  .home-now__actions {
+    grid-column: 1 / -1;
+  }
+
+  .home-now__actions {
+    margin-top: 0;
+  }
+
+  /* On a phone the bridge turns on its side: the old cover, the quiet
+     Mondays running down a line, then the new one. */
+  .comeback__bridge {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .comeback__end,
+  .comeback__end--now {
+    width: auto;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 2px 18px;
+    align-items: center;
+    justify-items: start;
+    text-align: left;
+  }
+
+  .comeback__art {
+    grid-row: 1 / span 2;
+    margin: 0;
+  }
+
+  .comeback__mix {
+    align-self: end;
+  }
+
+  .comeback__date {
+    align-self: start;
+  }
+
+  .comeback__gap {
+    place-items: center start;
+    min-height: 132px;
+    padding: 24px 0 24px 106px;
+  }
+
+  .comeback__reach--across {
+    display: none;
+  }
+
+  .comeback__reach--down {
+    display: block;
+    left: 30px;
+    top: 4px;
+    width: 28px;
+    height: calc(100% - 8px);
+  }
+
+  .comeback__count {
+    padding: 0;
+    background: none;
+    text-align: left;
+  }
+
+  .comeback__figure {
+    justify-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-wall,
+  .home-wall__col,
+  .home-hero__line > span,
+  .home-hero__tagline,
+  .home-now > *,
+  .home-now__callout > .hand-note {
+    animation: none !important;
+  }
+
+  .home-more__item:hover .home-more__art,
+  .comeback__end:hover .comeback__art,
+  .home-now__cover:hover {
+    transform: none;
+  }
+
+  /* Still, but staggered, so it reads as a wall rather than a grid. */
+  .home-wall__col {
+    transform: translate3d(0, calc(var(--phase) * -50%), 0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Scroll reveal
+   -------------------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   404: plain words and the way back
+   -------------------------------------------------------------------------- */
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 720px;
+  min-height: 52vh;
+}
+
+.not-found__title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.05;
+}
+
+/* --------------------------------------------------------------------------
+   View transitions & motion preferences
+   -------------------------------------------------------------------------- */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+  animation-timing-function: var(--ease-out);
+}
+
+/* Cover morph between a card and the mix hero (see navigateTo). */
+::view-transition-group(mix-cover) {
+  animation-duration: 560ms;
+  animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+::view-transition-old(mix-cover),
+::view-transition-new(mix-cover) {
+  height: 100%;
+  object-fit: cover;
+  animation-duration: 560ms;
+}
+
+.pjax-enter {
+  animation: page-enter 420ms var(--ease-out) both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tv__card,
+  .tv__caption,
+  .tracklist__bars i {
+    animation: none !important;
+  }
+}
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  /* Narrow screens: the record takes the top of the stage and the words
+     start over its lower edge. */
+  .mix-hero--stage {
+    display: block;
+    min-height: 0;
+  }
+
+  .mix-hero--stage .mix-hero__art {
+    inset: 0 0 auto;
+    height: min(74vh, 640px);
+  }
+
+  .mix-hero--stage .mix-hero__art {
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) calc(min(50vh, 430px) - 140px + 0px), rgba(0, 0, 0, 0.93) calc(min(50vh, 430px) - 140px + 36px), rgba(0, 0, 0, 0.8) calc(min(50vh, 430px) - 140px + 63px), rgba(0, 0, 0, 0.6) calc(min(50vh, 430px) - 140px + 90px), rgba(0, 0, 0, 0.38) calc(min(50vh, 430px) - 140px + 117px), rgba(0, 0, 0, 0.18) calc(min(50vh, 430px) - 140px + 144px), rgba(0, 0, 0, 0.07) calc(min(50vh, 430px) - 140px + 162px), rgba(0, 0, 0, 0) calc(min(50vh, 430px) - 140px + 180px));
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) calc(min(50vh, 430px) - 140px + 0px), rgba(0, 0, 0, 0.93) calc(min(50vh, 430px) - 140px + 36px), rgba(0, 0, 0, 0.8) calc(min(50vh, 430px) - 140px + 63px), rgba(0, 0, 0, 0.6) calc(min(50vh, 430px) - 140px + 90px), rgba(0, 0, 0, 0.38) calc(min(50vh, 430px) - 140px + 117px), rgba(0, 0, 0, 0.18) calc(min(50vh, 430px) - 140px + 144px), rgba(0, 0, 0, 0.07) calc(min(50vh, 430px) - 140px + 162px), rgba(0, 0, 0, 0) calc(min(50vh, 430px) - 140px + 180px));
+    -webkit-mask-composite: source-over;
+    mask-composite: add;
+  }
+
+  .mix-hero--stage .mix-hero__body {
+    max-width: none;
+    padding-block: min(50vh, 430px) 32px;
+  }
+
+  /* About where the sleeve rests above the record on narrow screens. */
+  .mix-hero--stage .mix-hero__cover,
+  .mix-hero--stage .mix-hero__art.is-vinyl-mounted .mix-hero__cover {
+    top: 32%;
+    left: 38%;
+    width: min(60vw, 30vh, 320px);
+    transform: translate(-50%, -50%);
+  }
+
+  .section-block--split {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .archive-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .take-home {
+    grid-template-columns: 1fr;
+  }
+
+  .take-home .inlay {
+    align-items: flex-start;
+  }
+}
+
+/* Short, wide screens (a phone on its side): the words keep the left and the
+   record and sleeve take the right, as on desktop, in a box no taller than
+   the window. stageFrame() reads the same condition. */
+@media (max-width: 960px) and (max-height: 520px) and (orientation: landscape) {
+  .mix-hero--stage {
+    display: flex;
+    min-height: 0;
+  }
+
+  .mix-hero--stage .mix-hero__art {
+    inset: 0;
+    height: auto;
+  }
+
+  .mix-hero--stage .mix-hero__art {
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 12%, rgba(0, 0, 0, 0.18) 22%, rgba(0, 0, 0, 0.38) 30%, rgba(0, 0, 0, 0.58) 36%, rgba(0, 0, 0, 0.76) 41%, rgba(0, 0, 0, 0.9) 45%, rgba(0, 0, 0, 1) 49%);
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 12%, rgba(0, 0, 0, 0.18) 22%, rgba(0, 0, 0, 0.38) 30%, rgba(0, 0, 0, 0.58) 36%, rgba(0, 0, 0, 0.76) 41%, rgba(0, 0, 0, 0.9) 45%, rgba(0, 0, 0, 1) 49%);
+    -webkit-mask-composite: source-over;
+    mask-composite: add;
+  }
+
+  .mix-hero--stage .mix-hero__body {
+    max-width: 42%;
+    padding-block: 28px 32px;
+  }
+
+  .mix-hero--stage .mix-hero__title {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+  }
+
+  .mix-hero--stage .mix-hero__cover,
+  .mix-hero--stage .mix-hero__art.is-vinyl-mounted .mix-hero__cover {
+    top: 30%;
+    left: 61%;
+    width: min(48vh, 23vw, 220px);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    min-height: 62vh;
+  }
+
+  .about-hero__tile {
+    transform: scale(0.72);
+  }
+
+  .about-hero__tile:nth-child(odd) {
+    display: none;
+  }
+
+  .about-hero__tile img {
+    opacity: calc(0.22 + var(--depth) * 0.25);
+  }
+
+  .about-chapter {
+    padding-left: 0;
+  }
+
+  .about-chapter__ghost {
+    left: auto;
+    right: -10px;
+    top: -60px;
+  }
+
+  /* One column of intro on a phone: the rule becomes a short line above it. */
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .about-intro__rule {
+    width: 64px;
+    margin-top: 0;
+  }
+
+  .about-hero__intro {
+    columns: auto;
+  }
+
+  .site-header__inner {
+    flex-direction: row;
+  }
+
+  .site-brand__name {
+    display: none;
+  }
+
+  .site-main {
+    gap: 48px;
+    padding-top: 32px;
+  }
+
+  /* Two columns on every phone, down to 320px (home and archive alike). */
+  .mix-grid,
+  .home-more__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+  }
+
+  .mix-grid--archive .mix-card__meta {
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Half-width cards: the number gets its own line, so no card ends a line
+     on a stray dot and every card's meta is two lines tall. */
+  .mix-grid--archive .mix-card__sep {
+    display: none;
+  }
+
+  .mix-grid--archive .mix-card__meta .mix-no {
+    display: block;
+    margin-top: 2px;
+  }
+
+  .mix-grid--archive .mix-card__title {
+    font-size: 1.08rem;
+  }
+
+  .tracklist__row {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    gap: 12px;
+    padding: 12px 4px;
+  }
+
+  .tracklist__note {
+    margin-left: 50px;
+  }
+
+  /* Shrunk to its lamp, the chip read like a stop button, so a phone goes
+     without it. */
+  .on-air {
+    display: none;
+  }
+
+  /* On a phone the player is a sheet along the bottom: the video the full
+     width at 16:9 (never under 200px tall), then the one row of controls. */
+  .tv {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+  }
+
+  .tv__card {
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .tv.is-tucked {
+    left: auto;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  body.has-tv {
+    --tv-clearance: calc(56.25vw + 84px);
+  }
+
+  /* 53 Mondays won't fit across a phone; each year wraps onto two lines. */
+  .wall__row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .wall__row--months {
+    display: none;
+  }
+
+  .wall__weeks {
+    grid-template-columns: repeat(27, minmax(0, 1fr));
+    gap: 2px;
+  }
+
+  .wall__cell--mix:hover a,
+  .wall__cell--mix:focus-within a {
+    transform: scale(2.6);
+  }
+
+  .wall__tip {
+    display: none;
+  }
+
+  /* Smaller notes, and the first one moves up above its square so it
+     doesn't crowd "I almost stopped here." on the line below. */
+  .wall__note .hand-note {
+    --note-size: 1.8rem;
+  }
+
+  .hand-mark.wall__arrow {
+    width: 32px;
+    height: 15px;
+  }
+
+  .wall__note--first {
+    top: auto;
+    bottom: calc(100% + 2px);
+    margin-top: 0;
+    align-items: flex-end;
+  }
+
+  .wall__note--first[data-side="west"] {
+    right: 40%;
+  }
+
+  .wall__note--first[data-side="west"] .wall__arrow {
+    transform: rotate(30deg);
+  }
+
+  .wall__note--first[data-side="east"] {
+    left: 40%;
+  }
+
+  .wall__note--first[data-side="east"] .wall__arrow {
+    transform: scaleX(-1) rotate(30deg);
+  }
+
+  .wall__note--first .hand-note {
+    padding-bottom: 6px;
+  }
+
+  /* "I almost stopped here." goes under its square instead, over the
+     empty second line of 2011, clear of "It started here." above. */
+  .wall__note--almost {
+    top: calc(100% + 3px);
+    bottom: auto;
+    align-items: flex-start;
+  }
+
+  .wall__note--almost[data-side="east"] .wall__arrow {
+    transform: rotate(180deg);
+  }
+
+  .wall__note--almost[data-side="west"] .wall__arrow {
+    transform: scaleY(-1);
+  }
+
+  .wall__note--almost .hand-note {
+    padding-bottom: 0;
+    padding-top: 9px;
+  }
+
+  /* "The next one goes here." and "It came back here." both hang under
+     their square on a phone: the arrow points straight up at it, and the
+     words take two short lines beneath, nudged inside the wall by site.js
+     (--shift) when the square is near an edge. The quiet years band sits
+     too close above 2026 to write over. */
+  .wall__note--next[data-side],
+  .wall__note--back[data-side] {
+    top: calc(100% + 1px);
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    width: max-content;
+    translate: -50% 0;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0;
+  }
+
+  .wall__note--next[data-side] .wall__arrow,
+  .wall__note--back[data-side] .wall__arrow {
+    width: 26px;
+    height: 12px;
+    margin: 8px 0 6px;
+    transform: rotate(-115deg);
+  }
+
+  .wall__note--next .hand-note,
+  .wall__note--back .hand-note {
+    max-width: 6.4em;
+    padding: 0;
+    white-space: normal;
+    text-align: center;
+    text-wrap: balance;
+    translate: var(--shift, 0px) 0;
+  }
+
+  .wall__grid:has(.wall__note--next:not([hidden]), .wall__note--back) {
+    padding-bottom: 92px;
+  }
+
+  /* No band words to clear on a phone. */
+  .wall__row--quiet .wall__quiet[data-aside] {
+    justify-content: center;
+    padding-inline: 24px;
+  }
+
+  .inlay {
+    --in: calc((100vw - 64px) / 6.12);
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* The narrowest phones (360px): wall notes a size down, so "I almost
+   stopped here." stays inside the wall. */
+@media (max-width: 370px) {
+  .wall__note .hand-note {
+    --note-size: 1.65rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Print: a mix page prints its inlay card at real size, ready to cut out
+   -------------------------------------------------------------------------- */
+
+@media print {
+  @page {
+    size: letter landscape;
+    margin: 0.5in;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  .tv,
+  .site-header,
+  .site-footer {
+    display: none !important;
+  }
+
+  body:has(.inlay) * {
+    visibility: hidden !important;
+  }
+
+  body:has(.inlay) .site-main > :not(.take-home),
+  body:has(.inlay) .take-home__copy {
+    display: none !important;
+  }
+
+  body:has(.inlay) .inlay,
+  body:has(.inlay) .inlay * {
+    visibility: visible !important;
+  }
+
+  /* Printed, the card is white stock with dark ink, at real size. */
+  .inlay {
+    --in: 1in;
+    --inlay-ground: #fff;
+    --inlay-ink: #15171b;
+    --inlay-soft: rgba(21, 23, 27, 0.66);
+    --inlay-faint: rgba(21, 23, 27, 0.55);
+    --inlay-fold: rgba(21, 23, 27, 0.32);
+    --inlay-label: color-mix(in oklab, var(--mix-accent) 62%, #15171b);
+    --inlay-spine: color-mix(in oklab, var(--mix-accent) 55%, #121418);
+    --inlay-spine-ink: #f4f5f7;
+    position: absolute;
+    top: 0.2in;
+    left: 0.2in;
+    align-items: flex-start;
+  }
+
+  .inlay__card {
+    grid-template-rows: calc(var(--in) * 4);
+    height: calc(var(--in) * 4);
+    transform: none !important;
+    box-shadow: 0 0 0 0.5pt #b3b8c0 !important;
+  }
+
+  .inlay__card::before {
+    --mark: #5c636d;
+  }
+
+  .inlay__caption {
+    color: #5c636d;
+  }
+}

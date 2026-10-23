@@ -1,0 +1,1382 @@
+{
+  "covers": {
+    "mix-001-first": {
+      "swatches": [
+        {
+          "hex": "#1f1a18",
+          "share": 0.267
+        },
+        {
+          "hex": "#070509",
+          "share": 0.257
+        },
+        {
+          "hex": "#180812",
+          "share": 0.132
+        },
+        {
+          "hex": "#352c22",
+          "share": 0.09
+        },
+        {
+          "hex": "#564434",
+          "share": 0.074
+        },
+        {
+          "hex": "#47061e",
+          "share": 0.066
+        },
+        {
+          "hex": "#8a7451",
+          "share": 0.06
+        },
+        {
+          "hex": "#451928",
+          "share": 0.055
+        }
+      ]
+    },
+    "mix-002-second": {
+      "swatches": [
+        {
+          "hex": "#010101",
+          "share": 0.374
+        },
+        {
+          "hex": "#2a645a",
+          "share": 0.214
+        },
+        {
+          "hex": "#183336",
+          "share": 0.131
+        },
+        {
+          "hex": "#101d22",
+          "share": 0.124
+        },
+        {
+          "hex": "#234b4d",
+          "share": 0.109
+        },
+        {
+          "hex": "#67997f",
+          "share": 0.047
+        }
+      ]
+    },
+    "mix-003-third": {
+      "swatches": [
+        {
+          "hex": "#f1e5de",
+          "share": 0.327
+        },
+        {
+          "hex": "#01022c",
+          "share": 0.279
+        },
+        {
+          "hex": "#88734f",
+          "share": 0.129
+        },
+        {
+          "hex": "#11172e",
+          "share": 0.122
+        },
+        {
+          "hex": "#513346",
+          "share": 0.102
+        },
+        {
+          "hex": "#d6d0bd",
+          "share": 0.041
+        }
+      ]
+    },
+    "mix-004-fourth": {
+      "swatches": [
+        {
+          "hex": "#f3f3f3",
+          "share": 0.433
+        },
+        {
+          "hex": "#f5f1d4",
+          "share": 0.136
+        },
+        {
+          "hex": "#1a4256",
+          "share": 0.128
+        },
+        {
+          "hex": "#7ba75b",
+          "share": 0.125
+        },
+        {
+          "hex": "#adcc98",
+          "share": 0.1
+        },
+        {
+          "hex": "#f5e0ac",
+          "share": 0.078
+        }
+      ]
+    },
+    "mix-005-fifth": {
+      "swatches": [
+        {
+          "hex": "#ffffff",
+          "share": 0.281
+        },
+        {
+          "hex": "#1b3048",
+          "share": 0.137
+        },
+        {
+          "hex": "#8c9994",
+          "share": 0.133
+        },
+        {
+          "hex": "#376a83",
+          "share": 0.125
+        },
+        {
+          "hex": "#0b0c21",
+          "share": 0.121
+        },
+        {
+          "hex": "#747082",
+          "share": 0.112
+        },
+        {
+          "hex": "#cbd2bd",
+          "share": 0.09
+        }
+      ]
+    },
+    "mix-006-sixth": {
+      "swatches": [
+        {
+          "hex": "#5e2023",
+          "share": 0.131
+        },
+        {
+          "hex": "#be705f",
+          "share": 0.12
+        },
+        {
+          "hex": "#0d0408",
+          "share": 0.117
+        },
+        {
+          "hex": "#d8ab93",
+          "share": 0.115
+        },
+        {
+          "hex": "#a7352a",
+          "share": 0.113
+        },
+        {
+          "hex": "#e3d3b9",
+          "share": 0.107
+        },
+        {
+          "hex": "#e5e2c9",
+          "share": 0.096
+        },
+        {
+          "hex": "#1f0b12",
+          "share": 0.082
+        },
+        {
+          "hex": "#eeecd9",
+          "share": 0.063
+        },
+        {
+          "hex": "#281921",
+          "share": 0.056
+        }
+      ]
+    },
+    "mix-007-seventh": {
+      "swatches": [
+        {
+          "hex": "#ffffff",
+          "share": 0.365
+        },
+        {
+          "hex": "#f4dce5",
+          "share": 0.218
+        },
+        {
+          "hex": "#bee065",
+          "share": 0.168
+        },
+        {
+          "hex": "#f7f3e6",
+          "share": 0.133
+        },
+        {
+          "hex": "#9ebe92",
+          "share": 0.081
+        },
+        {
+          "hex": "#d3d7a1",
+          "share": 0.025
+        },
+        {
+          "hex": "#e7f2c4",
+          "share": 0.011
+        }
+      ]
+    },
+    "mix-008-eighth": {
+      "swatches": [
+        {
+          "hex": "#f3f7fe",
+          "share": 0.241
+        },
+        {
+          "hex": "#e0e8f2",
+          "share": 0.167
+        },
+        {
+          "hex": "#696c5d",
+          "share": 0.125
+        },
+        {
+          "hex": "#47382a",
+          "share": 0.122
+        },
+        {
+          "hex": "#7ba29c",
+          "share": 0.12
+        },
+        {
+          "hex": "#bbb8b0",
+          "share": 0.115
+        },
+        {
+          "hex": "#b7dee8",
+          "share": 0.111
+        }
+      ]
+    },
+    "mix-009-ninth": {
+      "swatches": [
+        {
+          "hex": "#f6fcfa",
+          "share": 0.444
+        },
+        {
+          "hex": "#d3cdd7",
+          "share": 0.134
+        },
+        {
+          "hex": "#491832",
+          "share": 0.128
+        },
+        {
+          "hex": "#87ba87",
+          "share": 0.113
+        },
+        {
+          "hex": "#79706e",
+          "share": 0.106
+        },
+        {
+          "hex": "#e7f4ee",
+          "share": 0.076
+        }
+      ]
+    },
+    "mix-010-tenth": {
+      "swatches": [
+        {
+          "hex": "#a5b982",
+          "share": 0.281
+        },
+        {
+          "hex": "#82804c",
+          "share": 0.154
+        },
+        {
+          "hex": "#656554",
+          "share": 0.127
+        },
+        {
+          "hex": "#a8d591",
+          "share": 0.126
+        },
+        {
+          "hex": "#2f3e64",
+          "share": 0.106
+        },
+        {
+          "hex": "#9ba668",
+          "share": 0.062
+        },
+        {
+          "hex": "#bdf09e",
+          "share": 0.06
+        },
+        {
+          "hex": "#a5e784",
+          "share": 0.048
+        },
+        {
+          "hex": "#a2d47a",
+          "share": 0.036
+        }
+      ]
+    },
+    "mix-011-eleventh": {
+      "swatches": [
+        {
+          "hex": "#dbddd9",
+          "share": 0.284
+        },
+        {
+          "hex": "#0d0b0c",
+          "share": 0.133
+        },
+        {
+          "hex": "#322e30",
+          "share": 0.122
+        },
+        {
+          "hex": "#c1c8c2",
+          "share": 0.114
+        },
+        {
+          "hex": "#67655f",
+          "share": 0.104
+        },
+        {
+          "hex": "#f0efe6",
+          "share": 0.098
+        },
+        {
+          "hex": "#94998f",
+          "share": 0.075
+        },
+        {
+          "hex": "#b7a8a7",
+          "share": 0.071
+        }
+      ]
+    },
+    "mix-012-twelfth": {
+      "swatches": [
+        {
+          "hex": "#0d1b2c",
+          "share": 0.185
+        },
+        {
+          "hex": "#108046",
+          "share": 0.179
+        },
+        {
+          "hex": "#e6dc67",
+          "share": 0.134
+        },
+        {
+          "hex": "#0d110a",
+          "share": 0.119
+        },
+        {
+          "hex": "#67c671",
+          "share": 0.113
+        },
+        {
+          "hex": "#7c9728",
+          "share": 0.11
+        },
+        {
+          "hex": "#113c50",
+          "share": 0.06
+        },
+        {
+          "hex": "#044241",
+          "share": 0.051
+        },
+        {
+          "hex": "#2d3d52",
+          "share": 0.05
+        }
+      ]
+    },
+    "mix-013-thirteenth": {
+      "swatches": [
+        {
+          "hex": "#258a56",
+          "share": 0.137
+        },
+        {
+          "hex": "#bb8a8d",
+          "share": 0.133
+        },
+        {
+          "hex": "#e9f6c4",
+          "share": 0.131
+        },
+        {
+          "hex": "#10534f",
+          "share": 0.129
+        },
+        {
+          "hex": "#a7c23a",
+          "share": 0.117
+        },
+        {
+          "hex": "#53b850",
+          "share": 0.092
+        },
+        {
+          "hex": "#7a5982",
+          "share": 0.09
+        },
+        {
+          "hex": "#e5f63b",
+          "share": 0.089
+        },
+        {
+          "hex": "#b0e865",
+          "share": 0.047
+        },
+        {
+          "hex": "#e4c984",
+          "share": 0.034
+        }
+      ]
+    },
+    "mix-014-fourteenth": {
+      "swatches": [
+        {
+          "hex": "#e4e4e4",
+          "share": 0.208
+        },
+        {
+          "hex": "#000000",
+          "share": 0.168
+        },
+        {
+          "hex": "#b5b5b5",
+          "share": 0.12
+        },
+        {
+          "hex": "#6e6e6e",
+          "share": 0.108
+        },
+        {
+          "hex": "#cfcfcf",
+          "share": 0.107
+        },
+        {
+          "hex": "#8e8e8e",
+          "share": 0.082
+        },
+        {
+          "hex": "#9f9f9f",
+          "share": 0.076
+        },
+        {
+          "hex": "#2c2c2c",
+          "share": 0.073
+        },
+        {
+          "hex": "#f1f1f1",
+          "share": 0.058
+        }
+      ]
+    },
+    "mix-015-fifteenth": {
+      "swatches": [
+        {
+          "hex": "#000000",
+          "share": 0.418
+        },
+        {
+          "hex": "#666666",
+          "share": 0.128
+        },
+        {
+          "hex": "#3a3a3a",
+          "share": 0.119
+        },
+        {
+          "hex": "#a5a5a5",
+          "share": 0.101
+        },
+        {
+          "hex": "#1c1c1c",
+          "share": 0.091
+        },
+        {
+          "hex": "#d8d8d8",
+          "share": 0.075
+        },
+        {
+          "hex": "#fafafa",
+          "share": 0.069
+        }
+      ]
+    },
+    "mix-016-sixteenth-the-covers-edition": {
+      "swatches": [
+        {
+          "hex": "#446d4e",
+          "share": 0.143
+        },
+        {
+          "hex": "#d3d0da",
+          "share": 0.119
+        },
+        {
+          "hex": "#3d3f58",
+          "share": 0.115
+        },
+        {
+          "hex": "#774484",
+          "share": 0.11
+        },
+        {
+          "hex": "#edf6f2",
+          "share": 0.104
+        },
+        {
+          "hex": "#7c9561",
+          "share": 0.093
+        },
+        {
+          "hex": "#94708a",
+          "share": 0.09
+        },
+        {
+          "hex": "#687157",
+          "share": 0.089
+        },
+        {
+          "hex": "#9cbd7f",
+          "share": 0.074
+        },
+        {
+          "hex": "#e4f3ce",
+          "share": 0.062
+        }
+      ]
+    },
+    "mix-017-seventeenth": {
+      "swatches": [
+        {
+          "hex": "#837a66",
+          "share": 0.159
+        },
+        {
+          "hex": "#a6a387",
+          "share": 0.136
+        },
+        {
+          "hex": "#363739",
+          "share": 0.125
+        },
+        {
+          "hex": "#ba7552",
+          "share": 0.106
+        },
+        {
+          "hex": "#4b9daa",
+          "share": 0.092
+        },
+        {
+          "hex": "#993d57",
+          "share": 0.085
+        },
+        {
+          "hex": "#f7f6ec",
+          "share": 0.084
+        },
+        {
+          "hex": "#d5b07d",
+          "share": 0.078
+        },
+        {
+          "hex": "#4a6f76",
+          "share": 0.072
+        },
+        {
+          "hex": "#dcdb9c",
+          "share": 0.063
+        }
+      ]
+    },
+    "mix-018-eighteenth": {
+      "swatches": [
+        {
+          "hex": "#f3f5ee",
+          "share": 0.55
+        },
+        {
+          "hex": "#241515",
+          "share": 0.137
+        },
+        {
+          "hex": "#b3b086",
+          "share": 0.12
+        },
+        {
+          "hex": "#5c4a39",
+          "share": 0.102
+        },
+        {
+          "hex": "#e3e3d4",
+          "share": 0.092
+        }
+      ]
+    },
+    "mix-019-nineteenth": {
+      "swatches": [
+        {
+          "hex": "#fcfcfc",
+          "share": 0.178
+        },
+        {
+          "hex": "#bdbdbd",
+          "share": 0.135
+        },
+        {
+          "hex": "#4c4c4c",
+          "share": 0.134
+        },
+        {
+          "hex": "#313131",
+          "share": 0.112
+        },
+        {
+          "hex": "#a0a0a0",
+          "share": 0.111
+        },
+        {
+          "hex": "#656565",
+          "share": 0.11
+        },
+        {
+          "hex": "#888888",
+          "share": 0.082
+        },
+        {
+          "hex": "#787878",
+          "share": 0.075
+        },
+        {
+          "hex": "#e8e8e8",
+          "share": 0.063
+        }
+      ]
+    },
+    "mix-020-twentieth": {
+      "swatches": [
+        {
+          "hex": "#c06748",
+          "share": 0.13
+        },
+        {
+          "hex": "#a5939d",
+          "share": 0.129
+        },
+        {
+          "hex": "#141113",
+          "share": 0.122
+        },
+        {
+          "hex": "#d9c2b5",
+          "share": 0.112
+        },
+        {
+          "hex": "#aad3c8",
+          "share": 0.109
+        },
+        {
+          "hex": "#e88d90",
+          "share": 0.109
+        },
+        {
+          "hex": "#df1831",
+          "share": 0.108
+        },
+        {
+          "hex": "#23262a",
+          "share": 0.082
+        },
+        {
+          "hex": "#3b4e4a",
+          "share": 0.077
+        },
+        {
+          "hex": "#e09f81",
+          "share": 0.022
+        }
+      ]
+    },
+    "mix-021-twentyfirst": {
+      "swatches": [
+        {
+          "hex": "#190a04",
+          "share": 0.237
+        },
+        {
+          "hex": "#341906",
+          "share": 0.157
+        },
+        {
+          "hex": "#9b7511",
+          "share": 0.119
+        },
+        {
+          "hex": "#6c430a",
+          "share": 0.115
+        },
+        {
+          "hex": "#e5cb6c",
+          "share": 0.114
+        },
+        {
+          "hex": "#542007",
+          "share": 0.101
+        },
+        {
+          "hex": "#4f3807",
+          "share": 0.095
+        },
+        {
+          "hex": "#99440e",
+          "share": 0.061
+        }
+      ]
+    },
+    "mix-022-twentysecond": {
+      "swatches": [
+        {
+          "hex": "#fefefe",
+          "share": 0.517
+        },
+        {
+          "hex": "#242b43",
+          "share": 0.139
+        },
+        {
+          "hex": "#b39792",
+          "share": 0.121
+        },
+        {
+          "hex": "#e4d8c1",
+          "share": 0.115
+        },
+        {
+          "hex": "#724b67",
+          "share": 0.108
+        }
+      ]
+    },
+    "mix-023-twentythird": {
+      "swatches": [
+        {
+          "hex": "#4cb1ba",
+          "share": 0.159
+        },
+        {
+          "hex": "#011005",
+          "share": 0.153
+        },
+        {
+          "hex": "#7ae2e9",
+          "share": 0.135
+        },
+        {
+          "hex": "#082f27",
+          "share": 0.107
+        },
+        {
+          "hex": "#968845",
+          "share": 0.099
+        },
+        {
+          "hex": "#c2f8fe",
+          "share": 0.094
+        },
+        {
+          "hex": "#1a7385",
+          "share": 0.09
+        },
+        {
+          "hex": "#f7fdf7",
+          "share": 0.084
+        },
+        {
+          "hex": "#457d75",
+          "share": 0.057
+        },
+        {
+          "hex": "#c0d391",
+          "share": 0.024
+        }
+      ]
+    },
+    "mix-024-twentyfourth": {
+      "swatches": [
+        {
+          "hex": "#002629",
+          "share": 0.344
+        },
+        {
+          "hex": "#de9562",
+          "share": 0.135
+        },
+        {
+          "hex": "#f7e389",
+          "share": 0.12
+        },
+        {
+          "hex": "#053d3b",
+          "share": 0.101
+        },
+        {
+          "hex": "#c4524b",
+          "share": 0.09
+        },
+        {
+          "hex": "#c1213d",
+          "share": 0.088
+        },
+        {
+          "hex": "#001717",
+          "share": 0.087
+        },
+        {
+          "hex": "#161b1f",
+          "share": 0.035
+        }
+      ]
+    },
+    "mix-025-twentyfifth": {
+      "swatches": [
+        {
+          "hex": "#efefef",
+          "share": 0.28
+        },
+        {
+          "hex": "#5d9894",
+          "share": 0.135
+        },
+        {
+          "hex": "#b1d5d2",
+          "share": 0.133
+        },
+        {
+          "hex": "#72675c",
+          "share": 0.129
+        },
+        {
+          "hex": "#b5a18e",
+          "share": 0.12
+        },
+        {
+          "hex": "#d8e9e6",
+          "share": 0.109
+        },
+        {
+          "hex": "#5a3330",
+          "share": 0.093
+        }
+      ]
+    },
+    "mix-026-twentysixth": {
+      "swatches": [
+        {
+          "hex": "#af7d10",
+          "share": 0.171
+        },
+        {
+          "hex": "#81590f",
+          "share": 0.161
+        },
+        {
+          "hex": "#7f7a50",
+          "share": 0.141
+        },
+        {
+          "hex": "#17150f",
+          "share": 0.114
+        },
+        {
+          "hex": "#d4b13a",
+          "share": 0.089
+        },
+        {
+          "hex": "#52482c",
+          "share": 0.089
+        },
+        {
+          "hex": "#23211a",
+          "share": 0.08
+        },
+        {
+          "hex": "#dfcc85",
+          "share": 0.076
+        },
+        {
+          "hex": "#3b2b14",
+          "share": 0.066
+        },
+        {
+          "hex": "#b99b3f",
+          "share": 0.012
+        }
+      ]
+    },
+    "mix-027-twentyseventh": {
+      "swatches": [
+        {
+          "hex": "#f5f2ed",
+          "share": 0.648
+        },
+        {
+          "hex": "#9ca0a9",
+          "share": 0.126
+        },
+        {
+          "hex": "#5f5f70",
+          "share": 0.115
+        },
+        {
+          "hex": "#cccccc",
+          "share": 0.111
+        }
+      ]
+    },
+    "mix-028-twentyeighth": {
+      "swatches": [
+        {
+          "hex": "#ffffff",
+          "share": 0.441
+        },
+        {
+          "hex": "#303030",
+          "share": 0.104
+        },
+        {
+          "hex": "#6f6f6f",
+          "share": 0.074
+        },
+        {
+          "hex": "#b7b7b7",
+          "share": 0.065
+        },
+        {
+          "hex": "#d4d4d4",
+          "share": 0.064
+        },
+        {
+          "hex": "#919191",
+          "share": 0.063
+        },
+        {
+          "hex": "#a6a6a6",
+          "share": 0.063
+        },
+        {
+          "hex": "#e4e4e4",
+          "share": 0.063
+        },
+        {
+          "hex": "#c6c6c6",
+          "share": 0.063
+        }
+      ]
+    },
+    "mix-029-twentyninth": {
+      "swatches": [
+        {
+          "hex": "#a9b7b7",
+          "share": 0.294
+        },
+        {
+          "hex": "#c57841",
+          "share": 0.173
+        },
+        {
+          "hex": "#434634",
+          "share": 0.133
+        },
+        {
+          "hex": "#b4472e",
+          "share": 0.122
+        },
+        {
+          "hex": "#9daead",
+          "share": 0.118
+        },
+        {
+          "hex": "#bac6c4",
+          "share": 0.085
+        },
+        {
+          "hex": "#888152",
+          "share": 0.044
+        },
+        {
+          "hex": "#b4b288",
+          "share": 0.032
+        }
+      ]
+    },
+    "mix-030-thirtieth": {
+      "swatches": [
+        {
+          "hex": "#221c18",
+          "share": 0.19
+        },
+        {
+          "hex": "#131212",
+          "share": 0.169
+        },
+        {
+          "hex": "#d1ccd8",
+          "share": 0.158
+        },
+        {
+          "hex": "#e4e1ed",
+          "share": 0.121
+        },
+        {
+          "hex": "#a6a3af",
+          "share": 0.097
+        },
+        {
+          "hex": "#462a19",
+          "share": 0.096
+        },
+        {
+          "hex": "#544c4c",
+          "share": 0.085
+        },
+        {
+          "hex": "#32251c",
+          "share": 0.084
+        }
+      ]
+    },
+    "mix-031-thirtyfirst": {
+      "swatches": [
+        {
+          "hex": "#05050a",
+          "share": 0.36
+        },
+        {
+          "hex": "#c6b5aa",
+          "share": 0.134
+        },
+        {
+          "hex": "#e8dcd5",
+          "share": 0.129
+        },
+        {
+          "hex": "#8e7872",
+          "share": 0.11
+        },
+        {
+          "hex": "#453336",
+          "share": 0.098
+        },
+        {
+          "hex": "#26161f",
+          "share": 0.086
+        },
+        {
+          "hex": "#14111a",
+          "share": 0.083
+        }
+      ]
+    },
+    "mix-032-thirtysecond": {
+      "swatches": [
+        {
+          "hex": "#cb9275",
+          "share": 0.163
+        },
+        {
+          "hex": "#767064",
+          "share": 0.147
+        },
+        {
+          "hex": "#22221e",
+          "share": 0.128
+        },
+        {
+          "hex": "#978f7e",
+          "share": 0.106
+        },
+        {
+          "hex": "#9c7967",
+          "share": 0.105
+        },
+        {
+          "hex": "#534d49",
+          "share": 0.104
+        },
+        {
+          "hex": "#a6a39a",
+          "share": 0.074
+        },
+        {
+          "hex": "#ded9cb",
+          "share": 0.069
+        },
+        {
+          "hex": "#c5bea9",
+          "share": 0.053
+        },
+        {
+          "hex": "#c0a786",
+          "share": 0.05
+        }
+      ]
+    },
+    "mix-033-thirtythird": {
+      "swatches": [
+        {
+          "hex": "#5c8e82",
+          "share": 0.358
+        },
+        {
+          "hex": "#4b4546",
+          "share": 0.136
+        },
+        {
+          "hex": "#87736b",
+          "share": 0.122
+        },
+        {
+          "hex": "#1a1a20",
+          "share": 0.121
+        },
+        {
+          "hex": "#a9a08c",
+          "share": 0.098
+        },
+        {
+          "hex": "#557063",
+          "share": 0.078
+        },
+        {
+          "hex": "#c0b597",
+          "share": 0.07
+        },
+        {
+          "hex": "#708d80",
+          "share": 0.016
+        }
+      ]
+    },
+    "mix-034-thirtyfourth": {
+      "swatches": [
+        {
+          "hex": "#d4c3af",
+          "share": 0.262
+        },
+        {
+          "hex": "#918c7f",
+          "share": 0.135
+        },
+        {
+          "hex": "#a0998a",
+          "share": 0.134
+        },
+        {
+          "hex": "#b0a795",
+          "share": 0.121
+        },
+        {
+          "hex": "#78746c",
+          "share": 0.117
+        },
+        {
+          "hex": "#3e3e3c",
+          "share": 0.11
+        },
+        {
+          "hex": "#d0c176",
+          "share": 0.093
+        },
+        {
+          "hex": "#c8ba92",
+          "share": 0.029
+        }
+      ]
+    },
+    "mix-035-thirtyfifth": {
+      "swatches": [
+        {
+          "hex": "#946e50",
+          "share": 0.273
+        },
+        {
+          "hex": "#5b8e95",
+          "share": 0.129
+        },
+        {
+          "hex": "#1e2835",
+          "share": 0.114
+        },
+        {
+          "hex": "#734d3c",
+          "share": 0.088
+        },
+        {
+          "hex": "#a77f62",
+          "share": 0.087
+        },
+        {
+          "hex": "#bf9974",
+          "share": 0.086
+        },
+        {
+          "hex": "#75a2a9",
+          "share": 0.07
+        },
+        {
+          "hex": "#5e6c66",
+          "share": 0.054
+        },
+        {
+          "hex": "#647d7a",
+          "share": 0.05
+        },
+        {
+          "hex": "#c4b395",
+          "share": 0.049
+        }
+      ]
+    },
+    "mix-036-thirtysixth": {
+      "swatches": [
+        {
+          "hex": "#ac9887",
+          "share": 0.126
+        },
+        {
+          "hex": "#bdb5a4",
+          "share": 0.125
+        },
+        {
+          "hex": "#3d3d3f",
+          "share": 0.121
+        },
+        {
+          "hex": "#8f0c0d",
+          "share": 0.12
+        },
+        {
+          "hex": "#20100d",
+          "share": 0.119
+        },
+        {
+          "hex": "#738582",
+          "share": 0.116
+        },
+        {
+          "hex": "#cfc7b6",
+          "share": 0.088
+        },
+        {
+          "hex": "#655655",
+          "share": 0.08
+        },
+        {
+          "hex": "#94544c",
+          "share": 0.053
+        },
+        {
+          "hex": "#e9e3d4",
+          "share": 0.052
+        }
+      ]
+    },
+    "mmm-for-2026-04-13": {
+      "swatches": [
+        {
+          "hex": "#d5b7c2",
+          "share": 0.192
+        },
+        {
+          "hex": "#5c4b55",
+          "share": 0.123
+        },
+        {
+          "hex": "#7f5e62",
+          "share": 0.119
+        },
+        {
+          "hex": "#b1a1bf",
+          "share": 0.114
+        },
+        {
+          "hex": "#caa4ad",
+          "share": 0.109
+        },
+        {
+          "hex": "#8c7681",
+          "share": 0.108
+        },
+        {
+          "hex": "#b08789",
+          "share": 0.086
+        },
+        {
+          "hex": "#9f7e85",
+          "share": 0.081
+        },
+        {
+          "hex": "#efd0ca",
+          "share": 0.065
+        }
+      ]
+    },
+    "mmm-for-2026-10-05": {
+      "swatches": [
+        {
+          "hex": "#181a19",
+          "share": 0.346
+        },
+        {
+          "hex": "#5e4e3f",
+          "share": 0.119
+        },
+        {
+          "hex": "#3f3f3a",
+          "share": 0.111
+        },
+        {
+          "hex": "#746759",
+          "share": 0.108
+        },
+        {
+          "hex": "#2a2b28",
+          "share": 0.1
+        },
+        {
+          "hex": "#7e766a",
+          "share": 0.09
+        },
+        {
+          "hex": "#3c2f28",
+          "share": 0.066
+        },
+        {
+          "hex": "#978773",
+          "share": 0.06
+        }
+      ]
+    }
+  },
+  "generatedBy": "scripts/extract_palettes.py",
+  "schemaVersion": "1.0"
+}
